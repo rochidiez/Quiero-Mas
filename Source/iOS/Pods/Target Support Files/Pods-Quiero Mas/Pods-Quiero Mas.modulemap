@@ -1,0 +1,6 @@
+framework module Pods_Quiero_Mas {
+  umbrella header "Pods-Quiero Mas-umbrella.h"
+
+  export *
+  module * { export * }
+}

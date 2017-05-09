@@ -1,0 +1,599 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C100951A1E9730D3001748E4 /* MenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10095191E9730D3001748E4 /* MenuNavigationController.swift */; };
+		C100951C1E973B95001748E4 /* Cera-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C100951B1E973B95001748E4 /* Cera-Black.ttf */; };
+		C10095251E973BFD001748E4 /* Cera-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C100951D1E973BFD001748E4 /* Cera-BlackItalic.ttf */; };
+		C10095261E973BFD001748E4 /* Cera-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C100951E1E973BFD001748E4 /* Cera-BoldItalic.ttf */; };
+		C10095271E973BFD001748E4 /* Cera-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C100951F1E973BFD001748E4 /* Cera-Light.ttf */; };
+		C10095281E973BFD001748E4 /* Cera-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C10095201E973BFD001748E4 /* Cera-LightItalic.ttf */; };
+		C10095291E973BFD001748E4 /* Cera-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C10095211E973BFD001748E4 /* Cera-Medium.ttf */; };
+		C100952A1E973BFD001748E4 /* Cera-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C10095221E973BFD001748E4 /* Cera-MediumItalic.ttf */; };
+		C100952B1E973BFD001748E4 /* Cera-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C10095231E973BFD001748E4 /* Cera-Regular.ttf */; };
+		C100952C1E973BFD001748E4 /* Cera-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C10095241E973BFD001748E4 /* Cera-RegularItalic.ttf */; };
+		C100952F1E973C07001748E4 /* Cera-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C100952D1E973C07001748E4 /* Cera-Thin.ttf */; };
+		C10095301E973C07001748E4 /* Cera-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C100952E1E973C07001748E4 /* Cera-ThinItalic.ttf */; };
+		C10095331E974BFC001748E4 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10095321E974BFC001748E4 /* MenuTableViewCell.swift */; };
+		C10095361E9750DE001748E4 /* NutricionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10095351E9750DE001748E4 /* NutricionViewController.swift */; };
+		C10095391E9753B9001748E4 /* EstimulacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10095381E9753B9001748E4 /* EstimulacionViewController.swift */; };
+		C100953C1E9754B9001748E4 /* ABCNutricionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100953B1E9754B9001748E4 /* ABCNutricionViewController.swift */; };
+		C100953F1E9755C7001748E4 /* LactanciaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100953E1E9755C7001748E4 /* LactanciaViewController.swift */; };
+		C109FDBB1EAA95B10067E86C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C109FDBA1EAA95B10067E86C /* Login.storyboard */; };
+		C109FDBE1EAA95E60067E86C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C109FDBD1EAA95E60067E86C /* LoginViewController.swift */; };
+		C109FDC01EAA961D0067E86C /* video-background_1200x720.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C109FDBF1EAA961D0067E86C /* video-background_1200x720.mp4 */; };
+		C1523FAD1EC0339F0047B195 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1523FAC1EC0339F0047B195 /* GoogleService-Info.plist */; };
+		C18F22E71E887D24006E42DB /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F22E61E887D24006E42DB /* MenuTableViewController.swift */; };
+		C18F22EA1E88834C006E42DB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F22E91E88834C006E42DB /* HomeViewController.swift */; };
+		C199D9121E8877B0002255BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C199D9111E8877B0002255BA /* AppDelegate.swift */; };
+		C199D9141E8877B0002255BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C199D9131E8877B0002255BA /* ViewController.swift */; };
+		C199D9171E8877B0002255BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C199D9151E8877B0002255BA /* Main.storyboard */; };
+		C199D91A1E8877B0002255BA /* Quiero_Mas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C199D9181E8877B0002255BA /* Quiero_Mas.xcdatamodeld */; };
+		C199D91C1E8877B0002255BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C199D91B1E8877B0002255BA /* Assets.xcassets */; };
+		C199D91F1E8877B0002255BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C199D91D1E8877B0002255BA /* LaunchScreen.storyboard */; };
+		C1CA15301E9EAA1A0084A432 /* Cera-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C1CA152F1E9EAA1A0084A432 /* Cera-Bold.ttf */; };
+		C1D1CEA51EADDA3900EA14C8 /* EmailViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1CEA41EADDA3900EA14C8 /* EmailViewcontroller.swift */; };
+		C1D1CEA71EADE58200EA14C8 /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1CEA61EADE58200EA14C8 /* ForgotPassViewController.swift */; };
+		E01549BD6411FB5FF88B6DBB /* Pods_Quiero_Mas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C29DCC2F7295666DB7BEDF3 /* Pods_Quiero_Mas.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0C29DCC2F7295666DB7BEDF3 /* Pods_Quiero_Mas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quiero_Mas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77C1D4118C3A0374D5B98A78 /* Pods-Quiero Mas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quiero Mas.release.xcconfig"; path = "Pods/Target Support Files/Pods-Quiero Mas/Pods-Quiero Mas.release.xcconfig"; sourceTree = "<group>"; };
+		820FF37300A3D8DCBE25C712 /* Pods-Quiero Mas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quiero Mas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quiero Mas/Pods-Quiero Mas.debug.xcconfig"; sourceTree = "<group>"; };
+		C10095191E9730D3001748E4 /* MenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuNavigationController.swift; sourceTree = "<group>"; };
+		C100951B1E973B95001748E4 /* Cera-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cera-Black.ttf"; path = "../Cera-Black.ttf"; sourceTree = "<group>"; };
+		C100951D1E973BFD001748E4 /* Cera-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cera-BlackItalic.ttf"; path = "../Cera-BlackItalic.ttf"; sourceTree = "<group>"; };
+		C100951E1E973BFD001748E4 /* Cera-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cera-BoldItalic.ttf"; path = "../Cera-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C100951F1E973BFD001748E4 /* Cera-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cera-Light.ttf"; path = "../Cera-Light.ttf"; sourceTree = "<group>"; };
+		C10095201E973BFD001748E4 /* Cera-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cera-LightItalic.ttf"; path = "../Cera-LightItalic.ttf"; sourceTree = "<group>"; };
+		C10095211E973BFD001748E4 /* Cera-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cera-Medium.ttf"; path = "../Cera-Medium.ttf"; sourceTree = "<group>"; };
+		C10095221E973BFD001748E4 /* Cera-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cera-MediumItalic.ttf"; path = "../Cera-MediumItalic.ttf"; sourceTree = "<group>"; };
+		C10095231E973BFD001748E4 /* Cera-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cera-Regular.ttf"; path = "../Cera-Regular.ttf"; sourceTree = "<group>"; };
+		C10095241E973BFD001748E4 /* Cera-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cera-RegularItalic.ttf"; path = "../Cera-RegularItalic.ttf"; sourceTree = "<group>"; };
+		C100952D1E973C07001748E4 /* Cera-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cera-Thin.ttf"; path = "../Cera-Thin.ttf"; sourceTree = "<group>"; };
+		C100952E1E973C07001748E4 /* Cera-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cera-ThinItalic.ttf"; path = "../Cera-ThinItalic.ttf"; sourceTree = "<group>"; };
+		C10095321E974BFC001748E4 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		C10095351E9750DE001748E4 /* NutricionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutricionViewController.swift; sourceTree = "<group>"; };
+		C10095381E9753B9001748E4 /* EstimulacionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimulacionViewController.swift; sourceTree = "<group>"; };
+		C100953B1E9754B9001748E4 /* ABCNutricionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABCNutricionViewController.swift; sourceTree = "<group>"; };
+		C100953E1E9755C7001748E4 /* LactanciaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LactanciaViewController.swift; sourceTree = "<group>"; };
+		C109FDBA1EAA95B10067E86C /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		C109FDBD1EAA95E60067E86C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C109FDBF1EAA961D0067E86C /* video-background_1200x720.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "video-background_1200x720.mp4"; sourceTree = "<group>"; };
+		C1523FAB1EC030400047B195 /* Quiero Mas.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Quiero Mas.entitlements"; sourceTree = "<group>"; };
+		C1523FAC1EC0339F0047B195 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C18F22E61E887D24006E42DB /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		C18F22E91E88834C006E42DB /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C199D90E1E8877B0002255BA /* Quiero Mas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quiero Mas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C199D9111E8877B0002255BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C199D9131E8877B0002255BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C199D9161E8877B0002255BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C199D9191E8877B0002255BA /* Quiero_Mas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Quiero_Mas.xcdatamodel; sourceTree = "<group>"; };
+		C199D91B1E8877B0002255BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C199D91E1E8877B0002255BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C199D9201E8877B0002255BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1CA152F1E9EAA1A0084A432 /* Cera-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cera-Bold.ttf"; sourceTree = "<group>"; };
+		C1D1CEA41EADDA3900EA14C8 /* EmailViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewcontroller.swift; sourceTree = "<group>"; };
+		C1D1CEA61EADE58200EA14C8 /* ForgotPassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C199D90B1E8877B0002255BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E01549BD6411FB5FF88B6DBB /* Pods_Quiero_Mas.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3046229FC149833886AD19DF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				820FF37300A3D8DCBE25C712 /* Pods-Quiero Mas.debug.xcconfig */,
+				77C1D4118C3A0374D5B98A78 /* Pods-Quiero Mas.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		87207133D3BEC48613AF66C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C29DCC2F7295666DB7BEDF3 /* Pods_Quiero_Mas.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C10095311E973C0C001748E4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C100951B1E973B95001748E4 /* Cera-Black.ttf */,
+				C100951D1E973BFD001748E4 /* Cera-BlackItalic.ttf */,
+				C1CA152F1E9EAA1A0084A432 /* Cera-Bold.ttf */,
+				C100951E1E973BFD001748E4 /* Cera-BoldItalic.ttf */,
+				C100951F1E973BFD001748E4 /* Cera-Light.ttf */,
+				C10095201E973BFD001748E4 /* Cera-LightItalic.ttf */,
+				C10095211E973BFD001748E4 /* Cera-Medium.ttf */,
+				C10095221E973BFD001748E4 /* Cera-MediumItalic.ttf */,
+				C10095231E973BFD001748E4 /* Cera-Regular.ttf */,
+				C10095241E973BFD001748E4 /* Cera-RegularItalic.ttf */,
+				C100952D1E973C07001748E4 /* Cera-Thin.ttf */,
+				C100952E1E973C07001748E4 /* Cera-ThinItalic.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		C10095341E9750C9001748E4 /* Nutrición */ = {
+			isa = PBXGroup;
+			children = (
+				C10095351E9750DE001748E4 /* NutricionViewController.swift */,
+			);
+			name = "Nutrición";
+			sourceTree = "<group>";
+		};
+		C10095371E9753AA001748E4 /* Estimulación */ = {
+			isa = PBXGroup;
+			children = (
+				C10095381E9753B9001748E4 /* EstimulacionViewController.swift */,
+			);
+			name = "Estimulación";
+			sourceTree = "<group>";
+		};
+		C100953A1E9754A6001748E4 /* ABCNutricion */ = {
+			isa = PBXGroup;
+			children = (
+				C100953B1E9754B9001748E4 /* ABCNutricionViewController.swift */,
+			);
+			name = ABCNutricion;
+			sourceTree = "<group>";
+		};
+		C100953D1E9755BB001748E4 /* Lactancia */ = {
+			isa = PBXGroup;
+			children = (
+				C100953E1E9755C7001748E4 /* LactanciaViewController.swift */,
+			);
+			name = Lactancia;
+			sourceTree = "<group>";
+		};
+		C109FDB91EAA95A20067E86C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C199D91D1E8877B0002255BA /* LaunchScreen.storyboard */,
+				C109FDBA1EAA95B10067E86C /* Login.storyboard */,
+				C199D9151E8877B0002255BA /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		C109FDBC1EAA95D20067E86C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C109FDBD1EAA95E60067E86C /* LoginViewController.swift */,
+				C1D1CEA41EADDA3900EA14C8 /* EmailViewcontroller.swift */,
+				C1D1CEA61EADE58200EA14C8 /* ForgotPassViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		C18F22E41E887D02006E42DB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C109FDBC1EAA95D20067E86C /* Login */,
+				C100953D1E9755BB001748E4 /* Lactancia */,
+				C100953A1E9754A6001748E4 /* ABCNutricion */,
+				C10095371E9753AA001748E4 /* Estimulación */,
+				C10095341E9750C9001748E4 /* Nutrición */,
+				C18F22E81E88833C006E42DB /* Home */,
+				C18F22E51E887D0E006E42DB /* Menu */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		C18F22E51E887D0E006E42DB /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				C18F22E61E887D24006E42DB /* MenuTableViewController.swift */,
+				C10095191E9730D3001748E4 /* MenuNavigationController.swift */,
+				C10095321E974BFC001748E4 /* MenuTableViewCell.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		C18F22E81E88833C006E42DB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C18F22E91E88834C006E42DB /* HomeViewController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		C199D9051E8877B0002255BA = {
+			isa = PBXGroup;
+			children = (
+				C109FDBF1EAA961D0067E86C /* video-background_1200x720.mp4 */,
+				C199D9101E8877B0002255BA /* Quiero Mas */,
+				C199D90F1E8877B0002255BA /* Products */,
+				3046229FC149833886AD19DF /* Pods */,
+				87207133D3BEC48613AF66C5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C199D90F1E8877B0002255BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C199D90E1E8877B0002255BA /* Quiero Mas.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C199D9101E8877B0002255BA /* Quiero Mas */ = {
+			isa = PBXGroup;
+			children = (
+				C1523FAB1EC030400047B195 /* Quiero Mas.entitlements */,
+				C109FDB91EAA95A20067E86C /* Storyboards */,
+				C10095311E973C0C001748E4 /* Fonts */,
+				C18F22E41E887D02006E42DB /* Classes */,
+				C199D9111E8877B0002255BA /* AppDelegate.swift */,
+				C199D9131E8877B0002255BA /* ViewController.swift */,
+				C199D91B1E8877B0002255BA /* Assets.xcassets */,
+				C199D9201E8877B0002255BA /* Info.plist */,
+				C1523FAC1EC0339F0047B195 /* GoogleService-Info.plist */,
+				C199D9181E8877B0002255BA /* Quiero_Mas.xcdatamodeld */,
+			);
+			path = "Quiero Mas";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C199D90D1E8877B0002255BA /* Quiero Mas */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C199D9231E8877B0002255BA /* Build configuration list for PBXNativeTarget "Quiero Mas" */;
+			buildPhases = (
+				314B344D507B1C6AB687549B /* [CP] Check Pods Manifest.lock */,
+				C199D90A1E8877B0002255BA /* Sources */,
+				C199D90B1E8877B0002255BA /* Frameworks */,
+				C199D90C1E8877B0002255BA /* Resources */,
+				61B92B39D97BE6EE8B244A77 /* [CP] Embed Pods Frameworks */,
+				FF61EB75042C62EFDEC7DF5D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Quiero Mas";
+			productName = "Quiero Mas";
+			productReference = C199D90E1E8877B0002255BA /* Quiero Mas.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C199D9061E8877B0002255BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Fernando N. Frassia";
+				TargetAttributes = {
+					C199D90D1E8877B0002255BA = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 426MNF8EA3;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = C199D9091E8877B0002255BA /* Build configuration list for PBXProject "Quiero Mas" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C199D9051E8877B0002255BA;
+			productRefGroup = C199D90F1E8877B0002255BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C199D90D1E8877B0002255BA /* Quiero Mas */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C199D90C1E8877B0002255BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C109FDBB1EAA95B10067E86C /* Login.storyboard in Resources */,
+				C10095261E973BFD001748E4 /* Cera-BoldItalic.ttf in Resources */,
+				C199D91F1E8877B0002255BA /* LaunchScreen.storyboard in Resources */,
+				C199D91C1E8877B0002255BA /* Assets.xcassets in Resources */,
+				C199D9171E8877B0002255BA /* Main.storyboard in Resources */,
+				C100951C1E973B95001748E4 /* Cera-Black.ttf in Resources */,
+				C10095251E973BFD001748E4 /* Cera-BlackItalic.ttf in Resources */,
+				C100952C1E973BFD001748E4 /* Cera-RegularItalic.ttf in Resources */,
+				C100952A1E973BFD001748E4 /* Cera-MediumItalic.ttf in Resources */,
+				C10095291E973BFD001748E4 /* Cera-Medium.ttf in Resources */,
+				C100952F1E973C07001748E4 /* Cera-Thin.ttf in Resources */,
+				C1523FAD1EC0339F0047B195 /* GoogleService-Info.plist in Resources */,
+				C10095301E973C07001748E4 /* Cera-ThinItalic.ttf in Resources */,
+				C10095281E973BFD001748E4 /* Cera-LightItalic.ttf in Resources */,
+				C10095271E973BFD001748E4 /* Cera-Light.ttf in Resources */,
+				C1CA15301E9EAA1A0084A432 /* Cera-Bold.ttf in Resources */,
+				C100952B1E973BFD001748E4 /* Cera-Regular.ttf in Resources */,
+				C109FDC01EAA961D0067E86C /* video-background_1200x720.mp4 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		314B344D507B1C6AB687549B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		61B92B39D97BE6EE8B244A77 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quiero Mas/Pods-Quiero Mas-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF61EB75042C62EFDEC7DF5D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quiero Mas/Pods-Quiero Mas-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C199D90A1E8877B0002255BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C109FDBE1EAA95E60067E86C /* LoginViewController.swift in Sources */,
+				C100953C1E9754B9001748E4 /* ABCNutricionViewController.swift in Sources */,
+				C1D1CEA71EADE58200EA14C8 /* ForgotPassViewController.swift in Sources */,
+				C18F22EA1E88834C006E42DB /* HomeViewController.swift in Sources */,
+				C10095391E9753B9001748E4 /* EstimulacionViewController.swift in Sources */,
+				C18F22E71E887D24006E42DB /* MenuTableViewController.swift in Sources */,
+				C10095361E9750DE001748E4 /* NutricionViewController.swift in Sources */,
+				C10095331E974BFC001748E4 /* MenuTableViewCell.swift in Sources */,
+				C199D9141E8877B0002255BA /* ViewController.swift in Sources */,
+				C199D91A1E8877B0002255BA /* Quiero_Mas.xcdatamodeld in Sources */,
+				C100951A1E9730D3001748E4 /* MenuNavigationController.swift in Sources */,
+				C199D9121E8877B0002255BA /* AppDelegate.swift in Sources */,
+				C100953F1E9755C7001748E4 /* LactanciaViewController.swift in Sources */,
+				C1D1CEA51EADDA3900EA14C8 /* EmailViewcontroller.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C199D9151E8877B0002255BA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C199D9161E8877B0002255BA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C199D91D1E8877B0002255BA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C199D91E1E8877B0002255BA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C199D9211E8877B0002255BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C199D9221E8877B0002255BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C199D9241E8877B0002255BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 820FF37300A3D8DCBE25C712 /* Pods-Quiero Mas.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Quiero Mas/Quiero Mas.entitlements";
+				DEVELOPMENT_TEAM = 426MNF8EA3;
+				INFOPLIST_FILE = "Quiero Mas/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "FerFrassia.Quiero-Mas";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C199D9251E8877B0002255BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77C1D4118C3A0374D5B98A78 /* Pods-Quiero Mas.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Quiero Mas/Quiero Mas.entitlements";
+				DEVELOPMENT_TEAM = 426MNF8EA3;
+				INFOPLIST_FILE = "Quiero Mas/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "FerFrassia.Quiero-Mas";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C199D9091E8877B0002255BA /* Build configuration list for PBXProject "Quiero Mas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C199D9211E8877B0002255BA /* Debug */,
+				C199D9221E8877B0002255BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C199D9231E8877B0002255BA /* Build configuration list for PBXNativeTarget "Quiero Mas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C199D9241E8877B0002255BA /* Debug */,
+				C199D9251E8877B0002255BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C199D9181E8877B0002255BA /* Quiero_Mas.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C199D9191E8877B0002255BA /* Quiero_Mas.xcdatamodel */,
+			);
+			currentVersion = C199D9191E8877B0002255BA /* Quiero_Mas.xcdatamodel */;
+			path = Quiero_Mas.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C199D9061E8877B0002255BA /* Project object */;
+}

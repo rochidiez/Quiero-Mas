@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cera-Regular.ttf">
+            <string>Cera-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Las recetas están diseñadas para que cumpliendo el cronograma no le falte ningún nutriente a tu bebé." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sS8-Km-ag9">
+                                <rect key="frame" x="20" y="557" width="335" height="48"/>
+                                <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="16"/>
+                                <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Orange Right Separator" translatesAutoresizingMaskIntoConstraints="NO" id="BE7-5z-9su">
+                                <rect key="frame" x="204" y="625" width="135" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="Xux-GT-6PY"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DP6-NG-5l3">
+                                <rect key="frame" x="16" y="625" width="188" height="2"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScren Top Img" translatesAutoresizingMaskIntoConstraints="NO" id="ota-rk-eux">
+                                <rect key="frame" x="20" y="170" width="335" height="103"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BE7-5z-9su" firstAttribute="height" secondItem="DP6-NG-5l3" secondAttribute="height" id="1YS-k8-J55"/>
+                            <constraint firstItem="DP6-NG-5l3" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="2hg-Xu-Cxg"/>
+                            <constraint firstItem="ota-rk-eux" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="150" id="4VM-g5-onZ"/>
+                            <constraint firstItem="BE7-5z-9su" firstAttribute="bottom" secondItem="DP6-NG-5l3" secondAttribute="bottom" id="6xj-bs-WVO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BE7-5z-9su" secondAttribute="trailing" constant="20" id="C4u-Vm-WGd"/>
+                            <constraint firstItem="sS8-Km-ag9" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" id="ILJ-KY-mbT"/>
+                            <constraint firstItem="ota-rk-eux" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" id="K0T-ey-dB5"/>
+                            <constraint firstItem="DP6-NG-5l3" firstAttribute="top" secondItem="sS8-Km-ag9" secondAttribute="bottom" constant="20" id="Ofp-Kg-j5x"/>
+                            <constraint firstItem="DP6-NG-5l3" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.5" id="VLx-uj-Cgw"/>
+                            <constraint firstAttribute="trailing" secondItem="sS8-Km-ag9" secondAttribute="trailing" constant="20" id="irN-uv-ROD"/>
+                            <constraint firstItem="BE7-5z-9su" firstAttribute="leading" secondItem="DP6-NG-5l3" secondAttribute="trailing" id="mPV-ej-hND"/>
+                            <constraint firstAttribute="bottom" secondItem="BE7-5z-9su" secondAttribute="bottom" constant="40" id="oUd-hT-2Wc"/>
+                            <constraint firstAttribute="trailing" secondItem="ota-rk-eux" secondAttribute="trailing" constant="20" id="pII-y0-blN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LaunchScren Top Img" width="334" height="103"/>
+        <image name="Orange Right Separator" width="171" height="2"/>
+    </resources>
+</document>
