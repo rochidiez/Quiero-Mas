@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "892349249309",
+    "firebase_url": "https://quiero-mas.firebaseio.com",
+    "project_id": "quiero-mas",
+    "storage_bucket": "quiero-mas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892349249309:android:af5ba7c52625ec6e",
+        "android_client_info": {
+          "package_name": "com.android.quieromas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "892349249309-0bmee92c86avm1j6g31qnhu77dbm5715.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.quieromas",
+            "certificate_hash": "9b43b216ae32f03a5412fbc7f8346af1677a016a"
+          }
+        },
+        {
+          "client_id": "892349249309-2h6s1ur8m03up3bl4b36am2qimr22tue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlkFozQssugYNFaN4ezCquom8GnbBPKTc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "892349249309-paubrgj0k4pfr834f2984vj33c16gq82.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "FerFrassia.Quiero-Mas"
+              }
+            },
+            {
+              "client_id": "892349249309-2h6s1ur8m03up3bl4b36am2qimr22tue.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
