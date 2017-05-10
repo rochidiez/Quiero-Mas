@@ -9,7 +9,7 @@ import android.util.Log;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class AuthActivity extends AppCompatActivity implements FirebaseAuth.AuthStateListener{
+public abstract class AuthActivity extends AppCompatActivity implements FirebaseAuth.AuthStateListener{
 
     private FirebaseAuth mAuth;
     private static final String TAG = "AuthActivity";

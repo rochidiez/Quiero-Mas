@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
@@ -16,57 +17,113 @@
         android:layout_alignParentStart="true">
     </SurfaceView>
 
-    <LinearLayout
-        android:orientation="vertical"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:weightSum="1">
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
 
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/login_quiero_mas_blanco"
-            android:layout_weight="0.33" />
-
-        <TextView
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textColor="@color/textColorPrimary"
-            android:textSize="@dimen/title_text_size"
-            android:text="Recetas aprobadas por nutricionistas y pediatras para bebés de 6 a 12 meses."/>
-
-
-        <Button
-            android:text="Continuar con email"
-            android:textColor="@color/textColorPrimary"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_weight="0.33"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:textSize="@dimen/title_text_size"
-            android:layout_gravity="center"
-            android:layout_marginBottom="22dp"
-            android:id="@+id/btn_login_email" />
+            android:layout_alignParentStart="true"
+            android:weightSum="1">
 
-        <Button
-            android:text="Continuar con Facebook"
-            android:textColor="@color/textColorPrimary"
+            <ImageView
+                android:layout_width="134dp"
+                android:layout_height="51dp"
+                app:srcCompat="@drawable/login_logo_tvcrecer"
+                android:id="@+id/imageView"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:text="Avalado por la SAN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textColorPrimary"
+                android:textAlignment="center"
+                android:id="@+id/txt_avalado"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:text="Continuar con email"
+                android:textColor="@color/textColorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/title_text_size"
+                android:layout_gravity="center"
+                android:layout_marginBottom="22dp"
+                android:background="@drawable/button_border_white"
+                android:id="@+id/btn_login_email" />
+
+
+
+            <FrameLayout
+                android:id="@+id/FrameLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="22dp">
+
+                <com.facebook.login.widget.LoginButton
+                    android:id="@+id/btn_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btn_login_fb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/textColorPrimary"
+                    android:onClick="onClick"
+                    android:text="Continuar con Facebook"
+                    android:textSize="@dimen/title_text_size"
+                    android:background="@drawable/button_border_white"
+                    />
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:textSize="@dimen/title_text_size"
-            android:layout_gravity="center"
-            android:layout_marginBottom="22dp"
-            android:id="@+id/btn_login_fb" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true">
 
-    </LinearLayout>
+            <ImageView
+                android:layout_width="265dp"
+                android:layout_height="89dp"
+                android:src="@drawable/login_quiero_mas_blanco"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/title_text_size"
+                android:text="Recetas aprobadas por nutricionistas y pediatras para bebés de 6 a 12 meses."
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/imageView3"
+                android:layout_alignParentStart="true" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
 
 
 </RelativeLayout>
