@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_signup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.quieromas.activity.SignupActivity">
+
+    <fragment android:name="com.android.quieromas.fragment.VideoFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                app:srcCompat="@drawable/login_quiero_mas_blanco"
+                android:layout_marginTop="40dp"
+                android:layout_gravity="center"
+                android:id="@+id/imageView2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/subtitle_text_size"
+                android:text="Avalado por nutricionistas y pediatras"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/imageView3"
+                android:layout_alignParentStart="true" />
+
+            <include
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop = "18dp"
+                android:layout_marginBottom = "18dp"
+                layout="@layout/button_facebook_login" />
+
+
+            <fragment
+                android:name="com.android.quieromas.fragment.SignupFragment"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="18dp"
+                android:id="@+id/fragment_signup"></fragment>
+
+            <fragment
+            android:name="com.android.quieromas.fragment.SigninFragment"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginTop="18dp"
+            android:visibility="gone"
+            android:id="@+id/fragment_signin"></fragment>
+
+            <fragment
+                android:name="com.android.quieromas.fragment.ForgotPasswordFragment"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="18dp"
+                android:visibility="gone"
+                android:id="@+id/fragment_forgot"></fragment>
+
+        <Button
+            android:text="YA TENGO CUENTA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_has_acconut"
+            android:textColor="@color/textColorPrimary"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent" />
+
+    </LinearLayout>
+</ScrollView>
+
+
+</RelativeLayout>

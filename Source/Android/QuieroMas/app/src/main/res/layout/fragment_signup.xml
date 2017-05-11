@@ -1,0 +1,157 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    tools:context="com.android.quieromas.fragment.SignupFragment">
+
+
+    <ImageView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="#f5f5f4"
+        android:alpha="0.8"
+        >
+    </ImageView>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:id="@+id/signup_container">
+
+        <TextView
+            android:text="TU NOMBRE Y APELLIDO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/subtitle_text_size"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/textColorBlack"
+            android:id="@+id/textView2" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text=""
+            android:hint="ej: Vanina Gonzalez"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:id="@+id/etxt_name" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:src="@drawable/input_line"/>
+
+        <TextView
+            android:text="TU FECHA DE NACIMIENTO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/subtitle_text_size"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/textColorBlack"
+            android:id="@+id/textView" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:inputType="date"
+            android:hint="ej: 03/10/1985"
+            android:ems="10"
+            android:id="@+id/etxt_birthdate" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:src="@drawable/input_line"/>
+
+        <TextView
+            android:text="TU EMAIL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/subtitle_text_size"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/textColorBlack"
+            android:id="@+id/textView5" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:hint="ej: vani@gmail.com"
+            android:id="@+id/etxt_email" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:src="@drawable/input_line"/>
+
+        <TextView
+            android:text="TU CONTRASEÑA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/subtitle_text_size"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/textColorBlack"
+            android:id="@+id/textView6" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:background="@android:color/transparent"
+            android:id="@+id/etxt_password" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:src="@drawable/input_line"/>
+
+        <TextView
+            android:text="REPETIR CONTRASEÑA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/subtitle_text_size"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/textColorBlack"
+            android:id="@+id/textView7" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:background="@android:color/transparent"
+            android:id="@+id/etxt_password_confirm" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:src="@drawable/input_line"/>
+
+        <Button
+            android:text="Crear cuenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="@dimen/subtitle_text_size"
+            android:background="@drawable/button_border_black"
+            android:textColor="@color/textColorBlack"
+            android:onClick="createAccount"
+            android:id="@+id/btn_create_account" />
+
+    </LinearLayout>
+</FrameLayout>

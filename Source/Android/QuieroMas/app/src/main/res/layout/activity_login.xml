@@ -6,22 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme = "@style/NoActionBar"
-    tools:context="com.android.quieromas.LoginActivity">
+    tools:context="com.android.quieromas.activity.LoginActivity">
 
-    <SurfaceView
-        android:id="@+id/surface"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:paddingTop="10dip"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
-    </SurfaceView>
+
+    <fragment android:name="com.android.quieromas.fragment.VideoFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
+        android:layout_marginRight="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
 
         <LinearLayout
             android:orientation="vertical"
@@ -53,41 +51,22 @@
                 android:text="Continuar con email"
                 android:textColor="@color/textColorPrimary"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="48dp"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:textSize="@dimen/title_text_size"
                 android:layout_gravity="center"
-                android:layout_marginBottom="22dp"
+                android:layout_marginBottom="18dp"
                 android:background="@drawable/button_border_white"
                 android:id="@+id/btn_login_email" />
 
 
 
-            <FrameLayout
-                android:id="@+id/FrameLayout1"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="22dp">
-
-                <com.facebook.login.widget.LoginButton
-                    android:id="@+id/btn_login"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone" />
-
-                <Button
-                    android:id="@+id/btn_login_fb"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColor="@color/textColorPrimary"
-                    android:onClick="onClick"
-                    android:text="Continuar con Facebook"
-                    android:textSize="@dimen/title_text_size"
-                    android:background="@drawable/button_border_white"
-                    />
-            </FrameLayout>
+            <include
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="22dp"
+                layout="@layout/button_facebook_login" />
 
         </LinearLayout>
 
@@ -123,7 +102,6 @@
         </LinearLayout>
 
     </RelativeLayout>
-
 
 
 </RelativeLayout>

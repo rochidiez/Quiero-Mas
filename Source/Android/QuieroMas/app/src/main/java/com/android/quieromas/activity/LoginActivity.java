@@ -1,20 +1,21 @@
-package com.android.quieromas;
+package com.android.quieromas.activity;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.Log;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.android.quieromas.R;
+import com.android.quieromas.fragment.VideoFragment;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -30,19 +31,25 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.io.IOException;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
-public class LoginActivity extends AppCompatActivity{
+public class LoginActivity extends AppCompatActivity implements VideoFragment.OnFragmentInteractionListener {
 
-    SurfaceView mSurfaceView;
-    SurfaceHolder mSurfaceHolder;
-    private static final int PICK_VIDEO_REQUEST = 1001;
-    private static final String TAG = "SurfaceSwitch";
-    private MediaPlayer mMediaPlayer;
-    private Button btnFacebook;
-    private LoginButton btnLogin;
+
+    private static final String TAG = "LoginActivity";
+
+    //@BindView(R.id.signup_container) View includedLayout;
+    //@BindView(R.id.btn_login_email) Button btnLoginEmail;
+
     private CallbackManager mCallbackManager;
     private FirebaseAuth mAuth;
+    private LoginButton btnLogin;
+    private Button btnFacebook;
+    private Button btnLoginEmail;
+
+
+
 
 
     @Override
@@ -52,45 +59,18 @@ public class LoginActivity extends AppCompatActivity{
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_login);
-        mSurfaceView = (SurfaceView) findViewById(R.id.surface);
-        mSurfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
-            @Override
-            public void surfaceCreated(SurfaceHolder surfaceHolder) {
-                Log.d(TAG, "First surface created!");
+        //ButterKnife.bind(this);
 
-                Uri uri = Uri.parse("android.resource://" + getPackageName() + "/"
-                        + R.raw.video_background);
+        //btnLogin = ButterKnife.findById(includedLayout, R.id.btn_login);
+        //btnFacebook = ButterKnife.findById(includedLayout, R.id.btn_login_fb);
 
-                mSurfaceHolder = surfaceHolder;
-                if (uri != null) {
-                    mMediaPlayer = MediaPlayer.create(getApplicationContext(),
-                            uri, mSurfaceHolder);
-                    mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
-                        public void onCompletion(MediaPlayer arg0) {
-                            mMediaPlayer.start();
-                        }
-                    });
-                    mMediaPlayer.start();
-
-                }
-            }
-
-            @Override
-            public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i2, int i3) {
-
-            }
-
-            @Override
-            public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
-                Log.d(TAG, "First surface destroyed!");
-                mMediaPlayer.stop();
-            }
-        });
+        btnLogin = (LoginButton) findViewById(R.id.btn_login) ;
+        btnFacebook = (Button) findViewById(R.id.btn_login_fb) ;
+        btnLoginEmail = (Button) findViewById(R.id.btn_login_email) ;
 
         mAuth = FirebaseAuth.getInstance();
         mCallbackManager = CallbackManager.Factory.create();
-        btnFacebook = (Button) findViewById(R.id.btn_login_fb);
-        btnLogin = (LoginButton) findViewById(R.id.btn_login);
+
         btnLogin.setReadPermissions("email", "public_profile");
         btnLogin.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -111,6 +91,14 @@ public class LoginActivity extends AppCompatActivity{
                 Log.d(TAG, "facebook:onError", error);
                 Toast.makeText(LoginActivity.this, "Authentication failed.",
                         Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnLoginEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -158,5 +146,10 @@ public class LoginActivity extends AppCompatActivity{
     private void goToMain(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri){
+        Log.w(TAG, "Hello");
     }
 }

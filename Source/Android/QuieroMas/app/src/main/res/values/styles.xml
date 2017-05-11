@@ -6,16 +6,23 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="buttonStyle">@style/MyButton</item>
     </style>
 
     <style name = "NoActionBar" parent = "@android:style/Theme.Holo.Light">
         <item name = "android:windowActionBar">false</item>
         <item name = "android:windowNoTitle">true</item>
+        <item name="buttonStyle">@style/MyButton</item>
     </style>
 
     <style name = "NoActionBarActivity" parent="Theme.AppCompat.Light.NoActionBar">
         <item name = "android:windowActionBar">false</item>
         <item name = "android:windowNoTitle">true</item>
+        <item name="buttonStyle">@style/MyButton</item>
+    </style>
+
+    <style name="MyButton" parent="Widget.AppCompat.Button">
+        <item name="android:textAllCaps">false</item>
     </style>
 
 
