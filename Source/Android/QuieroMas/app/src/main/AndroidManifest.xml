@@ -25,7 +25,13 @@
             android:name=".activity.LoginActivity"
             android:theme="@style/NoActionBarActivity" />
         <activity android:name=".activity.AuthActivity" />
-        <activity android:name=".activity.SignupActivity" android:theme="@style/NoActionBarActivity"></activity>
+        <activity
+            android:name=".activity.SignupActivity"
+            android:theme="@style/NoActionBarActivity" />
+        <activity android:name=".activity.AuthFbActivity" />
+        <activity
+            android:name=".activity.CheckIfBornedActivity"
+            android:theme="@style/NoActionBarActivity" ></activity>
     </application>
 
 </manifest>

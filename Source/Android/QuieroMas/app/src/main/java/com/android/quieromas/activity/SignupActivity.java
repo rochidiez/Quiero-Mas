@@ -8,14 +8,21 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.android.quieromas.R;
 import com.android.quieromas.fragment.ForgotPasswordFragment;
 import com.android.quieromas.fragment.SigninFragment;
 import com.android.quieromas.fragment.SignupFragment;
 import com.android.quieromas.fragment.VideoFragment;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
+import com.google.firebase.auth.FirebaseAuth;
 
-public class SignupActivity extends AppCompatActivity implements VideoFragment.OnFragmentInteractionListener,
+public class SignupActivity extends AuthFbActivity implements VideoFragment.OnFragmentInteractionListener,
         SignupFragment.OnFragmentInteractionListener, SigninFragment.OnFragmentInteractionListener, ForgotPasswordFragment.OnFragmentInteractionListener{
 
     private static final String TAG = "SignupActivity";
@@ -24,6 +31,7 @@ public class SignupActivity extends AppCompatActivity implements VideoFragment.O
     private View signinFragement;
     private View signupFragement;
     private View forgotPasswordFragment;
+
 
     private SignInState signInState = SignInState.SIGN_UP;
 
@@ -56,7 +64,6 @@ public class SignupActivity extends AppCompatActivity implements VideoFragment.O
                 signinFragement.setVisibility(View.GONE);
             }
         });
-
     }
 
     public void handleFragmentSwitch(){
@@ -73,6 +80,7 @@ public class SignupActivity extends AppCompatActivity implements VideoFragment.O
             btnHasAccount.setText("YA TENGO CUENTA");
         }
     }
+
 
     @Override
     public void onFragmentInteraction(Uri uri){

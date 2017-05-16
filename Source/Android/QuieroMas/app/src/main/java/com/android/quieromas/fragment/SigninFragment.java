@@ -3,12 +3,23 @@ package com.android.quieromas.fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.quieromas.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,21 +39,19 @@ public class SigninFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private Button btnSignin;
+    private EditText email;
+    private EditText password;
+    private FirebaseAuth mAuth;
+
+
     private OnFragmentInteractionListener mListener;
 
     public SigninFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SigninFragment.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static SigninFragment newInstance(String param1, String param2) {
         SigninFragment fragment = new SigninFragment();
         Bundle args = new Bundle();
@@ -59,6 +68,7 @@ public class SigninFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        mAuth = FirebaseAuth.getInstance();
     }
 
     @Override
@@ -66,6 +76,41 @@ public class SigninFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_signin, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        email = (EditText) view.findViewById(R.id.etxt_signin_email);
+        password = (EditText) view.findViewById(R.id.etxt_signin_password);
+        btnSignin = (Button) view.findViewById(R.id.btn_signin);
+        btnSignin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("HOLAAAA",email.getText().toString());
+                mAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
+                        .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    // Sign in success, update UI with the signed-in user's information
+                                    Log.d("", "signInWithEmail:success");
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    Toast.makeText(getActivity(), "OK",
+                                            Toast.LENGTH_SHORT).show();
+                                } else {
+                                    // If sign in fails, display a message to the user.
+                                    Log.w("", "signInWithEmail:failure", task.getException());
+                                    Toast.makeText(getActivity(), "Authentication failed.",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+
+                                // ...
+                            }
+                        });
+            }
+        });
     }
 
     // TODO: Rename method, update argument and hook method into UI event

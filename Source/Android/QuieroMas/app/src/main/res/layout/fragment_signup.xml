@@ -61,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:inputType="date"
+            android:inputType="none"
             android:hint="ej: 03/10/1985"
             android:ems="10"
             android:id="@+id/etxt_birthdate" />
@@ -150,7 +150,6 @@
             android:textSize="@dimen/subtitle_text_size"
             android:background="@drawable/button_border_black"
             android:textColor="@color/textColorBlack"
-            android:onClick="createAccount"
             android:id="@+id/btn_create_account" />
 
     </LinearLayout>

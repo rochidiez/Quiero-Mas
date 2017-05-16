@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_signup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.quieromas.activity.SignupActivity">
+
+    <fragment android:name="com.android.quieromas.fragment.VideoFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="@dimen/title_text_size"
+                android:text="¿Ya Nació tu bebé?"
+                android:layout_marginTop="40dp"
+                android:layout_below="@+id/imageView3"
+                android:layout_alignParentStart="true" />
+
+
+            <Button
+                android:text="Si"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:textSize="@dimen/subtitle_text_size"
+                android:background="@drawable/button_border_white"
+                android:textColor="@color/textColorPrimary"
+                android:id="@+id/btn_is_borned_yes" />
+
+            <Button
+                android:text="No"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:textSize="@dimen/subtitle_text_size"
+                android:background="@drawable/button_border_white"
+                android:textColor="@color/textColorPrimary"
+                android:id="@+id/btn_is_borned_no" />
+
+
+
+
+
+            <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="18dp"
+                android:id="@+id/expected_date_view"
+                android:visibility="gone"
+                tools:context="com.android.quieromas.fragment.SignupFragment">
+
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:background="#f5f5f4"
+                    android:alpha="0.8"
+                    >
+                </ImageView>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:id="@+id/signup_container">
+
+
+                    <TextView
+                        android:text="¿CUÁL ES LA FECHA PROBABLE DE PARTO?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/subtitle_text_size"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="16dp"
+                        android:textColor="@color/textColorBlack"
+                        android:id="@+id/textView5" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="date"
+                        android:background="@android:color/transparent"
+                        android:ems="10"
+                        android:hint="ej: 01/01/2018"
+                        android:id="@+id/etxt_expected_date" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:src="@drawable/input_line"/>
+
+
+
+                    <Button
+                        android:text="Continuar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:textSize="@dimen/subtitle_text_size"
+                        android:background="@drawable/button_border_black"
+                        android:textColor="@color/textColorBlack"
+                        android:id="@+id/btn_expected_date_continue" />
+
+                </LinearLayout>
+            </FrameLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
