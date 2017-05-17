@@ -152,7 +152,7 @@ public class SignupFragment extends Fragment {
             public void onFocusChange(View v, boolean hasFocus) {
                 if(hasFocus) {
                     Calendar newCalendar = Calendar.getInstance();
-                    datePickerDialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
+                    datePickerDialog = new DatePickerDialog(v.getContext(),R.style.TimePickerTheme, new DatePickerDialog.OnDateSetListener() {
 
                         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                             Calendar newDate = Calendar.getInstance();

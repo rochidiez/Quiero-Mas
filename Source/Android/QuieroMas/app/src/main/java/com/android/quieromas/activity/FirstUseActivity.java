@@ -56,7 +56,7 @@ public class FirstUseActivity extends AuthActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if(hasFocus) {
                     Calendar newCalendar = Calendar.getInstance();
-                    datePickerDialog = new DatePickerDialog(getApplicationContext(), new DatePickerDialog.OnDateSetListener() {
+                    datePickerDialog = new DatePickerDialog(v.getContext(),R.style.TimePickerTheme, new DatePickerDialog.OnDateSetListener() {
 
                         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                             Calendar newDate = Calendar.getInstance();
