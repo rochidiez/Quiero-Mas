@@ -31,7 +31,10 @@
         <activity android:name=".activity.AuthFbActivity" />
         <activity
             android:name=".activity.CheckIfBornedActivity"
-            android:theme="@style/NoActionBarActivity" ></activity>
+            android:theme="@style/NoActionBarActivity" />
+        <activity
+            android:name=".activity.FirstUseActivity"
+            android:theme="@style/NoActionBarActivity"/>
     </application>
 
 </manifest>
