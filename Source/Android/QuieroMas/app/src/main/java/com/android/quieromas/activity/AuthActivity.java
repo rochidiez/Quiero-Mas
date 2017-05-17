@@ -37,6 +37,7 @@ public abstract class AuthActivity extends AppCompatActivity implements Firebase
             Log.d(TAG, "onAuthStateChanged:signed_out");
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
+            finish();
         }
     }
 

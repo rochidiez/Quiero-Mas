@@ -18,8 +18,11 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.andreabaccega.widget.FormEditText;
 import com.android.quieromas.R;
+import com.android.quieromas.activity.CheckIfBornedActivity;
 import com.android.quieromas.activity.MainActivity;
+import com.android.quieromas.validator.RepeatPasswordValidator;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -49,11 +52,11 @@ public class SignupFragment extends Fragment {
     private String mParam2;
     private OnFragmentInteractionListener mListener;
     private Button btnCreateAccount;
-    private EditText email;
-    private EditText password;
-    private EditText passwordRepeat;
-    private EditText birthdate;
-    private EditText name;
+    private FormEditText email;
+    private FormEditText password;
+    private FormEditText passwordRepeat;
+    private FormEditText birthdate;
+    private FormEditText name;
     private FirebaseAuth mAuth;
     private DatePickerDialog datePickerDialog;
     private SimpleDateFormat dateFormatter;
@@ -102,12 +105,12 @@ public class SignupFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        email = (EditText) view.findViewById(R.id.etxt_email);
-        password = (EditText) view.findViewById(R.id.etxt_password);
-        passwordRepeat = (EditText) view.findViewById(R.id.etxt_password_confirm);
-        birthdate = (EditText) view.findViewById(R.id.etxt_birthdate);
+        email = (FormEditText) view.findViewById(R.id.etxt_email);
+        password = (FormEditText) view.findViewById(R.id.etxt_password);
+        passwordRepeat = (FormEditText) view.findViewById(R.id.etxt_password_confirm);
+        birthdate = (FormEditText) view.findViewById(R.id.etxt_birthdate);
         birthdate.setInputType(InputType.TYPE_NULL);
-        name = (EditText) view.findViewById(R.id.etxt_name);
+        name = (FormEditText) view.findViewById(R.id.etxt_name);
         btnCreateAccount = (Button) view.findViewById(R.id.btn_create_account);
 
         dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
@@ -115,7 +118,7 @@ public class SignupFragment extends Fragment {
         btnCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (isEveryFieldCompleted()){
+                if (isValidForm()){
 
                     mAuth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString())
                             .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
@@ -123,13 +126,17 @@ public class SignupFragment extends Fragment {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         // Sign in success, update UI with the signed-in user's information
-                                        Log.d("", "createUserWithEmail:success");
+                                        Log.d("SIGNIN", "createUserWithEmail:success");
                                         FirebaseUser user = mAuth.getCurrentUser();
-                                        Intent intent = new Intent(getContext(), MainActivity.class);
+
+                                        //TODO send user information to firebase
+
+                                        Intent intent = new Intent(getContext(), CheckIfBornedActivity.class);
                                         startActivity(intent);
+                                        getActivity().finish();
                                     } else {
                                         // If sign in fails, display a message to the user.
-                                        Log.w("", "createUserWithEmail:failure", task.getException());
+                                        Log.w("SIGNIN", "createUserWithEmail:failure", task.getException());
                                         Toast.makeText(getActivity(), "Hubo un error al crear su usuario.",
                                                 Toast.LENGTH_SHORT).show();
                                     }
@@ -162,20 +169,14 @@ public class SignupFragment extends Fragment {
         });
     }
 
-    private boolean isEveryFieldCompleted(){
-//        boolean validateEmail = (email.getText().toString() != "" && email.getText().toString() != null);
-//        boolean validateBirthdate = (birthdate.getText().toString() != "" && birthdate.getText().toString() != null);
-//        boolean validateName = (name.getText().toString() != "" && name.getText().toString() != null);
-//        boolean validatePass = (password.getText().toString() != "" && password.getText().toString() != null);
-//        boolean validateEqualPasswords = (password.getText().toString() == passwordRepeat.getText().toString());
-//
-//        if (validateEmail && validateBirthdate && validateName && validatePass && validateEqualPasswords){
-//            return true;
-//        }else{
-//            Toast.makeText(getContext(), "Por favor, revise los campos", Toast.LENGTH_SHORT).show();
-//            return false;
-//        }
-        return true;
+    private boolean isValidForm(){
+        boolean isValid = true;
+        FormEditText[] allFields	= { email, password, passwordRepeat, birthdate, name };
+        passwordRepeat.addValidator(new RepeatPasswordValidator(password));
+        for (FormEditText field: allFields) {
+            isValid = field.testValidity() && isValid;
+        }
+        return isValid;
     }
 
     @Override

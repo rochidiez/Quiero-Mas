@@ -1,27 +1,33 @@
 package com.android.quieromas.activity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 
+import com.andreabaccega.widget.FormEditText;
 import com.android.quieromas.R;
+import com.android.quieromas.fragment.VideoFragment;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class CheckIfBornedActivity extends AppCompatActivity {
+public class CheckIfBornedActivity extends AppCompatActivity implements VideoFragment.OnFragmentInteractionListener {
 
+    private static final String TAG = "CheckIfBornedActivity";
     private Button btnIsBorned;
     private Button btnIsNotBorned;
     private View expectedDateView;
     private Button btnExpectedDateContinue;
-    private EditText txtExpectedDate;
+    private FormEditText txtExpectedDate;
     private DatePickerDialog datePickerDialog;
     private SimpleDateFormat dateFormatter;
 
@@ -34,7 +40,7 @@ public class CheckIfBornedActivity extends AppCompatActivity {
         btnIsNotBorned = (Button) findViewById(R.id.btn_is_borned_no);
         expectedDateView = (FrameLayout) findViewById(R.id.expected_date_view);
         btnExpectedDateContinue = (Button) findViewById(R.id.btn_expected_date_continue);
-        txtExpectedDate = (EditText) findViewById(R.id.etxt_expected_date);
+        txtExpectedDate = (FormEditText) findViewById(R.id.etxt_expected_date);
 
         dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
 
@@ -43,6 +49,16 @@ public class CheckIfBornedActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 expectedDateView.setVisibility(View.VISIBLE);
+            }
+        });
+
+        btnIsBorned.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(txtExpectedDate.testValidity()){
+                    Intent intent = new Intent(view.getContext(), FirstUseActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -68,5 +84,10 @@ public class CheckIfBornedActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri){
+        Log.w(TAG, "fragment interaction");
     }
 }

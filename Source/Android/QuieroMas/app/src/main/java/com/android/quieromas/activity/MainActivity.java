@@ -15,7 +15,7 @@ import android.view.MenuItem;
 
 import com.android.quieromas.R;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends AuthActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override

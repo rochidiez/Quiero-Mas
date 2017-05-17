@@ -8,7 +8,9 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
+import com.andreabaccega.widget.FormEditText;
 import com.android.quieromas.R;
+import com.android.quieromas.validator.RepeatPasswordValidator;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -21,9 +23,9 @@ public class FirstUseActivity extends AuthActivity {
     private Button btnContinue;
     private Button btnUploadPicture;
     private CircleImageView imgProfile;
-    private EditText txtName;
-    private EditText txtNickname;
-    private EditText txtBirthdate;
+    private FormEditText txtName;
+    private FormEditText txtNickname;
+    private FormEditText txtBirthdate;
     private DatePickerDialog datePickerDialog;
     private SimpleDateFormat dateFormatter;
 
@@ -35,9 +37,9 @@ public class FirstUseActivity extends AuthActivity {
         btnContinue = (Button) findViewById(R.id.btn_first_use_continue);
         btnUploadPicture =(Button) findViewById(R.id.btn_first_use_upload_photo);
         imgProfile = (CircleImageView) findViewById(R.id.img_first_use_profile);
-        txtName = (EditText) findViewById(R.id.etxt_first_use_baby_name);
-        txtNickname = (EditText) findViewById(R.id.etxt_first_use_baby_nickname);
-        txtBirthdate = (EditText) findViewById(R.id.etxt_first_use_baby_birthdate);
+        txtName = (FormEditText) findViewById(R.id.etxt_first_use_baby_name);
+        txtNickname = (FormEditText) findViewById(R.id.etxt_first_use_baby_nickname);
+        txtBirthdate = (FormEditText) findViewById(R.id.etxt_first_use_baby_birthdate);
 
         dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
 
@@ -66,7 +68,10 @@ public class FirstUseActivity extends AuthActivity {
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO: mandar la info por firebase
+
+                if(isValidForm()){
+                    //TODO: mandar la info por firebase y despues chequear si es mayor de 6 meses
+                }
             }
         });
 
@@ -76,5 +81,14 @@ public class FirstUseActivity extends AuthActivity {
                 //TODO Image picker
             }
         });
+    }
+
+    private boolean isValidForm(){
+        boolean isValid = true;
+        FormEditText[] allFields	= { txtName, txtBirthdate, txtNickname};
+        for (FormEditText field: allFields) {
+            isValid = field.testValidity() && isValid;
+        }
+        return isValid;
     }
 }
