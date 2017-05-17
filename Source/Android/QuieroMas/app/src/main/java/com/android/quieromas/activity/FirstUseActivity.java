@@ -1,6 +1,10 @@
 package com.android.quieromas.activity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +16,7 @@ import com.andreabaccega.widget.FormEditText;
 import com.android.quieromas.R;
 import com.android.quieromas.validator.RepeatPasswordValidator;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -20,6 +25,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class FirstUseActivity extends AuthActivity {
 
+    private static final int PICK_IMAGE_REQUEST = 1;
     private Button btnContinue;
     private Button btnUploadPicture;
     private CircleImageView imgProfile;
@@ -28,6 +34,7 @@ public class FirstUseActivity extends AuthActivity {
     private FormEditText txtBirthdate;
     private DatePickerDialog datePickerDialog;
     private SimpleDateFormat dateFormatter;
+    private boolean hasChangedImage = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +85,12 @@ public class FirstUseActivity extends AuthActivity {
         btnUploadPicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO Image picker
+
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Seleccionar imagen"), PICK_IMAGE_REQUEST);
+
             }
         });
     }
@@ -90,5 +102,23 @@ public class FirstUseActivity extends AuthActivity {
             isValid = field.testValidity() && isValid;
         }
         return isValid;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+
+            Uri uri = data.getData();
+
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                imgProfile.setImageBitmap(bitmap);
+                hasChangedImage = true;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
