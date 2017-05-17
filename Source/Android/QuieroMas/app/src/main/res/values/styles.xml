@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="buttonStyle">@style/MyButton</item>
         <item name="fontPath">fonts/Cera-Regular.ttf</item>
+        <item name="android:listDivider">@drawable/divisor_naranja_2</item>
     </style>
 
     <style name="NoActionBar" parent="@android:style/Theme.Holo.Light">
