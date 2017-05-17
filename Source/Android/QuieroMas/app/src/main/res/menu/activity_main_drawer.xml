@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="Inicio" />
+    </group>
+    <group android:id="@+id/grp1" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_recipes"
+            android:icon="@drawable/olla"
+            android:title="Todas las recetas" />
+        <item
+            android:id="@+id/nav_nutrition_plan"
+            android:icon="@drawable/receta"
+            android:title="Plan de Nutrición" />
+    </group>
+    <group android:id="@+id/grp2" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_education"
+            android:icon="@drawable/abacus"
+            android:title="Estimulación y educación" />
+        <item
+        android:id="@+id/nav_nutrition"
+        android:icon="@drawable/nutricion"
+        android:title="Nutrición" />
+        <item
+            android:id="@+id/nav_lactancy"
+            android:icon="@drawable/lactancia"
+            android:title="Lactancia" />
+    </group>
+    <group android:id="@+id/grp3" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_shopping_list"
+            android:icon="@drawable/lista_de_compras"
+            android:title="Lista de compras semanal" />
+        <item
+            android:id="@+id/nav_favorites"
+            android:icon="@drawable/favorito"
+            android:title="Recetas favoritas" />
+    </group>
+    <group android:id="@+id/grp4" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/about"
+            android:title="Sobre Quiero más!" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/mail"
+            android:title="Recomendar Quiero Más!" />
+        <item
+            android:id="@+id/nav_tac"
+            android:icon="@drawable/terms"
+            android:title="Términos y condiciones" />
+    </group>
+
+
+</menu>

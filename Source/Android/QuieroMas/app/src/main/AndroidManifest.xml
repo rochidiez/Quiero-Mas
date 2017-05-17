@@ -14,13 +14,6 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <activity android:name=".activity.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".activity.LoginActivity"
             android:theme="@style/NoActionBarActivity" />
@@ -34,7 +27,16 @@
             android:theme="@style/NoActionBarActivity" />
         <activity
             android:name=".activity.FirstUseActivity"
-            android:theme="@style/NoActionBarActivity"/>
+            android:theme="@style/NoActionBarActivity" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
