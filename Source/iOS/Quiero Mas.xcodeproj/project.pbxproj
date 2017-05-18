@@ -30,6 +30,12 @@
 		C1523FAD1EC0339F0047B195 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1523FAC1EC0339F0047B195 /* GoogleService-Info.plist */; };
 		C18F22E71E887D24006E42DB /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F22E61E887D24006E42DB /* MenuTableViewController.swift */; };
 		C18F22EA1E88834C006E42DB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F22E91E88834C006E42DB /* HomeViewController.swift */; };
+		C19425951ECA21A80092C6F6 /* TodasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19425941ECA21A80092C6F6 /* TodasViewController.swift */; };
+		C19425981ECA22F80092C6F6 /* ListaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19425971ECA22F80092C6F6 /* ListaViewController.swift */; };
+		C194259B1ECA23BE0092C6F6 /* FavoritasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C194259A1ECA23BE0092C6F6 /* FavoritasViewController.swift */; };
+		C194259E1ECA241E0092C6F6 /* SobreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C194259D1ECA241E0092C6F6 /* SobreViewController.swift */; };
+		C19425A11ECA24A80092C6F6 /* RecomendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19425A01ECA24A80092C6F6 /* RecomendarViewController.swift */; };
+		C19425A41ECA253F0092C6F6 /* TerminosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19425A31ECA253F0092C6F6 /* TerminosViewController.swift */; };
 		C199D9121E8877B0002255BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C199D9111E8877B0002255BA /* AppDelegate.swift */; };
 		C199D9141E8877B0002255BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C199D9131E8877B0002255BA /* ViewController.swift */; };
 		C199D9171E8877B0002255BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C199D9151E8877B0002255BA /* Main.storyboard */; };
@@ -39,6 +45,8 @@
 		C1CA15301E9EAA1A0084A432 /* Cera-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C1CA152F1E9EAA1A0084A432 /* Cera-Bold.ttf */; };
 		C1D1CEA51EADDA3900EA14C8 /* EmailViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1CEA41EADDA3900EA14C8 /* EmailViewcontroller.swift */; };
 		C1D1CEA71EADE58200EA14C8 /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1CEA61EADE58200EA14C8 /* ForgotPassViewController.swift */; };
+		C1E5EB601EC7AAB4009B4894 /* BabyDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E5EB5F1EC7AAB4009B4894 /* BabyDataViewController.swift */; };
+		C1E5EB631EC7C0E4009B4894 /* FirebaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E5EB621EC7C0E4009B4894 /* FirebaseAPI.swift */; };
 		E01549BD6411FB5FF88B6DBB /* Pods_Quiero_Mas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C29DCC2F7295666DB7BEDF3 /* Pods_Quiero_Mas.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +78,12 @@
 		C1523FAC1EC0339F0047B195 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C18F22E61E887D24006E42DB /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		C18F22E91E88834C006E42DB /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C19425941ECA21A80092C6F6 /* TodasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodasViewController.swift; sourceTree = "<group>"; };
+		C19425971ECA22F80092C6F6 /* ListaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaViewController.swift; sourceTree = "<group>"; };
+		C194259A1ECA23BE0092C6F6 /* FavoritasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritasViewController.swift; sourceTree = "<group>"; };
+		C194259D1ECA241E0092C6F6 /* SobreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SobreViewController.swift; sourceTree = "<group>"; };
+		C19425A01ECA24A80092C6F6 /* RecomendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecomendarViewController.swift; sourceTree = "<group>"; };
+		C19425A31ECA253F0092C6F6 /* TerminosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminosViewController.swift; sourceTree = "<group>"; };
 		C199D90E1E8877B0002255BA /* Quiero Mas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quiero Mas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C199D9111E8877B0002255BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C199D9131E8877B0002255BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +95,8 @@
 		C1CA152F1E9EAA1A0084A432 /* Cera-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cera-Bold.ttf"; sourceTree = "<group>"; };
 		C1D1CEA41EADDA3900EA14C8 /* EmailViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewcontroller.swift; sourceTree = "<group>"; };
 		C1D1CEA61EADE58200EA14C8 /* ForgotPassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
+		C1E5EB5F1EC7AAB4009B4894 /* BabyDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyDataViewController.swift; sourceTree = "<group>"; };
+		C1E5EB621EC7C0E4009B4894 /* FirebaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +195,7 @@
 				C109FDBD1EAA95E60067E86C /* LoginViewController.swift */,
 				C1D1CEA41EADDA3900EA14C8 /* EmailViewcontroller.swift */,
 				C1D1CEA61EADE58200EA14C8 /* ForgotPassViewController.swift */,
+				C1E5EB5F1EC7AAB4009B4894 /* BabyDataViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -186,6 +203,13 @@
 		C18F22E41E887D02006E42DB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C19425A21ECA25260092C6F6 /* Terminos y condiciones */,
+				C194259F1ECA24990092C6F6 /* Recomendar */,
+				C194259C1ECA240E0092C6F6 /* Sobre Quiero Mas */,
+				C19425991ECA23AF0092C6F6 /* Recetas Favoritas */,
+				C19425961ECA22E20092C6F6 /* Lista de compras semanal */,
+				C19425931ECA218E0092C6F6 /* Todas las recetas */,
+				C1E5EB611EC7C0D2009B4894 /* Firebase */,
 				C109FDBC1EAA95D20067E86C /* Login */,
 				C100953D1E9755BB001748E4 /* Lactancia */,
 				C100953A1E9754A6001748E4 /* ABCNutricion */,
@@ -213,6 +237,54 @@
 				C18F22E91E88834C006E42DB /* HomeViewController.swift */,
 			);
 			name = Home;
+			sourceTree = "<group>";
+		};
+		C19425931ECA218E0092C6F6 /* Todas las recetas */ = {
+			isa = PBXGroup;
+			children = (
+				C19425941ECA21A80092C6F6 /* TodasViewController.swift */,
+			);
+			name = "Todas las recetas";
+			sourceTree = "<group>";
+		};
+		C19425961ECA22E20092C6F6 /* Lista de compras semanal */ = {
+			isa = PBXGroup;
+			children = (
+				C19425971ECA22F80092C6F6 /* ListaViewController.swift */,
+			);
+			name = "Lista de compras semanal";
+			sourceTree = "<group>";
+		};
+		C19425991ECA23AF0092C6F6 /* Recetas Favoritas */ = {
+			isa = PBXGroup;
+			children = (
+				C194259A1ECA23BE0092C6F6 /* FavoritasViewController.swift */,
+			);
+			name = "Recetas Favoritas";
+			sourceTree = "<group>";
+		};
+		C194259C1ECA240E0092C6F6 /* Sobre Quiero Mas */ = {
+			isa = PBXGroup;
+			children = (
+				C194259D1ECA241E0092C6F6 /* SobreViewController.swift */,
+			);
+			name = "Sobre Quiero Mas";
+			sourceTree = "<group>";
+		};
+		C194259F1ECA24990092C6F6 /* Recomendar */ = {
+			isa = PBXGroup;
+			children = (
+				C19425A01ECA24A80092C6F6 /* RecomendarViewController.swift */,
+			);
+			name = Recomendar;
+			sourceTree = "<group>";
+		};
+		C19425A21ECA25260092C6F6 /* Terminos y condiciones */ = {
+			isa = PBXGroup;
+			children = (
+				C19425A31ECA253F0092C6F6 /* TerminosViewController.swift */,
+			);
+			name = "Terminos y condiciones";
 			sourceTree = "<group>";
 		};
 		C199D9051E8877B0002255BA = {
@@ -249,6 +321,14 @@
 				C199D9181E8877B0002255BA /* Quiero_Mas.xcdatamodeld */,
 			);
 			path = "Quiero Mas";
+			sourceTree = "<group>";
+		};
+		C1E5EB611EC7C0D2009B4894 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				C1E5EB621EC7C0E4009B4894 /* FirebaseAPI.swift */,
+			);
+			name = Firebase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,16 +475,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C194259B1ECA23BE0092C6F6 /* FavoritasViewController.swift in Sources */,
 				C109FDBE1EAA95E60067E86C /* LoginViewController.swift in Sources */,
 				C100953C1E9754B9001748E4 /* ABCNutricionViewController.swift in Sources */,
+				C19425A11ECA24A80092C6F6 /* RecomendarViewController.swift in Sources */,
+				C19425951ECA21A80092C6F6 /* TodasViewController.swift in Sources */,
+				C19425A41ECA253F0092C6F6 /* TerminosViewController.swift in Sources */,
 				C1D1CEA71EADE58200EA14C8 /* ForgotPassViewController.swift in Sources */,
 				C18F22EA1E88834C006E42DB /* HomeViewController.swift in Sources */,
 				C10095391E9753B9001748E4 /* EstimulacionViewController.swift in Sources */,
+				C19425981ECA22F80092C6F6 /* ListaViewController.swift in Sources */,
 				C18F22E71E887D24006E42DB /* MenuTableViewController.swift in Sources */,
 				C10095361E9750DE001748E4 /* NutricionViewController.swift in Sources */,
+				C1E5EB631EC7C0E4009B4894 /* FirebaseAPI.swift in Sources */,
 				C10095331E974BFC001748E4 /* MenuTableViewCell.swift in Sources */,
 				C199D9141E8877B0002255BA /* ViewController.swift in Sources */,
 				C199D91A1E8877B0002255BA /* Quiero_Mas.xcdatamodeld in Sources */,
+				C194259E1ECA241E0092C6F6 /* SobreViewController.swift in Sources */,
+				C1E5EB601EC7AAB4009B4894 /* BabyDataViewController.swift in Sources */,
 				C100951A1E9730D3001748E4 /* MenuNavigationController.swift in Sources */,
 				C199D9121E8877B0002255BA /* AppDelegate.swift in Sources */,
 				C100953F1E9755C7001748E4 /* LactanciaViewController.swift in Sources */,
