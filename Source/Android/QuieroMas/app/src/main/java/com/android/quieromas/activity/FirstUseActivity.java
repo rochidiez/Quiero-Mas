@@ -16,6 +16,9 @@ import android.widget.EditText;
 import com.andreabaccega.widget.FormEditText;
 import com.android.quieromas.R;
 import com.android.quieromas.validator.RepeatPasswordValidator;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -86,6 +89,12 @@ public class FirstUseActivity extends AuthActivity {
 
                 if(isValidForm()){
                     //TODO: mandar la info por firebase y despues chequear si es mayor de 6 meses
+
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                            .setPhotoUri(Uri.parse("https://example.com/jane-q-user/profile.jpg"))
+                            .build();
+
                 }
             }
         });
