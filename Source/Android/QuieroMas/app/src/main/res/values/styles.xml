@@ -11,6 +11,10 @@
         <item name="android:listDivider">@drawable/divisor_naranja_2</item>
     </style>
 
+    <style name="TextViewBold">
+        <item name="fontPath">fonts/Cera-Medium.ttf</item>
+    </style>
+
     <style name="NoActionBar" parent="@android:style/Theme.Holo.Light">
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>

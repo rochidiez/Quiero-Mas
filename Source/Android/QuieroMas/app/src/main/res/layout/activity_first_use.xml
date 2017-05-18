@@ -36,6 +36,7 @@
                 android:layout_marginBottom="20dp"
                 android:textColor="@color/textColorPrimary"
                 android:textSize="@dimen/title_text_size"
+                android:textAppearance="@style/TextViewBold"
                 android:text="Contanos un poco más sobre tu bebé"/>
 
             <TextView
@@ -87,6 +88,7 @@
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
                     android:textColor="@color/textColorBlack"
+                    android:textAppearance="@style/TextViewBold"
                     android:id="@+id/textView2" />
 
                 <com.andreabaccega.widget.FormEditText
@@ -113,6 +115,7 @@
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
                     android:textColor="@color/textColorBlack"
+                    android:textAppearance="@style/TextViewBold"
                     android:id="@+id/textView2" />
 
                 <com.andreabaccega.widget.FormEditText
@@ -140,6 +143,7 @@
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
                     android:textColor="@color/textColorBlack"
+                    android:textAppearance="@style/TextViewBold"
                     android:id="@+id/textView" />
 
                 <com.andreabaccega.widget.FormEditText
@@ -170,6 +174,7 @@
                     android:textSize="@dimen/subtitle_text_size"
                     android:background="@drawable/button_border_black"
                     android:textColor="@color/textColorBlack"
+                    android:textAppearance="@style/TextViewBold"
                     android:id="@+id/btn_first_use_continue" />
 
             </LinearLayout>

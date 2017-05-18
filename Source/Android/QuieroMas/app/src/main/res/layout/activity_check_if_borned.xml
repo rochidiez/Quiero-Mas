@@ -37,6 +37,7 @@
                 android:text="¿Ya Nació tu bebé?"
                 android:layout_marginTop="40dp"
                 android:layout_below="@+id/imageView3"
+                android:textAppearance="@style/TextViewBold"
                 android:layout_alignParentStart="true" />
 
 
@@ -49,6 +50,7 @@
                 android:textSize="@dimen/subtitle_text_size"
                 android:background="@drawable/button_border_white"
                 android:textColor="@color/textColorPrimary"
+                android:textAppearance="@style/TextViewBold"
                 android:id="@+id/btn_is_borned_yes" />
 
             <Button
@@ -60,6 +62,7 @@
                 android:textSize="@dimen/subtitle_text_size"
                 android:background="@drawable/button_border_white"
                 android:textColor="@color/textColorPrimary"
+                android:textAppearance="@style/TextViewBold"
                 android:id="@+id/btn_is_borned_no" />
 
 
@@ -103,6 +106,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_marginTop="16dp"
                         android:textColor="@color/textColorBlack"
+                        android:textAppearance="@style/TextViewBold"
                         android:id="@+id/textView5" />
 
                     <com.andreabaccega.widget.FormEditText

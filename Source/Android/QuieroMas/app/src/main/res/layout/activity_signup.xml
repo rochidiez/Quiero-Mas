@@ -85,6 +85,8 @@
             android:id="@+id/btn_has_acconut"
             android:textColor="@color/textColorPrimary"
             android:layout_gravity="center"
+            android:textAppearance="@style/TextViewBold"
+            android:textSize="@dimen/subtitle_text_size"
             android:background="@android:color/transparent" />
 
     </LinearLayout>

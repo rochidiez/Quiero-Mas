@@ -20,6 +20,7 @@ android:layout_marginBottom="22dp">
     android:onClick="onClick"
     android:text="Continuar con Facebook"
     android:textSize="@dimen/title_text_size"
+    android:textAppearance="@style/TextViewBold"
     android:background="@drawable/button_border_white"
     />
 </FrameLayout>

@@ -45,9 +45,6 @@ public class LoginActivity extends AuthFbActivity implements VideoFragment.OnFra
     private Button btnLoginEmail;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
