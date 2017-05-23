@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.android.quieromas.api.FirebaseFunctionApi;
+import com.android.quieromas.api.ServiceFactory;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -13,12 +15,14 @@ public abstract class AuthActivity extends AppCompatActivity implements Firebase
 
     private FirebaseAuth mAuth;
     private static final String TAG = "AuthActivity";
+    FirebaseFunctionApi api;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         mAuth = FirebaseAuth.getInstance();
+        api = ServiceFactory.createRetrofitService(FirebaseFunctionApi.class, FirebaseFunctionApi.SERVICE_ENDPOINT);
         checkIfUserIsLogged();
     }
 

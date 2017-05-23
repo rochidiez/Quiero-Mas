@@ -17,6 +17,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        prod {
+            buildConfigField 'String', 'ENDPOINT', '"https://us-central1-quiero-mas.cloudfunctions.net/"'
+        }
+        dev {
+            buildConfigField 'String', 'ENDPOINT', '"https://us-central1-quiero-mas.cloudfunctions.net/"'
+        }
+    }
     packagingOptions {
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/NOTICE'
@@ -31,8 +39,11 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.google.firebase:firebase-auth:9.6.0'
     compile 'com.google.firebase:firebase-database:9.6.0'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile 'io.reactivex.rxjava2:rxjava:2.1.0'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'io.reactivex:rxjava:1.1.6'
+    compile 'io.reactivex:rxandroid:1.2.1'
     compile 'com.facebook.android:facebook-android-sdk:4.22.0'
     compile 'com.firebase:firebase-client-android:2.5.2'
     compile 'com.android.support:support-v4:25.3.1'

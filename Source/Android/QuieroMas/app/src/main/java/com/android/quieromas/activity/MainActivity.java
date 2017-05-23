@@ -19,9 +19,10 @@ import android.view.MenuItem;
 
 import com.android.quieromas.R;
 import com.android.quieromas.fragment.HomeFragment;
+import com.android.quieromas.fragment.NutritionPlanFragment;
 
 public class MainActivity extends AuthActivity
-        implements NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnFragmentInteractionListener, NutritionPlanFragment.OnFragmentInteractionListener {
 
     private static final String TAG = "MainActivity";
 

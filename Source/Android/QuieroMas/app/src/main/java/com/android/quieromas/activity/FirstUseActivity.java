@@ -8,13 +8,17 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.andreabaccega.widget.FormEditText;
 import com.android.quieromas.R;
+import com.android.quieromas.api.FirebaseFunctionApi;
+import com.android.quieromas.api.ServiceFactory;
 import com.android.quieromas.validator.RepeatPasswordValidator;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,14 +27,22 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+import okhttp3.ResponseBody;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class FirstUseActivity extends AuthActivity {
 
     private static final int PICK_IMAGE_REQUEST = 1;
+    private static final String TAG = "FirstUserActivity";
     private Button btnContinue;
     private Button btnUploadPicture;
     private CircleImageView imgProfile;
@@ -40,6 +52,7 @@ public class FirstUseActivity extends AuthActivity {
     private DatePickerDialog datePickerDialog;
     private SimpleDateFormat dateFormatter;
     private boolean hasChangedImage = false;
+    private String formattedBabybirthdate;
 
 
     @Override
@@ -74,7 +87,8 @@ public class FirstUseActivity extends AuthActivity {
                         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                             Calendar newDate = Calendar.getInstance();
                             newDate.set(year, monthOfYear, dayOfMonth);
-                            txtBirthdate.setText(dateFormatter.format(newDate.getTime()));
+                            formattedBabybirthdate = dateFormatter.format(newDate.getTime());
+                            txtBirthdate.setText(formattedBabybirthdate);
                         }
 
                     },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
@@ -93,10 +107,33 @@ public class FirstUseActivity extends AuthActivity {
                     //TODO: mandar la info por firebase y despues chequear si es mayor de 6 meses
 
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                            .setPhotoUri(Uri.parse("https://example.com/jane-q-user/profile.jpg"))
-                            .build();
+//                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+//                            .setPhotoUri(Uri.parse("https://example.com/jane-q-user/profile.jpg"))
+//                            .build();
+                    String text = buildQueryParameter(user.getUid(),"testing","15/4/1990",
+                            "lucas@email.com",formattedBabybirthdate,txtName.getText().toString(),
+                            txtNickname.getText().toString());
+                   api.register(text)
+                            .subscribeOn(Schedulers.newThread())
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .subscribe(new Subscriber<ResponseBody>() {
+                               @Override
+                               public final void onCompleted() {
+                               }
 
+                               @Override
+                               public final void onError(Throwable e) {
+                                   Log.e(TAG, e.getMessage());
+                                   Toast.makeText(getApplicationContext(),"gg",Toast.LENGTH_LONG).show();
+                               }
+
+                               @Override
+                               public final void onNext(ResponseBody rb){
+
+                                   Log.d(TAG,"DS");
+                                   Toast.makeText(getApplicationContext(),"ff",Toast.LENGTH_LONG).show();
+                               }
+                   });
                 }
             }
         });
@@ -112,6 +149,47 @@ public class FirstUseActivity extends AuthActivity {
 
             }
         });
+    }
+
+    private String buildQueryParameter(String uid, String name, String birthdate, String email, String babyBirthdate, String babyName, String babyNickname){
+        //https://us-central1-quiero-mas.cloudfunctions.net/registrar
+        // ?text=IBObsbDGMNRrC1ra5U50QpBhuyE3+lucas+10/5/1990+lucasputerman@gmail.com+10/5/2016+bebe+bebito
+        StringBuilder builder = new StringBuilder();
+        builder.append(uid);
+        builder.append("+");
+
+        String[] splittedName = name.split(" ");
+        for(int i = 0; i < splittedName.length; i++){
+            builder.append(splittedName[i]);
+            if(i < splittedName.length -1){
+                builder.append("-");
+            }
+        }
+        builder.append("+");
+        builder.append(birthdate);
+        builder.append("+");
+        builder.append(email);
+        builder.append("+");
+        builder.append(babyBirthdate);
+        builder.append("+");
+        String[] splittedBabyName = babyName.split(" ");
+        for(int i = 0; i < splittedBabyName.length; i++){
+            builder.append(splittedBabyName[i]);
+            if(i < splittedBabyName.length -1){
+                builder.append("-");
+            }
+        }
+        builder.append("+");
+        String[] splittedBabyNickname = babyNickname.split(" ");
+        for(int i = 0; i < splittedBabyNickname.length; i++){
+            builder.append(splittedBabyNickname[i]);
+            if(i < splittedBabyNickname.length -1){
+                builder.append("-");
+            }
+        }
+
+        return builder.toString();
+
     }
 
     private boolean isValidForm(){
