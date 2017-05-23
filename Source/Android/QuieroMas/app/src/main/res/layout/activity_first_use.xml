@@ -56,19 +56,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:layout_marginTop="40dp">
+            android:layout_marginTop="120dp"
+            android:paddingTop="120dp"
+            >
 
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="170dp"
                 android:padding="8dp"
                 android:background="@color/colorPrimary"
                 android:id="@+id/signup_container"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true">
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="48dp">
 
                 <Button
                     android:text="SUBIR FOTO"
@@ -115,8 +117,7 @@
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
                     android:textColor="@color/textColorBlack"
-                    android:textAppearance="@style/TextViewBold"
-                    android:id="@+id/textView2" />
+                    android:textAppearance="@style/TextViewBold" />
 
                 <com.andreabaccega.widget.FormEditText
                     validator:testType="nocheck"
@@ -143,8 +144,7 @@
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
                     android:textColor="@color/textColorBlack"
-                    android:textAppearance="@style/TextViewBold"
-                    android:id="@+id/textView" />
+                    android:textAppearance="@style/TextViewBold"/>
 
                 <com.andreabaccega.widget.FormEditText
                     validator:testType="date"
@@ -186,9 +186,8 @@
                 android:src="@drawable/img_perfil"
                 app:civ_border_width="2dp"
                 app:civ_border_color="@android:color/transparent"
-                android:layout_marginTop="122dp"
                 android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"/>
 
         </RelativeLayout>
 

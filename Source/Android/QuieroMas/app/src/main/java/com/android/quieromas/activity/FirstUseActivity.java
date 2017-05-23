@@ -61,6 +61,8 @@ public class FirstUseActivity extends AuthActivity {
 
         dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
 
+        imgProfile.bringToFront();
+
         txtBirthdate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 
             @Override

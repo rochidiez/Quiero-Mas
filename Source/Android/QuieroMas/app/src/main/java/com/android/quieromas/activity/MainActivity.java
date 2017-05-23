@@ -1,8 +1,12 @@
 package com.android.quieromas.activity;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,9 +18,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.android.quieromas.R;
+import com.android.quieromas.fragment.HomeFragment;
 
 public class MainActivity extends AuthActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnFragmentInteractionListener {
+
+    private static final String TAG = "MainActivity";
+
+    Fragment fragment = null;
+    Class fragmentClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +45,15 @@ public class MainActivity extends AuthActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
+
+        fragmentClass = HomeFragment.class;
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.main_content, fragment).commit();
     }
 
     @Override
@@ -70,30 +89,50 @@ public class MainActivity extends AuthActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_recipes) {
+            fragmentClass = HomeFragment.class;
+//        } else if (id == R.id.nav_recipes) {
+//
+//        } else if (id == R.id.nav_nutrition_plan) {
+//
+//        } else if (id == R.id.nav_education) {
+//
+//        } else if (id == R.id.nav_nutrition) {
+//
+//        } else if (id == R.id.nav_lactancy) {
+//
+//        } else if (id == R.id.nav_shopping_list) {
+//
+//        } else if (id == R.id.nav_favorites) {
+//
+//        } else if (id == R.id.nav_about) {
+//
+//        } else if (id == R.id.nav_share) {
+//
+//        } else if (id == R.id.nav_tac) {
 
-        } else if (id == R.id.nav_nutrition_plan) {
-
-        } else if (id == R.id.nav_education) {
-
-        } else if (id == R.id.nav_nutrition) {
-
-        } else if (id == R.id.nav_lactancy) {
-
-        } else if (id == R.id.nav_shopping_list) {
-
-        } else if (id == R.id.nav_favorites) {
-
-        } else if (id == R.id.nav_about) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_tac) {
-
+        } else {
+            fragmentClass = HomeFragment.class;
         }
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // Insert the fragment by replacing any existing fragment
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.main_content, fragment).commit();
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+
+        item.setChecked(false);
+
         return true;
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri){
+        Log.w(TAG, "Hello");
     }
 }

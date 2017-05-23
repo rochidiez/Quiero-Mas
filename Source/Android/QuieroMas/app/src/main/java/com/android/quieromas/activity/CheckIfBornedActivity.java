@@ -55,8 +55,16 @@ public class CheckIfBornedActivity extends AppCompatActivity implements VideoFra
         btnIsBorned.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), FirstUseActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnExpectedDateContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 if(txtExpectedDate.testValidity()){
-                    Intent intent = new Intent(view.getContext(), FirstUseActivity.class);
+                    Intent intent = new Intent(view.getContext(), MainActivity.class);
                     startActivity(intent);
                 }
             }
