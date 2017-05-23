@@ -3,7 +3,6 @@ const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 
 
-// https://us-central1-quiero-mas.cloudfunctions.net/registrar?text=firebaseID/nombre/nacimiento/mail/fechaBebe/nombreBebe/apodoBebe
 exports.registrar = functions.https.onRequest((req, res) => {
 	const original = req.query.text;
 	console.log('original: ', original)
@@ -23,7 +22,7 @@ exports.registrar = functions.https.onRequest((req, res) => {
 		var apodoBebeSpace = apodoBebe.replace("-", " ");
 		console.log('registrando')
 		console.log('firebaseID: ', firebaseID)
-		console.log('nombreSpace: ', nombreSpace)
+		console.log('nombre: ', nombreSpace)
 		console.log('nacimiento: ', nacimiento)
 		console.log('mail: ', mail)
 		console.log('fechaBebe: ', fechaBebe)
@@ -64,12 +63,13 @@ exports.registrar = functions.https.onRequest((req, res) => {
 					  });
 		    	}
 		    }
-
+		    res.status(200).send('Updated Successfully');
 		  });
 		} else {
 			if (fechaBebe != '') {
 				admin.database().ref('/Bebés de menos de 6 meses').child(firebaseID).set(fechaBebe);
 			}
 		}
+		res.status(200).send('Updated Successfully');
 	}
 });
