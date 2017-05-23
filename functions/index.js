@@ -6,8 +6,10 @@ admin.initializeApp(functions.config().firebase);
 // https://us-central1-quiero-mas.cloudfunctions.net/registrar?text=firebaseID/nombre/nacimiento/mail/fechaBebe/nombreBebe/apodoBebe
 exports.registrar = functions.https.onRequest((req, res) => {
 	const original = req.query.text;
-	var params = original.split('/')
-	if (params.length == 7) {
+	console.log('original: ', original)
+	var params = original.split(' ')
+	console.log('params: ', params)
+	if (params.length >= 7) {
 		var firebaseID = params[0]
 		var nombre = params[1]
 		var nacimiento = params[2]
@@ -15,17 +17,37 @@ exports.registrar = functions.https.onRequest((req, res) => {
 		var fechaBebe = params[4]
 	 	var nombreBebe = params[5]
 		var apodoBebe = params[6]
-		console.log('registrando: ', firebaseID, nombre, nacimiento, mail, fechaBebe, nombreBebe, apodoBebe);
 		
+		var nombreSpace = nombre.replace("-", " ");
+		var nombreBebeSpace = nombreBebe.replace("-", " ");
+		var apodoBebeSpace = apodoBebe.replace("-", " ");
+		console.log('registrando')
+		console.log('firebaseID: ', firebaseID)
+		console.log('nombreSpace: ', nombreSpace)
+		console.log('nacimiento: ', nacimiento)
+		console.log('mail: ', mail)
+		console.log('fechaBebe: ', fechaBebe)
+		console.log('nombreBebe: ', nombreBebeSpace)
+		console.log('apodoBebe', apodoBebeSpace)
+
 		//Datos
-		admin.database().ref('/Usuarios').child(firebaseID).child('Datos').child('Email').set(mail);
-		admin.database().ref('/Usuarios').child(firebaseID).child('Datos').child('Fecha de Nacimiento').set(nacimiento);
-		admin.database().ref('/Usuarios').child(firebaseID).child('Datos').child('Nombre Completo').set(nombre);
+		if (nombreSpace != '') {
+			admin.database().ref('/Usuarios').child(firebaseID).child('Datos').child('Nombre Completo').set(nombreSpace);
+		}
+		
+		if (mail != '') {
+			admin.database().ref('/Usuarios').child(firebaseID).child('Datos').child('Email').set(mail);
+		}
+		
+		if (nacimiento != '') {
+			admin.database().ref('/Usuarios').child(firebaseID).child('Datos').child('Fecha de Nacimiento').set(nacimiento);
+		}
+		
 
 		//Bebe
-		if (nombreBebe != '' && apodoBebe != '') {
-			admin.database().ref('/Usuarios').child(firebaseID).child('Bebé').child('Apodo').set(apodoBebe);
-			admin.database().ref('/Usuarios').child(firebaseID).child('Bebé').child('Nombre').set(nombreBebe);
+		if (nombreBebeSpace != '' && apodoBebeSpace != '') {
+			admin.database().ref('/Usuarios').child(firebaseID).child('Bebé').child('Apodo').set(apodoBebeSpace);
+			admin.database().ref('/Usuarios').child(firebaseID).child('Bebé').child('Nombre').set(nombreBebeSpace);
 			admin.database().ref('/Usuarios').child(firebaseID).child('Bebé').child('Fecha de Nacimiento').set(fechaBebe);
 
 			return admin.database().ref('Bebés de menos de 6 meses').once('value').then(snap => {
@@ -45,7 +67,9 @@ exports.registrar = functions.https.onRequest((req, res) => {
 
 		  });
 		} else {
-			admin.database().ref('/Bebés de menos de 6 meses').child(firebaseID).set(fechaBebe);
+			if (fechaBebe != '') {
+				admin.database().ref('/Bebés de menos de 6 meses').child(firebaseID).set(fechaBebe);
+			}
 		}
 	}
 });
