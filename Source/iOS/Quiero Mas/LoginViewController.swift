@@ -317,7 +317,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
             alert.addAction(cancelAction)
             present(alert, animated: true, completion: nil)
         } else {
-            FirebaseAPI.storeFirebaseWithoutBaby(name: registerNameTF.text!, birthday: registerDateTF.text!, email: registerEmailTF.text!, deliveryDate: deliveryDateTF.text!)
+            let user = FIRAuth.auth()?.currentUser
+            guard let firebaseID = user?.uid else {return}
+            FirebaseAPI.storeFirebaseUser(firebaseID: firebaseID,
+                                          name: registerNameTF.text!,
+                                          birthday: registerDateTF.text!,
+                                          email: registerEmailTF.text!,
+                                          babyName: "",
+                                          babyNickName: "",
+                                          babyBirthday: deliveryDateTF.text!)
             notificationPopUp.isHidden = false
         }
     }
@@ -408,12 +416,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         let credentials = FIRFacebookAuthProvider.credential(withAccessToken: accessTokenString)
         FIRAuth.auth()?.signIn(with: credentials, completion: { (user, error) in
             if error != nil {
-                print("FB Firebase Login Failed: \(error)")
+                print("FB Firebase Login Failed: \(String(describing: error))")
                 return
             }
-            print("Accessed FB Firebase with user: \(user)")
-            //do something
-            FirebaseAPI.storeFirebaseUserFB(name: "s", birthday: "s", email: "s", babyName: "s", babyNickName: "s", babyBirthday: "s")
+            print("Accessed FB Firebase with user: \(String(describing: user))")
+            let fbName = UserDefaults.standard.value(forKey: "fbName") as? String
+            let fbEmail = UserDefaults.standard.value(forKey: "fbEmail") as? String
+            let firebaseID = user?.uid
+            FirebaseAPI.storeFirebaseUser(firebaseID: firebaseID!,
+                                            name: fbName!,
+                                            birthday: "",
+                                            email: fbEmail!,
+                                            babyName: "",
+                                            babyNickName: "",
+                                            babyBirthday: "")
             self.loginAction(self)
         })
     }

@@ -10,6 +10,7 @@ import UIKit
 import FirebaseDatabase
 import CoreData
 import Firebase
+import FirebaseStorage
 
 let localesStoredOrUpdatedKey = "localesStoredOrUpdatedKey"
 
@@ -65,36 +66,35 @@ class FirebaseAPI: NSObject {
         
     }
     
-    static func storeFirebaseUserFB(name: String,
+    static func storeFirebaseUser(firebaseID: String,
+                                      name: String,
                                       birthday: String,
                                       email: String,
                                       babyName: String,
                                       babyNickName: String,
                                       babyBirthday: String) {
-        let user = FIRAuth.auth()?.currentUser
-        let firebaseID = user?.uid
-        FIRDatabase.database().reference().child("Usuarios").observeSingleEvent(of: .value, with: { (snap) in
-            if var usuariosDic = snap.value as? [String:[String:AnyObject]] {
-                let userDic = ["Bebé": ["Apodo": babyNickName, "Fecha de Nacimiento": babyBirthday, "Nombre": babyName], "Datos": ["Email": email, "Fecha de Nacimiento": birthday, "Nombre Completo": name]]
-                
-                usuariosDic[firebaseID!] = userDic as [String : AnyObject]?
-                FIRDatabase.database().reference().child("Usuarios").setValue(usuariosDic)
-            }
-        }) { (error) in
-            print(error.localizedDescription)
-        }
+        let nameSpaces = name.replacingOccurrences(of: " ", with: "-")
+        let babyNameSpaces = babyName.replacingOccurrences(of: " ", with: "-")
+        let babyNicknNameSpaces = babyNickName.replacingOccurrences(of: " ", with: "-")
+        var request = URLRequest(url: URL(string: "https://us-central1-quiero-mas.cloudfunctions.net/registrar?text=\(firebaseID)+\(nameSpaces)+\(birthday)+\(email)+\(babyBirthday)+\(babyNameSpaces)+\(babyNicknNameSpaces)")!)
+        request.httpMethod = "POST"
+        let session = URLSession.shared
+        
+        session.dataTask(with: request) {data, response, err in
+            print("Entered the completionHandler")
+            }.resume()
     }
     
+    static func uploadBabyImg(url: NSURL) {
+        let storage = FIRStorage.storage()
+        let storageRef = storage.reference()
+        print(storageRef)
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+}
+
+class MyClass {
+    var name: String?
+    var email: String?
     
 }

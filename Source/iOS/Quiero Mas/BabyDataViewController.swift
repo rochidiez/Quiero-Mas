@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Firebase
 
-class BabyDataViewController: UIViewController, UITextFieldDelegate {
+class BabyDataViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var name: String?
     var birthday: String?
@@ -18,12 +19,20 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var babyNickNameTF: UITextField!
     @IBOutlet weak var babyBirthdayTF: UITextField!
     @IBOutlet weak var babyScroll: UIScrollView!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var babyImgView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapGestureHandler))
         self.view.addGestureRecognizer(tapGesture)
+        
+        setBabyBirthdayTF()
+    }
+    
+    func setBabyBirthdayTF() {
+        babyBirthdayTF.inputView = datePicker
     }
     
     func tapGestureHandler() {
@@ -46,9 +55,64 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate {
             present(alert, animated: true, completion: nil)
             return
         }
-        FirebaseAPI.storeFirebaseWithBaby(name: name!, birthday: birthday!, email: email!, babyName: babyNameTF.text!, babyNickName: babyNickNameTF.text!, babyBirthday: babyBirthdayTF.text!)
+        let user = FIRAuth.auth()?.currentUser
+        guard let firebaseID = user?.uid else {return}
+        FirebaseAPI.storeFirebaseUser(firebaseID: firebaseID,
+                                      name: name!,
+                                      birthday: birthday!,
+                                      email: email!,
+                                      babyName: babyNameTF.text!,
+                                      babyNickName: babyNickNameTF.text!,
+                                      babyBirthday: babyBirthdayTF.text!)
         showMainVC()
     }
+    
+    @IBAction func datePickerValueChanged(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let selectedDate = dateFormatter.string(from: datePicker.date)
+        
+        babyBirthdayTF.text = selectedDate
+    }
+    
+    @IBAction func takePicture(_ sender: Any) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        
+        let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action: UIAlertAction) in
+            imagePickerController.sourceType = .camera
+            self.present(imagePickerController, animated: true, completion: nil)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {(action: UIAlertAction) in
+            imagePickerController.sourceType = .photoLibrary
+            self.present(imagePickerController, animated: true, completion: nil)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        
+        present(actionSheet, animated: true, completion: nil)
+        
+        
+    }
+    
+    //MARK: - Picker Controller Delegate
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        babyImgView.image = image
+        picker.dismiss(animated: true, completion: nil)
+        
+        let url = info[UIImagePickerControllerReferenceURL] as! NSURL
+        FirebaseAPI.uploadBabyImg(url: url)
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
     
     //MARK: - Show VC
     func showMainVC() {

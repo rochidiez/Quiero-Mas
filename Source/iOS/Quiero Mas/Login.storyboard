@@ -190,7 +190,7 @@ todo su inmenso potencial.</string>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalado por la SAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPL-ND-HGT">
-                                                <rect key="frame" x="126" y="596" width="123.5" height="14"/>
+                                                <rect key="frame" x="126.5" y="596" width="123.5" height="14"/>
                                                 <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -231,7 +231,7 @@ todo su inmenso potencial.</string>
                                                 <rect key="frame" x="80" y="40" width="215" height="90"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalado por nutricionistas y pediatras." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSc-Zk-sdR">
-                                                <rect key="frame" x="45" y="140" width="286.5" height="16"/>
+                                                <rect key="frame" x="44.5" y="140" width="286.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -443,7 +443,7 @@ todo su inmenso potencial.</string>
                                                 <rect key="frame" x="80" y="40" width="215" height="90"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalado por nutricionistas y pediatras." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kF-QS-QaL">
-                                                <rect key="frame" x="45" y="140" width="286.5" height="16"/>
+                                                <rect key="frame" x="44.5" y="140" width="286.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -620,7 +620,7 @@ todo su inmenso potencial.</string>
                                                 <rect key="frame" x="80" y="40" width="215" height="90"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalado por nutricionistas y pediatras." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxo-SR-CnI">
-                                                <rect key="frame" x="45" y="140" width="286.5" height="16"/>
+                                                <rect key="frame" x="44.5" y="140" width="286.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -701,7 +701,7 @@ todo su inmenso potencial.</string>
                                                         <rect key="frame" x="20" y="71" width="295" height="17"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="uCc-nz-vbp" id="yan-9F-2EX"/>
                                                         </connections>
@@ -910,7 +910,7 @@ todo su inmenso potencial.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Ya nació tu bebé?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Rd-q5-ohk">
-                                                <rect key="frame" x="92" y="100" width="192" height="22"/>
+                                                <rect key="frame" x="91.5" y="100" width="192" height="22"/>
                                                 <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -1311,11 +1311,11 @@ todo su inmenso potencial.</string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JR1-YJ-B3O">
                                                 <rect key="frame" x="20" y="180" width="335" height="450"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8j7-js-qys">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8j7-js-qys" userLabel="White View">
                                                         <rect key="frame" x="0.0" y="50" width="335" height="400"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUBIR FOTO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn1-Pm-yBI">
-                                                                <rect key="frame" x="119.5" y="60" width="97" height="17"/>
+                                                                <rect key="frame" x="119" y="60" width="97" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="17"/>
                                                                 <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -1333,7 +1333,7 @@ todo su inmenso potencial.</string>
                                                                         <rect key="frame" x="20" y="52" width="295" height="17"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                                         <connections>
                                                                             <outlet property="delegate" destination="ogg-wx-Feg" id="6yY-hb-oDg"/>
                                                                         </connections>
@@ -1355,7 +1355,7 @@ todo su inmenso potencial.</string>
                                                                         <rect key="frame" x="20" y="126" width="295" height="17"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                                         <connections>
                                                                             <outlet property="delegate" destination="ogg-wx-Feg" id="UCj-QJ-yjl"/>
                                                                         </connections>
@@ -1463,12 +1463,22 @@ todo su inmenso potencial.</string>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle Baby" translatesAutoresizingMaskIntoConstraints="NO" id="lOR-KG-dBf">
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                             </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lc0-ff-A4Q">
+                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                                <connections>
+                                                                    <action selector="takePicture:" destination="ogg-wx-Feg" eventType="touchUpInside" id="qLS-70-u1i"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="lOR-KG-dBf" secondAttribute="trailing" id="IiE-E8-a7j"/>
+                                                            <constraint firstItem="lc0-ff-A4Q" firstAttribute="top" secondItem="pYV-bz-CQV" secondAttribute="top" id="JNE-rX-qJ2"/>
                                                             <constraint firstAttribute="bottom" secondItem="lOR-KG-dBf" secondAttribute="bottom" id="MbI-bj-EKy"/>
+                                                            <constraint firstAttribute="trailing" secondItem="lc0-ff-A4Q" secondAttribute="trailing" id="Q1s-TP-bYe"/>
+                                                            <constraint firstItem="lc0-ff-A4Q" firstAttribute="leading" secondItem="pYV-bz-CQV" secondAttribute="leading" id="WYy-Oj-YXj"/>
                                                             <constraint firstItem="lOR-KG-dBf" firstAttribute="top" secondItem="pYV-bz-CQV" secondAttribute="top" id="bF7-PS-aWa"/>
+                                                            <constraint firstAttribute="bottom" secondItem="lc0-ff-A4Q" secondAttribute="bottom" id="btZ-3l-FMe"/>
                                                             <constraint firstItem="lOR-KG-dBf" firstAttribute="leading" secondItem="pYV-bz-CQV" secondAttribute="leading" id="lRQ-ho-Zen"/>
                                                             <constraint firstAttribute="width" constant="100" id="ncN-77-4yq"/>
                                                             <constraint firstAttribute="height" constant="100" id="o7V-6q-vxD"/>
@@ -1521,12 +1531,25 @@ todo su inmenso potencial.</string>
                     </view>
                     <connections>
                         <outlet property="babyBirthdayTF" destination="zjQ-vs-zzJ" id="Msf-IH-CCc"/>
+                        <outlet property="babyImgView" destination="lOR-KG-dBf" id="czA-Vs-6vD"/>
                         <outlet property="babyNameTF" destination="KJk-7y-IN0" id="eSm-Yl-TrB"/>
                         <outlet property="babyNickNameTF" destination="nKV-0n-XeC" id="ua6-0c-jen"/>
                         <outlet property="babyScroll" destination="5kM-LO-Gdt" id="i7H-4f-nHB"/>
+                        <outlet property="datePicker" destination="vKl-w1-sF7" id="49Y-9V-z2t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9T-Y0-2K2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="vKl-w1-sF7">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <date key="date" timeIntervalSinceReferenceDate="517235837.73030102">
+                        <!--2017-05-23 12:37:17 +0000-->
+                    </date>
+                    <locale key="locale" localeIdentifier="es_AR"/>
+                    <connections>
+                        <action selector="datePickerValueChanged:" destination="ogg-wx-Feg" eventType="valueChanged" id="dVF-hq-kDE"/>
+                    </connections>
+                </datePicker>
             </objects>
             <point key="canvasLocation" x="1109.5999999999999" y="143.47826086956522"/>
         </scene>
