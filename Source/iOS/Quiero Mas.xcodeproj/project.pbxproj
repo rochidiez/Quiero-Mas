@@ -27,6 +27,7 @@
 		C109FDBB1EAA95B10067E86C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C109FDBA1EAA95B10067E86C /* Login.storyboard */; };
 		C109FDBE1EAA95E60067E86C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C109FDBD1EAA95E60067E86C /* LoginViewController.swift */; };
 		C109FDC01EAA961D0067E86C /* video-background_1200x720.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C109FDBF1EAA961D0067E86C /* video-background_1200x720.mp4 */; };
+		C12A4AED1ED639C7005B0441 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12A4AEC1ED639C7005B0441 /* PerfilViewController.swift */; };
 		C1523FAD1EC0339F0047B195 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1523FAC1EC0339F0047B195 /* GoogleService-Info.plist */; };
 		C18F22E71E887D24006E42DB /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F22E61E887D24006E42DB /* MenuTableViewController.swift */; };
 		C18F22EA1E88834C006E42DB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F22E91E88834C006E42DB /* HomeViewController.swift */; };
@@ -74,6 +75,7 @@
 		C109FDBA1EAA95B10067E86C /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		C109FDBD1EAA95E60067E86C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C109FDBF1EAA961D0067E86C /* video-background_1200x720.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "video-background_1200x720.mp4"; sourceTree = "<group>"; };
+		C12A4AEC1ED639C7005B0441 /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		C1523FAB1EC030400047B195 /* Quiero Mas.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Quiero Mas.entitlements"; sourceTree = "<group>"; };
 		C1523FAC1EC0339F0047B195 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C18F22E61E887D24006E42DB /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
@@ -200,9 +202,18 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		C12A4AEB1ED639AD005B0441 /* Perfil */ = {
+			isa = PBXGroup;
+			children = (
+				C12A4AEC1ED639C7005B0441 /* PerfilViewController.swift */,
+			);
+			name = Perfil;
+			sourceTree = "<group>";
+		};
 		C18F22E41E887D02006E42DB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C12A4AEB1ED639AD005B0441 /* Perfil */,
 				C19425A21ECA25260092C6F6 /* Terminos y condiciones */,
 				C194259F1ECA24990092C6F6 /* Recomendar */,
 				C194259C1ECA240E0092C6F6 /* Sobre Quiero Mas */,
@@ -493,6 +504,7 @@
 				C199D91A1E8877B0002255BA /* Quiero_Mas.xcdatamodeld in Sources */,
 				C194259E1ECA241E0092C6F6 /* SobreViewController.swift in Sources */,
 				C1E5EB601EC7AAB4009B4894 /* BabyDataViewController.swift in Sources */,
+				C12A4AED1ED639C7005B0441 /* PerfilViewController.swift in Sources */,
 				C100951A1E9730D3001748E4 /* MenuNavigationController.swift in Sources */,
 				C199D9121E8877B0002255BA /* AppDelegate.swift in Sources */,
 				C100953F1E9755C7001748E4 /* LactanciaViewController.swift in Sources */,

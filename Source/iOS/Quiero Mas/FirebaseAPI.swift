@@ -85,10 +85,20 @@ class FirebaseAPI: NSObject {
             }.resume()
     }
     
-    static func uploadBabyImg(url: NSURL) {
+    static func uploadBabyImg(url: URL, firebaseID: String) {
         let storage = FIRStorage.storage()
         let storageRef = storage.reference()
-        print(storageRef)
+
+        let bebesRef = storageRef.child("bebes/\(firebaseID).jpg")
+        
+        let uploadTask = bebesRef.putFile(url, metadata: nil) { metadata, error in
+            if let error = error {
+                // Uh-oh, an error occurred!
+            } else {
+                // Metadata contains file metadata such as size, content-type, and download URL.
+                let downloadURL = metadata!.downloadURL()
+            }
+        }
     }
     
 }

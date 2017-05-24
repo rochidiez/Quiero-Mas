@@ -138,11 +138,6 @@ class MenuTableViewController: UITableViewController {
         imgView.frame = CGRect(x:0, y:0, width: tableView.frame.size.width/2, height: 2)
         bigView.addSubview(imgView)
         
-//        NSLayoutConstraint(item: imgView, attribute: .leading, relatedBy: .equal, toItem: bigView, attribute: .leadingMargin, multiplier: 1.0, constant: 0.0).isActive = true
-//        NSLayoutConstraint(item: imgView, attribute: .trailing, relatedBy: .equal, toItem: bigView, attribute: .trailingMargin, multiplier: 1.0, constant: 0.0).isActive = true
-//        NSLayoutConstraint(item: imgView, attribute: .top, relatedBy: .equal, toItem: bigView, attribute: .topMargin, multiplier: 1.0, constant: 0.0).isActive = true
-//        NSLayoutConstraint(item: imgView, attribute: .bottom, relatedBy: .equal, toItem: bigView, attribute: .bottomMargin, multiplier: 1.0, constant: 0.0).isActive = true
-        
         return bigView
     }
     
@@ -217,6 +212,15 @@ class MenuTableViewController: UITableViewController {
             print("")
         }
     }
+    
+    
+    //MARK: - IBAction
+    @IBAction func perfilAction(_ sender: Any) {
+        let story = UIStoryboard(name: "Main", bundle: nil)
+        let vc = story.instantiateViewController(withIdentifier: "PerfilNav")
+        self.revealViewController().pushFrontViewController(vc, animated: true)
+    }
+    
 
     //MARK: - Device
     enum UIUserInterfaceIdiom : Int
@@ -242,8 +246,4 @@ class MenuTableViewController: UITableViewController {
         static let IS_IPHONE_6P         = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 736.0
         static let IS_IPAD              = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.SCREEN_MAX_LENGTH == 1024.0
     }
-    
-    //MARK: - IBAction
-    
-
 }

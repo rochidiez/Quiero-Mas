@@ -104,8 +104,11 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate, UIImagePick
         babyImgView.image = image
         picker.dismiss(animated: true, completion: nil)
         
-        let url = info[UIImagePickerControllerReferenceURL] as! NSURL
-        FirebaseAPI.uploadBabyImg(url: url)
+        let imgNSURL = info[UIImagePickerControllerReferenceURL] as! NSURL
+        let imgURL = URL(string: imgNSURL.path!)
+        let user = FIRAuth.auth()?.currentUser
+        guard let firebaseID = user?.uid else {return}
+        FirebaseAPI.uploadBabyImg(url: imgURL!, firebaseID: firebaseID)
         
     }
     

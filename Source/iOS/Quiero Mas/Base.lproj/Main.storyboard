@@ -71,22 +71,26 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VER MI PERFIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zh-Bz-rCa">
-                                    <rect key="frame" x="77" y="42" width="78.5" height="12"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HyS-js-bdg">
+                                    <rect key="frame" x="77" y="42" width="79" height="24"/>
                                     <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="12"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                    <state key="normal" title="VER MI PERFIL">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="perfilAction:" destination="ChA-pQ-5qX" eventType="touchUpInside" id="ZH0-YK-rct"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="1" green="0.57647058819999997" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="Nrn-99-HOU" firstAttribute="top" secondItem="8Kx-Sp-L1z" secondAttribute="top" constant="15" id="VXA-Z3-jmf"/>
                                 <constraint firstItem="UKG-TO-BbR" firstAttribute="leading" secondItem="Nrn-99-HOU" secondAttribute="trailing" constant="10" id="W4u-fP-Xl2"/>
                                 <constraint firstAttribute="bottom" secondItem="Nrn-99-HOU" secondAttribute="bottom" constant="15" id="YGl-mD-Ul8"/>
-                                <constraint firstItem="6Zh-Bz-rCa" firstAttribute="leading" secondItem="Nrn-99-HOU" secondAttribute="trailing" constant="12" id="fAV-3i-4jx"/>
+                                <constraint firstItem="HyS-js-bdg" firstAttribute="top" secondItem="UKG-TO-BbR" secondAttribute="bottom" id="htn-T3-c1X"/>
                                 <constraint firstItem="Nrn-99-HOU" firstAttribute="leading" secondItem="8Kx-Sp-L1z" secondAttribute="leading" constant="15" id="lS0-2T-VW1"/>
-                                <constraint firstItem="6Zh-Bz-rCa" firstAttribute="top" secondItem="UKG-TO-BbR" secondAttribute="bottom" id="oPd-B9-EaF"/>
                                 <constraint firstItem="UKG-TO-BbR" firstAttribute="top" secondItem="8Kx-Sp-L1z" secondAttribute="top" constant="20" id="qK0-jg-KLu"/>
+                                <constraint firstItem="HyS-js-bdg" firstAttribute="leading" secondItem="Nrn-99-HOU" secondAttribute="trailing" constant="12" id="tVi-4k-zUC"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -1377,6 +1381,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YdE-zh-TDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2494" y="7114"/>
+        </scene>
+        <!--Menu Navigation Controller-->
+        <scene sceneID="ER9-pk-lTu">
+            <objects>
+                <navigationController storyboardIdentifier="PerfilNav" id="gvs-Kk-F5c" customClass="MenuNavigationController" customModule="Quiero_Mas" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="WB0-e4-ebq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qoX-Rf-kc8" kind="relationship" relationship="rootViewController" id="Cee-GF-i2i"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gij-pO-bdK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1598" y="7825"/>
+        </scene>
+        <!--Tu perfil-->
+        <scene sceneID="u8J-Oi-ME7">
+            <objects>
+                <viewController id="qoX-Rf-kc8" customClass="PerfilViewController" customModule="Quiero_Mas" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MUp-PS-cIe"/>
+                        <viewControllerLayoutGuide type="bottom" id="sCS-dv-3VB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kkg-LX-jzF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XlZ-ms-ZKm" userLabel="Orange View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <color key="backgroundColor" red="1" green="0.50588235290000005" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="XlZ-ms-ZKm" secondAttribute="trailing" id="5Wv-5e-uqp"/>
+                            <constraint firstItem="XlZ-ms-ZKm" firstAttribute="height" secondItem="kkg-LX-jzF" secondAttribute="height" multiplier="0.3" id="Fs5-t4-gFO"/>
+                            <constraint firstItem="XlZ-ms-ZKm" firstAttribute="leading" secondItem="kkg-LX-jzF" secondAttribute="leading" id="a6B-BB-msg"/>
+                            <constraint firstItem="XlZ-ms-ZKm" firstAttribute="top" secondItem="kkg-LX-jzF" secondAttribute="top" id="g9D-bv-VPb"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Tu perfil" id="Wrp-aN-2oi">
+                        <barButtonItem key="leftBarButtonItem" image="Open Menu" id="zST-8w-Lt9">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Cerrar Sesión" id="JtL-5B-esp">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="revealMenuButton" destination="zST-8w-Lt9" id="YE1-dH-VmK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cuW-0l-MBd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2494" y="7825"/>
         </scene>
     </scenes>
     <resources>
