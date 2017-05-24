@@ -19,6 +19,7 @@ import com.andreabaccega.widget.FormEditText;
 import com.android.quieromas.R;
 import com.android.quieromas.api.FirebaseFunctionApi;
 import com.android.quieromas.api.ServiceFactory;
+import com.android.quieromas.helper.QueryHelper;
 import com.android.quieromas.validator.RepeatPasswordValidator;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -53,6 +54,9 @@ public class FirstUseActivity extends AuthActivity {
     private SimpleDateFormat dateFormatter;
     private boolean hasChangedImage = false;
     private String formattedBabybirthdate;
+    private String name;
+    private String email;
+    private String birthdate;
 
 
     @Override
@@ -73,6 +77,14 @@ public class FirstUseActivity extends AuthActivity {
         txtBirthdate = (FormEditText) findViewById(R.id.etxt_first_use_baby_birthdate);
 
         dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            name = extras.getString("NAME");
+            email = extras.getString("EMAIL");
+            birthdate = extras.getString("BIRTHDATE");
+        }
+
 
         imgProfile.bringToFront();
 
@@ -110,10 +122,10 @@ public class FirstUseActivity extends AuthActivity {
 //                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
 //                            .setPhotoUri(Uri.parse("https://example.com/jane-q-user/profile.jpg"))
 //                            .build();
-                    String text = buildQueryParameter(user.getUid(),"testing","15/4/1990",
-                            "lucas@email.com",formattedBabybirthdate,txtName.getText().toString(),
+                    String text = QueryHelper.buildQueryParameter(user.getUid(),name,birthdate,
+                            email,formattedBabybirthdate,txtName.getText().toString(),
                             txtNickname.getText().toString());
-                   api.register(text)
+                    api.register(text)
                             .subscribeOn(Schedulers.newThread())
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe(new Subscriber<ResponseBody>() {
@@ -129,9 +141,9 @@ public class FirstUseActivity extends AuthActivity {
 
                                @Override
                                public final void onNext(ResponseBody rb){
-
-                                   Log.d(TAG,"DS");
-                                   Toast.makeText(getApplicationContext(),"ff",Toast.LENGTH_LONG).show();
+                                   Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                   startActivity(intent);
+                                   finish();
                                }
                    });
                 }
@@ -149,47 +161,6 @@ public class FirstUseActivity extends AuthActivity {
 
             }
         });
-    }
-
-    private String buildQueryParameter(String uid, String name, String birthdate, String email, String babyBirthdate, String babyName, String babyNickname){
-        //https://us-central1-quiero-mas.cloudfunctions.net/registrar
-        // ?text=IBObsbDGMNRrC1ra5U50QpBhuyE3+lucas+10/5/1990+lucasputerman@gmail.com+10/5/2016+bebe+bebito
-        StringBuilder builder = new StringBuilder();
-        builder.append(uid);
-        builder.append(" ");
-
-        String[] splittedName = name.split(" ");
-        for(int i = 0; i < splittedName.length; i++){
-            builder.append(splittedName[i]);
-            if(i < splittedName.length -1){
-                builder.append("-");
-            }
-        }
-        builder.append(" ");
-        builder.append(birthdate);
-        builder.append(" ");
-        builder.append(email);
-        builder.append(" ");
-        builder.append(babyBirthdate);
-        builder.append(" ");
-        String[] splittedBabyName = babyName.split(" ");
-        for(int i = 0; i < splittedBabyName.length; i++){
-            builder.append(splittedBabyName[i]);
-            if(i < splittedBabyName.length -1){
-                builder.append("-");
-            }
-        }
-        builder.append(" ");
-        String[] splittedBabyNickname = babyNickname.split(" ");
-        for(int i = 0; i < splittedBabyNickname.length; i++){
-            builder.append(splittedBabyNickname[i]);
-            if(i < splittedBabyNickname.length -1){
-                builder.append("-");
-            }
-        }
-
-        return builder.toString();
-
     }
 
     private boolean isValidForm(){

@@ -120,7 +120,9 @@
             android:id="@+id/textView6" />
 
         <com.andreabaccega.widget.FormEditText
-            validator:testType="nocheck"
+            validator:testType="regexp"
+            validator:customRegexp=".{6,}"
+            validator:testErrorString="@string/more_than_six"
             validator:emptyErrorString="@string/cannot_be_empty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

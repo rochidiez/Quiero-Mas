@@ -11,16 +11,25 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.andreabaccega.widget.FormEditText;
 import com.android.quieromas.R;
 import com.android.quieromas.fragment.VideoFragment;
+import com.android.quieromas.helper.QueryHelper;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class CheckIfBornedActivity extends AppCompatActivity implements VideoFragment.OnFragmentInteractionListener {
+import okhttp3.ResponseBody;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
+public class CheckIfBornedActivity extends AuthActivity implements VideoFragment.OnFragmentInteractionListener {
 
     private static final String TAG = "CheckIfBornedActivity";
     private Button btnIsBorned;
@@ -30,6 +39,10 @@ public class CheckIfBornedActivity extends AppCompatActivity implements VideoFra
     private FormEditText txtExpectedDate;
     private DatePickerDialog datePickerDialog;
     private SimpleDateFormat dateFormatter;
+    private String formattedBabybirthdate;
+    private String name;
+    private String email;
+    private String birthdate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +57,13 @@ public class CheckIfBornedActivity extends AppCompatActivity implements VideoFra
 
         dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
 
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            name = extras.getString("NAME");
+            email = extras.getString("EMAIL");
+            birthdate = extras.getString("BIRTHDATE");
+        }
+
 
         btnIsNotBorned.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +76,9 @@ public class CheckIfBornedActivity extends AppCompatActivity implements VideoFra
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), FirstUseActivity.class);
+                intent.putExtra("NAME",name);
+                intent.putExtra("EMAIL",email);
+                intent.putExtra("BIRTHDATE",birthdate);
                 startActivity(intent);
             }
         });
@@ -64,8 +87,29 @@ public class CheckIfBornedActivity extends AppCompatActivity implements VideoFra
             @Override
             public void onClick(View view) {
                 if(txtExpectedDate.testValidity()){
-                    Intent intent = new Intent(view.getContext(), MainActivity.class);
-                    startActivity(intent);
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    String text = QueryHelper.buildQueryParameter(user.getUid(),name,email,
+                           birthdate,formattedBabybirthdate,"", "");
+                    api.register(text)
+                            .subscribeOn(Schedulers.newThread())
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .subscribe(new Subscriber<ResponseBody>() {
+                                @Override
+                                public final void onCompleted() {
+                                }
+
+                                @Override
+                                public final void onError(Throwable e) {
+                                    Log.e(TAG, e.getMessage());
+                                    Toast.makeText(getApplicationContext(),"gg",Toast.LENGTH_LONG).show();
+                                }
+
+                                @Override
+                                public final void onNext(ResponseBody rb){
+                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                    startActivity(intent);
+                                }
+                            });
                 }
             }
         });
@@ -81,7 +125,8 @@ public class CheckIfBornedActivity extends AppCompatActivity implements VideoFra
                         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                             Calendar newDate = Calendar.getInstance();
                             newDate.set(year, monthOfYear, dayOfMonth);
-                            txtExpectedDate.setText(dateFormatter.format(newDate.getTime()));
+                            formattedBabybirthdate = dateFormatter.format(newDate.getTime());
+                            txtExpectedDate.setText(formattedBabybirthdate);
                         }
 
                     },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));

@@ -60,21 +60,13 @@ public class SignupFragment extends Fragment {
     private FirebaseAuth mAuth;
     private DatePickerDialog datePickerDialog;
     private SimpleDateFormat dateFormatter;
+    private String formattedBirthdate;
 
 
     public SignupFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SignupFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static SignupFragment newInstance(String param1, String param2) {
         SignupFragment fragment = new SignupFragment();
         Bundle args = new Bundle();
@@ -132,6 +124,9 @@ public class SignupFragment extends Fragment {
                                         //TODO send user information to firebase
 
                                         Intent intent = new Intent(getContext(), CheckIfBornedActivity.class);
+                                        intent.putExtra("NAME",name.getText().toString());
+                                        intent.putExtra("EMAIL",email.getText().toString());
+                                        intent.putExtra("BIRTHDATE",formattedBirthdate);
                                         startActivity(intent);
                                         getActivity().finish();
                                     } else {
@@ -157,7 +152,8 @@ public class SignupFragment extends Fragment {
                         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                             Calendar newDate = Calendar.getInstance();
                             newDate.set(year, monthOfYear, dayOfMonth);
-                            birthdate.setText(dateFormatter.format(newDate.getTime()));
+                            formattedBirthdate = dateFormatter.format(newDate.getTime());
+                            birthdate.setText(formattedBirthdate);
                         }
 
                     },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
