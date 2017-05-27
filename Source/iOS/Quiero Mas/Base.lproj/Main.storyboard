@@ -108,7 +108,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYh-5y-lWp">
-                                            <rect key="frame" x="67" y="14.5" width="303" height="15"/>
+                                            <rect key="frame" x="67" y="15" width="303" height="15"/>
                                             <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="15"/>
                                             <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -1414,13 +1414,230 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                 <color key="backgroundColor" red="1" green="0.50588235290000005" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hH-zS-yT7">
+                                <rect key="frame" x="20" y="80" width="335" height="567"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8j4-UJ-rT9">
+                                        <rect key="frame" x="0.0" y="50" width="335" height="517"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpq-ud-b25">
+                                                <rect key="frame" x="66" y="50" width="202" height="30"/>
+                                                <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="18"/>
+                                                <state key="normal" title="CAMBIAR CONTRASEÑA">
+                                                    <color key="titleColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ak-tc-KfD">
+                                                <rect key="frame" x="0.0" y="90" width="335" height="427"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ijx-O0-598" userLabel="Static View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="700"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TU NOMBRE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PR-DZ-kTU">
+                                                                <rect key="frame" x="134" y="20" width="68" height="12"/>
+                                                                <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="12"/>
+                                                                <color key="textColor" red="0.78823529411764703" green="0.78823529411764703" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vanina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9au-bF-zhQ">
+                                                                <rect key="frame" x="146" y="42" width="44" height="14"/>
+                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Perfil Separator" translatesAutoresizingMaskIntoConstraints="NO" id="ErL-bz-IK5">
+                                                                <rect key="frame" x="77" y="66" width="180" height="2"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TU EMAIL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKQ-PA-nne">
+                                                                <rect key="frame" x="141" y="88" width="52.5" height="12"/>
+                                                                <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="12"/>
+                                                                <color key="textColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vani@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZL-hB-48r">
+                                                                <rect key="frame" x="113" y="110" width="109.5" height="14"/>
+                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Perfil Separator" translatesAutoresizingMaskIntoConstraints="NO" id="u7H-hq-qLy">
+                                                                <rect key="frame" x="77" y="134" width="180" height="2"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TU FECHA DE NACIMIENTO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QB7-Ng-JMm">
+                                                                <rect key="frame" x="92" y="156" width="150.5" height="12"/>
+                                                                <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="12"/>
+                                                                <color key="textColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29/10/1980" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iF0-Cq-YnM">
+                                                                <rect key="frame" x="128" y="178" width="80" height="14"/>
+                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Perfil Separator" translatesAutoresizingMaskIntoConstraints="NO" id="PhI-TJ-c1x">
+                                                                <rect key="frame" x="77.5" y="202" width="180" height="2"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EL NOMBRE DE TU BEBÉ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79p-Ym-iMU">
+                                                                <rect key="frame" x="101" y="224" width="133.5" height="12"/>
+                                                                <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="12"/>
+                                                                <color key="textColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Josefina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHe-Qp-Q3g">
+                                                                <rect key="frame" x="140.5" y="246" width="53" height="14"/>
+                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Perfil Separator" translatesAutoresizingMaskIntoConstraints="NO" id="jvf-vw-3gO">
+                                                                <rect key="frame" x="78" y="270" width="180" height="2"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿CÓMO LE DICEN?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEK-kp-4cR">
+                                                                <rect key="frame" x="116" y="292" width="103" height="12"/>
+                                                                <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="12"/>
+                                                                <color key="textColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsM-a9-v42">
+                                                                <rect key="frame" x="153.5" y="314" width="28.5" height="14"/>
+                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Perfil Separator" translatesAutoresizingMaskIntoConstraints="NO" id="597-Za-fTR">
+                                                                <rect key="frame" x="78" y="338" width="180" height="2"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FECHA DE NACIMIENTO DE TU BEBÉ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RZ-62-7Dy">
+                                                                <rect key="frame" x="67.5" y="360" width="200.5" height="12"/>
+                                                                <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="12"/>
+                                                                <color key="textColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/03/2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfU-WK-aRI">
+                                                                <rect key="frame" x="127.5" y="382" width="80.5" height="14"/>
+                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Perfil Separator" translatesAutoresizingMaskIntoConstraints="NO" id="VR1-6K-KR4">
+                                                                <rect key="frame" x="77" y="406" width="180" height="2"/>
+                                                            </imageView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5k-e1-nuH">
+                                                                <rect key="frame" x="20" y="448" width="295" height="40"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKy-ox-hZR">
+                                                                        <rect key="frame" x="1" y="1" width="293" height="38"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="17"/>
+                                                                        <state key="normal" title="Editar">
+                                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </state>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="IKy-ox-hZR" firstAttribute="leading" secondItem="i5k-e1-nuH" secondAttribute="leading" constant="1" id="24t-wG-Udo"/>
+                                                                    <constraint firstItem="IKy-ox-hZR" firstAttribute="top" secondItem="i5k-e1-nuH" secondAttribute="top" constant="1" id="EdV-sR-kTx"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="IKy-ox-hZR" secondAttribute="trailing" constant="1" id="I2a-gw-GOp"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="IKy-ox-hZR" secondAttribute="bottom" constant="1" id="Kce-Z5-s0h"/>
+                                                                    <constraint firstAttribute="height" constant="40" id="TNs-qR-dYA"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="VR1-6K-KR4" firstAttribute="top" secondItem="sfU-WK-aRI" secondAttribute="bottom" constant="10" id="0ff-Sv-16q"/>
+                                                            <constraint firstItem="ErL-bz-IK5" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="1C5-Pa-Aq8"/>
+                                                            <constraint firstItem="QB7-Ng-JMm" firstAttribute="top" secondItem="u7H-hq-qLy" secondAttribute="bottom" constant="20" id="1Lg-o4-pKF"/>
+                                                            <constraint firstItem="WEK-kp-4cR" firstAttribute="top" secondItem="jvf-vw-3gO" secondAttribute="bottom" constant="20" id="1kh-qL-a3O"/>
+                                                            <constraint firstItem="9PR-DZ-kTU" firstAttribute="top" secondItem="Ijx-O0-598" secondAttribute="top" constant="20" id="3GK-ae-O1y"/>
+                                                            <constraint firstItem="WEK-kp-4cR" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="5R9-Pz-u49"/>
+                                                            <constraint firstItem="hsM-a9-v42" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="6G3-Py-wKJ"/>
+                                                            <constraint firstItem="i5k-e1-nuH" firstAttribute="top" secondItem="VR1-6K-KR4" secondAttribute="bottom" constant="40" id="6Ra-mH-doH"/>
+                                                            <constraint firstItem="VR1-6K-KR4" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="AuG-FJ-N0W"/>
+                                                            <constraint firstItem="iKQ-PA-nne" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="C1S-le-MdV"/>
+                                                            <constraint firstItem="9au-bF-zhQ" firstAttribute="top" secondItem="9PR-DZ-kTU" secondAttribute="bottom" constant="10" id="GHA-GE-kIe"/>
+                                                            <constraint firstItem="PhI-TJ-c1x" firstAttribute="top" secondItem="iF0-Cq-YnM" secondAttribute="bottom" constant="10" id="Hjo-3H-5ay"/>
+                                                            <constraint firstItem="u7H-hq-qLy" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="Hlf-rT-QFA"/>
+                                                            <constraint firstItem="jvf-vw-3gO" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="LMK-fK-XQ0"/>
+                                                            <constraint firstItem="QB7-Ng-JMm" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="Mx6-SU-Yuj"/>
+                                                            <constraint firstItem="597-Za-fTR" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="NTi-QX-XHD"/>
+                                                            <constraint firstItem="BHe-Qp-Q3g" firstAttribute="top" secondItem="79p-Ym-iMU" secondAttribute="bottom" constant="10" id="O5u-qB-xca"/>
+                                                            <constraint firstItem="sfU-WK-aRI" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="Pgb-4W-8tM"/>
+                                                            <constraint firstItem="wZL-hB-48r" firstAttribute="top" secondItem="iKQ-PA-nne" secondAttribute="bottom" constant="10" id="RHv-h1-5Bq"/>
+                                                            <constraint firstItem="iF0-Cq-YnM" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="Su8-KR-Lvy"/>
+                                                            <constraint firstItem="9PR-DZ-kTU" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="XlV-bX-PjJ"/>
+                                                            <constraint firstItem="BHe-Qp-Q3g" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="Ya6-SJ-wwV"/>
+                                                            <constraint firstItem="sfU-WK-aRI" firstAttribute="top" secondItem="9RZ-62-7Dy" secondAttribute="bottom" constant="10" id="Znf-bt-IqG"/>
+                                                            <constraint firstItem="597-Za-fTR" firstAttribute="top" secondItem="hsM-a9-v42" secondAttribute="bottom" constant="10" id="bB4-eG-Us9"/>
+                                                            <constraint firstItem="9RZ-62-7Dy" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="cQB-Ud-3AP"/>
+                                                            <constraint firstItem="9au-bF-zhQ" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="cf8-Qx-VYX"/>
+                                                            <constraint firstItem="jvf-vw-3gO" firstAttribute="top" secondItem="BHe-Qp-Q3g" secondAttribute="bottom" constant="10" id="eNJ-Ti-qWJ"/>
+                                                            <constraint firstItem="9RZ-62-7Dy" firstAttribute="top" secondItem="597-Za-fTR" secondAttribute="bottom" constant="20" id="fCv-g5-zNE"/>
+                                                            <constraint firstItem="hsM-a9-v42" firstAttribute="top" secondItem="WEK-kp-4cR" secondAttribute="bottom" constant="10" id="ihp-37-KGO"/>
+                                                            <constraint firstAttribute="height" constant="700" id="iyi-uq-RIB"/>
+                                                            <constraint firstItem="ErL-bz-IK5" firstAttribute="top" secondItem="9au-bF-zhQ" secondAttribute="bottom" constant="10" id="l30-Ck-zSx"/>
+                                                            <constraint firstItem="u7H-hq-qLy" firstAttribute="top" secondItem="wZL-hB-48r" secondAttribute="bottom" constant="10" id="lNT-4g-ADE"/>
+                                                            <constraint firstItem="PhI-TJ-c1x" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="lfY-du-mR4"/>
+                                                            <constraint firstAttribute="trailing" secondItem="i5k-e1-nuH" secondAttribute="trailing" constant="20" id="stU-5w-oXV"/>
+                                                            <constraint firstItem="79p-Ym-iMU" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="tBL-50-pkJ"/>
+                                                            <constraint firstItem="79p-Ym-iMU" firstAttribute="top" secondItem="PhI-TJ-c1x" secondAttribute="bottom" constant="20" id="tVy-my-08D"/>
+                                                            <constraint firstItem="iKQ-PA-nne" firstAttribute="top" secondItem="ErL-bz-IK5" secondAttribute="bottom" constant="20" id="udL-ag-vzN"/>
+                                                            <constraint firstItem="wZL-hB-48r" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="urJ-xk-fyD"/>
+                                                            <constraint firstItem="iF0-Cq-YnM" firstAttribute="top" secondItem="QB7-Ng-JMm" secondAttribute="bottom" constant="10" id="yHe-bV-gVc"/>
+                                                            <constraint firstItem="i5k-e1-nuH" firstAttribute="leading" secondItem="Ijx-O0-598" secondAttribute="leading" constant="20" id="ykQ-vs-50n"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Ijx-O0-598" firstAttribute="leading" secondItem="9ak-tc-KfD" secondAttribute="leading" id="3rh-tV-bmS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ijx-O0-598" secondAttribute="trailing" id="EAH-CE-kje"/>
+                                                    <constraint firstItem="Ijx-O0-598" firstAttribute="width" secondItem="9ak-tc-KfD" secondAttribute="width" id="ZUL-6U-Osn"/>
+                                                    <constraint firstItem="Ijx-O0-598" firstAttribute="top" secondItem="9ak-tc-KfD" secondAttribute="top" id="c6m-Eo-gF1"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Ijx-O0-598" secondAttribute="bottom" id="wuB-oe-Bud"/>
+                                                </constraints>
+                                            </scrollView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="9ak-tc-KfD" secondAttribute="trailing" id="GcP-p3-njo"/>
+                                            <constraint firstItem="bpq-ud-b25" firstAttribute="centerX" secondItem="8j4-UJ-rT9" secondAttribute="centerX" id="QVe-2y-m1g"/>
+                                            <constraint firstAttribute="bottom" secondItem="9ak-tc-KfD" secondAttribute="bottom" id="ZFk-9f-T32"/>
+                                            <constraint firstItem="9ak-tc-KfD" firstAttribute="top" secondItem="bpq-ud-b25" secondAttribute="bottom" constant="10" id="jLj-26-5mf"/>
+                                            <constraint firstItem="9ak-tc-KfD" firstAttribute="leading" secondItem="8j4-UJ-rT9" secondAttribute="leading" id="mM0-Dz-Dna"/>
+                                            <constraint firstItem="bpq-ud-b25" firstAttribute="top" secondItem="8j4-UJ-rT9" secondAttribute="top" constant="50" id="oC1-O7-dMy"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Baby Group" translatesAutoresizingMaskIntoConstraints="NO" id="DV8-qq-CBm">
+                                        <rect key="frame" x="40" y="0.0" width="255" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="E3E-jc-M9Q"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="DV8-qq-CBm" firstAttribute="top" secondItem="7hH-zS-yT7" secondAttribute="top" id="8SJ-H6-T1X"/>
+                                    <constraint firstItem="8j4-UJ-rT9" firstAttribute="leading" secondItem="7hH-zS-yT7" secondAttribute="leading" id="9Yt-8L-zS0"/>
+                                    <constraint firstAttribute="trailing" secondItem="8j4-UJ-rT9" secondAttribute="trailing" id="LKi-QS-DjI"/>
+                                    <constraint firstItem="8j4-UJ-rT9" firstAttribute="top" secondItem="7hH-zS-yT7" secondAttribute="top" constant="50" id="Wz0-zQ-sQc"/>
+                                    <constraint firstAttribute="trailing" secondItem="DV8-qq-CBm" secondAttribute="trailing" constant="40" id="aZv-25-lAS"/>
+                                    <constraint firstAttribute="bottom" secondItem="8j4-UJ-rT9" secondAttribute="bottom" id="fGh-lc-WMQ"/>
+                                    <constraint firstItem="DV8-qq-CBm" firstAttribute="leading" secondItem="7hH-zS-yT7" secondAttribute="leading" constant="40" id="zxX-sx-i8w"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="7hH-zS-yT7" firstAttribute="leading" secondItem="kkg-LX-jzF" secondAttribute="leading" constant="20" id="1ve-5B-iZ9"/>
                             <constraint firstAttribute="trailing" secondItem="XlZ-ms-ZKm" secondAttribute="trailing" id="5Wv-5e-uqp"/>
                             <constraint firstItem="XlZ-ms-ZKm" firstAttribute="height" secondItem="kkg-LX-jzF" secondAttribute="height" multiplier="0.3" id="Fs5-t4-gFO"/>
+                            <constraint firstAttribute="trailing" secondItem="7hH-zS-yT7" secondAttribute="trailing" constant="20" id="GcC-v2-OIY"/>
+                            <constraint firstAttribute="bottom" secondItem="7hH-zS-yT7" secondAttribute="bottom" constant="20" id="VlT-4g-y7C"/>
                             <constraint firstItem="XlZ-ms-ZKm" firstAttribute="leading" secondItem="kkg-LX-jzF" secondAttribute="leading" id="a6B-BB-msg"/>
                             <constraint firstItem="XlZ-ms-ZKm" firstAttribute="top" secondItem="kkg-LX-jzF" secondAttribute="top" id="g9D-bv-VPb"/>
+                            <constraint firstItem="7hH-zS-yT7" firstAttribute="top" secondItem="kkg-LX-jzF" secondAttribute="top" constant="80" id="tOC-5X-r2A"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -1439,11 +1656,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cuW-0l-MBd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2494" y="7825"/>
+            <point key="canvasLocation" x="2493.5999999999999" y="7824.7376311844082"/>
         </scene>
     </scenes>
     <resources>
         <image name="Almuerzo1Img" width="375" height="145"/>
+        <image name="Baby Group" width="124" height="126"/>
         <image name="Back Arrow" width="6" height="11"/>
         <image name="Cena1Img" width="375" height="145"/>
         <image name="Circle Baby" width="102" height="102"/>
@@ -1457,6 +1675,7 @@
         <image name="Lista Nutricion" width="25" height="30"/>
         <image name="Open Menu" width="18" height="12"/>
         <image name="Orange Separator" width="180" height="2"/>
+        <image name="Perfil Separator" width="180" height="2"/>
         <image name="Receta Shadow" width="375" height="145"/>
     </resources>
 </document>
