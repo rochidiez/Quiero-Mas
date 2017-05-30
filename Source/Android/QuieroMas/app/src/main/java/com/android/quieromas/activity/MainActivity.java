@@ -2,27 +2,27 @@ package com.android.quieromas.activity;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.android.quieromas.R;
+import com.android.quieromas.fragment.FavoriteRecipesFragment;
 import com.android.quieromas.fragment.HomeFragment;
+import com.android.quieromas.fragment.LactationFragment;
 import com.android.quieromas.fragment.NutritionPlanFragment;
+import com.android.quieromas.model.DummyContent;
 
 public class MainActivity extends AuthActivity
-        implements NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnFragmentInteractionListener, NutritionPlanFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener,
+        HomeFragment.OnFragmentInteractionListener, NutritionPlanFragment.OnFragmentInteractionListener, LactationFragment.OnFragmentInteractionListener, FavoriteRecipesFragment.OnListFragmentInteractionListener {
 
     private static final String TAG = "MainActivity";
 
@@ -55,6 +55,9 @@ public class MainActivity extends AuthActivity
         }
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.main_content, fragment).commit();
+
+        //setStatusBarTranslucent(true);
+        //getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
     @Override
@@ -99,11 +102,13 @@ public class MainActivity extends AuthActivity
 //
 //        } else if (id == R.id.nav_nutrition) {
 //
-//        } else if (id == R.id.nav_lactancy) {
+        } else if (id == R.id.nav_lactancy) {
+            fragmentClass = LactationFragment.class;
 //
 //        } else if (id == R.id.nav_shopping_list) {
 //
-//        } else if (id == R.id.nav_favorites) {
+        } else if (id == R.id.nav_favorites) {
+            fragmentClass = FavoriteRecipesFragment.class;
 //
 //        } else if (id == R.id.nav_about) {
 //
@@ -134,6 +139,11 @@ public class MainActivity extends AuthActivity
 
     @Override
     public void onFragmentInteraction(Uri uri){
+        Log.w(TAG, "Hello");
+    }
+
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem di){
         Log.w(TAG, "Hello");
     }
 }

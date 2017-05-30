@@ -4,63 +4,62 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
-import android.widget.LinearLayout;
 
 import com.android.quieromas.R;
 import com.android.quieromas.adapter.QuieroMasExpandableListAdapter;
+import com.android.quieromas.model.ExpandableListGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link HomeFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link HomeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class HomeFragment extends Fragment {
+import java.util.ArrayList;
+
+
+public class LactationFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+    ExpandableListView expandableListView;
+    ArrayList<ExpandableListGroup> groups;
 
-    private LinearLayout lactationView;
-
-    public HomeFragment() {
+    public LactationFragment() {
         // Required empty public constructor
     }
-
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        getData();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.fragment_lactation, container, false);
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        lactationView = (LinearLayout) view.findViewById(R.id.view_lactancia_home);
+        expandableListView = (ExpandableListView) view.findViewById(R.id.lactation_exp_listView);
+        expandableListView.setAdapter(new QuieroMasExpandableListAdapter(this.getActivity(),groups));
+        //expandableListView.setGroupIndicator(null);
 
-        lactationView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.main_content, new LactationFragment());
-                ft.commit();
-            }
-        });
+    }
 
+    public void getData() {
+//        for (int j = 0; j < 5; j++) {
+//            ExpandableListGroup group = new ExpandableListGroup("Test " + j);
+//            for (int i = 0; i < 5; i++) {
+//                group.children.add("Sub Item" + i);
+//            }
+//            groups.add(group);
+//        }
     }
 
     @Override
@@ -80,18 +79,10 @@ public class HomeFragment extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 }
+
+
