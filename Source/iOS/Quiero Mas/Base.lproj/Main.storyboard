@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -108,7 +109,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYh-5y-lWp">
-                                            <rect key="frame" x="67" y="15" width="303" height="15"/>
+                                            <rect key="frame" x="67" y="14.5" width="303" height="15"/>
                                             <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="15"/>
                                             <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -135,6 +136,9 @@
                             <outlet property="delegate" destination="ChA-pQ-5qX" id="CNT-b4-sc5"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="orangeHeader" destination="8Kx-Sp-L1z" id="0EF-yU-Ems"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0T-6l-2mn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -582,6 +586,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="orangeHeader" destination="x0p-T4-sCd" id="M7F-r9-waA"/>
                         <outlet property="revealMenuButton" destination="eGC-8j-J2Y" id="tzv-h9-thV"/>
                     </connections>
                 </viewController>
@@ -994,63 +999,210 @@
             </objects>
             <point key="canvasLocation" x="1598" y="2967"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Menu Navigation Controller-->
         <scene sceneID="e8A-Dc-y3e">
             <objects>
-                <navigationController storyboardIdentifier="TodasNav" id="2wX-gS-S2E" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TodasNav" id="2wX-gS-S2E" customClass="MenuNavigationController" customModule="Quiero_Mas" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hU6-b1-cIB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="qmO-Uf-5wB" kind="relationship" relationship="rootViewController" id="yO7-mb-6sn"/>
+                        <segue destination="q2P-dF-rxW" kind="relationship" relationship="rootViewController" id="gSG-9r-WHw"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hik-Wj-bp7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1598" y="3672"/>
         </scene>
-        <!--Todas View Controller-->
-        <scene sceneID="CnF-0x-Mt8">
+        <!--Todas las recetas-->
+        <scene sceneID="Bz0-hA-6xd">
             <objects>
-                <viewController id="qmO-Uf-5wB" customClass="TodasViewController" customModule="Quiero_Mas" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="x7L-V6-97O"/>
-                        <viewControllerLayoutGuide type="bottom" id="eb0-YW-anB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Uwj-dS-zvB">
+                <tableViewController id="q2P-dF-rxW" customClass="TodasTableViewController" customModule="Quiero_Mas" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="svA-n2-w1p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todas las recetas" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIE-XE-gZv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ZIE-XE-gZv" firstAttribute="top" secondItem="Uwj-dS-zvB" secondAttribute="top" id="6FQ-5D-wGd"/>
-                            <constraint firstAttribute="trailing" secondItem="ZIE-XE-gZv" secondAttribute="trailing" id="S3f-3X-DuA"/>
-                            <constraint firstAttribute="bottom" secondItem="ZIE-XE-gZv" secondAttribute="bottom" id="a7P-G4-jPn"/>
-                            <constraint firstItem="ZIE-XE-gZv" firstAttribute="leading" secondItem="Uwj-dS-zvB" secondAttribute="leading" id="lh7-ZX-rwc"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="h60-X3-t62">
-                        <barButtonItem key="leftBarButtonItem" image="Open Menu" id="2f1-0h-q4k">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="w5V-G0-Wnt">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buscá la receta que más te haya gustado" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbW-LF-xUx">
+                                    <rect key="frame" x="20" y="20" width="335" height="36"/>
+                                    <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Search Todas" translatesAutoresizingMaskIntoConstraints="NO" id="3bC-nD-6Mu">
+                                    <rect key="frame" x="20" y="70" width="14" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="Jwn-Mw-K49"/>
+                                    </constraints>
+                                </imageView>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ej: Puré de naranja" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OFu-su-7YO">
+                                    <rect key="frame" x="44" y="71" width="311" height="15"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="15"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line Todas" translatesAutoresizingMaskIntoConstraints="NO" id="sqr-FH-dX1">
+                                    <rect key="frame" x="20" y="96" width="335" height="1"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Que contenga" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmL-hT-HEK">
+                                    <rect key="frame" x="20" y="117" width="335" height="18"/>
+                                    <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pot Todas" translatesAutoresizingMaskIntoConstraints="NO" id="xaZ-2n-S4z">
+                                    <rect key="frame" x="20" y="147" width="16" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="Fji-ak-hEW"/>
+                                    </constraints>
+                                </imageView>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Selecciona un ingrediente" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JQq-KR-hGo">
+                                    <rect key="frame" x="46" y="150" width="309" height="15"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="15"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line Todas" translatesAutoresizingMaskIntoConstraints="NO" id="Rvu-tq-SnU">
+                                    <rect key="frame" x="20" y="177" width="335" height="1"/>
+                                </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ySc-VC-97W" userLabel="Buscar View">
+                                    <rect key="frame" x="20" y="198" width="335" height="40"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1p-SJ-Bd6">
+                                            <rect key="frame" x="1" y="1" width="333" height="38"/>
+                                            <color key="backgroundColor" red="1" green="0.57647058819999997" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="18"/>
+                                            <state key="normal" title="Buscar">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="j1p-SJ-Bd6" firstAttribute="leading" secondItem="ySc-VC-97W" secondAttribute="leading" constant="1" id="5uV-Hz-kH9"/>
+                                        <constraint firstAttribute="height" constant="40" id="AlZ-g1-O6w"/>
+                                        <constraint firstAttribute="bottom" secondItem="j1p-SJ-Bd6" secondAttribute="bottom" constant="1" id="Bha-Wq-3gk"/>
+                                        <constraint firstItem="j1p-SJ-Bd6" firstAttribute="top" secondItem="ySc-VC-97W" secondAttribute="top" constant="1" id="lcb-h2-UTE"/>
+                                        <constraint firstAttribute="trailing" secondItem="j1p-SJ-Bd6" secondAttribute="trailing" constant="1" id="zsq-o2-kgR"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZM-wl-QVK" userLabel="Todas View">
+                                    <rect key="frame" x="0.0" y="240" width="375" height="80"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TODAS LAS RECETAS" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2D-xZ-GSg">
+                                            <rect key="frame" x="20" y="0.0" width="355" height="80"/>
+                                            <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="N2D-xZ-GSg" firstAttribute="top" secondItem="kZM-wl-QVK" secondAttribute="top" id="NlY-v9-BhZ"/>
+                                        <constraint firstAttribute="height" constant="80" id="fHp-d3-hz7"/>
+                                        <constraint firstItem="N2D-xZ-GSg" firstAttribute="leading" secondItem="kZM-wl-QVK" secondAttribute="leading" constant="20" id="fRS-Wd-Ysl"/>
+                                        <constraint firstAttribute="bottom" secondItem="N2D-xZ-GSg" secondAttribute="bottom" id="sc8-GA-4ep"/>
+                                        <constraint firstAttribute="trailing" secondItem="N2D-xZ-GSg" secondAttribute="trailing" id="x6l-dL-LzS"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="0.57647058819999997" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="3bC-nD-6Mu" firstAttribute="leading" secondItem="lbW-LF-xUx" secondAttribute="leading" id="0ob-Oi-omu"/>
+                                <constraint firstItem="OFu-su-7YO" firstAttribute="leading" secondItem="3bC-nD-6Mu" secondAttribute="trailing" constant="10" id="0s4-SA-sFO"/>
+                                <constraint firstAttribute="bottom" secondItem="kZM-wl-QVK" secondAttribute="bottom" id="1Ty-sH-iCh"/>
+                                <constraint firstAttribute="trailing" secondItem="JQq-KR-hGo" secondAttribute="trailing" constant="20" id="2un-HO-bWN"/>
+                                <constraint firstAttribute="trailing" secondItem="ySc-VC-97W" secondAttribute="trailing" constant="20" id="38w-Da-Eqn"/>
+                                <constraint firstItem="Rvu-tq-SnU" firstAttribute="leading" secondItem="lbW-LF-xUx" secondAttribute="leading" id="3uW-uv-q5x"/>
+                                <constraint firstItem="sqr-FH-dX1" firstAttribute="top" secondItem="OFu-su-7YO" secondAttribute="bottom" constant="10" id="99I-4o-RIs"/>
+                                <constraint firstItem="JQq-KR-hGo" firstAttribute="leading" secondItem="xaZ-2n-S4z" secondAttribute="trailing" constant="10" id="A8f-jH-4gc"/>
+                                <constraint firstAttribute="trailing" secondItem="kZM-wl-QVK" secondAttribute="trailing" id="Bar-83-bmt"/>
+                                <constraint firstAttribute="trailing" secondItem="OFu-su-7YO" secondAttribute="trailing" constant="20" id="FAO-io-KrI"/>
+                                <constraint firstItem="xaZ-2n-S4z" firstAttribute="top" secondItem="rmL-hT-HEK" secondAttribute="bottom" constant="12" id="Hbu-Jo-RTY"/>
+                                <constraint firstItem="OFu-su-7YO" firstAttribute="top" secondItem="lbW-LF-xUx" secondAttribute="bottom" constant="15" id="KPN-VR-TMI"/>
+                                <constraint firstItem="ySc-VC-97W" firstAttribute="top" secondItem="Rvu-tq-SnU" secondAttribute="bottom" constant="20" id="LYf-ih-vE1"/>
+                                <constraint firstItem="kZM-wl-QVK" firstAttribute="leading" secondItem="w5V-G0-Wnt" secondAttribute="leading" id="Nz5-Xb-CEE"/>
+                                <constraint firstItem="JQq-KR-hGo" firstAttribute="top" secondItem="rmL-hT-HEK" secondAttribute="bottom" constant="15" id="PMk-vZ-spk"/>
+                                <constraint firstItem="lbW-LF-xUx" firstAttribute="leading" secondItem="w5V-G0-Wnt" secondAttribute="leading" constant="20" id="Rvq-cS-bdN"/>
+                                <constraint firstItem="sqr-FH-dX1" firstAttribute="trailing" secondItem="lbW-LF-xUx" secondAttribute="trailing" id="Xk8-2Q-ybc"/>
+                                <constraint firstItem="xaZ-2n-S4z" firstAttribute="leading" secondItem="lbW-LF-xUx" secondAttribute="leading" id="Yeo-kI-qQA"/>
+                                <constraint firstItem="lbW-LF-xUx" firstAttribute="top" secondItem="w5V-G0-Wnt" secondAttribute="top" constant="20" id="dfK-CM-jwH"/>
+                                <constraint firstItem="rmL-hT-HEK" firstAttribute="top" secondItem="sqr-FH-dX1" secondAttribute="bottom" constant="20" id="fFJ-JH-KX8"/>
+                                <constraint firstItem="Rvu-tq-SnU" firstAttribute="trailing" secondItem="lbW-LF-xUx" secondAttribute="trailing" id="ju5-bm-6qP"/>
+                                <constraint firstItem="3bC-nD-6Mu" firstAttribute="top" secondItem="lbW-LF-xUx" secondAttribute="bottom" constant="14" id="mPw-UT-4Lj"/>
+                                <constraint firstItem="ySc-VC-97W" firstAttribute="leading" secondItem="w5V-G0-Wnt" secondAttribute="leading" constant="20" id="qud-vM-wdH"/>
+                                <constraint firstItem="sqr-FH-dX1" firstAttribute="leading" secondItem="lbW-LF-xUx" secondAttribute="leading" id="sc4-Sy-kfK"/>
+                                <constraint firstItem="rmL-hT-HEK" firstAttribute="leading" secondItem="lbW-LF-xUx" secondAttribute="leading" id="txM-dQ-1iQ"/>
+                                <constraint firstItem="rmL-hT-HEK" firstAttribute="trailing" secondItem="lbW-LF-xUx" secondAttribute="trailing" id="vKF-T1-TXH"/>
+                                <constraint firstAttribute="trailing" secondItem="lbW-LF-xUx" secondAttribute="trailing" constant="20" id="wYg-RU-5Xx"/>
+                                <constraint firstItem="Rvu-tq-SnU" firstAttribute="top" secondItem="xaZ-2n-S4z" secondAttribute="bottom" constant="10" id="xqt-3N-MhM"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodasTableViewCell" id="ZBp-hA-VXl" customClass="TodasTableViewCell" customModule="Quiero_Mas" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="348" width="375" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZBp-hA-VXl" id="Ay5-wC-X94">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Almuerzo1Img" translatesAutoresizingMaskIntoConstraints="NO" id="KuW-gh-hyP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Receta Shadow" translatesAutoresizingMaskIntoConstraints="NO" id="C6K-xd-aZA">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PURÉ DE NARANJA" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5w7-nq-COp">
+                                            <rect key="frame" x="20" y="111.5" width="335" height="18"/>
+                                            <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="18"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dx-GH-Koz">
+                                            <rect key="frame" x="322" y="28" width="25" height="28"/>
+                                            <state key="normal" image="Favorito Lleno"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="5w7-nq-COp" secondAttribute="bottom" constant="20" id="5g0-HQ-bqx"/>
+                                        <constraint firstItem="C6K-xd-aZA" firstAttribute="top" secondItem="Ay5-wC-X94" secondAttribute="top" id="9XT-KV-GPR"/>
+                                        <constraint firstItem="C6K-xd-aZA" firstAttribute="leading" secondItem="Ay5-wC-X94" secondAttribute="leading" id="Bs4-zH-ThR"/>
+                                        <constraint firstItem="9dx-GH-Koz" firstAttribute="top" secondItem="Ay5-wC-X94" secondAttribute="topMargin" constant="20" id="EAf-ND-EdZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="C6K-xd-aZA" secondAttribute="trailing" id="KoH-Vu-4ug"/>
+                                        <constraint firstItem="KuW-gh-hyP" firstAttribute="top" secondItem="Ay5-wC-X94" secondAttribute="top" id="M5G-Lh-WZE"/>
+                                        <constraint firstAttribute="trailing" secondItem="KuW-gh-hyP" secondAttribute="trailing" id="YLw-rT-tSw"/>
+                                        <constraint firstAttribute="bottom" secondItem="KuW-gh-hyP" secondAttribute="bottom" id="iv4-LD-R8J"/>
+                                        <constraint firstAttribute="bottom" secondItem="C6K-xd-aZA" secondAttribute="bottom" id="l1W-Bb-hpK"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="9dx-GH-Koz" secondAttribute="trailing" constant="20" id="lnv-G6-ovD"/>
+                                        <constraint firstItem="5w7-nq-COp" firstAttribute="leading" secondItem="Ay5-wC-X94" secondAttribute="leading" constant="20" id="rK5-bm-veD"/>
+                                        <constraint firstItem="KuW-gh-hyP" firstAttribute="leading" secondItem="Ay5-wC-X94" secondAttribute="leading" id="t8U-SK-IbY"/>
+                                        <constraint firstAttribute="trailing" secondItem="5w7-nq-COp" secondAttribute="trailing" constant="20" id="xLN-mz-6ro"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="q2P-dF-rxW" id="sFC-B5-Yjw"/>
+                            <outlet property="delegate" destination="q2P-dF-rxW" id="C1f-JX-ll9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Todas las recetas" id="MrE-Pw-jb6">
+                        <barButtonItem key="leftBarButtonItem" image="Open Menu" id="ILq-5N-pUY">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="revealMenuButton" destination="2f1-0h-q4k" id="rG1-uF-Shr"/>
+                        <outlet property="orangeView" destination="w5V-G0-Wnt" id="azI-Md-Guf"/>
+                        <outlet property="revealMenuButton" destination="ILq-5N-pUY" id="8dj-6v-k4K"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u9W-lp-qE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JR7-CY-9MN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2494" y="3672"/>
+            <point key="canvasLocation" x="2493.5999999999999" y="3671.5142428785612"/>
         </scene>
         <!--Lactancia View Controller-->
         <scene sceneID="ZGm-Bf-GIw">
@@ -1440,110 +1592,89 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vanina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9au-bF-zhQ">
-                                                                <rect key="frame" x="146" y="42" width="44" height="14"/>
-                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="14"/>
+                                                                <rect key="frame" x="144" y="42" width="47" height="15"/>
+                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Perfil Separator" translatesAutoresizingMaskIntoConstraints="NO" id="ErL-bz-IK5">
-                                                                <rect key="frame" x="77" y="66" width="180" height="2"/>
+                                                                <rect key="frame" x="77" y="67" width="180" height="2"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TU EMAIL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKQ-PA-nne">
-                                                                <rect key="frame" x="141" y="88" width="52.5" height="12"/>
+                                                                <rect key="frame" x="141" y="89" width="52.5" height="12"/>
                                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="12"/>
                                                                 <color key="textColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vani@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZL-hB-48r">
-                                                                <rect key="frame" x="113" y="110" width="109.5" height="14"/>
-                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="14"/>
+                                                                <rect key="frame" x="109" y="111" width="117" height="15"/>
+                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Perfil Separator" translatesAutoresizingMaskIntoConstraints="NO" id="u7H-hq-qLy">
-                                                                <rect key="frame" x="77" y="134" width="180" height="2"/>
+                                                                <rect key="frame" x="77" y="136" width="180" height="2"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TU FECHA DE NACIMIENTO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QB7-Ng-JMm">
-                                                                <rect key="frame" x="92" y="156" width="150.5" height="12"/>
+                                                                <rect key="frame" x="92" y="158" width="150.5" height="12"/>
                                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="12"/>
                                                                 <color key="textColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29/10/1980" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iF0-Cq-YnM">
-                                                                <rect key="frame" x="128" y="178" width="80" height="14"/>
-                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="14"/>
+                                                                <rect key="frame" x="125.5" y="180" width="85.5" height="15"/>
+                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Perfil Separator" translatesAutoresizingMaskIntoConstraints="NO" id="PhI-TJ-c1x">
-                                                                <rect key="frame" x="77.5" y="202" width="180" height="2"/>
+                                                                <rect key="frame" x="77.5" y="205" width="180" height="2"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EL NOMBRE DE TU BEBÉ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79p-Ym-iMU">
-                                                                <rect key="frame" x="101" y="224" width="133.5" height="12"/>
+                                                                <rect key="frame" x="101.5" y="227" width="133.5" height="12"/>
                                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="12"/>
                                                                 <color key="textColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Josefina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHe-Qp-Q3g">
-                                                                <rect key="frame" x="140.5" y="246" width="53" height="14"/>
-                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="14"/>
+                                                                <rect key="frame" x="138.5" y="249" width="57" height="15"/>
+                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Perfil Separator" translatesAutoresizingMaskIntoConstraints="NO" id="jvf-vw-3gO">
-                                                                <rect key="frame" x="78" y="270" width="180" height="2"/>
+                                                                <rect key="frame" x="78" y="274" width="180" height="2"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿CÓMO LE DICEN?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEK-kp-4cR">
-                                                                <rect key="frame" x="116" y="292" width="103" height="12"/>
+                                                                <rect key="frame" x="116" y="296" width="103" height="12"/>
                                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="12"/>
                                                                 <color key="textColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsM-a9-v42">
-                                                                <rect key="frame" x="153.5" y="314" width="28.5" height="14"/>
-                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="14"/>
+                                                                <rect key="frame" x="153" y="318" width="30.5" height="15"/>
+                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Perfil Separator" translatesAutoresizingMaskIntoConstraints="NO" id="597-Za-fTR">
-                                                                <rect key="frame" x="78" y="338" width="180" height="2"/>
+                                                                <rect key="frame" x="78" y="343" width="180" height="2"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FECHA DE NACIMIENTO DE TU BEBÉ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RZ-62-7Dy">
-                                                                <rect key="frame" x="67.5" y="360" width="200.5" height="12"/>
+                                                                <rect key="frame" x="68" y="365" width="200.5" height="12"/>
                                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="12"/>
                                                                 <color key="textColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/03/2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfU-WK-aRI">
-                                                                <rect key="frame" x="127.5" y="382" width="80.5" height="14"/>
-                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="14"/>
+                                                                <rect key="frame" x="125" y="387" width="86.5" height="15"/>
+                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Perfil Separator" translatesAutoresizingMaskIntoConstraints="NO" id="VR1-6K-KR4">
-                                                                <rect key="frame" x="77" y="406" width="180" height="2"/>
+                                                                <rect key="frame" x="77" y="412" width="180" height="2"/>
                                                             </imageView>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5k-e1-nuH">
-                                                                <rect key="frame" x="20" y="448" width="295" height="40"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKy-ox-hZR">
-                                                                        <rect key="frame" x="1" y="1" width="293" height="38"/>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                        <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="17"/>
-                                                                        <state key="normal" title="Editar">
-                                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                                        </state>
-                                                                    </button>
-                                                                </subviews>
-                                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <constraints>
-                                                                    <constraint firstItem="IKy-ox-hZR" firstAttribute="leading" secondItem="i5k-e1-nuH" secondAttribute="leading" constant="1" id="24t-wG-Udo"/>
-                                                                    <constraint firstItem="IKy-ox-hZR" firstAttribute="top" secondItem="i5k-e1-nuH" secondAttribute="top" constant="1" id="EdV-sR-kTx"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="IKy-ox-hZR" secondAttribute="trailing" constant="1" id="I2a-gw-GOp"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="IKy-ox-hZR" secondAttribute="bottom" constant="1" id="Kce-Z5-s0h"/>
-                                                                    <constraint firstAttribute="height" constant="40" id="TNs-qR-dYA"/>
-                                                                </constraints>
-                                                            </view>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -1554,7 +1685,6 @@
                                                             <constraint firstItem="9PR-DZ-kTU" firstAttribute="top" secondItem="Ijx-O0-598" secondAttribute="top" constant="20" id="3GK-ae-O1y"/>
                                                             <constraint firstItem="WEK-kp-4cR" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="5R9-Pz-u49"/>
                                                             <constraint firstItem="hsM-a9-v42" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="6G3-Py-wKJ"/>
-                                                            <constraint firstItem="i5k-e1-nuH" firstAttribute="top" secondItem="VR1-6K-KR4" secondAttribute="bottom" constant="40" id="6Ra-mH-doH"/>
                                                             <constraint firstItem="VR1-6K-KR4" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="AuG-FJ-N0W"/>
                                                             <constraint firstItem="iKQ-PA-nne" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="C1S-le-MdV"/>
                                                             <constraint firstItem="9au-bF-zhQ" firstAttribute="top" secondItem="9PR-DZ-kTU" secondAttribute="bottom" constant="10" id="GHA-GE-kIe"/>
@@ -1580,13 +1710,11 @@
                                                             <constraint firstItem="ErL-bz-IK5" firstAttribute="top" secondItem="9au-bF-zhQ" secondAttribute="bottom" constant="10" id="l30-Ck-zSx"/>
                                                             <constraint firstItem="u7H-hq-qLy" firstAttribute="top" secondItem="wZL-hB-48r" secondAttribute="bottom" constant="10" id="lNT-4g-ADE"/>
                                                             <constraint firstItem="PhI-TJ-c1x" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="lfY-du-mR4"/>
-                                                            <constraint firstAttribute="trailing" secondItem="i5k-e1-nuH" secondAttribute="trailing" constant="20" id="stU-5w-oXV"/>
                                                             <constraint firstItem="79p-Ym-iMU" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="tBL-50-pkJ"/>
                                                             <constraint firstItem="79p-Ym-iMU" firstAttribute="top" secondItem="PhI-TJ-c1x" secondAttribute="bottom" constant="20" id="tVy-my-08D"/>
                                                             <constraint firstItem="iKQ-PA-nne" firstAttribute="top" secondItem="ErL-bz-IK5" secondAttribute="bottom" constant="20" id="udL-ag-vzN"/>
                                                             <constraint firstItem="wZL-hB-48r" firstAttribute="centerX" secondItem="Ijx-O0-598" secondAttribute="centerX" id="urJ-xk-fyD"/>
                                                             <constraint firstItem="iF0-Cq-YnM" firstAttribute="top" secondItem="QB7-Ng-JMm" secondAttribute="bottom" constant="10" id="yHe-bV-gVc"/>
-                                                            <constraint firstItem="i5k-e1-nuH" firstAttribute="leading" secondItem="Ijx-O0-598" secondAttribute="leading" constant="20" id="ykQ-vs-50n"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -1627,15 +1755,39 @@
                                     <constraint firstItem="DV8-qq-CBm" firstAttribute="leading" secondItem="7hH-zS-yT7" secondAttribute="leading" constant="40" id="zxX-sx-i8w"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5k-e1-nuH" userLabel="Editar View">
+                                <rect key="frame" x="20" y="607" width="335" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKy-ox-hZR">
+                                        <rect key="frame" x="1" y="1" width="333" height="38"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="17"/>
+                                        <state key="normal" title="Editar">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="IKy-ox-hZR" firstAttribute="leading" secondItem="i5k-e1-nuH" secondAttribute="leading" constant="1" id="24t-wG-Udo"/>
+                                    <constraint firstItem="IKy-ox-hZR" firstAttribute="top" secondItem="i5k-e1-nuH" secondAttribute="top" constant="1" id="EdV-sR-kTx"/>
+                                    <constraint firstAttribute="trailing" secondItem="IKy-ox-hZR" secondAttribute="trailing" constant="1" id="I2a-gw-GOp"/>
+                                    <constraint firstAttribute="bottom" secondItem="IKy-ox-hZR" secondAttribute="bottom" constant="1" id="Kce-Z5-s0h"/>
+                                    <constraint firstAttribute="height" constant="40" id="TNs-qR-dYA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7hH-zS-yT7" firstAttribute="leading" secondItem="kkg-LX-jzF" secondAttribute="leading" constant="20" id="1ve-5B-iZ9"/>
                             <constraint firstAttribute="trailing" secondItem="XlZ-ms-ZKm" secondAttribute="trailing" id="5Wv-5e-uqp"/>
+                            <constraint firstAttribute="bottom" secondItem="i5k-e1-nuH" secondAttribute="bottom" constant="20" id="9qg-eq-fCh"/>
                             <constraint firstItem="XlZ-ms-ZKm" firstAttribute="height" secondItem="kkg-LX-jzF" secondAttribute="height" multiplier="0.3" id="Fs5-t4-gFO"/>
                             <constraint firstAttribute="trailing" secondItem="7hH-zS-yT7" secondAttribute="trailing" constant="20" id="GcC-v2-OIY"/>
+                            <constraint firstAttribute="trailing" secondItem="i5k-e1-nuH" secondAttribute="trailing" constant="20" id="UFo-Uv-p2j"/>
                             <constraint firstAttribute="bottom" secondItem="7hH-zS-yT7" secondAttribute="bottom" constant="20" id="VlT-4g-y7C"/>
                             <constraint firstItem="XlZ-ms-ZKm" firstAttribute="leading" secondItem="kkg-LX-jzF" secondAttribute="leading" id="a6B-BB-msg"/>
+                            <constraint firstItem="i5k-e1-nuH" firstAttribute="leading" secondItem="kkg-LX-jzF" secondAttribute="leading" constant="20" id="foQ-vO-lvY"/>
                             <constraint firstItem="XlZ-ms-ZKm" firstAttribute="top" secondItem="kkg-LX-jzF" secondAttribute="top" id="g9D-bv-VPb"/>
                             <constraint firstItem="7hH-zS-yT7" firstAttribute="top" secondItem="kkg-LX-jzF" secondAttribute="top" constant="80" id="tOC-5X-r2A"/>
                         </constraints>
@@ -1651,6 +1803,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="orangeHeader" destination="XlZ-ms-ZKm" id="tgd-8Q-1We"/>
                         <outlet property="revealMenuButton" destination="zST-8w-Lt9" id="YE1-dH-VmK"/>
                     </connections>
                 </viewController>
@@ -1666,16 +1819,20 @@
         <image name="Cena1Img" width="375" height="145"/>
         <image name="Circle Baby" width="102" height="102"/>
         <image name="Circle Oval" width="104" height="104"/>
+        <image name="Favorito Lleno" width="25" height="28"/>
         <image name="Forward Arrow" width="6" height="11"/>
         <image name="Home Abc" width="36" height="37"/>
         <image name="Home Baby" width="375" height="366"/>
         <image name="Home Educacion" width="31" height="36"/>
         <image name="Home Lactancia" width="38" height="35"/>
         <image name="Home Nutricion" width="30" height="36"/>
+        <image name="Line Todas" width="330" height="1"/>
         <image name="Lista Nutricion" width="25" height="30"/>
         <image name="Open Menu" width="18" height="12"/>
         <image name="Orange Separator" width="180" height="2"/>
         <image name="Perfil Separator" width="180" height="2"/>
+        <image name="Pot Todas" width="16" height="13"/>
         <image name="Receta Shadow" width="375" height="145"/>
+        <image name="Search Todas" width="14" height="14"/>
     </resources>
 </document>

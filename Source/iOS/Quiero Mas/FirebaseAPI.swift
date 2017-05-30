@@ -13,7 +13,7 @@ import Firebase
 import FirebaseStorage
 
 let localesStoredOrUpdatedKey = "localesStoredOrUpdatedKey"
-
+let appMainColor = UIColor(red: 255/255, green: 147/255, blue: 96/255, alpha: 1.0)
 
 class FirebaseAPI: NSObject {
     

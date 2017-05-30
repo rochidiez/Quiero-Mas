@@ -11,17 +11,22 @@ import UIKit
 class MenuTableViewController: UITableViewController {
     
     @IBOutlet weak var revealMenuButton: UIBarButtonItem!
+    @IBOutlet weak var orangeHeader: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setTableView()
+        setAppMainColor()
     }
     
     func setTableView() {
-        if DeviceType.IS_IPHONE_5 {
-            tableView.isScrollEnabled = true
-        }
+        if DeviceType.IS_IPHONE_5 {tableView.isScrollEnabled = true}
+    }
+    
+    func setAppMainColor() {
+        tableView.backgroundColor = appMainColor
+        orangeHeader.backgroundColor = appMainColor
     }
 
     func setRevealMenuButton() {

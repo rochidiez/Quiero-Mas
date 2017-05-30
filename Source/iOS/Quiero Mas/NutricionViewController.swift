@@ -12,16 +12,17 @@ import SWRevealViewController
 class NutricionViewController: UIViewController {
 
     @IBOutlet weak var revealMenuButton: UIBarButtonItem!
+    @IBOutlet weak var orangeHeader: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setRevealMenuButton()
+        setAppMainColor()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setAppMainColor() {
+        orangeHeader.backgroundColor = appMainColor
     }
 
     func setRevealMenuButton() {

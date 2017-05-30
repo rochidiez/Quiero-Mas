@@ -31,7 +31,7 @@
 		C1523FAD1EC0339F0047B195 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1523FAC1EC0339F0047B195 /* GoogleService-Info.plist */; };
 		C18F22E71E887D24006E42DB /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F22E61E887D24006E42DB /* MenuTableViewController.swift */; };
 		C18F22EA1E88834C006E42DB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F22E91E88834C006E42DB /* HomeViewController.swift */; };
-		C19425951ECA21A80092C6F6 /* TodasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19425941ECA21A80092C6F6 /* TodasViewController.swift */; };
+		C19425951ECA21A80092C6F6 /* TodasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19425941ECA21A80092C6F6 /* TodasTableViewController.swift */; };
 		C19425981ECA22F80092C6F6 /* ListaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19425971ECA22F80092C6F6 /* ListaViewController.swift */; };
 		C194259B1ECA23BE0092C6F6 /* FavoritasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C194259A1ECA23BE0092C6F6 /* FavoritasViewController.swift */; };
 		C194259E1ECA241E0092C6F6 /* SobreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C194259D1ECA241E0092C6F6 /* SobreViewController.swift */; };
@@ -43,6 +43,7 @@
 		C199D91A1E8877B0002255BA /* Quiero_Mas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C199D9181E8877B0002255BA /* Quiero_Mas.xcdatamodeld */; };
 		C199D91C1E8877B0002255BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C199D91B1E8877B0002255BA /* Assets.xcassets */; };
 		C199D91F1E8877B0002255BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C199D91D1E8877B0002255BA /* LaunchScreen.storyboard */; };
+		C1A6DB341EDCE91E006DB0B0 /* TodasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A6DB331EDCE91E006DB0B0 /* TodasTableViewCell.swift */; };
 		C1CA15301E9EAA1A0084A432 /* Cera-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C1CA152F1E9EAA1A0084A432 /* Cera-Bold.ttf */; };
 		C1D1CEA51EADDA3900EA14C8 /* EmailViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1CEA41EADDA3900EA14C8 /* EmailViewcontroller.swift */; };
 		C1D1CEA71EADE58200EA14C8 /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1CEA61EADE58200EA14C8 /* ForgotPassViewController.swift */; };
@@ -80,7 +81,7 @@
 		C1523FAC1EC0339F0047B195 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C18F22E61E887D24006E42DB /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		C18F22E91E88834C006E42DB /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		C19425941ECA21A80092C6F6 /* TodasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodasViewController.swift; sourceTree = "<group>"; };
+		C19425941ECA21A80092C6F6 /* TodasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodasTableViewController.swift; sourceTree = "<group>"; };
 		C19425971ECA22F80092C6F6 /* ListaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaViewController.swift; sourceTree = "<group>"; };
 		C194259A1ECA23BE0092C6F6 /* FavoritasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritasViewController.swift; sourceTree = "<group>"; };
 		C194259D1ECA241E0092C6F6 /* SobreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SobreViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +95,7 @@
 		C199D91B1E8877B0002255BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C199D91E1E8877B0002255BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C199D9201E8877B0002255BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1A6DB331EDCE91E006DB0B0 /* TodasTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodasTableViewCell.swift; sourceTree = "<group>"; };
 		C1CA152F1E9EAA1A0084A432 /* Cera-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cera-Bold.ttf"; sourceTree = "<group>"; };
 		C1D1CEA41EADDA3900EA14C8 /* EmailViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewcontroller.swift; sourceTree = "<group>"; };
 		C1D1CEA61EADE58200EA14C8 /* ForgotPassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
@@ -253,7 +255,8 @@
 		C19425931ECA218E0092C6F6 /* Todas las recetas */ = {
 			isa = PBXGroup;
 			children = (
-				C19425941ECA21A80092C6F6 /* TodasViewController.swift */,
+				C19425941ECA21A80092C6F6 /* TodasTableViewController.swift */,
+				C1A6DB331EDCE91E006DB0B0 /* TodasTableViewCell.swift */,
 			);
 			name = "Todas las recetas";
 			sourceTree = "<group>";
@@ -490,7 +493,7 @@
 				C109FDBE1EAA95E60067E86C /* LoginViewController.swift in Sources */,
 				C100953C1E9754B9001748E4 /* ABCNutricionViewController.swift in Sources */,
 				C19425A11ECA24A80092C6F6 /* RecomendarViewController.swift in Sources */,
-				C19425951ECA21A80092C6F6 /* TodasViewController.swift in Sources */,
+				C19425951ECA21A80092C6F6 /* TodasTableViewController.swift in Sources */,
 				C19425A41ECA253F0092C6F6 /* TerminosViewController.swift in Sources */,
 				C1D1CEA71EADE58200EA14C8 /* ForgotPassViewController.swift in Sources */,
 				C18F22EA1E88834C006E42DB /* HomeViewController.swift in Sources */,
@@ -503,6 +506,7 @@
 				C199D9141E8877B0002255BA /* ViewController.swift in Sources */,
 				C199D91A1E8877B0002255BA /* Quiero_Mas.xcdatamodeld in Sources */,
 				C194259E1ECA241E0092C6F6 /* SobreViewController.swift in Sources */,
+				C1A6DB341EDCE91E006DB0B0 /* TodasTableViewCell.swift in Sources */,
 				C1E5EB601EC7AAB4009B4894 /* BabyDataViewController.swift in Sources */,
 				C12A4AED1ED639C7005B0441 /* PerfilViewController.swift in Sources */,
 				C100951A1E9730D3001748E4 /* MenuNavigationController.swift in Sources */,
