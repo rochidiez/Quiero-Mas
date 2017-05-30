@@ -12,6 +12,7 @@ import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
 
 import com.android.quieromas.R;
+import com.android.quieromas.activity.MainActivity;
 import com.android.quieromas.adapter.QuieroMasExpandableListAdapter;
 
 /**
@@ -27,6 +28,7 @@ public class HomeFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     private LinearLayout lactationView;
+    private LinearLayout abcView;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -47,16 +49,34 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        ((MainActivity) getActivity()).setActionBarTitle("");
+    }
+
+    @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         lactationView = (LinearLayout) view.findViewById(R.id.view_lactancia_home);
+        abcView = (LinearLayout) view.findViewById(R.id.view_abc_home);
+
 
         lactationView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.main_content, new LactationFragment());
+                ft.commit();
+            }
+        });
+
+        abcView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.main_content, new AbcFragment(),"abc");
+                ft.addToBackStack("abc");
                 ft.commit();
             }
         });

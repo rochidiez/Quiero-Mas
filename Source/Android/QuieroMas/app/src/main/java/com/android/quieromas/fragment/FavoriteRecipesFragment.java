@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.android.quieromas.R;
+import com.android.quieromas.activity.MainActivity;
 import com.android.quieromas.adapter.MyFavoriteRecipesRecyclerViewAdapter;
 import com.android.quieromas.model.DummyContent;
 import com.android.quieromas.model.DummyContent.DummyItem;
@@ -53,6 +54,12 @@ public class FavoriteRecipesFragment extends Fragment {
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((MainActivity) getActivity()).setActionBarTitle("Recetas favoritas");
     }
 
     @Override

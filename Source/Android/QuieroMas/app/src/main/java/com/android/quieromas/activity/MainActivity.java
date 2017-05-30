@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.android.quieromas.R;
+import com.android.quieromas.fragment.AbcFragment;
 import com.android.quieromas.fragment.FavoriteRecipesFragment;
 import com.android.quieromas.fragment.HomeFragment;
 import com.android.quieromas.fragment.LactationFragment;
@@ -22,7 +23,9 @@ import com.android.quieromas.model.DummyContent;
 
 public class MainActivity extends AuthActivity
         implements NavigationView.OnNavigationItemSelectedListener,
-        HomeFragment.OnFragmentInteractionListener, NutritionPlanFragment.OnFragmentInteractionListener, LactationFragment.OnFragmentInteractionListener, FavoriteRecipesFragment.OnListFragmentInteractionListener {
+        HomeFragment.OnFragmentInteractionListener, NutritionPlanFragment.OnFragmentInteractionListener,
+        LactationFragment.OnFragmentInteractionListener, FavoriteRecipesFragment.OnListFragmentInteractionListener,
+        AbcFragment.OnFragmentInteractionListener {
 
     private static final String TAG = "MainActivity";
 
@@ -135,6 +138,10 @@ public class MainActivity extends AuthActivity
         item.setChecked(false);
 
         return true;
+    }
+
+    public void setActionBarTitle(String title){
+        getSupportActionBar().setTitle(title);
     }
 
     @Override
