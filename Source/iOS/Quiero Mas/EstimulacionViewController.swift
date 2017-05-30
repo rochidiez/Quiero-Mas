@@ -12,22 +12,17 @@ import SWRevealViewController
 class EstimulacionViewController: UIViewController {
     
     @IBOutlet weak var revealMenuButton: UIBarButtonItem!
+    @IBOutlet weak var scroll: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setRevealMenuButton()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func setRevealMenuButton() {
         revealMenuButton.target = self.revealViewController()
         revealMenuButton.action = Selector(("revealToggle:"))
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        scroll.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
     
 }

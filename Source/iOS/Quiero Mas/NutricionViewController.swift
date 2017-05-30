@@ -31,4 +31,12 @@ class NutricionViewController: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
     
+    //MARK: - IBAction
+    @IBAction func listadoAction(_ sender: Any) {
+        let story = UIStoryboard(name: "Main", bundle: nil)
+        let vc = story.instantiateViewController(withIdentifier: "ListaNav")
+        self.revealViewController().pushFrontViewController(vc, animated: true)
+    }
+    
+    
 }
