@@ -15,4 +15,6 @@
     <string name="more_than_six">La contraseña debe tener al menos seis caracteres</string>
     <string name="default_test_error_string">El campo no es válido</string>
 
+
+    <string name="no_recipes">Todavía no tienes ninguna receta favorita. Explora todas las recetas disponibles.</string>
 </resources>

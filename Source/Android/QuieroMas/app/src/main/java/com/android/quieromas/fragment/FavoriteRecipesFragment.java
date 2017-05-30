@@ -58,15 +58,23 @@ public class FavoriteRecipesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_favoriterecipes_list, container, false);
+        boolean empty = true;
+        View view;
 
-        // Set the adapter
-        if (view instanceof RecyclerView) {
-            Context context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
-            recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            recyclerView.setAdapter(new MyFavoriteRecipesRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+        if(empty){
+            view = inflater.inflate(R.layout.fragment_favoriterecipes_empty, container, false);
+        }else{
+            view = inflater.inflate(R.layout.fragment_favoriterecipes_list, container, false);
+
+            // Set the adapter
+            if (view instanceof RecyclerView) {
+                Context context = view.getContext();
+                RecyclerView recyclerView = (RecyclerView) view;
+                recyclerView.setLayoutManager(new LinearLayoutManager(context));
+                recyclerView.setAdapter(new MyFavoriteRecipesRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            }
         }
+
         return view;
     }
 
