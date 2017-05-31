@@ -3,7 +3,6 @@ package com.android.quieromas.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,6 +12,7 @@ import android.view.ViewGroup;
 import com.android.quieromas.R;
 import com.android.quieromas.activity.MainActivity;
 import com.android.quieromas.adapter.MyFavoriteRecipesRecyclerViewAdapter;
+import com.android.quieromas.adapter.MyPlanRecipesRecyclerViewAdapter;
 import com.android.quieromas.model.DummyContent;
 import com.android.quieromas.model.DummyContent.DummyItem;
 
@@ -22,7 +22,7 @@ import com.android.quieromas.model.DummyContent.DummyItem;
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class FavoriteRecipesFragment extends Fragment {
+public class PlanRecipesFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -34,13 +34,12 @@ public class FavoriteRecipesFragment extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public FavoriteRecipesFragment() {
+    public PlanRecipesFragment() {
     }
 
-    // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
-    public static FavoriteRecipesFragment newInstance(int columnCount) {
-        FavoriteRecipesFragment fragment = new FavoriteRecipesFragment();
+
+    public static PlanRecipesFragment newInstance(int columnCount) {
+        PlanRecipesFragment fragment = new PlanRecipesFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -59,28 +58,22 @@ public class FavoriteRecipesFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        ((MainActivity) getActivity()).setActionBarTitle("Recetas favoritas");
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        boolean empty = true;
-        View view;
 
-        if(!empty){
-            view = inflater.inflate(R.layout.fragment_favoriterecipes_empty, container, false);
-        }else{
-            view = inflater.inflate(R.layout.fragment_favoriterecipes_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_favoriterecipes_list, container, false);
 
             // Set the adapter
             if (view instanceof RecyclerView) {
                 Context context = view.getContext();
                 RecyclerView recyclerView = (RecyclerView) view;
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
-                recyclerView.setAdapter(new MyFavoriteRecipesRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+                recyclerView.setAdapter(new MyPlanRecipesRecyclerViewAdapter(DummyContent.ITEMS, mListener));
             }
-        }
+
 
         return view;
     }

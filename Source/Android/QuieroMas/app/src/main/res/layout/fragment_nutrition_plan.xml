@@ -1,12 +1,13 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.android.quieromas.fragment.NutritionPlanFragment">
 
+
     <android.support.design.widget.CoordinatorLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -18,24 +19,148 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
-                app:layout_scrollFlags="scroll|enterAlways"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+                android:layout_height="wrap_content"
+                android:background="@color/orangePrimary"
+                android:titleTextColor="@color/grayPrimary"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/orangePrimary"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="BEBE NOMBRE"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextViewBold"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="@dimen/bigtitle_text_size" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:layout_marginTop="4dp"
+                        android:text="9 Meses, 3 Semanas"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextViewBold"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="@dimen/title_text_size" />
+                </LinearLayout>
+
+
+            </android.support.v7.widget.Toolbar>
 
             <android.support.design.widget.TabLayout
                 android:id="@+id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:tabMode="fixed"
-                app:tabGravity="fill"/>
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/colorPrimary"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@android:color/transparent"
+                app:tabMode="scrollable"
+                app:tabSelectedTextColor="@color/textColorBlack"
+                app:tabTextColor="@color/grayPrimary" />
         </android.support.design.widget.AppBarLayout>
 
         <android.support.v4.view.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
+            android:layout_height="220dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:id="@+id/nutrition_plan_previous_week"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_height="12dp"
+                        android:layout_width="8dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="4dp"
+                        android:background="@drawable/back_button_black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="@dimen/subsubtitle_text_size"
+                        android:text="Semana anterior"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/nutrition_plan_next_week"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_alignParentEnd="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="@dimen/subsubtitle_text_size"
+                        android:text="Semana siguiente"/>
+
+                    <ImageView
+                        android:layout_height="12dp"
+                        android:layout_width="8dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="4dp"
+                        android:rotation="180"
+                        android:background="@drawable/back_button_black"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/divisor_centro">
+
+            </ImageView>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:paddingLeft="36dp"
+                android:drawableStart="@drawable/lista_de_compras"
+                android:text="Listado de compras semanal"
+                android:textSize="@dimen/subtitle_text_size"
+                android:textAppearance="@style/TextViewBold"
+                android:background="@drawable/button_border_black_thin"/>
+        </LinearLayout>
     </android.support.design.widget.CoordinatorLayout>
 
-</FrameLayout>
+
+</LinearLayout>
+
+

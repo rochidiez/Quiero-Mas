@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.quieromas.R;
+import com.android.quieromas.fragment.AbcFragment;
 import com.android.quieromas.fragment.FavoriteRecipesFragment.OnListFragmentInteractionListener;
 import com.android.quieromas.fragment.PlanRecipesFragment;
 import com.android.quieromas.model.DummyContent.DummyItem;
@@ -18,12 +19,12 @@ import java.util.List;
  * specified {@link OnListFragmentInteractionListener}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class MyFavoriteRecipesRecyclerViewAdapter extends RecyclerView.Adapter<MyFavoriteRecipesRecyclerViewAdapter.ViewHolder> {
+public class MyPlanRecipesRecyclerViewAdapter extends RecyclerView.Adapter<MyPlanRecipesRecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;
-    private final OnListFragmentInteractionListener mListener;
+    private final PlanRecipesFragment.OnListFragmentInteractionListener mListener;
 
-    public MyFavoriteRecipesRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
+    public MyPlanRecipesRecyclerViewAdapter(List<DummyItem> items, PlanRecipesFragment.OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }

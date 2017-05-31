@@ -1,12 +1,14 @@
 package com.android.quieromas.fragment;
 
+import android.app.FragmentManager;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.PagerAdapter;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -14,28 +16,19 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.android.quieromas.R;
+import com.android.quieromas.activity.MainActivity;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link NutritionPlanFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link NutritionPlanFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class NutritionPlanFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     private OnFragmentInteractionListener mListener;
 
@@ -43,31 +36,16 @@ public class NutritionPlanFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment NutritionPlanFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static NutritionPlanFragment newInstance(String param1, String param2) {
-        NutritionPlanFragment fragment = new NutritionPlanFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((MainActivity) getActivity()).setActionBarTitle("Plan de nutrición");
     }
 
     @Override
@@ -84,11 +62,23 @@ public class NutritionPlanFragment extends Fragment {
         toolbar = (Toolbar) view.findViewById(R.id.toolbar);
 
         viewPager = (ViewPager) view.findViewById(R.id.viewpager);
-        //setupViewPager(viewPager);
+        setupViewPager(viewPager);
 
         tabLayout = (TabLayout) view.findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
+    }
+
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getFragmentManager());
+        adapter.addFragment(new FavoriteRecipesFragment(), "Lun");
+        adapter.addFragment(new FavoriteRecipesFragment(), "Mar");
+        adapter.addFragment(new FavoriteRecipesFragment(), "Mie");
+        adapter.addFragment(new FavoriteRecipesFragment(), "Jue");
+        adapter.addFragment(new FavoriteRecipesFragment(), "Vie");
+        adapter.addFragment(new FavoriteRecipesFragment(), "Sab");
+        adapter.addFragment(new FavoriteRecipesFragment(), "Dom");
+        viewPager.setAdapter(adapter);
     }
 
 
@@ -115,4 +105,35 @@ public class NutritionPlanFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+    class ViewPagerAdapter extends FragmentPagerAdapter {
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
+
+        public ViewPagerAdapter(android.support.v4.app.FragmentManager manager) {
+            super(manager);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
+
+        public void addFragment(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
+        }
+    }
+
+    
 }

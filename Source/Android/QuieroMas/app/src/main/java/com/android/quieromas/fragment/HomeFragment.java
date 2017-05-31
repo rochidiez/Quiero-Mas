@@ -29,6 +29,7 @@ public class HomeFragment extends Fragment {
 
     private LinearLayout lactationView;
     private LinearLayout abcView;
+    private LinearLayout nutritionPlanView;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -60,13 +61,15 @@ public class HomeFragment extends Fragment {
 
         lactationView = (LinearLayout) view.findViewById(R.id.view_lactancia_home);
         abcView = (LinearLayout) view.findViewById(R.id.view_abc_home);
+        nutritionPlanView = (LinearLayout) view.findViewById(R.id.view_receta_home);
 
 
         lactationView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.main_content, new LactationFragment());
+                ft.replace(R.id.main_content, new LactationFragment(),"lactation");
+                ft.addToBackStack("lactation");
                 ft.commit();
             }
         });
@@ -80,6 +83,18 @@ public class HomeFragment extends Fragment {
                 ft.commit();
             }
         });
+
+        nutritionPlanView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.main_content, new NutritionPlanFragment(),"nutrition_plan");
+                ft.addToBackStack("nutrition_plan");
+                ft.commit();
+            }
+        });
+
+
 
     }
 
