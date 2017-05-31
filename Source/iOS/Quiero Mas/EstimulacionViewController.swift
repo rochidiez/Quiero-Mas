@@ -21,8 +21,24 @@ class EstimulacionViewController: UIViewController {
     
     func setRevealMenuButton() {
         revealMenuButton.target = self.revealViewController()
-        revealMenuButton.action = Selector(("revealToggle:"))
+        revealMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         scroll.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
+    
+    @IBAction func mesesAction(_ sender: UIButton) {
+        performSegue(withIdentifier: "mesesSegue", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let s = sender as? UIButton {
+            let vc = segue.destination as! EstimulacionVideosViewController
+            vc.num = String(s.tag)
+        }
+    }
+    
+    
+    
+
+    
     
 }

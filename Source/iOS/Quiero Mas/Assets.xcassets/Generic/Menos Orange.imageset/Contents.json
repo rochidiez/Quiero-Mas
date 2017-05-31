@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "enfaBebe.png",
+      "filename" : "Menos.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "enfaBebe@2x.png.png",
+      "filename" : "Menos@2x.png.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "enfaBebe@3x.png.png",
+      "filename" : "Menos@3x.png.png",
       "scale" : "3x"
     }
   ],

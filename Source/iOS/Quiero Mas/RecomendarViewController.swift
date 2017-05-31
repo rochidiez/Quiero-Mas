@@ -27,7 +27,7 @@ class RecomendarViewController: UIViewController {
     
     func setRevealMenuButton() {
         revealMenuButton.target = self.revealViewController()
-        revealMenuButton.action = Selector(("revealToggle:"))
+        revealMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
 
