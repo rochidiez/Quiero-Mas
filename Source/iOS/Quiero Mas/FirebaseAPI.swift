@@ -14,6 +14,7 @@ import FirebaseStorage
 
 let localesStoredOrUpdatedKey = "localesStoredOrUpdatedKey"
 let appMainColor = UIColor(red: 255/255, green: 147/255, blue: 96/255, alpha: 1.0)
+let lactanciaUpdated = "lactanciaUpdated"
 
 class FirebaseAPI: NSObject {
     
@@ -98,6 +99,17 @@ class FirebaseAPI: NSObject {
                 // Metadata contains file metadata such as size, content-type, and download URL.
                 let downloadURL = metadata!.downloadURL()
             }
+        }
+    }
+    
+    static func getDatosLactancia() {
+        FIRDatabase.database().reference().child("Lactancia").observeSingleEvent(of: .value, with: { (snap) in
+            if let lactanciaDic = snap.value as? [String:String] {
+                UserDefaults.standard.set(lactanciaDic, forKey: "lactancia")
+                NotificationCenter.default.post(name: Notification.Name(rawValue: lactanciaUpdated), object: nil)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
         }
     }
     

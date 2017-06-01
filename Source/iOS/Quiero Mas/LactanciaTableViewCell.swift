@@ -10,15 +10,13 @@ import UIKit
 
 class LactanciaTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    @IBOutlet weak var openButton: UIButton!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var orangeView: UIView!
+    @IBOutlet weak var web: UIWebView!
+    
+    @IBOutlet weak var leftFirst: UIView!
+    @IBOutlet weak var rightFirst: UIView!
+    @IBOutlet weak var topFirst: UIView!
 
 }
