@@ -15,6 +15,7 @@ import FirebaseStorage
 let localesStoredOrUpdatedKey = "localesStoredOrUpdatedKey"
 let appMainColor = UIColor(red: 255/255, green: 147/255, blue: 96/255, alpha: 1.0)
 let lactanciaUpdated = "lactanciaUpdated"
+let nutricionUpdated = "nutricionUpdated"
 
 class FirebaseAPI: NSObject {
     
@@ -107,6 +108,17 @@ class FirebaseAPI: NSObject {
             if let lactanciaDic = snap.value as? [String:String] {
                 UserDefaults.standard.set(lactanciaDic, forKey: "lactancia")
                 NotificationCenter.default.post(name: Notification.Name(rawValue: lactanciaUpdated), object: nil)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    static func getDatosNutricion() {
+        FIRDatabase.database().reference().child("Nutrición").observeSingleEvent(of: .value, with: { (snap) in
+            if let lactanciaDic = snap.value as? [String:Any] {
+                UserDefaults.standard.set(lactanciaDic, forKey: "nutricion")
+                NotificationCenter.default.post(name: Notification.Name(rawValue: nutricionUpdated), object: nil)
             }
         }) { (error) in
             print(error.localizedDescription)

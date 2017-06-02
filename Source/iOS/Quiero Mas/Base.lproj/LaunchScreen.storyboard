@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Las recetas están diseñadas para que cumpliendo el cronograma no le falte ningún nutriente a tu bebé." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sS8-Km-ag9">
-                                <rect key="frame" x="20" y="557" width="335" height="48"/>
+                                <rect key="frame" x="20" y="549" width="335" height="56"/>
                                 <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="16"/>
                                 <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
