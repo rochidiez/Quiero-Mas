@@ -9,7 +9,7 @@
 import UIKit
 import SWRevealViewController
 
-class ABCNutricionViewController: UIViewController {
+class ABCNutricionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var revealMenuButton: UIBarButtonItem!
     @IBOutlet weak var table: UITableView!
@@ -18,7 +18,8 @@ class ABCNutricionViewController: UIViewController {
     @IBOutlet weak var titleWeb: UIWebView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    var nutricionDic: [String:Any]?
+    var seccionesDic: [String:[String]]?
+    var mesesDic: [String:Any]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,16 +54,81 @@ class ABCNutricionViewController: UIViewController {
     
     func reloadNutricion() {
         if let storedDic = UserDefaults.standard.dictionary(forKey: "nutricion") {
-            nutricionDic = storedDic
-        }
-        
-        if let d = nutricionDic {
-            if d["INTRODUCCION"] != nil {
-                titleWeb.loadHTMLString(d["INTRODUCCION"] as! String, baseURL: nil)
+            if let titulo = storedDic["Título"] as? String {
+                titleWeb.loadHTMLString(titulo, baseURL: nil)
+            }
+            
+            if let secciones = storedDic["Secciones"] as? [String:Any] {
+                var i = 0
+                var d = [String:[String]]()
+                for (key, element) in secciones {
+                    d[String(i)] = [key, element as! String, "closed"]
+                    i += 1
+                }
+                seccionesDic = d
             }
         }
-
+        
+        table.reloadData()
         spinner.stopAnimating()
+    }
+    
+    //MARK: - UITableView Data Source
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let d = seccionesDic {
+            return d.count
+        }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ABCTableViewCell", for: indexPath) as! ABCTableViewCell
+        
+        if let meaning = seccionesDic?[String(indexPath.row)] {
+            if meaning[2] == "closed" {
+                cell.openButton.setImage(UIImage(named: "Mas Orange"), for: .normal)
+            } else {
+                cell.openButton.setImage(UIImage(named: "Menos Orange"), for: .normal)
+            }
+            cell.openButton.tag = indexPath.row
+            cell.openButton.addTarget(self, action: #selector(ABCNutricionViewController.openCloseCell(sender:)), for: .touchUpInside)
+            
+            cell.orangeView.isHidden = meaning[2] == "closed"
+            
+            cell.title.text = meaning[0]
+            cell.web.loadHTMLString((meaning[1]), baseURL: nil)
+        }
+        
+        return cell
+    }
+    
+    //MARK: - UITableView Delegate
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if seccionesDic?[String(indexPath.row)]?[2] == "closed" {
+            return 80
+        } else {
+            return 350
+        }
+    }
+    
+    func openCloseCell(sender: UIButton) {
+        let t = sender.tag
+        if seccionesDic?[String(t)]?[2] == "closed" {
+            seccionesDic?[String(t)]?[2] = "opened"
+        } else {
+            seccionesDic?[String(t)]?[2] = "closed"
+        }
+        table.reloadRows(at: [IndexPath(row: t, section: 0)], with: .automatic)
+    }
+    
+    
+    //MARK: - IBAction
+    @IBAction func mesesAction(_ sender: UIButton) {
+        performSegue(withIdentifier: "mesesSegue", sender: sender)
     }
     
 }

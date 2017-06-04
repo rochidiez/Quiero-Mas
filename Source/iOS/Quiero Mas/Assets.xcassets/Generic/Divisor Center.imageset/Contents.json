@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "abc.png",
+      "filename" : "Divisor-centeral.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "abc@2x.png.png",
+      "filename" : "Divisor-centeral@2x.png.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "abc@3x.png.png",
+      "filename" : "Divisor-centeral@3x.png.png",
       "scale" : "3x"
     }
   ],
