@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "icono-enviar.png",
+      "filename" : "Back-Chevron.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icono-enviar@2x.png.png",
+      "filename" : "Back-Chevron 2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icono-enviar@3x.png.png",
+      "filename" : "Back-Chevron 3x.png",
       "scale" : "3x"
     }
   ],

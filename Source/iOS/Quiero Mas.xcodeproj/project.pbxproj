@@ -50,6 +50,10 @@
 		C1D057901EDF271C0018C9D0 /* EstimulacionVideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D0578F1EDF271C0018C9D0 /* EstimulacionVideosViewController.swift */; };
 		C1D1CEA51EADDA3900EA14C8 /* EmailViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1CEA41EADDA3900EA14C8 /* EmailViewcontroller.swift */; };
 		C1D1CEA71EADE58200EA14C8 /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1CEA61EADE58200EA14C8 /* ForgotPassViewController.swift */; };
+		C1DA20291EE47D8C003269D3 /* MesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA20281EE47D8C003269D3 /* MesTableViewCell.swift */; };
+		C1DA202B1EE4B4EA003269D3 /* RecomendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA202A1EE4B4EA003269D3 /* RecomendarTableViewCell.swift */; };
+		C1DA202D1EE4E39A003269D3 /* FavoritasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA202C1EE4E39A003269D3 /* FavoritasTableViewCell.swift */; };
+		C1DA202F1EE50408003269D3 /* ListaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DA202E1EE50408003269D3 /* ListaTableViewCell.swift */; };
 		C1E16B591EDF795100DE5566 /* LactanciaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E16B581EDF795100DE5566 /* LactanciaTableViewCell.swift */; };
 		C1E5EB601EC7AAB4009B4894 /* BabyDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E5EB5F1EC7AAB4009B4894 /* BabyDataViewController.swift */; };
 		C1E5EB631EC7C0E4009B4894 /* FirebaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E5EB621EC7C0E4009B4894 /* FirebaseAPI.swift */; };
@@ -108,6 +112,10 @@
 		C1D0578F1EDF271C0018C9D0 /* EstimulacionVideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimulacionVideosViewController.swift; sourceTree = "<group>"; };
 		C1D1CEA41EADDA3900EA14C8 /* EmailViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewcontroller.swift; sourceTree = "<group>"; };
 		C1D1CEA61EADE58200EA14C8 /* ForgotPassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
+		C1DA20281EE47D8C003269D3 /* MesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MesTableViewCell.swift; sourceTree = "<group>"; };
+		C1DA202A1EE4B4EA003269D3 /* RecomendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecomendarTableViewCell.swift; sourceTree = "<group>"; };
+		C1DA202C1EE4E39A003269D3 /* FavoritasTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritasTableViewCell.swift; sourceTree = "<group>"; };
+		C1DA202E1EE50408003269D3 /* ListaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaTableViewCell.swift; sourceTree = "<group>"; };
 		C1E16B581EDF795100DE5566 /* LactanciaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LactanciaTableViewCell.swift; sourceTree = "<group>"; };
 		C1E5EB5F1EC7AAB4009B4894 /* BabyDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyDataViewController.swift; sourceTree = "<group>"; };
 		C1E5EB621EC7C0E4009B4894 /* FirebaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAPI.swift; sourceTree = "<group>"; };
@@ -187,6 +195,7 @@
 				C145F76E1EE2285A00A7DDD0 /* ABCTableViewCell.swift */,
 				C1F185D41EE37014007E9E96 /* MesesSelectorViewController.swift */,
 				C1F185D61EE37DFB007E9E96 /* MesViewController.swift */,
+				C1DA20281EE47D8C003269D3 /* MesTableViewCell.swift */,
 			);
 			name = ABCNutricion;
 			sourceTree = "<group>";
@@ -283,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				C19425971ECA22F80092C6F6 /* ListaViewController.swift */,
+				C1DA202E1EE50408003269D3 /* ListaTableViewCell.swift */,
 			);
 			name = "Lista de compras semanal";
 			sourceTree = "<group>";
@@ -291,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				C194259A1ECA23BE0092C6F6 /* FavoritasViewController.swift */,
+				C1DA202C1EE4E39A003269D3 /* FavoritasTableViewCell.swift */,
 			);
 			name = "Recetas Favoritas";
 			sourceTree = "<group>";
@@ -307,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				C19425A01ECA24A80092C6F6 /* RecomendarViewController.swift */,
+				C1DA202A1EE4B4EA003269D3 /* RecomendarTableViewCell.swift */,
 			);
 			name = Recomendar;
 			sourceTree = "<group>";
@@ -508,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1D057901EDF271C0018C9D0 /* EstimulacionVideosViewController.swift in Sources */,
+				C1DA202F1EE50408003269D3 /* ListaTableViewCell.swift in Sources */,
 				C194259B1ECA23BE0092C6F6 /* FavoritasViewController.swift in Sources */,
 				C109FDBE1EAA95E60067E86C /* LoginViewController.swift in Sources */,
 				C100953C1E9754B9001748E4 /* ABCNutricionViewController.swift in Sources */,
@@ -523,6 +536,7 @@
 				C1F185D51EE37014007E9E96 /* MesesSelectorViewController.swift in Sources */,
 				C10095361E9750DE001748E4 /* NutricionViewController.swift in Sources */,
 				C1E5EB631EC7C0E4009B4894 /* FirebaseAPI.swift in Sources */,
+				C1DA20291EE47D8C003269D3 /* MesTableViewCell.swift in Sources */,
 				C10095331E974BFC001748E4 /* MenuTableViewCell.swift in Sources */,
 				C199D9141E8877B0002255BA /* ViewController.swift in Sources */,
 				C1E16B591EDF795100DE5566 /* LactanciaTableViewCell.swift in Sources */,
@@ -532,7 +546,9 @@
 				C1E5EB601EC7AAB4009B4894 /* BabyDataViewController.swift in Sources */,
 				C12A4AED1ED639C7005B0441 /* PerfilViewController.swift in Sources */,
 				C100951A1E9730D3001748E4 /* MenuNavigationController.swift in Sources */,
+				C1DA202D1EE4E39A003269D3 /* FavoritasTableViewCell.swift in Sources */,
 				C199D9121E8877B0002255BA /* AppDelegate.swift in Sources */,
+				C1DA202B1EE4B4EA003269D3 /* RecomendarTableViewCell.swift in Sources */,
 				C100953F1E9755C7001748E4 /* LactanciaViewController.swift in Sources */,
 				C1D1CEA51EADDA3900EA14C8 /* EmailViewcontroller.swift in Sources */,
 				C145F76F1EE2285A00A7DDD0 /* ABCTableViewCell.swift in Sources */,

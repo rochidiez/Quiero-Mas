@@ -16,6 +16,8 @@ let localesStoredOrUpdatedKey = "localesStoredOrUpdatedKey"
 let appMainColor = UIColor(red: 255/255, green: 147/255, blue: 96/255, alpha: 1.0)
 let lactanciaUpdated = "lactanciaUpdated"
 let nutricionUpdated = "nutricionUpdated"
+let sobreUpdated = "sobreUpdated"
+let terminosUpdated = "terminosUpdated"
 
 class FirebaseAPI: NSObject {
     
@@ -93,12 +95,9 @@ class FirebaseAPI: NSObject {
 
         let bebesRef = storageRef.child("bebes/\(firebaseID).jpg")
         
-        let uploadTask = bebesRef.putFile(url, metadata: nil) { metadata, error in
+        _ = bebesRef.putFile(url, metadata: nil) { metadata, error in
             if let error = error {
-                // Uh-oh, an error occurred!
-            } else {
-                // Metadata contains file metadata such as size, content-type, and download URL.
-                let downloadURL = metadata!.downloadURL()
+                print(error)
             }
         }
     }
@@ -116,9 +115,31 @@ class FirebaseAPI: NSObject {
     
     static func getDatosNutricion() {
         FIRDatabase.database().reference().child("Nutrición").observeSingleEvent(of: .value, with: { (snap) in
-            if let lactanciaDic = snap.value as? [String:Any] {
-                UserDefaults.standard.set(lactanciaDic, forKey: "nutricion")
+            if let nutricionDic = snap.value as? [String:Any] {
+                UserDefaults.standard.set(nutricionDic, forKey: "nutricion")
                 NotificationCenter.default.post(name: Notification.Name(rawValue: nutricionUpdated), object: nil)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    static func getDatosSobre() {
+        FIRDatabase.database().reference().child("Sobre Quiero Más!").observeSingleEvent(of: .value, with: { (snap) in
+            if let sobreDic = snap.value as? [String:Any] {
+                UserDefaults.standard.set(sobreDic, forKey: "sobre")
+                NotificationCenter.default.post(name: Notification.Name(rawValue: sobreUpdated), object: nil)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    static func getDatosTerminos() {
+        FIRDatabase.database().reference().child("Términos y condiciones").observeSingleEvent(of: .value, with: { (snap) in
+            if let terminosString = snap.value as? String {
+                UserDefaults.standard.set(terminosString, forKey: "terminos")
+                NotificationCenter.default.post(name: Notification.Name(rawValue: terminosUpdated), object: nil)
             }
         }) { (error) in
             print(error.localizedDescription)

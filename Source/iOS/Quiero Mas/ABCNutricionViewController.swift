@@ -31,7 +31,7 @@ class ABCNutricionViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.backgroundColor = appMainColor
+        self.navigationItem.title = "El ABC de la nutrición"
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -50,6 +50,7 @@ class ABCNutricionViewController: UIViewController, UITableViewDataSource, UITab
         orangeView.backgroundColor = appMainColor
         forwardArrow.tintColor = appMainColor
         spinner.color = appMainColor
+        self.navigationController?.navigationBar.backgroundColor = appMainColor
     }
     
     func reloadNutricion() {
@@ -66,6 +67,10 @@ class ABCNutricionViewController: UIViewController, UITableViewDataSource, UITab
                     i += 1
                 }
                 seccionesDic = d
+            }
+            
+            if let meses = storedDic["Meses"] as? [String:Any] {
+                mesesDic = meses
             }
         }
         
@@ -94,6 +99,7 @@ class ABCNutricionViewController: UIViewController, UITableViewDataSource, UITab
             } else {
                 cell.openButton.setImage(UIImage(named: "Menos Orange"), for: .normal)
             }
+            
             cell.openButton.tag = indexPath.row
             cell.openButton.addTarget(self, action: #selector(ABCNutricionViewController.openCloseCell(sender:)), for: .touchUpInside)
             
@@ -129,6 +135,11 @@ class ABCNutricionViewController: UIViewController, UITableViewDataSource, UITab
     //MARK: - IBAction
     @IBAction func mesesAction(_ sender: UIButton) {
         performSegue(withIdentifier: "mesesSegue", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! MesesSelectorViewController
+        vc.mesesDic = mesesDic
     }
     
 }

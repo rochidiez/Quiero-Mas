@@ -24,15 +24,17 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate, UIImagePick
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapGestureHandler))
-        self.view.addGestureRecognizer(tapGesture)
-        
         setBabyBirthdayTF()
+        setTapGesture()
     }
     
     func setBabyBirthdayTF() {
         babyBirthdayTF.inputView = datePicker
+    }
+    
+    func setTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapGestureHandler))
+        self.view.addGestureRecognizer(tapGesture)
     }
     
     func tapGestureHandler() {

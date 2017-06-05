@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Favorito lleno.png",
+      "filename" : "Estrella-rellena.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Favorito lleno@2x.png",
+      "filename" : "Estrella-rellena2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Favorito lleno@3x.png",
+      "filename" : "Estrella-rellena3x.png",
       "scale" : "3x"
     }
   ],
