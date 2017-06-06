@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Nutricion.png",
+      "filename" : "Icono-nutricion.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Nutricion@2x.png",
+      "filename" : "Icono-nutricion@2x.png.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Nutricion@3x.png",
+      "filename" : "Icono-nutricion@3x.png.png",
       "scale" : "3x"
     }
   ],

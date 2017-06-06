@@ -16,19 +16,23 @@ class NutricionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setRevealMenuButton()
         setAppMainColor()
+    }
+    
+    func setRevealMenuButton() {
+        revealMenuButton.target = self.revealViewController()
+        revealMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
 
     func setAppMainColor() {
         orangeHeader.backgroundColor = appMainColor
     }
 
-    func setRevealMenuButton() {
-        revealMenuButton.target = self.revealViewController()
-        revealMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "Plan de nutrición"
     }
     
     //MARK: - IBAction
@@ -36,6 +40,18 @@ class NutricionViewController: UIViewController {
         let story = UIStoryboard(name: "Main", bundle: nil)
         let vc = story.instantiateViewController(withIdentifier: "ListaNav")
         self.revealViewController().pushFrontViewController(vc, animated: true)
+    }
+    
+    @IBAction func topRecetaAction(_ sender: Any) {
+        let story = UIStoryboard(name: "Main", bundle: nil)
+        let vc = story.instantiateViewController(withIdentifier: "RecetaViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func bottomRecetaAction(_ sender: Any) {
+        let story = UIStoryboard(name: "Main", bundle: nil)
+        let vc = story.instantiateViewController(withIdentifier: "RecetaViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     

@@ -37,14 +37,13 @@ class TodasTableViewController: UITableViewController {
     }
     
     func setAppMainColor() {
-        tableView.backgroundColor = appMainColor
         orangeView.backgroundColor = appMainColor
     }
     
     
     //MARK: - UITableView Data Source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,6 +66,12 @@ class TodasTableViewController: UITableViewController {
         let hView = UIView()
         hView.backgroundColor = .white
         return hView
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let story = UIStoryboard(name: "Main", bundle: nil)
+        let vc = story.instantiateViewController(withIdentifier: "RecetaViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     

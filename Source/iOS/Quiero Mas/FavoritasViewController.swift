@@ -46,5 +46,14 @@ class FavoritasViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     //MARK: - UITableView Delegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let story = UIStoryboard(name: "Main", bundle: nil)
+        let vc = story.instantiateViewController(withIdentifier: "RecetaViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    
+    
 
 }
