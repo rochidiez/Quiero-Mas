@@ -190,7 +190,7 @@ todo su inmenso potencial.</string>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalado por la SAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPL-ND-HGT">
-                                                <rect key="frame" x="126.5" y="596" width="123.5" height="14"/>
+                                                <rect key="frame" x="126" y="596" width="123.5" height="14"/>
                                                 <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -231,7 +231,7 @@ todo su inmenso potencial.</string>
                                                 <rect key="frame" x="80" y="40" width="215" height="90"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalado por nutricionistas y pediatras." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSc-Zk-sdR">
-                                                <rect key="frame" x="44.5" y="140" width="286.5" height="16"/>
+                                                <rect key="frame" x="45" y="140" width="286.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -443,7 +443,7 @@ todo su inmenso potencial.</string>
                                                 <rect key="frame" x="80" y="40" width="215" height="90"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalado por nutricionistas y pediatras." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kF-QS-QaL">
-                                                <rect key="frame" x="44.5" y="140" width="286.5" height="16"/>
+                                                <rect key="frame" x="45" y="140" width="286.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -620,7 +620,7 @@ todo su inmenso potencial.</string>
                                                 <rect key="frame" x="80" y="40" width="215" height="90"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalado por nutricionistas y pediatras." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxo-SR-CnI">
-                                                <rect key="frame" x="44.5" y="140" width="286.5" height="16"/>
+                                                <rect key="frame" x="45" y="140" width="286.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -910,7 +910,7 @@ todo su inmenso potencial.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Ya nació tu bebé?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Rd-q5-ohk">
-                                                <rect key="frame" x="91.5" y="100" width="192" height="22"/>
+                                                <rect key="frame" x="92" y="100" width="192" height="22"/>
                                                 <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -1222,6 +1222,11 @@ todo su inmenso potencial.</string>
                                     <constraint firstItem="RSC-yd-L83" firstAttribute="height" secondItem="Cq6-Xi-ElM" secondAttribute="height" id="vnY-kb-7Qs"/>
                                 </constraints>
                             </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="47C-9V-Ybj">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="1" green="0.50588235290000005" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1260,6 +1265,7 @@ todo su inmenso potencial.</string>
                         <outlet property="registerNameTF" destination="QuK-78-v0K" id="mPW-Nn-iWy"/>
                         <outlet property="registerPassTF" destination="xjh-3W-etC" id="rVv-3V-4Lw"/>
                         <outlet property="registerView" destination="KMt-LH-RAe" id="Dr5-zN-ckw"/>
+                        <outlet property="spinner" destination="47C-9V-Ybj" id="kKM-Lj-ibi"/>
                         <segue destination="ogg-wx-Feg" kind="show" identifier="babyDataSegue" id="MI7-3P-LyO"/>
                     </connections>
                 </viewController>
@@ -1315,7 +1321,7 @@ todo su inmenso potencial.</string>
                                                         <rect key="frame" x="0.0" y="50" width="335" height="400"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUBIR FOTO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn1-Pm-yBI">
-                                                                <rect key="frame" x="119" y="60" width="97" height="17"/>
+                                                                <rect key="frame" x="119.5" y="60" width="97" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="17"/>
                                                                 <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -1519,6 +1525,11 @@ todo su inmenso potencial.</string>
                                     <constraint firstItem="Rgi-KT-Xga" firstAttribute="top" secondItem="5kM-LO-Gdt" secondAttribute="top" id="vwC-Cs-k74"/>
                                 </constraints>
                             </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="6Nc-1U-wx3">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="1" green="0.50588235290000005" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.57647058823529407" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1536,6 +1547,7 @@ todo su inmenso potencial.</string>
                         <outlet property="babyNickNameTF" destination="nKV-0n-XeC" id="ua6-0c-jen"/>
                         <outlet property="babyScroll" destination="5kM-LO-Gdt" id="i7H-4f-nHB"/>
                         <outlet property="datePicker" destination="vKl-w1-sF7" id="49Y-9V-z2t"/>
+                        <outlet property="spinner" destination="6Nc-1U-wx3" id="VtB-D6-DGu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9T-Y0-2K2" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -14,6 +14,7 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate, UIImagePick
     var name: String?
     var birthday: String?
     var email: String?
+    var password: String?
     
     @IBOutlet weak var babyNameTF: UITextField!
     @IBOutlet weak var babyNickNameTF: UITextField!
@@ -21,6 +22,7 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate, UIImagePick
     @IBOutlet weak var babyScroll: UIScrollView!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var babyImgView: UIImageView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +47,7 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate, UIImagePick
     
     //MARK: - IBAction
     @IBAction func createAccount(_ sender: Any) {
+        spinner.startAnimating()
         if babyNameTF.text == "" || babyNickNameTF.text == "" || babyBirthdayTF.text == "" {
             let alert = UIAlertController(title: "",
                                           message: "Faltan completar datos",
@@ -55,25 +58,42 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate, UIImagePick
             
             alert.addAction(cancelAction)
             present(alert, animated: true, completion: nil)
+            spinner.stopAnimating()
             return
         }
-        let user = FIRAuth.auth()?.currentUser
-        guard let firebaseID = user?.uid else {return}
-        FirebaseAPI.storeFirebaseUser(firebaseID: firebaseID,
-                                      name: name!,
-                                      birthday: birthday!,
-                                      email: email!,
-                                      babyName: babyNameTF.text!,
-                                      babyNickName: babyNickNameTF.text!,
-                                      babyBirthday: babyBirthdayTF.text!)
-        showMainVC()
+        
+        FIRAuth.auth()?.createUser(withEmail: email!, password: password!, completion: { (user, error) in
+            if error != nil {
+                let alert = UIAlertController(title: "",
+                                              message: "No se pudo crear la cuenta, puede que ya exista una cuenta con este email",
+                                              preferredStyle: UIAlertControllerStyle.alert)
+                
+                let cancelAction = UIAlertAction(title: "OK",
+                                                 style: .cancel, handler: nil)
+                
+                alert.addAction(cancelAction)
+                self.present(alert, animated: true, completion: nil)
+                self.spinner.stopAnimating()
+                return
+            } else {
+                let user = FIRAuth.auth()?.currentUser
+                guard let firebaseID = user?.uid else {return}
+                FirebaseAPI.storeFirebaseUser(firebaseID: firebaseID,
+                                              name: self.name!,
+                                              birthday: self.birthday!,
+                                              email: self.email!,
+                                              babyName: self.babyNameTF.text!,
+                                              babyNickName: self.babyNickNameTF.text!,
+                                              babyBirthday: self.babyBirthdayTF.text!)
+                self.showMainVC()
+            }
+        })
     }
     
     @IBAction func datePickerValueChanged(_ sender: Any) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
         let selectedDate = dateFormatter.string(from: datePicker.date)
-        
         babyBirthdayTF.text = selectedDate
     }
     

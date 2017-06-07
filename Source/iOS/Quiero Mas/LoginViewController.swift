@@ -51,6 +51,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     @IBOutlet weak var emailNoAccountConstraint: NSLayoutConstraint!
     @IBOutlet weak var forgotPassNoAccountConstraint: NSLayoutConstraint!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -202,6 +203,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     
     //MARK: - Show View
     func showLoginView() {
+        self.view.endEditing(true)
         scrollToTop(animated: false)
         loginView.isHidden = false
         emailView.isHidden = true
@@ -212,6 +214,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     }
     
     func showEmailView() {
+        self.view.endEditing(true)
         scrollToTop(animated: false)
         loginView.isHidden = true
         emailView.isHidden = false
@@ -222,6 +225,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     }
     
     func showForgotView() {
+        self.view.endEditing(true)
         scrollToTop(animated: false)
         loginView.isHidden = true
         emailView.isHidden = true
@@ -232,6 +236,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     }
     
     func showRegisterView() {
+        self.view.endEditing(true)
         scrollToTop(animated: false)
         loginView.isHidden = true
         emailView.isHidden = true
@@ -242,6 +247,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     }
     
     func showNacioView() {
+        self.view.endEditing(true)
         scrollToTop(animated: false)
         loginView.isHidden = true
         emailView.isHidden = true
@@ -249,6 +255,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         registerView.isHidden = true
         nacioView.isHidden = false
         loginScroll.isScrollEnabled = false
+    }
+    
+    func restartLogin() {
+        noView.backgroundColor = .clear
+        noButton.setTitleColor(.white, for: .normal)
+        partoView.isHidden = true
+        clearAllTextFields()
+        showLoginView()
+    }
+    
+    func clearAllTextFields() {
+        loginEmailTF.text = ""
+        loginPassTF.text = ""
+        registerNameTF.text = ""
+        registerDateTF.text = ""
+        registerEmailTF.text = ""
+        registerPassTF.text = ""
+        registerConfirmPassTF.text = ""
+        deliveryDateTF.text = ""
     }
     
     
@@ -287,6 +312,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
             present(alert, animated: true, completion: nil)
             return
         }
+        
+        if (registerPassTF.text?.characters.count)! < 6 || (registerConfirmPassTF.text?.characters.count)! < 6 {
+            let alert = UIAlertController(title: "",
+                                          message: "Las contraseñas deben ser de 6 caracteres o más",
+                                          preferredStyle: UIAlertControllerStyle.alert)
+            
+            let cancelAction = UIAlertAction(title: "OK",
+                                             style: .cancel, handler: nil)
+            
+            alert.addAction(cancelAction)
+            present(alert, animated: true, completion: nil)
+            return
+        }
+        
         showNacioView()
     }
     
@@ -339,10 +378,36 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     }
     
     @IBAction func loginAction(_ sender: Any) {
-        showMainVC()
+        spinner.startAnimating()
+        FIRAuth.auth()?.createUser(withEmail: loginEmailTF.text!, password: loginPassTF.text!, completion: { (user, error) in
+            if error != nil {
+                let alert = UIAlertController(title: "",
+                                              message: "No se pudo crear la cuenta, puede que ya exista una cuenta con este email",
+                                              preferredStyle: UIAlertControllerStyle.alert)
+                
+                let cancelAction = UIAlertAction(title: "OK",
+                                                 style: .cancel, handler: { (alert: UIAlertAction) in
+                                                    self.restartLogin()
+                })
+                
+                alert.addAction(cancelAction)
+                self.present(alert, animated: true, completion: nil)
+                self.spinner.stopAnimating()
+                return
+            } else {
+                let user = FIRAuth.auth()?.currentUser
+                guard let firebaseID = user?.uid else {return}
+                FirebaseAPI.storeFirebaseUser(firebaseID: firebaseID,
+                                              name: self.registerNameTF.text!,
+                                              birthday: self.registerDateTF.text!,
+                                              email: self.registerEmailTF.text!,
+                                              babyName: "",
+                                              babyNickName: "",
+                                              babyBirthday: self.deliveryDateTF.text!)
+                self.showMainVC()
+            }
+        })
     }
-    
-
     
     @IBAction func datePickerValueChanged(_ sender: Any) {
         let dateFormatter = DateFormatter()
@@ -459,6 +524,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
             let vc = segue.destination as? BabyDataViewController
             vc?.name = registerNameTF.text
             vc?.email = registerEmailTF.text
+            vc?.password = registerPassTF.text
             vc?.birthday = registerDateTF.text
         }
     }

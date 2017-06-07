@@ -6,17 +6,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Quiero Mas/LoginViewController.swift"
-            timestampString = "517235338.4935"
+            timestampString = "518555123.00822"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "322"
-            endingLineNumber = "322"
-            landmarkName = "nacioContinueAction(_:)"
+            startingLineNumber = "382"
+            endingLineNumber = "382"
+            landmarkName = "loginAction(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Quiero_Mas.LoginViewController.loginAction (Any) -&gt; ()"
+                  moduleName = "Quiero Mas"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fer/Documents/Workspace/Quiero-Mas/Source/iOS/Quiero%20Mas/LoginViewController.swift"
+                  timestampString = "518555123.171802"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "382"
+                  endingLineNumber = "382"
+                  offsetFromSymbolStart = "197">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Quiero_Mas.LoginViewController.(loginAction (Any) -&gt; ()).(closure #1)"
+                  moduleName = "Quiero Mas"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fer/Documents/Workspace/Quiero-Mas/Source/iOS/Quiero%20Mas/LoginViewController.swift"
+                  timestampString = "518555123.175515"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "383"
+                  endingLineNumber = "383"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
