@@ -28,7 +28,7 @@ public class RecipeActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
         //Show "back" button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btnWatch = (Button) findViewById(R.id.btn_recipe_watch);
         btnWatch.setOnClickListener(new View.OnClickListener() {

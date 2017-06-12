@@ -1,6 +1,7 @@
 package com.android.quieromas.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,11 +9,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.android.quieromas.R;
 import com.android.quieromas.activity.MainActivity;
+import com.android.quieromas.activity.RecipeActivity;
 import com.android.quieromas.adapter.MyFavoriteRecipesRecyclerViewAdapter;
 import com.android.quieromas.adapter.MyPlanRecipesRecyclerViewAdapter;
+import com.android.quieromas.listener.ClickListener;
+import com.android.quieromas.listener.RecyclerTouchListener;
 import com.android.quieromas.model.DummyContent;
 import com.android.quieromas.model.DummyContent.DummyItem;
 
@@ -72,6 +77,20 @@ public class PlanRecipesFragment extends Fragment {
                 RecyclerView recyclerView = (RecyclerView) view;
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
                 recyclerView.setAdapter(new MyPlanRecipesRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+
+                recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getActivity(),
+                        recyclerView, new ClickListener() {
+
+                    @Override
+                    public void onClick(View view, final int position) {
+                        Toast.makeText(getActivity(), "Long press on position :"+position,
+                                Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(getActivity(), RecipeActivity.class);
+                        startActivity(intent);
+                    }
+
+
+                }));
 
             }
 

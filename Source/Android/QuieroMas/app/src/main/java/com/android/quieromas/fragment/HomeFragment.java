@@ -1,6 +1,9 @@
 package com.android.quieromas.fragment;
 
+import android.app.ActionBar;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
+import android.widget.Toolbar;
 
 import com.android.quieromas.R;
 import com.android.quieromas.activity.MainActivity;
@@ -53,11 +57,16 @@ public class HomeFragment extends Fragment {
     public void onResume() {
         super.onResume();
         ((MainActivity) getActivity()).setActionBarTitle("");
+
+
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
+
 
         lactationView = (LinearLayout) view.findViewById(R.id.view_lactancia_home);
         abcView = (LinearLayout) view.findViewById(R.id.view_abc_home);
