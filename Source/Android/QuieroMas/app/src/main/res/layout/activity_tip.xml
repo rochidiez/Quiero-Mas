@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.quieromas.activity.TipActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/orangePrimary"
+        android:textSize="@dimen/bigtitle_text_size"
+        android:text="Tip Nutricional"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="24dp"
+        android:id="@+id/tip_title" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grayPrimary"
+        android:textSize="@dimen/subsubtitle_text_size"
+        android:text="struggles of her era: over civil rights, women’s rights, and sexual freedom. A prolific writer across genres, Jordan’s poetry is known for its immediacy and accessibility as well as its interest in identity and the representation of personal, lived experience—her poetry is often deeply autobiographical; Jordan’s work can also be overtly political and often displays a radical, globalized notion of solidarity amongst the world’s marginalized and oppressed. In volumes like Some Changes (1971), Living Room"
+        android:layout_below="@+id/tip_title"
+        android:id="@+id/tip_text"
+        android:layout_margin="8dp"
+        android:layout_alignParentStart="true" />
+
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:background="@drawable/apple"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/tip_text"
+        android:id="@+id/tip_icon"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/divisor_centro"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/tip_icon"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
