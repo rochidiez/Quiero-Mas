@@ -48,7 +48,7 @@ public class QuieroMasExpandableListAdapter extends BaseExpandableListAdapter {
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.expandable_listrow_details, null);
         }
-        text = (TextView) convertView.findViewById(R.id.textView1);
+        text = (TextView) convertView.findViewById(R.id.lactation_text);
         text.setText(children);
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override

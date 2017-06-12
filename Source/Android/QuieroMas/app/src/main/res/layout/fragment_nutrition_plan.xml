@@ -157,6 +157,8 @@
                 android:textSize="@dimen/subtitle_text_size"
                 android:textAppearance="@style/TextViewBold"
                 android:background="@drawable/button_border_black_thin"/>
+
+
         </LinearLayout>
     </android.support.design.widget.CoordinatorLayout>
 

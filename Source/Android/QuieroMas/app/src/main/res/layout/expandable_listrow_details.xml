@@ -10,13 +10,14 @@
         android:id="@+id/lactation_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="16dp"
         android:gravity="center_vertical"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
         android:paddingTop="8dp"
         android:text="test"
-        android:textSize="16sp">
+        android:textColor="@color/textColorBlack"
+        android:textSize="@dimen/subsubtitle_text_size">
 
     </TextView>
 

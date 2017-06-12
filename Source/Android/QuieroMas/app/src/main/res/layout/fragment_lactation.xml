@@ -4,39 +4,17 @@
     android:layout_height="match_parent"
     tools:context="com.android.quieromas.fragment.LactationFragment">
 
-    <LinearLayout
+
+    <ExpandableListView
+        android:id="@+id/lactation_exp_listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:groupIndicator="@drawable/expandable_lv_indicator"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center_vertical">
+    </ExpandableListView>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="La importancia de la lactancia"
-            android:textAllCaps="true"
-            android:textAppearance="@style/TextViewBold"
-            android:textSize="@dimen/subtitle_text_size"
-            android:layout_marginLeft="24dp"
-            android:textColor="@color/textColorBlack"
-            android:id="@+id/lactation_title"
-        />
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="180dp"
-            android:layout_height="3dp"
-            android:layout_margin="24dp"
-            android:layout_gravity="end"
-            android:background="@drawable/divisor_naranja"
-            android:rotation="180" />
-
-        <ExpandableListView
-            android:id="@+id/lactation_exp_listView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-        </ExpandableListView>
-
-    </LinearLayout>
 
 
 
