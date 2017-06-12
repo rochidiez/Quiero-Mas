@@ -1,5 +1,6 @@
 package com.android.quieromas.adapter;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.quieromas.R;
+import com.android.quieromas.activity.RecipeActivity;
 import com.android.quieromas.fragment.AbcFragment;
 import com.android.quieromas.fragment.FavoriteRecipesFragment.OnListFragmentInteractionListener;
 import com.android.quieromas.fragment.PlanRecipesFragment;
@@ -30,9 +32,10 @@ public class MyPlanRecipesRecyclerViewAdapter extends RecyclerView.Adapter<MyPla
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.fragment_favoriterecipes, parent, false);
+
         return new ViewHolder(view);
     }
 

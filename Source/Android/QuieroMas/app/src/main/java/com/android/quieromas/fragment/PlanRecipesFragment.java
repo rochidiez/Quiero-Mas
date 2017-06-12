@@ -72,6 +72,7 @@ public class PlanRecipesFragment extends Fragment {
                 RecyclerView recyclerView = (RecyclerView) view;
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
                 recyclerView.setAdapter(new MyPlanRecipesRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+
             }
 
 

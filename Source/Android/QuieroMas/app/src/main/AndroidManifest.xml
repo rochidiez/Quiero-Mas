@@ -32,15 +32,16 @@
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
-            android:name=".activity.RecipeActivity"
-            android:theme="@style/NoActionBarActivity">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.RecipeActivity"
+            android:theme="@style/NoActionBarActivity">
         </activity>
         <activity android:name=".activity.TipActivity"
             android:theme="@style/NoActionBarActivity">
