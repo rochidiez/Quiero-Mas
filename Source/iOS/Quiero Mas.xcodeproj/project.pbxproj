@@ -24,6 +24,10 @@
 		C10095391E9753B9001748E4 /* EstimulacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10095381E9753B9001748E4 /* EstimulacionViewController.swift */; };
 		C100953C1E9754B9001748E4 /* ABCNutricionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100953B1E9754B9001748E4 /* ABCNutricionViewController.swift */; };
 		C100953F1E9755C7001748E4 /* LactanciaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100953E1E9755C7001748E4 /* LactanciaViewController.swift */; };
+		C1027D2C1EEF3B9600B1A688 /* PerfilStaticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1027D2A1EEF3B9600B1A688 /* PerfilStaticTableViewCell.swift */; };
+		C1027D2D1EEF3B9600B1A688 /* PerfilStaticTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1027D2B1EEF3B9600B1A688 /* PerfilStaticTableViewCell.xib */; };
+		C1027D301EEF3BA900B1A688 /* PerfilEditableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1027D2E1EEF3BA900B1A688 /* PerfilEditableTableViewCell.swift */; };
+		C1027D311EEF3BA900B1A688 /* PerfilEditableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1027D2F1EEF3BA900B1A688 /* PerfilEditableTableViewCell.xib */; };
 		C109FDBB1EAA95B10067E86C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C109FDBA1EAA95B10067E86C /* Login.storyboard */; };
 		C109FDBE1EAA95E60067E86C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C109FDBD1EAA95E60067E86C /* LoginViewController.swift */; };
 		C109FDC01EAA961D0067E86C /* video-background_1200x720.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C109FDBF1EAA961D0067E86C /* video-background_1200x720.mp4 */; };
@@ -93,6 +97,10 @@
 		C10095381E9753B9001748E4 /* EstimulacionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimulacionViewController.swift; sourceTree = "<group>"; };
 		C100953B1E9754B9001748E4 /* ABCNutricionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABCNutricionViewController.swift; sourceTree = "<group>"; };
 		C100953E1E9755C7001748E4 /* LactanciaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LactanciaViewController.swift; sourceTree = "<group>"; };
+		C1027D2A1EEF3B9600B1A688 /* PerfilStaticTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilStaticTableViewCell.swift; sourceTree = "<group>"; };
+		C1027D2B1EEF3B9600B1A688 /* PerfilStaticTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PerfilStaticTableViewCell.xib; sourceTree = "<group>"; };
+		C1027D2E1EEF3BA900B1A688 /* PerfilEditableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilEditableTableViewCell.swift; sourceTree = "<group>"; };
+		C1027D2F1EEF3BA900B1A688 /* PerfilEditableTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PerfilEditableTableViewCell.xib; sourceTree = "<group>"; };
 		C109FDBA1EAA95B10067E86C /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		C109FDBD1EAA95E60067E86C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C109FDBF1EAA961D0067E86C /* video-background_1200x720.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "video-background_1200x720.mp4"; sourceTree = "<group>"; };
@@ -229,6 +237,17 @@
 			name = Lactancia;
 			sourceTree = "<group>";
 		};
+		C1027D321EEF3BAE00B1A688 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C1027D2A1EEF3B9600B1A688 /* PerfilStaticTableViewCell.swift */,
+				C1027D2B1EEF3B9600B1A688 /* PerfilStaticTableViewCell.xib */,
+				C1027D2E1EEF3BA900B1A688 /* PerfilEditableTableViewCell.swift */,
+				C1027D2F1EEF3BA900B1A688 /* PerfilEditableTableViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		C109FDB91EAA95A20067E86C /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +273,7 @@
 		C12A4AEB1ED639AD005B0441 /* Perfil */ = {
 			isa = PBXGroup;
 			children = (
+				C1027D321EEF3BAE00B1A688 /* Cells */,
 				C12A4AEC1ED639C7005B0441 /* PerfilViewController.swift */,
 			);
 			name = Perfil;
@@ -530,11 +550,13 @@
 				C100951C1E973B95001748E4 /* Cera-Black.ttf in Resources */,
 				C10095251E973BFD001748E4 /* Cera-BlackItalic.ttf in Resources */,
 				C100952C1E973BFD001748E4 /* Cera-RegularItalic.ttf in Resources */,
+				C1027D311EEF3BA900B1A688 /* PerfilEditableTableViewCell.xib in Resources */,
 				C100952A1E973BFD001748E4 /* Cera-MediumItalic.ttf in Resources */,
 				C10095291E973BFD001748E4 /* Cera-Medium.ttf in Resources */,
 				C100952F1E973C07001748E4 /* Cera-Thin.ttf in Resources */,
 				C17819E61EE59F9F00EA05F8 /* PasosTableViewCell.xib in Resources */,
 				C1523FAD1EC0339F0047B195 /* GoogleService-Info.plist in Resources */,
+				C1027D2D1EEF3B9600B1A688 /* PerfilStaticTableViewCell.xib in Resources */,
 				C10095301E973C07001748E4 /* Cera-ThinItalic.ttf in Resources */,
 				C10095281E973BFD001748E4 /* Cera-LightItalic.ttf in Resources */,
 				C10095271E973BFD001748E4 /* Cera-Light.ttf in Resources */,
@@ -608,6 +630,7 @@
 				C109FDBE1EAA95E60067E86C /* LoginViewController.swift in Sources */,
 				C100953C1E9754B9001748E4 /* ABCNutricionViewController.swift in Sources */,
 				C19425A11ECA24A80092C6F6 /* RecomendarViewController.swift in Sources */,
+				C1027D301EEF3BA900B1A688 /* PerfilEditableTableViewCell.swift in Sources */,
 				C17819EF1EE6218800EA05F8 /* PostreViewController.swift in Sources */,
 				C19425951ECA21A80092C6F6 /* TodasViewController.swift in Sources */,
 				C19425A41ECA253F0092C6F6 /* TerminosViewController.swift in Sources */,
@@ -641,6 +664,7 @@
 				C145F76F1EE2285A00A7DDD0 /* ABCTableViewCell.swift in Sources */,
 				C17819EC1EE61B5E00EA05F8 /* TipDesarrolloViewController.swift in Sources */,
 				C150820C1EE2080000A27A0C /* FirstLoginViewController.swift in Sources */,
+				C1027D2C1EEF3B9600B1A688 /* PerfilStaticTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

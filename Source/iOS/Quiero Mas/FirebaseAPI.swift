@@ -18,9 +18,11 @@ let lactanciaUpdated = "lactanciaUpdated"
 let nutricionUpdated = "nutricionUpdated"
 let sobreUpdated = "sobreUpdated"
 let terminosUpdated = "terminosUpdated"
+let perfilLoaded = "perfilLoaded"
+let perfilUpdated = "perfilUpdated"
+let connectionError = "connectionError"
 
 class FirebaseAPI: NSObject {
-    
     
     static func storeFirebaseWithBaby(name: String,
                                   birthday: String,
@@ -71,16 +73,35 @@ class FirebaseAPI: NSObject {
     }
     
     static func storeFirebaseUser(firebaseID: String,
-                                      name: String,
-                                      birthday: String,
-                                      email: String,
-                                      babyName: String,
-                                      babyNickName: String,
-                                      babyBirthday: String) {
-        let nameSpaces = name.replacingOccurrences(of: " ", with: "-")
-        let babyNameSpaces = babyName.replacingOccurrences(of: " ", with: "-")
-        let babyNicknNameSpaces = babyNickName.replacingOccurrences(of: " ", with: "-")
-        var request = URLRequest(url: URL(string: "https://us-central1-quiero-mas.cloudfunctions.net/registrar?text=\(firebaseID)+\(nameSpaces)+\(birthday)+\(email)+\(babyBirthday)+\(babyNameSpaces)+\(babyNicknNameSpaces)")!)
+                                      name: String?,
+                                      birthday: String?,
+                                      email: String?,
+                                      babyName: String?,
+                                      babyNickName: String?,
+                                      babyBirthday: String?) {
+        
+        var namePosta = ""
+        if name != nil {namePosta = name!}
+        
+        var birthdayPosta = ""
+        if birthday != nil {birthdayPosta = birthday!}
+        
+        var emailPosta = ""
+        if email != nil {emailPosta = email!}
+        
+        var babyNamePosta = ""
+        if babyName != nil {babyNamePosta = babyName!}
+        
+        var babyNickNamePosta = ""
+        if babyNickName != nil {babyNickNamePosta = babyNickName!}
+        
+        var babyBirthdayPosta = ""
+        if babyBirthday != nil {babyBirthdayPosta = babyBirthday!}
+        
+        let nameSpaces = namePosta.replacingOccurrences(of: " ", with: "-")
+        let babyNameSpaces = babyNamePosta.replacingOccurrences(of: " ", with: "-")
+        let babyNicknNameSpaces = babyNickNamePosta.replacingOccurrences(of: " ", with: "-")
+        var request = URLRequest(url: URL(string: "https://us-central1-quiero-mas.cloudfunctions.net/registrar?text=\(firebaseID)+\(nameSpaces)+\(birthdayPosta)+\(emailPosta)+\(babyBirthdayPosta)+\(babyNameSpaces)+\(babyNicknNameSpaces)")!)
         request.httpMethod = "POST"
         let session = URLSession.shared
         
@@ -146,10 +167,18 @@ class FirebaseAPI: NSObject {
         }
     }
     
-}
-
-class MyClass {
-    var name: String?
-    var email: String?
+    static func getDatosPerfil() {
+        let user = FIRAuth.auth()?.currentUser
+        guard let firebaseID = user?.uid else {return}
+        FIRDatabase.database().reference().child("Usuarios").child(firebaseID).observeSingleEvent(of: .value, with: { (snap) in
+            if let perfilDic = snap.value as? [String:[String:String]] {
+                UserDefaults.standard.set(perfilDic, forKey: "perfil")
+                NotificationCenter.default.post(name: Notification.Name(rawValue: perfilLoaded), object: nil)
+            }
+        }) { (error) in
+            NotificationCenter.default.post(name: Notification.Name(rawValue: connectionError), object: nil)
+        }
+    }
+    
     
 }

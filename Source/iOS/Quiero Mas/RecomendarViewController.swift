@@ -43,6 +43,7 @@ class RecomendarViewController: UIViewController, UITableViewDataSource, UITextF
         self.view.endEditing(true)
     }
     
+    
     //MARK: - UITableView Data Source
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -61,6 +62,7 @@ class RecomendarViewController: UIViewController, UITableViewDataSource, UITextF
         return cell
     }
     
+    
     //MARK: - UITextField Delegate
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if let oldText = textField.text {
@@ -70,6 +72,7 @@ class RecomendarViewController: UIViewController, UITableViewDataSource, UITextF
         }
         return true
     }
+    
     
     //MARK: - IBAction
     @IBAction func addCell(_ sender: Any) {

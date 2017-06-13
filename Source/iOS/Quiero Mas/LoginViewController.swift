@@ -159,7 +159,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     //MARK: - TextField Delegate
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         scrollToView(view: textField)
-        
         return true
     }
     

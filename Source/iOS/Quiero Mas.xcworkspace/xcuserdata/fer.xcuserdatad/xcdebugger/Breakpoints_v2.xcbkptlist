@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Quiero Mas/LoginViewController.swift"
-            timestampString = "518555123.00822"
+            timestampString = "519001135.759046"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "382"
-            endingLineNumber = "382"
+            startingLineNumber = "381"
+            endingLineNumber = "381"
             landmarkName = "loginAction(_:)"
             landmarkType = "7">
             <Locations>
@@ -26,12 +26,12 @@
                   moduleName = "Quiero Mas"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fer/Documents/Workspace/Quiero-Mas/Source/iOS/Quiero%20Mas/LoginViewController.swift"
-                  timestampString = "518555123.171802"
+                  timestampString = "519011957.862016"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "382"
-                  endingLineNumber = "382"
-                  offsetFromSymbolStart = "197">
+                  startingLineNumber = "381"
+                  endingLineNumber = "381"
+                  offsetFromSymbolStart = "196">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,12 @@
                   moduleName = "Quiero Mas"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fer/Documents/Workspace/Quiero-Mas/Source/iOS/Quiero%20Mas/LoginViewController.swift"
-                  timestampString = "518555123.175515"
+                  timestampString = "519011957.864189"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "383"
-                  endingLineNumber = "383"
-                  offsetFromSymbolStart = "32">
+                  startingLineNumber = "382"
+                  endingLineNumber = "382"
+                  offsetFromSymbolStart = "36">
                </Location>
             </Locations>
          </BreakpointContent>
