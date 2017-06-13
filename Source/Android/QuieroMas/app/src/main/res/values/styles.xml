@@ -35,6 +35,8 @@
         <item name="colorPrimary">@color/orangePrimary</item>
         <item name="colorPrimaryDark">@color/orangePrimary</item>
         <item name="colorAccent">@color/orangePrimary</item>
+
+        <item name="elevation">0dp</item>
     </style>
 
     <style name="MyButton" parent="Widget.AppCompat.Button">
@@ -44,6 +46,7 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="elevation">0dp</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
