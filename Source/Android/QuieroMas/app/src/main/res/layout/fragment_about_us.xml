@@ -34,6 +34,7 @@
 
 
         <TextView
+            android:id="@+id/txt_about_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
@@ -41,9 +42,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:paddingTop="8dp"
-            android:text="Lorem ipsum dolor sit amet, te nam modo augue nominavi. Nihil assentior has ex, nec et graeci adipisci. Ut pro habeo dicat oportere, possim blandit suscipit an qui. Ea regione labores cum. Vivendum pertinacia nec ei. Ad nam aperiri nonumes inimicus.
-
-Vim id sint prompta sapientem, quo utinam persecuti moderatius te. Volumus prodesset constituto et nec, vis eu aperiam phaedrum. In cum habemus accusam molestie, cu duo putant nonumes. Quo in diam graece. In quis labitur pri, prima molestiae mel in, eum ad veri ipsum comprehensam. No nec nemore dissentiunt."
+            android:text=""
             android:textSize="@dimen/small_text_size">
 
         </TextView>

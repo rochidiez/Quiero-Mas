@@ -20,13 +20,14 @@ import com.android.quieromas.fragment.FavoriteRecipesFragment;
 import com.android.quieromas.fragment.HomeFragment;
 import com.android.quieromas.fragment.LactationFragment;
 import com.android.quieromas.fragment.NutritionPlanFragment;
+import com.android.quieromas.fragment.TermsFragment;
 import com.android.quieromas.model.DummyContent;
 
 public class MainActivity extends AuthActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         HomeFragment.OnFragmentInteractionListener, NutritionPlanFragment.OnFragmentInteractionListener,
         LactationFragment.OnFragmentInteractionListener, FavoriteRecipesFragment.OnListFragmentInteractionListener,
-        AbcFragment.OnFragmentInteractionListener, AboutUsFragment.OnFragmentInteractionListener {
+        AbcFragment.OnFragmentInteractionListener, AboutUsFragment.OnFragmentInteractionListener, TermsFragment.OnFragmentInteractionListener {
 
     private static final String TAG = "MainActivity";
 
@@ -118,8 +119,8 @@ public class MainActivity extends AuthActivity
             fragmentClass = AboutUsFragment.class;
 //        } else if (id == R.id.nav_share) {
 //
-//        } else if (id == R.id.nav_tac) {
-
+        } else if (id == R.id.nav_tac) {
+            fragmentClass = TermsFragment.class;
         } else {
             fragmentClass = HomeFragment.class;
         }
