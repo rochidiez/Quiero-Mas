@@ -15,6 +15,7 @@ import android.view.MenuItem;
 
 import com.android.quieromas.R;
 import com.android.quieromas.fragment.AbcFragment;
+import com.android.quieromas.fragment.AboutUsFragment;
 import com.android.quieromas.fragment.FavoriteRecipesFragment;
 import com.android.quieromas.fragment.HomeFragment;
 import com.android.quieromas.fragment.LactationFragment;
@@ -25,7 +26,7 @@ public class MainActivity extends AuthActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         HomeFragment.OnFragmentInteractionListener, NutritionPlanFragment.OnFragmentInteractionListener,
         LactationFragment.OnFragmentInteractionListener, FavoriteRecipesFragment.OnListFragmentInteractionListener,
-        AbcFragment.OnFragmentInteractionListener {
+        AbcFragment.OnFragmentInteractionListener, AboutUsFragment.OnFragmentInteractionListener {
 
     private static final String TAG = "MainActivity";
 
@@ -113,8 +114,8 @@ public class MainActivity extends AuthActivity
         } else if (id == R.id.nav_favorites) {
             fragmentClass = FavoriteRecipesFragment.class;
 //
-//        } else if (id == R.id.nav_about) {
-//
+        } else if (id == R.id.nav_about) {
+            fragmentClass = AboutUsFragment.class;
 //        } else if (id == R.id.nav_share) {
 //
 //        } else if (id == R.id.nav_tac) {
