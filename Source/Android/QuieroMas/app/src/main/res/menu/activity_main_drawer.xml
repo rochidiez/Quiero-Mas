@@ -37,7 +37,7 @@
             android:title="Lista de compras semanal" />
         <item
             android:id="@+id/nav_favorites"
-            android:icon="@drawable/favorito"
+            android:icon="@drawable/fav_lleno"
             android:title="Recetas favoritas" />
     </group>
     <group android:id="@+id/grp4" android:checkableBehavior="single">

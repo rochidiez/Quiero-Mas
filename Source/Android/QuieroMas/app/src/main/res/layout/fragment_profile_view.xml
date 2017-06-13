@@ -1,0 +1,209 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:validator="http://schemas.android.com/apk/res-auto"
+    tools:context="com.android.quieromas.fragment.ProfileEditFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/btn_profile_edit_change_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:background="@android:color/transparent"
+            android:text="CAMBIAR CONTRASEÑA"
+            android:textColor="@color/grayPrimary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tu nombre"
+            android:textAllCaps="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/grayPrimary"
+            android:textSize="@dimen/small_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_profile_view_name"
+            android:text="Vanina"
+            android:layout_gravity="center"
+            android:textColor="@color/textColorBlack"
+            android:textStyle="bold"
+            android:layout_margin="8dp"
+            android:textSize="@dimen/subtitle_text_size" />
+
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center"
+            android:src="@drawable/divisor_centro" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tu email"
+            android:textAllCaps="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/grayPrimary"
+            android:textSize="@dimen/small_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_profile_view_email"
+            android:text="vanina@gmail.com"
+            android:layout_gravity="center"
+            android:textColor="@color/textColorBlack"
+            android:textStyle="bold"
+            android:layout_margin="8dp"
+            android:textSize="@dimen/subtitle_text_size" />
+
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center"
+            android:src="@drawable/divisor_centro" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tu fecha de nacimiento"
+            android:textAllCaps="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/grayPrimary"
+            android:textSize="@dimen/small_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_profile_view_birthdate"
+            android:text="16/08/1986"
+            android:layout_gravity="center"
+            android:textColor="@color/textColorBlack"
+            android:textStyle="bold"
+            android:layout_margin="8dp"
+            android:textSize="@dimen/subtitle_text_size" />
+
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center"
+            android:src="@drawable/divisor_centro" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="El nombre de tu bebé"
+            android:textAllCaps="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/grayPrimary"
+            android:textSize="@dimen/small_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_profile_view_baby_name"
+            android:text="Josefina"
+            android:layout_gravity="center"
+            android:textColor="@color/textColorBlack"
+            android:textStyle="bold"
+            android:layout_margin="8dp"
+            android:textSize="@dimen/subtitle_text_size" />
+
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center"
+            android:src="@drawable/divisor_centro" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Cómo le dicen?"
+            android:textAllCaps="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/grayPrimary"
+            android:textSize="@dimen/small_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_profile_view_baby_nickname"
+            android:text="Jose"
+            android:layout_gravity="center"
+            android:textColor="@color/textColorBlack"
+            android:textStyle="bold"
+            android:layout_margin="8dp"
+            android:textSize="@dimen/subtitle_text_size" />
+
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center"
+            android:src="@drawable/divisor_centro" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fecha de nacimiento de tu bebé"
+            android:textAllCaps="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/grayPrimary"
+            android:textSize="@dimen/small_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_profile_view_baby_birthdate"
+            android:text="14/07/2017"
+            android:layout_gravity="center"
+            android:textColor="@color/textColorBlack"
+            android:textStyle="bold"
+            android:layout_margin="8dp"
+            android:textSize="@dimen/subtitle_text_size" />
+
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center"
+            android:src="@drawable/divisor_centro" />
+
+
+        <Button
+            android:id="@+id/btn_profile_view_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_border_black"
+            android:text="Editar"
+            android:textAppearance="@style/TextViewBold"
+            android:textColor="@color/textColorBlack"
+            android:textSize="@dimen/subtitle_text_size" />
+
+    </LinearLayout>
+
+</FrameLayout>

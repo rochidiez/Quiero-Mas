@@ -1,0 +1,203 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:validator="http://schemas.android.com/apk/res-auto"
+    tools:context="com.android.quieromas.fragment.ProfileEditFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@color/colorPrimary">
+
+        <Button
+            android:text="CAMBIAR CONTRASEÑA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:id="@+id/btn_profile_edit_change_photo"
+            android:textColor="@color/grayPrimary"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent" />
+
+        <TextView
+            android:text="TU NOMBRE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/subtitle_text_size"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/textColorBlack"
+            android:textAppearance="@style/TextViewBold" />
+
+        <com.andreabaccega.widget.FormEditText
+            validator:testType="nocheck"
+            validator:emptyErrorString="@string/cannot_be_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Sofía"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:id="@+id/etxt_edit_profile_name" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:src="@drawable/input_line"/>
+
+        <TextView
+            android:text="TU EMAIL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/subtitle_text_size"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/textColorBlack"
+            android:textAppearance="@style/TextViewBold" />
+
+        <com.andreabaccega.widget.FormEditText
+            validator:testType="email"
+            validator:emptyErrorString="@string/cannot_be_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Sofía"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:id="@+id/etxt_edit_profile_email" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:src="@drawable/input_line"/>
+
+        <TextView
+            android:text="TU FECHA DE NACIMIENTO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/subtitle_text_size"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/textColorBlack"
+            android:textAppearance="@style/TextViewBold"/>
+
+        <com.andreabaccega.widget.FormEditText
+            validator:testType="date"
+            validator:emptyErrorString="@string/cannot_be_empty"
+            validator:testErrorString="@string/default_test_error_string"
+            validator:customFormat="dd/MM/yyyy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:inputType="none"
+            android:hint="03/10/1985"
+            android:ems="10"
+            android:id="@+id/etxt_edit_profile_birthdate" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:src="@drawable/input_line"/>
+
+        <TextView
+            android:text="EL NOMBRE DE TU BEBÉ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/subtitle_text_size"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/textColorBlack"
+            android:textAppearance="@style/TextViewBold"
+            android:id="@+id/textView2" />
+
+        <com.andreabaccega.widget.FormEditText
+            validator:testType="nocheck"
+            validator:emptyErrorString="@string/cannot_be_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Josefina"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:id="@+id/etxt_edit_profile_baby_name" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:src="@drawable/input_line"/>
+
+        <TextView
+            android:text="¿CÓMO LE DICEN?"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/subtitle_text_size"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/textColorBlack"
+            android:textAppearance="@style/TextViewBold" />
+
+        <com.andreabaccega.widget.FormEditText
+            validator:testType="nocheck"
+            validator:emptyErrorString="@string/cannot_be_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text=""
+            android:hint="ej: Sofi"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:id="@+id/etxt_edit_profile_baby_nickname" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:src="@drawable/input_line"/>
+
+        <TextView
+            android:text="FECHA DE NACIMIENTO DE TU BEBÉ?"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/subtitle_text_size"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/textColorBlack"
+            android:textAppearance="@style/TextViewBold"/>
+
+        <com.andreabaccega.widget.FormEditText
+            validator:testType="date"
+            validator:emptyErrorString="@string/cannot_be_empty"
+            validator:testErrorString="@string/default_test_error_string"
+            validator:customFormat="dd/MM/yyyy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:inputType="none"
+            android:hint="ej: 03/10/1985"
+            android:ems="10"
+            android:id="@+id/etxt_edit_profile_baby_birthdate" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:src="@drawable/input_line"/>
+
+
+        <Button
+            android:text="Guardar Cambios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="@dimen/subtitle_text_size"
+            android:background="@drawable/button_border_black"
+            android:textColor="@color/textColorBlack"
+            android:textAppearance="@style/TextViewBold"
+            android:id="@+id/btn_first_use_continue" />
+
+    </LinearLayout>
+
+</FrameLayout>

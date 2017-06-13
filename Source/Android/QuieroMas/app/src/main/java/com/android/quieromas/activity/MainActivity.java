@@ -12,6 +12,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.android.quieromas.R;
 import com.android.quieromas.fragment.AbcFragment;
@@ -20,6 +22,9 @@ import com.android.quieromas.fragment.FavoriteRecipesFragment;
 import com.android.quieromas.fragment.HomeFragment;
 import com.android.quieromas.fragment.LactationFragment;
 import com.android.quieromas.fragment.NutritionPlanFragment;
+import com.android.quieromas.fragment.ProfileEditFragment;
+import com.android.quieromas.fragment.ProfileFragment;
+import com.android.quieromas.fragment.ProfileViewFragment;
 import com.android.quieromas.fragment.TermsFragment;
 import com.android.quieromas.model.DummyContent;
 
@@ -27,12 +32,14 @@ public class MainActivity extends AuthActivity
         implements NavigationView.OnNavigationItemSelectedListener,
         HomeFragment.OnFragmentInteractionListener, NutritionPlanFragment.OnFragmentInteractionListener,
         LactationFragment.OnFragmentInteractionListener, FavoriteRecipesFragment.OnListFragmentInteractionListener,
-        AbcFragment.OnFragmentInteractionListener, AboutUsFragment.OnFragmentInteractionListener, TermsFragment.OnFragmentInteractionListener {
+        AbcFragment.OnFragmentInteractionListener, AboutUsFragment.OnFragmentInteractionListener, TermsFragment.OnFragmentInteractionListener,
+        ProfileFragment.OnFragmentInteractionListener, ProfileEditFragment.OnFragmentInteractionListener, ProfileViewFragment.OnFragmentInteractionListener{
 
     private static final String TAG = "MainActivity";
 
     Fragment fragment = null;
     Class fragmentClass;
+    DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +49,7 @@ public class MainActivity extends AuthActivity
         setSupportActionBar(toolbar);
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -58,8 +65,27 @@ public class MainActivity extends AuthActivity
         } catch (Exception e) {
             e.printStackTrace();
         }
-        FragmentManager fragmentManager = getSupportFragmentManager();
+        final FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.main_content, fragment).commit();
+
+        View headerLayout = navigationView.getHeaderView(0);
+        Button btnProfile = (Button) headerLayout.findViewById(R.id.btn_drawer_profile);
+        btnProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fragmentClass = ProfileFragment.class;
+
+                try {
+                    fragment = (Fragment) fragmentClass.newInstance();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.main_content, fragment).commit();
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
 
         //setStatusBarTranslucent(true);
         //getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -101,7 +127,8 @@ public class MainActivity extends AuthActivity
             fragmentClass = HomeFragment.class;
 //        } else if (id == R.id.nav_recipes) {
 //
-//        } else if (id == R.id.nav_nutrition_plan) {
+        } else if (id == R.id.nav_nutrition_plan) {
+            fragmentClass = NutritionPlanFragment.class;
 //
 //        } else if (id == R.id.nav_education) {
 //
@@ -134,7 +161,6 @@ public class MainActivity extends AuthActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.main_content, fragment).commit();
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
 
         item.setChecked(false);
