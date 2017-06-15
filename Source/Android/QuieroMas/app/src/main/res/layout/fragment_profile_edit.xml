@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:id="@+id/btn_profile_edit_change_photo"
+            android:id="@+id/btn_profile_edit_change_password"
             android:textColor="@color/grayPrimary"
             android:layout_gravity="center"
             android:background="@android:color/transparent" />

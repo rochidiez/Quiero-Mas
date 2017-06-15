@@ -19,14 +19,6 @@ import com.android.quieromas.R;
 import com.android.quieromas.activity.MainActivity;
 import com.android.quieromas.adapter.QuieroMasExpandableListAdapter;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link HomeFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link HomeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class HomeFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
@@ -34,6 +26,7 @@ public class HomeFragment extends Fragment {
     private LinearLayout lactationView;
     private LinearLayout abcView;
     private LinearLayout nutritionPlanView;
+    private LinearLayout developmentView;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -71,6 +64,17 @@ public class HomeFragment extends Fragment {
         lactationView = (LinearLayout) view.findViewById(R.id.view_lactancia_home);
         abcView = (LinearLayout) view.findViewById(R.id.view_abc_home);
         nutritionPlanView = (LinearLayout) view.findViewById(R.id.view_receta_home);
+        developmentView = (LinearLayout) view.findViewById(R.id.view_estimulacion_home);
+
+        developmentView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.main_content, new DevelopmentFragment(),"development");
+                ft.addToBackStack("development");
+                ft.commit();
+            }
+        });
 
 
         lactationView.setOnClickListener(new View.OnClickListener() {
@@ -102,6 +106,8 @@ public class HomeFragment extends Fragment {
                 ft.commit();
             }
         });
+
+
 
 
 

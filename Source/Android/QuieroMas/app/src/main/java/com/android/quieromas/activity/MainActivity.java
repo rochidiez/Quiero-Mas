@@ -18,6 +18,7 @@ import android.widget.Button;
 import com.android.quieromas.R;
 import com.android.quieromas.fragment.AbcFragment;
 import com.android.quieromas.fragment.AboutUsFragment;
+import com.android.quieromas.fragment.DevelopmentFragment;
 import com.android.quieromas.fragment.FavoriteRecipesFragment;
 import com.android.quieromas.fragment.HomeFragment;
 import com.android.quieromas.fragment.LactationFragment;
@@ -33,7 +34,8 @@ public class MainActivity extends AuthActivity
         HomeFragment.OnFragmentInteractionListener, NutritionPlanFragment.OnFragmentInteractionListener,
         LactationFragment.OnFragmentInteractionListener, FavoriteRecipesFragment.OnListFragmentInteractionListener,
         AbcFragment.OnFragmentInteractionListener, AboutUsFragment.OnFragmentInteractionListener, TermsFragment.OnFragmentInteractionListener,
-        ProfileFragment.OnFragmentInteractionListener, ProfileEditFragment.OnFragmentInteractionListener, ProfileViewFragment.OnFragmentInteractionListener{
+        ProfileFragment.OnFragmentInteractionListener, ProfileEditFragment.OnFragmentInteractionListener, ProfileViewFragment.OnFragmentInteractionListener,
+        DevelopmentFragment.OnFragmentInteractionListener{
 
     private static final String TAG = "MainActivity";
 
@@ -130,7 +132,8 @@ public class MainActivity extends AuthActivity
         } else if (id == R.id.nav_nutrition_plan) {
             fragmentClass = NutritionPlanFragment.class;
 //
-//        } else if (id == R.id.nav_education) {
+        } else if (id == R.id.nav_education) {
+            fragmentClass = DevelopmentFragment.class;
 //
 //        } else if (id == R.id.nav_nutrition) {
 //

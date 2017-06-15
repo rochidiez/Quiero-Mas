@@ -1,0 +1,30 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.android.quieromas.fragment.DevelopmentFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/development_linear_layout"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/enfabebe"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/subtitle_text_size"
+            android:text="Lorem ipsum dolor sit amet, eu cetero utamur nam. Sit omittam voluptatibus ex. Novum impedit eu mea, epicuri verterem inimicus et eum. Ornatus fastidii in pri. Quo ancillae accusamus eu, nec vidit doming ut, vis an habeo iusto salutandi."/>
+
+    </LinearLayout>
+
+
+</ScrollView>

@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.android.quieromas.R;
 
-public class RecipeActivity extends AppCompatActivity {
+public class RecipeActivity extends AuthActivity {
 
     private Button btnDessert;
     private Button btnNutritionalTip;
