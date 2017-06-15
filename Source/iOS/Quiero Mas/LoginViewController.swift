@@ -449,12 +449,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     
     //MARK: - FB Login
     @IBAction func loginActionFB() {
+        spinner.startAnimating()
         FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self, handler:
             { (result, err) in
                 if err != nil {
                     print("FB Login Failed: ", err ?? "Error is nil")
+                    self.spinner.stopAnimating()
                 } else {
                     if (result?.isCancelled)! {
+                        self.spinner.stopAnimating()
                         return
                     } else {
                         if let userId = result?.token.userID {
@@ -462,8 +465,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
                             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, email"]).start(completionHandler: { (connection, result, error) -> Void in
                                 if (error == nil) {
                                     if let res = result as? [String:Any] {
-                                        UserDefaults.standard.setValue(res["name"], forKey: "fbName")
-                                        UserDefaults.standard.setValue(res["email"], forKey: "fbEmail")
+                                        if var userDic = UserDefaults.standard.dictionary(forKey: "usuario") {
+                                            userDic["nombre"] = res["name"] as? String
+                                            userDic["email"] = res["email"] as? String
+                                            UserDefaults.standard.set(userDic, forKey: "usuario")
+                                        } else {
+                                            UserDefaults.standard.set(["nombre":res["name"] as? String, "email": res["email"] as? String], forKey: "usuario")
+                                        }
                                     }
                                 }
                             })
@@ -481,20 +489,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         FIRAuth.auth()?.signIn(with: credentials, completion: { (user, error) in
             if error != nil {
                 print("FB Firebase Login Failed: \(String(describing: error))")
+                self.spinner.stopAnimating()
                 return
             }
             print("Accessed FB Firebase with user: \(String(describing: user))")
-            let fbName = UserDefaults.standard.value(forKey: "fbName") as? String
-            let fbEmail = UserDefaults.standard.value(forKey: "fbEmail") as? String
-            let firebaseID = user?.uid
-            FirebaseAPI.storeFirebaseUser(firebaseID: firebaseID!,
-                                            name: fbName!,
-                                            birthday: "",
-                                            email: fbEmail!,
-                                            babyName: "",
-                                            babyNickName: "",
-                                            babyBirthday: "")
-            self.loginAction(self)
+            if let userDic = UserDefaults.standard.dictionary(forKey: "usuario") {
+                let fbName = userDic["nombre"] as? String
+                let fbEmail = userDic["email"] as? String
+                let firebaseID = user?.uid
+                FirebaseAPI.storeFirebaseUser(firebaseID: firebaseID!,
+                                              name: fbName!,
+                                              birthday: "",
+                                              email: fbEmail!,
+                                              babyName: "",
+                                              babyNickName: "",
+                                              babyBirthday: "")
+                self.showMainVC()
+            }
         })
     }
     
@@ -514,7 +525,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     func showMainVC() {
         let story = UIStoryboard(name: "Main", bundle: nil)
         let vc = story.instantiateInitialViewController()
-        self.present(vc!, animated: false, completion: nil)
+        self.present(vc!, animated: true, completion: nil)
     }
     
     //MARK: - Segue

@@ -15,6 +15,7 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate, UIImagePick
     var birthday: String?
     var email: String?
     var password: String?
+    var babyImg: UIImage?
     
     @IBOutlet weak var babyNameTF: UITextField!
     @IBOutlet weak var babyNickNameTF: UITextField!
@@ -78,6 +79,7 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate, UIImagePick
             } else {
                 let user = FIRAuth.auth()?.currentUser
                 guard let firebaseID = user?.uid else {return}
+                self.storeUserDataInUserDefaults()
                 FirebaseAPI.storeFirebaseUser(firebaseID: firebaseID,
                                               name: self.name!,
                                               birthday: self.birthday!,
@@ -85,9 +87,45 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate, UIImagePick
                                               babyName: self.babyNameTF.text!,
                                               babyNickName: self.babyNickNameTF.text!,
                                               babyBirthday: self.babyBirthdayTF.text!)
+                if self.babyImg != nil {
+                    FirebaseAPI.uploadBabyImg(img: self.babyImg!, firebaseID: firebaseID)
+                }
                 self.showMainVC()
             }
         })
+    }
+    
+    func storeUserDataInUserDefaults() {
+        var userDic = [String:Any]()
+        if let d = UserDefaults.standard.dictionary(forKey: "usuario") {
+            userDic = d
+        }
+        
+        if name != nil && name! != "" {
+            userDic["nombre"] = name!
+        }
+        
+        if birthday != nil && birthday! != "" {
+            userDic["cumpleanos"] = birthday!
+        }
+        
+        if email != nil && email! != "" {
+            userDic["email"] = email!
+        }
+        
+        if babyNameTF.text != nil && babyNameTF.text! != "" {
+            userDic["nombreBebe"] = babyNameTF.text!
+        }
+        
+        if babyNickNameTF.text != nil && babyNickNameTF.text! != "" {
+            userDic["apodoBebe"] = babyNickNameTF.text!
+        }
+        
+        if babyBirthdayTF.text != nil && babyBirthdayTF.text! != "" {
+            userDic["cumpleanosBebe"] = babyBirthdayTF.text!
+        }
+        
+        UserDefaults.standard.set(userDic, forKey: "usuario")
     }
     
     @IBAction func datePickerValueChanged(_ sender: Any) {
@@ -124,14 +162,8 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate, UIImagePick
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         babyImgView.image = image
+        babyImg = image
         picker.dismiss(animated: true, completion: nil)
-        
-        let imgNSURL = info[UIImagePickerControllerReferenceURL] as! NSURL
-        let imgURL = URL(string: imgNSURL.path!)
-        let user = FIRAuth.auth()?.currentUser
-        guard let firebaseID = user?.uid else {return}
-        FirebaseAPI.uploadBabyImg(url: imgURL!, firebaseID: firebaseID)
-        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

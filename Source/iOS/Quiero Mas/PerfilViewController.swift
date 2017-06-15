@@ -9,6 +9,7 @@
 import UIKit
 import SWRevealViewController
 import Firebase
+import FBSDKLoginKit
 
 class PerfilViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 
@@ -280,6 +281,14 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
         profileIsEditing = !profileIsEditing
         table.reloadData()
         table.scrollToRow(at: IndexPath(row: 0, section: 0), at: .middle, animated: true)
+    }
+    
+    @IBAction func logOut(_ sender:Any) {
+        try! FIRAuth.auth()?.signOut()
+        FBSDKLoginManager().logOut()
+        let story = UIStoryboard(name: "Login", bundle: nil)
+        let vc = story.instantiateInitialViewController()
+        self.present(vc!, animated: true, completion: nil)
     }
     
 

@@ -66,14 +66,14 @@
                                         <constraint firstAttribute="width" constant="50" id="Dpz-pt-m6j"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vanina y José" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKG-TO-BbR">
-                                    <rect key="frame" x="75" y="20" width="137.5" height="22"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKG-TO-BbR">
+                                    <rect key="frame" x="75" y="20" width="0.0" height="0.0"/>
                                     <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="22"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HyS-js-bdg">
-                                    <rect key="frame" x="77" y="42" width="79" height="24"/>
+                                    <rect key="frame" x="77" y="20" width="79" height="24"/>
                                     <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="12"/>
                                     <state key="normal" title="VER MI PERFIL">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -137,6 +137,8 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="babyImgView" destination="Nrn-99-HOU" id="RIk-02-cJP"/>
+                        <outlet property="nameLabel" destination="UKG-TO-BbR" id="kqZ-8u-pyp"/>
                         <outlet property="orangeHeader" destination="8Kx-Sp-L1z" id="0EF-yU-Ems"/>
                     </connections>
                 </tableViewController>
@@ -827,13 +829,13 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle Oval" translatesAutoresizingMaskIntoConstraints="NO" id="sxS-Md-i5d">
                                         <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle Baby" translatesAutoresizingMaskIntoConstraints="NO" id="Lkg-A4-bKD">
-                                        <rect key="frame" x="2" y="4" width="100" height="98"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle Baby" translatesAutoresizingMaskIntoConstraints="NO" id="Lkg-A4-bKD">
+                                        <rect key="frame" x="2" y="2" width="100" height="100"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Lkg-A4-bKD" firstAttribute="top" secondItem="7G0-i5-rLW" secondAttribute="top" constant="4" id="2aq-ZW-WiQ"/>
+                                    <constraint firstItem="Lkg-A4-bKD" firstAttribute="top" secondItem="7G0-i5-rLW" secondAttribute="top" constant="2" id="2aq-ZW-WiQ"/>
                                     <constraint firstItem="sxS-Md-i5d" firstAttribute="leading" secondItem="7G0-i5-rLW" secondAttribute="leading" id="AYw-gP-pgW"/>
                                     <constraint firstAttribute="bottom" secondItem="Lkg-A4-bKD" secondAttribute="bottom" constant="2" id="R7Y-iP-hrZ"/>
                                     <constraint firstAttribute="trailing" secondItem="Lkg-A4-bKD" secondAttribute="trailing" constant="2" id="VBB-v8-DD0"/>
@@ -845,13 +847,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenid@s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJs-zv-ZCP">
-                                <rect key="frame" x="10" y="195" width="355" height="13"/>
+                                <rect key="frame" x="10" y="225" width="355" height="13"/>
                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vanina y José" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwa-wA-wC1">
-                                <rect key="frame" x="10" y="213" width="355" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwa-wA-wC1">
+                                <rect key="frame" x="10" y="243" width="355" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -886,7 +888,9 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="babyBottomConstraint" destination="ICw-O1-JqP" id="Dp4-Xe-lm0"/>
+                        <outlet property="babyImgView" destination="Lkg-A4-bKD" id="AI1-Wx-QK4"/>
                         <outlet property="circleView" destination="7G0-i5-rLW" id="TUL-Ma-TCl"/>
+                        <outlet property="nameLabel" destination="rwa-wA-wC1" id="oM6-ID-0pz"/>
                         <outlet property="revealMenuButton" destination="1m9-4z-Pr3" id="Jk2-do-ITh"/>
                     </connections>
                 </viewController>
@@ -4632,6 +4636,9 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Cerrar Sesión" id="GDK-h9-Rmz">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="logOut:" destination="7hd-mV-qML" id="nbD-zz-J7b"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

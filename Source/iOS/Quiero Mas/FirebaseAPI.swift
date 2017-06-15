@@ -110,16 +110,29 @@ class FirebaseAPI: NSObject {
             }.resume()
     }
     
-    static func uploadBabyImg(url: URL, firebaseID: String) {
+    static func uploadBabyImg(img: UIImage, firebaseID: String) {
         let storage = FIRStorage.storage()
         let storageRef = storage.reference()
 
-        let bebesRef = storageRef.child("bebes/\(firebaseID).jpg")
+        let bebesRef = storageRef.child("Bebes/\(firebaseID).png")
         
-        _ = bebesRef.putFile(url, metadata: nil) { metadata, error in
-            if let error = error {
-                print(error)
-            }
+        if let uploadData = UIImagePNGRepresentation(img) {
+            bebesRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
+                if error != nil {
+                    print(error ?? "error uploading")
+                } else {
+                    print(metadata ?? "error uploading")
+                    if let url = metadata?.downloadURL() {
+                        if var userDic = UserDefaults.standard.dictionary(forKey: "usuario") {
+                            userDic["foto"] = url.absoluteString
+                            UserDefaults.standard.set(userDic, forKey: "usuario")
+                        } else {
+                            UserDefaults.standard.set(["foto":url.absoluteString], forKey: "usuario")
+                        }
+                        NotificationCenter.default.post(name: Notification.Name(rawValue: perfilUpdated), object: nil)
+                    }
+                }
+            })
         }
     }
     

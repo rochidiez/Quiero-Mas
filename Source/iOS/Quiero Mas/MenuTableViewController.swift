@@ -10,14 +10,15 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
     
-    @IBOutlet weak var revealMenuButton: UIBarButtonItem!
     @IBOutlet weak var orangeHeader: UIView!
-
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var babyImgView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setTableView()
         setAppMainColor()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadPerfil), name: NSNotification.Name(rawValue: perfilUpdated), object: nil)
     }
     
     func setTableView() {
@@ -28,9 +29,30 @@ class MenuTableViewController: UITableViewController {
         tableView.backgroundColor = appMainColor
         orangeHeader.backgroundColor = appMainColor
     }
-
-    func setRevealMenuButton() {
-        revealMenuButton.action = Selector(("revealToggle:"))
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setUserName()
+        setBabyImgView()
+    }
+    
+    func setUserName() {
+        if let userDic = UserDefaults.standard.dictionary(forKey: "usuario") {
+            nameLabel.text = userDic["nombre"] as? String
+        }
+    }
+    
+    func setBabyImgView() {
+        if let userDic = UserDefaults.standard.dictionary(forKey: "usuario") {
+            if let url = userDic["foto"] as? String {
+                babyImgView.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "Circle Baby"))
+            }
+        }
+    }
+    
+    func reloadPerfil() {
+        setUserName()
+        setBabyImgView()
     }
     
 

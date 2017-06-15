@@ -104,6 +104,7 @@
 		C109FDBA1EAA95B10067E86C /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		C109FDBD1EAA95E60067E86C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C109FDBF1EAA961D0067E86C /* video-background_1200x720.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "video-background_1200x720.mp4"; sourceTree = "<group>"; };
+		C114858D1EF2D47200F376CB /* Quiero Mas-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Quiero Mas-Bridging-Header.h"; sourceTree = "<group>"; };
 		C12A4AEC1ED639C7005B0441 /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		C145F76E1EE2285A00A7DDD0 /* ABCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABCTableViewCell.swift; sourceTree = "<group>"; };
 		C150820B1EE2080000A27A0C /* FirstLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLoginViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +271,14 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		C114858C1EF2D45B00F376CB /* Bridging Header */ = {
+			isa = PBXGroup;
+			children = (
+				C114858D1EF2D47200F376CB /* Quiero Mas-Bridging-Header.h */,
+			);
+			name = "Bridging Header";
+			sourceTree = "<group>";
+		};
 		C12A4AEB1ED639AD005B0441 /* Perfil */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +348,7 @@
 		C18F22E41E887D02006E42DB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C114858C1EF2D45B00F376CB /* Bridging Header */,
 				C17819DB1EE5985200EA05F8 /* Receta */,
 				C12A4AEB1ED639AD005B0441 /* Perfil */,
 				C19425A21ECA25260092C6F6 /* Terminos y condiciones */,
@@ -509,6 +519,7 @@
 					C199D90D1E8877B0002255BA = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 426MNF8EA3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -788,12 +799,15 @@
 			baseConfigurationReference = 820FF37300A3D8DCBE25C712 /* Pods-Quiero Mas.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Quiero Mas/Quiero Mas.entitlements";
 				DEVELOPMENT_TEAM = 426MNF8EA3;
 				INFOPLIST_FILE = "Quiero Mas/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "FerFrassia.Quiero-Mas";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Quiero Mas/Quiero Mas-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -804,12 +818,14 @@
 			baseConfigurationReference = 77C1D4118C3A0374D5B98A78 /* Pods-Quiero Mas.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Quiero Mas/Quiero Mas.entitlements";
 				DEVELOPMENT_TEAM = 426MNF8EA3;
 				INFOPLIST_FILE = "Quiero Mas/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "FerFrassia.Quiero-Mas";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Quiero Mas/Quiero Mas-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
