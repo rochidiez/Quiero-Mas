@@ -490,15 +490,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
                             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, email"]).start(completionHandler: { (connection, result, error) -> Void in
                                 if (error == nil) {
                                     if let res = result as? [String:Any] {
-                                        if var userDic = UserDefaults.standard.dictionary(forKey: "perfil") as? [String:[String:String]] {
-                                            userDic["Datos"]?["Nombre Completo"] = res["name"] as? String
-                                            userDic["Datos"]?["Email"] = res["email"] as? String
-                                            UserDefaults.standard.set(userDic, forKey: "perfil")
-                                        } else {
-                                            let datosDic = ["Nombre Completo":res["name"] as? String, "Email":res["email"] as? String]
-                                            let userDic = ["Datos" : datosDic]
-                                            UserDefaults.standard.set(userDic, forKey: "perfil")
-                                        }
+                                        let datosDic = ["Nombre Completo":res["name"] as? String, "Email":res["email"] as? String]
+                                        let userDic = ["Datos" : datosDic]
+                                        UserDefaults.standard.set(userDic, forKey: "perfil")
                                     }
                                 }
                             })
@@ -520,16 +514,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
                 return
             }
             print("Accessed FB Firebase with user: \(String(describing: user))")
-            if let userDic = UserDefaults.standard.dictionary(forKey: "perfil") as? [String:[String:String]] {
-                FirebaseAPI.storeFirebaseUser(firebaseID: (user?.uid)!,
-                                              name: userDic["Datos"]?["Nombre Completo"],
-                                              birthday: userDic["Datos"]?["Fecha de Nacimiento"],
-                                              email: userDic["Datos"]?["Email"],
-                                              babyName: userDic["Bebé"]?["Nombre"],
-                                              babyNickName: userDic["Bebé"]?["Apodo"],
-                                              babyBirthday: userDic["Bebé"]?["Fecha de Nacimiento"])
-                self.showMainVC()
-            }
+            FirebaseAPI.getDatosPerfil()
+            self.showMainVC()
         })
     }
     

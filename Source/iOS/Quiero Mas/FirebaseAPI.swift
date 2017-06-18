@@ -20,6 +20,7 @@ let sobreUpdated = "sobreUpdated"
 let terminosUpdated = "terminosUpdated"
 let perfilLoaded = "perfilLoaded"
 let perfilUpdated = "perfilUpdated"
+let perfilNotFound = "perfilNotFound"
 let connectionError = "connectionError"
 
 class FirebaseAPI: NSObject {
@@ -183,6 +184,18 @@ class FirebaseAPI: NSObject {
             if let perfilDic = snap.value as? [String:[String:String]] {
                 UserDefaults.standard.set(perfilDic, forKey: "perfil")
                 NotificationCenter.default.post(name: Notification.Name(rawValue: perfilLoaded), object: nil)
+            } else {
+                let user = FIRAuth.auth()?.currentUser
+                guard let firebaseID = user?.uid else {return}
+                if let userDic = UserDefaults.standard.dictionary(forKey: "perfil") as? [String:[String:String]] {
+                    FirebaseAPI.storeFirebaseUser(firebaseID: firebaseID,
+                                                  name: userDic["Datos"]?["Nombre Completo"],
+                                                  birthday: userDic["Datos"]?["Fecha de Nacimiento"],
+                                                  email: userDic["Datos"]?["Email"],
+                                                  babyName: userDic["Bebé"]?["Nombre"],
+                                                  babyNickName: userDic["Bebé"]?["Apodo"],
+                                                  babyBirthday: userDic["Bebé"]?["Fecha de Nacimiento"])
+                }
             }
         }) { (error) in
             NotificationCenter.default.post(name: Notification.Name(rawValue: connectionError), object: nil)

@@ -294,13 +294,15 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
             if profileDic != nil {
                 let user = FIRAuth.auth()?.currentUser
                 guard let firebaseID = user?.uid else {return}
-                if (profileDic?["Bebé"]?["Nombre"] == "" ||
-                    profileDic?["Bebé"]?["Apodo"] == "" ||
-                    profileDic?["Bebé"]?["Fecha de Nacimiento"] == "") &&
-                    !(profileDic?["Bebé"]?["Nombre"] == "" &&
-                    profileDic?["Bebé"]?["Apodo"] == "" &&
-                    profileDic?["Bebé"]?["Fecha de Nacimiento"] == "") {
-                    showAlert(text: "Todos los campos del bebé deben llenarse")
+                if (profileDic?["Bebé"]?["Nombre"] != nil ||
+                    profileDic?["Bebé"]?["Apodo"] != nil ||
+                    profileDic?["Bebé"]?["Fecha de Nacimiento"] != nil) {
+                    if !(profileDic?["Bebé"]?["Nombre"] != nil &&
+                        profileDic?["Bebé"]?["Apodo"] != nil &&
+                        profileDic?["Bebé"]?["Fecha de Nacimiento"] != nil) {
+                        showAlert(text: "Todos los campos del bebé deben llenarse")
+                        return
+                    }
                 }
                 FirebaseAPI.storeFirebaseUser(firebaseID: firebaseID,
                                               name: profileDic?["Datos"]?["Nombre Completo"],
@@ -352,6 +354,13 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     @IBAction func datePickerValueChanged(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let selectedDate = dateFormatter.string(from: datePicker.date)
+        
+        if profileDic?["Bebé"] == nil {profileDic?["Bebé"] = [String:String]()}
+        profileDic?["Bebé"]?["Fecha de Nacimiento"] = selectedDate
+        
         datePicked = true
         table.reloadRows(at: [IndexPath(row: 5, section: 0)], with: .none)
     }
@@ -384,13 +393,6 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
             } else {
                 if profileDic?["Bebé"] == nil {profileDic?["Bebé"] = [String:String]()}
                 profileDic?["Bebé"]?["Apodo"] = textField.text
-            }
-        case 5:
-            if textField.text == "" {
-                profileDic?["Bebé"]?.removeValue(forKey: "Fecha de Nacimiento")
-            } else {
-                if profileDic?["Bebé"] == nil {profileDic?["Bebé"] = [String:String]()}
-                profileDic?["Bebé"]?["Fecha de Nacimiento"] = textField.text
             }
         default:
             print("")
