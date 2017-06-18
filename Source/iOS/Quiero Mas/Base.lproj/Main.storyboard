@@ -60,7 +60,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle Baby" translatesAutoresizingMaskIntoConstraints="NO" id="Nrn-99-HOU">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle Baby" translatesAutoresizingMaskIntoConstraints="NO" id="Nrn-99-HOU">
                                     <rect key="frame" x="15" y="15" width="50" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="50" id="Dpz-pt-m6j"/>
@@ -109,7 +109,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYh-5y-lWp">
-                                            <rect key="frame" x="67" y="15" width="303" height="15"/>
+                                            <rect key="frame" x="67" y="14.5" width="303" height="15"/>
                                             <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="15"/>
                                             <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -584,20 +584,115 @@
                                     <constraint firstAttribute="height" constant="40" id="sv7-XU-1YR"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QwM-Is-dmb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xC3-X4-aRO">
+                                        <rect key="frame" x="20" y="220" width="335" height="64"/>
+                                        <string key="text">El programa de alimentación es para bebés de 6 a 12 meses. Cuando cumpla 6 meses comenzaremos a mostrarte las recetas ideales para que le cocines.</string>
+                                        <fontDescription key="fontDescription" name="Cera-Light" family="Cera" pointSize="16"/>
+                                        <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Orange Separator" translatesAutoresizingMaskIntoConstraints="NO" id="wHk-uK-9RP">
+                                        <rect key="frame" x="98" y="324" width="180" height="2"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="pLr-9c-Lha"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CSw-As-oqj" userLabel="Editar View">
+                                        <rect key="frame" x="20" y="366" width="335" height="40"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shO-Gd-26p">
+                                                <rect key="frame" x="1" y="1" width="333" height="38"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaV-Hs-0fN">
+                                                        <rect key="frame" x="87" y="0.0" width="160" height="38"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="Baby Nutricion" translatesAutoresizingMaskIntoConstraints="NO" id="lkH-To-2tb">
+                                                                <rect key="frame" x="0.0" y="5" width="30" height="28"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="30" id="HVc-3y-MG4"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Editar perfil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d18-ZF-pdS">
+                                                                <rect key="frame" x="50" y="0.0" width="110" height="38"/>
+                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="18"/>
+                                                                <color key="textColor" red="0.18823529410000001" green="0.27450980390000002" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0D-nL-OPB">
+                                                                <rect key="frame" x="0.0" y="0.0" width="160" height="38"/>
+                                                                <connections>
+                                                                    <action selector="openPerfilAction:" destination="1l9-OV-Ftx" eventType="touchUpInside" id="f1l-pr-Pec"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="160" id="21l-sD-LHI"/>
+                                                            <constraint firstAttribute="bottom" secondItem="h0D-nL-OPB" secondAttribute="bottom" id="2fE-7C-bgI"/>
+                                                            <constraint firstItem="h0D-nL-OPB" firstAttribute="top" secondItem="OaV-Hs-0fN" secondAttribute="top" id="5Ka-Gw-pwb"/>
+                                                            <constraint firstAttribute="trailing" secondItem="d18-ZF-pdS" secondAttribute="trailing" id="UFR-7V-88q"/>
+                                                            <constraint firstItem="lkH-To-2tb" firstAttribute="top" secondItem="OaV-Hs-0fN" secondAttribute="top" constant="5" id="V5h-73-F0E"/>
+                                                            <constraint firstItem="d18-ZF-pdS" firstAttribute="leading" secondItem="lkH-To-2tb" secondAttribute="trailing" constant="20" id="Yjr-5w-DDH"/>
+                                                            <constraint firstAttribute="trailing" secondItem="h0D-nL-OPB" secondAttribute="trailing" id="cUg-ZO-sGD"/>
+                                                            <constraint firstAttribute="bottom" secondItem="lkH-To-2tb" secondAttribute="bottom" constant="5" id="flo-Xi-2Ge"/>
+                                                            <constraint firstItem="h0D-nL-OPB" firstAttribute="leading" secondItem="OaV-Hs-0fN" secondAttribute="leading" id="nci-Gs-Wj6"/>
+                                                            <constraint firstAttribute="bottom" secondItem="d18-ZF-pdS" secondAttribute="bottom" id="rVU-Ot-RyD"/>
+                                                            <constraint firstItem="d18-ZF-pdS" firstAttribute="top" secondItem="OaV-Hs-0fN" secondAttribute="top" id="wxG-6R-AXb"/>
+                                                            <constraint firstItem="lkH-To-2tb" firstAttribute="leading" secondItem="OaV-Hs-0fN" secondAttribute="leading" id="yUN-pZ-XWO"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="OaV-Hs-0fN" secondAttribute="bottom" id="0LE-E1-QiT"/>
+                                                    <constraint firstItem="OaV-Hs-0fN" firstAttribute="centerX" secondItem="shO-Gd-26p" secondAttribute="centerX" id="Mvz-sJ-jnC"/>
+                                                    <constraint firstItem="OaV-Hs-0fN" firstAttribute="top" secondItem="shO-Gd-26p" secondAttribute="top" id="Nk9-mv-47w"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.18823529410000001" green="0.27450980390000002" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="shO-Gd-26p" secondAttribute="trailing" constant="1" id="9aV-Z3-5HA"/>
+                                            <constraint firstItem="shO-Gd-26p" firstAttribute="leading" secondItem="CSw-As-oqj" secondAttribute="leading" constant="1" id="Iu9-bh-QZy"/>
+                                            <constraint firstAttribute="height" constant="40" id="RFx-ho-Feu"/>
+                                            <constraint firstAttribute="bottom" secondItem="shO-Gd-26p" secondAttribute="bottom" constant="1" id="YMZ-2K-EfF"/>
+                                            <constraint firstItem="shO-Gd-26p" firstAttribute="top" secondItem="CSw-As-oqj" secondAttribute="top" constant="1" id="bVS-n7-P2f"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="CSw-As-oqj" secondAttribute="trailing" constant="20" id="JTR-Z7-4a5"/>
+                                    <constraint firstItem="xC3-X4-aRO" firstAttribute="top" secondItem="QwM-Is-dmb" secondAttribute="top" constant="220" id="Klu-4D-HaA"/>
+                                    <constraint firstItem="CSw-As-oqj" firstAttribute="top" secondItem="wHk-uK-9RP" secondAttribute="bottom" constant="40" id="QT8-wG-0VH"/>
+                                    <constraint firstItem="xC3-X4-aRO" firstAttribute="leading" secondItem="QwM-Is-dmb" secondAttribute="leading" constant="20" id="UEb-mO-0Ln"/>
+                                    <constraint firstItem="wHk-uK-9RP" firstAttribute="top" secondItem="xC3-X4-aRO" secondAttribute="bottom" constant="40" id="XI1-7n-DSP"/>
+                                    <constraint firstItem="CSw-As-oqj" firstAttribute="leading" secondItem="QwM-Is-dmb" secondAttribute="leading" constant="20" id="cpT-VN-wkX"/>
+                                    <constraint firstAttribute="trailing" secondItem="xC3-X4-aRO" secondAttribute="trailing" constant="20" id="rnp-I5-lUh"/>
+                                    <constraint firstItem="wHk-uK-9RP" firstAttribute="centerX" secondItem="QwM-Is-dmb" secondAttribute="centerX" id="zcL-aH-Oy7"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BxM-AM-Iob" firstAttribute="leading" secondItem="TOS-Lx-QJ1" secondAttribute="leading" id="2fL-3K-Op5"/>
                             <constraint firstItem="aDM-dc-Okb" firstAttribute="top" secondItem="BxM-AM-Iob" secondAttribute="bottom" id="9C8-0B-DXv"/>
+                            <constraint firstItem="QwM-Is-dmb" firstAttribute="top" secondItem="jB2-bq-DYr" secondAttribute="bottom" id="9Qt-p2-vO2"/>
                             <constraint firstItem="3Vs-f5-FTg" firstAttribute="top" secondItem="x0p-T4-sCd" secondAttribute="bottom" id="CDh-Ck-o7q"/>
                             <constraint firstAttribute="trailing" secondItem="KVR-OJ-FKM" secondAttribute="trailing" constant="20" id="CHY-ge-h1Y"/>
                             <constraint firstAttribute="trailing" secondItem="3Vs-f5-FTg" secondAttribute="trailing" id="Guy-xp-OSf"/>
                             <constraint firstItem="3Vs-f5-FTg" firstAttribute="leading" secondItem="TOS-Lx-QJ1" secondAttribute="leading" id="Hhh-ON-Xc4"/>
+                            <constraint firstItem="QwM-Is-dmb" firstAttribute="leading" secondItem="TOS-Lx-QJ1" secondAttribute="leading" id="I7K-BS-c7e"/>
                             <constraint firstAttribute="trailing" secondItem="BxM-AM-Iob" secondAttribute="trailing" id="Ksg-sP-lxW"/>
                             <constraint firstAttribute="trailing" secondItem="x0p-T4-sCd" secondAttribute="trailing" id="PBl-H9-1IB"/>
                             <constraint firstAttribute="trailing" secondItem="aDM-dc-Okb" secondAttribute="trailing" id="RUq-Dc-Uep"/>
                             <constraint firstItem="vbY-se-JN9" firstAttribute="top" secondItem="KVR-OJ-FKM" secondAttribute="bottom" constant="20" id="Rs5-Mx-ES9"/>
                             <constraint firstItem="x0p-T4-sCd" firstAttribute="leading" secondItem="TOS-Lx-QJ1" secondAttribute="leading" id="TVg-EL-uk9"/>
+                            <constraint firstItem="vbY-se-JN9" firstAttribute="top" secondItem="QwM-Is-dmb" secondAttribute="bottom" id="USC-XX-pdR"/>
+                            <constraint firstAttribute="trailing" secondItem="QwM-Is-dmb" secondAttribute="trailing" id="Zur-nO-cHs"/>
                             <constraint firstItem="x0p-T4-sCd" firstAttribute="top" secondItem="TOS-Lx-QJ1" secondAttribute="top" id="fdw-mi-fwH"/>
                             <constraint firstItem="KVR-OJ-FKM" firstAttribute="leading" secondItem="TOS-Lx-QJ1" secondAttribute="leading" constant="20" id="m1p-yl-7dX"/>
                             <constraint firstItem="aDM-dc-Okb" firstAttribute="leading" secondItem="TOS-Lx-QJ1" secondAttribute="leading" id="rrZ-mz-hKE"/>
@@ -611,6 +706,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="noBabyView" destination="QwM-Is-dmb" id="e6J-ih-6Qf"/>
                         <outlet property="orangeHeader" destination="x0p-T4-sCd" id="M7F-r9-waA"/>
                         <outlet property="revealMenuButton" destination="eGC-8j-J2Y" id="tzv-h9-thV"/>
                     </connections>
@@ -3766,7 +3862,7 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
                                             <rect key="frame" x="0.0" y="116" width="375" height="80"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LISTA DE INGREDIENTES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ow3-yE-uGc">
-                                                    <rect key="frame" x="86" y="20" width="203" height="18"/>
+                                                    <rect key="frame" x="86.5" y="20" width="203" height="18"/>
                                                     <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -4525,20 +4621,34 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OXQ-X9-HqK" userLabel="White">
                                             <rect key="frame" x="20" y="130" width="335" height="70"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="70" id="ggB-j7-uJE"/>
-                                            </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieb-hb-v7f">
                                             <rect key="frame" x="0.0" y="200" width="375" height="20"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Baby Group" translatesAutoresizingMaskIntoConstraints="NO" id="Faz-M0-lZd">
-                                            <rect key="frame" x="125.5" y="80" width="124" height="100"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="100" id="r7A-n1-DrF"/>
+                                                <constraint firstAttribute="height" constant="20" id="Ho7-Y1-Cl5"/>
+                                            </constraints>
+                                        </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle Oval" translatesAutoresizingMaskIntoConstraints="NO" id="a6m-IB-a38">
+                                            <rect key="frame" x="137.5" y="80" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="6Bn-DA-TpD"/>
+                                                <constraint firstAttribute="width" constant="100" id="R6g-7J-RP3"/>
                                             </constraints>
                                         </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle Baby" translatesAutoresizingMaskIntoConstraints="NO" id="Faz-M0-lZd">
+                                            <rect key="frame" x="139.5" y="82" width="96" height="96"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="96" id="MdM-ZC-6DO"/>
+                                                <constraint firstAttribute="width" constant="96" id="VI9-Tc-zar"/>
+                                            </constraints>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atF-UI-D0c">
+                                            <rect key="frame" x="137.5" y="80" width="100" height="100"/>
+                                            <connections>
+                                                <action selector="changeBabyImg:" destination="7hd-mV-qML" eventType="touchUpInside" id="odq-A2-2NF"/>
+                                            </connections>
+                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDw-Cg-lSQ">
                                             <rect key="frame" x="86" y="180" width="202" height="30"/>
                                             <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="18"/>
@@ -4549,17 +4659,24 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
                                     </subviews>
                                     <color key="backgroundColor" red="1" green="0.50588235290000005" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstItem="ieb-hb-v7f" firstAttribute="leading" secondItem="iCZ-ak-Hg6" secondAttribute="leading" id="5Xs-4a-a4Y"/>
-                                        <constraint firstItem="ieb-hb-v7f" firstAttribute="top" secondItem="OXQ-X9-HqK" secondAttribute="bottom" id="70U-7W-kaa"/>
-                                        <constraint firstItem="OXQ-X9-HqK" firstAttribute="top" secondItem="iCZ-ak-Hg6" secondAttribute="top" constant="130" id="OqH-Lr-AJp"/>
-                                        <constraint firstItem="Faz-M0-lZd" firstAttribute="top" secondItem="iCZ-ak-Hg6" secondAttribute="top" constant="80" id="PkS-Ol-5K7"/>
-                                        <constraint firstItem="OXQ-X9-HqK" firstAttribute="leading" secondItem="iCZ-ak-Hg6" secondAttribute="leading" constant="20" id="bIE-8h-XN8"/>
-                                        <constraint firstAttribute="trailing" secondItem="ieb-hb-v7f" secondAttribute="trailing" id="c3I-x4-aTU"/>
-                                        <constraint firstItem="tDw-Cg-lSQ" firstAttribute="centerX" secondItem="iCZ-ak-Hg6" secondAttribute="centerX" id="moD-WP-Oy6"/>
-                                        <constraint firstItem="Faz-M0-lZd" firstAttribute="centerX" secondItem="iCZ-ak-Hg6" secondAttribute="centerX" id="odL-ge-IuH"/>
-                                        <constraint firstAttribute="bottom" secondItem="ieb-hb-v7f" secondAttribute="bottom" id="sDk-zv-fhs"/>
-                                        <constraint firstItem="tDw-Cg-lSQ" firstAttribute="top" secondItem="Faz-M0-lZd" secondAttribute="bottom" id="waV-71-OIS"/>
-                                        <constraint firstAttribute="trailing" secondItem="OXQ-X9-HqK" secondAttribute="trailing" constant="20" id="weZ-fk-Shg"/>
+                                        <constraint firstAttribute="trailing" secondItem="ieb-hb-v7f" secondAttribute="trailing" id="0Yk-ou-Bl6"/>
+                                        <constraint firstItem="ieb-hb-v7f" firstAttribute="top" secondItem="OXQ-X9-HqK" secondAttribute="bottom" id="8BJ-X3-Wah"/>
+                                        <constraint firstItem="atF-UI-D0c" firstAttribute="bottom" secondItem="a6m-IB-a38" secondAttribute="bottom" id="8Tf-T8-HHP"/>
+                                        <constraint firstItem="a6m-IB-a38" firstAttribute="top" secondItem="iCZ-ak-Hg6" secondAttribute="top" constant="80" id="FP8-Mf-beI"/>
+                                        <constraint firstItem="OXQ-X9-HqK" firstAttribute="leading" secondItem="iCZ-ak-Hg6" secondAttribute="leading" constant="20" id="Kf8-mP-goW"/>
+                                        <constraint firstItem="tDw-Cg-lSQ" firstAttribute="top" secondItem="a6m-IB-a38" secondAttribute="bottom" id="MDb-lR-JS5"/>
+                                        <constraint firstItem="a6m-IB-a38" firstAttribute="centerX" secondItem="iCZ-ak-Hg6" secondAttribute="centerX" id="V2o-el-yQH"/>
+                                        <constraint firstItem="ieb-hb-v7f" firstAttribute="leading" secondItem="iCZ-ak-Hg6" secondAttribute="leading" id="VxV-Hp-Yrn"/>
+                                        <constraint firstItem="OXQ-X9-HqK" firstAttribute="top" secondItem="iCZ-ak-Hg6" secondAttribute="top" constant="130" id="ahv-47-Ycq"/>
+                                        <constraint firstItem="atF-UI-D0c" firstAttribute="leading" secondItem="a6m-IB-a38" secondAttribute="leading" id="cxV-ef-x4H"/>
+                                        <constraint firstItem="atF-UI-D0c" firstAttribute="top" secondItem="a6m-IB-a38" secondAttribute="top" id="fkp-LP-dx0"/>
+                                        <constraint firstAttribute="trailing" secondItem="OXQ-X9-HqK" secondAttribute="trailing" constant="20" id="hWH-X8-VJS"/>
+                                        <constraint firstAttribute="bottom" secondItem="ieb-hb-v7f" secondAttribute="bottom" id="nbb-p2-KeY"/>
+                                        <constraint firstItem="Faz-M0-lZd" firstAttribute="top" secondItem="iCZ-ak-Hg6" secondAttribute="top" constant="82" id="px8-wU-842"/>
+                                        <constraint firstItem="atF-UI-D0c" firstAttribute="trailing" secondItem="a6m-IB-a38" secondAttribute="trailing" id="rvL-jt-IgV"/>
+                                        <constraint firstItem="tDw-Cg-lSQ" firstAttribute="centerX" secondItem="iCZ-ak-Hg6" secondAttribute="centerX" id="vQL-Zk-BFM"/>
+                                        <constraint firstItem="tDw-Cg-lSQ" firstAttribute="top" secondItem="Faz-M0-lZd" secondAttribute="bottom" constant="2" id="wkH-sw-u8z"/>
+                                        <constraint firstItem="Faz-M0-lZd" firstAttribute="centerX" secondItem="iCZ-ak-Hg6" secondAttribute="centerX" id="zF5-P0-MUH"/>
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="Re0-Hz-Q1E" userLabel="Footer">
@@ -4583,19 +4700,19 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="4py-jt-5JC" firstAttribute="top" secondItem="nSN-9a-Gxq" secondAttribute="top" constant="1" id="DQH-hE-luI"/>
-                                                <constraint firstAttribute="height" constant="40" id="KOE-Rn-4wq"/>
-                                                <constraint firstAttribute="trailing" secondItem="4py-jt-5JC" secondAttribute="trailing" constant="1" id="Olb-hQ-DYC"/>
-                                                <constraint firstAttribute="bottom" secondItem="4py-jt-5JC" secondAttribute="bottom" constant="1" id="gtc-q5-ufd"/>
-                                                <constraint firstItem="4py-jt-5JC" firstAttribute="leading" secondItem="nSN-9a-Gxq" secondAttribute="leading" constant="1" id="hUd-BG-SgQ"/>
+                                                <constraint firstItem="4py-jt-5JC" firstAttribute="leading" secondItem="nSN-9a-Gxq" secondAttribute="leading" constant="1" id="8IH-15-BY5"/>
+                                                <constraint firstAttribute="height" constant="40" id="8KT-eS-AiG"/>
+                                                <constraint firstItem="4py-jt-5JC" firstAttribute="top" secondItem="nSN-9a-Gxq" secondAttribute="top" constant="1" id="CfP-IX-AMb"/>
+                                                <constraint firstAttribute="trailing" secondItem="4py-jt-5JC" secondAttribute="trailing" constant="1" id="Jy1-Vv-eqN"/>
+                                                <constraint firstAttribute="bottom" secondItem="4py-jt-5JC" secondAttribute="bottom" constant="1" id="TKz-cm-wEe"/>
                                             </constraints>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="nSN-9a-Gxq" secondAttribute="trailing" constant="20" id="NcI-L8-LM9"/>
-                                        <constraint firstItem="nSN-9a-Gxq" firstAttribute="top" secondItem="Re0-Hz-Q1E" secondAttribute="top" constant="20" id="PDC-aH-KU6"/>
-                                        <constraint firstItem="nSN-9a-Gxq" firstAttribute="leading" secondItem="Re0-Hz-Q1E" secondAttribute="leading" constant="20" id="qR8-lU-eqL"/>
+                                        <constraint firstAttribute="trailing" secondItem="nSN-9a-Gxq" secondAttribute="trailing" constant="20" id="Gyp-Uo-gws"/>
+                                        <constraint firstItem="nSN-9a-Gxq" firstAttribute="top" secondItem="Re0-Hz-Q1E" secondAttribute="top" constant="20" id="Odg-fd-ipZ"/>
+                                        <constraint firstItem="nSN-9a-Gxq" firstAttribute="leading" secondItem="Re0-Hz-Q1E" secondAttribute="leading" constant="20" id="QpI-Nz-QLn"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
@@ -4614,20 +4731,18 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
                                 </connections>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="33a-EJ-9FV">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
                                 <color key="color" red="1" green="0.50588235290000005" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.50588235290000005" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="7R4-f5-1fd" firstAttribute="top" secondItem="DKD-K4-gLn" secondAttribute="bottom" id="4kK-sh-isG"/>
-                            <constraint firstItem="33a-EJ-9FV" firstAttribute="top" secondItem="uaU-Da-scM" secondAttribute="bottom" id="74Z-ZD-EVP"/>
-                            <constraint firstItem="33a-EJ-9FV" firstAttribute="leading" secondItem="30r-Ap-9Ew" secondAttribute="leading" id="Fla-h8-gld"/>
-                            <constraint firstAttribute="trailing" secondItem="DKD-K4-gLn" secondAttribute="trailing" id="Hnm-XL-6lE"/>
-                            <constraint firstItem="DKD-K4-gLn" firstAttribute="leading" secondItem="30r-Ap-9Ew" secondAttribute="leading" id="pAj-JH-VNM"/>
-                            <constraint firstItem="7R4-f5-1fd" firstAttribute="top" secondItem="33a-EJ-9FV" secondAttribute="bottom" id="tNs-yH-21R"/>
-                            <constraint firstItem="DKD-K4-gLn" firstAttribute="top" secondItem="30r-Ap-9Ew" secondAttribute="top" id="uFW-nG-z5Y"/>
-                            <constraint firstAttribute="trailing" secondItem="33a-EJ-9FV" secondAttribute="trailing" id="v8J-91-ls1"/>
+                            <constraint firstAttribute="trailing" secondItem="DKD-K4-gLn" secondAttribute="trailing" id="8Ox-Of-UWt"/>
+                            <constraint firstItem="33a-EJ-9FV" firstAttribute="centerY" secondItem="30r-Ap-9Ew" secondAttribute="centerY" id="IFt-Og-hTn"/>
+                            <constraint firstItem="DKD-K4-gLn" firstAttribute="top" secondItem="30r-Ap-9Ew" secondAttribute="top" id="MnA-k6-5vn"/>
+                            <constraint firstItem="33a-EJ-9FV" firstAttribute="centerX" secondItem="30r-Ap-9Ew" secondAttribute="centerX" id="Z6B-cy-mGt"/>
+                            <constraint firstItem="7R4-f5-1fd" firstAttribute="top" secondItem="DKD-K4-gLn" secondAttribute="bottom" id="kIy-ed-cqk"/>
+                            <constraint firstItem="DKD-K4-gLn" firstAttribute="leading" secondItem="30r-Ap-9Ew" secondAttribute="leading" id="m1o-Xk-xsN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tu perfil" id="VjL-Kp-Ebw">
@@ -4642,6 +4757,8 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="babyImgView" destination="Faz-M0-lZd" id="kwc-SP-NYd"/>
+                        <outlet property="datePicker" destination="xSY-ih-We1" id="tP6-2n-nIq"/>
                         <outlet property="editOrSaveButton" destination="4py-jt-5JC" id="a2b-NG-tg0"/>
                         <outlet property="revealMenuButton" destination="k7l-M5-iZq" id="bDc-0v-Bj9"/>
                         <outlet property="spinner" destination="33a-EJ-9FV" id="udj-T4-Y4j"/>
@@ -4649,13 +4766,24 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8uK-Ia-dqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="xSY-ih-We1">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <date key="date" timeIntervalSinceReferenceDate="519442151.58861899">
+                        <!--2017-06-18 01:29:11 +0000-->
+                    </date>
+                    <locale key="locale" localeIdentifier="es_AR"/>
+                    <connections>
+                        <action selector="datePickerValueChanged:" destination="7hd-mV-qML" eventType="valueChanged" id="lbi-pI-2gS"/>
+                    </connections>
+                </datePicker>
             </objects>
             <point key="canvasLocation" x="2494" y="7825"/>
         </scene>
     </scenes>
     <resources>
         <image name="Almuerzo1Img" width="375" height="145"/>
-        <image name="Baby Group" width="124" height="126"/>
+        <image name="Baby Nutricion" width="32" height="28"/>
         <image name="Back Arrow" width="6" height="11"/>
         <image name="Calendar Lista" width="15" height="15"/>
         <image name="Cena1Img" width="375" height="145"/>

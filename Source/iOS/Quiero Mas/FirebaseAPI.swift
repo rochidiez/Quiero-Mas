@@ -110,25 +110,21 @@ class FirebaseAPI: NSObject {
             }.resume()
     }
     
-    static func uploadBabyImg(img: UIImage, firebaseID: String) {
+    static func uploadBabyImg(img: UIImage) {
+        let user = FIRAuth.auth()?.currentUser
+        guard let firebaseID = user?.uid else {return}
+        
         let storage = FIRStorage.storage()
         let storageRef = storage.reference()
-
-        let bebesRef = storageRef.child("Bebes/\(firebaseID).png")
+        let bebesRef = storageRef.child("Bebes/\(firebaseID).jpeg")
         
-        if let uploadData = UIImagePNGRepresentation(img) {
+        if let uploadData = UIImageJPEGRepresentation(img, 0) {
             bebesRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
                 if error != nil {
                     print(error ?? "error uploading")
                 } else {
                     print(metadata ?? "error uploading")
-                    if let url = metadata?.downloadURL() {
-                        if var userDic = UserDefaults.standard.dictionary(forKey: "usuario") {
-                            userDic["foto"] = url.absoluteString
-                            UserDefaults.standard.set(userDic, forKey: "usuario")
-                        } else {
-                            UserDefaults.standard.set(["foto":url.absoluteString], forKey: "usuario")
-                        }
+                    if metadata?.downloadURL() != nil {
                         NotificationCenter.default.post(name: Notification.Name(rawValue: perfilUpdated), object: nil)
                     }
                 }
@@ -190,6 +186,17 @@ class FirebaseAPI: NSObject {
             }
         }) { (error) in
             NotificationCenter.default.post(name: Notification.Name(rawValue: connectionError), object: nil)
+        }
+    }
+    
+    static func getUser(firebaseID: String) {
+        FIRDatabase.database().reference().child("Usuarios").child(firebaseID).observeSingleEvent(of: .value, with: { (snap) in
+            if let userDic = snap.value as? [String:String] {
+                UserDefaults.standard.set(userDic, forKey: "perfil")
+                NotificationCenter.default.post(name: Notification.Name(rawValue: perfilUpdated), object: nil)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
         }
     }
     

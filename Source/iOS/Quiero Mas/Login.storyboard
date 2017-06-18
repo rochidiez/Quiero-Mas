@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="itE-Kv-gin">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="itE-Kv-gin">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -190,7 +190,7 @@ todo su inmenso potencial.</string>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalado por la SAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPL-ND-HGT">
-                                                <rect key="frame" x="126" y="596" width="123.5" height="14"/>
+                                                <rect key="frame" x="126.5" y="596" width="123.5" height="14"/>
                                                 <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -231,7 +231,7 @@ todo su inmenso potencial.</string>
                                                 <rect key="frame" x="80" y="40" width="215" height="90"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalado por nutricionistas y pediatras." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSc-Zk-sdR">
-                                                <rect key="frame" x="45" y="140" width="286.5" height="16"/>
+                                                <rect key="frame" x="44.5" y="140" width="286.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -367,7 +367,7 @@ todo su inmenso potencial.</string>
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="loginAction:" destination="uCc-nz-vbp" eventType="touchUpInside" id="jC1-eV-c0T"/>
+                                                                    <action selector="logInWithEmail:" destination="uCc-nz-vbp" eventType="touchUpInside" id="YAZ-Eg-mW0"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -443,7 +443,7 @@ todo su inmenso potencial.</string>
                                                 <rect key="frame" x="80" y="40" width="215" height="90"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalado por nutricionistas y pediatras." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kF-QS-QaL">
-                                                <rect key="frame" x="45" y="140" width="286.5" height="16"/>
+                                                <rect key="frame" x="44.5" y="140" width="286.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -620,7 +620,7 @@ todo su inmenso potencial.</string>
                                                 <rect key="frame" x="80" y="40" width="215" height="90"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalado por nutricionistas y pediatras." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxo-SR-CnI">
-                                                <rect key="frame" x="45" y="140" width="286.5" height="16"/>
+                                                <rect key="frame" x="44.5" y="140" width="286.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -910,7 +910,7 @@ todo su inmenso potencial.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Ya nació tu bebé?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Rd-q5-ohk">
-                                                <rect key="frame" x="92" y="100" width="192" height="22"/>
+                                                <rect key="frame" x="91.5" y="100" width="192" height="22"/>
                                                 <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -1222,9 +1222,8 @@ todo su inmenso potencial.</string>
                                     <constraint firstItem="RSC-yd-L83" firstAttribute="height" secondItem="Cq6-Xi-ElM" secondAttribute="height" id="vnY-kb-7Qs"/>
                                 </constraints>
                             </scrollView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="47C-9V-Ybj">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="47C-9V-Ybj">
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="1" green="0.50588235290000005" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -1233,10 +1232,12 @@ todo su inmenso potencial.</string>
                             <constraint firstItem="gjZ-ov-IAt" firstAttribute="leading" secondItem="he2-ix-xfb" secondAttribute="leading" id="22u-HX-6gk"/>
                             <constraint firstItem="gjZ-ov-IAt" firstAttribute="top" secondItem="he2-ix-xfb" secondAttribute="top" id="7Qs-02-Wky"/>
                             <constraint firstAttribute="trailing" secondItem="1Ik-UX-hFI" secondAttribute="trailing" id="AP6-7n-QTx"/>
+                            <constraint firstItem="47C-9V-Ybj" firstAttribute="centerX" secondItem="he2-ix-xfb" secondAttribute="centerX" id="DOF-rT-nzj"/>
                             <constraint firstItem="1Ik-UX-hFI" firstAttribute="top" secondItem="he2-ix-xfb" secondAttribute="top" id="DWj-6E-1Wa"/>
                             <constraint firstItem="XSx-YF-p69" firstAttribute="centerX" secondItem="he2-ix-xfb" secondAttribute="centerX" id="HmF-sq-lGx"/>
                             <constraint firstAttribute="bottom" secondItem="gjZ-ov-IAt" secondAttribute="bottom" id="Ntq-Ad-KWW"/>
                             <constraint firstAttribute="trailing" secondItem="gjZ-ov-IAt" secondAttribute="trailing" id="X90-d7-ag8"/>
+                            <constraint firstItem="47C-9V-Ybj" firstAttribute="centerY" secondItem="he2-ix-xfb" secondAttribute="centerY" id="YP8-JW-kGz"/>
                             <constraint firstAttribute="bottom" secondItem="1Ik-UX-hFI" secondAttribute="bottom" id="d5I-Bd-ClH"/>
                             <constraint firstItem="XSx-YF-p69" firstAttribute="centerY" secondItem="he2-ix-xfb" secondAttribute="centerY" id="s4V-Zh-Mz8"/>
                             <constraint firstItem="1Ik-UX-hFI" firstAttribute="leading" secondItem="he2-ix-xfb" secondAttribute="leading" id="zOw-iE-2Rn"/>
@@ -1321,7 +1322,7 @@ todo su inmenso potencial.</string>
                                                         <rect key="frame" x="0.0" y="50" width="335" height="400"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUBIR FOTO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn1-Pm-yBI">
-                                                                <rect key="frame" x="119.5" y="60" width="97" height="17"/>
+                                                                <rect key="frame" x="119" y="60" width="97" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="17"/>
                                                                 <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -1466,8 +1467,11 @@ todo su inmenso potencial.</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYV-bz-CQV" userLabel="Baby View">
                                                         <rect key="frame" x="118" y="0.0" width="100" height="100"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle Baby" translatesAutoresizingMaskIntoConstraints="NO" id="lOR-KG-dBf">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle Oval" translatesAutoresizingMaskIntoConstraints="NO" id="WGE-7W-Ccz">
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Circle Baby" translatesAutoresizingMaskIntoConstraints="NO" id="lOR-KG-dBf">
+                                                                <rect key="frame" x="2" y="2" width="96" height="96"/>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lc0-ff-A4Q">
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -1478,14 +1482,18 @@ todo su inmenso potencial.</string>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="lOR-KG-dBf" secondAttribute="trailing" id="IiE-E8-a7j"/>
+                                                            <constraint firstAttribute="trailing" secondItem="WGE-7W-Ccz" secondAttribute="trailing" id="CYP-Fv-M1L"/>
+                                                            <constraint firstAttribute="bottom" secondItem="WGE-7W-Ccz" secondAttribute="bottom" id="IZD-MX-92E"/>
+                                                            <constraint firstAttribute="trailing" secondItem="lOR-KG-dBf" secondAttribute="trailing" constant="2" id="IiE-E8-a7j"/>
                                                             <constraint firstItem="lc0-ff-A4Q" firstAttribute="top" secondItem="pYV-bz-CQV" secondAttribute="top" id="JNE-rX-qJ2"/>
-                                                            <constraint firstAttribute="bottom" secondItem="lOR-KG-dBf" secondAttribute="bottom" id="MbI-bj-EKy"/>
+                                                            <constraint firstAttribute="bottom" secondItem="lOR-KG-dBf" secondAttribute="bottom" constant="2" id="MbI-bj-EKy"/>
                                                             <constraint firstAttribute="trailing" secondItem="lc0-ff-A4Q" secondAttribute="trailing" id="Q1s-TP-bYe"/>
                                                             <constraint firstItem="lc0-ff-A4Q" firstAttribute="leading" secondItem="pYV-bz-CQV" secondAttribute="leading" id="WYy-Oj-YXj"/>
-                                                            <constraint firstItem="lOR-KG-dBf" firstAttribute="top" secondItem="pYV-bz-CQV" secondAttribute="top" id="bF7-PS-aWa"/>
+                                                            <constraint firstItem="WGE-7W-Ccz" firstAttribute="top" secondItem="pYV-bz-CQV" secondAttribute="top" id="XJ6-ZT-YTP"/>
+                                                            <constraint firstItem="WGE-7W-Ccz" firstAttribute="leading" secondItem="pYV-bz-CQV" secondAttribute="leading" id="Z7J-cK-XTK"/>
+                                                            <constraint firstItem="lOR-KG-dBf" firstAttribute="top" secondItem="pYV-bz-CQV" secondAttribute="top" constant="2" id="bF7-PS-aWa"/>
                                                             <constraint firstAttribute="bottom" secondItem="lc0-ff-A4Q" secondAttribute="bottom" id="btZ-3l-FMe"/>
-                                                            <constraint firstItem="lOR-KG-dBf" firstAttribute="leading" secondItem="pYV-bz-CQV" secondAttribute="leading" id="lRQ-ho-Zen"/>
+                                                            <constraint firstItem="lOR-KG-dBf" firstAttribute="leading" secondItem="pYV-bz-CQV" secondAttribute="leading" constant="2" id="lRQ-ho-Zen"/>
                                                             <constraint firstAttribute="width" constant="100" id="ncN-77-4yq"/>
                                                             <constraint firstAttribute="height" constant="100" id="o7V-6q-vxD"/>
                                                         </constraints>
@@ -1525,9 +1533,8 @@ todo su inmenso potencial.</string>
                                     <constraint firstItem="Rgi-KT-Xga" firstAttribute="top" secondItem="5kM-LO-Gdt" secondAttribute="top" id="vwC-Cs-k74"/>
                                 </constraints>
                             </scrollView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="6Nc-1U-wx3">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="6Nc-1U-wx3">
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="1" green="0.50588235290000005" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -1537,7 +1544,9 @@ todo su inmenso potencial.</string>
                             <constraint firstItem="5kM-LO-Gdt" firstAttribute="top" secondItem="teD-yI-Skb" secondAttribute="top" id="Iou-bN-qhM"/>
                             <constraint firstItem="5kM-LO-Gdt" firstAttribute="leading" secondItem="teD-yI-Skb" secondAttribute="leading" id="LXk-ka-Nwe"/>
                             <constraint firstAttribute="bottom" secondItem="5kM-LO-Gdt" secondAttribute="bottom" id="RgF-qB-TSn"/>
+                            <constraint firstItem="6Nc-1U-wx3" firstAttribute="centerY" secondItem="teD-yI-Skb" secondAttribute="centerY" id="dRm-6E-vBH"/>
                             <constraint firstAttribute="trailing" secondItem="5kM-LO-Gdt" secondAttribute="trailing" id="fdJ-QF-zke"/>
+                            <constraint firstItem="6Nc-1U-wx3" firstAttribute="centerX" secondItem="teD-yI-Skb" secondAttribute="centerX" id="nDj-pz-KIW"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1599,6 +1608,7 @@ todo su inmenso potencial.</string>
     </scenes>
     <resources>
         <image name="Circle Baby" width="102" height="102"/>
+        <image name="Circle Oval" width="104" height="104"/>
         <image name="LaunchScreen Top Img" width="334" height="103"/>
         <image name="Login Quiero Mas" width="293" height="90"/>
         <image name="Login TV Crecer" width="152" height="44"/>

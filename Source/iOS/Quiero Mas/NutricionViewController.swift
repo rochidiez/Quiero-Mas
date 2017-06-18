@@ -13,7 +13,9 @@ class NutricionViewController: UIViewController {
 
     @IBOutlet weak var revealMenuButton: UIBarButtonItem!
     @IBOutlet weak var orangeHeader: UIView!
+    @IBOutlet weak var noBabyView: UIView!
     
+    //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         setRevealMenuButton()
@@ -29,11 +31,21 @@ class NutricionViewController: UIViewController {
     func setAppMainColor() {
         orangeHeader.backgroundColor = appMainColor
     }
-
+    
+    
+    //MARK: - ViewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.title = "Plan de nutrición"
+        checkAndSetView()
     }
+    
+    func checkAndSetView() {
+        if let userDic = UserDefaults.standard.dictionary(forKey: "perfil") as? [String:[String:String]] {
+            noBabyView.isHidden = userDic["Bebé"] != nil
+        }
+    }
+    
     
     //MARK: - IBAction
     @IBAction func listadoAction(_ sender: Any) {
@@ -52,6 +64,12 @@ class NutricionViewController: UIViewController {
         let story = UIStoryboard(name: "Main", bundle: nil)
         let vc = story.instantiateViewController(withIdentifier: "RecetaViewController")
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func openPerfilAction(_ sender:Any) {
+        let story = UIStoryboard(name: "Main", bundle: nil)
+        let vc = story.instantiateViewController(withIdentifier: "PerfilNav")
+        self.revealViewController().pushFrontViewController(vc, animated: true)
     }
     
     

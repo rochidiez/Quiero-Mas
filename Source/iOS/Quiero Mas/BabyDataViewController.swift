@@ -29,6 +29,7 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate, UIImagePick
         super.viewDidLoad()
         setBabyBirthdayTF()
         setTapGesture()
+        setBabyImgCorners()
     }
     
     func setBabyBirthdayTF() {
@@ -38,6 +39,10 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate, UIImagePick
     func setTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapGestureHandler))
         self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    func setBabyImgCorners() {
+        babyImgView.layer.cornerRadius = babyImgView.frame.width/2
     }
     
     func tapGestureHandler() {
@@ -77,10 +82,8 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate, UIImagePick
                 self.spinner.stopAnimating()
                 return
             } else {
-                let user = FIRAuth.auth()?.currentUser
-                guard let firebaseID = user?.uid else {return}
                 self.storeUserDataInUserDefaults()
-                FirebaseAPI.storeFirebaseUser(firebaseID: firebaseID,
+                FirebaseAPI.storeFirebaseUser(firebaseID: (user?.uid)!,
                                               name: self.name!,
                                               birthday: self.birthday!,
                                               email: self.email!,
@@ -88,7 +91,7 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate, UIImagePick
                                               babyNickName: self.babyNickNameTF.text!,
                                               babyBirthday: self.babyBirthdayTF.text!)
                 if self.babyImg != nil {
-                    FirebaseAPI.uploadBabyImg(img: self.babyImg!, firebaseID: firebaseID)
+                    FirebaseAPI.uploadBabyImg(img: self.babyImg!)
                 }
                 self.showMainVC()
             }
@@ -96,36 +99,36 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate, UIImagePick
     }
     
     func storeUserDataInUserDefaults() {
-        var userDic = [String:Any]()
-        if let d = UserDefaults.standard.dictionary(forKey: "usuario") {
+        var userDic = [String:[String:String]]()
+        if let d = UserDefaults.standard.dictionary(forKey: "perfil") as? [String:[String:String]] {
             userDic = d
         }
         
         if name != nil && name! != "" {
-            userDic["nombre"] = name!
+            userDic["Datos"]?["Nombre Completo"] = name!
         }
         
         if birthday != nil && birthday! != "" {
-            userDic["cumpleanos"] = birthday!
+            userDic["Datos"]?["Fecha de Nacimiento"] = birthday!
         }
         
         if email != nil && email! != "" {
-            userDic["email"] = email!
+            userDic["Datos"]?["Email"] = email!
         }
         
         if babyNameTF.text != nil && babyNameTF.text! != "" {
-            userDic["nombreBebe"] = babyNameTF.text!
+            userDic["Bebé"]?["Nombre"] = babyNameTF.text!
         }
         
         if babyNickNameTF.text != nil && babyNickNameTF.text! != "" {
-            userDic["apodoBebe"] = babyNickNameTF.text!
+            userDic["Bebé"]?["Apodo"] = babyNickNameTF.text!
         }
         
         if babyBirthdayTF.text != nil && babyBirthdayTF.text! != "" {
-            userDic["cumpleanosBebe"] = babyBirthdayTF.text!
+            userDic["Bebé"]?["Fecha de Nacimiento"] = babyBirthdayTF.text!
         }
         
-        UserDefaults.standard.set(userDic, forKey: "usuario")
+        UserDefaults.standard.set(userDic, forKey: "perfil")
     }
     
     @IBAction func datePickerValueChanged(_ sender: Any) {
@@ -154,8 +157,6 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate, UIImagePick
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         
         present(actionSheet, animated: true, completion: nil)
-        
-        
     }
     
     //MARK: - Picker Controller Delegate

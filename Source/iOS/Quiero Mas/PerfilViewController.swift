@@ -10,16 +10,20 @@ import UIKit
 import SWRevealViewController
 import Firebase
 import FBSDKLoginKit
+import FirebaseStorageUI
 
-class PerfilViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+class PerfilViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var revealMenuButton: UIBarButtonItem!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var editOrSaveButton: UIButton!
+    @IBOutlet weak var babyImgView: UIImageView!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     var profileDic: [String:[String:String]]?
     var profileIsEditing = false
+    var datePicked = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +58,25 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
         spinner.stopAnimating()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadBabyImg()
+    }
+    
+    func loadBabyImg() {
+        let user = FIRAuth.auth()?.currentUser
+        guard let firebaseID = user?.uid else {return}
+        
+        let storage = FIRStorage.storage()
+        let storageRef = storage.reference()
+        let bebesRef = storageRef.child("Bebes/\(firebaseID).jpeg")
+        
+        babyImgView.sd_setImage(with: bebesRef, placeholderImage: UIImage(named: "Circle Baby"))
+        babyImgView.layer.cornerRadius = babyImgView.frame.width/2
+    }
+    
     func reloadPerfil() {
+        loadBabyImg()
         showAlert(text: "Los cambios se guardaron correctamente")
     }
     
@@ -161,6 +183,21 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
             cell.descriptionProfile.placeholder = descriptionString
             cell.descriptionProfile.delegate = self
             cell.descriptionProfile.tag = indexPath.row
+            
+            //load date
+            if indexPath.row == 5 {
+                cell.descriptionProfile.inputView = datePicker
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd/MM/yyyy"
+                let selectedDate = dateFormatter.string(from: datePicker.date)
+                
+                if datePicked {
+                    cell.descriptionProfile.text = selectedDate
+                } else {
+                    cell.descriptionProfile.placeholder = selectedDate
+                }
+            }
             
             return cell
         } else {
@@ -272,6 +309,7 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
                                               babyName: profileDic?["Bebé"]?["Nombre"],
                                               babyNickName: profileDic?["Bebé"]?["Apodo"],
                                               babyBirthday: profileDic?["Bebé"]?["Fecha de Nacimiento"])
+                UserDefaults.standard.set(profileDic, forKey: "perfil")
                 showAlert(text: "Los cambios se guardaron exitosamente")
             }
             editOrSaveButton.setTitle("Editar", for: .normal)
@@ -286,9 +324,36 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
     @IBAction func logOut(_ sender:Any) {
         try! FIRAuth.auth()?.signOut()
         FBSDKLoginManager().logOut()
+        UserDefaults.standard.removeObject(forKey: "perfil")
         let story = UIStoryboard(name: "Login", bundle: nil)
         let vc = story.instantiateInitialViewController()
         self.present(vc!, animated: true, completion: nil)
+    }
+    
+    @IBAction func changeBabyImg(_ sender:Any) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        
+        let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action: UIAlertAction) in
+            imagePickerController.sourceType = .camera
+            self.present(imagePickerController, animated: true, completion: nil)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {(action: UIAlertAction) in
+            imagePickerController.sourceType = .photoLibrary
+            self.present(imagePickerController, animated: true, completion: nil)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        
+        present(actionSheet, animated: true, completion: nil)
+    }
+    
+    @IBAction func datePickerValueChanged(_ sender: Any) {
+        datePicked = true
+        table.reloadRows(at: [IndexPath(row: 5, section: 0)], with: .none)
     }
     
 
@@ -342,6 +407,24 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
         return true
     }
     
+    
+    //MARK: - Picker Controller Delegate
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        babyImgView.image = image
+        uploadPicture()
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func uploadPicture() {
+        if babyImgView.image != nil {
+            FirebaseAPI.uploadBabyImg(img: babyImgView.image!)
+        }
+    }
     
     
     

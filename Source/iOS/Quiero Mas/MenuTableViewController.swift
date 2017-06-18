@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorageUI
 
 class MenuTableViewController: UITableViewController {
     
@@ -33,26 +35,30 @@ class MenuTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUserName()
-        setBabyImgView()
+        loadBabyImgView()
     }
     
     func setUserName() {
-        if let userDic = UserDefaults.standard.dictionary(forKey: "usuario") {
-            nameLabel.text = userDic["nombre"] as? String
+        if let userDic = UserDefaults.standard.dictionary(forKey: "perfil") as? [String:[String:String]] {
+            nameLabel.text = userDic["Datos"]?["Nombre Completo"]
         }
     }
     
-    func setBabyImgView() {
-        if let userDic = UserDefaults.standard.dictionary(forKey: "usuario") {
-            if let url = userDic["foto"] as? String {
-                babyImgView.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "Circle Baby"))
-            }
-        }
+    func loadBabyImgView() {
+        let user = FIRAuth.auth()?.currentUser
+        guard let firebaseID = user?.uid else {return}
+        
+        let storage = FIRStorage.storage()
+        let storageRef = storage.reference()
+        let bebesRef = storageRef.child("Bebes/\(firebaseID).jpeg")
+        
+        babyImgView.sd_setImage(with: bebesRef, placeholderImage: UIImage(named: "Circle Baby"))
+        babyImgView.layer.cornerRadius = babyImgView.frame.width/2
     }
     
     func reloadPerfil() {
         setUserName()
-        setBabyImgView()
+        loadBabyImgView()
     }
     
 

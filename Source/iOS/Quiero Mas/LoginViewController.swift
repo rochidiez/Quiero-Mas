@@ -260,6 +260,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         noView.backgroundColor = .clear
         noButton.setTitleColor(.white, for: .normal)
         partoView.isHidden = true
+        notificationPopUp.isHidden = true
         clearAllTextFields()
         showLoginView()
     }
@@ -282,6 +283,43 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     @IBAction func registerAction(_ sender: Any) {
         showRegisterView()
     }
+    
+    @IBAction func logInWithEmail(_ sender:Any) {
+        if loginEmailTF.text == nil || loginEmailTF.text! == "" || loginPassTF.text == nil || loginPassTF.text! == "" {
+            let alert = UIAlertController(title: "",
+                                          message: "Faltan llenar campos",
+                                          preferredStyle: UIAlertControllerStyle.alert)
+            
+            let cancelAction = UIAlertAction(title: "OK",
+                                             style: .cancel, handler: { (alert: UIAlertAction) in
+            })
+            
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true, completion: nil)
+            return
+        } else {
+            spinner.startAnimating()
+            FIRAuth.auth()?.signIn(withEmail: loginEmailTF.text!, password: loginPassTF.text!, completion: { (user, error) in
+                if error != nil {
+                    let alert = UIAlertController(title: "",
+                                                  message: "No se encontró la cuenta, pruebe nuevamente",
+                                                  preferredStyle: UIAlertControllerStyle.alert)
+                    
+                    let cancelAction = UIAlertAction(title: "OK",
+                                                     style: .cancel, handler: { (alert: UIAlertAction) in
+                    })
+                    
+                    alert.addAction(cancelAction)
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    FirebaseAPI.getUser(firebaseID: (user?.uid)!)
+                    self.showMainVC()
+                }
+                self.spinner.stopAnimating()
+            })
+        }
+    }
+    
     //MARK: - IBAction Forgot
     
     //MARK: - IBAction Register
@@ -355,15 +393,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
             alert.addAction(cancelAction)
             present(alert, animated: true, completion: nil)
         } else {
-            let user = FIRAuth.auth()?.currentUser
-            guard let firebaseID = user?.uid else {return}
-            FirebaseAPI.storeFirebaseUser(firebaseID: firebaseID,
-                                          name: registerNameTF.text!,
-                                          birthday: registerDateTF.text!,
-                                          email: registerEmailTF.text!,
-                                          babyName: "",
-                                          babyNickName: "",
-                                          babyBirthday: deliveryDateTF.text!)
             notificationPopUp.isHidden = false
         }
     }
@@ -378,7 +407,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     
     @IBAction func loginAction(_ sender: Any) {
         spinner.startAnimating()
-        FIRAuth.auth()?.createUser(withEmail: loginEmailTF.text!, password: loginPassTF.text!, completion: { (user, error) in
+        FIRAuth.auth()?.createUser(withEmail: registerEmailTF.text!, password: registerPassTF.text!, completion: { (user, error) in
             if error != nil {
                 let alert = UIAlertController(title: "",
                                               message: "No se pudo crear la cuenta, puede que ya exista una cuenta con este email",
@@ -394,18 +423,40 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
                 self.spinner.stopAnimating()
                 return
             } else {
-                let user = FIRAuth.auth()?.currentUser
-                guard let firebaseID = user?.uid else {return}
-                FirebaseAPI.storeFirebaseUser(firebaseID: firebaseID,
-                                              name: self.registerNameTF.text!,
-                                              birthday: self.registerDateTF.text!,
-                                              email: self.registerEmailTF.text!,
-                                              babyName: "",
-                                              babyNickName: "",
-                                              babyBirthday: self.deliveryDateTF.text!)
-                self.showMainVC()
+                    self.storeUserDataInUserDefaults()
+                    FirebaseAPI.storeFirebaseUser(firebaseID: (user?.uid)!,
+                                                  name: self.registerNameTF.text!,
+                                                  birthday: self.registerDateTF.text!,
+                                                  email: self.registerEmailTF.text!,
+                                                  babyName: nil,
+                                                  babyNickName: nil,
+                                                  babyBirthday: self.deliveryDateTF.text!)
+                    self.showMainVC()
             }
         })
+    }
+    
+    func storeUserDataInUserDefaults() {
+        var userDic = [String:[String:String]]()
+        userDic["Datos"] = [String:String]()
+        
+        if registerNameTF.text != nil && registerNameTF.text! != "" {
+            userDic["Datos"]?["Nombre Completo"] = registerNameTF.text!
+        }
+        
+        if registerDateTF.text != nil && registerDateTF.text! != "" {
+            userDic["Datos"]?["Fecha de Nacimiento"] = registerDateTF.text!
+        }
+        
+        if registerEmailTF.text != nil && registerEmailTF.text! != "" {
+            userDic["Datos"]?["Email"] = registerEmailTF.text!
+        }
+        
+        if deliveryDateTF.text != nil && deliveryDateTF.text! != "" {
+            userDic["Bebé"] = ["Fecha de Nacimiento": deliveryDateTF.text!]
+        }
+        
+        UserDefaults.standard.set(userDic, forKey: "perfil")
     }
     
     @IBAction func datePickerValueChanged(_ sender: Any) {
@@ -422,31 +473,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         }
     }
     
-    //MARK: - Device
-    enum UIUserInterfaceIdiom : Int
-    {
-        case Unspecified
-        case Phone
-        case Pad
-    }
-    
-    struct ScreenSize
-    {
-        static let SCREEN_WIDTH         = UIScreen.main.bounds.size.width
-        static let SCREEN_HEIGHT        = UIScreen.main.bounds.size.height
-        static let SCREEN_MAX_LENGTH    = max(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
-        static let SCREEN_MIN_LENGTH    = min(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
-    }
-    
-    struct DeviceType
-    {
-        static let IS_IPHONE_4_OR_LESS  = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH < 568.0
-        static let IS_IPHONE_5          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 568.0
-        static let IS_IPHONE_6          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 667.0
-        static let IS_IPHONE_6P         = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 736.0
-        static let IS_IPAD              = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.SCREEN_MAX_LENGTH == 1024.0
-    }
-    
     //MARK: - FB Login
     @IBAction func loginActionFB() {
         spinner.startAnimating()
@@ -460,17 +486,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
                         self.spinner.stopAnimating()
                         return
                     } else {
-                        if let userId = result?.token.userID {
-                            UserDefaults.standard.setValue(userId, forKey: "fbToken")
+                        if (result?.token.userID) != nil {
                             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, email"]).start(completionHandler: { (connection, result, error) -> Void in
                                 if (error == nil) {
                                     if let res = result as? [String:Any] {
-                                        if var userDic = UserDefaults.standard.dictionary(forKey: "usuario") {
-                                            userDic["nombre"] = res["name"] as? String
-                                            userDic["email"] = res["email"] as? String
-                                            UserDefaults.standard.set(userDic, forKey: "usuario")
+                                        if var userDic = UserDefaults.standard.dictionary(forKey: "perfil") as? [String:[String:String]] {
+                                            userDic["Datos"]?["Nombre Completo"] = res["name"] as? String
+                                            userDic["Datos"]?["Email"] = res["email"] as? String
+                                            UserDefaults.standard.set(userDic, forKey: "perfil")
                                         } else {
-                                            UserDefaults.standard.set(["nombre":res["name"] as? String, "email": res["email"] as? String], forKey: "usuario")
+                                            let datosDic = ["Nombre Completo":res["name"] as? String, "Email":res["email"] as? String]
+                                            let userDic = ["Datos" : datosDic]
+                                            UserDefaults.standard.set(userDic, forKey: "perfil")
                                         }
                                     }
                                 }
@@ -493,17 +520,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
                 return
             }
             print("Accessed FB Firebase with user: \(String(describing: user))")
-            if let userDic = UserDefaults.standard.dictionary(forKey: "usuario") {
-                let fbName = userDic["nombre"] as? String
-                let fbEmail = userDic["email"] as? String
-                let firebaseID = user?.uid
-                FirebaseAPI.storeFirebaseUser(firebaseID: firebaseID!,
-                                              name: fbName!,
-                                              birthday: "",
-                                              email: fbEmail!,
-                                              babyName: "",
-                                              babyNickName: "",
-                                              babyBirthday: "")
+            if let userDic = UserDefaults.standard.dictionary(forKey: "perfil") as? [String:[String:String]] {
+                FirebaseAPI.storeFirebaseUser(firebaseID: (user?.uid)!,
+                                              name: userDic["Datos"]?["Nombre Completo"],
+                                              birthday: userDic["Datos"]?["Fecha de Nacimiento"],
+                                              email: userDic["Datos"]?["Email"],
+                                              babyName: userDic["Bebé"]?["Nombre"],
+                                              babyNickName: userDic["Bebé"]?["Apodo"],
+                                              babyBirthday: userDic["Bebé"]?["Fecha de Nacimiento"])
                 self.showMainVC()
             }
         })
@@ -540,4 +564,29 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     }
     
 
+}
+
+//MARK: - Device
+enum UIUserInterfaceIdiom : Int
+{
+    case Unspecified
+    case Phone
+    case Pad
+}
+
+struct ScreenSize
+{
+    static let SCREEN_WIDTH         = UIScreen.main.bounds.size.width
+    static let SCREEN_HEIGHT        = UIScreen.main.bounds.size.height
+    static let SCREEN_MAX_LENGTH    = max(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
+    static let SCREEN_MIN_LENGTH    = min(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
+}
+
+struct DeviceType
+{
+    static let IS_IPHONE_4_OR_LESS  = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH < 568.0
+    static let IS_IPHONE_5          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 568.0
+    static let IS_IPHONE_6          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 667.0
+    static let IS_IPHONE_6P         = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 736.0
+    static let IS_IPAD              = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.SCREEN_MAX_LENGTH == 1024.0
 }
