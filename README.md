@@ -2,22 +2,22 @@
 
 To Do: Todas las recetas
 ----------------
-- [0] Buscar recetas por nombre
-- [0] Buscar recetas por ingrediente
-- [0] Mostrar cambios en UI
+- [ ] Buscar recetas por nombre
+- [ ] Buscar recetas por ingrediente
+- [ ] Mostrar cambios en UI
 
 To Do: Plan de nutrición
 ----------------
-- [0] Función de Node que dada una fecha de nacimiento devuelva cuántos meses y semanas tiene
-- [0] Obtener todas las recetas de una semana del plan en particular
-- [0] Obtener todos los postres de una semana del plan en particular
-- [0] Mostrar cambios en UI
+- [ ] Función de Node que dada una fecha de nacimiento devuelva cuántos meses y semanas tiene
+- [ ] Obtener todas las recetas de una semana del plan en particular
+- [ ] Obtener todos los postres de una semana del plan en particular
+- [ ] Mostrar cambios en UI
 
 To Do: Estimulación y educación
 ----------------
-- [0] Cargar videos de estimulación
-- [0] Reproducir videos
-- [0] Cambiar UI
+- [ ] Cargar videos de estimulación
+- [ ] Reproducir videos
+- [ ] Cambiar UI
 
 To Do: Nutrición
 ----------------
@@ -27,34 +27,34 @@ To Do: Lactancia
 
 To Do: Lista de compras semanal
 ----------------
- - [0] Función de Node que dada una fecha devuelva una lista de compras
- - [0] Función de Node que tome una lista de compras, un mail y lo envíe
- - [0] Mostrar cambios en UI
+ - [ ] Función de Node que dada una fecha devuelva una lista de compras
+ - [ ] Función de Node que tome una lista de compras, un mail y lo envíe
+ - [ ] Mostrar cambios en UI
 
 To Do: Recetas Favoritas
 ----------------
-- [0] Obtener las recetas favoritas del usuario
-- [0] Marcar/desmarcar como favorita
-- [0] Mostrar cambios en UI
+- [ ] Obtener las recetas favoritas del usuario
+- [ ] Marcar/desmarcar como favorita
+- [ ] Mostrar cambios en UI
 
 To Do: Sobre quiero más
 ----------------
 
 To Do: Recomendar quiero más
 ----------------
-- [0] Función de Node que tome una lista de mails y envíe un mail recomendado la app
-- [0] Mostrar mensaje de estado
+- [ ] Función de Node que tome una lista de mails y envíe un mail recomendado la app
+- [ ] Mostrar mensaje de estado
 
 To Do: Términos y condiciones
 ----------------
 
 To Do: Receta
 ----------------
-- [0] Obtener receta de Firebase
-- [0] Obtener el postre en Firebase
-- [0] Mostrar cambios en UI
-- [0] Obtener puntaje
-- [0] Puntuar
+- [ ] Obtener receta de Firebase
+- [ ] Obtener el postre en Firebase
+- [ ] Mostrar cambios en UI
+- [ ] Obtener puntaje
+- [ ] Puntuar
 
 To Do: Congelar y reutilizar
 ----------------
