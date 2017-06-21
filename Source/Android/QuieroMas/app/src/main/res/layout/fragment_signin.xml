@@ -44,6 +44,7 @@
             android:inputType="textEmailAddress"
             android:background="@android:color/transparent"
             android:ems="10"
+            android:textColorHint="@color/grayPrimary"
             android:hint="ej: vani@gmail.com"
             android:id="@+id/etxt_signin_email" />
 

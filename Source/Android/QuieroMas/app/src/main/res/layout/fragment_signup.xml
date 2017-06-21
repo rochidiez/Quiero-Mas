@@ -42,6 +42,7 @@
             android:inputType="textPersonName"
             android:text=""
             android:hint="ej: Vanina Gonzalez"
+            android:textColorHint="@color/grayPrimary"
             android:background="@android:color/transparent"
             android:ems="10"
             android:id="@+id/etxt_name" />
@@ -72,6 +73,7 @@
             android:background="@android:color/transparent"
             android:inputType="none"
             android:hint="ej: 03/10/1985"
+            android:textColorHint="@color/grayPrimary"
             android:ems="10"
             android:id="@+id/etxt_birthdate" />
 
@@ -101,6 +103,7 @@
             android:background="@android:color/transparent"
             android:ems="10"
             android:hint="ej: vani@gmail.com"
+            android:textColorHint="@color/grayPrimary"
             android:id="@+id/etxt_email" />
 
         <ImageView
