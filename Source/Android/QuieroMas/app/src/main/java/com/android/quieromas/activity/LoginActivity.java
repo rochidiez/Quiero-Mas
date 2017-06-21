@@ -1,7 +1,9 @@
 package com.android.quieromas.activity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,8 +12,12 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.TextSwitcher;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.quieromas.R;
@@ -39,10 +45,15 @@ public class LoginActivity extends AuthFbActivity implements VideoFragment.OnFra
 
     private static final String TAG = "LoginActivity";
 
-    //@BindView(R.id.signup_container) View includedLayout;
-    //@BindView(R.id.btn_login_email) Button btnLoginEmail;
-
+    private TextView txt1;
+    private TextView txt2;
     private Button btnLoginEmail;
+    private int interval = 10000; // 5 seconds by default, can be changed later
+    private Handler mHandler;
+
+    String text1ToShow[] = {"Recetas aprobadas por nutricionistas y pediatras para bebés de 6 a 12 meses.","Plan de nutrición y recetas para cada etapa de tu bebé."};
+    String text2ToShow[] = {"","Queremos que tu hijo desarrolle todo su inmenso potencial."};
+    int index = 0;
 
 
     @Override
@@ -52,14 +63,9 @@ public class LoginActivity extends AuthFbActivity implements VideoFragment.OnFra
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_login);
-        //ButterKnife.bind(this);
-
-        //btnLogin = ButterKnife.findById(includedLayout, R.id.btn_login);
-        //btnFacebook = ButterKnife.findById(includedLayout, R.id.btn_login_fb);
 
 
         btnLoginEmail = (Button) findViewById(R.id.btn_login_email) ;
-
         btnLoginEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,8 +73,46 @@ public class LoginActivity extends AuthFbActivity implements VideoFragment.OnFra
                 startActivity(intent);
             }
         });
+
+        txt1 = (TextView) findViewById(R.id.txt_login_text1);
+        txt1.setTypeface(Typeface.DEFAULT_BOLD);
+        txt2 = (TextView) findViewById(R.id.txt_login_text2);
+
+        mHandler = new Handler();
+        startRepeatingTask();
+
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        stopRepeatingTask();
+    }
+
+    Runnable mStatusChecker = new Runnable() {
+        @Override
+        public void run() {
+            try {
+                // If index reaches maximum reset it
+                if (index == text1ToShow.length){
+                    index = 0;
+                }
+                txt1.setText(text1ToShow[index]);
+                txt2.setText(text2ToShow[index]);
+            } finally {
+                index++;
+                mHandler.postDelayed(mStatusChecker, interval);
+            }
+        }
+    };
+
+    void startRepeatingTask() {
+        mStatusChecker.run();
+    }
+
+    void stopRepeatingTask() {
+        mHandler.removeCallbacks(mStatusChecker);
+    }
 
     @Override
     public void onFragmentInteraction(Uri uri){
