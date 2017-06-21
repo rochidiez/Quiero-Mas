@@ -11,7 +11,7 @@
 
     <fragment android:name="com.android.quieromas.fragment.VideoFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -37,15 +37,6 @@
                 android:id="@+id/imageView"
                 android:layout_gravity="center" />
 
-            <TextView
-                android:text="Avalado por la SAN"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/textColorPrimary"
-                android:textAlignment="center"
-                android:id="@+id/txt_avalado"
-                android:layout_marginBottom="16dp"
-                android:layout_gravity="center"/>
 
             <Button
                 android:text="Continuar con email"
@@ -85,7 +76,7 @@
                 android:src="@drawable/login_quiero_mas_blanco"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="48dp"
                 android:layout_gravity="center"/>
 
             <TextView
