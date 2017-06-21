@@ -68,6 +68,8 @@ public class CheckIfBornedActivity extends AuthActivity implements VideoFragment
         btnIsNotBorned.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                btnIsNotBorned.setTextColor(getResources().getColor(R.color.orangePrimary));
+                btnIsNotBorned.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                 expectedDateView.setVisibility(View.VISIBLE);
             }
         });
