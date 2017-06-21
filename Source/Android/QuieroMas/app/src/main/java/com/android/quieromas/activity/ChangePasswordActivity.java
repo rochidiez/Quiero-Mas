@@ -1,9 +1,11 @@
 package com.android.quieromas.activity;
 
 import android.support.annotation.NonNull;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -29,6 +31,9 @@ public class ChangePasswordActivity extends AuthActivity {
         super.onCreate(savedInstanceState);
         setTitle("Cambiar Contraseña");
         setContentView(R.layout.activity_change_password);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         oldPassword = (FormEditText) findViewById(R.id.etxt_password_change_old);
         newPassword = (FormEditText) findViewById(R.id.etxt_password_change_new);
@@ -65,5 +70,16 @@ public class ChangePasswordActivity extends AuthActivity {
             isValid = field.testValidity() && isValid;
         }
         return isValid;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
