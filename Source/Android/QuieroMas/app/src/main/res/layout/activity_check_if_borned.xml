@@ -120,6 +120,7 @@
                         android:background="@android:color/transparent"
                         android:ems="10"
                         android:hint="ej: 01/01/2018"
+                        android:textColorHint="@color/grayPrimary"
                         android:id="@+id/etxt_expected_date" />
 
                     <ImageView
