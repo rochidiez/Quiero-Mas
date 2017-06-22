@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,17 @@ public class ProfileViewFragment extends BaseFragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ChangePasswordActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        Button btnEditProfile = (Button) view.findViewById(R.id.btn_profile_view_edit);
+        btnEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.profile_edit_container, new ProfileEditFragment(),"edit_profile");
+                ft.addToBackStack("edit_profile");
+                ft.commit();
             }
         });
 
