@@ -22,15 +22,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class NutritionPlanFragment extends Fragment {
+public class NutritionPlanFragment extends BaseFragment {
 
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-
-    private OnFragmentInteractionListener mListener;
 
     public NutritionPlanFragment() {
         // Required empty public constructor
@@ -81,30 +79,6 @@ public class NutritionPlanFragment extends Fragment {
         viewPager.setAdapter(adapter);
     }
 
-
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-    }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();

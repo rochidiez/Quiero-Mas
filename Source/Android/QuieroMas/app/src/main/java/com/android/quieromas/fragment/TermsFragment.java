@@ -12,17 +12,15 @@ import android.widget.TextView;
 import com.android.quieromas.R;
 import com.android.quieromas.activity.MainActivity;
 
-public class TermsFragment extends Fragment {
+public class TermsFragment extends BaseFragment {
 
-
-    private OnFragmentInteractionListener mListener;
 
     public TermsFragment() {
         // Required empty public constructor
     }
 
-    // TODO: Rename and change types and number of parameters
-    public static TermsFragment newInstance(String param1, String param2) {
+
+    public static TermsFragment newInstance() {
         TermsFragment fragment = new TermsFragment();
         return fragment;
     }
@@ -54,27 +52,5 @@ public class TermsFragment extends Fragment {
                 "\n" +
                 "Causae feugiat qui at. Mel nihil laboramus theophrastus ut, et ius ferri ponderum fabellas, impedit omnesque suscipit eu mea. Qui te veri moderatius reprehendunt, at cum doming delicatissimi, te cum wisi impedit civibus. Sit ut velit nonumy consetetur, an eos diceret oportere.\n");
 
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
     }
 }

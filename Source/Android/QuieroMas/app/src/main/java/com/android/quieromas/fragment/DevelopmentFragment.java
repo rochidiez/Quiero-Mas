@@ -24,10 +24,7 @@ import com.android.quieromas.R;
 import com.android.quieromas.activity.DevelopmentDetailActivity;
 import com.android.quieromas.activity.MainActivity;
 
-public class DevelopmentFragment extends Fragment {
-
-
-    private OnFragmentInteractionListener mListener;
+public class DevelopmentFragment extends BaseFragment {
 
     public DevelopmentFragment() {
         // Required empty public constructor
@@ -116,28 +113,5 @@ public class DevelopmentFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_development, container, false);
-    }
-
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
     }
 }

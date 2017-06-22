@@ -25,9 +25,8 @@ import com.android.quieromas.activity.ChangePasswordActivity;
  * Use the {@link ProfileEditFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ProfileEditFragment extends Fragment {
+public class ProfileEditFragment extends BaseFragment {
 
-    private OnFragmentInteractionListener mListener;
 
     public ProfileEditFragment() {
         // Required empty public constructor
@@ -65,25 +64,4 @@ public class ProfileEditFragment extends Fragment {
 
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-    }
 }

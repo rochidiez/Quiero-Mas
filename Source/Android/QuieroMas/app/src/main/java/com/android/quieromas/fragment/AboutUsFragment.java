@@ -14,17 +14,15 @@ import android.widget.TextView;
 import com.android.quieromas.R;
 import com.android.quieromas.activity.MainActivity;
 
-public class AboutUsFragment extends Fragment {
+public class AboutUsFragment extends BaseFragment {
 
-
-    private OnFragmentInteractionListener mListener;
 
     public AboutUsFragment() {
         // Required empty public constructor
     }
 
 
-    public static AboutUsFragment newInstance(String param1, String param2) {
+    public static AboutUsFragment newInstance() {
         AboutUsFragment fragment = new AboutUsFragment();
         return fragment;
     }
@@ -47,16 +45,7 @@ public class AboutUsFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_about_us, container, false);
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
+
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -69,14 +58,5 @@ public class AboutUsFragment extends Fragment {
 
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
 
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-    }
 }

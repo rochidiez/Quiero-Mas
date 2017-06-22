@@ -14,9 +14,7 @@ import android.widget.Button;
 import com.android.quieromas.R;
 import com.android.quieromas.activity.ChangePasswordActivity;
 
-public class ProfileViewFragment extends Fragment {
-
-    private OnFragmentInteractionListener mListener;
+public class ProfileViewFragment extends BaseFragment {
 
     public ProfileViewFragment() {
         // Required empty public constructor
@@ -54,28 +52,5 @@ public class ProfileViewFragment extends Fragment {
             }
         });
 
-    }
-
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
     }
 }

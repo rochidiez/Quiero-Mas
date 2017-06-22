@@ -23,9 +23,8 @@ import com.android.quieromas.model.ExpandableListGroup;
 import java.util.ArrayList;
 
 
-public class LactationFragment extends Fragment {
+public class LactationFragment extends BaseFragment {
 
-    private OnFragmentInteractionListener mListener;
     ExpandableListView expandableListView;
     ArrayList<ExpandableListGroup> groups;
     TextView txtSubtitle;
@@ -94,28 +93,6 @@ public class LactationFragment extends Fragment {
             }
             groups.add(group);
         }
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
     }
 }
 

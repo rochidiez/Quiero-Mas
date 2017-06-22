@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.android.quieromas.R;
+import com.android.quieromas.fragment.BaseFragment;
 import com.android.quieromas.fragment.ForgotPasswordFragment;
 import com.android.quieromas.fragment.SigninFragment;
 import com.android.quieromas.fragment.SignupFragment;
@@ -22,8 +23,7 @@ import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class SignupActivity extends AuthFbActivity implements VideoFragment.OnFragmentInteractionListener,
-        SignupFragment.OnFragmentInteractionListener, SigninFragment.OnFragmentInteractionListener, ForgotPasswordFragment.OnFragmentInteractionListener{
+public class SignupActivity extends AuthFbActivity implements BaseFragment.OnFragmentInteractionListener{
 
     private static final String TAG = "SignupActivity";
 

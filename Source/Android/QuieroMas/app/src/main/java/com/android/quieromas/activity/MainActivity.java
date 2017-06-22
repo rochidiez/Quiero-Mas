@@ -13,12 +13,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 
 import com.android.quieromas.R;
 import com.android.quieromas.fragment.AbcFragment;
+import com.android.quieromas.fragment.AbcPerMonthFragment;
 import com.android.quieromas.fragment.AboutUsFragment;
+import com.android.quieromas.fragment.BaseFragment;
 import com.android.quieromas.fragment.DevelopmentFragment;
 import com.android.quieromas.fragment.FavoriteRecipesFragment;
 import com.android.quieromas.fragment.HomeFragment;
@@ -31,12 +32,8 @@ import com.android.quieromas.fragment.TermsFragment;
 import com.android.quieromas.model.DummyContent;
 
 public class MainActivity extends AuthActivity
-        implements NavigationView.OnNavigationItemSelectedListener,
-        HomeFragment.OnFragmentInteractionListener, NutritionPlanFragment.OnFragmentInteractionListener,
-        LactationFragment.OnFragmentInteractionListener, FavoriteRecipesFragment.OnListFragmentInteractionListener,
-        AbcFragment.OnFragmentInteractionListener, AboutUsFragment.OnFragmentInteractionListener, TermsFragment.OnFragmentInteractionListener,
-        ProfileFragment.OnFragmentInteractionListener, ProfileEditFragment.OnFragmentInteractionListener, ProfileViewFragment.OnFragmentInteractionListener,
-        DevelopmentFragment.OnFragmentInteractionListener{
+        implements NavigationView.OnNavigationItemSelectedListener, FavoriteRecipesFragment.OnListFragmentInteractionListener,
+        BaseFragment.OnFragmentInteractionListener{
 
     private static final String TAG = "MainActivity";
 

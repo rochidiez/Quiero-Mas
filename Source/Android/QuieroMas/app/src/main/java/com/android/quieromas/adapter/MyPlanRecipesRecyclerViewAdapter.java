@@ -1,6 +1,5 @@
 package com.android.quieromas.adapter;
 
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,8 +7,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.quieromas.R;
-import com.android.quieromas.activity.RecipeActivity;
-import com.android.quieromas.fragment.AbcFragment;
 import com.android.quieromas.fragment.FavoriteRecipesFragment.OnListFragmentInteractionListener;
 import com.android.quieromas.fragment.PlanRecipesFragment;
 import com.android.quieromas.model.DummyContent.DummyItem;
