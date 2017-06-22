@@ -27,6 +27,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.text.SimpleDateFormat;
@@ -110,8 +111,16 @@ public class SignupFragment extends BaseFragment {
                                     } else {
                                         // If sign in fails, display a message to the user.
                                         Log.w("SIGNIN", "createUserWithEmail:failure", task.getException());
-                                        Toast.makeText(getActivity(), "Hubo un error al crear su usuario.",
-                                                Toast.LENGTH_SHORT).show();
+                                        try {
+                                            throw task.getException();
+                                        } catch(FirebaseAuthUserCollisionException e) {
+                                            Toast.makeText(getActivity(), "El email ya existe.",
+                                                    Toast.LENGTH_SHORT).show();
+                                        } catch(Exception e) {
+                                            Toast.makeText(getActivity(), "Hubo un error al crear su usuario.",
+                                                    Toast.LENGTH_SHORT).show();
+                                        }
+
                                     }
                                 }
                             });
