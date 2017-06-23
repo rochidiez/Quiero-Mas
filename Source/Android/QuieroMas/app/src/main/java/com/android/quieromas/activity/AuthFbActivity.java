@@ -27,7 +27,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class AuthFbActivity extends AppCompatActivity {
+public class AuthFbActivity extends BaseActivity {
     private static final String TAG = "AuthFbActivity";
 
 

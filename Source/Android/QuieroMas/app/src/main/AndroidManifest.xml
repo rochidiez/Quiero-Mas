@@ -46,7 +46,8 @@
             android:name=".activity.TipActivity"
             android:theme="@style/NoActionBarActivity" />
         <activity android:name=".activity.ChangePasswordActivity" />
-        <activity android:name=".activity.DevelopmentDetailActivity"></activity>
+        <activity android:name=".activity.DevelopmentDetailActivity" />
+        <activity android:name=".activity.BaseActivity"></activity>
     </application>
 
 </manifest>

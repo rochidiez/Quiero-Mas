@@ -12,7 +12,7 @@ import android.view.WindowManager;
 
 import com.android.quieromas.R;
 
-public class DevelopmentDetailActivity extends AppCompatActivity {
+public class DevelopmentDetailActivity extends BaseActivity {
 
     private int month;
 

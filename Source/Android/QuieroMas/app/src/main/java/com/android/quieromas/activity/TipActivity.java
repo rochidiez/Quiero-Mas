@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.android.quieromas.R;
 
-public class TipActivity extends AppCompatActivity {
+public class TipActivity extends BaseActivity {
 
     private String text;
     private String title;
