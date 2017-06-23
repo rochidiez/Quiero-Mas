@@ -48,6 +48,10 @@
         <activity android:name=".activity.ChangePasswordActivity" />
         <activity android:name=".activity.DevelopmentDetailActivity" />
         <activity android:name=".activity.BaseActivity"></activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="5c84f2c848fa12edce31011817a28e1d058959eb"
+            />
     </application>
 
 </manifest>
