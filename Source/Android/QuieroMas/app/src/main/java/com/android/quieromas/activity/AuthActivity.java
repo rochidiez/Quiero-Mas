@@ -1,5 +1,6 @@
 package com.android.quieromas.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,8 @@ import com.android.quieromas.api.FirebaseFunctionApi;
 import com.android.quieromas.api.ServiceFactory;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public abstract class AuthActivity extends AppCompatActivity implements FirebaseAuth.AuthStateListener{
 
@@ -25,6 +28,11 @@ public abstract class AuthActivity extends AppCompatActivity implements Firebase
         mAuth = FirebaseAuth.getInstance();
         api = ServiceFactory.createRetrofitService(FirebaseFunctionApi.class, FirebaseFunctionApi.SERVICE_ENDPOINT);
         checkIfUserIsLogged();
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
     @Override

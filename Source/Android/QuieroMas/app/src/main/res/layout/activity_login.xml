@@ -48,7 +48,7 @@
                 android:textSize="@dimen/title_text_size"
                 android:layout_gravity="center"
                 android:layout_marginBottom="18dp"
-                android:textAppearance="@style/TextViewBold"
+                android:textAppearance="@style/AppTheme.TextAppearance.Bold"
                 android:background="@drawable/button_border_white"
                 android:id="@+id/btn_login_email" />
 
@@ -86,9 +86,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/textColorPrimary"
                 android:textSize="@dimen/title_text_size"
-                android:text=""
                 android:layout_marginTop="20dp"
-                android:textStyle="bold"
+                android:textAppearance="@style/AppTheme.TextAppearance.Medium"
                 android:layout_below="@+id/imageView3"
                 android:layout_alignParentStart="true" />
 

@@ -15,7 +15,6 @@
             android:layout_height="wrap_content"
             android:text="¿Quiénes somos Quiero Más?"
             android:textAllCaps="true"
-            android:textAppearance="@style/TextViewBold"
             android:textSize="@dimen/subtitle_text_size"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="24dp"

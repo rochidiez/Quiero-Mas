@@ -19,7 +19,7 @@
             android:layout_marginTop="24dp"
             android:background="@drawable/button_border_orange"
             android:text="6 meses"
-            android:textAppearance="@style/TextViewBold"
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"
             android:textColor="@color/orangePrimary"
             android:textSize="@dimen/subtitle_text_size" />
 
@@ -30,7 +30,7 @@
             android:layout_margin="12dp"
             android:background="@drawable/button_border_orange"
             android:text="7 y 8 meses"
-            android:textAppearance="@style/TextViewBold"
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"
             android:textColor="@color/orangePrimary"
             android:textSize="@dimen/subtitle_text_size" />
 
@@ -41,7 +41,7 @@
             android:layout_margin="12dp"
             android:background="@drawable/button_border_orange"
             android:text="9 meses"
-            android:textAppearance="@style/TextViewBold"
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"
             android:textColor="@color/orangePrimary"
             android:textSize="@dimen/subtitle_text_size" />
 
@@ -52,7 +52,7 @@
             android:layout_margin="12dp"
             android:background="@drawable/button_border_orange"
             android:text="10 meses"
-            android:textAppearance="@style/TextViewBold"
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"
             android:textColor="@color/orangePrimary"
             android:textSize="@dimen/subtitle_text_size" />
 

@@ -32,7 +32,7 @@
         android:drawableStart="@drawable/olla"
         android:text="Todas las recetas"
         android:textSize="@dimen/subtitle_text_size"
-        android:textAppearance="@style/TextViewBold"
+        android:textAppearance="@style/AppTheme.TextAppearance.Bold"
         android:background="@drawable/button_border_black_thin"/>
 
 

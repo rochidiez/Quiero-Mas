@@ -75,7 +75,6 @@ public class LoginActivity extends AuthFbActivity implements VideoFragment.OnFra
         });
 
         txt1 = (TextView) findViewById(R.id.txt_login_text1);
-        txt1.setTypeface(Typeface.DEFAULT_BOLD);
         txt2 = (TextView) findViewById(R.id.txt_login_text2);
 
         mHandler = new Handler();

@@ -32,7 +32,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:textColor="@color/textColorBlack"
-            android:textAppearance="@style/TextViewBold"
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"
             android:id="@+id/textView5" />
 
         <com.andreabaccega.widget.FormEditText
@@ -61,7 +61,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:textColor="@color/textColorBlack"
-            android:textAppearance="@style/TextViewBold"
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"
             android:id="@+id/textView6" />
 
         <com.andreabaccega.widget.FormEditText
@@ -100,7 +100,7 @@
             android:background="@drawable/button_border_black"
             android:textColor="@color/textColorBlack"
             android:onClick="createAccount"
-            android:textAppearance="@style/TextViewBold"
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"
             android:id="@+id/btn_signin" />
 
     </LinearLayout>

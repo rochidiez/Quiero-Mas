@@ -14,7 +14,7 @@
         android:textColor="@color/orangePrimary"
         android:textSize="@dimen/bigtitle_text_size"
         android:text="Tip Nutricional"
-        android:textStyle="bold"
+        android:textAppearance="@style/AppTheme.TextAppearance.Bold"
         android:textAllCaps="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"

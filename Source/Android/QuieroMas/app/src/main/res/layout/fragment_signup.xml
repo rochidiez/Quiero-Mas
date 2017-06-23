@@ -31,7 +31,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:textColor="@color/textColorBlack"
-            android:textAppearance="@style/TextViewBold"
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"
             android:id="@+id/textView2" />
 
         <com.andreabaccega.widget.FormEditText
@@ -60,7 +60,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:textColor="@color/textColorBlack"
-            android:textAppearance="@style/TextViewBold"
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"
             android:id="@+id/textView" />
 
         <com.andreabaccega.widget.FormEditText
@@ -90,7 +90,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:textColor="@color/textColorBlack"
-            android:textAppearance="@style/TextViewBold"
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"
             android:id="@+id/textView5" />
 
         <com.andreabaccega.widget.FormEditText
@@ -119,7 +119,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:textColor="@color/textColorBlack"
-            android:textAppearance="@style/TextViewBold"
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"
             android:id="@+id/textView6" />
 
         <com.andreabaccega.widget.FormEditText
@@ -147,7 +147,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:textColor="@color/textColorBlack"
-            android:textAppearance="@style/TextViewBold"
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"
             android:id="@+id/textView7" />
 
         <com.andreabaccega.widget.FormEditText
@@ -174,7 +174,7 @@
             android:textSize="@dimen/subtitle_text_size"
             android:background="@drawable/button_border_black"
             android:textColor="@color/textColorBlack"
-            android:textAppearance="@style/TextViewBold"
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"
             android:id="@+id/btn_create_account" />
 
     </LinearLayout>

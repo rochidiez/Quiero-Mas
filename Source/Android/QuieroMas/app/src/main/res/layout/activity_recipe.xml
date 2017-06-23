@@ -178,7 +178,7 @@
                 android:drawableStart="@drawable/apple"
                 android:text="El postre de hoy"
                 android:textSize="@dimen/subtitle_text_size"
-                android:textAppearance="@style/TextViewBold"
+                android:textAppearance="@style/AppTheme.TextAppearance.Bold"
                 android:id="@+id/recipe_button_dessert"
                 android:background="@drawable/button_border_black_thin"/>
 
@@ -225,7 +225,7 @@
                 android:drawableStart="@drawable/light_bulb"
                 android:text="Tips de desarrollo"
                 android:textSize="@dimen/subtitle_text_size"
-                android:textAppearance="@style/TextViewBold"
+                android:textAppearance="@style/AppTheme.TextAppearance.Bold"
                 android:background="@drawable/button_border_black_thin"/>
 
             <RelativeLayout

@@ -40,7 +40,7 @@
         android:text="Puré de narnaja"
         android:textAllCaps="true"
         android:textColor="@color/textColorPrimary"
-        android:textAppearance="@style/TextViewBold"
+        android:textAppearance="@style/AppTheme.TextAppearance.Bold"
         android:textSize="@dimen/subsubtitle_text_size"
         android:layout_alignParentBottom="true"/>
 

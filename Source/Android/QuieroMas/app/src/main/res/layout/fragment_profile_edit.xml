@@ -31,7 +31,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:textColor="@color/textColorBlack"
-            android:textAppearance="@style/TextViewBold" />
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold" />
 
         <com.andreabaccega.widget.FormEditText
             validator:testType="nocheck"
@@ -57,7 +57,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:textColor="@color/textColorBlack"
-            android:textAppearance="@style/TextViewBold" />
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold" />
 
         <com.andreabaccega.widget.FormEditText
             validator:testType="email"
@@ -83,7 +83,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:textColor="@color/textColorBlack"
-            android:textAppearance="@style/TextViewBold"/>
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"/>
 
         <com.andreabaccega.widget.FormEditText
             validator:testType="date"
@@ -111,7 +111,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:textColor="@color/textColorBlack"
-            android:textAppearance="@style/TextViewBold"
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"
             android:id="@+id/textView2" />
 
         <com.andreabaccega.widget.FormEditText
@@ -138,7 +138,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:textColor="@color/textColorBlack"
-            android:textAppearance="@style/TextViewBold" />
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold" />
 
         <com.andreabaccega.widget.FormEditText
             validator:testType="nocheck"
@@ -165,7 +165,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginTop="16dp"
             android:textColor="@color/textColorBlack"
-            android:textAppearance="@style/TextViewBold"/>
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"/>
 
         <com.andreabaccega.widget.FormEditText
             validator:testType="date"
@@ -195,7 +195,7 @@
             android:textSize="@dimen/subtitle_text_size"
             android:background="@drawable/button_border_black"
             android:textColor="@color/textColorBlack"
-            android:textAppearance="@style/TextViewBold"
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"
             android:id="@+id/btn_first_use_continue" />
 
     </LinearLayout>

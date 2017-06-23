@@ -36,10 +36,9 @@
                         android:layout_marginTop="12dp"
                         android:text="BEBE NOMBRE"
                         android:textAlignment="center"
-                        android:textAppearance="@style/TextViewBold"
                         android:textColor="@color/textColorPrimary"
                         android:textSize="@dimen/bigtitle_text_size"
-                        android:textStyle="bold" />
+                        android:textAppearance="@style/AppTheme.TextAppearance.Bold" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -48,7 +47,7 @@
                         android:layout_marginTop="4dp"
                         android:text="9 Meses, 3 Semanas"
                         android:textAlignment="center"
-                        android:textAppearance="@style/TextViewBold"
+                        android:textAppearance="@style/AppTheme.TextAppearance.Bold"
                         android:textColor="@color/textColorPrimary"
                         android:textSize="@dimen/title_text_size" />
                 </LinearLayout>
@@ -151,7 +150,7 @@
                 android:drawableStart="@drawable/lista_de_compras"
                 android:paddingLeft="36dp"
                 android:text="Listado de compra semanal"
-                android:textAppearance="@style/TextViewBold"
+                android:textAppearance="@style/AppTheme.TextAppearance.Bold"
                 android:textSize="@dimen/subtitle_text_size" />
 
 

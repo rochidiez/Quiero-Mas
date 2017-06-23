@@ -7,13 +7,19 @@
         <item name="colorPrimaryDark">@color/orangePrimary</item>
         <item name="colorAccent">@color/orangePrimary</item>
         <item name="buttonStyle">@style/MyButton</item>
-        <item name="fontPath">fonts/Cera-Regular.ttf</item>
         <!--<item name="android:listDivider">@drawable/divisor_naranja_2</item>-->
     </style>
 
-    <style name="TextViewBold">
+    <style name="AppTheme.TextAppearance" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Cera-Regular.ttf</item>
+    </style>
+    <style name="AppTheme.TextAppearance.Bold" parent="AppTheme.TextAppearance">
         <item name="fontPath">fonts/Cera-Medium.ttf</item>
     </style>
+    <style name="AppTheme.TextAppearance.Medium" parent="AppTheme.TextAppearance">
+        <item name="fontPath">fonts/Cera-Medium.ttf</item>
+    </style>
+
 
     <style name="listDividerOrange">
         <item name="android:listDivider">@drawable/divisor_naranja_2</item>
