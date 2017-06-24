@@ -15,6 +15,8 @@ class FirstLoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         autoLogin()
+        FirebaseAPI.getDatosRecetas()
+        FirebaseAPI.getDatosRecetasBasicas()
     }
 
     func autoLogin() {

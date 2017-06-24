@@ -20,6 +20,9 @@ let sobreUpdated = "sobreUpdated"
 let terminosUpdated = "terminosUpdated"
 let perfilLoaded = "perfilLoaded"
 let perfilUpdated = "perfilUpdated"
+let recetasUpdated = "recetasUpdated"
+let recetasBasicasUpdated = "recetasBasicasUpdated"
+
 let perfilNotFound = "perfilNotFound"
 let connectionError = "connectionError"
 
@@ -196,6 +199,28 @@ class FirebaseAPI: NSObject {
                                                   babyNickName: userDic["Bebé"]?["Apodo"],
                                                   babyBirthday: userDic["Bebé"]?["Fecha de Nacimiento"])
                 }
+            }
+        }) { (error) in
+            NotificationCenter.default.post(name: Notification.Name(rawValue: connectionError), object: nil)
+        }
+    }
+    
+    static func getDatosRecetas() {
+        FIRDatabase.database().reference().child("Recetas").observeSingleEvent(of: .value, with: { (snap) in
+            if let recetasDic = snap.value as? [String:[String:Any]] {
+                UserDefaults.standard.set(recetasDic, forKey: "recetas")
+                NotificationCenter.default.post(name: Notification.Name(rawValue: recetasUpdated), object: nil)
+            }
+        }) { (error) in
+            NotificationCenter.default.post(name: Notification.Name(rawValue: connectionError), object: nil)
+        }
+    }
+    
+    static func getDatosRecetasBasicas() {
+        FIRDatabase.database().reference().child("Recetas Básicas").observeSingleEvent(of: .value, with: { (snap) in
+            if let recetasBasicasDic = snap.value as? [String:Any] {
+                UserDefaults.standard.set(recetasBasicasDic, forKey: "recetas basicas")
+                NotificationCenter.default.post(name: Notification.Name(rawValue: recetasBasicasUpdated), object: nil)
             }
         }) { (error) in
             NotificationCenter.default.post(name: Notification.Name(rawValue: connectionError), object: nil)

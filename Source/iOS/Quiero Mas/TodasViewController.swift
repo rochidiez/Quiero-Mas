@@ -14,6 +14,9 @@ class TodasViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var revealMenuButton: UIBarButtonItem!
     @IBOutlet weak var orangeView: UIView!
     @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
+    var recetasArray: [[String:[String:Any]]]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,8 @@ class TodasViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.backgroundColor = appMainColor
+        reloadRecetas()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadRecetas), name: NSNotification.Name(rawValue: recetasUpdated), object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -41,10 +46,22 @@ class TodasViewController: UIViewController, UITableViewDataSource, UITableViewD
         orangeView.backgroundColor = appMainColor
     }
     
+    func reloadRecetas() {
+        if let recetasDic = UserDefaults.standard.dictionary(forKey: "recetas") as? [String:[String:Any]] {
+            recetasArray = recetasDic["Por Nombre"]!.toArray() as? [[String:[String:Any]]]
+            table.reloadData()
+            spinner.stopAnimating()
+        }
+    }
+    
     
     //MARK: - UITableView Data Source
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        var sections = 0
+        if recetasArray != nil {
+            sections = recetasArray!.count
+        }
+        return sections
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,6 +71,12 @@ class TodasViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodasTableViewCell", for: indexPath) as! TodasTableViewCell
         
+        if let receta = recetasArray?[indexPath.section] {
+            for (key, element) in receta {
+                cell.recetaName.text = key
+            }
+        }
+    
         return cell
     }
     
@@ -70,9 +93,15 @@ class TodasViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let story = UIStoryboard(name: "Main", bundle: nil)
-        let vc = story.instantiateViewController(withIdentifier: "RecetaViewController")
-        self.navigationController?.pushViewController(vc, animated: true)
+        if let receta = recetasArray?[indexPath.section] {
+            let story = UIStoryboard(name: "Main", bundle: nil)
+            let vc = story.instantiateViewController(withIdentifier: "RecetaViewController") as! RecetaViewController
+            for (key, element) in receta {
+                vc.recetaNombre = key
+                vc.recetaDict = element
+            }
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     

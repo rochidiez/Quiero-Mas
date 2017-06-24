@@ -9,6 +9,15 @@
 import UIKit
 
 class TipDesarrolloViewController: UIViewController {
+    
+    @IBOutlet weak var textoLabel: UILabel!
+    
+    var texto: String?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        textoLabel.text = texto
+    }
 
     @IBAction func closeAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)

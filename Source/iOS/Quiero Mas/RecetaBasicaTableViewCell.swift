@@ -10,6 +10,6 @@ import UIKit
 
 class RecetaBasicaTableViewCell: UITableViewCell {
 
-    
+    @IBOutlet weak var recetaLabel: UILabel!
 
 }

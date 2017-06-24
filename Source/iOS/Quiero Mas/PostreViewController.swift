@@ -9,6 +9,8 @@
 import UIKit
 
 class PostreViewController: UIViewController {
+    
+    var postreDic: [String:Any]?
 
     @IBAction func closeAction(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)

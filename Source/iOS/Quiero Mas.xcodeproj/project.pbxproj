@@ -34,6 +34,7 @@
 		C12A4AED1ED639C7005B0441 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12A4AEC1ED639C7005B0441 /* PerfilViewController.swift */; };
 		C145F76F1EE2285A00A7DDD0 /* ABCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C145F76E1EE2285A00A7DDD0 /* ABCTableViewCell.swift */; };
 		C150820C1EE2080000A27A0C /* FirstLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C150820B1EE2080000A27A0C /* FirstLoginViewController.swift */; };
+		C15230521EFD9F00009355DA /* Dictionary+toArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15230511EFD9F00009355DA /* Dictionary+toArray.swift */; };
 		C1523FAD1EC0339F0047B195 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1523FAC1EC0339F0047B195 /* GoogleService-Info.plist */; };
 		C17819DD1EE5986C00EA05F8 /* RecetaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17819DC1EE5986C00EA05F8 /* RecetaViewController.swift */; };
 		C17819E11EE59F8900EA05F8 /* IngredientesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17819DF1EE59F8900EA05F8 /* IngredientesTableViewCell.swift */; };
@@ -71,6 +72,7 @@
 		C1E16B591EDF795100DE5566 /* LactanciaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E16B581EDF795100DE5566 /* LactanciaTableViewCell.swift */; };
 		C1E5EB601EC7AAB4009B4894 /* BabyDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E5EB5F1EC7AAB4009B4894 /* BabyDataViewController.swift */; };
 		C1E5EB631EC7C0E4009B4894 /* FirebaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E5EB621EC7C0E4009B4894 /* FirebaseAPI.swift */; };
+		C1EC023F1EFDE4B900B12013 /* String+Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EC023E1EFDE4B900B12013 /* String+Height.swift */; };
 		C1F185D51EE37014007E9E96 /* MesesSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F185D41EE37014007E9E96 /* MesesSelectorViewController.swift */; };
 		C1F185D71EE37DFB007E9E96 /* MesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F185D61EE37DFB007E9E96 /* MesViewController.swift */; };
 		E01549BD6411FB5FF88B6DBB /* Pods_Quiero_Mas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C29DCC2F7295666DB7BEDF3 /* Pods_Quiero_Mas.framework */; };
@@ -108,6 +110,7 @@
 		C12A4AEC1ED639C7005B0441 /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		C145F76E1EE2285A00A7DDD0 /* ABCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABCTableViewCell.swift; sourceTree = "<group>"; };
 		C150820B1EE2080000A27A0C /* FirstLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLoginViewController.swift; sourceTree = "<group>"; };
+		C15230511EFD9F00009355DA /* Dictionary+toArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+toArray.swift"; sourceTree = "<group>"; };
 		C1523FAB1EC030400047B195 /* Quiero Mas.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Quiero Mas.entitlements"; sourceTree = "<group>"; };
 		C1523FAC1EC0339F0047B195 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C17819DC1EE5986C00EA05F8 /* RecetaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecetaViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +151,7 @@
 		C1E16B581EDF795100DE5566 /* LactanciaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LactanciaTableViewCell.swift; sourceTree = "<group>"; };
 		C1E5EB5F1EC7AAB4009B4894 /* BabyDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyDataViewController.swift; sourceTree = "<group>"; };
 		C1E5EB621EC7C0E4009B4894 /* FirebaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAPI.swift; sourceTree = "<group>"; };
+		C1EC023E1EFDE4B900B12013 /* String+Height.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Height.swift"; sourceTree = "<group>"; };
 		C1F185D41EE37014007E9E96 /* MesesSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MesesSelectorViewController.swift; sourceTree = "<group>"; };
 		C1F185D61EE37DFB007E9E96 /* MesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -286,6 +290,15 @@
 				C12A4AEC1ED639C7005B0441 /* PerfilViewController.swift */,
 			);
 			name = Perfil;
+			sourceTree = "<group>";
+		};
+		C15230501EFD9EE9009355DA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C15230511EFD9F00009355DA /* Dictionary+toArray.swift */,
+				C1EC023E1EFDE4B900B12013 /* String+Height.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		C17819DB1EE5985200EA05F8 /* Receta */ = {
@@ -461,6 +474,7 @@
 		C199D9101E8877B0002255BA /* Quiero Mas */ = {
 			isa = PBXGroup;
 			children = (
+				C15230501EFD9EE9009355DA /* Extensions */,
 				C1523FAB1EC030400047B195 /* Quiero Mas.entitlements */,
 				C109FDB91EAA95A20067E86C /* Storyboards */,
 				C10095311E973C0C001748E4 /* Fonts */,
@@ -644,12 +658,14 @@
 				C1027D301EEF3BA900B1A688 /* PerfilEditableTableViewCell.swift in Sources */,
 				C17819EF1EE6218800EA05F8 /* PostreViewController.swift in Sources */,
 				C19425951ECA21A80092C6F6 /* TodasViewController.swift in Sources */,
+				C15230521EFD9F00009355DA /* Dictionary+toArray.swift in Sources */,
 				C19425A41ECA253F0092C6F6 /* TerminosViewController.swift in Sources */,
 				C1D1CEA71EADE58200EA14C8 /* ForgotPassViewController.swift in Sources */,
 				C1F185D71EE37DFB007E9E96 /* MesViewController.swift in Sources */,
 				C18F22EA1E88834C006E42DB /* HomeViewController.swift in Sources */,
 				C10095391E9753B9001748E4 /* EstimulacionViewController.swift in Sources */,
 				C19425981ECA22F80092C6F6 /* ListaViewController.swift in Sources */,
+				C1EC023F1EFDE4B900B12013 /* String+Height.swift in Sources */,
 				C18F22E71E887D24006E42DB /* MenuTableViewController.swift in Sources */,
 				C1F185D51EE37014007E9E96 /* MesesSelectorViewController.swift in Sources */,
 				C17819F21EE6240800EA05F8 /* RecetaBasicaViewController.swift in Sources */,

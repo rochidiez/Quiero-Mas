@@ -190,6 +190,97 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QwM-Is-dmb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xC3-X4-aRO">
+                                        <rect key="frame" x="20" y="220" width="335" height="64"/>
+                                        <string key="text">El programa de alimentación es para bebés de 6 a 12 meses. Cuando cumpla 6 meses comenzaremos a mostrarte las recetas ideales para que le cocines.</string>
+                                        <fontDescription key="fontDescription" name="Cera-Light" family="Cera" pointSize="16"/>
+                                        <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Orange Separator" translatesAutoresizingMaskIntoConstraints="NO" id="wHk-uK-9RP">
+                                        <rect key="frame" x="98" y="324" width="180" height="2"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="pLr-9c-Lha"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CSw-As-oqj" userLabel="Editar View">
+                                        <rect key="frame" x="20" y="366" width="335" height="40"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shO-Gd-26p">
+                                                <rect key="frame" x="1" y="1" width="333" height="38"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaV-Hs-0fN">
+                                                        <rect key="frame" x="87" y="0.0" width="160" height="38"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="Baby Nutricion" translatesAutoresizingMaskIntoConstraints="NO" id="lkH-To-2tb">
+                                                                <rect key="frame" x="0.0" y="5" width="30" height="28"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="30" id="HVc-3y-MG4"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Editar perfil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d18-ZF-pdS">
+                                                                <rect key="frame" x="50" y="0.0" width="110" height="38"/>
+                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="18"/>
+                                                                <color key="textColor" red="0.18823529410000001" green="0.27450980390000002" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0D-nL-OPB">
+                                                                <rect key="frame" x="0.0" y="0.0" width="160" height="38"/>
+                                                                <connections>
+                                                                    <action selector="openPerfilAction:" destination="1l9-OV-Ftx" eventType="touchUpInside" id="f1l-pr-Pec"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="160" id="21l-sD-LHI"/>
+                                                            <constraint firstAttribute="bottom" secondItem="h0D-nL-OPB" secondAttribute="bottom" id="2fE-7C-bgI"/>
+                                                            <constraint firstItem="h0D-nL-OPB" firstAttribute="top" secondItem="OaV-Hs-0fN" secondAttribute="top" id="5Ka-Gw-pwb"/>
+                                                            <constraint firstAttribute="trailing" secondItem="d18-ZF-pdS" secondAttribute="trailing" id="UFR-7V-88q"/>
+                                                            <constraint firstItem="lkH-To-2tb" firstAttribute="top" secondItem="OaV-Hs-0fN" secondAttribute="top" constant="5" id="V5h-73-F0E"/>
+                                                            <constraint firstItem="d18-ZF-pdS" firstAttribute="leading" secondItem="lkH-To-2tb" secondAttribute="trailing" constant="20" id="Yjr-5w-DDH"/>
+                                                            <constraint firstAttribute="trailing" secondItem="h0D-nL-OPB" secondAttribute="trailing" id="cUg-ZO-sGD"/>
+                                                            <constraint firstAttribute="bottom" secondItem="lkH-To-2tb" secondAttribute="bottom" constant="5" id="flo-Xi-2Ge"/>
+                                                            <constraint firstItem="h0D-nL-OPB" firstAttribute="leading" secondItem="OaV-Hs-0fN" secondAttribute="leading" id="nci-Gs-Wj6"/>
+                                                            <constraint firstAttribute="bottom" secondItem="d18-ZF-pdS" secondAttribute="bottom" id="rVU-Ot-RyD"/>
+                                                            <constraint firstItem="d18-ZF-pdS" firstAttribute="top" secondItem="OaV-Hs-0fN" secondAttribute="top" id="wxG-6R-AXb"/>
+                                                            <constraint firstItem="lkH-To-2tb" firstAttribute="leading" secondItem="OaV-Hs-0fN" secondAttribute="leading" id="yUN-pZ-XWO"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="OaV-Hs-0fN" secondAttribute="bottom" id="0LE-E1-QiT"/>
+                                                    <constraint firstItem="OaV-Hs-0fN" firstAttribute="centerX" secondItem="shO-Gd-26p" secondAttribute="centerX" id="Mvz-sJ-jnC"/>
+                                                    <constraint firstItem="OaV-Hs-0fN" firstAttribute="top" secondItem="shO-Gd-26p" secondAttribute="top" id="Nk9-mv-47w"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.18823529410000001" green="0.27450980390000002" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="shO-Gd-26p" secondAttribute="trailing" constant="1" id="9aV-Z3-5HA"/>
+                                            <constraint firstItem="shO-Gd-26p" firstAttribute="leading" secondItem="CSw-As-oqj" secondAttribute="leading" constant="1" id="Iu9-bh-QZy"/>
+                                            <constraint firstAttribute="height" constant="40" id="RFx-ho-Feu"/>
+                                            <constraint firstAttribute="bottom" secondItem="shO-Gd-26p" secondAttribute="bottom" constant="1" id="YMZ-2K-EfF"/>
+                                            <constraint firstItem="shO-Gd-26p" firstAttribute="top" secondItem="CSw-As-oqj" secondAttribute="top" constant="1" id="bVS-n7-P2f"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="CSw-As-oqj" secondAttribute="trailing" constant="20" id="JTR-Z7-4a5"/>
+                                    <constraint firstItem="xC3-X4-aRO" firstAttribute="top" secondItem="QwM-Is-dmb" secondAttribute="top" constant="220" id="Klu-4D-HaA"/>
+                                    <constraint firstItem="CSw-As-oqj" firstAttribute="top" secondItem="wHk-uK-9RP" secondAttribute="bottom" constant="40" id="QT8-wG-0VH"/>
+                                    <constraint firstItem="xC3-X4-aRO" firstAttribute="leading" secondItem="QwM-Is-dmb" secondAttribute="leading" constant="20" id="UEb-mO-0Ln"/>
+                                    <constraint firstItem="wHk-uK-9RP" firstAttribute="top" secondItem="xC3-X4-aRO" secondAttribute="bottom" constant="40" id="XI1-7n-DSP"/>
+                                    <constraint firstItem="CSw-As-oqj" firstAttribute="leading" secondItem="QwM-Is-dmb" secondAttribute="leading" constant="20" id="cpT-VN-wkX"/>
+                                    <constraint firstAttribute="trailing" secondItem="xC3-X4-aRO" secondAttribute="trailing" constant="20" id="rnp-I5-lUh"/>
+                                    <constraint firstItem="wHk-uK-9RP" firstAttribute="centerX" secondItem="QwM-Is-dmb" secondAttribute="centerX" id="zcL-aH-Oy7"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0p-T4-sCd" userLabel="Name And Age View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="153"/>
                                 <subviews>
@@ -582,97 +673,6 @@
                                     <constraint firstAttribute="bottom" secondItem="bNy-3j-fVU" secondAttribute="bottom" constant="1" id="oy1-5w-jg8"/>
                                     <constraint firstItem="bNy-3j-fVU" firstAttribute="top" secondItem="KVR-OJ-FKM" secondAttribute="top" constant="1" id="rqE-cQ-3ZT"/>
                                     <constraint firstAttribute="height" constant="40" id="sv7-XU-1YR"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QwM-Is-dmb">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xC3-X4-aRO">
-                                        <rect key="frame" x="20" y="220" width="335" height="64"/>
-                                        <string key="text">El programa de alimentación es para bebés de 6 a 12 meses. Cuando cumpla 6 meses comenzaremos a mostrarte las recetas ideales para que le cocines.</string>
-                                        <fontDescription key="fontDescription" name="Cera-Light" family="Cera" pointSize="16"/>
-                                        <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Orange Separator" translatesAutoresizingMaskIntoConstraints="NO" id="wHk-uK-9RP">
-                                        <rect key="frame" x="98" y="324" width="180" height="2"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="2" id="pLr-9c-Lha"/>
-                                        </constraints>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CSw-As-oqj" userLabel="Editar View">
-                                        <rect key="frame" x="20" y="366" width="335" height="40"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shO-Gd-26p">
-                                                <rect key="frame" x="1" y="1" width="333" height="38"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaV-Hs-0fN">
-                                                        <rect key="frame" x="87" y="0.0" width="160" height="38"/>
-                                                        <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="Baby Nutricion" translatesAutoresizingMaskIntoConstraints="NO" id="lkH-To-2tb">
-                                                                <rect key="frame" x="0.0" y="5" width="30" height="28"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="30" id="HVc-3y-MG4"/>
-                                                                </constraints>
-                                                            </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Editar perfil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d18-ZF-pdS">
-                                                                <rect key="frame" x="50" y="0.0" width="110" height="38"/>
-                                                                <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="18"/>
-                                                                <color key="textColor" red="0.18823529410000001" green="0.27450980390000002" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0D-nL-OPB">
-                                                                <rect key="frame" x="0.0" y="0.0" width="160" height="38"/>
-                                                                <connections>
-                                                                    <action selector="openPerfilAction:" destination="1l9-OV-Ftx" eventType="touchUpInside" id="f1l-pr-Pec"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="160" id="21l-sD-LHI"/>
-                                                            <constraint firstAttribute="bottom" secondItem="h0D-nL-OPB" secondAttribute="bottom" id="2fE-7C-bgI"/>
-                                                            <constraint firstItem="h0D-nL-OPB" firstAttribute="top" secondItem="OaV-Hs-0fN" secondAttribute="top" id="5Ka-Gw-pwb"/>
-                                                            <constraint firstAttribute="trailing" secondItem="d18-ZF-pdS" secondAttribute="trailing" id="UFR-7V-88q"/>
-                                                            <constraint firstItem="lkH-To-2tb" firstAttribute="top" secondItem="OaV-Hs-0fN" secondAttribute="top" constant="5" id="V5h-73-F0E"/>
-                                                            <constraint firstItem="d18-ZF-pdS" firstAttribute="leading" secondItem="lkH-To-2tb" secondAttribute="trailing" constant="20" id="Yjr-5w-DDH"/>
-                                                            <constraint firstAttribute="trailing" secondItem="h0D-nL-OPB" secondAttribute="trailing" id="cUg-ZO-sGD"/>
-                                                            <constraint firstAttribute="bottom" secondItem="lkH-To-2tb" secondAttribute="bottom" constant="5" id="flo-Xi-2Ge"/>
-                                                            <constraint firstItem="h0D-nL-OPB" firstAttribute="leading" secondItem="OaV-Hs-0fN" secondAttribute="leading" id="nci-Gs-Wj6"/>
-                                                            <constraint firstAttribute="bottom" secondItem="d18-ZF-pdS" secondAttribute="bottom" id="rVU-Ot-RyD"/>
-                                                            <constraint firstItem="d18-ZF-pdS" firstAttribute="top" secondItem="OaV-Hs-0fN" secondAttribute="top" id="wxG-6R-AXb"/>
-                                                            <constraint firstItem="lkH-To-2tb" firstAttribute="leading" secondItem="OaV-Hs-0fN" secondAttribute="leading" id="yUN-pZ-XWO"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="OaV-Hs-0fN" secondAttribute="bottom" id="0LE-E1-QiT"/>
-                                                    <constraint firstItem="OaV-Hs-0fN" firstAttribute="centerX" secondItem="shO-Gd-26p" secondAttribute="centerX" id="Mvz-sJ-jnC"/>
-                                                    <constraint firstItem="OaV-Hs-0fN" firstAttribute="top" secondItem="shO-Gd-26p" secondAttribute="top" id="Nk9-mv-47w"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.18823529410000001" green="0.27450980390000002" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="shO-Gd-26p" secondAttribute="trailing" constant="1" id="9aV-Z3-5HA"/>
-                                            <constraint firstItem="shO-Gd-26p" firstAttribute="leading" secondItem="CSw-As-oqj" secondAttribute="leading" constant="1" id="Iu9-bh-QZy"/>
-                                            <constraint firstAttribute="height" constant="40" id="RFx-ho-Feu"/>
-                                            <constraint firstAttribute="bottom" secondItem="shO-Gd-26p" secondAttribute="bottom" constant="1" id="YMZ-2K-EfF"/>
-                                            <constraint firstItem="shO-Gd-26p" firstAttribute="top" secondItem="CSw-As-oqj" secondAttribute="top" constant="1" id="bVS-n7-P2f"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="CSw-As-oqj" secondAttribute="trailing" constant="20" id="JTR-Z7-4a5"/>
-                                    <constraint firstItem="xC3-X4-aRO" firstAttribute="top" secondItem="QwM-Is-dmb" secondAttribute="top" constant="220" id="Klu-4D-HaA"/>
-                                    <constraint firstItem="CSw-As-oqj" firstAttribute="top" secondItem="wHk-uK-9RP" secondAttribute="bottom" constant="40" id="QT8-wG-0VH"/>
-                                    <constraint firstItem="xC3-X4-aRO" firstAttribute="leading" secondItem="QwM-Is-dmb" secondAttribute="leading" constant="20" id="UEb-mO-0Ln"/>
-                                    <constraint firstItem="wHk-uK-9RP" firstAttribute="top" secondItem="xC3-X4-aRO" secondAttribute="bottom" constant="40" id="XI1-7n-DSP"/>
-                                    <constraint firstItem="CSw-As-oqj" firstAttribute="leading" secondItem="QwM-Is-dmb" secondAttribute="leading" constant="20" id="cpT-VN-wkX"/>
-                                    <constraint firstAttribute="trailing" secondItem="xC3-X4-aRO" secondAttribute="trailing" constant="20" id="rnp-I5-lUh"/>
-                                    <constraint firstItem="wHk-uK-9RP" firstAttribute="centerX" secondItem="QwM-Is-dmb" secondAttribute="centerX" id="zcL-aH-Oy7"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -2144,6 +2144,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomView" destination="89O-NP-lTs" id="RfS-4h-4jX"/>
                         <outlet property="fifthImg" destination="Upy-vA-GBT" id="yUU-0g-EEm"/>
                         <outlet property="fifthLabel" destination="h9r-Z0-rso" id="wus-7h-dp2"/>
                         <outlet property="firstImg" destination="pF5-DI-ZCv" id="Qwg-hc-eiW"/>
@@ -2155,6 +2156,8 @@
                         <outlet property="table" destination="1cC-wc-XKx" id="ivg-yt-6We"/>
                         <outlet property="thirdImg" destination="YYa-2b-F8e" id="nEJ-Ns-K0K"/>
                         <outlet property="thirdLabel" destination="GMb-A6-zLz" id="4Ky-jL-PXQ"/>
+                        <outlet property="varianteHeightConstraint" destination="WEU-FU-0dv" id="Dla-Kb-k16"/>
+                        <outlet property="varianteLabel" destination="kgz-Zq-pz2" id="mMW-bG-aL4"/>
                         <segue destination="v2x-MJ-M7l" kind="presentation" identifier="tipNutricionalSegue" id="SSC-q3-IVB"/>
                         <segue destination="0NC-oz-8In" kind="presentation" identifier="tipDesarrolloSegue" id="v0L-M7-4lF"/>
                         <segue destination="7Rx-Ct-EwS" kind="presentation" identifier="postreSegue" id="pkK-Hc-zBd"/>
@@ -2236,6 +2239,9 @@
                             <constraint firstItem="IPj-cF-xfh" firstAttribute="top" secondItem="d38-C6-LiX" secondAttribute="top" constant="40" id="rRT-zS-4CH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textoLabel" destination="rSN-w7-lwa" id="t2i-PI-Pgh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rzp-VB-KKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2312,6 +2318,9 @@
                             <constraint firstItem="TE0-c6-ZEo" firstAttribute="centerX" secondItem="D3h-cK-DvS" secondAttribute="centerX" id="lk2-SO-wrU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textoLabel" destination="FHS-Hf-s8u" id="MWm-iT-3hi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edX-2Q-vsa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2557,6 +2566,9 @@
                                                 <constraint firstItem="cSD-IO-Odq" firstAttribute="leading" secondItem="Cgx-Zd-MFF" secondAttribute="trailing" constant="20" id="roh-7j-gAn"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="recetaLabel" destination="cSD-IO-Odq" id="pK4-lG-wra"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -2575,6 +2587,7 @@
                     </view>
                     <connections>
                         <outlet property="table" destination="j5h-Jd-Cd0" id="D9U-5L-SLp"/>
+                        <outlet property="videoImgView" destination="fK0-Ww-eGu" id="HGI-lx-07K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gM4-ba-biA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3746,6 +3759,10 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
                                                 <constraint firstAttribute="trailing" secondItem="YHA-D3-hEg" secondAttribute="trailing" id="xW5-DI-0Va"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="recetaImg" destination="YHA-D3-hEg" id="cMU-3G-Nff"/>
+                                            <outlet property="recetaName" destination="Dgi-Z2-pFU" id="vIr-C1-oUA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -3753,13 +3770,21 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
                                     <outlet property="delegate" destination="rQQ-X4-VX8" id="t0v-dv-zus"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hVG-8z-12t">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="color" red="1" green="0.50588235290000005" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.50588235290000005" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="HIc-OU-4c6" firstAttribute="top" secondItem="cRy-fq-K1s" secondAttribute="bottom" id="0M4-5w-nYH"/>
+                            <constraint firstItem="mxt-DF-KyN" firstAttribute="top" secondItem="hVG-8z-12t" secondAttribute="bottom" id="6tg-rw-QHk"/>
                             <constraint firstAttribute="trailing" secondItem="HIc-OU-4c6" secondAttribute="trailing" id="Goc-ND-aco"/>
+                            <constraint firstItem="hVG-8z-12t" firstAttribute="top" secondItem="K9H-hD-f6p" secondAttribute="top" id="Wqt-Ad-T00"/>
                             <constraint firstItem="mxt-DF-KyN" firstAttribute="top" secondItem="HIc-OU-4c6" secondAttribute="bottom" id="aCF-FC-cVe"/>
                             <constraint firstItem="HIc-OU-4c6" firstAttribute="leading" secondItem="K9H-hD-f6p" secondAttribute="leading" id="f9e-gI-8h9"/>
+                            <constraint firstAttribute="trailing" secondItem="hVG-8z-12t" secondAttribute="trailing" id="hTL-Br-Wg7"/>
+                            <constraint firstItem="hVG-8z-12t" firstAttribute="leading" secondItem="K9H-hD-f6p" secondAttribute="leading" id="vFP-Fj-43B"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Todas las recetas" id="Vd3-X8-mfT">
@@ -3770,6 +3795,7 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
                     <connections>
                         <outlet property="orangeView" destination="7Wm-QN-8sm" id="IoA-vM-v5n"/>
                         <outlet property="revealMenuButton" destination="xsi-08-y3H" id="6jJ-rf-1Ul"/>
+                        <outlet property="spinner" destination="hVG-8z-12t" id="sEO-Mt-wTf"/>
                         <outlet property="table" destination="HIc-OU-4c6" id="lGf-YG-3vc"/>
                     </connections>
                 </viewController>
