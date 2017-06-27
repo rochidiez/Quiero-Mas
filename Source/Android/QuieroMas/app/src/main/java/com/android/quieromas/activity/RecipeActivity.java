@@ -1,6 +1,7 @@
 package com.android.quieromas.activity;
 
 import android.content.Intent;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -9,6 +10,13 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.android.quieromas.R;
+import com.android.quieromas.model.receta.Receta;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class RecipeActivity extends AuthActivity {
 
@@ -16,6 +24,7 @@ public class RecipeActivity extends AuthActivity {
     private Button btnNutritionalTip;
     private Button btnDevelopmentTip;
     private Button btnWatch;
+    private String recipeName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +38,27 @@ public class RecipeActivity extends AuthActivity {
         setSupportActionBar(toolbar);
         //Show "back" button
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            recipeName = extras.getString("id");
+        }
+
+        DatabaseReference recetasRef = FirebaseDatabase.getInstance().getReference("Recetas");
+
+        recetasRef.child("Por Nombre").child(recipeName).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Receta receta = dataSnapshot.getValue(Receta.class);
+                Toast.makeText(getApplicationContext(),receta.getPasos().get(0),Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
 
         btnWatch = (Button) findViewById(R.id.btn_recipe_watch);
         btnWatch.setOnClickListener(new View.OnClickListener() {

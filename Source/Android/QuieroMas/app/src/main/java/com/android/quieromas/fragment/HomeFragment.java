@@ -12,6 +12,11 @@ import android.widget.LinearLayout;
 
 import com.android.quieromas.R;
 import com.android.quieromas.activity.MainActivity;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class HomeFragment extends BaseFragment {
 
@@ -97,6 +102,35 @@ public class HomeFragment extends BaseFragment {
                 ft.commit();
             }
         });
+
+        DatabaseReference recetasRef = FirebaseDatabase.getInstance().getReference("Recetas");
+        recetasRef.keepSynced(true);
+        recetasRef.orderByKey().addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                System.out.print(dataSnapshot.toString());
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
 
     }
 
