@@ -24,6 +24,7 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeRecycl
 
     private final List<RecipeStepElement> mValues;
     private final boolean isSteps;
+    int orangeColor;
 
 
     public RecipeRecyclerViewAdapter(List<RecipeStepElement> items, boolean isSteps) {
@@ -35,6 +36,7 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeRecycl
     public RecipeRecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.listitem_recipe_steps, parent, false);
+        orangeColor = parent.getResources().getColor(R.color.orangePrimary);
         return new RecipeRecyclerViewAdapter.ViewHolder(view);
     }
 
@@ -47,11 +49,10 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeRecycl
             holder.txtIndicator.setText(Integer.toString(n));
         }else{
             holder.txtIndicator.setText("●");
-
             if(holder.mItem.getBasicRecipe() != null){
-
+                
+                holder.txtText.setTextColor(orangeColor);
                 holder.btnPlus.setVisibility(View.VISIBLE);
-
                 holder.btnPlus.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

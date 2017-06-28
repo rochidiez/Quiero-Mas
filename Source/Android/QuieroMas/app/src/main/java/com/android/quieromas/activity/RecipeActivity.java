@@ -50,6 +50,7 @@ public class RecipeActivity extends AuthActivity {
     private TextView txtVariants;
     private TextView txtName;
     private RecyclerView rvSteps;
+    private RecyclerView rvIngredients;
 
 
     @Override
@@ -97,6 +98,7 @@ public class RecipeActivity extends AuthActivity {
         txtVariants = (TextView) findViewById(R.id.txt_recipe_variants);
         txtName = (TextView) findViewById(R.id.txt_recipe_name);
         rvSteps = (RecyclerView) findViewById(R.id.recipe_list_steps);
+        rvIngredients = (RecyclerView) findViewById(R.id.recipe_list_ingredients);
 
         txtName.setText(recipeName);
 
@@ -166,7 +168,7 @@ public class RecipeActivity extends AuthActivity {
 
         txtVariants.setText(receta.getVariante());
 
-        //Set ing
+        //Set steps
         ArrayList<RecipeStepElement> stepsList = new ArrayList<>();
         for (ListIterator<String> iter = receta.getPasos().listIterator(); iter.hasNext(); ) {
             String element = iter.next();
@@ -174,5 +176,14 @@ public class RecipeActivity extends AuthActivity {
         }
         rvSteps.setLayoutManager(new LinearLayoutManager(this));
         rvSteps.setAdapter(new RecipeRecyclerViewAdapter(stepsList,true));
+
+        //set ingredients
+        ArrayList<RecipeStepElement> ingredientsList = new ArrayList<>();
+        for (ListIterator<Ingrediente> iter = receta.getIngredientes().listIterator(); iter.hasNext(); ) {
+            Ingrediente element = iter.next();
+            ingredientsList.add(new RecipeStepElement(element.getNombre(),element.getNombre_basico()));
+        }
+        rvIngredients.setLayoutManager(new LinearLayoutManager(this));
+        rvIngredients.setAdapter(new RecipeRecyclerViewAdapter(ingredientsList,false));
     }
 }
