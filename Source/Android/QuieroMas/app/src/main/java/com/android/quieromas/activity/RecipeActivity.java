@@ -4,17 +4,28 @@ import android.content.Intent;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.quieromas.R;
+import com.android.quieromas.adapter.MyFavoriteRecipesRecyclerViewAdapter;
+import com.android.quieromas.adapter.RecipeRecyclerViewAdapter;
+import com.android.quieromas.model.DummyContent;
 import com.android.quieromas.model.FirebaseDatabaseKeys;
+import com.android.quieromas.model.receta.Ingrediente;
 import com.android.quieromas.model.receta.Receta;
+import com.android.quieromas.model.receta.RecipeStepElement;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,6 +33,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.ListIterator;
 
 public class RecipeActivity extends AuthActivity {
 
@@ -35,6 +49,8 @@ public class RecipeActivity extends AuthActivity {
     private String dessertName;
     private TextView txtVariants;
     private TextView txtName;
+    private RecyclerView rvSteps;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +96,7 @@ public class RecipeActivity extends AuthActivity {
         btnDevelopmentTip = (Button) findViewById(R.id.recipe_button_development_tip);
         txtVariants = (TextView) findViewById(R.id.txt_recipe_variants);
         txtName = (TextView) findViewById(R.id.txt_recipe_name);
+        rvSteps = (RecyclerView) findViewById(R.id.recipe_list_steps);
 
         txtName.setText(recipeName);
 
@@ -129,7 +146,7 @@ public class RecipeActivity extends AuthActivity {
         btnNutritionalTip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startTipActivity("Tip Nutruional",receta.getTip_nutricional(),"light_bulb");
+                startTipActivity("Tip Nutricional",receta.getTip_nutricional(),"light_bulb");
 
             }
         });
@@ -149,6 +166,13 @@ public class RecipeActivity extends AuthActivity {
 
         txtVariants.setText(receta.getVariante());
 
-
+        //Set ing
+        ArrayList<RecipeStepElement> stepsList = new ArrayList<>();
+        for (ListIterator<String> iter = receta.getPasos().listIterator(); iter.hasNext(); ) {
+            String element = iter.next();
+            stepsList.add(new RecipeStepElement(element));
+        }
+        rvSteps.setLayoutManager(new LinearLayoutManager(this));
+        rvSteps.setAdapter(new RecipeRecyclerViewAdapter(stepsList,true));
     }
 }

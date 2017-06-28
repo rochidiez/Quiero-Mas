@@ -130,12 +130,12 @@
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/subsubtitle_text_size" />
 
-            <ListView
+            <android.support.v7.widget.RecyclerView
                 android:id="@+id/recipe_list_steps"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:listitem="@layout/listitem_recipe_steps"
-                android:layout_marginStart="16dp"></ListView>
+                android:layout_marginStart="16dp"></android.support.v7.widget.RecyclerView>
 
             <LinearLayout
                 android:layout_width="match_parent"

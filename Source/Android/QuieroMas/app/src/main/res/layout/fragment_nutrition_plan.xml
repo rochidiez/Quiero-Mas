@@ -36,9 +36,9 @@
                         android:layout_marginTop="12dp"
                         android:text="BEBE NOMBRE"
                         android:textAlignment="center"
+                        android:textAppearance="@style/AppTheme.TextAppearance.Bold"
                         android:textColor="@color/textColorPrimary"
-                        android:textSize="@dimen/bigtitle_text_size"
-                        android:textAppearance="@style/AppTheme.TextAppearance.Bold" />
+                        android:textSize="@dimen/bigtitle_text_size" />
 
                     <TextView
                         android:layout_width="match_parent"
