@@ -91,7 +91,7 @@ public class FavoriteRecipesFragment extends Fragment {
                     @Override
                     public void onClick(View view, final int position) {
                         Intent intent = new Intent(getActivity(), RecipeActivity.class);
-                        intent.putExtra("id", "Receta Ejemplo");
+                        intent.putExtra("RECIPE", "Receta Ejemplo");
                         startActivity(intent);
                     }
 

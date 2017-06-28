@@ -11,7 +11,7 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar_recipe"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="210dp"
         android:fitsSystemWindows="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
@@ -30,8 +30,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:background="@drawable/video_cover"
                 android:fitsSystemWindows="true">
+
+                <ImageView
+                    android:id="@+id/img_recipe_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
 
                 <Button
                     android:id="@+id/btn_recipe_watch"
@@ -74,12 +78,13 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/txt_recipe_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="16dp"
-                    android:text="Papilla naranja"
+                    android:text=""
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/bigtitle_text_size" />
 
@@ -150,12 +155,13 @@
                     android:textSize="@dimen/subsubtitle_text_size" />
 
                 <TextView
+                    android:id="@+id/txt_recipe_variants"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginBottom="16dp"
-                    android:text="se puede cambiar la calabaza por zapallo o zanahoria"
+                    android:text=""
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/subsubtitle_text_size" />
 

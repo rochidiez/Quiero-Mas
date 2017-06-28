@@ -2,6 +2,7 @@ package com.android.quieromas.activity;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
@@ -30,6 +31,12 @@ import com.android.quieromas.fragment.ProfileFragment;
 import com.android.quieromas.fragment.ProfileViewFragment;
 import com.android.quieromas.fragment.TermsFragment;
 import com.android.quieromas.model.DummyContent;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AuthActivity
         implements NavigationView.OnNavigationItemSelectedListener, FavoriteRecipesFragment.OnListFragmentInteractionListener,
@@ -90,6 +97,44 @@ public class MainActivity extends AuthActivity
 
         //setStatusBarTranslucent(true);
         //getSupportActionBar().setDisplayShowTitleEnabled(false);
+    }
+
+    @Override
+    public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+        super.onAuthStateChanged(firebaseAuth);
+
+        syncDatabase("Recetas");
+        syncDatabase("Postres");
+    }
+
+    private void syncDatabase(final String name){
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(name);
+        ref.keepSynced(true);
+        ref.orderByKey().addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                Log.d(TAG,"Updated local datebase for: " + name);
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override
