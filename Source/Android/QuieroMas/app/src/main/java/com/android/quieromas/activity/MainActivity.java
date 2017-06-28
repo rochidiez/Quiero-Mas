@@ -31,6 +31,7 @@ import com.android.quieromas.fragment.ProfileFragment;
 import com.android.quieromas.fragment.ProfileViewFragment;
 import com.android.quieromas.fragment.TermsFragment;
 import com.android.quieromas.model.DummyContent;
+import com.android.quieromas.model.FirebaseDatabaseKeys;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -103,8 +104,8 @@ public class MainActivity extends AuthActivity
     public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
         super.onAuthStateChanged(firebaseAuth);
 
-        syncDatabase("Recetas");
-        syncDatabase("Postres");
+        syncDatabase(FirebaseDatabaseKeys.getInstance().RECIPES);
+        syncDatabase(FirebaseDatabaseKeys.getInstance().DESSERTS);
     }
 
     private void syncDatabase(final String name){

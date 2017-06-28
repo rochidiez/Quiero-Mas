@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.quieromas.R;
+import com.android.quieromas.model.FirebaseDatabaseKeys;
 import com.android.quieromas.model.receta.Receta;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -33,6 +34,7 @@ public class RecipeActivity extends AuthActivity {
     private ImageView imgBackground;
     private String dessertName;
     private TextView txtVariants;
+    private TextView txtName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +57,9 @@ public class RecipeActivity extends AuthActivity {
             }
         }
 
-        DatabaseReference recetasRef = FirebaseDatabase.getInstance().getReference("Recetas");
+
+
+        DatabaseReference recetasRef = FirebaseDatabase.getInstance().getReference(FirebaseDatabaseKeys.getInstance().RECIPES);
         recetasRef.child("Por Nombre").child(recipeName).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -69,18 +73,20 @@ public class RecipeActivity extends AuthActivity {
             }
         });
 
-        //TODO: ver de donde viene el postre
         btnDessert = (Button) findViewById(R.id.recipe_button_dessert);
         imgBackground = (ImageView) findViewById(R.id.img_recipe_image);
         btnWatch = (Button) findViewById(R.id.btn_recipe_watch);
         btnNutritionalTip = (Button) findViewById(R.id.recipe_button_nutritional_tip);
         btnDevelopmentTip = (Button) findViewById(R.id.recipe_button_development_tip);
         txtVariants = (TextView) findViewById(R.id.txt_recipe_variants);
+        txtName = (TextView) findViewById(R.id.txt_recipe_name);
+
+        txtName.setText(recipeName);
 
         if(dessertName == null){
             btnDessert.setVisibility(View.GONE);
         }else{
-            DatabaseReference postresRef = FirebaseDatabase.getInstance().getReference("Postres");
+            DatabaseReference postresRef = FirebaseDatabase.getInstance().getReference(FirebaseDatabaseKeys.getInstance().DESSERTS);
             postresRef.child(dessertName).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
