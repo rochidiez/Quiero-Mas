@@ -1,11 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/list"
-    android:name="com.android.quieromas.fragment.FavoriteRecipesFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layoutManager="LinearLayoutManager"
-    tools:context="com.android.quieromas.fragment.FavoriteRecipesFragment"
-    tools:listitem="@layout/fragment_favoriterecipes" />
+    tools:context="com.android.quieromas.fragment.FavoriteRecipesFragment">
+
+    <com.android.quieromas.EmptyRecyclerView
+        android:id="@+id/list"
+        android:name="com.android.quieromas.fragment.FavoriteRecipesFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="LinearLayoutManager"
+        tools:listitem="@layout/fragment_favoriterecipes" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/empty_view">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/no_recipes"
+            android:textAlignment="center"
+            android:layout_marginLeft="48dp"
+            android:layout_marginRight="48dp"
+            android:layout_marginTop="120dp"
+            android:textSize="@dimen/subtitle_text_size"
+            >
+        </TextView>
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="24dp"
+            android:background="@drawable/divisor_centro">
+
+        </ImageView>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:paddingLeft="36dp"
+            android:drawableStart="@drawable/olla"
+            android:text="Todas las recetas"
+            android:textSize="@dimen/subtitle_text_size"
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"
+            android:background="@drawable/button_border_black_thin"/>
+
+
+    </LinearLayout>
+
+
+    </FrameLayout>

@@ -17,8 +17,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.android.quieromas.R;
-import com.android.quieromas.fragment.AbcFragment;
-import com.android.quieromas.fragment.AbcPerMonthFragment;
 import com.android.quieromas.fragment.AboutUsFragment;
 import com.android.quieromas.fragment.BaseFragment;
 import com.android.quieromas.fragment.DevelopmentFragment;
@@ -26,18 +24,15 @@ import com.android.quieromas.fragment.FavoriteRecipesFragment;
 import com.android.quieromas.fragment.HomeFragment;
 import com.android.quieromas.fragment.LactationFragment;
 import com.android.quieromas.fragment.NutritionPlanFragment;
-import com.android.quieromas.fragment.ProfileEditFragment;
 import com.android.quieromas.fragment.ProfileFragment;
-import com.android.quieromas.fragment.ProfileViewFragment;
 import com.android.quieromas.fragment.TermsFragment;
-import com.android.quieromas.model.DummyContent;
-import com.android.quieromas.model.FirebaseDatabaseKeys;
+import com.android.quieromas.helper.FirebaseDatabaseHelper;
+import com.android.quieromas.model.receta.Receta;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AuthActivity
         implements NavigationView.OnNavigationItemSelectedListener, FavoriteRecipesFragment.OnListFragmentInteractionListener,
@@ -93,23 +88,30 @@ public class MainActivity extends AuthActivity
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.main_content, fragment).commit();
                 drawer.closeDrawer(GravityCompat.START);
+
             }
         });
 
-        //setStatusBarTranslucent(true);
-        //getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        FirebaseDatabaseHelper firebaseDatabaseHelper = new FirebaseDatabaseHelper();
+        //All recipes
+        syncDatabaseForReference(firebaseDatabaseHelper.getRecipesReference());
+
+        //All desserts
+        syncDatabaseForReference(firebaseDatabaseHelper.getDessertsReference());
+
+        //Current user
+        syncDatabaseForReference(firebaseDatabaseHelper.getCurrentUserReference());
+
     }
 
     @Override
     public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
         super.onAuthStateChanged(firebaseAuth);
 
-        syncDatabase(FirebaseDatabaseKeys.getInstance().RECIPES);
-        syncDatabase(FirebaseDatabaseKeys.getInstance().DESSERTS);
     }
 
-    private void syncDatabase(final String name){
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(name);
+    private void syncDatabaseForReference(DatabaseReference ref){
         ref.keepSynced(true);
         ref.orderByKey().addChildEventListener(new ChildEventListener() {
             @Override
@@ -118,7 +120,7 @@ public class MainActivity extends AuthActivity
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                Log.d(TAG,"Updated local datebase for: " + name);
+                Log.d(TAG,"Updated local datebase for: " + dataSnapshot.getKey());
             }
 
             @Override
@@ -226,7 +228,7 @@ public class MainActivity extends AuthActivity
     }
 
     @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem di){
+    public void onListFragmentInteraction(Receta di){
         Log.w(TAG, "Hello");
     }
 }

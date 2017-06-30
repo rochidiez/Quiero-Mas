@@ -6,12 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.quieromas.R;
-import com.android.quieromas.activity.RecipeActivity;
-import com.android.quieromas.fragment.FavoriteRecipesFragment;
-import com.android.quieromas.model.DummyContent;
 import com.android.quieromas.model.receta.RecipeStepElement;
 
 import java.util.List;
@@ -50,7 +46,7 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeRecycl
         }else{
             holder.txtIndicator.setText("●");
             if(holder.mItem.getBasicRecipe() != null){
-                
+
                 holder.txtText.setTextColor(orangeColor);
                 holder.btnPlus.setVisibility(View.VISIBLE);
                 holder.btnPlus.setOnClickListener(new View.OnClickListener() {

@@ -1,32 +1,22 @@
 package com.android.quieromas.activity;
 
 import android.content.Intent;
-import android.provider.Settings;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Adapter;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.quieromas.R;
-import com.android.quieromas.adapter.MyFavoriteRecipesRecyclerViewAdapter;
 import com.android.quieromas.adapter.RecipeRecyclerViewAdapter;
-import com.android.quieromas.model.DummyContent;
-import com.android.quieromas.model.FirebaseDatabaseKeys;
+import com.android.quieromas.helper.FirebaseDatabaseHelper;
 import com.android.quieromas.model.receta.Ingrediente;
 import com.android.quieromas.model.receta.Receta;
 import com.android.quieromas.model.receta.RecipeStepElement;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -51,6 +41,7 @@ public class RecipeActivity extends AuthActivity {
     private TextView txtName;
     private RecyclerView rvSteps;
     private RecyclerView rvIngredients;
+    private RelativeLayout reuseLayout;
 
 
     @Override
@@ -74,10 +65,8 @@ public class RecipeActivity extends AuthActivity {
             }
         }
 
-
-
-        DatabaseReference recetasRef = FirebaseDatabase.getInstance().getReference(FirebaseDatabaseKeys.getInstance().RECIPES);
-        recetasRef.child("Por Nombre").child(recipeName).addListenerForSingleValueEvent(new ValueEventListener() {
+        FirebaseDatabaseHelper firebaseDatabaseHelper = new FirebaseDatabaseHelper();
+        firebaseDatabaseHelper.getRecipeReference(recipeName).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 receta = dataSnapshot.getValue(Receta.class);
@@ -99,14 +88,16 @@ public class RecipeActivity extends AuthActivity {
         txtName = (TextView) findViewById(R.id.txt_recipe_name);
         rvSteps = (RecyclerView) findViewById(R.id.recipe_list_steps);
         rvIngredients = (RecyclerView) findViewById(R.id.recipe_list_ingredients);
+        reuseLayout = (RelativeLayout) findViewById(R.id.recipe_layout_reuse);
 
         txtName.setText(recipeName);
 
         if(dessertName == null){
             btnDessert.setVisibility(View.GONE);
+            reuseLayout.setVisibility(View.GONE);
         }else{
-            DatabaseReference postresRef = FirebaseDatabase.getInstance().getReference(FirebaseDatabaseKeys.getInstance().DESSERTS);
-            postresRef.child(dessertName).addListenerForSingleValueEvent(new ValueEventListener() {
+            FirebaseDatabaseHelper firebaseDatabaseHelper1 =  new FirebaseDatabaseHelper();
+            firebaseDatabaseHelper.getDessertReference(dessertName).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     final String dessertText = dataSnapshot.getValue(String.class);

@@ -9,21 +9,17 @@ import android.widget.TextView;
 import com.android.quieromas.R;
 import com.android.quieromas.fragment.FavoriteRecipesFragment.OnListFragmentInteractionListener;
 import com.android.quieromas.fragment.PlanRecipesFragment;
-import com.android.quieromas.model.DummyContent.DummyItem;
+import com.android.quieromas.model.receta.Receta;
 
 import java.util.List;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
- * specified {@link OnListFragmentInteractionListener}.
- * TODO: Replace the implementation with code for your data type.
- */
+
 public class MyFavoriteRecipesRecyclerViewAdapter extends RecyclerView.Adapter<MyFavoriteRecipesRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues;
+    private final List<Receta> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public MyFavoriteRecipesRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
+    public MyFavoriteRecipesRecyclerViewAdapter(List<Receta> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -38,8 +34,8 @@ public class MyFavoriteRecipesRecyclerViewAdapter extends RecyclerView.Adapter<M
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.txtMeal.setText(mValues.get(position).id);
-        holder.txtTitle.setText(mValues.get(position).content);
+       // holder.txtMeal.setText(mValues.get(position).id);
+        //holder.txtTitle.setText(mValues.get(position).content);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +59,7 @@ public class MyFavoriteRecipesRecyclerViewAdapter extends RecyclerView.Adapter<M
         public final TextView txtMeal;
         public final TextView txtTitle;
 
-        public DummyItem mItem;
+        public Receta mItem;
 
         public ViewHolder(View view) {
             super(view);

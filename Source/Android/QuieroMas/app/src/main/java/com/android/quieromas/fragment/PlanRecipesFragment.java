@@ -12,14 +12,13 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.android.quieromas.R;
-import com.android.quieromas.activity.MainActivity;
 import com.android.quieromas.activity.RecipeActivity;
-import com.android.quieromas.adapter.MyFavoriteRecipesRecyclerViewAdapter;
 import com.android.quieromas.adapter.MyPlanRecipesRecyclerViewAdapter;
 import com.android.quieromas.listener.ClickListener;
 import com.android.quieromas.listener.RecyclerTouchListener;
-import com.android.quieromas.model.DummyContent;
-import com.android.quieromas.model.DummyContent.DummyItem;
+import com.android.quieromas.model.receta.Receta;
+
+import java.util.ArrayList;
 
 /**
  * A fragment representing a list of Items.
@@ -34,6 +33,8 @@ public class PlanRecipesFragment extends Fragment {
     // TODO: Customize parameters
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
+
+    ArrayList<Receta> favoriteRecipes = new ArrayList<>();
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -76,7 +77,7 @@ public class PlanRecipesFragment extends Fragment {
                 Context context = view.getContext();
                 RecyclerView recyclerView = (RecyclerView) view;
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
-                recyclerView.setAdapter(new MyPlanRecipesRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+                recyclerView.setAdapter(new MyPlanRecipesRecyclerViewAdapter(favoriteRecipes, mListener));
 
                 recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getActivity(),
                         recyclerView, new ClickListener() {
@@ -119,6 +120,6 @@ public class PlanRecipesFragment extends Fragment {
 
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(Receta item);
     }
 }

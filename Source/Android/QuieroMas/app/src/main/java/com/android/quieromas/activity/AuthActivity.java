@@ -17,7 +17,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public abstract class AuthActivity extends BaseActivity implements FirebaseAuth.AuthStateListener{
 
-    private FirebaseAuth mAuth;
+    FirebaseAuth mAuth;
     private static final String TAG = "AuthActivity";
     FirebaseFunctionApi api;
 
