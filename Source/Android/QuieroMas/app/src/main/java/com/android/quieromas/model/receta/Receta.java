@@ -18,6 +18,7 @@ public class Receta {
     public Puntaje puntaje;
     public ArrayList<String> pasos;
     public ArrayList<Ingrediente> ingredientes;
+    public String titulo;
 
     public Receta(String thumbnail, String tip_desarrollo, String tip_nutricional, String variante, String video, com.android.quieromas.model.receta.Puntaje puntaje, ArrayList<String> pasos, ArrayList<Ingrediente> ingredientes) {
         this.thumbnail = thumbnail;
@@ -63,4 +64,7 @@ public class Receta {
     public ArrayList<Ingrediente> getIngredientes() {
         return ingredientes;
     }
+
+    public String getTitulo(){return titulo;}
+
 }

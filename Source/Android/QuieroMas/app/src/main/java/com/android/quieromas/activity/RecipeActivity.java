@@ -154,7 +154,7 @@ public class RecipeActivity extends AuthActivity {
         });
 
         Picasso.with(getApplicationContext()).load(receta.getThumbnail())
-                .resize(imgBackground.getWidth(),imgBackground.getHeight())
+                .fit()
                 .into(imgBackground);
 
         txtVariants.setText(receta.getVariante());

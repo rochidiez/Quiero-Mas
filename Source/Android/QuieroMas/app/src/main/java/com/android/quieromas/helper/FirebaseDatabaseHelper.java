@@ -31,8 +31,12 @@ public class FirebaseDatabaseHelper {
         return FirebaseDatabase.getInstance().getReference(RECIPES);
     }
 
+    public DatabaseReference getRecipesByNameReference(){
+        return getRecipesReference().child(BY_NAME);
+    }
+
     public DatabaseReference getRecipeReference(String recipeName){
-        return getRecipesReference().child(BY_NAME).child(recipeName);
+        return getRecipesByNameReference().child(recipeName);
     }
 
     public DatabaseReference getFavoriteRecipesReference(){

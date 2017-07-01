@@ -3,8 +3,11 @@ package com.android.quieromas.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.util.ArrayMap;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,22 +22,25 @@ import com.android.quieromas.listener.ClickListener;
 import com.android.quieromas.listener.RecyclerTouchListener;
 import com.android.quieromas.model.receta.Receta;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class FavoriteRecipesFragment extends Fragment {
 
-    // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
 
     ArrayList<String> favoriteRecipesNames = new ArrayList<>();
     ArrayList<Receta> favoriteRecipes = new ArrayList<>();
+    FirebaseDatabaseHelper firebaseDatabaseHelper;
+    EmptyRecyclerView recyclerView;
 
     public FavoriteRecipesFragment() {
     }
@@ -71,35 +77,27 @@ public class FavoriteRecipesFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_favoriterecipes_list, container, false);
 
-        // Set the adapter
-        if (view instanceof EmptyRecyclerView) {
-            Context context = view.getContext();
-            EmptyRecyclerView recyclerView = (EmptyRecyclerView) view;
-            recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            recyclerView.setEmptyView(view.findViewById(R.id.empty_view));
-            recyclerView.setAdapter(new MyFavoriteRecipesRecyclerViewAdapter(favoriteRecipes, mListener));
 
-            recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getActivity(),
-                    recyclerView, new ClickListener() {
+        return view;
+    }
 
-                @Override
-                public void onClick(View view, final int position) {
-                    String name = favoriteRecipesNames.get(position);
-                    Intent intent = new Intent(getActivity(), RecipeActivity.class);
-                    intent.putExtra("RECIPE", name);
-                    startActivity(intent);
-                }
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        Context context = view.getContext();
+        recyclerView = (EmptyRecyclerView) view.findViewById(R.id.list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        //recyclerView.setAdapter(new MyFavoriteRecipesRecyclerViewAdapter(favoriteRecipes, mListener));
+        recyclerView.setEmptyView(view.findViewById(R.id.empty_view));
 
-
-            }));
-        }
-
-        FirebaseDatabaseHelper firebaseDatabaseHelper = new FirebaseDatabaseHelper();
+        firebaseDatabaseHelper = new FirebaseDatabaseHelper();
         firebaseDatabaseHelper.getFavoriteRecipesReference().addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                favoriteRecipesNames = dataSnapshot.getValue(ArrayList.class);
-                addRecipes();
+                GenericTypeIndicator<ArrayList<String>> t = new GenericTypeIndicator<ArrayList<String>>() {};
+                favoriteRecipesNames = dataSnapshot.getValue(t);
+                if(favoriteRecipesNames != null && favoriteRecipesNames.size() > 0){
+                    addRecipes();
+                }
             }
 
             @Override
@@ -107,11 +105,44 @@ public class FavoriteRecipesFragment extends Fragment {
 
             }
         });
-        return view;
     }
 
+    void addRecipes(){
+        firebaseDatabaseHelper.getRecipesByNameReference().addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                GenericTypeIndicator<HashMap<String,Receta>> t = new GenericTypeIndicator<HashMap<String,Receta>>() {};
+                HashMap<String,Receta> hm = dataSnapshot.getValue(t);
+                for(int i = 0; i < favoriteRecipesNames.size(); i++){
+                    if(hm.containsKey(favoriteRecipesNames.get(i))){
+                        Receta receta = hm.get(favoriteRecipesNames.get(i));
+                        receta.titulo = favoriteRecipesNames.get(i);
+                        favoriteRecipes.add(receta);
+                    }
+                }
+                recyclerView.setAdapter(new MyFavoriteRecipesRecyclerViewAdapter(favoriteRecipes, mListener));
 
-    void addRecipes(){}
+                recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getActivity(),
+                        recyclerView, new ClickListener() {
+
+                    @Override
+                    public void onClick(View view, final int position) {
+                        String name = favoriteRecipesNames.get(position);
+                        Intent intent = new Intent(getActivity(), RecipeActivity.class);
+                        intent.putExtra("RECIPE", name);
+                        startActivity(intent);
+                    }
+
+
+                }));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
 
 
 

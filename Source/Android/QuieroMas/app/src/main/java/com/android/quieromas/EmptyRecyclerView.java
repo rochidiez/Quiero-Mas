@@ -27,7 +27,12 @@ public class EmptyRecyclerView extends RecyclerView {
 
     void checkIfEmpty() {
         if (emptyView != null) {
-            emptyView.setVisibility(getAdapter().getItemCount() > 0 ? GONE : VISIBLE);
+            if(getAdapter() != null){
+                emptyView.setVisibility(getAdapter().getItemCount() > 0 ? GONE : VISIBLE);
+            }else{
+                emptyView.setVisibility(VISIBLE);
+            }
+
         }
     }
 
@@ -46,11 +51,26 @@ public class EmptyRecyclerView extends RecyclerView {
         super.setAdapter(adapter);
         if (adapter != null) {
             adapter.registerAdapterDataObserver(observer);
+            checkIfEmpty();
         }
     }
 
     public void setEmptyView(@Nullable View emptyView) {
         this.emptyView = emptyView;
+        checkIfEmpty();
+    }
+
+    @Override
+    public void swapAdapter(Adapter adapter, boolean removeAndRecycleExistingViews) {
+        final Adapter oldAdapter = getAdapter();
+        if (oldAdapter != null) {
+            oldAdapter.unregisterAdapterDataObserver(observer);
+        }
+
+        if (adapter != null) {
+            adapter.registerAdapterDataObserver(observer);
+        }
+        super.swapAdapter(adapter, removeAndRecycleExistingViews);
         checkIfEmpty();
     }
 }
