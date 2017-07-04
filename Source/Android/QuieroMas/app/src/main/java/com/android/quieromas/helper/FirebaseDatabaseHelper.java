@@ -17,6 +17,8 @@ public class FirebaseDatabaseHelper {
     public static final String DESSERTS = "Postres";
     public static final String USERS = "Usuarios";
     public static final String BY_NAME = "Por Nombre";
+    public static final String DEVELOPMENT = "Estimulación";
+    public static final String MONTH = "mes ";
 
     public FirebaseDatabaseHelper(){
         mAuth = FirebaseAuth.getInstance();
@@ -49,5 +51,13 @@ public class FirebaseDatabaseHelper {
 
     public DatabaseReference getDessertReference(String dessert){
         return FirebaseDatabase.getInstance().getReference(DESSERTS).child(dessert);
+    }
+
+    public DatabaseReference getDevelopmentReference(){
+        return FirebaseDatabase.getInstance().getReference(DEVELOPMENT);
+    }
+
+    public DatabaseReference getDevelopmentReferenceByMonth(int month){
+        return getDevelopmentReference().child(MONTH  + month);
     }
 }

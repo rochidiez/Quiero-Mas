@@ -40,7 +40,7 @@ public class MyFavoriteRecipesRecyclerViewAdapter extends RecyclerView.Adapter<M
         holder.txtTitle.setText(mValues.get(position).getTitulo());
 
         Picasso.with(holder.imgBackground.getContext()).load(mValues.get(position).getThumbnail())
-                //.resize(holder.imgBackground.getWidth(),holder.imgBackground.getHeight())
+                .resize(holder.imgBackground.getWidth(),holder.imgBackground.getHeight())
                 .fit()
                 .into(holder.imgBackground);
 

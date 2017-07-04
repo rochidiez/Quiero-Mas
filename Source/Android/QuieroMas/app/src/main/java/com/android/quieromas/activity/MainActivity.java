@@ -91,7 +91,10 @@ public class MainActivity extends AuthActivity
 
             }
         });
+    }
 
+    void userLoggedEvent(){
+        super.userLoggedEvent();
 
         FirebaseDatabaseHelper firebaseDatabaseHelper = new FirebaseDatabaseHelper();
         //All recipes
@@ -102,7 +105,6 @@ public class MainActivity extends AuthActivity
 
         //Current user
         syncDatabaseForReference(firebaseDatabaseHelper.getCurrentUserReference());
-
     }
 
     @Override

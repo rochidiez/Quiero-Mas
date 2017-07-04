@@ -40,6 +40,7 @@ public abstract class AuthActivity extends BaseActivity implements FirebaseAuth.
         if (user != null) {
             // User is signed in
             Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+            userLoggedEvent();
         } else {
             // User is signed out
             Log.d(TAG, "onAuthStateChanged:signed_out");
@@ -56,6 +57,8 @@ public abstract class AuthActivity extends BaseActivity implements FirebaseAuth.
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
     }
+
+    void userLoggedEvent(){}
 
 
 }

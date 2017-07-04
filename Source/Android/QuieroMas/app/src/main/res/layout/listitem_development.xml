@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/subtitle_text_size"
+        android:text=""
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        android:textAppearance="@style/AppTheme.TextAppearance.Bold"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/txt_development_title" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:scaleType="centerCrop"
+        android:fitsSystemWindows="true"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/txt_development_title"
+        android:layout_alignStart="@+id/txt_development_title">
+
+        <ImageView
+            android:id="@+id/img_development_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"/>
+
+        <Button
+            android:id="@+id/btn_development_watch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/video_play"
+            android:background="@android:color/transparent"
+            android:text=""
+            android:textSize="@dimen/subtitle_text_size"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+</RelativeLayout>
