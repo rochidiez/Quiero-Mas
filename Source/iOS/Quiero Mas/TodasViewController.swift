@@ -47,8 +47,8 @@ class TodasViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func reloadRecetas() {
-        if let recetasDic = UserDefaults.standard.dictionary(forKey: "recetas") as? [String:[String:Any]] {
-            recetasArray = recetasDic["Por Nombre"]!.toArray() as? [[String:[String:Any]]]
+        if let recetasDic = UserDefaults.standard.dictionary(forKey: defRecetas) as? [String:[String:Any]] {
+            recetasArray = recetasDic[firPorNombre]!.toArray() as? [[String:[String:Any]]]
             table.reloadData()
             spinner.stopAnimating()
         }
@@ -74,6 +74,16 @@ class TodasViewController: UIViewController, UITableViewDataSource, UITableViewD
         if let receta = recetasArray?[indexPath.section] {
             for (key, element) in receta {
                 cell.recetaName.text = key
+                if let thumbnail = element["Thumbnail"] as? String {
+                    cell.recetaImg.sd_setImage(with: URL(string:thumbnail), placeholderImage: UIImage(named: "Thumbnail Receta"))
+                }
+                if FirebaseAPI.isRecetaFavorite(name: key) {
+                    cell.recetaFav.imageView?.image = UIImage(named: "Favorito Lleno")
+                } else {
+                    cell.recetaFav.imageView?.image = UIImage(named: "Favorito Vacio")
+                }
+                cell.recetaFav.tag = indexPath.section
+                cell.recetaFav.addTarget(self, action: #selector(favUnfav(_:)), for: .touchUpInside)
             }
         }
     
@@ -104,6 +114,14 @@ class TodasViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
+    @IBAction func favUnfav(_ sender:UIButton) {
+        if let receta = recetasArray?[sender.tag] {
+            for (key, _) in receta {
+                FirebaseAPI.favUnfavReceta(name: key)
+                table.reloadData()
+            }
+        }
+    }
     
     
 }

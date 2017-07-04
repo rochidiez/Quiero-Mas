@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
+import Firebase
 
 class RecetaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var table: UITableView!
     
-    var recetaDict: [String:Any]?
-    var recetaNombre: String?
+    //Video
+    @IBOutlet weak var thumbnailImgView: UIImageView!
+    
+    //Top
+    @IBOutlet weak var recetaTitle: UILabel!
     
     //Bottom
     @IBOutlet weak var bottomView: UIView!
@@ -33,6 +39,9 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
     //Variante
     @IBOutlet weak var varianteLabel: UILabel!
     @IBOutlet weak var varianteHeightConstraint: NSLayoutConstraint!
+    
+    var recetaDict: [String:Any]?
+    var recetaNombre: String?
 
     
     //MARK: - View Did Load
@@ -55,19 +64,46 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
     
     //MARK: - View Will Appear
     override func viewWillAppear(_ animated: Bool) {
+        setTop()
+        setVideo()
         setVariante()
         setBottom()
+        setPuntaje()
+    }
+    
+    func setTop() {
+        recetaTitle.text = recetaNombre
+    }
+    
+    func setVideo() {
+        if let thumbnail = recetaDict?[firRecetaThumbnail] as? String {
+            thumbnailImgView.sd_setImage(with: URL(string:thumbnail), placeholderImage: UIImage(named: "Thumbnail Receta"))
+        }
     }
     
     func setVariante() {
-        if recetaDict?["Variante"] != nil {
-            varianteLabel.text = recetaDict?["Variante"] as? String
+        if recetaDict?[firRecetaVariante] != nil {
+            varianteLabel.text = recetaDict?[firRecetaVariante] as? String
         }
     }
     
     func setBottom() {
         setVarianteView()
         bottomView.frame = CGRect(origin: bottomView.frame.origin, size: CGSize(width: bottomView.frame.size.width, height:varianteHeightConstraint.constant + 387))
+    }
+    
+    func setPuntaje() {
+        if let puntajeDic = recetaDict?[firRecetaPuntaje] as? [String:Any] {
+            if let datosDic = puntajeDic[firRecetaPuntajeDatos] as? [String:Int] {
+                let user = FIRAuth.auth()?.currentUser
+                guard let firebaseID = user?.uid else {return}
+                if let puntaje = datosDic[firebaseID] {
+                    dibujarPuntaje(puntaje: puntaje)
+                }
+            }
+        } else {
+            dibujarPuntaje(puntaje: 0)
+        }
     }
     
     func setVarianteView() {
@@ -86,11 +122,11 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var sections = 0
         if section == 0 {
-            if let ingredientesArr = recetaDict?["Ingredientes"] as? [[String:Any]] {
+            if let ingredientesArr = recetaDict?[firRecetaIngredientes] as? [[String:Any]] {
                 sections = ingredientesArr.count
             }
         } else {
-            if let pasosArr = recetaDict?["Pasos"] as? [String] {
+            if let pasosArr = recetaDict?[firRecetaPasos] as? [String] {
                 sections = pasosArr.count
             }
         }
@@ -102,15 +138,15 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientesTableViewCell", for: indexPath) as! IngredientesTableViewCell
             
-            if let ingredientesArr = recetaDict?["Ingredientes"] as? [[String:Any]] {
+            if let ingredientesArr = recetaDict?[firRecetaIngredientes] as? [[String:Any]] {
             let ingredienteDic = ingredientesArr[indexPath.row]
-            cell.title.text = ingredienteDic["Nombre"] as? String
+            cell.title.text = ingredienteDic[firRecetaIngredientesNombre] as? String
             
-            if ingredienteDic["Nombre Básico"] != nil {
+            if ingredienteDic[firRecetaIngredientesNombreBasico] != nil {
                     cell.title.font = UIFont(name: "Cera-Bold", size: 16)
                     cell.title.textColor = appMainColor
             }
-            cell.button.isHidden = ingredienteDic["Nombre Básico"] == nil
+            cell.button.isHidden = ingredienteDic[firRecetaIngredientesNombreBasico] == nil
                 
             }
             
@@ -119,7 +155,7 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
             let cell = tableView.dequeueReusableCell(withIdentifier: "PasosTableViewCell", for: indexPath) as! PasosTableViewCell
             
             cell.numberLabel.text = String(indexPath.row + 1)
-            if let pasosArr = recetaDict?["Pasos"] as? [String] {
+            if let pasosArr = recetaDict?[firRecetaPasos] as? [String] {
                 cell.title.text = pasosArr[indexPath.row]
             }
             
@@ -137,7 +173,7 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
             let screenWidth = ScreenSize.SCREEN_WIDTH
             var linesCount = CGFloat(0)
             var amountOfRows = 0
-            if let pasosArr = recetaDict?["Pasos"] as? [String] {
+            if let pasosArr = recetaDict?[firRecetaPasos] as? [String] {
                 linesCount = CGFloat(pasosArr[indexPath.row].characters.count)
                 amountOfRows = pasosArr.count
             }
@@ -146,9 +182,11 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
                 linesCount = linesCount / 48
                 magicValue = 0.07
             } else if DeviceType.IS_IPHONE_6 {
-                
+                linesCount = linesCount / 40
+                magicValue = 0.069
             } else if DeviceType.IS_IPHONE_5 {
-                
+                linesCount = linesCount / 28
+                magicValue = 0.075
             }
             height = linesCount * (screenWidth - 60) * magicValue
             
@@ -182,10 +220,10 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            if let ingredientesArr = recetaDict?["Ingredientes"] as? [[String:Any]] {
+            if let ingredientesArr = recetaDict?[firRecetaIngredientes] as? [[String:Any]] {
                 let ingredienteDic = ingredientesArr[indexPath.row]
-                if ingredienteDic["Nombre Básico"] != nil {
-                    performSegue(withIdentifier: "recetaBasicaSegue", sender: ingredienteDic["Nombre Básico"])
+                if ingredienteDic[firRecetaIngredientesNombreBasico] != nil {
+                    performSegue(withIdentifier: "recetaBasicaSegue", sender: ingredienteDic[firRecetaIngredientesNombreBasico])
                 }
             }
         }
@@ -208,6 +246,62 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     @IBAction func firstAction(_ sender: UIButton) {
+        dibujar1()
+        if recetaNombre != nil {UserDefaultsManager.setearPuntajeEnUserDefaults(recetaNombre: recetaNombre!, puntaje: 1)}
+        if recetaNombre != nil {FirebaseAPI.puntuar(receta: recetaNombre!, puntuacion: 1)}
+    }
+    
+    @IBAction func secondAction(_ sender: UIButton) {
+        dibujar2()
+        if recetaNombre != nil {UserDefaultsManager.setearPuntajeEnUserDefaults(recetaNombre: recetaNombre!, puntaje: 2)}
+        if recetaNombre != nil {FirebaseAPI.puntuar(receta: recetaNombre!, puntuacion: 2)}
+    }
+    
+    @IBAction func thirdAction(_ sender: UIButton) {
+        dibujar3()
+        if recetaNombre != nil {UserDefaultsManager.setearPuntajeEnUserDefaults(recetaNombre: recetaNombre!, puntaje: 3)}
+        if recetaNombre != nil {FirebaseAPI.puntuar(receta: recetaNombre!, puntuacion: 3)}
+    }
+    
+    @IBAction func fourthAction(_ sender: UIButton) {
+        dibujar4()
+        if recetaNombre != nil {UserDefaultsManager.setearPuntajeEnUserDefaults(recetaNombre: recetaNombre!, puntaje: 4)}
+        if recetaNombre != nil {FirebaseAPI.puntuar(receta: recetaNombre!, puntuacion: 4)}
+    }
+    
+    @IBAction func fifthAction(_ sender: UIButton) {
+        dibujar5()
+        if recetaNombre != nil {UserDefaultsManager.setearPuntajeEnUserDefaults(recetaNombre: recetaNombre!, puntaje: 5)}
+        if recetaNombre != nil {FirebaseAPI.puntuar(receta: recetaNombre!, puntuacion: 5)}
+    }
+    
+    @IBAction func playVideo(_ sender: UIButton) {
+        if let videoString = recetaDict?[firRecetaVideo] as? String {
+            let videoURL = URL(string: videoString)
+            let player = AVPlayer(url: videoURL!)
+            let playerViewController = AVPlayerViewController()
+            playerViewController.player = player
+            self.present(playerViewController, animated: true) {
+                playerViewController.player!.play()
+            }
+        }
+    }
+    
+    //MARK: - Puntaje
+    func dibujar0() {
+        firstImg.image = UIImage(named: "Oval Vacio")
+        firstLabel.textColor = appMainColor
+        secondImg.image = UIImage(named: "Oval Vacio")
+        secondLabel.textColor = appMainColor
+        thirdImg.image = UIImage(named: "Oval Vacio")
+        thirdLabel.textColor = appMainColor
+        fourthImg.image = UIImage(named: "Oval Vacio")
+        fourthLabel.textColor = appMainColor
+        fifthImg.image = UIImage(named: "Oval Vacio")
+        fifthLabel.textColor = appMainColor
+    }
+    
+    func dibujar1() {
         firstImg.image = UIImage(named: "Oval Lleno")
         firstLabel.textColor = .white
         
@@ -221,7 +315,7 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
         fifthLabel.textColor = appMainColor
     }
     
-    @IBAction func secondAction(_ sender: UIButton) {
+    func dibujar2() {
         secondImg.image = UIImage(named: "Oval Lleno")
         secondLabel.textColor = .white
         
@@ -235,7 +329,7 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
         fifthLabel.textColor = appMainColor
     }
     
-    @IBAction func thirdAction(_ sender: UIButton) {
+    func dibujar3() {
         thirdImg.image = UIImage(named: "Oval Lleno")
         thirdLabel.textColor = .white
         
@@ -249,7 +343,7 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
         fifthLabel.textColor = appMainColor
     }
     
-    @IBAction func fourthAction(_ sender: UIButton) {
+    func dibujar4() {
         fourthImg.image = UIImage(named: "Oval Lleno")
         fourthLabel.textColor = .white
         
@@ -263,7 +357,7 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
         fifthLabel.textColor = appMainColor
     }
     
-    @IBAction func fifthAction(_ sender: UIButton) {
+    func dibujar5() {
         fifthImg.image = UIImage(named: "Oval Lleno")
         fifthLabel.textColor = .white
         
@@ -275,6 +369,25 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
         thirdLabel.textColor = appMainColor
         fourthImg.image = UIImage(named: "Oval Vacio")
         fourthLabel.textColor = appMainColor
+    }
+    
+    func dibujarPuntaje(puntaje: Int) {
+        switch puntaje {
+        case 0:
+            dibujar0()
+        case 1:
+            dibujar1()
+        case 2:
+            dibujar2()
+        case 3:
+            dibujar3()
+        case 4:
+            dibujar4()
+        case 5:
+            dibujar5()
+        default:
+            print("dibujar puntaje mal llamado")
+        }
     }
     
     
@@ -289,7 +402,7 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
         
         if segue.identifier == "tipNutricionalSegue" {
             let vc = segue.destination as! TipNutricionalViewController
-            if let texto = recetaDict?["Tip Nutricional"] as? String {
+            if let texto = recetaDict?[firRecetaTipNutricional] as? String {
                 vc.texto = texto
             }
         }

@@ -13,10 +13,20 @@ class EstimulacionViewController: UIViewController {
     
     @IBOutlet weak var revealMenuButton: UIBarButtonItem!
     @IBOutlet weak var scroll: UIScrollView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
+    var estimulacionDic: [String:[String:[String:String]]]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setRevealMenuButton()
+        FirebaseAPI.getDatosEstimulacion()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadEstimulacion), name: NSNotification.Name(rawValue: estimulacionUpdated), object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 43/255, green: 74/255, blue: 124/255, alpha: 1.0)
     }
     
     func setRevealMenuButton() {
@@ -33,9 +43,19 @@ class EstimulacionViewController: UIViewController {
         if let s = sender as? UIButton {
             let vc = segue.destination as! EstimulacionVideosViewController
             vc.num = String(s.tag)
+            if let semanaDic = estimulacionDic?[firEstimulacionMes + String(s.tag)] {
+                vc.videosDic = semanaDic
+            }
         }
     }
     
+    func reloadEstimulacion() {
+        estimulacionDic = [String:[String:[String:String]]]()
+        if let storedDic = UserDefaults.standard.dictionary(forKey: firEstimulacion) as?  [String:[String:[String:String]]] {
+            estimulacionDic = storedDic
+        }
+        spinner.stopAnimating()
+    }
     
     
 

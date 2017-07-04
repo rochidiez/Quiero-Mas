@@ -54,13 +54,15 @@
 		C194259E1ECA241E0092C6F6 /* SobreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C194259D1ECA241E0092C6F6 /* SobreViewController.swift */; };
 		C19425A11ECA24A80092C6F6 /* RecomendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19425A01ECA24A80092C6F6 /* RecomendarViewController.swift */; };
 		C19425A41ECA253F0092C6F6 /* TerminosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19425A31ECA253F0092C6F6 /* TerminosViewController.swift */; };
+		C19473DF1EFE2EF3006F1669 /* UserDeafaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19473DE1EFE2EF3006F1669 /* UserDeafaultsManager.swift */; };
 		C199D9121E8877B0002255BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C199D9111E8877B0002255BA /* AppDelegate.swift */; };
-		C199D9141E8877B0002255BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C199D9131E8877B0002255BA /* ViewController.swift */; };
 		C199D9171E8877B0002255BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C199D9151E8877B0002255BA /* Main.storyboard */; };
 		C199D91A1E8877B0002255BA /* Quiero_Mas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C199D9181E8877B0002255BA /* Quiero_Mas.xcdatamodeld */; };
 		C199D91C1E8877B0002255BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C199D91B1E8877B0002255BA /* Assets.xcassets */; };
 		C199D91F1E8877B0002255BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C199D91D1E8877B0002255BA /* LaunchScreen.storyboard */; };
 		C1A6DB341EDCE91E006DB0B0 /* TodasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A6DB331EDCE91E006DB0B0 /* TodasTableViewCell.swift */; };
+		C1BABB341F06E0A40020342E /* AppKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BABB331F06E0A40020342E /* AppKeys.swift */; };
+		C1BABB371F06F0740020342E /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BABB361F06F0740020342E /* DateManager.swift */; };
 		C1CA15301E9EAA1A0084A432 /* Cera-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C1CA152F1E9EAA1A0084A432 /* Cera-Bold.ttf */; };
 		C1D057901EDF271C0018C9D0 /* EstimulacionVideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D0578F1EDF271C0018C9D0 /* EstimulacionVideosViewController.swift */; };
 		C1D1CEA51EADDA3900EA14C8 /* EmailViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1CEA41EADDA3900EA14C8 /* EmailViewcontroller.swift */; };
@@ -131,15 +133,17 @@
 		C194259D1ECA241E0092C6F6 /* SobreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SobreViewController.swift; sourceTree = "<group>"; };
 		C19425A01ECA24A80092C6F6 /* RecomendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecomendarViewController.swift; sourceTree = "<group>"; };
 		C19425A31ECA253F0092C6F6 /* TerminosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminosViewController.swift; sourceTree = "<group>"; };
+		C19473DE1EFE2EF3006F1669 /* UserDeafaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDeafaultsManager.swift; sourceTree = "<group>"; };
 		C199D90E1E8877B0002255BA /* Quiero Mas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quiero Mas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C199D9111E8877B0002255BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C199D9131E8877B0002255BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C199D9161E8877B0002255BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C199D9191E8877B0002255BA /* Quiero_Mas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Quiero_Mas.xcdatamodel; sourceTree = "<group>"; };
 		C199D91B1E8877B0002255BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C199D91E1E8877B0002255BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C199D9201E8877B0002255BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1A6DB331EDCE91E006DB0B0 /* TodasTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodasTableViewCell.swift; sourceTree = "<group>"; };
+		C1BABB331F06E0A40020342E /* AppKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKeys.swift; sourceTree = "<group>"; };
+		C1BABB361F06F0740020342E /* DateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		C1CA152F1E9EAA1A0084A432 /* Cera-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cera-Bold.ttf"; sourceTree = "<group>"; };
 		C1D0578F1EDF271C0018C9D0 /* EstimulacionVideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstimulacionVideosViewController.swift; sourceTree = "<group>"; };
 		C1D1CEA41EADDA3900EA14C8 /* EmailViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewcontroller.swift; sourceTree = "<group>"; };
@@ -361,23 +365,13 @@
 		C18F22E41E887D02006E42DB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C1BABB351F06F05D0020342E /* Aux */,
+				C1BABB321F06E0760020342E /* Keys */,
+				C15230501EFD9EE9009355DA /* Extensions */,
+				C1BABB311F06E0540020342E /* App Delegate */,
+				C1BABB301F06E0210020342E /* Views */,
 				C114858C1EF2D45B00F376CB /* Bridging Header */,
-				C17819DB1EE5985200EA05F8 /* Receta */,
-				C12A4AEB1ED639AD005B0441 /* Perfil */,
-				C19425A21ECA25260092C6F6 /* Terminos y condiciones */,
-				C194259F1ECA24990092C6F6 /* Recomendar */,
-				C194259C1ECA240E0092C6F6 /* Sobre Quiero Mas */,
-				C19425991ECA23AF0092C6F6 /* Recetas Favoritas */,
-				C19425961ECA22E20092C6F6 /* Lista de compras semanal */,
-				C19425931ECA218E0092C6F6 /* Todas las recetas */,
 				C1E5EB611EC7C0D2009B4894 /* Firebase */,
-				C109FDBC1EAA95D20067E86C /* Login */,
-				C100953D1E9755BB001748E4 /* Lactancia */,
-				C100953A1E9754A6001748E4 /* ABCNutricion */,
-				C10095371E9753AA001748E4 /* Estimulación */,
-				C10095341E9750C9001748E4 /* Nutrición */,
-				C18F22E81E88833C006E42DB /* Home */,
-				C18F22E51E887D0E006E42DB /* Menu */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -474,19 +468,63 @@
 		C199D9101E8877B0002255BA /* Quiero Mas */ = {
 			isa = PBXGroup;
 			children = (
-				C15230501EFD9EE9009355DA /* Extensions */,
 				C1523FAB1EC030400047B195 /* Quiero Mas.entitlements */,
 				C109FDB91EAA95A20067E86C /* Storyboards */,
 				C10095311E973C0C001748E4 /* Fonts */,
 				C18F22E41E887D02006E42DB /* Classes */,
-				C199D9111E8877B0002255BA /* AppDelegate.swift */,
-				C199D9131E8877B0002255BA /* ViewController.swift */,
 				C199D91B1E8877B0002255BA /* Assets.xcassets */,
 				C199D9201E8877B0002255BA /* Info.plist */,
 				C1523FAC1EC0339F0047B195 /* GoogleService-Info.plist */,
 				C199D9181E8877B0002255BA /* Quiero_Mas.xcdatamodeld */,
 			);
 			path = "Quiero Mas";
+			sourceTree = "<group>";
+		};
+		C1BABB301F06E0210020342E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C109FDBC1EAA95D20067E86C /* Login */,
+				C100953D1E9755BB001748E4 /* Lactancia */,
+				C100953A1E9754A6001748E4 /* ABCNutricion */,
+				C10095371E9753AA001748E4 /* Estimulación */,
+				C10095341E9750C9001748E4 /* Nutrición */,
+				C18F22E81E88833C006E42DB /* Home */,
+				C18F22E51E887D0E006E42DB /* Menu */,
+				C17819DB1EE5985200EA05F8 /* Receta */,
+				C12A4AEB1ED639AD005B0441 /* Perfil */,
+				C19425A21ECA25260092C6F6 /* Terminos y condiciones */,
+				C194259F1ECA24990092C6F6 /* Recomendar */,
+				C194259C1ECA240E0092C6F6 /* Sobre Quiero Mas */,
+				C19425991ECA23AF0092C6F6 /* Recetas Favoritas */,
+				C19425961ECA22E20092C6F6 /* Lista de compras semanal */,
+				C19425931ECA218E0092C6F6 /* Todas las recetas */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		C1BABB311F06E0540020342E /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				C199D9111E8877B0002255BA /* AppDelegate.swift */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		C1BABB321F06E0760020342E /* Keys */ = {
+			isa = PBXGroup;
+			children = (
+				C1BABB331F06E0A40020342E /* AppKeys.swift */,
+			);
+			name = Keys;
+			sourceTree = "<group>";
+		};
+		C1BABB351F06F05D0020342E /* Aux */ = {
+			isa = PBXGroup;
+			children = (
+				C19473DE1EFE2EF3006F1669 /* UserDeafaultsManager.swift */,
+				C1BABB361F06F0740020342E /* DateManager.swift */,
+			);
+			name = Aux;
 			sourceTree = "<group>";
 		};
 		C1E5EB611EC7C0D2009B4894 /* Firebase */ = {
@@ -664,6 +702,7 @@
 				C1F185D71EE37DFB007E9E96 /* MesViewController.swift in Sources */,
 				C18F22EA1E88834C006E42DB /* HomeViewController.swift in Sources */,
 				C10095391E9753B9001748E4 /* EstimulacionViewController.swift in Sources */,
+				C19473DF1EFE2EF3006F1669 /* UserDeafaultsManager.swift in Sources */,
 				C19425981ECA22F80092C6F6 /* ListaViewController.swift in Sources */,
 				C1EC023F1EFDE4B900B12013 /* String+Height.swift in Sources */,
 				C18F22E71E887D24006E42DB /* MenuTableViewController.swift in Sources */,
@@ -674,7 +713,6 @@
 				C1E5EB631EC7C0E4009B4894 /* FirebaseAPI.swift in Sources */,
 				C1DA20291EE47D8C003269D3 /* MesTableViewCell.swift in Sources */,
 				C10095331E974BFC001748E4 /* MenuTableViewCell.swift in Sources */,
-				C199D9141E8877B0002255BA /* ViewController.swift in Sources */,
 				C1E16B591EDF795100DE5566 /* LactanciaTableViewCell.swift in Sources */,
 				C199D91A1E8877B0002255BA /* Quiero_Mas.xcdatamodeld in Sources */,
 				C17819F41EE6245F00EA05F8 /* RecetaBasicaTableViewCell.swift in Sources */,
@@ -683,11 +721,13 @@
 				C1E5EB601EC7AAB4009B4894 /* BabyDataViewController.swift in Sources */,
 				C12A4AED1ED639C7005B0441 /* PerfilViewController.swift in Sources */,
 				C100951A1E9730D3001748E4 /* MenuNavigationController.swift in Sources */,
+				C1BABB371F06F0740020342E /* DateManager.swift in Sources */,
 				C1DA202D1EE4E39A003269D3 /* FavoritasTableViewCell.swift in Sources */,
 				C199D9121E8877B0002255BA /* AppDelegate.swift in Sources */,
 				C1DA202B1EE4B4EA003269D3 /* RecomendarTableViewCell.swift in Sources */,
 				C100953F1E9755C7001748E4 /* LactanciaViewController.swift in Sources */,
 				C1D1CEA51EADDA3900EA14C8 /* EmailViewcontroller.swift in Sources */,
+				C1BABB341F06E0A40020342E /* AppKeys.swift in Sources */,
 				C145F76F1EE2285A00A7DDD0 /* ABCTableViewCell.swift in Sources */,
 				C17819EC1EE61B5E00EA05F8 /* TipDesarrolloViewController.swift in Sources */,
 				C150820C1EE2080000A27A0C /* FirstLoginViewController.swift in Sources */,

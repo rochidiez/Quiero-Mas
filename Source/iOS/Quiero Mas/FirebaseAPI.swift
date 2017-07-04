@@ -12,21 +12,12 @@ import CoreData
 import Firebase
 import FirebaseStorage
 
-let localesStoredOrUpdatedKey = "localesStoredOrUpdatedKey"
-let appMainColor = UIColor(red: 255/255, green: 147/255, blue: 96/255, alpha: 1.0)
-let lactanciaUpdated = "lactanciaUpdated"
-let nutricionUpdated = "nutricionUpdated"
-let sobreUpdated = "sobreUpdated"
-let terminosUpdated = "terminosUpdated"
-let perfilLoaded = "perfilLoaded"
-let perfilUpdated = "perfilUpdated"
-let recetasUpdated = "recetasUpdated"
-let recetasBasicasUpdated = "recetasBasicasUpdated"
-
-let perfilNotFound = "perfilNotFound"
-let connectionError = "connectionError"
-
 class FirebaseAPI: NSObject {
+    
+    static func getInitialData() {
+        FirebaseAPI.getDatosRecetas()
+        FirebaseAPI.getDatosRecetasBasicas()
+    }
     
     static func storeFirebaseWithBaby(name: String,
                                   birthday: String,
@@ -184,8 +175,8 @@ class FirebaseAPI: NSObject {
         let user = FIRAuth.auth()?.currentUser
         guard let firebaseID = user?.uid else {return}
         FIRDatabase.database().reference().child("Usuarios").child(firebaseID).observeSingleEvent(of: .value, with: { (snap) in
-            if let perfilDic = snap.value as? [String:[String:String]] {
-                UserDefaults.standard.set(perfilDic, forKey: "perfil")
+            if let perfilDic = snap.value as? [String:Any] {
+                UserDefaults.standard.set(perfilDic, forKey: defPerfil)
                 NotificationCenter.default.post(name: Notification.Name(rawValue: perfilLoaded), object: nil)
             } else {
                 let user = FIRAuth.auth()?.currentUser
@@ -206,9 +197,9 @@ class FirebaseAPI: NSObject {
     }
     
     static func getDatosRecetas() {
-        FIRDatabase.database().reference().child("Recetas").observeSingleEvent(of: .value, with: { (snap) in
+        FIRDatabase.database().reference().child(firRecetas).observeSingleEvent(of: .value, with: { (snap) in
             if let recetasDic = snap.value as? [String:[String:Any]] {
-                UserDefaults.standard.set(recetasDic, forKey: "recetas")
+                UserDefaults.standard.set(recetasDic, forKey: defRecetas)
                 NotificationCenter.default.post(name: Notification.Name(rawValue: recetasUpdated), object: nil)
             }
         }) { (error) in
@@ -230,7 +221,7 @@ class FirebaseAPI: NSObject {
     static func getUser(firebaseID: String) {
         FIRDatabase.database().reference().child("Usuarios").child(firebaseID).observeSingleEvent(of: .value, with: { (snap) in
             if let userDic = snap.value as? [String:String] {
-                UserDefaults.standard.set(userDic, forKey: "perfil")
+                UserDefaults.standard.set(userDic, forKey: defPerfil)
                 NotificationCenter.default.post(name: Notification.Name(rawValue: perfilUpdated), object: nil)
             }
         }) { (error) in
@@ -238,5 +229,107 @@ class FirebaseAPI: NSObject {
         }
     }
     
+    static func puntuar(receta: String, puntuacion: Int) {
+        let user = FIRAuth.auth()?.currentUser
+        guard let firebaseID = user?.uid else {return}
+        FIRDatabase.database().reference().child("Recetas").child("Por Nombre").child(receta).observeSingleEvent(of: .value, with: { (snap) in
+            if let recetaDic = snap.value as? [String:Any] {
+                if var puntajeDic = recetaDic["Puntaje"] as? [String:Any] {
+                    var datosDic = puntajeDic["Datos"] as? [String:Int]
+                    var viejoPuntaje = 0
+                    if datosDic?[firebaseID] != nil {
+                        viejoPuntaje = (datosDic?[firebaseID])!
+                    }
+                    datosDic?[firebaseID] = puntuacion
+                    puntajeDic["Datos"] = datosDic
+                    if let puntos = puntajeDic["Total"] as? Int {
+                        puntajeDic["Total"] = puntos - viejoPuntaje + puntuacion
+                    }
+                    
+                    FIRDatabase.database().reference().child("Recetas/Por Nombre/\(receta)/Puntaje").setValue(puntajeDic)
+                } else {
+                    let puntajeDic = ["Datos": [firebaseID: puntuacion], "Total": puntuacion] as [String:Any]
+                    FIRDatabase.database().reference().child("Recetas/Por Nombre/\(receta)/Puntaje").setValue(puntajeDic)
+                }
+                NotificationCenter.default.post(name: Notification.Name(rawValue: perfilUpdated), object: nil)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    static func getDatosEstimulacion() {
+        FIRDatabase.database().reference().child(firEstimulacion).observeSingleEvent(of: .value, with: { (snap) in
+            if let estimulacionDic = snap.value as? [String:Any] {
+                UserDefaults.standard.set(estimulacionDic, forKey: firEstimulacion)
+                NotificationCenter.default.post(name: Notification.Name(rawValue: estimulacionUpdated), object: nil)
+            }
+        }) { (error) in
+            NotificationCenter.default.post(name: Notification.Name(rawValue: connectionError), object: nil)
+        }
+    }
+    
+    //MARK: - Aux
+    static func getRecetaByName(name: String) -> [String:Any]? {
+        if let recetasDic = UserDefaults.standard.value(forKey: defRecetas) as? [String:[String:Any]] {
+            if let recetasDicNombre = recetasDic[firPorNombre] as? [String:[String:Any]] {
+                return recetasDicNombre[name]
+            }
+        }
+        return nil
+    }
+    
+    static func getPostreByName(name: String) -> [String:Any]? {
+        return nil
+    }
+    
+    static func getRecetasByNames(names: [String]) -> [[String:Any]?] {
+        var recetas = [[String:Any]]()
+        for name in names {
+            if let r = getRecetaByName(name: name) {
+                recetas.append(r)
+            }
+        }
+        return recetas
+    }
+    
+    static func isRecetaFavorite(name: String) -> Bool {
+        if let perfilDic = UserDefaults.standard.value(forKey: defPerfil) as? [String:Any] {
+            if let favoritasArr = perfilDic[firUsuarioFavoritos] as? [String] {
+                for favorita in favoritasArr {
+                    if favorita == name {
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
+    
+    static func favUnfavReceta(name: String) {
+        if var perfilDic = UserDefaults.standard.value(forKey: defPerfil) as? [String:Any] {
+            if var favoritasArr = perfilDic[firUsuarioFavoritos] as? [String] {
+                if isRecetaFavorite(name: name) {
+                    var i = 0
+                    while i < favoritasArr.count {
+                        if favoritasArr[i] == name {
+                            favoritasArr.remove(at: i)
+                            i = favoritasArr.count
+                        }
+                        i += 1
+                    }
+                } else {
+                    favoritasArr.append(name)
+                }
+                perfilDic[firUsuarioFavoritos] = favoritasArr
+            } else {
+                perfilDic[firUsuarioFavoritos] = [name]
+            }
+            UserDefaults.standard.set(perfilDic, forKey: defPerfil)
+            let user = FIRAuth.auth()?.currentUser
+            guard let firebaseID = user?.uid else {return}
+            FIRDatabase.database().reference().child("Usuarios/\(firebaseID)/\(firUsuarioFavoritos)").setValue(perfilDic[firUsuarioFavoritos])
+        }
+    }
     
 }

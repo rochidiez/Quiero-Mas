@@ -51,7 +51,7 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func loadPerfil() {
-        if let storedDic = UserDefaults.standard.dictionary(forKey: "perfil") as? [String:[String:String]] {
+        if let storedDic = UserDefaults.standard.dictionary(forKey: defPerfil) as? [String:[String:String]] {
             profileDic = storedDic
         }
         table.reloadData()
@@ -135,45 +135,45 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
             if profileDic != nil {
                 switch indexPath.row {
                 case 0:
-                    if profileDic?["Datos"] != nil {
-                        let datos = profileDic?["Datos"]
-                        if datos?["Nombre Completo"] != nil {
-                            descriptionString = (datos?["Nombre Completo"])!
+                    if profileDic?[defPerfilDatos] != nil {
+                        let datos = profileDic?[defPerfilDatos]
+                        if datos?[defPerfilDatosNombre] != nil {
+                            descriptionString = (datos?[defPerfilDatosNombre])!
                         }
                     }
                 case 1:
-                    if profileDic?["Datos"] != nil {
-                        let datos = profileDic?["Datos"]
-                        if datos?["Email"] != nil {
-                            descriptionString = (datos?["Email"])!
+                    if profileDic?[defPerfilDatos] != nil {
+                        let datos = profileDic?[defPerfilDatos]
+                        if datos?[defPerfilDatosEmail] != nil {
+                            descriptionString = (datos?[defPerfilDatosEmail])!
                         }
                     }
                 case 2:
-                    if profileDic?["Datos"] != nil {
-                        let datos = profileDic?["Datos"]
-                        if datos?["Fecha de Nacimiento"] != nil {
-                            descriptionString = (datos?["Fecha de Nacimiento"])!
+                    if profileDic?[defPerfilDatos] != nil {
+                        let datos = profileDic?[defPerfilDatos]
+                        if datos?[defPerfilDatosFechaDeNacimiento] != nil {
+                            descriptionString = (datos?[defPerfilDatosFechaDeNacimiento])!
                         }
                     }
                 case 3:
-                    if profileDic?["Bebé"] != nil {
-                        let bebe = profileDic?["Bebé"]
-                        if bebe?["Nombre"] != nil {
-                            descriptionString = (bebe?["Nombre"])!
+                    if profileDic?[defPerfilBebe] != nil {
+                        let bebe = profileDic?[defPerfilBebe]
+                        if bebe?[defPerfilBebeNombre] != nil {
+                            descriptionString = (bebe?[defPerfilBebeNombre])!
                         }
                     }
                 case 4:
-                    if profileDic?["Bebé"] != nil {
-                        let bebe = profileDic?["Bebé"]
-                        if bebe?["Apodo"] != nil {
-                            descriptionString = (bebe?["Apodo"])!
+                    if profileDic?[defPerfilBebe] != nil {
+                        let bebe = profileDic?[defPerfilBebe]
+                        if bebe?[defPerfilBebeApodo] != nil {
+                            descriptionString = (bebe?[defPerfilBebeApodo])!
                         }
                     }
                 case 5:
-                    if profileDic?["Bebé"] != nil {
-                        let bebe = profileDic?["Bebé"]
-                        if bebe?["Fecha de Nacimiento"] != nil {
-                            descriptionString = (bebe?["Fecha de Nacimiento"])!
+                    if profileDic?[defPerfilBebe] != nil {
+                        let bebe = profileDic?[defPerfilBebe]
+                        if bebe?[defPerfilBebeFechaDeNacimiento] != nil {
+                            descriptionString = (bebe?[defPerfilBebeFechaDeNacimiento])!
                         }
                     }
                 default:
@@ -226,45 +226,45 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
             if profileDic != nil {
                 switch indexPath.row {
                 case 0:
-                    if profileDic?["Datos"] != nil {
-                        let datos = profileDic?["Datos"]
-                        if datos?["Nombre Completo"] != nil {
-                            descriptionString = (datos?["Nombre Completo"])!
+                    if profileDic?[defPerfilDatos] != nil {
+                        let datos = profileDic?[defPerfilDatos]
+                        if datos?[defPerfilDatosNombre] != nil {
+                            descriptionString = (datos?[defPerfilDatosNombre])!
                         }
                     }
                 case 1:
-                    if profileDic?["Datos"] != nil {
-                        let datos = profileDic?["Datos"]
-                        if datos?["Email"] != nil {
-                            descriptionString = (datos?["Email"])!
+                    if profileDic?[defPerfilDatos] != nil {
+                        let datos = profileDic?[defPerfilDatos]
+                        if datos?[defPerfilDatosEmail] != nil {
+                            descriptionString = (datos?[defPerfilDatosEmail])!
                         }
                     }
                 case 2:
-                    if profileDic?["Datos"] != nil {
-                        let datos = profileDic?["Datos"]
-                        if datos?["Fecha de Nacimiento"] != nil {
-                            descriptionString = (datos?["Fecha de Nacimiento"])!
+                    if profileDic?[defPerfilDatos] != nil {
+                        let datos = profileDic?[defPerfilDatos]
+                        if datos?[defPerfilDatosFechaDeNacimiento] != nil {
+                            descriptionString = (datos?[defPerfilDatosFechaDeNacimiento])!
                         }
                     }
                 case 3:
-                    if profileDic?["Bebé"] != nil {
-                        let bebe = profileDic?["Bebé"]
-                        if bebe?["Nombre"] != nil {
-                            descriptionString = (bebe?["Nombre"])!
+                    if profileDic?[defPerfilBebe] != nil {
+                        let bebe = profileDic?[defPerfilBebe]
+                        if bebe?[defPerfilBebeNombre] != nil {
+                            descriptionString = (bebe?[defPerfilBebeNombre])!
                         }
                     }
                 case 4:
-                    if profileDic?["Bebé"] != nil {
-                        let bebe = profileDic?["Bebé"]
-                        if bebe?["Apodo"] != nil {
-                            descriptionString = (bebe?["Apodo"])!
+                    if profileDic?[defPerfilBebe] != nil {
+                        let bebe = profileDic?[defPerfilBebe]
+                        if bebe?[defPerfilBebeApodo] != nil {
+                            descriptionString = (bebe?[defPerfilBebeApodo])!
                         }
                     }
                 case 5:
-                    if profileDic?["Bebé"] != nil {
-                        let bebe = profileDic?["Bebé"]
-                        if bebe?["Fecha de Nacimiento"] != nil {
-                            descriptionString = (bebe?["Fecha de Nacimiento"])!
+                    if profileDic?[defPerfilBebe] != nil {
+                        let bebe = profileDic?[defPerfilBebe]
+                        if bebe?[defPerfilBebeFechaDeNacimiento] != nil {
+                            descriptionString = (bebe?[defPerfilBebeFechaDeNacimiento])!
                         }
                     }
                 default:
@@ -294,24 +294,24 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
             if profileDic != nil {
                 let user = FIRAuth.auth()?.currentUser
                 guard let firebaseID = user?.uid else {return}
-                if (profileDic?["Bebé"]?["Nombre"] != nil ||
-                    profileDic?["Bebé"]?["Apodo"] != nil ||
-                    profileDic?["Bebé"]?["Fecha de Nacimiento"] != nil) {
-                    if !(profileDic?["Bebé"]?["Nombre"] != nil &&
-                        profileDic?["Bebé"]?["Apodo"] != nil &&
-                        profileDic?["Bebé"]?["Fecha de Nacimiento"] != nil) {
+                if (profileDic?[defPerfilBebe]?[defPerfilBebeNombre] != nil ||
+                    profileDic?[defPerfilBebe]?[defPerfilBebeApodo] != nil ||
+                    profileDic?[defPerfilBebe]?[defPerfilBebeFechaDeNacimiento] != nil) {
+                    if !(profileDic?[defPerfilBebe]?[defPerfilBebeNombre] != nil &&
+                        profileDic?[defPerfilBebe]?[defPerfilBebeApodo] != nil &&
+                        profileDic?[defPerfilBebe]?[defPerfilBebeFechaDeNacimiento] != nil) {
                         showAlert(text: "Todos los campos del bebé deben llenarse")
                         return
                     }
                 }
                 FirebaseAPI.storeFirebaseUser(firebaseID: firebaseID,
-                                              name: profileDic?["Datos"]?["Nombre Completo"],
-                                              birthday: profileDic?["Datos"]?["Fecha de Nacimiento"],
-                                              email: profileDic?["Datos"]?["Email"],
-                                              babyName: profileDic?["Bebé"]?["Nombre"],
-                                              babyNickName: profileDic?["Bebé"]?["Apodo"],
-                                              babyBirthday: profileDic?["Bebé"]?["Fecha de Nacimiento"])
-                UserDefaults.standard.set(profileDic, forKey: "perfil")
+                                              name: profileDic?[defPerfilDatos]?[defPerfilDatosNombre],
+                                              birthday: profileDic?[defPerfilDatos]?[defPerfilDatosFechaDeNacimiento],
+                                              email: profileDic?[defPerfilDatos]?[defPerfilDatosEmail],
+                                              babyName: profileDic?[defPerfilBebe]?[defPerfilBebeNombre],
+                                              babyNickName: profileDic?[defPerfilBebe]?[defPerfilBebeApodo],
+                                              babyBirthday: profileDic?[defPerfilBebe]?[defPerfilBebeFechaDeNacimiento])
+                UserDefaults.standard.set(profileDic, forKey: defPerfil)
                 showAlert(text: "Los cambios se guardaron exitosamente")
             }
             editOrSaveButton.setTitle("Editar", for: .normal)
@@ -326,7 +326,7 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
     @IBAction func logOut(_ sender:Any) {
         try! FIRAuth.auth()?.signOut()
         FBSDKLoginManager().logOut()
-        UserDefaults.standard.removeObject(forKey: "perfil")
+        UserDefaults.standard.removeObject(forKey: defPerfil)
         let story = UIStoryboard(name: "Login", bundle: nil)
         let vc = story.instantiateInitialViewController()
         self.present(vc!, animated: true, completion: nil)
@@ -358,8 +358,8 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
         dateFormatter.dateFormat = "dd/MM/yyyy"
         let selectedDate = dateFormatter.string(from: datePicker.date)
         
-        if profileDic?["Bebé"] == nil {profileDic?["Bebé"] = [String:String]()}
-        profileDic?["Bebé"]?["Fecha de Nacimiento"] = selectedDate
+        if profileDic?[defPerfilBebe] == nil {profileDic?[defPerfilBebe] = [String:String]()}
+        profileDic?[defPerfilBebe]?[defPerfilBebeFechaDeNacimiento] = selectedDate
         
         datePicked = true
         table.reloadRows(at: [IndexPath(row: 5, section: 0)], with: .none)
@@ -375,31 +375,31 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         switch textField.tag {
         case 0:
-            profileDic?["Datos"]?["Nombre Completo"] = textField.text
+            profileDic?[defPerfilDatos]?[defPerfilDatosNombre] = textField.text
         case 1:
-            profileDic?["Datos"]?["Email"] = textField.text
+            profileDic?[defPerfilDatos]?[defPerfilDatosEmail] = textField.text
         case 2:
-            profileDic?["Datos"]?["Fecha de Nacimiento"] = textField.text
+            profileDic?[defPerfilDatos]?[defPerfilDatosFechaDeNacimiento] = textField.text
         case 3:
             if textField.text == "" {
-                profileDic?["Bebé"]?.removeValue(forKey: "Nombre")
+                profileDic?[defPerfilBebe]?.removeValue(forKey: defPerfilBebeNombre)
             } else {
-                if profileDic?["Bebé"] == nil {profileDic?["Bebé"] = [String:String]()}
-                profileDic?["Bebé"]?["Nombre"] = textField.text
+                if profileDic?[defPerfilBebe] == nil {profileDic?[defPerfilBebe] = [String:String]()}
+                profileDic?[defPerfilBebe]?[defPerfilBebeNombre] = textField.text
             }
         case 4:
             if textField.text == "" {
-                profileDic?["Bebé"]?.removeValue(forKey: "Apodo")
+                profileDic?[defPerfilBebe]?.removeValue(forKey: defPerfilBebeApodo)
             } else {
-                if profileDic?["Bebé"] == nil {profileDic?["Bebé"] = [String:String]()}
-                profileDic?["Bebé"]?["Apodo"] = textField.text
+                if profileDic?[defPerfilBebe] == nil {profileDic?[defPerfilBebe] = [String:String]()}
+                profileDic?[defPerfilBebe]?[defPerfilBebeApodo] = textField.text
             }
         default:
             print("")
         }
         
-        if profileDic?["Bebé"]?.count == 0 {
-            profileDic?.removeValue(forKey: "Bebé")
+        if profileDic?[defPerfilBebe]?.count == 0 {
+            profileDic?.removeValue(forKey: defPerfilBebe)
         }
         return true
     }

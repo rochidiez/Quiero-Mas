@@ -27,7 +27,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lro-Gl-07z">
-                        <rect key="frame" x="20" y="8" width="9" height="16"/>
+                        <rect key="frame" x="20" y="9" width="9" height="16"/>
                         <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="16"/>
                         <color key="textColor" red="1" green="0.50588235290000005" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
