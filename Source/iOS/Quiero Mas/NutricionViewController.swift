@@ -39,12 +39,12 @@ class NutricionViewController: UIViewController {
     //Spinner
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    var recetasEdadDic: [String:[String:[String:[String:Any]]]]?
+    var recetasEdadArr: [[String:Any]]?
     var recetasNombreDic: [String:Any]?
-    var showingDate: QuieroDate?
     var recetasActuales: RecetasNutricion?
     var birthdayString: String?
-    var selectedDayOfTheWeek: Int?
+    var selectedDayOfTheWeek = 0
+    var babyDayInPlan = 0
     
     let diaSelectedColor: UIColor = .black
     let diaSelectedFont = UIFont(name: "Cera-Bold", size: 17)!
@@ -93,10 +93,10 @@ class NutricionViewController: UIViewController {
     }
     
     func reloadNutricion() {
-        if let recetasDic = UserDefaults.standard.dictionary(forKey: defRecetas) as? [String:[String:Any]] {
-            if let rDicEdad = recetasDic[firPorEdad] as? [String:[String:[String:[String:Any]]]] {
-                if let rDicNombre = recetasDic[firPorNombre] {
-                    recetasEdadDic = rDicEdad
+        if let recetasDic = UserDefaults.standard.dictionary(forKey: defRecetas) {
+            if let rEdadArr = recetasDic[firPorEdad] as? [[String:Any]] {
+                if let rDicNombre = recetasDic[firPorNombre] as? [String:Any] {
+                    recetasEdadArr = rEdadArr
                     recetasNombreDic = rDicNombre
                     loadUIData()
                     spinner.stopAnimating()
@@ -109,7 +109,7 @@ class NutricionViewController: UIViewController {
     //MARK: - Load UI Data
     func loadUIData() {
         loadCurrentDay()
-        loadShowingDate()
+        loadBabyDayInPlan()
         loadBabyName()
         loadBabyAge()
         loadRecetaDayWeek()
@@ -144,12 +144,12 @@ class NutricionViewController: UIViewController {
         }
     }
     
-    func loadShowingDate() {
+    func loadBabyDayInPlan() {
         if let userDic = UserDefaults.standard.dictionary(forKey: defPerfil) as? [String:[String:String]] {
             if let bebeDic = userDic[defPerfilBebe]  {
                 if let dateString = bebeDic[defPerfilBebeFechaDeNacimiento] {
                     birthdayString = dateString
-                    showingDate = DateManager.getBabyAgeTuple(birthday: birthdayString!, currentDate: Date())
+                    babyDayInPlan = DateManager.getBabyDayInPlan(birthday: birthdayString!, currentDate: Date())
                 }
             }
         }
@@ -176,89 +176,52 @@ class NutricionViewController: UIViewController {
     }
     
     func loadRecetaDayWeek() {
-        guard showingDate != nil else {return}
         loadRecetasActuales()
         loadRecetasUI()
     }
     
-    
+
     //MARK: - Aux
     func loadRecetasActuales() {
-        if let semanasDic = recetasEdadDic?[firPorEdadMes + " \(showingDate?.mes ?? 6)"] {
-            if let diasDic = semanasDic[firPorEdadMesSemana + " \(showingDate?.semana ?? 3)"] {
-                if let diaDic = diasDic[firPorEdadMesSemanaDia + " \(showingDate?.dia ?? 6)"] {
-                    if let almuerzoDic = diaDic[firPorEdadMesSemanaDiaAlmuerzo] as? [String:String] {
-                        if let cenaDic = diaDic[firPorEdadMesSemanaDiaCena] as? [String:String] {
-                            let almuerzoReceta = FirebaseAPI.getRecetaByName(name: almuerzoDic["receta"]!)
-                            let almuerzoPostre = FirebaseAPI.getPostreByName(name: almuerzoDic["postre"]!)
-                            let cenaReceta = FirebaseAPI.getRecetaByName(name: cenaDic["receta"]!)
-                            let cenaPostre = FirebaseAPI.getPostreByName(name: cenaDic["postre"]!)
-                            recetasActuales = RecetasNutricion(almuerzoReceta: almuerzoReceta,
-                                            almuerzoPostre: almuerzoPostre,
-                                            cenaReceta: cenaReceta,
-                                            cenaPostre: cenaPostre)
-                        }
-                    }
+        if let recetaDic = recetasEdadArr?[babyDayInPlan] {
+            if let almuerzoDic = recetaDic[firPorEdadAlmuerzo] as? [String:String] {
+                if let cenaDic = recetaDic[firPorEdadCena] as? [String:String] {
+                    let almuerzoReceta = FirebaseAPI.getRecetaByName(name: almuerzoDic[firPorEdadAlmuerzoReceta]!)
+                    let almuerzoPostre = FirebaseAPI.getPostreByName(name: almuerzoDic[firPorEdadAlmuerzoPostre]!)
+                    let cenaReceta = FirebaseAPI.getRecetaByName(name: cenaDic[firPorEdadCenaReceta]!)
+                    let cenaPostre = FirebaseAPI.getPostreByName(name: cenaDic[firPorEdadCenaPostre]!)
+                    recetasActuales = RecetasNutricion(almuerzoReceta: almuerzoReceta,
+                                                       almuerzoPostre: almuerzoPostre,
+                                                       cenaReceta: cenaReceta,
+                                                       cenaPostre: cenaPostre)
                 }
             }
         }
     }
     
     func loadRecetasUI() {
-        almuerzoRecetaLabel.text = recetasActuales?.almuerzoReceta?["nombre"] as? String
-        almuerzoRecetaImg.sd_setImage(with: URL(string:recetasActuales?.almuerzoReceta?["thumbnail"] as! String), placeholderImage: UIImage(named: "Thumbnail Receta"))
+        almuerzoRecetaLabel.text = recetasActuales?.almuerzoReceta?[firRecetaNombre] as? String
+        almuerzoRecetaImg.sd_setImage(with: URL(string:recetasActuales?.almuerzoReceta?[firRecetaThumbnail] as! String), placeholderImage: UIImage(named: "Thumbnail Receta"))
         
-        cenaRecetaLabel.text = recetasActuales?.cenaReceta?["nombre"] as? String
-        cenaRecetaImg.sd_setImage(with: URL(string:recetasActuales?.cenaReceta?["thumbnail"] as! String), placeholderImage: UIImage(named: "Thumbnail Receta"))
+        cenaRecetaLabel.text = recetasActuales?.cenaReceta?[firRecetaNombre] as? String
+        cenaRecetaImg.sd_setImage(with: URL(string:recetasActuales?.cenaReceta?[firRecetaThumbnail] as! String), placeholderImage: UIImage(named: "Thumbnail Receta"))
+    }
+    
+    func cambiarDia(n: Int) {
+        if babyDayInPlan + n >= 0 && babyDayInPlan + n <= 185 {
+            babyDayInPlan += n
+            loadRecetaDayWeek()
+        }
     }
     
     func changeCurrentDay(weekDay: Int) {
-        let daysDiff = weekDay - selectedDayOfTheWeek!
-        selectedDayOfTheWeek = weekDay
-        changePlanDateBy(dia: daysDiff)
-        loadRecetaDayWeek()
+        let daysDiff = weekDay - selectedDayOfTheWeek
+        if babyDayInPlan + daysDiff >= 0 && babyDayInPlan + daysDiff <= 185 {
+            selectedDayOfTheWeek = weekDay
+            cambiarDia(n: daysDiff)
+        }
     }
     
-    func changePlanDateBy(dia: Int) {
-        var newdia = (showingDate?.dia)! + dia
-        var newSemana = (showingDate?.semana)!
-        
-        if newdia < 1 {
-            newSemana -= 1
-            newdia += 7
-        }
-        if newdia > 7 {
-            newSemana += 1
-            newdia -= 7
-        }
-        
-        if newSemana < 1 {
-            showingDate?.mes = (showingDate?.mes)! - 1
-            newSemana += 5
-        }
-        if newSemana > 5 {
-            showingDate?.mes = (showingDate?.mes)! + 1
-            newSemana -= 5
-        }
-        
-        showingDate?.dia = newdia
-        showingDate?.semana = newSemana
-    }
-    
-    func aumentarSemana(cambio: Int) {
-        var newSemana = (showingDate?.semana)! + cambio
-        if newSemana < 1 {
-            showingDate?.mes = (showingDate?.mes)! - 1
-            newSemana += 5
-        }
-        if newSemana > 5 {
-            showingDate?.mes = (showingDate?.mes)! + 1
-            newSemana -= 5
-        }
-        
-        showingDate?.semana = newSemana
-        loadRecetaDayWeek()
-    }
     
     //MARK: - IBAction
     @IBAction func listadoAction(_ sender: Any) {
@@ -290,14 +253,15 @@ class NutricionViewController: UIViewController {
     }
     
     @IBAction func semanaAnterior(_ sender:Any) {
-        aumentarSemana(cambio: -1)
+        cambiarDia(n: -7)
     }
     
     @IBAction func semanaProxima(_ sender:Any) {
-        aumentarSemana(cambio: 1)
+        cambiarDia(n: 7)
     }
+
     
-    //MARK: -
+    //MARK: - Dias Action
     @IBAction func lunesAction(_ sender:Any) {
         changeCurrentDay(weekDay: 1)
         selectLunes()

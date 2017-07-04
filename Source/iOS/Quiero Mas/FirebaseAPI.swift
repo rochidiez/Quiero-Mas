@@ -198,7 +198,7 @@ class FirebaseAPI: NSObject {
     
     static func getDatosRecetas() {
         FIRDatabase.database().reference().child(firRecetas).observeSingleEvent(of: .value, with: { (snap) in
-            if let recetasDic = snap.value as? [String:[String:Any]] {
+            if let recetasDic = snap.value as? [String:Any] {
                 UserDefaults.standard.set(recetasDic, forKey: defRecetas)
                 NotificationCenter.default.post(name: Notification.Name(rawValue: recetasUpdated), object: nil)
             }
@@ -271,7 +271,7 @@ class FirebaseAPI: NSObject {
     
     //MARK: - Aux
     static func getRecetaByName(name: String) -> [String:Any]? {
-        if let recetasDic = UserDefaults.standard.value(forKey: defRecetas) as? [String:[String:Any]] {
+        if let recetasDic = UserDefaults.standard.dictionary(forKey: defRecetas) {
             if let recetasDicNombre = recetasDic[firPorNombre] as? [String:[String:Any]] {
                 return recetasDicNombre[name]
             }

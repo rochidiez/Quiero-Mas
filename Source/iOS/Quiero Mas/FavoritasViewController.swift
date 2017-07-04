@@ -98,7 +98,9 @@ class FavoritasViewController: UIViewController, UITableViewDataSource, UITableV
         
         FirebaseAPI.favUnfavReceta(name: receta![firRecetaNombre] as! String)
         favRecetas!.remove(at: sender.tag)
-        table.reloadData()
+        UIView.animate(withDuration: 0.4, animations: {
+            self.table.reloadData()
+        })
     }
     
     

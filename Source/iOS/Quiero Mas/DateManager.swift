@@ -42,6 +42,19 @@ class DateManager: NSObject {
         return components.weekday!
     }
     
+    static func getBabyDayInPlan(birthday: String, currentDate: Date) -> Int {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let birthdayDate = dateFormatter.date(from: birthday)!
+        
+        let calendar = Calendar.current
+        let component: Set<Calendar.Component> = [.day]
+        let timeDifference = calendar.dateComponents(component, from: birthdayDate, to: currentDate)
+        
+        let days = timeDifference.day! - 185
+        return days
+    }
+    
 }
 
 struct QuieroDate {

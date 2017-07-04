@@ -327,6 +327,7 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
         try! FIRAuth.auth()?.signOut()
         FBSDKLoginManager().logOut()
         UserDefaults.standard.removeObject(forKey: defPerfil)
+        UserDefaults.standard.synchronize()
         let story = UIStoryboard(name: "Login", bundle: nil)
         let vc = story.instantiateInitialViewController()
         self.present(vc!, animated: true, completion: nil)
