@@ -69,6 +69,9 @@ let firEstimulacionMesSemanaVideo = "video"
 //Firebase Usuario
 let firUsuarioFavoritos = "Recetas Favoritas"
 
+//Firebase Recomendar
+let firRecomendar = "Recomendar"
+
 //User Defaults Keys
 let defRecetas = "recetas"
 

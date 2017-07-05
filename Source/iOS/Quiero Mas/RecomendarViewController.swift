@@ -83,6 +83,15 @@ class RecomendarViewController: UIViewController, UITableViewDataSource, UITextF
         })
     }
     
+    @IBAction func send(_ sender: Any) {
+        var mails = [String]()
+        for (key, element) in dic {
+            mails.append(element)
+        }
+        FirebaseAPI.addToRecomendar(mails: mails)
+        
+    }
+    
     
     
     

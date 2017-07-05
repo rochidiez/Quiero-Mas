@@ -47,10 +47,12 @@ class TodasViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func reloadRecetas() {
-        if let recetasDic = UserDefaults.standard.dictionary(forKey: defRecetas) as? [String:[String:Any]] {
-            recetasArray = recetasDic[firPorNombre]!.toArray() as? [[String:[String:Any]]]
-            table.reloadData()
-            spinner.stopAnimating()
+        if let recetasDic = UserDefaults.standard.dictionary(forKey: defRecetas) {
+            if let porNombreDic = recetasDic[firPorNombre] as? [String:Any] {
+                recetasArray = porNombreDic.toArray() as? [[String:[String:Any]]]
+                table.reloadData()
+                spinner.stopAnimating()
+            }
         }
     }
     

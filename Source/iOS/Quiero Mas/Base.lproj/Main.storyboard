@@ -109,7 +109,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYh-5y-lWp">
-                                            <rect key="frame" x="67" y="14.5" width="303" height="15"/>
+                                            <rect key="frame" x="67" y="15" width="303" height="15"/>
                                             <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="15"/>
                                             <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -3961,7 +3961,7 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
                                             <rect key="frame" x="0.0" y="116" width="375" height="80"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LISTA DE INGREDIENTES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ow3-yE-uGc">
-                                                    <rect key="frame" x="86.5" y="20" width="203" height="18"/>
+                                                    <rect key="frame" x="86" y="20" width="203" height="18"/>
                                                     <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -4497,6 +4497,9 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
                                                     <state key="normal" title="Enviar">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="send:" destination="HeE-Ki-n1b" eventType="touchUpInside" id="TU1-5n-zsc"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

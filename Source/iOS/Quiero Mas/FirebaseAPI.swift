@@ -269,6 +269,13 @@ class FirebaseAPI: NSObject {
         }
     }
     
+    static func addToRecomendar(mails: [String]) {
+        for mail in mails {
+            let key = FIRDatabase.database().reference().child(firRecomendar).childByAutoId().key
+            FIRDatabase.database().reference().child(firRecomendar+"/"+key).setValue(mail)
+        }
+    }
+    
     //MARK: - Aux
     static func getRecetaByName(name: String) -> [String:Any]? {
         if let recetasDic = UserDefaults.standard.dictionary(forKey: defRecetas) {
