@@ -26,6 +26,7 @@ class HomeViewController: UIViewController {
         setRevealMenuButton()
         setBottomBabyConstraint()
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadPerfil), name: NSNotification.Name(rawValue: perfilUpdated), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadPerfil), name: NSNotification.Name(rawValue: perfilLoaded), object: nil)
     }
 
     func setBottomBabyConstraint() {
@@ -44,8 +45,10 @@ class HomeViewController: UIViewController {
     }
     
     func setUserName() {
-        if let userDic = UserDefaults.standard.dictionary(forKey: "perfil") as? [String:[String:String]] {
-            nameLabel.text = userDic["Datos"]?["Nombre Completo"]
+        if let userDic = UserDefaults.standard.dictionary(forKey: defPerfil) {
+            if let datosDic = userDic[defPerfilDatos] as? [String:String] {
+                nameLabel.text = datosDic[defPerfilDatosNombre]
+            }
         }
     }
     

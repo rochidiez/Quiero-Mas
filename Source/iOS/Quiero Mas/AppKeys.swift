@@ -20,6 +20,7 @@ let perfilUpdated = "perfilUpdated"
 let recetasUpdated = "recetasUpdated"
 let recetasBasicasUpdated = "recetasBasicasUpdated"
 let estimulacionUpdated = "estimulacionUpdated"
+let postresUpdated = "postresUpdated"
 
 let perfilNotFound = "perfilNotFound"
 let connectionError = "connectionError"
@@ -58,6 +59,11 @@ let firBasicaIngredientes = "ingredientes"
 let firBasicaNombre = "nombre"
 let firBasicaThumbnail = "thumbnail"
 let firBasicaVideo = "video"
+
+//Firebase Postres
+let firPostres = "Postres"
+let firPostreNombre = "nombre"
+let firPostreDescripcion = "descripcion"
 
 //Firebase Estimulacion
 let firEstimulacion = "Estimulación"

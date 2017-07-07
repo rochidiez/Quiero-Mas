@@ -54,9 +54,9 @@ class NutricionViewController: UIViewController {
     
     struct RecetasNutricion {
         var almuerzoReceta: [String:Any]?
-        var almuerzoPostre: [String:Any]?
+        var almuerzoPostre: [String:String]?
         var cenaReceta: [String:Any]?
-        var cenaPostre: [String:Any]?
+        var cenaPostre: [String:String]?
     }
     
     //MARK: - ViewDidLoad
@@ -84,10 +84,11 @@ class NutricionViewController: UIViewController {
         checkForBaby()
         reloadNutricion()
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadNutricion), name: NSNotification.Name(rawValue: recetasUpdated), object: nil)
+        
     }
     
     func checkForBaby() {
-        if let userDic = UserDefaults.standard.dictionary(forKey: defPerfil) as? [String:[String:String]] {
+        if let userDic = UserDefaults.standard.dictionary(forKey: defPerfil) {
             noBabyView.isHidden = userDic[defPerfilBebe] != nil
         }
     }
@@ -156,18 +157,16 @@ class NutricionViewController: UIViewController {
     }
     
     func loadBabyName() {
-        if let userDic = UserDefaults.standard.dictionary(forKey: defPerfil) as? [String:[String:String]] {
-            if let bebeDic = userDic[defPerfilBebe]  {
-                if bebeDic[defPerfilBebeNombre] != nil {
-                    babyNameLabel.text = bebeDic[defPerfilBebeNombre]
-                }
+        if let userDic = UserDefaults.standard.dictionary(forKey: defPerfil) {
+            if let bebeDic = userDic[defPerfilBebe] as? [String:String] {
+                babyNameLabel.text = bebeDic[defPerfilBebeNombre]
             }
         }
     }
     
     func loadBabyAge() {
-        if let userDic = UserDefaults.standard.dictionary(forKey: defPerfil) as? [String:[String:String]] {
-            if let bebeDic = userDic[defPerfilBebe]  {
+        if let userDic = UserDefaults.standard.dictionary(forKey: defPerfil) {
+            if let bebeDic = userDic[defPerfilBebe] as? [String:String] {
                 if let dateString = bebeDic[defPerfilBebeFechaDeNacimiento] {
                     babyAgeLabel.text = DateManager.getBabyAgeString(birthday: dateString, currentDate: Date())
                 }
@@ -233,16 +232,20 @@ class NutricionViewController: UIViewController {
     @IBAction func topRecetaAction(_ sender: Any) {
         let story = UIStoryboard(name: "Main", bundle: nil)
         let vc = story.instantiateViewController(withIdentifier: "RecetaViewController") as! RecetaViewController
-        vc.recetaNombre = recetasActuales?.almuerzoReceta?["nombre"] as? String
+        vc.recetaNombre = recetasActuales?.almuerzoReceta?[firRecetaIngredientesNombre] as? String
         vc.recetaDict = recetasActuales?.almuerzoReceta
+        vc.recetaPostre = recetasActuales?.almuerzoPostre
+        vc.recetaDia = recetasEdadArr?[babyDayInPlan]
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func bottomRecetaAction(_ sender: Any) {
         let story = UIStoryboard(name: "Main", bundle: nil)
         let vc = story.instantiateViewController(withIdentifier: "RecetaViewController") as! RecetaViewController
-        vc.recetaNombre = recetasActuales?.cenaReceta?["nombre"] as? String
+        vc.recetaNombre = recetasActuales?.cenaReceta?[firRecetaIngredientesNombre] as? String
         vc.recetaDict = recetasActuales?.cenaReceta
+        vc.recetaPostre = recetasActuales?.cenaPostre
+        vc.recetaDia = recetasEdadArr?[babyDayInPlan]
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

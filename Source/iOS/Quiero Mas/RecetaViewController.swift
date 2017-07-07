@@ -40,8 +40,20 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var varianteLabel: UILabel!
     @IBOutlet weak var varianteHeightConstraint: NSLayoutConstraint!
     
+    //Postre
+    @IBOutlet weak var postreView: UIView!
+    
+    //Tip Desarrollo
+    @IBOutlet weak var tipDesarrolloView: UIView!
+    
+    //Volver a cocinar
+    @IBOutlet weak var volverACocinarLabel: UILabel!
+    
+    
     var recetaDict: [String:Any]?
     var recetaNombre: String?
+    var recetaPostre: [String:String]?
+    var recetaDia: [String:Any]?
 
     
     //MARK: - View Did Load
@@ -69,6 +81,7 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
         setVariante()
         setBottom()
         setPuntaje()
+        showOrHideViews()
     }
     
     func setTop() {
@@ -104,6 +117,24 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
         } else {
             dibujarPuntaje(puntaje: 0)
         }
+    }
+    
+    func showOrHideViews() {
+        showOrHidePostre()
+        showOrHideVolverACocinar()
+        showOrHideTipDesarrollo()
+    }
+
+    func showOrHidePostre() {
+        postreView.isHidden = recetaPostre == nil
+    }
+    
+    func showOrHideVolverACocinar() {
+        volverACocinarLabel.isHidden = recetaDia == nil
+    }
+
+    func showOrHideTipDesarrollo() {
+        tipDesarrolloView.isHidden = recetaDia == nil
     }
     
     func setVarianteView() {
@@ -395,9 +426,7 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "tipDesarrolloSegue" {
             let vc = segue.destination as! TipDesarrolloViewController
-            if let texto = recetaDict?["Tip Desarrollo"] as? String {
-                vc.texto = texto
-            }
+            vc.texto = recetaDia?[firPorEdadDesarrollo] as? String
         }
         
         if segue.identifier == "tipNutricionalSegue" {
@@ -416,5 +445,15 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
                 }
             }
         }
+    
+        if segue.identifier == "postreSegue" {
+            let vc = segue.destination as! PostreViewController
+            vc.postreDic = recetaPostre
+        }
     }
+    
+    
+    
+    
+    
 }

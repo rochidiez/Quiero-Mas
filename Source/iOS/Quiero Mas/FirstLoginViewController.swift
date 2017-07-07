@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
+import Firebase
 
 class FirstLoginViewController: UIViewController {
     
@@ -19,7 +20,8 @@ class FirstLoginViewController: UIViewController {
     }
 
     func autoLogin() {
-        if (FBSDKAccessToken.current() != nil) {
+        let user = FIRAuth.auth()?.currentUser
+        if (user != nil) {
             showMainVC()
         } else {
             performSegue(withIdentifier: "loginSegue", sender: nil)

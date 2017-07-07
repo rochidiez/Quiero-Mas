@@ -17,6 +17,8 @@ class FirebaseAPI: NSObject {
     static func getInitialData() {
         FirebaseAPI.getDatosRecetas()
         FirebaseAPI.getDatosRecetasBasicas()
+        FirebaseAPI.getDatosPostres()
+        FirebaseAPI.getDatosPerfil()
     }
     
     static func storeFirebaseWithBaby(name: String,
@@ -179,16 +181,18 @@ class FirebaseAPI: NSObject {
                 UserDefaults.standard.set(perfilDic, forKey: defPerfil)
                 NotificationCenter.default.post(name: Notification.Name(rawValue: perfilLoaded), object: nil)
             } else {
-                let user = FIRAuth.auth()?.currentUser
-                guard let firebaseID = user?.uid else {return}
-                if let userDic = UserDefaults.standard.dictionary(forKey: "perfil") as? [String:[String:String]] {
-                    FirebaseAPI.storeFirebaseUser(firebaseID: firebaseID,
-                                                  name: userDic["Datos"]?["Nombre Completo"],
-                                                  birthday: userDic["Datos"]?["Fecha de Nacimiento"],
-                                                  email: userDic["Datos"]?["Email"],
-                                                  babyName: userDic["Bebé"]?["Nombre"],
-                                                  babyNickName: userDic["Bebé"]?["Apodo"],
-                                                  babyBirthday: userDic["Bebé"]?["Fecha de Nacimiento"])
+                if let userDic = UserDefaults.standard.dictionary(forKey: defPerfil) {
+                    if let datosDic = userDic[defPerfilDatos] as? [String:String] {
+                        if let bebeDic = userDic[defPerfilBebe] as? [String:String] {
+                            FirebaseAPI.storeFirebaseUser(firebaseID: firebaseID,
+                                                          name: datosDic["Nombre Completo"],
+                                                          birthday: datosDic["Fecha de Nacimiento"],
+                                                          email: datosDic["Email"],
+                                                          babyName: bebeDic["Nombre"],
+                                                          babyNickName: bebeDic["Apodo"],
+                                                          babyBirthday: bebeDic["Fecha de Nacimiento"])
+                        }
+                    }
                 }
             }
         }) { (error) in
@@ -212,6 +216,17 @@ class FirebaseAPI: NSObject {
             if let recetasBasicasDic = snap.value as? [String:Any] {
                 UserDefaults.standard.set(recetasBasicasDic, forKey: "recetas basicas")
                 NotificationCenter.default.post(name: Notification.Name(rawValue: recetasBasicasUpdated), object: nil)
+            }
+        }) { (error) in
+            NotificationCenter.default.post(name: Notification.Name(rawValue: connectionError), object: nil)
+        }
+    }
+    
+    static func getDatosPostres() {
+        FIRDatabase.database().reference().child(firPostres).observeSingleEvent(of: .value, with: { (snap) in
+            if let postresDic = snap.value as? [String:Any] {
+                UserDefaults.standard.set(postresDic, forKey: firPostres)
+                NotificationCenter.default.post(name: Notification.Name(rawValue: postresUpdated), object: nil)
             }
         }) { (error) in
             NotificationCenter.default.post(name: Notification.Name(rawValue: connectionError), object: nil)
@@ -286,7 +301,10 @@ class FirebaseAPI: NSObject {
         return nil
     }
     
-    static func getPostreByName(name: String) -> [String:Any]? {
+    static func getPostreByName(name: String) -> [String:String]? {
+        if let postresDic = UserDefaults.standard.dictionary(forKey: firPostres) as? [String:[String:String]] {
+            return postresDic[name]
+        }
         return nil
     }
     

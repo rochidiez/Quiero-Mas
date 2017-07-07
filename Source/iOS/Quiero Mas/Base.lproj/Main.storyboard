@@ -2210,6 +2210,7 @@
                         <outlet property="firstLabel" destination="2nw-Xg-AnZ" id="gHD-O4-Ln6"/>
                         <outlet property="fourthImg" destination="ck5-Aa-Qdk" id="AhT-jv-elL"/>
                         <outlet property="fourthLabel" destination="hnr-YP-ADV" id="sVA-ie-W9z"/>
+                        <outlet property="postreView" destination="Kg3-NG-zOI" id="LHW-kl-BNa"/>
                         <outlet property="recetaTitle" destination="4un-Xz-ZYS" id="cPY-NG-ev7"/>
                         <outlet property="secondImg" destination="gkW-qb-wet" id="5qP-9x-qvf"/>
                         <outlet property="secondLabel" destination="3DB-f9-oSE" id="c5E-5A-rAE"/>
@@ -2217,8 +2218,10 @@
                         <outlet property="thirdImg" destination="YYa-2b-F8e" id="nEJ-Ns-K0K"/>
                         <outlet property="thirdLabel" destination="GMb-A6-zLz" id="4Ky-jL-PXQ"/>
                         <outlet property="thumbnailImgView" destination="502-pd-mIi" id="9wc-BY-ntf"/>
+                        <outlet property="tipDesarrolloView" destination="hrd-2V-2Jv" id="Cdg-tW-fQL"/>
                         <outlet property="varianteHeightConstraint" destination="WEU-FU-0dv" id="Dla-Kb-k16"/>
                         <outlet property="varianteLabel" destination="kgz-Zq-pz2" id="mMW-bG-aL4"/>
+                        <outlet property="volverACocinarLabel" destination="8eq-9d-oAP" id="INw-tp-Qzl"/>
                         <segue destination="v2x-MJ-M7l" kind="presentation" identifier="tipNutricionalSegue" id="SSC-q3-IVB"/>
                         <segue destination="0NC-oz-8In" kind="presentation" identifier="tipDesarrolloSegue" id="v0L-M7-4lF"/>
                         <segue destination="7Rx-Ct-EwS" kind="presentation" identifier="postreSegue" id="pkK-Hc-zBd"/>
@@ -2459,6 +2462,10 @@
                             <constraint firstItem="dWS-ZD-KS1" firstAttribute="top" secondItem="ZpW-vp-zaK" secondAttribute="bottom" constant="40" id="ud5-uS-FGT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="ZpW-vp-zaK" id="lNu-Pd-e8g"/>
+                        <outlet property="nombreLabel" destination="0TZ-Og-Nee" id="qdH-Xq-tdk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pl1-8s-wH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4862,7 +4869,8 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
                     </navigationItem>
                     <connections>
                         <outlet property="babyImgView" destination="Faz-M0-lZd" id="kwc-SP-NYd"/>
-                        <outlet property="datePicker" destination="xSY-ih-We1" id="tP6-2n-nIq"/>
+                        <outlet property="datePickerBaby" destination="xSY-ih-We1" id="u1H-MW-6gj"/>
+                        <outlet property="datePickerUser" destination="fGE-qa-77Z" id="Rvt-2w-sch"/>
                         <outlet property="editOrSaveButton" destination="4py-jt-5JC" id="a2b-NG-tg0"/>
                         <outlet property="revealMenuButton" destination="k7l-M5-iZq" id="bDc-0v-Bj9"/>
                         <outlet property="spinner" destination="33a-EJ-9FV" id="udj-T4-Y4j"/>
@@ -4870,7 +4878,18 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8uK-Ia-dqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="xSY-ih-We1">
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="fGE-qa-77Z">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <date key="date" timeIntervalSinceReferenceDate="521156596.89341402">
+                        <!--2017-07-07 21:43:16 +0000-->
+                    </date>
+                    <locale key="locale" localeIdentifier="es_AR"/>
+                    <connections>
+                        <action selector="datePickerValueChanged:" destination="7hd-mV-qML" eventType="valueChanged" id="jDj-mc-kzk"/>
+                    </connections>
+                </datePicker>
+                <datePicker tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="xSY-ih-We1">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <date key="date" timeIntervalSinceReferenceDate="519442151.58861899">
