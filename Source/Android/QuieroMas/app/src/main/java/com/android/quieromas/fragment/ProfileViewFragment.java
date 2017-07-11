@@ -11,11 +11,31 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.android.quieromas.R;
 import com.android.quieromas.activity.ChangePasswordActivity;
+import com.android.quieromas.helper.FirebaseDatabaseHelper;
+import com.android.quieromas.model.receta.Receta;
+import com.android.quieromas.model.user.User;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 public class ProfileViewFragment extends BaseFragment {
+
+    FirebaseDatabaseHelper firebaseDatabaseHelper;
+    TextView txtName;
+    TextView txtEmail;
+    TextView txtBirthdate;
+    TextView txtBabyName;
+    TextView txtBabyNickname;
+    TextView txtBabyBirthdate;
+    User user;
 
     public ProfileViewFragment() {
         // Required empty public constructor
@@ -64,5 +84,38 @@ public class ProfileViewFragment extends BaseFragment {
             }
         });
 
+        txtName = (TextView) view.findViewById(R.id.txt_profile_view_name);
+        txtEmail = (TextView) view.findViewById(R.id.txt_profile_view_email);
+        txtBirthdate = (TextView) view.findViewById(R.id.txt_profile_view_birthdate);
+        txtBabyName = (TextView) view.findViewById(R.id.txt_profile_view_baby_name);
+        txtBabyNickname  = (TextView) view.findViewById(R.id.txt_profile_view_baby_nickname);
+        txtBabyBirthdate = (TextView) view.findViewById(R.id.txt_profile_view_baby_birthdate);
+
+        firebaseDatabaseHelper = new FirebaseDatabaseHelper();
+        firebaseDatabaseHelper.getCurrentUserReference().addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                user = dataSnapshot.getValue(User.class);
+                updateUI(dataSnapshot);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
+    public void updateUI(DataSnapshot dataSnapshot){
+        txtName.setText(user.getDatos().getNombreCompleto());
+        txtEmail.setText(user.getDatos().getEmail());
+        txtBirthdate.setText(user.getDatos().getFechaDeNacimiento());
+
+        if(user.getBebe() != null){
+            txtBabyName.setText(user.getBebe().getNombre());
+            txtBabyNickname.setText(user.getBebe().getApodo());
+            txtBabyBirthdate.setText(user.getBebe().getFechaDeNacimiento());
+        }
     }
 }

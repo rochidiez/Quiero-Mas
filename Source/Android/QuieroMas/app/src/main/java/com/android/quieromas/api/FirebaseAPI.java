@@ -1,6 +1,6 @@
 package com.android.quieromas.api;
 
-import com.android.quieromas.model.Bebe;
+import com.android.quieromas.model.user.Bebe;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 
