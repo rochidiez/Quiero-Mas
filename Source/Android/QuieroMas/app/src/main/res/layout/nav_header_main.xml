@@ -31,10 +31,11 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/txt_drawer_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
-            android:text="Vanina y José"
+            android:text=""
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/title_text_size" />
 

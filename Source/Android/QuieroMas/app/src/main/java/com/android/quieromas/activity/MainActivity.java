@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.android.quieromas.R;
 import com.android.quieromas.fragment.AboutUsFragment;
@@ -28,11 +29,13 @@ import com.android.quieromas.fragment.ProfileFragment;
 import com.android.quieromas.fragment.TermsFragment;
 import com.android.quieromas.helper.FirebaseDatabaseHelper;
 import com.android.quieromas.model.receta.Receta;
+import com.android.quieromas.model.user.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AuthActivity
         implements NavigationView.OnNavigationItemSelectedListener, FavoriteRecipesFragment.OnListFragmentInteractionListener,
@@ -43,6 +46,8 @@ public class MainActivity extends AuthActivity
     Fragment fragment = null;
     Class fragmentClass;
     DrawerLayout drawer;
+    TextView txtName;
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +96,9 @@ public class MainActivity extends AuthActivity
 
             }
         });
+
+        txtName = (TextView) headerLayout.findViewById(R.id.txt_drawer_name);
+
     }
 
     void userLoggedEvent(){
@@ -105,6 +113,30 @@ public class MainActivity extends AuthActivity
 
         //Current user
         syncDatabaseForReference(firebaseDatabaseHelper.getCurrentUserReference());
+
+        firebaseDatabaseHelper.getCurrentUserReference().addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                user = dataSnapshot.getValue(User.class);
+                updateUI();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    public void updateUI(){
+        String names;
+        names = user.datos.nombreCompleto.split(" ")[0];
+        if(user.bebe != null && user.bebe.apodo != null){
+            names = names + " y " + user.bebe.apodo;
+        }else if(user.bebe != null && user.bebe.nombre != null){
+            names = names + " y " + user.bebe.nombre;
+        }
+        txtName.setText(names);
     }
 
     @Override
