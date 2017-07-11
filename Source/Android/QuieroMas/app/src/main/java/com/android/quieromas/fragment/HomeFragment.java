@@ -131,11 +131,11 @@ public class HomeFragment extends BaseFragment {
 
     public void updateUI(){
         String names;
-        names = user.getDatos().getNombreCompleto().split(" ")[0];
-        if(user.getBebe() != null && user.getBebe().getApodo() != null){
-            names = names + " y " + user.getBebe().getApodo();
-        }else if(user.getBebe() != null && user.getBebe().getNombre() != null){
-            names = names + " y " + user.getBebe().getNombre();
+        names = user.datos.nombreCompleto.split(" ")[0];
+        if(user.bebe != null && user.bebe.apodo != null){
+            names = names + " y " + user.bebe.apodo;
+        }else if(user.bebe != null && user.bebe.nombre != null){
+            names = names + " y " + user.bebe.nombre;
         }
         txtNames.setText(names);
     }

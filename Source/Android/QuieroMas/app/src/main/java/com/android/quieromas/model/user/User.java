@@ -1,6 +1,7 @@
 package com.android.quieromas.model.user;
 
 import com.google.firebase.database.IgnoreExtraProperties;
+import com.google.firebase.database.PropertyName;
 
 import java.util.ArrayList;
 
@@ -10,27 +11,21 @@ import java.util.ArrayList;
 @IgnoreExtraProperties
 public class User {
 
+    @PropertyName("Datos")
     public UserData datos;
+
+    @PropertyName("Bebé")
     public Bebe bebe;
-    public ArrayList<String> recetas_favoritas;
+
+    @PropertyName("Recetas Favoritas")
+    public ArrayList<String> recetasFavoritas;
 
     public User(){}
 
-    public User(UserData datos, Bebe bebe, ArrayList<String> recetas_favoritas) {
+    public User(UserData datos, Bebe bebe, ArrayList<String> recetasFavoritas) {
         this.datos = datos;
         this.bebe = bebe;
-        this.recetas_favoritas = recetas_favoritas;
+        this.recetasFavoritas = recetasFavoritas;
     }
 
-    public UserData getDatos() {
-        return datos;
-    }
-
-    public Bebe getBebe() {
-        return bebe;
-    }
-
-    public ArrayList<String> getRecetasFavoritas() {
-        return recetas_favoritas;
-    }
 }

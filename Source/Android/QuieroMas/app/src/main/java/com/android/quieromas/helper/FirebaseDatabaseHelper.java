@@ -13,7 +13,7 @@ public class FirebaseDatabaseHelper {
     FirebaseAuth mAuth;
 
     public static final String RECIPES = "Recetas";
-    public static final String FAVORITE_RECIPES = "recetas_favoritas";
+    public static final String FAVORITE_RECIPES = "Recetas Favoritas";
     public static final String DESSERTS = "Postres";
     public static final String USERS = "Usuarios";
     public static final String BY_NAME = "Por Nombre";

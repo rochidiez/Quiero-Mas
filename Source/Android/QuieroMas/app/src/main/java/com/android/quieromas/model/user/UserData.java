@@ -1,6 +1,7 @@
 package com.android.quieromas.model.user;
 
 import com.google.firebase.database.IgnoreExtraProperties;
+import com.google.firebase.database.PropertyName;
 
 import java.util.Date;
 
@@ -10,27 +11,21 @@ import java.util.Date;
 @IgnoreExtraProperties
 public class UserData {
 
-    public String nombre_completo;
+    @PropertyName("Nombre Completo")
+    public String nombreCompleto;
+
+    @PropertyName("Email")
     public String email;
-    public String fecha_de_nacimiento;
+
+    @PropertyName("Fecha de Nacimiento")
+    public String fechaDeNacimiento;
 
     public UserData(){}
 
-    public UserData(String nombre_completo, String email, String fecha_de_nacimiento) {
-        this.nombre_completo = nombre_completo;
+    public UserData(String nombreCompleto, String email, String fechaDeNacimiento) {
+        this.nombreCompleto = nombreCompleto;
         this.email = email;
-        this.fecha_de_nacimiento = fecha_de_nacimiento;
+        this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
-    public String getNombreCompleto() {
-        return nombre_completo;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getFechaDeNacimiento() {
-        return fecha_de_nacimiento;
-    }
 }

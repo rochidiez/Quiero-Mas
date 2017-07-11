@@ -196,7 +196,7 @@
             android:background="@drawable/button_border_black"
             android:textColor="@color/textColorBlack"
             android:textAppearance="@style/AppTheme.TextAppearance.Bold"
-            android:id="@+id/btn_first_use_continue" />
+            android:id="@+id/btn_edit_profile_save_changes" />
 
     </LinearLayout>
 

@@ -108,14 +108,14 @@ public class ProfileViewFragment extends BaseFragment {
     }
 
     public void updateUI(){
-        txtName.setText(user.getDatos().getNombreCompleto());
-        txtEmail.setText(user.getDatos().getEmail());
-        txtBirthdate.setText(user.getDatos().getFechaDeNacimiento());
+        txtName.setText(user.datos.nombreCompleto);
+        txtEmail.setText(user.datos.email);
+        txtBirthdate.setText(user.datos.fechaDeNacimiento);
 
-        if(user.getBebe() != null){
-            txtBabyName.setText(user.getBebe().getNombre());
-            txtBabyNickname.setText(user.getBebe().getApodo());
-            txtBabyBirthdate.setText(user.getBebe().getFechaDeNacimiento());
+        if(user.bebe != null){
+            txtBabyName.setText(user.bebe.nombre);
+            txtBabyNickname.setText(user.bebe.apodo);
+            txtBabyBirthdate.setText(user.bebe.fechaDeNacimiento);
         }
     }
 }
