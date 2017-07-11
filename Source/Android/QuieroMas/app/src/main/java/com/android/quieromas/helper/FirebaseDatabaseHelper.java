@@ -14,6 +14,7 @@ public class FirebaseDatabaseHelper {
 
     public static final String RECIPES = "Recetas";
     public static final String FAVORITE_RECIPES = "Recetas Favoritas";
+    public static final String BASIC_RECIPES = "Recetas Básicas";
     public static final String DESSERTS = "Postres";
     public static final String USERS = "Usuarios";
     public static final String BY_NAME = "Por Nombre";
@@ -31,6 +32,14 @@ public class FirebaseDatabaseHelper {
 
     public DatabaseReference getRecipesReference(){
         return FirebaseDatabase.getInstance().getReference(RECIPES);
+    }
+
+    public DatabaseReference getBasicRecipesReference(){
+        return FirebaseDatabase.getInstance().getReference(BASIC_RECIPES);
+    }
+
+    public DatabaseReference getBasicRecipeReference(String recipeName){
+        return getBasicRecipesReference().child(recipeName);
     }
 
     public DatabaseReference getRecipesByNameReference(){

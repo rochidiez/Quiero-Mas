@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.android.quieromas.activity.BasicRecipeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_basic_recipe_close"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/close_orange"
+            android:layout_margin="8dp"
+            android:layout_gravity="start"/>
+
+        <TextView
+            android:id="@+id/txt_basic_recipe_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="16dp"
+            android:text=""
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/bigtitle_text_size" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/basic_recipe_list_ingredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            tools:listitem="@layout/listitem_recipe_steps"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="8dp"></android.support.v7.widget.RecyclerView>
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="180dp"
+            android:layout_height="3dp"
+            android:layout_margin="24dp"
+            android:layout_gravity="end"
+            android:background="@drawable/divisor_naranja"
+            android:rotation="180" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="16dp"
+            android:text="Mirá la receta"
+            android:textAllCaps="true"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/subsubtitle_text_size" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"
+            android:fitsSystemWindows="true"
+            android:layout_margin="16dp">
+
+            <ImageView
+                android:id="@+id/img_basic_recipe_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+
+            <Button
+                android:id="@+id/btn_basic_recipe_watch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/video_play"
+                android:background="@android:color/transparent"
+                android:text=""
+                android:textSize="@dimen/subtitle_text_size"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@drawable/olla"></ImageView>
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="12dp"
+            android:background="@drawable/divisor_centro"></ImageView>
+
+    </LinearLayout>
+</ScrollView>

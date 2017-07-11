@@ -1,13 +1,17 @@
 package com.android.quieromas.adapter;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.quieromas.R;
+import com.android.quieromas.activity.BasicRecipeActivity;
+import com.android.quieromas.activity.VideoActivity;
 import com.android.quieromas.model.receta.RecipeStepElement;
 
 import java.util.List;
@@ -52,7 +56,9 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeRecycl
                 holder.btnPlus.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        Intent intent = new Intent(holder.btnPlus.getContext(), BasicRecipeActivity.class);
+                        intent.putExtra("BASIC_RECIPE",holder.mItem.getBasicRecipe());
+                        holder.btnPlus.getContext().startActivity(intent);
                     }
                 });
             }

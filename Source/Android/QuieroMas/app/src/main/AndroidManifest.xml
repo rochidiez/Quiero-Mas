@@ -53,9 +53,13 @@
             android:name="io.fabric.ApiKey"
             android:value="5c84f2c848fa12edce31011817a28e1d058959eb" />
 
-        <activity android:name=".activity.VideoActivity"
-            android:theme="@style/NoActionBarActivity"
-            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.VideoActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/NoActionBarActivity" />
+        <activity
+            android:name=".activity.BasicRecipeActivity"
+            android:theme="@style/NoActionBarActivity" />
     </application>
 
 </manifest>
