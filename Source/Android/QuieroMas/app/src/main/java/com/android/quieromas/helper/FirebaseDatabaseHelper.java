@@ -20,6 +20,7 @@ public class FirebaseDatabaseHelper {
     public static final String BY_NAME = "Por Nombre";
     public static final String DEVELOPMENT = "Estimulación";
     public static final String MONTH = "mes ";
+    public static final String LACTATION = "Lactancia";
 
     public FirebaseDatabaseHelper(){
         mAuth = FirebaseAuth.getInstance();
@@ -68,5 +69,9 @@ public class FirebaseDatabaseHelper {
 
     public DatabaseReference getDevelopmentReferenceByMonth(int month){
         return getDevelopmentReference().child(MONTH  + month);
+    }
+
+    public DatabaseReference getLactationReference(){
+        return FirebaseDatabase.getInstance().getReference(LACTATION);
     }
 }

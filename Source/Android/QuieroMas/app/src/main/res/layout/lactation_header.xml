@@ -8,7 +8,7 @@ android:orientation="vertical">
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="La importancia de la lactancia"
+    android:text=""
     android:textAllCaps="true"
     android:textAppearance="@style/AppTheme.TextAppearance.Bold"
     android:textSize="@dimen/subtitle_text_size"

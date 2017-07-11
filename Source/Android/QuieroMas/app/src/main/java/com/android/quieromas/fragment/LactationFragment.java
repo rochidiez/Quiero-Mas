@@ -18,9 +18,18 @@ import android.widget.TextView;
 import com.android.quieromas.R;
 import com.android.quieromas.activity.MainActivity;
 import com.android.quieromas.adapter.QuieroMasExpandableListAdapter;
+import com.android.quieromas.helper.FirebaseDatabaseHelper;
+import com.android.quieromas.model.DevelopmentItem;
 import com.android.quieromas.model.ExpandableListGroup;
+import com.android.quieromas.model.receta.Receta;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.GenericTypeIndicator;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class LactationFragment extends BaseFragment {
@@ -28,6 +37,8 @@ public class LactationFragment extends BaseFragment {
     ExpandableListView expandableListView;
     ArrayList<ExpandableListGroup> groups;
     TextView txtSubtitle;
+    TextView txtTitle;
+    HashMap<String,String> data;
 
     public LactationFragment() {
         // Required empty public constructor
@@ -39,7 +50,6 @@ public class LactationFragment extends BaseFragment {
         super.onCreate(savedInstanceState);
 
         groups = new ArrayList<>();
-        getData();
     }
 
     @Override
@@ -59,13 +69,8 @@ public class LactationFragment extends BaseFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        DisplayMetrics metrics = new DisplayMetrics();
-        getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        int width = metrics.widthPixels;
 
         expandableListView = (ExpandableListView) view.findViewById(R.id.lactation_exp_listView);
-        expandableListView.setAdapter(new QuieroMasExpandableListAdapter(this.getActivity(),groups));
-        expandableListView.setIndicatorBounds(width - getPixelFromDips(50), width - getPixelFromDips(10));
 
 
         //sets header view to expandableListView so it scrolls together
@@ -73,8 +78,50 @@ public class LactationFragment extends BaseFragment {
         View header= inflater.inflate(R.layout.lactation_header, null, false);
         expandableListView.addHeaderView(header,null,false);
 
+        txtTitle = (TextView) header.findViewById(R.id.lactation_title);
         txtSubtitle = (TextView) header.findViewById(R.id.lactation_subtitle_text);
-        txtSubtitle.setText(Html.fromHtml("Amamantar a tu bebe es un momento único e íntimo para ambos. Le estás ofreciendo el mejor alimento que podés brindarle.</p><p>Pero no es solamente una razón nutricional, sino que es la continuación de una profunda relación de amor que comenzó en el mismo momento de la concepción.</p>"));
+
+
+        FirebaseDatabaseHelper firebaseDatabaseHelper =  new FirebaseDatabaseHelper();
+        firebaseDatabaseHelper.getLactationReference().addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                GenericTypeIndicator<HashMap<String,String>> t = new GenericTypeIndicator<HashMap<String,String>>() {};
+                data = dataSnapshot.getValue(t);
+                updateUI();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    public void updateUI(){
+
+        if(data.containsKey("0")){
+            String[] text = data.get("0").split("</h1>");
+            String title = text[0].split(">")[1];
+            String subtitle = text[1];
+            txtTitle.setText(Html.fromHtml(title));
+            txtSubtitle.setText(Html.fromHtml(subtitle));
+            data.remove("0");
+        }
+
+        for (Map.Entry<String, String> entry : data.entrySet()) {
+            String key = entry.getKey();
+            ExpandableListGroup group = new ExpandableListGroup(key);
+            group.children.add(entry.getValue());
+            groups.add(group);
+        }
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        int width = metrics.widthPixels;
+
+        expandableListView.setAdapter(new QuieroMasExpandableListAdapter(this.getActivity(),groups));
+        expandableListView.setIndicatorBounds(width - getPixelFromDips(50), width - getPixelFromDips(10));
 
     }
 
@@ -85,15 +132,6 @@ public class LactationFragment extends BaseFragment {
         return (int) (pixels * scale + 0.5f);
     }
 
-    public void getData() {
-        for (int j = 0; j < 5; j++) {
-            ExpandableListGroup group = new ExpandableListGroup("Por qué es mejor darle el pecho que la mamadera con una leche maternizada?");
-            for (int i = 0; i < 1; i++) {
-                group.children.add("Tu bebé cumplió 6 meses y ya puede comenzar con sus primeras comidas. Han madurado su función digestiva y renal...");
-            }
-            groups.add(group);
-        }
-    }
 }
 
 

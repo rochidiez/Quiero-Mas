@@ -114,6 +114,9 @@ public class MainActivity extends AuthActivity
         //Current user
         syncDatabaseForReference(firebaseDatabaseHelper.getCurrentUserReference());
 
+        //Lactation
+        syncDatabaseForReference(firebaseDatabaseHelper.getLactationReference());
+
         firebaseDatabaseHelper.getCurrentUserReference().addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

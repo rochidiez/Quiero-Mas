@@ -2,6 +2,7 @@ package com.android.quieromas.adapter;
 
 import android.app.Activity;
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,14 +50,8 @@ public class QuieroMasExpandableListAdapter extends BaseExpandableListAdapter {
             convertView = inflater.inflate(R.layout.expandable_listrow_details, null);
         }
         text = (TextView) convertView.findViewById(R.id.lactation_text);
-        text.setText(children);
-        convertView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(v.getContext(), children,
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
+        text.setText(Html.fromHtml(children));
+
         return convertView;
     }
 
