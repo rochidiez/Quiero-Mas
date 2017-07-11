@@ -121,8 +121,12 @@ public class LactationFragment extends BaseFragment {
         int width = metrics.widthPixels;
 
         expandableListView.setAdapter(new QuieroMasExpandableListAdapter(this.getActivity(),groups));
-        expandableListView.setIndicatorBounds(width - getPixelFromDips(50), width - getPixelFromDips(10));
 
+        if(android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            expandableListView.setIndicatorBounds(width - getPixelFromDips(50), width - getPixelFromDips(10));
+        } else {
+            expandableListView.setIndicatorBoundsRelative(width - getPixelFromDips(50), width - getPixelFromDips(10));
+        }
     }
 
     public int getPixelFromDips(float pixels) {
