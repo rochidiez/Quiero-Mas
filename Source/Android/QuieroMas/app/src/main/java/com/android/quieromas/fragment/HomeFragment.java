@@ -9,14 +9,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.android.quieromas.R;
 import com.android.quieromas.activity.MainActivity;
+import com.android.quieromas.helper.FirebaseDatabaseHelper;
+import com.android.quieromas.model.user.User;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
 
 public class HomeFragment extends BaseFragment {
 
@@ -24,6 +30,9 @@ public class HomeFragment extends BaseFragment {
     private LinearLayout abcView;
     private LinearLayout nutritionPlanView;
     private LinearLayout developmentView;
+    private TextView txtNames;
+    FirebaseDatabaseHelper firebaseDatabaseHelper;
+    User user;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -61,6 +70,7 @@ public class HomeFragment extends BaseFragment {
         abcView = (LinearLayout) view.findViewById(R.id.view_abc_home);
         nutritionPlanView = (LinearLayout) view.findViewById(R.id.view_receta_home);
         developmentView = (LinearLayout) view.findViewById(R.id.view_estimulacion_home);
+        txtNames = (TextView) view.findViewById(R.id.home_title_name);
 
         developmentView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,8 +113,31 @@ public class HomeFragment extends BaseFragment {
             }
         });
 
+        firebaseDatabaseHelper = new FirebaseDatabaseHelper();
+        firebaseDatabaseHelper.getCurrentUserReference().addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                user = dataSnapshot.getValue(User.class);
+                updateUI();
+            }
 
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
+            }
+        });
+
+    }
+
+    public void updateUI(){
+        String names;
+        names = user.getDatos().getNombreCompleto().split(" ")[0];
+        if(user.getBebe() != null && user.getBebe().getApodo() != null){
+            names = names + " y " + user.getBebe().getApodo();
+        }else if(user.getBebe() != null && user.getBebe().getNombre() != null){
+            names = names + " y " + user.getBebe().getNombre();
+        }
+        txtNames.setText(names);
     }
 
 }

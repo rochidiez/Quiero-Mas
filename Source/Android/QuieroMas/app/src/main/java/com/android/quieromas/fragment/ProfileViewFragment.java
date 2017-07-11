@@ -96,7 +96,7 @@ public class ProfileViewFragment extends BaseFragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 user = dataSnapshot.getValue(User.class);
-                updateUI(dataSnapshot);
+                updateUI();
             }
 
             @Override
@@ -107,7 +107,7 @@ public class ProfileViewFragment extends BaseFragment {
 
     }
 
-    public void updateUI(DataSnapshot dataSnapshot){
+    public void updateUI(){
         txtName.setText(user.getDatos().getNombreCompleto());
         txtEmail.setText(user.getDatos().getEmail());
         txtBirthdate.setText(user.getDatos().getFechaDeNacimiento());
