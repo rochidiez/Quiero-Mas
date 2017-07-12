@@ -21,6 +21,8 @@ import com.android.quieromas.adapter.QuieroMasExpandableListAdapter;
 import com.android.quieromas.helper.FirebaseDatabaseHelper;
 import com.android.quieromas.model.DevelopmentItem;
 import com.android.quieromas.model.ExpandableListGroup;
+import com.android.quieromas.model.lactancia.ItemLactancia;
+import com.android.quieromas.model.lactancia.Lactancia;
 import com.android.quieromas.model.receta.Receta;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -38,7 +40,7 @@ public class LactationFragment extends BaseFragment {
     ArrayList<ExpandableListGroup> groups;
     TextView txtSubtitle;
     TextView txtTitle;
-    HashMap<String,String> data;
+    Lactancia data;
 
     public LactationFragment() {
         // Required empty public constructor
@@ -86,8 +88,7 @@ public class LactationFragment extends BaseFragment {
         firebaseDatabaseHelper.getLactationReference().addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                GenericTypeIndicator<HashMap<String,String>> t = new GenericTypeIndicator<HashMap<String,String>>() {};
-                data = dataSnapshot.getValue(t);
+                data = dataSnapshot.getValue(Lactancia.class);
                 updateUI();
             }
 
@@ -100,19 +101,15 @@ public class LactationFragment extends BaseFragment {
 
     public void updateUI(){
 
-        if(data.containsKey("0")){
-            String[] text = data.get("0").split("</h1>");
-            String title = text[0].split(">")[1];
-            String subtitle = text[1];
-            txtTitle.setText(Html.fromHtml(title));
-            txtSubtitle.setText(Html.fromHtml(subtitle));
-            data.remove("0");
+        if(data.getTitulo() != null){
+            txtTitle.setText(data.getTitulo().getTitulo());
+            txtSubtitle.setText(data.getTitulo().getTexto());
         }
 
-        for (Map.Entry<String, String> entry : data.entrySet()) {
-            String key = entry.getKey();
-            ExpandableListGroup group = new ExpandableListGroup(key);
-            group.children.add(entry.getValue());
+        for(int i = 0; i < data.getTabla().size(); i++){
+            ItemLactancia elem = data.getTabla().get(i);
+            ExpandableListGroup group = new ExpandableListGroup(elem.getTitulo());
+            group.children.add(elem.getHtml());
             groups.add(group);
         }
 
