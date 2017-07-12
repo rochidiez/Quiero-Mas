@@ -1,9 +1,6 @@
 package com.android.quieromas.fragment;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,14 +12,9 @@ import com.android.quieromas.R;
 import com.android.quieromas.activity.MainActivity;
 import com.android.quieromas.helper.FirebaseDatabaseHelper;
 import com.android.quieromas.model.user.User;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import org.w3c.dom.Text;
 
 public class HomeFragment extends BaseFragment {
 

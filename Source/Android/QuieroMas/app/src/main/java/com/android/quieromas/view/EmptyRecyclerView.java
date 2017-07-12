@@ -1,4 +1,4 @@
-package com.android.quieromas;
+package com.android.quieromas.view;
 
 import android.content.Context;
 import android.support.annotation.Nullable;

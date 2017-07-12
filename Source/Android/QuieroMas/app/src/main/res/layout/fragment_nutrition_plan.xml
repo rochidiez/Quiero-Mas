@@ -31,21 +31,23 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/txt_plan_baby_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="BEBE NOMBRE"
+                        android:layout_marginTop="4dp"
+                        android:text=""
                         android:textAlignment="center"
                         android:textAppearance="@style/AppTheme.TextAppearance.Bold"
                         android:textColor="@color/textColorPrimary"
                         android:textSize="@dimen/bigtitle_text_size" />
 
                     <TextView
+                        android:id="@+id/txt_plan_stage"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="24dp"
+                        android:layout_marginBottom="12dp"
                         android:layout_marginTop="4dp"
-                        android:text="9 Meses, 3 Semanas"
+                        android:text=""
                         android:textAlignment="center"
                         android:textAppearance="@style/AppTheme.TextAppearance.Bold"
                         android:textColor="@color/textColorPrimary"
@@ -63,7 +65,7 @@
                 android:background="@color/colorPrimary"
                 app:tabGravity="fill"
                 app:tabIndicatorColor="@android:color/transparent"
-                app:tabMaxWidth="56dp"
+                app:tabMaxWidth="66dp"
                 app:tabMode="scrollable"
                 app:tabSelectedTextColor="@color/textColorBlack"
                 app:tabTextColor="@color/grayPrimary" />
@@ -77,8 +79,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_height="wrap_content">
 
 
                 <LinearLayout
@@ -137,7 +138,7 @@
                 android:layout_width="160dp"
                 android:layout_height="2dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="4dp"
                 android:background="@drawable/divisor_centro">
 
             </ImageView>
@@ -159,7 +160,7 @@
         <android.support.v4.view.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
+            android:layout_height="270dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
     </android.support.design.widget.CoordinatorLayout>
 

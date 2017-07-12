@@ -1,23 +1,15 @@
 package com.android.quieromas.fragment;
 
 import android.app.DatePickerDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.andreabaccega.widget.FormEditText;
@@ -26,7 +18,6 @@ import com.android.quieromas.activity.ChangePasswordActivity;
 import com.android.quieromas.helper.FirebaseDatabaseHelper;
 import com.android.quieromas.model.user.Bebe;
 import com.android.quieromas.model.user.User;
-import com.android.quieromas.validator.RepeatPasswordValidator;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;

@@ -3,8 +3,6 @@ package com.android.quieromas.model.user;
 import com.google.firebase.database.IgnoreExtraProperties;
 import com.google.firebase.database.PropertyName;
 
-import java.util.Date;
-
 /**
  * Created by lucas on 18/5/17.
  */

@@ -4,12 +4,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.quieromas.R;
 import com.android.quieromas.fragment.FavoriteRecipesFragment.OnListFragmentInteractionListener;
-import com.android.quieromas.fragment.PlanRecipesFragment;
 import com.android.quieromas.model.receta.Receta;
 import com.squareup.picasso.Picasso;
 
@@ -29,7 +29,7 @@ public class MyFavoriteRecipesRecyclerViewAdapter extends RecyclerView.Adapter<M
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_favoriterecipes, parent, false);
+                .inflate(R.layout.fragment_recipe_item, parent, false);
         return new ViewHolder(view);
     }
 
@@ -66,6 +66,8 @@ public class MyFavoriteRecipesRecyclerViewAdapter extends RecyclerView.Adapter<M
         public final TextView txtMeal;
         public final TextView txtTitle;
         public final ImageView imgBackground;
+        public final Button btnFav;
+        public final ImageView imgArrow;
 
         public Receta mItem;
 
@@ -75,6 +77,12 @@ public class MyFavoriteRecipesRecyclerViewAdapter extends RecyclerView.Adapter<M
             txtMeal = (TextView) view.findViewById(R.id.txt_recipe_meal);
             txtTitle = (TextView) view.findViewById(R.id.txt_recipe_title);
             imgBackground = (ImageView) view.findViewById(R.id.img_fav_background);
+
+            btnFav = (Button) view.findViewById(R.id.btn_fav_recipe);
+            btnFav.setVisibility(View.VISIBLE);
+
+            imgArrow = (ImageView) view.findViewById(R.id.img_recipe_arrow);
+            imgArrow.setVisibility(View.VISIBLE);
         }
 
         @Override

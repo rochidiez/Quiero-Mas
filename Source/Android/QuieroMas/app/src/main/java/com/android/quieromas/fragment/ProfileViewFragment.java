@@ -1,11 +1,8 @@
 package com.android.quieromas.fragment;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,15 +13,10 @@ import android.widget.TextView;
 import com.android.quieromas.R;
 import com.android.quieromas.activity.ChangePasswordActivity;
 import com.android.quieromas.helper.FirebaseDatabaseHelper;
-import com.android.quieromas.model.receta.Receta;
 import com.android.quieromas.model.user.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Locale;
 
 public class ProfileViewFragment extends BaseFragment {
 

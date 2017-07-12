@@ -35,6 +35,7 @@ public class RecipeActivity extends AuthActivity {
     private Receta receta;
     private ImageView imgBackground;
     private String dessertName;
+    private String developmentTip;
     private TextView txtVariants;
     private TextView txtName;
     private RecyclerView rvSteps;
@@ -60,6 +61,9 @@ public class RecipeActivity extends AuthActivity {
             recipeName = extras.getString("RECIPE");
             if(extras.containsKey("DESSERT")){
                 dessertName = extras.getString("DESSERT");
+            }
+            if(extras.containsKey("DEVELOPMENT")){
+                developmentTip = extras.getString("DEVELOPMENT");
             }
         }
 
@@ -89,6 +93,10 @@ public class RecipeActivity extends AuthActivity {
         reuseLayout = (RelativeLayout) findViewById(R.id.recipe_layout_reuse);
 
         txtName.setText(recipeName);
+
+        if(developmentTip == null){
+            btnDevelopmentTip.setVisibility(View.GONE);
+        }
 
         if(dessertName == null){
             btnDessert.setVisibility(View.GONE);
@@ -130,7 +138,7 @@ public class RecipeActivity extends AuthActivity {
         btnDevelopmentTip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startTipActivity("Tip de Desarrollo",receta.getTip_desarrollo(),"light_bulb");
+                startTipActivity("Tip de Desarrollo",developmentTip,"light_bulb");
             }
         });
 

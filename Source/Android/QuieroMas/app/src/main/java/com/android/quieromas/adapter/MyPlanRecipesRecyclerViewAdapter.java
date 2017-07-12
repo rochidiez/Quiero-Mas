@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.quieromas.R;
-import com.android.quieromas.fragment.FavoriteRecipesFragment.OnListFragmentInteractionListener;
 import com.android.quieromas.fragment.PlanRecipesFragment;
 import com.android.quieromas.model.receta.Receta;
 
@@ -27,7 +26,7 @@ public class MyPlanRecipesRecyclerViewAdapter extends RecyclerView.Adapter<MyPla
     @Override
     public ViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_favoriterecipes, parent, false);
+                .inflate(R.layout.fragment_recipe_item, parent, false);
 
         return new ViewHolder(view);
     }

@@ -18,6 +18,7 @@ public class FirebaseDatabaseHelper {
     public static final String DESSERTS = "Postres";
     public static final String USERS = "Usuarios";
     public static final String BY_NAME = "Por Nombre";
+    public static final String BY_AGE = "Por Edad";
     public static final String DEVELOPMENT = "Estimulación";
     public static final String MONTH = "mes ";
     public static final String LACTATION = "Lactancia";
@@ -73,5 +74,13 @@ public class FirebaseDatabaseHelper {
 
     public DatabaseReference getLactationReference(){
         return FirebaseDatabase.getInstance().getReference(LACTATION);
+    }
+
+    public DatabaseReference getPlanByAgeReference(){
+        return FirebaseDatabase.getInstance().getReference(BY_AGE);
+    }
+
+    public DatabaseReference getPlanForDayReference(int day){
+        return getPlanByAgeReference().child(Integer.toString(day));
     }
 }

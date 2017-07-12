@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     tools:context="com.android.quieromas.fragment.FavoriteRecipesFragment">
 
-    <com.android.quieromas.EmptyRecyclerView
+    <com.android.quieromas.view.EmptyRecyclerView
         android:id="@+id/list"
         android:name="com.android.quieromas.fragment.FavoriteRecipesFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="LinearLayoutManager"
-        tools:listitem="@layout/fragment_favoriterecipes" />
+        tools:listitem="@layout/fragment_recipe_item" />
 
     <LinearLayout
         android:orientation="vertical"
