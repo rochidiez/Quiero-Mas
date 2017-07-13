@@ -21,12 +21,14 @@ import com.android.quieromas.R;
 import com.android.quieromas.fragment.AboutUsFragment;
 import com.android.quieromas.fragment.BaseFragment;
 import com.android.quieromas.fragment.DevelopmentFragment;
+import com.android.quieromas.fragment.EmptyNutritionPlanFragment;
 import com.android.quieromas.fragment.FavoriteRecipesFragment;
 import com.android.quieromas.fragment.HomeFragment;
 import com.android.quieromas.fragment.LactationFragment;
 import com.android.quieromas.fragment.NutritionPlanFragment;
 import com.android.quieromas.fragment.ProfileFragment;
 import com.android.quieromas.fragment.TermsFragment;
+import com.android.quieromas.helper.AgeHelper;
 import com.android.quieromas.helper.FirebaseDatabaseHelper;
 import com.android.quieromas.model.receta.Receta;
 import com.android.quieromas.model.user.User;
@@ -45,6 +47,7 @@ public class MainActivity extends AuthActivity
 
     Fragment fragment = null;
     Class fragmentClass;
+    Class nutritionPlanFragment;
     DrawerLayout drawer;
     TextView txtName;
     User user;
@@ -69,6 +72,7 @@ public class MainActivity extends AuthActivity
         navigationView.setItemIconTintList(null);
 
         fragmentClass = HomeFragment.class;
+        nutritionPlanFragment = EmptyNutritionPlanFragment.class;
         try {
             fragment = (Fragment) fragmentClass.newInstance();
         } catch (Exception e) {
@@ -140,6 +144,17 @@ public class MainActivity extends AuthActivity
             names = names + " y " + user.bebe.nombre;
         }
         txtName.setText(names);
+
+        AgeHelper ageHelper = new AgeHelper();
+        if(user.bebe != null){
+            if(ageHelper.canAccessPlan(user.bebe.fechaDeNacimiento)){
+                nutritionPlanFragment = NutritionPlanFragment.class;
+            }else{
+                nutritionPlanFragment = EmptyNutritionPlanFragment.class;
+            }
+        }else{
+            nutritionPlanFragment = EmptyNutritionPlanFragment.class;
+        }
     }
 
     @Override
@@ -214,7 +229,7 @@ public class MainActivity extends AuthActivity
 //        } else if (id == R.id.nav_recipes) {
 //
         } else if (id == R.id.nav_nutrition_plan) {
-            fragmentClass = NutritionPlanFragment.class;
+            fragmentClass = nutritionPlanFragment;
 //
         } else if (id == R.id.nav_education) {
             fragmentClass = DevelopmentFragment.class;

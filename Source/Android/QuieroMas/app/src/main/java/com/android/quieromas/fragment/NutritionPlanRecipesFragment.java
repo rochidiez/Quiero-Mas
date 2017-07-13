@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.constraint.solver.ArrayLinkedVariables;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,8 +21,11 @@ import com.android.quieromas.model.planDeNutricion.DiaPlanNutricion;
 import com.android.quieromas.model.receta.Receta;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
 
 
 public class NutritionPlanRecipesFragment extends BaseFragment {
@@ -72,10 +76,12 @@ public class NutritionPlanRecipesFragment extends BaseFragment {
         cenaView = (RelativeLayout) view.findViewById(R.id.cena);
 
         firebaseDatabaseHelper =  new FirebaseDatabaseHelper();
-        firebaseDatabaseHelper.getPlanForDayReference(dia).addListenerForSingleValueEvent(new ValueEventListener() {
+        firebaseDatabaseHelper.getPlanByAgeReference().addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                data = dataSnapshot.getValue(DiaPlanNutricion.class);
+                GenericTypeIndicator<ArrayList<DiaPlanNutricion>> t = new GenericTypeIndicator<ArrayList<DiaPlanNutricion>>() {};
+                ArrayList<DiaPlanNutricion> dataArray = dataSnapshot.getValue(t);
+                data = dataArray.get(dia);
                 getReceta(true);
                 getReceta(false);
             }

@@ -1,6 +1,7 @@
 package com.android.quieromas.fragment;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.android.quieromas.R;
 import com.android.quieromas.activity.MainActivity;
+import com.android.quieromas.helper.AgeHelper;
 import com.android.quieromas.helper.FirebaseDatabaseHelper;
 import com.android.quieromas.model.user.User;
 import com.google.firebase.database.DataSnapshot;
@@ -95,15 +97,6 @@ public class HomeFragment extends BaseFragment {
             }
         });
 
-        nutritionPlanView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.main_content, new NutritionPlanFragment(),"nutrition_plan");
-                ft.addToBackStack("nutrition_plan");
-                ft.commit();
-            }
-        });
 
         firebaseDatabaseHelper = new FirebaseDatabaseHelper();
         firebaseDatabaseHelper.getCurrentUserReference().addListenerForSingleValueEvent(new ValueEventListener() {
@@ -130,6 +123,36 @@ public class HomeFragment extends BaseFragment {
             names = names + " y " + user.bebe.nombre;
         }
         txtNames.setText(names);
+
+        AgeHelper ageHelper = new AgeHelper();
+        final Class nutritionPlanFragment;
+        if(user.bebe != null){
+            if(ageHelper.canAccessPlan(user.bebe.fechaDeNacimiento)){
+                nutritionPlanFragment = NutritionPlanFragment.class;
+            }else{
+                nutritionPlanFragment = EmptyNutritionPlanFragment.class;
+            }
+        }else{
+            nutritionPlanFragment = EmptyNutritionPlanFragment.class;
+        }
+
+
+
+        nutritionPlanView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                Fragment fragment = null;
+                try {
+                    fragment = (Fragment) nutritionPlanFragment.newInstance();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                ft.replace(R.id.main_content, fragment,"nutrition_plan");
+                ft.addToBackStack("nutrition_plan");
+                ft.commit();
+            }
+        });
     }
 
 }

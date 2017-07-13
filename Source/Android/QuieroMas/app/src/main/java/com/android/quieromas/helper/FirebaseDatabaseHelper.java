@@ -80,7 +80,4 @@ public class FirebaseDatabaseHelper {
         return FirebaseDatabase.getInstance().getReference(BY_AGE);
     }
 
-    public DatabaseReference getPlanForDayReference(int day){
-        return getPlanByAgeReference().child(Integer.toString(day));
-    }
 }

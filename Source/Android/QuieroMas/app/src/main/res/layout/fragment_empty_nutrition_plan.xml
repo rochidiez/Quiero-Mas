@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    tools:context="com.android.quieromas.fragment.EmptyNutritionPlanFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="120dp"
+        android:text="El programa de alimentación es para bebés de 6 a 12 meses. Cuando cumpla 6 meses comenzaremos a mostrarte las recetas ideales para que le cocines"
+        android:textAlignment="center"
+        android:textSize="@dimen/subtitle_text_size" />
+
+    <ImageView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="12dp"
+            android:background="@drawable/divisor_centro"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_empty_nutrition_plan_edit_profile"
+            android:layout_margin="12dp"
+            android:paddingLeft="24dp"
+            android:drawableStart="@drawable/baby"
+            android:text="Editar Perfil"
+            android:textSize="@dimen/subtitle_text_size"
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"
+            android:background="@drawable/button_border_black_thin"/>
+
+</LinearLayout>
