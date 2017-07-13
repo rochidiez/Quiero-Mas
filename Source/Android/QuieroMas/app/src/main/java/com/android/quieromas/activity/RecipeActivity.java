@@ -15,6 +15,7 @@ import com.android.quieromas.R;
 import com.android.quieromas.adapter.RecipeRecyclerViewAdapter;
 import com.android.quieromas.helper.FirebaseDatabaseHelper;
 import com.android.quieromas.model.receta.Ingrediente;
+import com.android.quieromas.model.receta.Postre;
 import com.android.quieromas.model.receta.Receta;
 import com.android.quieromas.model.receta.RecipeStepElement;
 import com.google.firebase.database.DataSnapshot;
@@ -106,11 +107,11 @@ public class RecipeActivity extends AuthActivity {
             firebaseDatabaseHelper.getDessertReference(dessertName).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    final String dessertText = dataSnapshot.getValue(String.class);
+                    final Postre dessert = dataSnapshot.getValue(Postre.class);
                     btnDessert.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            startTipActivity(dessertName,dessertText,"apple");
+                            startTipActivity(dessertName,dessert.getDescripcion(),"apple");
                         }
                     });
                 }

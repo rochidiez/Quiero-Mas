@@ -14,9 +14,6 @@ import android.view.ViewGroup;
 
 import com.android.quieromas.R;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class VideoFragment extends BaseFragment {
 
 //    @BindView(R.id.surface) SurfaceView mSurfaceView;

@@ -1,14 +1,20 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="270dp"
+    android:orientation="vertical"
     tools:context="com.android.quieromas.fragment.NutritionPlanRecipesFragment">
 
-    <include layout="@layout/fragment_recipe_item"
-        android:id="@+id/almuerzo" />
+    <FrameLayout
+        android:id="@+id/recipe_lunch_container"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="3dp"
+        android:layout_height="132dp"/>
 
-    <include
-        android:id="@+id/cena"
-        layout="@layout/content_main" />
+    <FrameLayout
+        android:id="@+id/recipe_dinner_container"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="3dp"
+        android:layout_height="132dp"/>
 
-</FrameLayout>
+</LinearLayout>

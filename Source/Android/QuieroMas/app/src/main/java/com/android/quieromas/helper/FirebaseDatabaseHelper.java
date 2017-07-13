@@ -77,7 +77,7 @@ public class FirebaseDatabaseHelper {
     }
 
     public DatabaseReference getPlanByAgeReference(){
-        return FirebaseDatabase.getInstance().getReference(BY_AGE);
+        return getRecipesReference().child(BY_AGE);
     }
 
 }

@@ -9,7 +9,9 @@ import android.support.constraint.solver.ArrayLinkedVariables;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -34,8 +36,8 @@ public class NutritionPlanRecipesFragment extends BaseFragment {
     DiaPlanNutricion data;
     Receta almuerzo;
     Receta cena;
-    RelativeLayout almuerzoView;
-    RelativeLayout cenaView;
+    View almuerzoView;
+    View cenaView;
     FirebaseDatabaseHelper firebaseDatabaseHelper;
 
 
@@ -72,8 +74,14 @@ public class NutritionPlanRecipesFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        almuerzoView = (RelativeLayout) view.findViewById(R.id.almuerzo);
-        cenaView = (RelativeLayout) view.findViewById(R.id.cena);
+        LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        almuerzoView = inflater.inflate(R.layout.fragment_recipe_item, null);
+        FrameLayout almuerzoContainer = (FrameLayout) view.findViewById(R.id.recipe_lunch_container);
+        almuerzoContainer.addView(almuerzoView);
+
+        cenaView = inflater.inflate(R.layout.fragment_recipe_item, null);
+        FrameLayout dinnerContainer = (FrameLayout) view.findViewById(R.id.recipe_dinner_container);
+        dinnerContainer.addView(cenaView);
 
         firebaseDatabaseHelper =  new FirebaseDatabaseHelper();
         firebaseDatabaseHelper.getPlanByAgeReference().addListenerForSingleValueEvent(new ValueEventListener() {
@@ -82,8 +90,8 @@ public class NutritionPlanRecipesFragment extends BaseFragment {
                 GenericTypeIndicator<ArrayList<DiaPlanNutricion>> t = new GenericTypeIndicator<ArrayList<DiaPlanNutricion>>() {};
                 ArrayList<DiaPlanNutricion> dataArray = dataSnapshot.getValue(t);
                 data = dataArray.get(dia);
-                getReceta(true);
-                getReceta(false);
+               getReceta(true);
+               getReceta(false);
             }
 
             @Override
@@ -95,14 +103,14 @@ public class NutritionPlanRecipesFragment extends BaseFragment {
     }
 
     public void updateUI(boolean isAlmuerzo){
-        RelativeLayout meal;
+        View meal;
         String mealText;
         final Comida comida;
         final Receta receta;
 
         if(isAlmuerzo){
             meal = almuerzoView;
-            mealText = "Para el amluerzo";
+            mealText = "Para el almuerzo";
             receta = almuerzo;
             comida = data.getAlmuerzo();
         }else{
@@ -116,7 +124,7 @@ public class NutritionPlanRecipesFragment extends BaseFragment {
         TextView txtTitle = (TextView) meal.findViewById(R.id.txt_recipe_title);
 
         txtMeal.setText(mealText);
-        txtTitle.setText(receta.getTitulo());
+        txtTitle.setText(comida.getReceta());
 
         Picasso.with(getContext()).load(receta.getThumbnail())
                 .fit()
@@ -126,7 +134,7 @@ public class NutritionPlanRecipesFragment extends BaseFragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), RecipeActivity.class);
-                intent.putExtra("RECIPE", receta.getTitulo());
+                intent.putExtra("RECIPE", comida.getReceta());
                 intent.putExtra("DESSERT",comida.getPostre());
                 intent.putExtra("DEVELOPMENT",data.getTipDesarrollo());
                 startActivity(intent);
@@ -164,21 +172,4 @@ public class NutritionPlanRecipesFragment extends BaseFragment {
 
     }
 
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
 }

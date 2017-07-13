@@ -36,10 +36,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class LoginActivity extends AuthFbActivity implements VideoFragment.OnFragmentInteractionListener {
 
 
