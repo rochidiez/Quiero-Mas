@@ -15,8 +15,12 @@ class LactanciaViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
+    //Top
+    @IBOutlet weak var titleTop: UILabel!
+    @IBOutlet weak var descriptionTop: UILabel!
+    
     let tableBackgroundColor = UIColor(red: 247/255, green: 248/255, blue: 250/255, alpha: 1)
-    var lactanciaDic = Dictionary<String,[String]>()
+    var lactanciaDic: [String:Any]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,16 +46,28 @@ class LactanciaViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func reloadLactancia() {
-        lactanciaDic = Dictionary<String,[String]>()
-        if let storedDic = UserDefaults.standard.dictionary(forKey: "lactancia") {
-            var i = 0
-            for (key, element) in storedDic {
-                lactanciaDic[String(i)] = [key, element as! String, "closed"]
-                i += 1
+        lactanciaDic = [String:Any]()
+        if var storedDic = UserDefaults.standard.dictionary(forKey: firLactancia) {
+            if var tablaArray = storedDic[firLactanciaTabla] as? [[String:Any]] {
+                var i = 0
+                while i < tablaArray.count {
+                    tablaArray[i]["abierto"] = false
+                    i += 1
+                }
+                storedDic[firLactanciaTabla] = tablaArray
             }
+            lactanciaDic = storedDic
         }
         table.reloadData()
+        setTitle()
         spinner.stopAnimating()
+    }
+    
+    func setTitle() {
+        if let tituloDic = lactanciaDic?[firLactanciaTitulo] as? [String:String] {
+            titleTop.text = tituloDic[firLactanciaTituloTitulo]
+            descriptionTop.text = tituloDic[firLactanciaTituloTexto]
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,7 +87,11 @@ class LactanciaViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return lactanciaDic.count
+        if let tablaArr = lactanciaDic?[firLactanciaTabla] as? [[String:Any]] {
+            return tablaArr.count
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -82,7 +102,10 @@ class LactanciaViewController: UIViewController, UITableViewDataSource, UITableV
         cell.leftFirst.isHidden = indexPath.row != 0
         cell.rightFirst.isHidden = indexPath.row != 0
         
-        if lactanciaDic[String(indexPath.row)]?[2] == "closed" {
+        let tablaArray = lactanciaDic?[firLactanciaTabla] as! [[String:Any]]
+        let cellDic = tablaArray[indexPath.row]
+        
+        if !(cellDic["abierto"] as! Bool) {
             cell.openButton.setImage(UIImage(named: "Mas Orange"), for: .normal)
         } else {
             cell.openButton.setImage(UIImage(named: "Menos Orange"), for: .normal)
@@ -90,43 +113,36 @@ class LactanciaViewController: UIViewController, UITableViewDataSource, UITableV
         cell.openButton.tag = indexPath.row
         cell.openButton.addTarget(self, action: #selector(LactanciaViewController.openCloseCell(sender:)), for: .touchUpInside)
         
-        cell.title.text = lactanciaDic[String(indexPath.row)]?[0]
+        cell.title.text = cellDic[firLactanciaTablaTitulo] as? String
         
-        cell.orangeView.isHidden = lactanciaDic[String(indexPath.row)]?[2] == "closed"
+        cell.orangeView.isHidden = !(cellDic["abierto"] as! Bool)
         
-        cell.web.loadHTMLString((lactanciaDic[String(indexPath.row)]?[1])!, baseURL: nil)
+        cell.web.loadHTMLString(cellDic[firLactanciaTablaHtml] as! String, baseURL: nil)
         
         return cell
     }
     
     //MARK: - UITableView Delegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let meaning = lactanciaDic[String(indexPath.row)]
-        if let status = meaning?[2] {
-            if status == "closed" {
-                return 80
-            } else {
+        if let tablaArray = lactanciaDic?[firLactanciaTabla] as? [[String:Any]] {
+            if tablaArray[indexPath.row]["abierto"] as! Bool {
                 return 350
+            } else {
+                return 80
             }
         }
         return 0
     }
     
     func openCloseCell(sender: UIButton) {
-        let t = sender.tag
-        if lactanciaDic[String(t)]?[2] == "closed" {
-            lactanciaDic[String(t)]?[2] = "opened"
-        } else {
-            lactanciaDic[String(t)]?[2] = "closed"
+        if var tablaArray = lactanciaDic?[firLactanciaTabla] as? [[String:Any]] {
+            tablaArray[sender.tag]["abierto"] = !(tablaArray[sender.tag]["abierto"] as! Bool)
+            lactanciaDic?[firLactanciaTabla] = tablaArray
+            table.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
         }
-        table.reloadRows(at: [IndexPath(row: t, section: 0)], with: .automatic)
     }
     
 
-    
-    
-    
-    
     
     
     

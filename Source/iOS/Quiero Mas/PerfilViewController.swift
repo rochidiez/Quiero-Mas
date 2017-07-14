@@ -48,6 +48,7 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
     func setObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.loadPerfil), name: NSNotification.Name(rawValue: perfilLoaded), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadPerfil), name: NSNotification.Name(rawValue: perfilUpdated), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.passUpdated), name: NSNotification.Name(rawValue: perfilPassUpdated), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.connectionAlert), name: NSNotification.Name(rawValue: connectionError), object: nil)
     }
     
@@ -78,6 +79,13 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
     func reloadPerfil() {
         loadBabyImg()
         showAlert(text: "Los cambios se guardaron correctamente")
+    }
+    
+    func passUpdated() {
+        let user = FIRAuth.auth()?.currentUser
+        if let email = user?.email {
+            showAlert(text: "Email de cambio de contraseña enviado exitósamente a: \(email)")
+        }
     }
     
     func connectionAlert() {
@@ -361,6 +369,21 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
         }
         
         table.reloadRows(at: [IndexPath(row: sender.tag == 0 ? 2 : 5, section: 0)], with: .none)
+    }
+    
+    @IBAction func changePass(_ sender: Any) {
+        let alert = UIAlertController(title: "",
+                                      message: "Cambiar contraseña?",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cambiar", style: .default, handler: {
+            alert -> Void in
+                FirebaseAPI.changePassword()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
     }
     
 

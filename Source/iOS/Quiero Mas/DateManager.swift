@@ -55,6 +55,26 @@ class DateManager: NSObject {
         return days
     }
     
+    static func getDateFromIndexInPlan(indexToTransform: Int, currentIndex: Int) -> String {
+        let daysToAdd = indexToTransform - currentIndex
+        let currentDate = Date()
+        
+        var dateComponent = DateComponents()
+        
+        dateComponent.day = daysToAdd
+        
+        let futureDate = Calendar.current.date(byAdding: dateComponent, to: currentDate)
+        
+        print(currentDate)
+        print(futureDate!)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM"
+        let futureDateString = dateFormatter.string(from: futureDate!)
+        
+        return futureDateString
+    }
+    
 }
 
 struct QuieroDate {

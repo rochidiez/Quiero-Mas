@@ -146,8 +146,8 @@ class NutricionViewController: UIViewController {
     }
     
     func loadBabyDayInPlan() {
-        if let userDic = UserDefaults.standard.dictionary(forKey: defPerfil) as? [String:[String:String]] {
-            if let bebeDic = userDic[defPerfilBebe]  {
+        if let userDic = UserDefaults.standard.dictionary(forKey: defPerfil) {
+            if let bebeDic = userDic[defPerfilBebe] as? [String:String] {
                 if let dateString = bebeDic[defPerfilBebeFechaDeNacimiento] {
                     birthdayString = dateString
                     babyDayInPlan = DateManager.getBabyDayInPlan(birthday: birthdayString!, currentDate: Date())
@@ -221,6 +221,46 @@ class NutricionViewController: UIViewController {
         }
     }
     
+    func getVolverACocinarString(recetaName: String) -> String? {
+        let babyDay = getNextAppearanceForReceta(recetaName: recetaName)
+        guard babyDay != nil else {return nil}
+        let currentIndex = DateManager.getBabyDayInPlan(birthday: birthdayString!, currentDate: Date())
+        let dateString = DateManager.getDateFromIndexInPlan(indexToTransform: babyDay!, currentIndex: currentIndex)
+        return "Volveremos a cocinar esta receta el \(dateString)"
+    }
+    
+    func getNextAppearanceForReceta(recetaName: String) -> Int? {
+        var babyDay = DateManager.getBabyDayInPlan(birthday: birthdayString!, currentDate: Date())
+        while babyDay < (recetasEdadArr?.count)! {
+            if let currentDia = recetasEdadArr?[babyDay] {
+                //check almuerzo
+                if let currentDiaAlmuerzo = currentDia[firPorEdadAlmuerzo] as? [String:String] {
+                    if let currentDiaAlmuerzoReceta = currentDiaAlmuerzo[firPorEdadAlmuerzoReceta] {
+                        if currentDiaAlmuerzoReceta == recetaName {
+                            break
+                        }
+                    }
+                }
+                
+                //check cena
+                if let currentDiaCena = currentDia[firPorEdadCena] as? [String:String] {
+                    if let currentDiaCenaReceta = currentDiaCena[firPorEdadCenaReceta] {
+                        if currentDiaCenaReceta == recetaName {
+                            break
+                        }
+                    }
+                }
+            }
+            babyDay += 1
+        }
+        
+        if babyDay < (recetasEdadArr?.count)! {
+            return babyDay
+        } else {
+            return nil
+        }
+    }
+    
     
     //MARK: - IBAction
     @IBAction func listadoAction(_ sender: Any) {
@@ -236,6 +276,7 @@ class NutricionViewController: UIViewController {
         vc.recetaDict = recetasActuales?.almuerzoReceta
         vc.recetaPostre = recetasActuales?.almuerzoPostre
         vc.recetaDia = recetasEdadArr?[babyDayInPlan]
+        vc.volverACocinar = getVolverACocinarString(recetaName: vc.recetaNombre!)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -246,6 +287,7 @@ class NutricionViewController: UIViewController {
         vc.recetaDict = recetasActuales?.cenaReceta
         vc.recetaPostre = recetasActuales?.cenaPostre
         vc.recetaDia = recetasEdadArr?[babyDayInPlan]
+        vc.volverACocinar = getVolverACocinarString(recetaName: vc.recetaNombre!)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

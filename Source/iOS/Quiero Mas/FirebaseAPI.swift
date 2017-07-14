@@ -130,9 +130,9 @@ class FirebaseAPI: NSObject {
     }
     
     static func getDatosLactancia() {
-        FIRDatabase.database().reference().child("Lactancia").observeSingleEvent(of: .value, with: { (snap) in
-            if let lactanciaDic = snap.value as? [String:String] {
-                UserDefaults.standard.set(lactanciaDic, forKey: "lactancia")
+        FIRDatabase.database().reference().child(firLactancia).observeSingleEvent(of: .value, with: { (snap) in
+            if let lactanciaDic = snap.value as? [String:Any] {
+                UserDefaults.standard.set(lactanciaDic, forKey: firLactancia)
                 NotificationCenter.default.post(name: Notification.Name(rawValue: lactanciaUpdated), object: nil)
             }
         }) { (error) in
@@ -354,6 +354,19 @@ class FirebaseAPI: NSObject {
             let user = FIRAuth.auth()?.currentUser
             guard let firebaseID = user?.uid else {return}
             FIRDatabase.database().reference().child("Usuarios/\(firebaseID)/\(firUsuarioFavoritos)").setValue(perfilDic[firUsuarioFavoritos])
+        }
+    }
+    
+    static func changePassword() {
+        let user = FIRAuth.auth()?.currentUser
+        if let email = user?.email {
+            FIRAuth.auth()?.sendPasswordReset(withEmail: email, completion: { (error) in
+                if error != nil {
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: connectionError), object: nil)
+                } else {
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: perfilPassUpdated), object: nil)
+                }
+            })
         }
     }
     

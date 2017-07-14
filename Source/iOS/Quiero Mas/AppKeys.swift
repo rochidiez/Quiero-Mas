@@ -17,6 +17,7 @@ let sobreUpdated = "sobreUpdated"
 let terminosUpdated = "terminosUpdated"
 let perfilLoaded = "perfilLoaded"
 let perfilUpdated = "perfilUpdated"
+let perfilPassUpdated = "perfilPassUpdated"
 let recetasUpdated = "recetasUpdated"
 let recetasBasicasUpdated = "recetasBasicasUpdated"
 let estimulacionUpdated = "estimulacionUpdated"
@@ -77,6 +78,16 @@ let firUsuarioFavoritos = "Recetas Favoritas"
 
 //Firebase Recomendar
 let firRecomendar = "Recomendar"
+
+//Firebase Lactancia
+let firLactancia = "Lactancia"
+let firLactanciaTabla = "tabla"
+let firLactanciaTablaTitulo = "titulo"
+let firLactanciaTablaHtml = "html"
+let firLactanciaTitulo = "titulo"
+let firLactanciaTituloTitulo = "titulo"
+let firLactanciaTituloTexto = "texto"
+
 
 //User Defaults Keys
 let defRecetas = "recetas"

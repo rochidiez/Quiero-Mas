@@ -54,6 +54,7 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
     var recetaNombre: String?
     var recetaPostre: [String:String]?
     var recetaDia: [String:Any]?
+    var volverACocinar: String?
 
     
     //MARK: - View Did Load
@@ -82,6 +83,7 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
         setBottom()
         setPuntaje()
         showOrHideViews()
+        setVolverACocinar()
     }
     
     func setTop() {
@@ -121,20 +123,19 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
     
     func showOrHideViews() {
         showOrHidePostre()
-        showOrHideVolverACocinar()
         showOrHideTipDesarrollo()
     }
 
     func showOrHidePostre() {
         postreView.isHidden = recetaPostre == nil
     }
-    
-    func showOrHideVolverACocinar() {
-        volverACocinarLabel.isHidden = recetaDia == nil
-    }
 
     func showOrHideTipDesarrollo() {
         tipDesarrolloView.isHidden = recetaDia == nil
+    }
+    
+    func setVolverACocinar() {
+        volverACocinarLabel.text = volverACocinar
     }
     
     func setVarianteView() {

@@ -3380,7 +3380,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="300" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3fE-0V-M93">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="pch-5g-HGE">
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="pch-5g-HGE" userLabel="Top">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="270"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
@@ -3448,6 +3448,11 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
                                         <constraint firstItem="kZz-YJ-ERK" firstAttribute="top" secondItem="dNG-xb-DCe" secondAttribute="bottom" constant="20" id="mJk-AT-3zp"/>
                                         <constraint firstAttribute="trailing" secondItem="kZz-YJ-ERK" secondAttribute="trailing" id="ops-xi-ctK"/>
                                     </constraints>
+                                </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="6Ac-MB-2Ys" userLabel="Bottom">
+                                    <rect key="frame" x="0.0" y="598" width="375" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.96862745098039216" green="0.97254901960784312" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LactanciaTableViewCell" id="R7i-Xx-TvI" customClass="LactanciaTableViewCell" customModule="Quiero_Mas" customModuleProvider="target">
@@ -3638,9 +3643,11 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="descriptionTop" destination="Pts-tq-dd9" id="4MZ-ZF-hgT"/>
                         <outlet property="revealMenuButton" destination="S9F-nY-AjI" id="TOP-DP-bJN"/>
                         <outlet property="spinner" destination="Jcj-ja-8R7" id="Ppu-Mi-VoC"/>
                         <outlet property="table" destination="3fE-0V-M93" id="gWx-uf-yKo"/>
+                        <outlet property="titleTop" destination="dNG-xb-DCe" id="WYd-uh-DvY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ac9-jL-bPo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4766,6 +4773,9 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
                                             <state key="normal" title="CAMBIAR CONTRASEÑA">
                                                 <color key="titleColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="changePass:" destination="7hd-mV-qML" eventType="touchUpInside" id="EIr-pe-nVk"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" red="1" green="0.50588235290000005" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
