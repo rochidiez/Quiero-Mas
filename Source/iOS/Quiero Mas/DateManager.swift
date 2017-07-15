@@ -42,37 +42,48 @@ class DateManager: NSObject {
         return components.weekday!
     }
     
-    static func getBabyDayInPlan(birthday: String, currentDate: Date) -> Int {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        let birthdayDate = dateFormatter.date(from: birthday)!
-        
-        let calendar = Calendar.current
-        let component: Set<Calendar.Component> = [.day]
-        let timeDifference = calendar.dateComponents(component, from: birthdayDate, to: currentDate)
-        
-        let days = timeDifference.day! - 185
-        return days
+    static func getBabyDayInPlan() -> Int {
+        if let userDic = UserDefaults.standard.dictionary(forKey: defPerfil) {
+            if let bebeDic = userDic[defPerfilBebe] as? [String:String] {
+                if let dateString = bebeDic[defPerfilBebeFechaDeNacimiento] {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "dd/MM/yyyy"
+                    let birthdayDate = dateFormatter.date(from: dateString)!
+                    
+                    let currentDate = Date()
+                    let calendar = Calendar.current
+                    let component: Set<Calendar.Component> = [.day]
+                    let timeDifference = calendar.dateComponents(component, from: birthdayDate, to: currentDate)
+                    
+                    let days = timeDifference.day! - 185
+                    return days
+                }
+            }
+        }
+        return 0
     }
     
     static func getDateFromIndexInPlan(indexToTransform: Int, currentIndex: Int) -> String {
         let daysToAdd = indexToTransform - currentIndex
-        let currentDate = Date()
-        
-        var dateComponent = DateComponents()
-        
-        dateComponent.day = daysToAdd
-        
-        let futureDate = Calendar.current.date(byAdding: dateComponent, to: currentDate)
-        
-        print(currentDate)
-        print(futureDate!)
+        let futureDate = getDateByAddingDays(date: Date(), daysToAdd: daysToAdd)
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM"
-        let futureDateString = dateFormatter.string(from: futureDate!)
+        return dateFormatter.string(from: futureDate)
+    }
+    
+    static func getDateByAddingDays(date: Date, daysToAdd: Int) -> Date {
+        var dateComponent = DateComponents()
+        dateComponent.day = daysToAdd
+        return Calendar.current.date(byAdding: dateComponent, to: date)!
+    }
+    
+    static func getDateStringByAddingDays(date: Date, daysToAdd: Int) -> String {
+        let futureDate = getDateByAddingDays(date: date, daysToAdd: daysToAdd)
         
-        return futureDateString
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM"
+        return dateFormatter.string(from: futureDate)
     }
     
 }

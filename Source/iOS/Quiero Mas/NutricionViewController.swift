@@ -146,14 +146,7 @@ class NutricionViewController: UIViewController {
     }
     
     func loadBabyDayInPlan() {
-        if let userDic = UserDefaults.standard.dictionary(forKey: defPerfil) {
-            if let bebeDic = userDic[defPerfilBebe] as? [String:String] {
-                if let dateString = bebeDic[defPerfilBebeFechaDeNacimiento] {
-                    birthdayString = dateString
-                    babyDayInPlan = DateManager.getBabyDayInPlan(birthday: birthdayString!, currentDate: Date())
-                }
-            }
-        }
+        babyDayInPlan = DateManager.getBabyDayInPlan()
     }
     
     func loadBabyName() {
@@ -224,13 +217,13 @@ class NutricionViewController: UIViewController {
     func getVolverACocinarString(recetaName: String) -> String? {
         let babyDay = getNextAppearanceForReceta(recetaName: recetaName)
         guard babyDay != nil else {return nil}
-        let currentIndex = DateManager.getBabyDayInPlan(birthday: birthdayString!, currentDate: Date())
+        let currentIndex = DateManager.getBabyDayInPlan()
         let dateString = DateManager.getDateFromIndexInPlan(indexToTransform: babyDay!, currentIndex: currentIndex)
         return "Volveremos a cocinar esta receta el \(dateString)"
     }
     
     func getNextAppearanceForReceta(recetaName: String) -> Int? {
-        var babyDay = DateManager.getBabyDayInPlan(birthday: birthdayString!, currentDate: Date())
+        var babyDay = DateManager.getBabyDayInPlan()
         while babyDay < (recetasEdadArr?.count)! {
             if let currentDia = recetasEdadArr?[babyDay] {
                 //check almuerzo

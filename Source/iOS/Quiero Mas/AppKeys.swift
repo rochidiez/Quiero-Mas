@@ -40,9 +40,14 @@ let firPorEdadDesarrollo = "tip_desarrollo"
 
 let firPorNombre = "Por Nombre"
 
+let firIngredientes = "Ingredientes"
+let firIngredientesNombre = "nombre"
+
 let firRecetaPuntaje = "puntaje"
 let firRecetaPuntajeDatos = "datos"
 let firRecetaPuntajeTotal = "total"
+
+let firRecetaIngredientesLista = "ingredientes lista"
 
 let firRecetaIngredientes = "ingredientes"
 let firRecetaIngredientesNombre = "nombre"

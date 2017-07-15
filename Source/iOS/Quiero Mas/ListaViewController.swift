@@ -9,13 +9,16 @@
 import UIKit
 import SWRevealViewController
 
-class ListaViewController: UIViewController, UITableViewDataSource {
+class ListaViewController: UIViewController, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var revealMenuButton: UIBarButtonItem!
     @IBOutlet weak var orangeView: UIView!
     @IBOutlet weak var dateTF: UITextField!
-    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var table: UITableView!
+    
+    var ingredientes: [String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +41,7 @@ class ListaViewController: UIViewController, UITableViewDataSource {
     }
     
     func setDateTF() {
-        dateTF.inputView = datePicker
+        dateTF.inputView = picker
     }
     
     func setTapGesture() {
@@ -57,29 +60,17 @@ class ListaViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if ingredientes != nil {
+            return ingredientes!.count
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListaTableViewCell", for: indexPath) as! ListaTableViewCell
         
-        var text = ""
-        switch indexPath.row {
-        case 0:
-            text = "1 manzana"
-        case 1:
-            text = "2 bananas"
-        case 2:
-            text = "100gr de avena"
-        case 3:
-            text = "2 huevos"
-        case 4:
-            text = "200gr de manteca"
-        default:
-            text = ""
-        }
-        
-        cell.title.text = text
+        cell.title.text = ingredientes?[indexPath.row]
         
         return cell
     }
@@ -87,10 +78,165 @@ class ListaViewController: UIViewController, UITableViewDataSource {
     
     //MARK: - IBAction
     @IBAction func datePickerValueChanged(_ sender: Any) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        let selectedDate = dateFormatter.string(from: datePicker.date)
-        dateTF.text = selectedDate
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "dd/MM/yyyy"
+//        let selectedDate = dateFormatter.string(from: datePicker.date)
+//        dateTF.text = selectedDate
     }
 
+    //MARK: - Picker
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 7
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        var s = ""
+        switch row {
+        case 0:
+            s = "Lunes"
+        case 1:
+            s = "Martes"
+        case 2:
+            s = "Miércoles"
+        case 3:
+            s = "Jueves"
+        case 4:
+            s = "Viernes"
+        case 5:
+            s = "Sábado"
+        case 6:
+            s = "Domingo"
+        default:
+            s = ""
+        }
+        return s
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        setDateTF(weekDay: row)
+        
+        var currentDay = DateManager.getCurrentDay()
+        currentDay = (currentDay - 2) % 7
+        var diff = 0
+        var found = false
+        while (!found) {
+            if (currentDay + diff) % 7 == row {
+                found = true
+                break
+            }
+            diff += 1
+        }
+        
+        setDateLabel(diff: diff)
+        setTable(diff: diff)
+    }
+    
+    func setDateTF(weekDay: Int) {
+        switch weekDay {
+        case 0:
+            dateTF.text = "Lunes"
+        case 1:
+            dateTF.text = "Martes"
+        case 2:
+            dateTF.text = "Miércoles"
+        case 3:
+            dateTF.text = "Jueves"
+        case 4:
+            dateTF.text = "Viernes"
+        case 5:
+            dateTF.text = "Sábado"
+        case 6:
+            dateTF.text = "Domingo"
+        default:
+            print("")
+        }
+    }
+    
+    func setDateLabel(diff: Int) {
+        let initialMarketDateSring = DateManager.getDateStringByAddingDays(date: Date(), daysToAdd: diff)
+        let finalMarketDateString = DateManager.getDateStringByAddingDays(date: Date(), daysToAdd: diff+6)
+        dateLabel.text = "Para recetas del \(initialMarketDateSring) al \(finalMarketDateString)"
+    }
+    
+    func setTable(diff: Int) {
+        let initialIndex = DateManager.getBabyDayInPlan() + diff
+        let finalIndex = initialIndex + 6 <= 185 ? initialIndex + 6 : 185
+        ingredientes = getIngredientes(initialIndex: initialIndex, finalIndex: finalIndex)
+        table.reloadData()
+    }
+    
+    func getIngredientes(initialIndex: Int, finalIndex: Int) -> [String]? {
+        if let recetasDic = UserDefaults.standard.dictionary(forKey: defRecetas) {
+            if let rIngredientesDic = recetasDic[firIngredientes] as? [String:Any] {
+                if let rEdadArr = recetasDic[firPorEdad] as? [[String:Any]] {
+                    if let rDicNombre = recetasDic[firPorNombre] as? [String:Any] {
+                        
+                        //busco nombres de recetas
+                        var names = [String]()
+                        var i = initialIndex
+                        while i <= finalIndex {
+                            if let almuerzoDic = rEdadArr[i][firPorEdadAlmuerzo] as? [String:String] {
+                                names.append(almuerzoDic[firPorEdadAlmuerzoReceta]!)
+                            }
+                            if let cenaDic = rEdadArr[i][firPorEdadCena] as? [String:String] {
+                                names.append(cenaDic[firPorEdadCenaReceta]!)
+                            }
+                            i += 1
+                        }
+                        
+                        //busco recetas y sumo cantidades
+                        var cantDic = [String:Int]()
+                        for name in names {
+                            if let receta = rDicNombre[name] as? [String:Any] {
+                                if let ingredientesDic = receta[firRecetaIngredientesLista] as? [String:Int] {
+                                    for (key, element) in ingredientesDic {
+                                        if cantDic[key] == nil {
+                                            cantDic[key] = element
+                                        } else {
+                                            cantDic[key] = cantDic[key]! + element
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                        //busco nombres, cambio aridad y retorno
+                        var ingredientesList = [String]()
+                        for (key, element) in cantDic {
+                            if let nombreDic = rIngredientesDic[key] as? [String:String] {
+                                ingredientesList.append("\(element) \(nombreDic[firIngredientesNombre]!)")
+                            }
+                        }
+                        return ingredientesList
+                    }
+                }
+            }
+        }
+        
+        return ["100 gr de manteca", "2 bananas", "3 peras"]
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

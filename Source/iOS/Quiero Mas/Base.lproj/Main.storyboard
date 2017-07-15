@@ -109,7 +109,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYh-5y-lWp">
-                                            <rect key="frame" x="67" y="15" width="303" height="15"/>
+                                            <rect key="frame" x="67" y="14.5" width="303" height="15"/>
                                             <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="15"/>
                                             <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -150,7 +150,7 @@
         <scene sceneID="z5h-bx-0Cw">
             <objects>
                 <navigationController storyboardIdentifier="HomeNav" id="fOm-FH-05F" customClass="MenuNavigationController" customModule="Quiero_Mas" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cnU-bg-2Xz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cnU-bg-2Xz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -166,7 +166,7 @@
         <scene sceneID="P5B-7Z-Tcz">
             <objects>
                 <navigationController storyboardIdentifier="PlanNav" id="dHu-Sv-hxk" customClass="MenuNavigationController" customModule="Quiero_Mas" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4g6-EK-fW6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4g6-EK-fW6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1047,7 +1047,7 @@
         <scene sceneID="CMZ-qZ-rhg">
             <objects>
                 <navigationController storyboardIdentifier="EstimulacionNav" id="Alu-Yj-EqK" customClass="MenuNavigationController" customModule="Quiero_Mas" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dEz-ul-U9S">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dEz-ul-U9S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2677,7 +2677,7 @@
         <scene sceneID="MhM-su-zik">
             <objects>
                 <navigationController storyboardIdentifier="ABCNutricionNav" id="fSD-mb-Xps" customClass="MenuNavigationController" customModule="Quiero_Mas" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RcR-N7-Ovv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RcR-N7-Ovv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3353,7 +3353,7 @@
         <scene sceneID="3Nf-y4-u4p">
             <objects>
                 <navigationController storyboardIdentifier="LactanciaNav" id="kLK-sY-8uq" customClass="MenuNavigationController" customModule="Quiero_Mas" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="04b-bA-irt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="04b-bA-irt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3658,7 +3658,7 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
         <scene sceneID="e8A-Dc-y3e">
             <objects>
                 <navigationController storyboardIdentifier="TodasNav" id="2wX-gS-S2E" customClass="MenuNavigationController" customModule="Quiero_Mas" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hU6-b1-cIB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hU6-b1-cIB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3894,7 +3894,7 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
         <scene sceneID="r6h-8c-iKV">
             <objects>
                 <navigationController storyboardIdentifier="ListaNav" id="Uwn-Mx-0hy" customClass="MenuNavigationController" customModule="Quiero_Mas" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3mX-bj-NbF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3mX-bj-NbF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3975,13 +3975,13 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
                                             <rect key="frame" x="0.0" y="116" width="375" height="80"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LISTA DE INGREDIENTES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ow3-yE-uGc">
-                                                    <rect key="frame" x="86" y="20" width="203" height="18"/>
+                                                    <rect key="frame" x="86.5" y="20" width="203" height="18"/>
                                                     <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para recetas del 20 al 27 de Enero" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fho-cW-gRH">
-                                                    <rect key="frame" x="61.5" y="48" width="251.5" height="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fho-cW-gRH">
+                                                    <rect key="frame" x="187.5" y="48" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -4143,25 +4143,23 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="datePicker" destination="kkm-ar-PMi" id="jtR-CB-XSi"/>
+                        <outlet property="dateLabel" destination="Fho-cW-gRH" id="nX1-8M-JmA"/>
                         <outlet property="dateTF" destination="4dJ-fu-9Nn" id="WUI-im-eby"/>
                         <outlet property="orangeView" destination="4l4-vE-0pr" id="HGa-qx-bPS"/>
+                        <outlet property="picker" destination="pfN-YG-BBS" id="wac-TT-NQs"/>
                         <outlet property="revealMenuButton" destination="1WF-Y5-hbN" id="iaC-iI-TwC"/>
                         <outlet property="table" destination="JV4-7k-5SD" id="1fi-0i-Hef"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAz-uj-7Ib" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="kkm-ar-PMi">
+                <pickerView contentMode="scaleToFill" id="pfN-YG-BBS">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <date key="date" timeIntervalSinceReferenceDate="518321218.59247798">
-                        <!--2017-06-05 02:06:58 +0000-->
-                    </date>
-                    <locale key="locale" localeIdentifier="es_AR"/>
                     <connections>
-                        <action selector="datePickerValueChanged:" destination="oIL-MN-5Jo" eventType="valueChanged" id="F3n-kL-a2v"/>
+                        <outlet property="dataSource" destination="oIL-MN-5Jo" id="phl-CY-dW5"/>
+                        <outlet property="delegate" destination="oIL-MN-5Jo" id="RHd-xE-5AH"/>
                     </connections>
-                </datePicker>
+                </pickerView>
             </objects>
             <point key="canvasLocation" x="2494" y="4387"/>
         </scene>
@@ -4169,7 +4167,7 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
         <scene sceneID="gwU-CJ-TTJ">
             <objects>
                 <navigationController storyboardIdentifier="FavoritasNav" id="bJm-ua-xTl" customClass="MenuNavigationController" customModule="Quiero_Mas" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dAR-ZP-7gw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dAR-ZP-7gw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4312,7 +4310,7 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
         <scene sceneID="Fo3-oT-qym">
             <objects>
                 <navigationController storyboardIdentifier="SobreNav" id="0HM-m5-Kyt" customClass="MenuNavigationController" customModule="Quiero_Mas" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uAU-pi-seg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uAU-pi-seg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4439,7 +4437,7 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
         <scene sceneID="VBb-50-8fE">
             <objects>
                 <navigationController storyboardIdentifier="RecomendarNav" id="mZr-W0-zel" customClass="MenuNavigationController" customModule="Quiero_Mas" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="v3I-a8-eHn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="v3I-a8-eHn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4639,7 +4637,7 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
         <scene sceneID="uPu-HR-DMN">
             <objects>
                 <navigationController storyboardIdentifier="TerminosNav" id="FXE-Lu-lax" customClass="MenuNavigationController" customModule="Quiero_Mas" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="U4F-Ne-j4u">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="U4F-Ne-j4u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4705,7 +4703,7 @@ Pero no es solamente una razón nutricional, sino que es la continuación de una
         <scene sceneID="ER9-pk-lTu">
             <objects>
                 <navigationController storyboardIdentifier="PerfilNav" id="gvs-Kk-F5c" customClass="MenuNavigationController" customModule="Quiero_Mas" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="WB0-e4-ebq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WB0-e4-ebq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
