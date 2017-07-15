@@ -18,17 +18,53 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var babyImgView: UIImageView!
     
+    //Top Left
+    @IBOutlet weak var tlLabel: UILabel!
+    @IBOutlet weak var tlImg: UIImageView!
+    @IBOutlet weak var tlImgHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tlImgWidthConstraint: NSLayoutConstraint!
+    
+    //Top Right
+    @IBOutlet weak var trLabel: UILabel!
+    @IBOutlet weak var trImg: UIImageView!
+    
+    //Botom Left
+    @IBOutlet weak var blLabel: UILabel!
+    @IBOutlet weak var blImg: UIImageView!
+    
+    //Bottom Right
+    @IBOutlet weak var brLabel: UILabel!
+    @IBOutlet weak var brImg: UIImageView!
+    
     //Circle View
     @IBOutlet weak var circleView: UIView!
+    
+    var picCornered = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setRevealMenuButton()
         setBottomBabyConstraint()
+        setListeners()
+        setConstraints()
+    }
+    
+    func setListeners() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadPerfil), name: NSNotification.Name(rawValue: perfilUpdated), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadPerfil), name: NSNotification.Name(rawValue: perfilLoaded), object: nil)
     }
 
+    func setConstraints() {
+        if DeviceType.IS_IPHONE_5 {
+            tlImgWidthConstraint.constant = 35
+            tlImgHeightConstraint.constant = 35
+            tlLabel.font = UIFont(name: "Cera-Medium", size: 12)
+            trLabel.font = UIFont(name: "Cera-Medium", size: 12)
+            blLabel.font = UIFont(name: "Cera-Medium", size: 12)
+            brLabel.font = UIFont(name: "Cera-Medium", size: 12)
+        }
+    }
+    
     func setBottomBabyConstraint() {
         babyBottomConstraint.constant = self.view.frame.height/2
     }
@@ -67,9 +103,13 @@ class HomeViewController: UIViewController {
         } else if DeviceType.IS_IPHONE_6 {
             val = 0
         } else {
-            val = -5
+            val = -10
         }
-        babyImgView.layer.cornerRadius = babyImgView.frame.width/2 + CGFloat(val)
+        
+        if !picCornered {
+            babyImgView.layer.cornerRadius = babyImgView.frame.width/2 + CGFloat(val)
+            picCornered = !picCornered
+        }
     }
     
     func reloadPerfil() {

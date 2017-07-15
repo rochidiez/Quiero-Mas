@@ -47,6 +47,7 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tipDesarrolloView: UIView!
     
     //Volver a cocinar
+    @IBOutlet weak var reutilizarLabel: UILabel!
     @IBOutlet weak var volverACocinarLabel: UILabel!
     
     
@@ -62,6 +63,7 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         setNavBar()
         setTable()
+        setCongelarLabel()
     }
 
     func setNavBar() {
@@ -72,6 +74,12 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
     func setTable() {
         table.register(UINib(nibName: "IngredientesTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "IngredientesTableViewCell")
         table.register(UINib(nibName: "PasosTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "PasosTableViewCell")
+    }
+    
+    func setCongelarLabel() {
+        if DeviceType.IS_IPHONE_5 {
+            reutilizarLabel.font = UIFont(name: "Cera-Bold", size: 13)
+        }
     }
     
     
@@ -139,8 +147,16 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func setVarianteView() {
+        var val = 0
+        if DeviceType.IS_IPHONE_6P {
+            val = 20
+        } else if DeviceType.IS_IPHONE_6 {
+            val = 40
+        } else {
+            val = 80
+        }
         if let labelHeight = varianteLabel.text?.height(withConstrainedWidth: varianteLabel.frame.width, font: varianteLabel.font) {
-            let viewHeight = varianteLabel.frame.origin.y + labelHeight + 32
+            let viewHeight = varianteLabel.frame.origin.y + labelHeight + CGFloat(val)
             varianteHeightConstraint.constant = viewHeight
         }
     }

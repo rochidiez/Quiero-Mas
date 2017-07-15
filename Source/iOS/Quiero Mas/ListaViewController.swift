@@ -71,17 +71,16 @@ class ListaViewController: UIViewController, UITableViewDataSource, UIPickerView
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListaTableViewCell", for: indexPath) as! ListaTableViewCell
         
         cell.title.text = ingredientes?[indexPath.row]
+        cell.cancelButton.tag = indexPath.row
+        cell.cancelButton.addTarget(self, action: #selector(deleteIngredient(_:)), for: .touchUpInside)
         
         return cell
     }
     
-    
-    //MARK: - IBAction
-    @IBAction func datePickerValueChanged(_ sender: Any) {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "dd/MM/yyyy"
-//        let selectedDate = dateFormatter.string(from: datePicker.date)
-//        dateTF.text = selectedDate
+    //MARK: - Delete element
+    @IBAction func deleteIngredient(_ sender: UIButton) {
+        ingredientes?.remove(at: sender.tag)
+        table.reloadData()
     }
 
     //MARK: - Picker
@@ -217,7 +216,7 @@ class ListaViewController: UIViewController, UITableViewDataSource, UIPickerView
             }
         }
         
-        return ["100 gr de manteca", "2 bananas", "3 peras"]
+        return nil
     }
 
     
