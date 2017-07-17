@@ -83,22 +83,7 @@ public class NutritionPlanRecipesFragment extends BaseFragment {
         FrameLayout dinnerContainer = (FrameLayout) view.findViewById(R.id.recipe_dinner_container);
         dinnerContainer.addView(cenaView);
 
-        firebaseDatabaseHelper =  new FirebaseDatabaseHelper();
-        firebaseDatabaseHelper.getPlanByAgeReference().addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                GenericTypeIndicator<ArrayList<DiaPlanNutricion>> t = new GenericTypeIndicator<ArrayList<DiaPlanNutricion>>() {};
-                ArrayList<DiaPlanNutricion> dataArray = dataSnapshot.getValue(t);
-                data = dataArray.get(dia);
-               getReceta(true);
-               getReceta(false);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
+        updateDay(dia);
 
     }
 
@@ -170,6 +155,26 @@ public class NutritionPlanRecipesFragment extends BaseFragment {
         });
 
 
+    }
+
+    public void updateDay(int day){
+        dia = day;
+        firebaseDatabaseHelper =  new FirebaseDatabaseHelper();
+        firebaseDatabaseHelper.getPlanByAgeReference().addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                GenericTypeIndicator<ArrayList<DiaPlanNutricion>> t = new GenericTypeIndicator<ArrayList<DiaPlanNutricion>>() {};
+                ArrayList<DiaPlanNutricion> dataArray = dataSnapshot.getValue(t);
+                data = dataArray.get(dia);
+                getReceta(true);
+                getReceta(false);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
 }

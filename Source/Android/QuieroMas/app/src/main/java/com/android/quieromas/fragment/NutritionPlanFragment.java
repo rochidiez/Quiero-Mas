@@ -15,10 +15,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.quieromas.R;
 import com.android.quieromas.activity.MainActivity;
+import com.android.quieromas.helper.AgeHelper;
 import com.android.quieromas.helper.FirebaseDatabaseHelper;
 import com.android.quieromas.model.user.User;
 import com.google.firebase.database.DataSnapshot;
@@ -35,10 +37,14 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private LinearLayout previousWeek;
+    private LinearLayout nextWeek;
+    ViewPagerAdapter adapter;
     TextView txtBabyName;
     TextView txtPlanStage;
     FirebaseDatabaseHelper firebaseDatabaseHelper;
     User user;
+    int planWeek = -1;
 
 
 
@@ -74,9 +80,9 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
         tabLayout = (TabLayout) view.findViewById(R.id.tabs);
         txtBabyName = (TextView) view.findViewById(R.id.txt_plan_baby_name);
         txtPlanStage = (TextView) view.findViewById(R.id.txt_plan_stage);
+        previousWeek = (LinearLayout) view.findViewById(R.id.nutrition_plan_previous_week);
+        nextWeek = (LinearLayout) view.findViewById(R.id.nutrition_plan_next_week);
 
-        setupViewPager(viewPager);
-        tabLayout.setupWithViewPager(viewPager);
 
         firebaseDatabaseHelper = new FirebaseDatabaseHelper();
         firebaseDatabaseHelper.getCurrentUserReference().addListenerForSingleValueEvent(new ValueEventListener() {
@@ -99,20 +105,68 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
 
 
     private void updateUI(){
+
+
+        AgeHelper ageHelper = new AgeHelper();
+        planWeek = ageHelper.getPlanWeek(user.bebe.fechaDeNacimiento);
+        int totalWeek = ageHelper.getTotalWeeks(user.bebe.fechaDeNacimiento);
+
         txtBabyName.setText(user.bebe.nombre);
+
+        int months = (int) Math.floor(totalWeek / 4);
+        int weeks = totalWeek % 4;
+        String weekText = " semana";
+        if(weeks > 1){
+            weekText += "s";
+        }
+        txtPlanStage.setText(months + " meses, " + weeks + weekText);
+
+        previousWeek.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                planWeek--;
+                setupViewPager(viewPager, planWeek);
+            }
+        });
+
+        nextWeek.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                planWeek++;
+                setupViewPager(viewPager, planWeek);
+            }
+        });
+
+
+        setupViewPager(viewPager, planWeek);
+        tabLayout.setupWithViewPager(viewPager);
+
     }
 
 
-    private void setupViewPager(ViewPager viewPager) {
+    private void setupViewPager(ViewPager viewPager, int week) {
 
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getFragmentManager());
-        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(0), "Lun");
-        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(1), "Mar");
-        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(2), "Mie");
-        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(3), "Jue");
-        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(4), "Vie");
-        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(5), "Sab");
-        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(6), "Dom");
+        int day = week * 7;
+
+        //para no quedarse sin recetas!
+        if(day  > 180){
+            day = 179;
+        }
+        adapter = new ViewPagerAdapter(getFragmentManager());
+
+        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day), "Lun");
+        day++;
+        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day), "Mar");
+        day++;
+        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day), "Mie");
+        day++;
+        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day), "Jue");
+        day++;
+        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day), "Vie");
+        day++;
+        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day), "Sab");
+        day++;
+        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day), "Dom");
         viewPager.setAdapter(adapter);
     }
 
@@ -123,7 +177,7 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
-        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<NutritionPlanRecipesFragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
 
         public ViewPagerAdapter(android.support.v4.app.FragmentManager manager) {
@@ -131,7 +185,12 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
         }
 
         @Override
-        public Fragment getItem(int position) {
+        public int getItemPosition(Object object) {
+            return POSITION_NONE;
+        }
+
+        @Override
+        public NutritionPlanRecipesFragment getItem(int position) {
             return mFragmentList.get(position);
         }
 
@@ -140,10 +199,11 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
             return mFragmentList.size();
         }
 
-        public void addFragment(Fragment fragment, String title) {
+        public void addFragment(NutritionPlanRecipesFragment fragment, String title) {
             mFragmentList.add(fragment);
             mFragmentTitleList.add(title);
         }
+
 
         @Override
         public CharSequence getPageTitle(int position) {

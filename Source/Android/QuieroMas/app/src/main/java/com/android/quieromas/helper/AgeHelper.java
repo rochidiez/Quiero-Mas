@@ -49,4 +49,12 @@ public class AgeHelper {
         return Weeks.weeksBetween(sixMonths,new DateTime()).getWeeks();
     }
 
+    public int getTotalWeeks(String babyBirthdate){
+        DateTime birthdate = dtf.parseDateTime(babyBirthdate);
+
+        int weeks = Weeks.weeksBetween(birthdate,new DateTime()).getWeeks();
+
+        return weeks;
+    }
+
 }
