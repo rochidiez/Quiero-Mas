@@ -84,7 +84,7 @@ class PerfilViewController: UIViewController, UITableViewDataSource, UITableView
     func passUpdated() {
         let user = FIRAuth.auth()?.currentUser
         if let email = user?.email {
-            showAlert(text: "Email de cambio de contraseña enviado exitósamente a: \(email)")
+            showAlert(text: "Email de cambio de contraseña enviado exitósamente a \(email)")
         }
     }
     

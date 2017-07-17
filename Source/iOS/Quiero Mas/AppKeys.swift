@@ -22,6 +22,7 @@ let recetasUpdated = "recetasUpdated"
 let recetasBasicasUpdated = "recetasBasicasUpdated"
 let estimulacionUpdated = "estimulacionUpdated"
 let postresUpdated = "postresUpdated"
+let ingredientesSent = "ingredientesSent"
 
 let perfilNotFound = "perfilNotFound"
 let connectionError = "connectionError"

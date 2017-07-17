@@ -8,6 +8,7 @@
 
 import UIKit
 import SWRevealViewController
+import Firebase
 
 class ListaViewController: UIViewController, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate {
 
@@ -26,6 +27,7 @@ class ListaViewController: UIViewController, UITableViewDataSource, UIPickerView
         setAppMainColor()
         setDateTF()
         setTapGesture()
+        setObservers()
     }
     
     func setRevealMenuButton() {
@@ -51,6 +53,30 @@ class ListaViewController: UIViewController, UITableViewDataSource, UIPickerView
     
     func tapGestureHandler() {
         self.view.endEditing(true)
+    }
+    
+    func setObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.ingredientesSentAlert), name: NSNotification.Name(rawValue: ingredientesSent), object: nil)
+    }
+    
+    func ingredientesSentAlert() {
+        let user = FIRAuth.auth()?.currentUser
+        if let email = user?.email {
+            showAlert(text: "Tu lista de compras se ha enviado exitósamente a \(email)")
+        }
+    }
+    
+    func showAlert(text: String) {
+        let alert = UIAlertController(title: "",
+                                      message: text,
+                                      preferredStyle: UIAlertControllerStyle.alert)
+        
+        let cancelAction = UIAlertAction(title: "OK",
+                                         style: .cancel, handler: nil)
+        
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+        return
     }
     
     
@@ -220,7 +246,12 @@ class ListaViewController: UIViewController, UITableViewDataSource, UIPickerView
     }
 
     
-    
+    //MARK: - IBAction
+    @IBAction func sendEmail(_ sender:Any) {
+        if ingredientes != nil {
+            FirebaseAPI.sendIngredients(list: ingredientes!)
+        }
+    }
     
     
     

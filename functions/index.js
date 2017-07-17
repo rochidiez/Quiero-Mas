@@ -3,6 +3,9 @@ const admin = require('firebase-admin');
 
 admin.initializeApp(functions.config().firebase);
 
+// URL: "https://us-central1-quiero-mas.cloudfunctions.net/enviarLista/"
+// parámetros: ["user": String, "list": [String]]  ---  ej: ["user": "userEmail@gmail.com", "list": ["2 huevos", "4 bananas"]]
+// respuesta: ["success": Bool]
 exports.enviarLista = functions.https.onRequest((req, res) => {
 	var dic = req.body;
 	var userEmail = dic.email;
