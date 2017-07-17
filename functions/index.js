@@ -1,11 +1,35 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
-var qs = require('querystring');
+
 admin.initializeApp(functions.config().firebase);
 
 exports.enviarLista = functions.https.onRequest((req, res) => {
-	var body = req.body;
-	console.log('body: ', body);
+	var dic = req.body;
+	var userEmail = dic.email;
+	var list = dic.list;
+	var parsedList = list.map(function (ingredient) {
+		return "- " + ingredient + "\n";
+	});
+	var emailText = "Tu lista de compras de Quiero Más!\n" + parsedList.join("");
+
+	console.log('enviando mail a: ', userEmail);
+	console.log('cuerpo de mail: ', emailText);
+
+	var send = require('gmail-send')({
+	  user: 'ferfrassia@gmail.com',
+	  pass: 'kqnxqwpbyhqpscsq',
+	  to:   userEmail,
+	  subject: 'Lista de compras de Quiero Más!',
+	  text:    emailText,
+	});
+	 
+	send({}, function (err, res) {
+		if (err != null) {
+			console.log('error: ', err);
+			console.log('result: ', res);
+		}
+	});
+
 	res.send({success: true});
 });
 
@@ -77,6 +101,7 @@ exports.registrar = functions.https.onRequest((req, res) => {
 				admin.database().ref('/Bebés de menos de 6 meses').child(firebaseID).set(fechaBebe);
 			}
 		}
-		res.json({success: true})
+		res.json({success: true});
 	}
+	res.json({success: false});
 });
