@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.quieromas.R;
+import com.android.quieromas.fragment.AbcFragment;
 import com.android.quieromas.fragment.AboutUsFragment;
 import com.android.quieromas.fragment.BaseFragment;
 import com.android.quieromas.fragment.DevelopmentFragment;
@@ -27,6 +28,7 @@ import com.android.quieromas.fragment.HomeFragment;
 import com.android.quieromas.fragment.LactationFragment;
 import com.android.quieromas.fragment.NutritionPlanFragment;
 import com.android.quieromas.fragment.ProfileFragment;
+import com.android.quieromas.fragment.ShoppingListFragment;
 import com.android.quieromas.fragment.TermsFragment;
 import com.android.quieromas.helper.AgeHelper;
 import com.android.quieromas.helper.FirebaseDatabaseHelper;
@@ -230,20 +232,18 @@ public class MainActivity extends AuthActivity
 //
         } else if (id == R.id.nav_nutrition_plan) {
             fragmentClass = nutritionPlanFragment;
-//
         } else if (id == R.id.nav_education) {
             fragmentClass = DevelopmentFragment.class;
-//
-//        } else if (id == R.id.nav_nutrition) {
-//
+
+        } else if (id == R.id.nav_nutrition) {
+            fragmentClass = AbcFragment.class;
         } else if (id == R.id.nav_lactancy) {
             fragmentClass = LactationFragment.class;
-//
-//        } else if (id == R.id.nav_shopping_list) {
-//
+
+        } else if (id == R.id.nav_shopping_list) {
+            fragmentClass = ShoppingListFragment.class;
         } else if (id == R.id.nav_favorites) {
             fragmentClass = FavoriteRecipesFragment.class;
-//
         } else if (id == R.id.nav_about) {
             fragmentClass = AboutUsFragment.class;
 //        } else if (id == R.id.nav_share) {

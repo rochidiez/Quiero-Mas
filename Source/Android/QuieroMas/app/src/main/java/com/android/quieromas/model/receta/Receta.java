@@ -1,8 +1,10 @@
 package com.android.quieromas.model.receta;
 
 import com.google.firebase.database.IgnoreExtraProperties;
+import com.google.firebase.database.PropertyName;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by lucas on 27/6/17.
@@ -19,7 +21,10 @@ public class Receta {
     public ArrayList<Ingrediente> ingredientes;
     public String titulo;
 
-    public Receta(String thumbnail, String tip_nutricional, String variante, String video, com.android.quieromas.model.receta.Puntaje puntaje, ArrayList<String> pasos, ArrayList<Ingrediente> ingredientes) {
+    @PropertyName("ingredientes lista")
+    public HashMap<String,String> ingredientesLista;
+
+    public Receta(String thumbnail, String tip_nutricional, String variante, String video, Puntaje puntaje, ArrayList<String> pasos, ArrayList<Ingrediente> ingredientes, String titulo, HashMap<String, String> ingredientesLista) {
         this.thumbnail = thumbnail;
         this.tip_nutricional = tip_nutricional;
         this.variante = variante;
@@ -27,6 +32,8 @@ public class Receta {
         this.puntaje = puntaje;
         this.pasos = pasos;
         this.ingredientes = ingredientes;
+        this.titulo = titulo;
+        this.ingredientesLista = ingredientesLista;
     }
 
     public Receta(){}
@@ -61,4 +68,7 @@ public class Receta {
 
     public String getTitulo(){return titulo;}
 
+    public HashMap<String, String> getIngredientesLista() {
+        return ingredientesLista;
+    }
 }
