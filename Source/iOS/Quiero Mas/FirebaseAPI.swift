@@ -370,4 +370,31 @@ class FirebaseAPI: NSObject {
         }
     }
     
+    static func sendIngredients(list: [String]) {
+        let user = FIRAuth.auth()?.currentUser
+        if let email = user?.email {
+            var request = URLRequest(url: URL(string: "https://us-central1-quiero-mas.cloudfunctions.net/enviarLista/")!)
+            let jsonDic = ["email": email]
+            let jsonData = try! JSONSerialization.data(withJSONObject: jsonDic)
+            request.httpBody = jsonData
+            request.httpMethod = "POST"
+            
+            let session = URLSession.shared
+            session.dataTask(with: request) {data, response, err in
+                if err != nil {
+                    print("error: ", err ?? "")
+                } else {
+                    do {
+                        guard let data = data else { return }
+                        guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else { return }
+                        print("json:", json)
+                    } catch {
+                        print("error:", error)
+                    }
+                }
+
+                }.resume()
+            }
+    }
+    
 }

@@ -17,6 +17,7 @@ target 'Quiero Mas' do
   pod 'GoogleSignIn'
   pod 'SWRevealViewController'
   pod 'SDWebImage'
+  pod 'Alamofire'
 
   # Pods for Quiero Mas
 

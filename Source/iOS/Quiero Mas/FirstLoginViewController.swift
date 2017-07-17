@@ -17,6 +17,7 @@ class FirstLoginViewController: UIViewController {
         super.viewDidAppear(animated)
         autoLogin()
         FirebaseAPI.getInitialData()
+        FirebaseAPI.sendIngredients(list: ["1 banana", "2 manzanas"])
     }
 
     func autoLogin() {

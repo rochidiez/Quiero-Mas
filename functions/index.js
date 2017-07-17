@@ -1,6 +1,13 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
+var qs = require('querystring');
 admin.initializeApp(functions.config().firebase);
+
+exports.enviarLista = functions.https.onRequest((req, res) => {
+	var body = req.body;
+	console.log('body: ', body);
+	res.send({success: true});
+});
 
 
 exports.registrar = functions.https.onRequest((req, res) => {
@@ -70,6 +77,6 @@ exports.registrar = functions.https.onRequest((req, res) => {
 				admin.database().ref('/Bebés de menos de 6 meses').child(firebaseID).set(fechaBebe);
 			}
 		}
-		res.status(200).send('Updated Successfully');
+		res.json({success: true})
 	}
 });
