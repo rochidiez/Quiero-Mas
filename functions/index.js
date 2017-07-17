@@ -4,7 +4,7 @@ const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 
 // URL: "https://us-central1-quiero-mas.cloudfunctions.net/enviarLista/"
-// parámetros: ["user": String, "list": [String]]  ---  ej: ["user": "userEmail@gmail.com", "list": ["2 huevos", "4 bananas"]]
+// parámetros: ["email": String, "list": [String]]  ---  ej: ["email": "userEmail@gmail.com", "list": ["2 huevos", "4 bananas"]]
 // respuesta: ["success": Bool]
 exports.enviarLista = functions.https.onRequest((req, res) => {
 	var dic = req.body;
@@ -23,6 +23,35 @@ exports.enviarLista = functions.https.onRequest((req, res) => {
 	  pass: 'kqnxqwpbyhqpscsq',
 	  to:   userEmail,
 	  subject: 'Lista de compras de Quiero Más!',
+	  text:    emailText,
+	});
+	 
+	send({}, function (err, res) {
+		if (err != null) {
+			console.log('error: ', err);
+			console.log('result: ', res);
+		}
+	});
+
+	res.send({success: true});
+});
+
+// URL: "https://us-central1-quiero-mas.cloudfunctions.net/recomendar"
+// parámetros: ["email": String]  ---  ej: ["email": "userEmail@gmail.com"]
+// respuesta: ["success": Bool]
+exports.recomendar = functions.https.onRequest((req, res) => {
+	var dic = req.body;
+	var userEmail = dic.email;
+	var emailText = "Bajáte la app Quiero Más!";
+
+	console.log('enviando mail a: ', userEmail);
+	console.log('cuerpo de mail: ', emailText);
+
+	var send = require('gmail-send')({
+	  user: 'ferfrassia@gmail.com',
+	  pass: 'kqnxqwpbyhqpscsq',
+	  to:   userEmail,
+	  subject: 'App Quiero Más!',
 	  text:    emailText,
 	});
 	 
