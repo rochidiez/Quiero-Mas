@@ -37,30 +37,35 @@ exports.enviarLista = functions.https.onRequest((req, res) => {
 });
 
 // URL: "https://us-central1-quiero-mas.cloudfunctions.net/recomendar"
-// parámetros: ["email": String]  ---  ej: ["email": "userEmail@gmail.com"]
+// parámetros: ["emails": [String]]  ---  ej: ["emails": ["user1@gmail.com", "user2@gmail.com", "user3@gmail.com", "user4@gmail.com"]]
 // respuesta: ["success": Bool]
 exports.recomendar = functions.https.onRequest((req, res) => {
 	var dic = req.body;
-	var userEmail = dic.email;
-	var emailText = "Bajáte la app Quiero Más!";
+	var emailsArr = dic.emails;
+	var emailText = "Bajate la app Quiero Más!";
 
-	console.log('enviando mail a: ', userEmail);
-	console.log('cuerpo de mail: ', emailText);
+	var i = 0
+	while (i < emailsArr.length) {
+		var userEmail = emailsArr[i];
+		console.log('enviando mail a: ', userEmail);
 
-	var send = require('gmail-send')({
-	  user: 'ferfrassia@gmail.com',
-	  pass: 'kqnxqwpbyhqpscsq',
-	  to:   userEmail,
-	  subject: 'App Quiero Más!',
-	  text:    emailText,
-	});
-	 
-	send({}, function (err, res) {
-		if (err != null) {
-			console.log('error: ', err);
-			console.log('result: ', res);
-		}
-	});
+		var send = require('gmail-send')({
+		  user: 'ferfrassia@gmail.com',
+		  pass: 'kqnxqwpbyhqpscsq',
+		  to:   userEmail,
+		  subject: 'App Quiero Más!',
+		  text:    emailText,
+		});
+		 
+		send({}, function (err, res) {
+			if (err != null) {
+				console.log('error: ', err);
+				console.log('result: ', res);
+			}
+		});
+
+		i = i+1
+	}
 
 	res.send({success: true});
 });
