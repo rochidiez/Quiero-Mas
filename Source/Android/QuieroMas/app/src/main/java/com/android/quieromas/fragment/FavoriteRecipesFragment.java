@@ -28,16 +28,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class FavoriteRecipesFragment extends Fragment {
+public class FavoriteRecipesFragment extends BaseRecipeFragment {
 
     private static final String ARG_COLUMN_COUNT = "column-count";
     private int mColumnCount = 1;
-    private OnListFragmentInteractionListener mListener;
-
-    ArrayList<String> favoriteRecipesNames = new ArrayList<>();
-    ArrayList<Receta> favoriteRecipes = new ArrayList<>();
-    FirebaseDatabaseHelper firebaseDatabaseHelper;
-    EmptyRecyclerView recyclerView;
 
     public FavoriteRecipesFragment() {
     }
@@ -83,7 +77,7 @@ public class FavoriteRecipesFragment extends Fragment {
         Context context = view.getContext();
         recyclerView = (EmptyRecyclerView) view.findViewById(R.id.list);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
-        //recyclerView.setAdapter(new MyFavoriteRecipesRecyclerViewAdapter(favoriteRecipes, mListener));
+        //recyclerView.setAdapter(new MyFavoriteRecipesRecyclerViewAdapter(recipes, mListener));
         recyclerView.setEmptyView(view.findViewById(R.id.empty_view));
 
         firebaseDatabaseHelper = new FirebaseDatabaseHelper();
@@ -91,9 +85,29 @@ public class FavoriteRecipesFragment extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 GenericTypeIndicator<ArrayList<String>> t = new GenericTypeIndicator<ArrayList<String>>() {};
-                favoriteRecipesNames = dataSnapshot.getValue(t);
-                if(favoriteRecipesNames != null && favoriteRecipesNames.size() > 0){
-                    addRecipes();
+                recipesNames = dataSnapshot.getValue(t);
+                if(recipesNames != null && recipesNames.size() > 0){
+                    firebaseDatabaseHelper.getRecipesByNameReference().addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            GenericTypeIndicator<HashMap<String,Receta>> t = new GenericTypeIndicator<HashMap<String,Receta>>() {};
+                            HashMap<String,Receta> hm = dataSnapshot.getValue(t);
+                            for(int i = 0; i < recipesNames.size(); i++){
+                                if(hm.containsKey(recipesNames.get(i))){
+                                    Receta receta = hm.get(recipesNames.get(i));
+                                    receta.titulo = recipesNames.get(i);
+                                    receta.isFavorite = true;
+                                    recipes.add(receta);
+                                }
+                            }
+                            addRecipes();
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
                 }
             }
 
@@ -104,65 +118,4 @@ public class FavoriteRecipesFragment extends Fragment {
         });
     }
 
-    void addRecipes(){
-        firebaseDatabaseHelper.getRecipesByNameReference().addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                GenericTypeIndicator<HashMap<String,Receta>> t = new GenericTypeIndicator<HashMap<String,Receta>>() {};
-                HashMap<String,Receta> hm = dataSnapshot.getValue(t);
-                for(int i = 0; i < favoriteRecipesNames.size(); i++){
-                    if(hm.containsKey(favoriteRecipesNames.get(i))){
-                        Receta receta = hm.get(favoriteRecipesNames.get(i));
-                        receta.titulo = favoriteRecipesNames.get(i);
-                        favoriteRecipes.add(receta);
-                    }
-                }
-                recyclerView.setAdapter(new MyFavoriteRecipesRecyclerViewAdapter(favoriteRecipes, mListener));
-
-                recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getActivity(),
-                        recyclerView, new ClickListener() {
-
-                    @Override
-                    public void onClick(View view, final int position) {
-                        String name = favoriteRecipesNames.get(position);
-                        Intent intent = new Intent(getActivity(), RecipeActivity.class);
-                        intent.putExtra("RECIPE", name);
-                        startActivity(intent);
-                    }
-
-
-                }));
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
-
-
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnListFragmentInteractionListener) {
-            mListener = (OnListFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnListFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-
-    public interface OnListFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onListFragmentInteraction(Receta item);
-    }
 }

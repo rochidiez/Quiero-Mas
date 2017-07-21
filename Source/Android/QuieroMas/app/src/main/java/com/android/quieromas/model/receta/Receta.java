@@ -20,6 +20,7 @@ public class Receta {
     public ArrayList<String> pasos;
     public ArrayList<Ingrediente> ingredientes;
     public String titulo;
+    public boolean isFavorite = false;
 
     @PropertyName("ingredientes lista")
     public HashMap<String,Integer> ingredientesLista;

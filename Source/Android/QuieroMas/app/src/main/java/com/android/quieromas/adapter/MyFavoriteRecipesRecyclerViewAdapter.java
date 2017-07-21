@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.quieromas.R;
-import com.android.quieromas.fragment.FavoriteRecipesFragment.OnListFragmentInteractionListener;
+import com.android.quieromas.fragment.BaseRecipeFragment.OnListFragmentInteractionListener;
 import com.android.quieromas.model.receta.Receta;
 import com.squareup.picasso.Picasso;
 
@@ -38,6 +38,11 @@ public class MyFavoriteRecipesRecyclerViewAdapter extends RecyclerView.Adapter<M
         holder.mItem = mValues.get(position);
        // holder.txtMeal.setText(mValues.get(position).id);
         holder.txtTitle.setText(mValues.get(position).getTitulo());
+
+        holder.btnFav.setVisibility(View.VISIBLE);
+        if(holder.mItem.isFavorite == false){
+           holder.btnFav.setBackground(holder.btnFav.getResources().getDrawable(R.drawable.fav_vacio));
+        }
 
         Picasso.with(holder.imgBackground.getContext()).load(mValues.get(position).getThumbnail())
                 //.resize(holder.imgBackground.getWidth(),holder.imgBackground.getHeight())
@@ -79,7 +84,7 @@ public class MyFavoriteRecipesRecyclerViewAdapter extends RecyclerView.Adapter<M
             imgBackground = (ImageView) view.findViewById(R.id.img_fav_background);
 
             btnFav = (Button) view.findViewById(R.id.btn_fav_recipe);
-            btnFav.setVisibility(View.VISIBLE);
+
 
             imgArrow = (ImageView) view.findViewById(R.id.img_recipe_arrow);
             imgArrow.setVisibility(View.VISIBLE);
