@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +14,15 @@ import android.widget.TextView;
 
 import com.android.quieromas.R;
 import com.android.quieromas.activity.MainActivity;
+import com.android.quieromas.helper.FirebaseDatabaseHelper;
+import com.android.quieromas.model.quienesSomos.QuienesSomos;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 public class AboutUsFragment extends BaseFragment {
+
+    FirebaseDatabaseHelper firebaseDatabaseHelper;
 
 
     public AboutUsFragment() {
@@ -51,10 +59,26 @@ public class AboutUsFragment extends BaseFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        TextView about = (TextView) view.findViewById(R.id.txt_about_text);
-        about.setText("Lorem ipsum dolor sit amet, est in affert graece eligendi, usu at partiendo maiestatis persequeris. Cu dicant legendos nec, et cetero efficiendi pro, in tota dicant maluisset sed. Iudico omnium sapientem qui ea, no summo eripuit laoreet eum. His te alii eirmod intellegam, cu legere vivendo duo. Ad accusata temporibus intellegebat mei, no facilis laboramus vix. Sit stet abhorreant ne, magna imperdiet no mei.\n" +
-                "\n" +
-                "Causae feugiat qui at. Mel nihil laboramus theophrastus ut, et ius ferri ponderum fabellas, impedit omnesque suscipit eu mea. Qui te veri moderatius reprehendunt, at cum doming delicatissimi, te cum wisi impedit civibus. Sit ut velit nonumy consetetur, an eos diceret oportere.\n");
+        firebaseDatabaseHelper = new FirebaseDatabaseHelper();
+
+        final TextView about = (TextView) view.findViewById(R.id.txt_about_text);
+        final TextView title = (TextView) view.findViewById(R.id.txt_about_title);
+
+        firebaseDatabaseHelper.getAboutUsReference().addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                QuienesSomos quienesSomos = dataSnapshot.getValue(QuienesSomos.class);
+                about.setText(Html.fromHtml(quienesSomos.getTexto()));
+                if(quienesSomos.getTitulo() != null){
+                    title.setText(Html.fromHtml(quienesSomos.getTitulo()));
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
     }
 

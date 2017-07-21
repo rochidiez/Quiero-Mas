@@ -24,6 +24,7 @@ public class FirebaseDatabaseHelper {
     public static final String MONTH = "mes ";
     public static final String LACTATION = "Lactancia";
     public static final String TERMS = "Términos y condiciones";
+    public static final String ABOUT_US = "Sobre Quiero Más!";
 
     public FirebaseDatabaseHelper(){
         mAuth = FirebaseAuth.getInstance();
@@ -88,5 +89,9 @@ public class FirebaseDatabaseHelper {
 
     public DatabaseReference getTermsReference(){
         return FirebaseDatabase.getInstance().getReference(TERMS);
+    }
+
+    public DatabaseReference getAboutUsReference(){
+        return FirebaseDatabase.getInstance().getReference(ABOUT_US);
     }
 }
