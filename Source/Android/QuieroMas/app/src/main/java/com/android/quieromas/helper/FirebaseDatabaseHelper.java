@@ -23,6 +23,7 @@ public class FirebaseDatabaseHelper {
     public static final String DEVELOPMENT = "Estimulación";
     public static final String MONTH = "mes ";
     public static final String LACTATION = "Lactancia";
+    public static final String TERMS = "Términos y condiciones";
 
     public FirebaseDatabaseHelper(){
         mAuth = FirebaseAuth.getInstance();
@@ -83,5 +84,9 @@ public class FirebaseDatabaseHelper {
 
     public DatabaseReference getIngredientsReference(){
         return getRecipesReference().child(INGREDIENTS);
+    }
+
+    public DatabaseReference getTermsReference(){
+        return FirebaseDatabase.getInstance().getReference(TERMS);
     }
 }
