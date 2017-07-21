@@ -22,9 +22,9 @@ public class Receta {
     public String titulo;
 
     @PropertyName("ingredientes lista")
-    public HashMap<String,String> ingredientesLista;
+    public HashMap<String,Integer> ingredientesLista;
 
-    public Receta(String thumbnail, String tip_nutricional, String variante, String video, Puntaje puntaje, ArrayList<String> pasos, ArrayList<Ingrediente> ingredientes, String titulo, HashMap<String, String> ingredientesLista) {
+    public Receta(String thumbnail, String tip_nutricional, String variante, String video, Puntaje puntaje, ArrayList<String> pasos, ArrayList<Ingrediente> ingredientes, String titulo, HashMap<String, Integer> ingredientesLista) {
         this.thumbnail = thumbnail;
         this.tip_nutricional = tip_nutricional;
         this.variante = variante;
@@ -68,7 +68,7 @@ public class Receta {
 
     public String getTitulo(){return titulo;}
 
-    public HashMap<String, String> getIngredientesLista() {
+    public HashMap<String, Integer> getIngredientesLista() {
         return ingredientesLista;
     }
 }

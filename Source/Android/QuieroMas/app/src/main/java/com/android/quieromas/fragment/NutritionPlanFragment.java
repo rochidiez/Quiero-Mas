@@ -110,6 +110,7 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
         AgeHelper ageHelper = new AgeHelper();
         planWeek = ageHelper.getPlanWeek(user.bebe.fechaDeNacimiento);
         int totalWeek = ageHelper.getTotalWeeks(user.bebe.fechaDeNacimiento);
+        int weekStartDay = ageHelper.getPlanWeekStartDay(user.bebe.fechaDeNacimiento);
 
         txtBabyName.setText(user.bebe.nombre);
 
@@ -138,20 +139,15 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
         });
 
 
-        setupViewPager(viewPager, planWeek);
+        setupViewPager(viewPager, weekStartDay);
         tabLayout.setupWithViewPager(viewPager);
 
     }
 
 
-    private void setupViewPager(ViewPager viewPager, int week) {
+    private void setupViewPager(ViewPager viewPager, int day) {
 
-        int day = week * 7;
 
-        //para no quedarse sin recetas!
-        if(day  > 180){
-            day = 179;
-        }
         adapter = new ViewPagerAdapter(getFragmentManager());
 
         adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day), "Lun");

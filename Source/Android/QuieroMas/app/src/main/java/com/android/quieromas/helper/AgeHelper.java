@@ -49,6 +49,20 @@ public class AgeHelper {
         return Weeks.weeksBetween(sixMonths,new DateTime()).getWeeks();
     }
 
+    public int getPlanWeekStartDay(String babyBirthdate){
+
+       int week = getPlanWeek(babyBirthdate);
+
+        int day = week * 7;
+
+        //para no quedarse sin recetas!
+        if(day  > 180){
+            day = 179;
+        }
+
+        return day;
+    }
+
     public int getTotalWeeks(String babyBirthdate){
         DateTime birthdate = dtf.parseDateTime(babyBirthdate);
 

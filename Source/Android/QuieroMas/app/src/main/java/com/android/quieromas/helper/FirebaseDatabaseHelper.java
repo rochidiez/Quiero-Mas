@@ -19,6 +19,7 @@ public class FirebaseDatabaseHelper {
     public static final String USERS = "Usuarios";
     public static final String BY_NAME = "Por Nombre";
     public static final String BY_AGE = "Por Edad";
+    public static final String INGREDIENTS = "Ingredientes";
     public static final String DEVELOPMENT = "Estimulación";
     public static final String MONTH = "mes ";
     public static final String LACTATION = "Lactancia";
@@ -80,4 +81,7 @@ public class FirebaseDatabaseHelper {
         return getRecipesReference().child(BY_AGE);
     }
 
+    public DatabaseReference getIngredientsReference(){
+        return getRecipesReference().child(INGREDIENTS);
+    }
 }
