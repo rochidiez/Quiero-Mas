@@ -9,24 +9,31 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.quieromas.R;
 import com.android.quieromas.activity.ChangePasswordActivity;
 import com.android.quieromas.activity.MainActivity;
 import com.android.quieromas.adapter.RecipeRecyclerViewAdapter;
 import com.android.quieromas.adapter.ShoppingListRecyclerViewAdapter;
+import com.android.quieromas.api.FirebaseFunctionApi;
+import com.android.quieromas.api.ServiceFactory;
 import com.android.quieromas.helper.AgeHelper;
 import com.android.quieromas.helper.FirebaseDatabaseHelper;
 import com.android.quieromas.model.DevelopmentItem;
+import com.android.quieromas.model.api.ShoppingListParams;
 import com.android.quieromas.model.planDeNutricion.DiaPlanNutricion;
 import com.android.quieromas.model.receta.IngredienteListaSemanal;
 import com.android.quieromas.model.receta.Receta;
 import com.android.quieromas.model.user.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.GenericTypeIndicator;
@@ -35,6 +42,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import okhttp3.ResponseBody;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 
 public class ShoppingListFragment extends BaseFragment {
@@ -46,6 +58,9 @@ public class ShoppingListFragment extends BaseFragment {
     ArrayList<String> ingredientsToShow;
     RecyclerView rvList;
     Button btnEmail;
+    FirebaseAuth mAuth;
+    FirebaseFunctionApi api;
+
 
     public ShoppingListFragment() {
         // Required empty public constructor
@@ -78,9 +93,47 @@ public class ShoppingListFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        ingredientsToShow = new ArrayList<String>();
+        mAuth = FirebaseAuth.getInstance();
         rvList = (RecyclerView) view.findViewById(R.id.shopping_list_rv);
         btnEmail = (Button) view.findViewById(R.id.shopping_list_btn_mail);
 
+        getList();
+
+
+        btnEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(ingredientsToShow.size() == 0){
+                    Toast.makeText(getContext(),"No hay ingredientes disponibles",Toast.LENGTH_SHORT).show();
+                }else{
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    api = ServiceFactory.createRetrofitService(FirebaseFunctionApi.class, FirebaseFunctionApi.SERVICE_ENDPOINT);
+                    api.sendList(new ShoppingListParams(user.getEmail(),ingredientsToShow)).subscribeOn(Schedulers.newThread())
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .subscribe(new Subscriber<ResponseBody>() {
+                                @Override
+                                public final void onCompleted() {
+                                }
+
+                                @Override
+                                public final void onError(Throwable e) {
+                                    Toast.makeText(getContext(),"Se ha producido un error",Toast.LENGTH_LONG).show();
+                                }
+
+                                @Override
+                                public final void onNext(ResponseBody rb){
+                                    Toast.makeText(getContext(),"La lista ha sido enviada",Toast.LENGTH_LONG).show();
+                                }
+                            });
+                }
+            }
+        });
+
+    }
+
+    public void getList(){
         ingedients = new HashMap<>();
 
         firebaseDatabaseHelper = new FirebaseDatabaseHelper();
@@ -153,7 +206,6 @@ public class ShoppingListFragment extends BaseFragment {
 
             }
         });
-
     }
 
     public void queryIngredients(){
@@ -164,7 +216,6 @@ public class ShoppingListFragment extends BaseFragment {
                 GenericTypeIndicator< HashMap<String,IngredienteListaSemanal>> t = new GenericTypeIndicator< HashMap<String,IngredienteListaSemanal>>() {};
                 HashMap<String,IngredienteListaSemanal> ingredienteListaSemanalHm = dataSnapshot.getValue(t);
 
-                ingredientsToShow = new ArrayList<String>();
                 for (Map.Entry<String, Integer> ingredient : ingedients.entrySet()) {
                     if(ingredienteListaSemanalHm.containsKey(ingredient.getKey())){
                         ingredientsToShow.add(ingredient.getValue() + " " + ingredienteListaSemanalHm.get(ingredient.getKey()).getNombre());
