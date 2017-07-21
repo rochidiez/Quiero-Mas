@@ -1,0 +1,76 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.android.quieromas.fragment.ShoppingListFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_margin="16dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Escribe el email de tus amigos"
+                android:textAllCaps="true"
+                android:textSize="@dimen/subtitle_text_size"
+                android:textColor="@color/textColorBlack"
+                android:textAppearance="@style/AppTheme.TextAppearance.Bold"
+                />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/share_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/listitem_share"></android.support.v7.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/txt_shopping_date_text"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="@dimen/subsubtitle_text_size"
+                android:textColor="@color/textColorBlack"
+                android:textAlignment="center"
+                />
+
+            <Button
+                android:id="@+id/btn_share_add_element"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/plus_icon2"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_share_send"
+                android:layout_margin="12dp"
+                android:text="Enviar"
+                android:textSize="@dimen/subtitle_text_size"
+                android:textAppearance="@style/AppTheme.TextAppearance.Bold"
+                android:background="@drawable/button_border_black_thin"/>
+
+            <ImageView
+                android:layout_marginTop="12dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/mail"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

@@ -1,6 +1,7 @@
 package com.android.quieromas.api;
 
 import com.android.quieromas.BuildConfig;
+import com.android.quieromas.model.api.ShareParams;
 import com.android.quieromas.model.api.ShoppingListParams;
 
 import java.util.List;
@@ -27,4 +28,7 @@ public interface FirebaseFunctionApi {
 
     @POST("enviarLista")
     Observable<ResponseBody> sendList(@Body ShoppingListParams shoppingListParams);
+
+    @POST("recomendar")
+    Observable<ResponseBody> share(@Body ShareParams shareParams);
 }

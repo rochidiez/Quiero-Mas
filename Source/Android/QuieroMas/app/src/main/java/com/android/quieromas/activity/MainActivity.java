@@ -28,6 +28,7 @@ import com.android.quieromas.fragment.HomeFragment;
 import com.android.quieromas.fragment.LactationFragment;
 import com.android.quieromas.fragment.NutritionPlanFragment;
 import com.android.quieromas.fragment.ProfileFragment;
+import com.android.quieromas.fragment.ShareFragment;
 import com.android.quieromas.fragment.ShoppingListFragment;
 import com.android.quieromas.fragment.TermsFragment;
 import com.android.quieromas.helper.AgeHelper;
@@ -246,8 +247,8 @@ public class MainActivity extends AuthActivity
             fragmentClass = FavoriteRecipesFragment.class;
         } else if (id == R.id.nav_about) {
             fragmentClass = AboutUsFragment.class;
-//        } else if (id == R.id.nav_share) {
-//
+        } else if (id == R.id.nav_share) {
+            fragmentClass = ShareFragment.class;
         } else if (id == R.id.nav_tac) {
             fragmentClass = TermsFragment.class;
         } else {
