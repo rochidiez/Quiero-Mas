@@ -39,8 +39,13 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
+import org.joda.time.DateTime;
+import org.joda.time.LocalDateTime;
+import org.joda.time.format.DateTimeFormat;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import okhttp3.ResponseBody;
@@ -60,6 +65,7 @@ public class ShoppingListFragment extends BaseFragment {
     Button btnEmail;
     FirebaseAuth mAuth;
     FirebaseFunctionApi api;
+    TextView txtDate;
 
 
     public ShoppingListFragment() {
@@ -97,6 +103,14 @@ public class ShoppingListFragment extends BaseFragment {
         mAuth = FirebaseAuth.getInstance();
         rvList = (RecyclerView) view.findViewById(R.id.shopping_list_rv);
         btnEmail = (Button) view.findViewById(R.id.shopping_list_btn_mail);
+        txtDate = (TextView) view.findViewById(R.id.txt_shopping_date_text);
+
+
+        String dateText = "Para recetas de la semana del ";
+
+        LocalDateTime date = new LocalDateTime();
+        String month = DateTimeFormat.forPattern("MMMM").withLocale(new Locale("es", "ES")).print(date);
+        txtDate.setText(dateText + date.getDayOfMonth() + " " + month);
 
         getList();
 

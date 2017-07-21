@@ -58,10 +58,11 @@
                 android:textAlignment="center"
                 />
             <TextView
+                android:id="@+id/txt_shopping_date_text"
                 android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Para recetas del 12 al 17 de Julio"
+                android:text=""
                 android:textSize="@dimen/subsubtitle_text_size"
                 android:textColor="@color/textColorBlack"
                 android:textAlignment="center"
