@@ -28,21 +28,22 @@ import java.util.HashMap;
 public class BaseRecipeFragment extends Fragment {
 
     OnListFragmentInteractionListener mListener;
-    ArrayList<String> recipesNames = new ArrayList<>();
     ArrayList<Receta> recipes = new ArrayList<>();
     FirebaseDatabaseHelper firebaseDatabaseHelper;
     EmptyRecyclerView recyclerView;
+    MyFavoriteRecipesRecyclerViewAdapter adapter;
 
 
     void addRecipes(){
-        recyclerView.setAdapter(new MyFavoriteRecipesRecyclerViewAdapter(recipes, mListener));
+        adapter = new MyFavoriteRecipesRecyclerViewAdapter(recipes, mListener);
+        recyclerView.setAdapter(adapter);
 
         recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getActivity(),
                 recyclerView, new ClickListener() {
 
             @Override
             public void onClick(View view, final int position) {
-                String name = recipesNames.get(position);
+                String name = recipes.get(position).getTitulo();
                 Intent intent = new Intent(getActivity(), RecipeActivity.class);
                 intent.putExtra("RECIPE", name);
                 startActivity(intent);

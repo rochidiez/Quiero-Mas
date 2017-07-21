@@ -10,6 +10,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.android.quieromas.R;
 import com.android.quieromas.adapter.MyFavoriteRecipesRecyclerViewAdapter;
@@ -29,6 +32,9 @@ import java.util.Map;
 public class SearchFragment extends BaseRecipeFragment {
 
     FirebaseDatabaseHelper firebaseDatabaseHelper;
+    ArrayList<Receta> allRecipes = new ArrayList<>();
+    Button btnSearh;
+    EditText etxtRecipeName;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -65,8 +71,9 @@ public class SearchFragment extends BaseRecipeFragment {
 
                     Receta receta = entry.getValue();
                     receta.titulo = entry.getKey();
-                    recipes.add(receta);
+                    allRecipes.add(receta);
                 }
+                recipes = allRecipes;
                 addRecipes();
             }
 
@@ -75,6 +82,41 @@ public class SearchFragment extends BaseRecipeFragment {
 
             }
         });
+
+        etxtRecipeName = (EditText) view.findViewById(R.id.etxt_search_recipe);
+        btnSearh = (Button) view.findViewById(R.id.btn_search_search);
+
+        etxtRecipeName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                etxtRecipeName.setText("");
+            }
+        });
+
+        btnSearh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                InputMethodManager imm = (InputMethodManager) view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+
+                String text = etxtRecipeName.getText().toString();
+                ArrayList<Receta> filteredRecipes = new ArrayList<>();
+                if(recipes.size() != 0){
+                    for (Receta receta : recipes) {
+                        if (receta.titulo.contains(text)) {
+                            filteredRecipes.add(receta);
+                        }
+                    }
+                }
+                if(text == ""){
+                    filteredRecipes = allRecipes;
+                }
+                if(adapter != null){
+                    adapter.updateValues(filteredRecipes);
+                }
+            }
+        });
+
     }
 
 }

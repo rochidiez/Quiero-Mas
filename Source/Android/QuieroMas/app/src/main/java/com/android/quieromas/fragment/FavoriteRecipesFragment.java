@@ -32,6 +32,8 @@ public class FavoriteRecipesFragment extends BaseRecipeFragment {
 
     private static final String ARG_COLUMN_COUNT = "column-count";
     private int mColumnCount = 1;
+    ArrayList<String> recipesNames = new ArrayList<>();
+
 
     public FavoriteRecipesFragment() {
     }

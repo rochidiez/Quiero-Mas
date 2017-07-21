@@ -18,7 +18,7 @@ import java.util.List;
 
 public class MyFavoriteRecipesRecyclerViewAdapter extends RecyclerView.Adapter<MyFavoriteRecipesRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Receta> mValues;
+    private List<Receta> mValues;
     private final OnListFragmentInteractionListener mListener;
 
     public MyFavoriteRecipesRecyclerViewAdapter(List<Receta> items, OnListFragmentInteractionListener listener) {
@@ -59,6 +59,11 @@ public class MyFavoriteRecipesRecyclerViewAdapter extends RecyclerView.Adapter<M
                 }
             }
         });
+    }
+
+    public void updateValues(List<Receta> values){
+        mValues = values;
+        notifyDataSetChanged();
     }
 
     @Override

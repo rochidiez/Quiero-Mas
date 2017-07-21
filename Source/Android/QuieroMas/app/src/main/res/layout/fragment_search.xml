@@ -24,6 +24,7 @@
             android:textSize="@dimen/subtitle_text_size"/>
 
         <EditText
+            android:id="@+id/etxt_search_recipe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
