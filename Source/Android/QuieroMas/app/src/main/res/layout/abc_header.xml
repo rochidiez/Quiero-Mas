@@ -4,30 +4,32 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:id="@+id/rl_abc_months"
-       >
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/bottom_shadow">
+
         <TextView
             android:id="@+id/txt_abc_title"
-            android:layout_marginStart="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:text="Introducción a los alimentos"
             android:textAllCaps="true"
-            android:layout_gravity="center_vertical"
             android:textAppearance="@style/AppTheme.TextAppearance.Bold"
-            android:textSize="@dimen/subtitle_text_size"/>
+            android:textSize="@dimen/subtitle_text_size"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true" />
 
         <ImageView
             android:layout_width="16dp"
             android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
             android:layout_gravity="end"
             android:layout_marginEnd="8dp"
-            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
             android:background="@drawable/back_button_orange"
-            android:rotation="180"/>
+            android:rotation="180" />
     </RelativeLayout>
 
     <TextView
