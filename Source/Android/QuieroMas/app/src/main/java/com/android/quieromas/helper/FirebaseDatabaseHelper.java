@@ -25,6 +25,9 @@ public class FirebaseDatabaseHelper {
     public static final String LACTATION = "Lactancia";
     public static final String TERMS = "Términos y condiciones";
     public static final String ABOUT_US = "Sobre Quiero Más!";
+    public static final String NUTRITION = "Nutrición";
+    public static final String TITLE = "Título";
+    public static final String SECTIONS = "Secciones";
 
     public FirebaseDatabaseHelper(){
         mAuth = FirebaseAuth.getInstance();
@@ -93,5 +96,17 @@ public class FirebaseDatabaseHelper {
 
     public DatabaseReference getAboutUsReference(){
         return FirebaseDatabase.getInstance().getReference(ABOUT_US);
+    }
+
+    public DatabaseReference getNutritionReference(){
+        return FirebaseDatabase.getInstance().getReference(NUTRITION);
+    }
+
+    public DatabaseReference getNutritionSubtitleReference(){
+        return getNutritionReference().child(TITLE);
+    }
+
+    public DatabaseReference getNutritionSectionsReference(){
+        return getNutritionReference().child(SECTIONS);
     }
 }

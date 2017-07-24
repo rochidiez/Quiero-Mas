@@ -13,9 +13,11 @@
     <style name="AppTheme.TextAppearance" parent="android:TextAppearance">
         <item name="fontPath">fonts/Cera-Regular.ttf</item>
     </style>
+
     <style name="AppTheme.TextAppearance.Bold" parent="AppTheme.TextAppearance">
         <item name="fontPath">fonts/Cera-Medium.ttf</item>
     </style>
+
     <style name="AppTheme.TextAppearance.Medium" parent="AppTheme.TextAppearance">
         <item name="fontPath">fonts/Cera-Medium.ttf</item>
     </style>

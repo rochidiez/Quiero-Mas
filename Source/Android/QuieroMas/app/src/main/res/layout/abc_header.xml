@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:id="@+id/rl_abc_months"
+       >
+        <TextView
+            android:id="@+id/txt_abc_title"
+            android:layout_marginStart="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Introducción a los alimentos"
+            android:textAllCaps="true"
+            android:layout_gravity="center_vertical"
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"
+            android:textSize="@dimen/subtitle_text_size"/>
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="20dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="8dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/back_button_orange"
+            android:rotation="180"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_abc_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grayPrimary"
+        android:layout_margin="8dp"
+        android:text="ddkfdfdujfbdubfdubfubgdugbubgeugbeugbeubeufbeufbeubf"
+        android:textSize="@dimen/subsubtitle_text_size"
+        />
+
+</LinearLayout>

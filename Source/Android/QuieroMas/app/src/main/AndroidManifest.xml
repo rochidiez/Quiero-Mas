@@ -60,6 +60,9 @@
         <activity
             android:name=".activity.BasicRecipeActivity"
             android:theme="@style/NoActionBarActivity" />
+        <activity
+            android:name=".activity.AbcActivity"
+            android:label="@string/title_activity_abc"></activity>
     </application>
 
 </manifest>

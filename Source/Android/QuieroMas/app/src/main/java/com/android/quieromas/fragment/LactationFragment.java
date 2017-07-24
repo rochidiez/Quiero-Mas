@@ -34,10 +34,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class LactationFragment extends BaseFragment {
+public class LactationFragment extends BaseExpandableFragment {
 
-    ExpandableListView expandableListView;
-    ArrayList<ExpandableListGroup> groups;
     TextView txtSubtitle;
     TextView txtTitle;
     Lactancia data;
@@ -124,13 +122,6 @@ public class LactationFragment extends BaseFragment {
         } else {
             expandableListView.setIndicatorBoundsRelative(width - getPixelFromDips(50), width - getPixelFromDips(10));
         }
-    }
-
-    public int getPixelFromDips(float pixels) {
-        // Get the screen's density scale
-        final float scale = getResources().getDisplayMetrics().density;
-        // Convert the dps to pixels, based on density scale
-        return (int) (pixels * scale + 0.5f);
     }
 
 }

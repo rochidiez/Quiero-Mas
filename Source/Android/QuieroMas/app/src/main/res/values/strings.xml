@@ -17,4 +17,5 @@
 
 
     <string name="no_recipes">Todavía no tienes ninguna receta favorita. Explora todas las recetas disponibles.</string>
+    <string name="title_activity_abc">AbcActivity</string>
 </resources>
