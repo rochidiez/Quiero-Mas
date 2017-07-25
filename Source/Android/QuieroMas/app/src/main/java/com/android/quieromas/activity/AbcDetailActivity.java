@@ -10,7 +10,7 @@ import com.android.quieromas.R;
 import com.android.quieromas.fragment.AbcDetailFragment;
 import com.android.quieromas.fragment.BaseFragment;
 
-public class AbcDetailActivity extends AppCompatActivity implements BaseFragment.OnFragmentInteractionListener{
+public class AbcDetailActivity extends BaseActivity implements BaseFragment.OnFragmentInteractionListener{
 
     String month;
     private static final String TAG = "AbcDetailActivity";
