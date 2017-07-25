@@ -28,6 +28,7 @@ public class FirebaseDatabaseHelper {
     public static final String NUTRITION = "Nutrición";
     public static final String TITLE = "Título";
     public static final String SECTIONS = "Secciones";
+    public static final String MONTHS = "Meses";
 
     public FirebaseDatabaseHelper(){
         mAuth = FirebaseAuth.getInstance();
@@ -108,5 +109,9 @@ public class FirebaseDatabaseHelper {
 
     public DatabaseReference getNutritionSectionsReference(){
         return getNutritionReference().child(SECTIONS);
+    }
+
+    public DatabaseReference getNutritionMonthsReference(){
+        return getNutritionReference().child(MONTHS);
     }
 }
