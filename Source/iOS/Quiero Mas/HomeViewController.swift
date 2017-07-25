@@ -83,7 +83,19 @@ class HomeViewController: UIViewController {
     func setUserName() {
         if let userDic = UserDefaults.standard.dictionary(forKey: defPerfil) {
             if let datosDic = userDic[defPerfilDatos] as? [String:String] {
-                nameLabel.text = datosDic[defPerfilDatosNombre]
+                if let mamaFull = datosDic[defPerfilDatosNombre] {
+                    if let mamaFirst = mamaFull.components(separatedBy: " ").first {
+                        if let bebeDic = userDic[defPerfilBebe] as? [String:String] {
+                            if let bebe = bebeDic[defPerfilBebeApodo] {
+                                nameLabel.text = "\(mamaFirst) y \(bebe)"
+                            } else {
+                                nameLabel.text = mamaFirst
+                            }
+                        } else {
+                            nameLabel.text = mamaFirst
+                        }
+                    }
+                }
             }
         }
     }

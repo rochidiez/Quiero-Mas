@@ -27,29 +27,31 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lro-Gl-07z">
-                        <rect key="frame" x="20" y="9" width="9" height="16"/>
+                        <rect key="frame" x="20" y="22" width="9" height="16"/>
                         <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="16"/>
                         <color key="textColor" red="1" green="0.50588235290000005" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hacer una mezcla con el puré de batata y ricota" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXq-gZ-Hls">
-                        <rect key="frame" x="49" y="0.0" width="251" height="32"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKL-of-9Mw">
+                        <rect key="frame" x="49" y="10" width="251" height="39.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                         <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="16"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="xXq-gZ-Hls" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ObS-Ls-QQu"/>
+                    <constraint firstItem="dKL-of-9Mw" firstAttribute="leading" secondItem="Lro-Gl-07z" secondAttribute="trailing" constant="20" id="1vA-A7-6DR"/>
+                    <constraint firstItem="dKL-of-9Mw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Lpd-Ea-LFV"/>
+                    <constraint firstAttribute="trailing" secondItem="dKL-of-9Mw" secondAttribute="trailing" constant="20" id="Var-av-Vwx"/>
                     <constraint firstItem="Lro-Gl-07z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="akD-0y-1p3"/>
-                    <constraint firstItem="xXq-gZ-Hls" firstAttribute="centerY" secondItem="Lro-Gl-07z" secondAttribute="centerY" id="gYB-1F-gxE"/>
-                    <constraint firstAttribute="trailing" secondItem="xXq-gZ-Hls" secondAttribute="trailing" constant="20" id="lVc-nl-rQ9"/>
-                    <constraint firstItem="xXq-gZ-Hls" firstAttribute="leading" secondItem="Lro-Gl-07z" secondAttribute="trailing" constant="20" id="yCn-AO-VrJ"/>
+                    <constraint firstAttribute="bottom" secondItem="dKL-of-9Mw" secondAttribute="bottom" constant="10" id="cvb-U6-24p"/>
+                    <constraint firstItem="dKL-of-9Mw" firstAttribute="centerY" secondItem="Lro-Gl-07z" secondAttribute="centerY" id="m0b-rs-yKY"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="numberLabel" destination="Lro-Gl-07z" id="2Ag-6y-YGi"/>
-                <outlet property="title" destination="xXq-gZ-Hls" id="bKE-iC-Wd0"/>
+                <outlet property="title" destination="dKL-of-9Mw" id="r8F-jc-a5Q"/>
             </connections>
         </tableViewCell>
     </objects>

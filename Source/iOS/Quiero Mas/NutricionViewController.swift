@@ -54,9 +54,9 @@ class NutricionViewController: UIViewController {
     
     struct RecetasNutricion {
         var almuerzoReceta: [String:Any]?
-        var almuerzoPostre: [String:String]?
+        var almuerzoPostre: [String:Any]?
         var cenaReceta: [String:Any]?
-        var cenaPostre: [String:String]?
+        var cenaPostre: [String:Any]?
     }
     
     //MARK: - ViewDidLoad

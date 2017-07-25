@@ -285,10 +285,10 @@ class FirebaseAPI: NSObject {
         }
     }
     
-    static func addToRecomendar(mails: [String]) {
-        for mail in mails {
-            let key = FIRDatabase.database().reference().child(firRecomendar).childByAutoId().key
-            FIRDatabase.database().reference().child(firRecomendar+"/"+key).setValue(mail)
+    static func recomendar(mails: [String]) {
+        let jsonDic: Parameters = ["emails": mails]
+        Alamofire.request("https://us-central1-quiero-mas.cloudfunctions.net/recomendar/", method: .post, parameters: jsonDic, encoding: JSONEncoding.default).responseJSON {response in
+            NotificationCenter.default.post(name: Notification.Name(rawValue: recomendarSent), object: nil)
         }
     }
     
@@ -302,8 +302,8 @@ class FirebaseAPI: NSObject {
         return nil
     }
     
-    static func getPostreByName(name: String) -> [String:String]? {
-        if let postresDic = UserDefaults.standard.dictionary(forKey: firPostres) as? [String:[String:String]] {
+    static func getPostreByName(name: String) -> [String:Any]? {
+        if let postresDic = UserDefaults.standard.dictionary(forKey: firPostres) as? [String:[String:Any]] {
             return postresDic[name]
         }
         return nil

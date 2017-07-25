@@ -10,6 +10,7 @@ import UIKit
 
 class LactanciaTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var openIcon: UIImageView!
     @IBOutlet weak var openButton: UIButton!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var orangeView: UIView!

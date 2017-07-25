@@ -20,6 +20,12 @@ class RecetaBasicaViewController: UIViewController, UITableViewDataSource, UITab
     var basicaDict: [String:Any]?
     var basicaNombre: String?
     
+    //MARK: - View Did Appear
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationItem.hidesBackButton = true
+    }
+    
     //MARK: - View Will Appear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -39,25 +45,43 @@ class RecetaBasicaViewController: UIViewController, UITableViewDataSource, UITab
     
     //MARK: - UITableView Data Source
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var rows = 0
-        if let ingredientesArr = basicaDict?[firBasicaIngredientes] as? [String] {
-            rows = ingredientesArr.count
+        
+        if section == 0 {
+            if let ingredientesArr = basicaDict?[firBasicaIngredientes] as? [String] {
+                rows = ingredientesArr.count
+            }
+        } else {
+            if let pasosArr = basicaDict?[firBasicaPasos] as? [String] {
+                rows = pasosArr.count
+            }
         }
         return rows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecetaBasicaTableViewCell", for: indexPath) as! RecetaBasicaTableViewCell
-        
-        if let ingredientesArr = basicaDict?[firBasicaIngredientes] as? [String] {
-            cell.recetaLabel.text = ingredientesArr[indexPath.row]
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RecetaBasicaTableViewCell", for: indexPath) as! RecetaBasicaTableViewCell
+            
+            if let ingredientesArr = basicaDict?[firBasicaIngredientes] as? [String] {
+                cell.recetaLabel.text = ingredientesArr[indexPath.row]
+            }
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RecetaBasicaPasosTableViewCell", for: indexPath) as! RecetaBasicaPasosTableViewCell
+            
+            if let pasosArr = basicaDict?[firBasicaPasos] as? [String] {
+                cell.pasonumber.text = "\(indexPath.row+1)"
+                cell.pasoTW.text = pasosArr[indexPath.row]
+            }
+            
+            return cell
         }
-        
-        return cell
     }
     
     
@@ -65,7 +89,7 @@ class RecetaBasicaViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
         label.backgroundColor = .white
-        label.text = "     INGREDIENTES PARA 1 PORCIÓN"
+        label.text = section == 0 ? "     INGREDIENTES PARA 1 PORCIÓN" : "     PASO A PASO"
         label.font = UIFont(name: "Cera-Bold", size: 16)
         
         return label
@@ -73,6 +97,16 @@ class RecetaBasicaViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var height: CGFloat = 0
+        if indexPath.section == 0 {
+            height = 44
+        } else {
+            height = 80
+        }
+        return height
     }
     
     //MARK: - IBAction Top

@@ -9,7 +9,7 @@
 import UIKit
 import SWRevealViewController
 
-class TodasViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+class TodasViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var revealMenuButton: UIBarButtonItem!
     @IBOutlet weak var orangeView: UIView!
@@ -17,14 +17,18 @@ class TodasViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var recetaTF: UITextField!
     @IBOutlet weak var ingredienteTF: UITextField!
+    @IBOutlet weak var ingredientesPicker: UIPickerView!
     
     var recetasArray: [[String:[String:Any]]]?
+    var ingredientesArray: [[String:[String:String]]]?
+    var selectedIngredientKey: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setRevealMenuButton()
         setAppMainColor()
         addTapKeyboardDismiss()
+        setPicker()
     }
     
     func addTapKeyboardDismiss() {
@@ -36,6 +40,10 @@ class TodasViewController: UIViewController, UITableViewDataSource, UITableViewD
     func endEditing() {
         recetaTF.resignFirstResponder()
         ingredienteTF.resignFirstResponder()
+    }
+    
+    func setPicker() {
+        ingredienteTF.inputView = ingredientesPicker
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,12 +72,19 @@ class TodasViewController: UIViewController, UITableViewDataSource, UITableViewD
     func reloadRecetas() {
         loadRecetasArray()
         reloadTable()
+        reloadIngredientePicker()
     }
     
     func loadRecetasArray() {
         if let recetasDic = UserDefaults.standard.dictionary(forKey: defRecetas) {
             if let porNombreDic = recetasDic[firPorNombre] as? [String:Any] {
                 recetasArray = porNombreDic.toArray() as? [[String:[String:Any]]]
+                if let iDic = recetasDic[firIngredientes] as? [String:[String:String]] {
+                    ingredientesArray = [[String:[String:String]]]()
+                    for (key, element) in iDic {
+                        ingredientesArray?.append([key:element])
+                    }
+                }
             }
         }
     }
@@ -79,6 +94,10 @@ class TodasViewController: UIViewController, UITableViewDataSource, UITableViewD
             table.reloadData()
             spinner.stopAnimating()
         }
+    }
+    
+    func reloadIngredientePicker() {
+        ingredientesPicker.reloadAllComponents()
     }
     
     
@@ -185,12 +204,9 @@ class TodasViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func agregarPorIngrediente(receta: [String:Any]) -> Bool {
-        if let ingredientes = receta[firRecetaIngredientes] as? [[String:String]] {
-            for ingrediente in ingredientes {
-                if ingrediente[firRecetaIngredientesNombre]!.lowercased().range(of:ingredienteTF.text!) != nil {
-                    return true
-                }
-            }
+        guard selectedIngredientKey != nil else {return false}
+        if let recetaIngredientesDic = receta[firRecetaIngredientesLista] as? [String:Any] {
+            return recetaIngredientesDic[selectedIngredientKey!] != nil
         }
         return false
     }
@@ -215,7 +231,36 @@ class TodasViewController: UIViewController, UITableViewDataSource, UITableViewD
         return true
     }
     
+    //MARK: - Picker DataSource
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return ingredientesArray != nil ? ingredientesArray!.count : 0
+    }
+    
+    //MARK: - Picker Delegate
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        var name: String?
+        if let ingredientDict = ingredientesArray?[row] {
+            for (_, element) in ingredientDict {
+                name = element[firRecetaIngredientesNombre]
+            }
+        }
+        return name
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        var name: String?
+        if let ingredientDict = ingredientesArray?[row] {
+            for (key, element) in ingredientDict {
+                name = element[firRecetaIngredientesNombre]
+                selectedIngredientKey = key
+            }
+        }
+        ingredienteTF.text = name
+    }
     
     
     

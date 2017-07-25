@@ -11,6 +11,6 @@ import UIKit
 class PasosTableViewCell: UITableViewCell {
 
     @IBOutlet weak var numberLabel: UILabel!
-    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var title: UITextView!
     
 }

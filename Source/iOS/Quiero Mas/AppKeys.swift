@@ -23,6 +23,7 @@ let recetasBasicasUpdated = "recetasBasicasUpdated"
 let estimulacionUpdated = "estimulacionUpdated"
 let postresUpdated = "postresUpdated"
 let ingredientesSent = "ingredientesSent"
+let recomendarSent = "recomendarSent"
 
 let perfilNotFound = "perfilNotFound"
 let connectionError = "connectionError"
@@ -66,6 +67,7 @@ let firBasicaIngredientes = "ingredientes"
 let firBasicaNombre = "nombre"
 let firBasicaThumbnail = "thumbnail"
 let firBasicaVideo = "video"
+let firBasicaPasos = "pasos"
 
 //Firebase Postres
 let firPostres = "Postres"

@@ -106,9 +106,9 @@ class LactanciaViewController: UIViewController, UITableViewDataSource, UITableV
         let cellDic = tablaArray[indexPath.row]
         
         if !(cellDic["abierto"] as! Bool) {
-            cell.openButton.setImage(UIImage(named: "Mas Orange"), for: .normal)
+            cell.openIcon.image = UIImage(named: "Mas Orange")
         } else {
-            cell.openButton.setImage(UIImage(named: "Menos Orange"), for: .normal)
+            cell.openIcon.image = UIImage(named: "Menos Orange")
         }
         cell.openButton.tag = indexPath.row
         cell.openButton.addTarget(self, action: #selector(LactanciaViewController.openCloseCell(sender:)), for: .touchUpInside)

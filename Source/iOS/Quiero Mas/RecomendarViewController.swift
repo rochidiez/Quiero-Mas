@@ -22,6 +22,7 @@ class RecomendarViewController: UIViewController, UITableViewDataSource, UITextF
         setRevealMenuButton()
         setAppMainColor()
         setTapGesture()
+        setObservers()
     }
     
     func setRevealMenuButton() {
@@ -37,6 +38,10 @@ class RecomendarViewController: UIViewController, UITableViewDataSource, UITextF
     func setTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapGestureHandler))
         self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    func setObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.recomendarSentAlert), name: NSNotification.Name(rawValue: recomendarSent), object: nil)
     }
     
     func tapGestureHandler() {
@@ -85,20 +90,45 @@ class RecomendarViewController: UIViewController, UITableViewDataSource, UITextF
     
     @IBAction func send(_ sender: Any) {
         var mails = [String]()
-        for (key, element) in dic {
+        for (_, element) in dic {
             mails.append(element)
         }
-        FirebaseAPI.addToRecomendar(mails: mails)
-        
+        FirebaseAPI.recomendar(mails: mails)
+    }
+    
+    func eraseEmails() {
+        dic = ["0":""]
+        UIView.animate(withDuration: 0.2, animations: {
+            self.table.reloadData()
+        })
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
+    //MARK: - Observers
+    func recomendarSentAlert() {
+        showAlert(text: "Tu lista de compras se ha enviado exitósamente a los destinatarios")
+        eraseEmails()
+    }
+
+
+    //MARK: - Aux
+    func showAlert(text: String) {
+        let alert = UIAlertController(title: "",
+                                      message: text,
+                                      preferredStyle: UIAlertControllerStyle.alert)
+        
+        let cancelAction = UIAlertAction(title: "OK",
+                                         style: .cancel, handler: nil)
+        
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+        return
+    }
+
+
+
+
+
+
+
 }

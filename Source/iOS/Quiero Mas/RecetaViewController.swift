@@ -53,7 +53,7 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
     
     var recetaDict: [String:Any]?
     var recetaNombre: String?
-    var recetaPostre: [String:String]?
+    var recetaPostre: [String:Any]?
     var recetaDia: [String:Any]?
     var volverACocinar: String?
 
@@ -214,33 +214,11 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
     
     //MARK: - UITableView Delegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var height = CGFloat(0)
+        var height: CGFloat = 0
         if indexPath.section == 0 {
-            height = CGFloat(44)
+            height = 44
         } else {
-            let screenWidth = ScreenSize.SCREEN_WIDTH
-            var linesCount = CGFloat(0)
-            var amountOfRows = 0
-            if let pasosArr = recetaDict?[firRecetaPasos] as? [String] {
-                linesCount = CGFloat(pasosArr[indexPath.row].characters.count)
-                amountOfRows = pasosArr.count
-            }
-            var magicValue = CGFloat(0)
-            if DeviceType.IS_IPHONE_6P {
-                linesCount = linesCount / 48
-                magicValue = 0.07
-            } else if DeviceType.IS_IPHONE_6 {
-                linesCount = linesCount / 40
-                magicValue = 0.069
-            } else if DeviceType.IS_IPHONE_5 {
-                linesCount = linesCount / 28
-                magicValue = 0.075
-            }
-            height = linesCount * (screenWidth - 60) * magicValue
-            
-            if indexPath.row == amountOfRows - 1 {
-                height += 10
-            }
+            height = 90
         }
         
         return height
@@ -291,6 +269,10 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBAction func tipDesarrolloAction(_ sender: UIButton) {
         performSegue(withIdentifier: "tipDesarrolloSegue", sender: self)
+    }
+    
+    @IBAction func conservacionAction(_ sender: UIButton) {
+        performSegue(withIdentifier: "conservacionSegue", sender: self)
     }
     
     @IBAction func firstAction(_ sender: UIButton) {
@@ -465,7 +447,7 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
     
         if segue.identifier == "postreSegue" {
             let vc = segue.destination as! PostreViewController
-            vc.postreDic = recetaPostre
+            vc.basicaDict = recetaPostre
         }
     }
     
