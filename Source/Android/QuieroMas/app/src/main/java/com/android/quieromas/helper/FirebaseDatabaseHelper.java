@@ -114,4 +114,9 @@ public class FirebaseDatabaseHelper {
     public DatabaseReference getNutritionMonthsReference(){
         return getNutritionReference().child(MONTHS);
     }
+
+    public DatabaseReference getNutritionMonthReference(String month){
+        return getNutritionMonthsReference().child(month);
+    }
+
 }

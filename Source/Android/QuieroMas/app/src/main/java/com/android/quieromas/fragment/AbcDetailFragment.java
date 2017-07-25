@@ -1,68 +1,66 @@
 package com.android.quieromas.fragment;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-
 import android.support.v4.app.Fragment;
-import android.text.Html;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.quieromas.R;
-import com.android.quieromas.activity.MainActivity;
 import com.android.quieromas.adapter.QuieroMasExpandableListAdapter;
 import com.android.quieromas.helper.FirebaseDatabaseHelper;
-import com.android.quieromas.model.DevelopmentItem;
 import com.android.quieromas.model.ExpandableListGroup;
-import com.android.quieromas.model.lactancia.ItemLactancia;
 import com.android.quieromas.model.lactancia.Lactancia;
-import com.android.quieromas.model.receta.Receta;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-
-public class LactationFragment extends BaseExpandableFragment {
+public class AbcDetailFragment extends BaseExpandableFragment {
 
     TextView txtSubtitle;
     TextView txtTitle;
-    Lactancia data;
+    HashMap<String,String> data;
 
-    public LactationFragment() {
+
+    private String month;
+    private static final String MONTH = "month";
+
+
+    public AbcDetailFragment() {
         // Required empty public constructor
     }
 
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        groups = new ArrayList<>();
+    public static AbcDetailFragment newInstance(String month) {
+        AbcDetailFragment fragment = new AbcDetailFragment();
+        Bundle args = new Bundle();
+        args.putString(MONTH, month);
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-        ((MainActivity) getActivity()).setActionBarTitle("Lactancia");
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            month = getArguments().getString(MONTH);
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lactation, container, false);
+        return inflater.inflate(R.layout.fragment_abc_detail, container, false);
     }
 
     @Override
@@ -70,7 +68,7 @@ public class LactationFragment extends BaseExpandableFragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        expandableListView = (ExpandableListView) view.findViewById(R.id.lactation_exp_listView);
+        expandableListView = (ExpandableListView) view.findViewById(R.id.abc_detail_exp_listView);
 
 
         //sets header view to expandableListView so it scrolls together
@@ -79,14 +77,15 @@ public class LactationFragment extends BaseExpandableFragment {
         expandableListView.addHeaderView(header,null,false);
 
         txtTitle = (TextView) header.findViewById(R.id.lactation_title);
-        txtSubtitle = (TextView) header.findViewById(R.id.lactation_subtitle_text);
+        txtTitle.setText("LECHE MATERNA Y/O FÓRMULA LÁCTEA RECOMENDADA");
 
 
         FirebaseDatabaseHelper firebaseDatabaseHelper =  new FirebaseDatabaseHelper();
-        firebaseDatabaseHelper.getLactationReference().addListenerForSingleValueEvent(new ValueEventListener() {
+        firebaseDatabaseHelper.getNutritionMonthReference(month).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                data = dataSnapshot.getValue(Lactancia.class);
+                GenericTypeIndicator<HashMap<String,String>> t = new GenericTypeIndicator<HashMap<String,String>>() {};
+                data = dataSnapshot.getValue(t);
                 updateUI();
             }
 
@@ -98,16 +97,9 @@ public class LactationFragment extends BaseExpandableFragment {
     }
 
     public void updateUI(){
-
-        if(data.getTitulo() != null){
-            txtTitle.setText(data.getTitulo().getTitulo());
-            txtSubtitle.setText(data.getTitulo().getTexto());
-        }
-
-        for(int i = 0; i < data.getTabla().size(); i++){
-            ItemLactancia elem = data.getTabla().get(i);
-            ExpandableListGroup group = new ExpandableListGroup(elem.getTitulo());
-            group.children.add(elem.getHtml());
+        for (Map.Entry<String,String> entry : data.entrySet()) {
+            ExpandableListGroup group = new ExpandableListGroup(entry.getKey());
+            group.children.add(entry.getValue());
             groups.add(group);
         }
 
@@ -115,5 +107,3 @@ public class LactationFragment extends BaseExpandableFragment {
     }
 
 }
-
-

@@ -62,7 +62,8 @@
             android:theme="@style/NoActionBarActivity" />
         <activity
             android:name=".activity.AbcActivity"
-            android:label="@string/title_activity_abc"></activity>
+            android:label="@string/title_activity_abc" />
+        <activity android:name=".activity.AbcDetailActivity"></activity>
     </application>
 
 </manifest>

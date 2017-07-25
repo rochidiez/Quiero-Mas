@@ -43,7 +43,7 @@ public class AbcActivity extends BaseActivity {
 
         linearLayout  = (LinearLayout) findViewById(R.id.abc_linear_layout);
          lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-         lp.setMargins(24,12,24,12);
+         lp.setMargins(24,16,24,16);
 
         firebaseDatabaseHelper = new FirebaseDatabaseHelper();
         firebaseDatabaseHelper.getNutritionMonthsReference().addListenerForSingleValueEvent(new ValueEventListener() {
@@ -79,8 +79,8 @@ public class AbcActivity extends BaseActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), DevelopmentDetailActivity.class);
-                intent.putExtra("month", 6);
+                Intent intent = new Intent(getApplicationContext(), AbcDetailActivity.class);
+                intent.putExtra("month", title);
                 startActivity(intent);
             }
         });
