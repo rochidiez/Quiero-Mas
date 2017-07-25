@@ -32,6 +32,7 @@ public class RecipeActivity extends AuthActivity {
     private Button btnNutritionalTip;
     private Button btnDevelopmentTip;
     private Button btnWatch;
+    private Button btnReuse;
     private String recipeName;
     private Receta receta;
     private ImageView imgBackground;
@@ -92,6 +93,7 @@ public class RecipeActivity extends AuthActivity {
         rvSteps = (RecyclerView) findViewById(R.id.recipe_list_steps);
         rvIngredients = (RecyclerView) findViewById(R.id.recipe_list_ingredients);
         reuseLayout = (RelativeLayout) findViewById(R.id.recipe_layout_reuse);
+        btnReuse = (Button) findViewById(R.id.recipe_button_reuse);
 
         txtName.setText(recipeName);
 
@@ -103,6 +105,15 @@ public class RecipeActivity extends AuthActivity {
             btnDessert.setVisibility(View.GONE);
             reuseLayout.setVisibility(View.GONE);
         }else{
+
+            btnReuse.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getApplicationContext(), ConservationActivity.class);
+                    startActivity(intent);
+                }
+            });
+
             FirebaseDatabaseHelper firebaseDatabaseHelper1 =  new FirebaseDatabaseHelper();
             firebaseDatabaseHelper.getDessertReference(dessertName).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override

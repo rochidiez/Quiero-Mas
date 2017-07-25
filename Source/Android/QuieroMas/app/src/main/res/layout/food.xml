@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="80dp"
+    android:background="@color/grayLight">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:id="@+id/linearLayout">
+        <ImageView
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bullet"
+            android:id="@+id/textView9"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/txt_food_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@+id/textView9"
+            android:text="Vegetales"
+            android:textAllCaps="true"
+            android:textColor="@color/textColorBlack"
+            android:textSize="@dimen/subtitle_text_size" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/txt_food_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="@dimen/subsubtitle_text_size"
+        android:textColor="@color/grayPrimary"
+        android:text="Cocidos, trozados o en Pure"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignStart="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/txt_food_months"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/subsubtitle_text_size"
+        android:textColor="@color/textColorBlack"
+        android:layout_marginEnd="16dp"
+        android:text="6 meses"
+        android:textAppearance="@style/AppTheme.TextAppearance.Bold"
+        android:layout_alignBottom="@+id/linearLayout"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>

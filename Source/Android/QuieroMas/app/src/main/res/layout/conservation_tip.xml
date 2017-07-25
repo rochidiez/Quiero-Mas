@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp">
+
+    <TextView
+        android:id="@+id/txt_conservation_tip_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DESCONGELAR Y CALENTAR"
+        android:textAllCaps="true"
+        android:textColor="@color/textColorBlack"
+        android:textSize="@dimen/subtitle_text_size"
+        android:textAppearance="@style/AppTheme.TextAppearance.Bold"
+        android:layout_marginLeft="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/conservation_tip_linear_layout"></LinearLayout>
+
+
+
+</LinearLayout>

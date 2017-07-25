@@ -18,4 +18,14 @@
 
     <string name="no_recipes">Todavía no tienes ninguna receta favorita. Explora todas las recetas disponibles.</string>
     <string name="title_activity_abc">AbcActivity</string>
+
+    <string name="conservation_title">Conservación</string>
+    <string name="conservation_subtitle">CONGELAR PORCIONES DE PURE O PAPILLAS, BUDINES O TERRINAS</string>
+    <string name="conservation_first_text">Se puede congelar el Puré Amarillo o Papillas con base de puré amarillo y ricota, o queso crema, o cereales precocidos, en cubeteras esterilizadas (de plásticos aptos – libres de tóxicos como bisfenol o poliestireno, entre otros). Descongelar las porciones necesarias.
+
+        Recomendamos porcionar la comida a gusto (para esto es bueno utilizar cubeteras), esperar a que enfríen y etiquetar con la fecha del día. Guardar en el freezer.
+</string>
+    <string name="conservation_duration_title">DURACIÓN DE LOS ALIMENTOS CONGELADOS</string>
+
+
 </resources>

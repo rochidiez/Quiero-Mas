@@ -48,11 +48,6 @@
         <activity android:name=".activity.ChangePasswordActivity" />
         <activity android:name=".activity.DevelopmentDetailActivity" />
         <activity android:name=".activity.BaseActivity" />
-
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="5c84f2c848fa12edce31011817a28e1d058959eb" />
-
         <activity
             android:name=".activity.VideoActivity"
             android:screenOrientation="landscape"
@@ -63,7 +58,13 @@
         <activity
             android:name=".activity.AbcActivity"
             android:label="@string/title_activity_abc" />
-        <activity android:name=".activity.AbcDetailActivity"></activity>
+        <activity android:name=".activity.AbcDetailActivity" />
+        <activity
+            android:name=".activity.ConservationActivity"
+            android:theme="@style/NoActionBarActivity" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="5c84f2c848fa12edce31011817a28e1d058959eb" />
     </application>
 
 </manifest>
