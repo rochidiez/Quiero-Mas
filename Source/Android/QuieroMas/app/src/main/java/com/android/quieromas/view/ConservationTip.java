@@ -1,6 +1,7 @@
 package com.android.quieromas.view;
 
 import android.content.Context;
+import android.text.Html;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -41,6 +42,7 @@ public class ConservationTip extends LinearLayout {
     private void init() {
         inflate(getContext(), R.layout.conservation_tip, this);
         this.title = (TextView)findViewById(R.id.txt_conservation_tip_title);
+        title.setText(Html.fromHtml(titleText));
         this.linearLayout = (LinearLayout) findViewById(R.id.conservation_tip_linear_layout);
         if(list != null){
             for(int i = 0; i < list.size(); i++){

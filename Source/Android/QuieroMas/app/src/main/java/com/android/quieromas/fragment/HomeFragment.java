@@ -3,9 +3,13 @@ package com.android.quieromas.fragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -25,6 +29,8 @@ public class HomeFragment extends BaseFragment {
     private LinearLayout nutritionPlanView;
     private LinearLayout developmentView;
     private TextView txtNames;
+    private Button btnMenu;
+    private DrawerLayout drawerLayout;
     FirebaseDatabaseHelper firebaseDatabaseHelper;
     User user;
 
@@ -48,9 +54,18 @@ public class HomeFragment extends BaseFragment {
     public void onResume() {
         super.onResume();
         ((MainActivity) getActivity()).setActionBarTitle("");
-
+        ((MainActivity) getActivity()).getSupportActionBar().hide();
 
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        ((MainActivity) getActivity()).getSupportActionBar().show();
+
+    }
+
+
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -65,6 +80,16 @@ public class HomeFragment extends BaseFragment {
         nutritionPlanView = (LinearLayout) view.findViewById(R.id.view_receta_home);
         developmentView = (LinearLayout) view.findViewById(R.id.view_estimulacion_home);
         txtNames = (TextView) view.findViewById(R.id.home_title_name);
+        btnMenu = (Button) view.findViewById(R.id.btn_home_menu);
+        drawerLayout = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);
+
+
+        btnMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
 
         developmentView.setOnClickListener(new View.OnClickListener() {
             @Override
