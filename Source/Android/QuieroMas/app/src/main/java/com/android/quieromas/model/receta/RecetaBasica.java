@@ -12,14 +12,16 @@ import java.util.ArrayList;
 public class RecetaBasica {
 
     public ArrayList<String> ingredientes;
+    public ArrayList<String> pasos;
     public String nombre;
     public String thumbnail;
     public String video;
 
     public RecetaBasica(){}
 
-    public RecetaBasica(ArrayList<String> ingredientes, String nombre, String thumbnail, String video) {
+    public RecetaBasica(ArrayList<String> ingredientes, ArrayList<String> pasos, String nombre, String thumbnail, String video ) {
         this.ingredientes = ingredientes;
+        this.pasos = pasos;
         this.nombre = nombre;
         this.thumbnail = thumbnail;
         this.video = video;
@@ -27,6 +29,10 @@ public class RecetaBasica {
 
     public ArrayList<String> getIngredientes() {
         return ingredientes;
+    }
+
+    public ArrayList<String> getPasos() {
+        return pasos;
     }
 
     public String getNombre() {

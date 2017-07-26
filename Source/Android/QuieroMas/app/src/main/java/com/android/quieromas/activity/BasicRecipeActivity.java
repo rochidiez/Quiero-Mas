@@ -24,11 +24,12 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.ListIterator;
 
-public class BasicRecipeActivity extends AppCompatActivity {
+public class BasicRecipeActivity extends BaseActivity {
 
     TextView txtName;
     ImageView imgBackground;
     RecyclerView rvIngredients;
+    RecyclerView rvSteps;
     Button btnWatch;
     Button btnClose;
     String recipeName;
@@ -50,6 +51,7 @@ public class BasicRecipeActivity extends AppCompatActivity {
         btnWatch = (Button) findViewById(R.id.btn_basic_recipe_watch);
         btnClose = (Button) findViewById(R.id.btn_basic_recipe_close);
         rvIngredients = (RecyclerView) findViewById(R.id.basic_recipe_list_ingredients);
+        rvSteps = (RecyclerView) findViewById(R.id.basic_recipe_list_steps);
 
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +89,15 @@ public class BasicRecipeActivity extends AppCompatActivity {
         }
         rvIngredients.setLayoutManager(new LinearLayoutManager(this));
         rvIngredients.setAdapter(new RecipeRecyclerViewAdapter(stepsList,false));
+
+        //Set steps
+        ArrayList<RecipeStepElement> ingList = new ArrayList<>();
+        for (ListIterator<String> iter = recetaBasica.getPasos().listIterator(); iter.hasNext(); ) {
+            String element = iter.next();
+            ingList.add(new RecipeStepElement(element));
+        }
+        rvSteps.setLayoutManager(new LinearLayoutManager(this));
+        rvSteps.setAdapter(new RecipeRecyclerViewAdapter(ingList,true));
 
         btnWatch.setOnClickListener(new View.OnClickListener() {
             @Override

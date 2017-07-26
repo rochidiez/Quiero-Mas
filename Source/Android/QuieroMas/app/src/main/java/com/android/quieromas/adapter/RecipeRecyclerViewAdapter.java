@@ -48,7 +48,7 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeRecycl
             int n = position + 1;
             holder.txtIndicator.setText(Integer.toString(n));
         }else{
-            holder.txtIndicator.setText("●");
+            holder.txtIndicator.setText("•");
             if(holder.mItem.getBasicRecipe() != null){
 
                 holder.txtText.setTextColor(orangeColor);

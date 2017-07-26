@@ -52,9 +52,9 @@ public class BaseExpandableFragment extends BaseFragment {
         expandableListView.setAdapter(new QuieroMasExpandableListAdapter(this.getActivity(),groups));
 
         if(android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
-            expandableListView.setIndicatorBounds(width - getPixelFromDips(50), width - getPixelFromDips(10));
+            expandableListView.setIndicatorBounds(width - getPixelFromDips(35), width - getPixelFromDips(5));
         } else {
-            expandableListView.setIndicatorBoundsRelative(width - getPixelFromDips(50), width - getPixelFromDips(10));
+            expandableListView.setIndicatorBoundsRelative(width - getPixelFromDips(35), width - getPixelFromDips(5));
         }
 
     }

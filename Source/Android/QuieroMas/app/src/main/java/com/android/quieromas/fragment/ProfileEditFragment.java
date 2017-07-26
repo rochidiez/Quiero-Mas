@@ -195,7 +195,7 @@ public class ProfileEditFragment extends BaseFragment {
                             newDate.set(year, monthOfYear, dayOfMonth);
                             babyDate = newDate.getTime();
                             formattedBirthdate = dateFormatter.format(newDate.getTime());
-                            txtBirthdate.setText(formattedBirthdate);
+                            txtBabyBirthdate.setText(formattedBirthdate);
                         }
 
                     },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
