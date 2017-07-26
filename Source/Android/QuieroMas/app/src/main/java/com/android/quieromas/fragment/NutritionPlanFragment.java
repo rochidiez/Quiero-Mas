@@ -2,6 +2,7 @@ package com.android.quieromas.fragment;
 
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,12 +10,14 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -42,6 +45,8 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
     ViewPagerAdapter adapter;
     TextView txtBabyName;
     TextView txtPlanStage;
+    Button btnShoppingList;
+
     FirebaseDatabaseHelper firebaseDatabaseHelper;
     User user;
     int planWeek = -1;
@@ -82,7 +87,18 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
         txtPlanStage = (TextView) view.findViewById(R.id.txt_plan_stage);
         previousWeek = (LinearLayout) view.findViewById(R.id.nutrition_plan_previous_week);
         nextWeek = (LinearLayout) view.findViewById(R.id.nutrition_plan_next_week);
+        btnShoppingList = (Button) view.findViewById(R.id.btn_plan_shopping_list);
 
+
+        btnShoppingList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.main_content, new ShoppingListFragment(),"shopping_list");
+                ft.addToBackStack("shopping_list");
+                ft.commit();
+            }
+        });
 
         firebaseDatabaseHelper = new FirebaseDatabaseHelper();
         firebaseDatabaseHelper.getCurrentUserReference().addListenerForSingleValueEvent(new ValueEventListener() {
