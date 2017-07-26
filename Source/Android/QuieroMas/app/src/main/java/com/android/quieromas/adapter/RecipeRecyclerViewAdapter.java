@@ -58,6 +58,7 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeRecycl
                     public void onClick(View v) {
                         Intent intent = new Intent(holder.btnPlus.getContext(), BasicRecipeActivity.class);
                         intent.putExtra("BASIC_RECIPE",holder.mItem.getBasicRecipe());
+                        intent.putExtra("IS_DESSERT",false);
                         holder.btnPlus.getContext().startActivity(intent);
                     }
                 });

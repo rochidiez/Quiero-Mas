@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -74,8 +75,8 @@ public class AbcActivity extends BaseActivity {
         button.setText(title);
         button.generateViewId();
         button.setLayoutParams(lp);
-        button.setBackground(getResources().getDrawable(R.drawable.button_border_orange));
-        button.setTextColor(getResources().getColor(R.color.orangePrimary));
+        button.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.button_border_orange));
+        button.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.orangePrimary));
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

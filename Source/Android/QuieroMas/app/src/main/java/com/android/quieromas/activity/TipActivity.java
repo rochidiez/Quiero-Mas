@@ -1,5 +1,6 @@
 package com.android.quieromas.activity;
 
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -43,7 +44,7 @@ public class TipActivity extends BaseActivity {
 
         if(drawable != null){
             int resID = getResources().getIdentifier(drawable , "drawable", getPackageName());
-            img.setBackground(getDrawable(resID));
+            img.setBackground(ContextCompat.getDrawable(getApplicationContext(),resID));
         }
 
     }
