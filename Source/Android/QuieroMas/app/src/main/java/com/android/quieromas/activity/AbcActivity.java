@@ -21,6 +21,8 @@ import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
@@ -64,10 +66,22 @@ public class AbcActivity extends BaseActivity {
     }
 
     void updateUI(){
-
+        ArrayList<String> list = new ArrayList<>();
         for (Map.Entry<String,HashMap<String,String>> entry : data.entrySet()) {
-            linearLayout.addView(createMonthButton(entry.getKey()));
+            list.add(entry.getKey());
         }
+        Collections.sort(list, new Comparator<String>() {
+            @Override
+            public int compare(String s, String t1) {
+                int a = Integer.parseInt(s.split(" ")[0]);
+                int b = Integer.parseInt(t1.split(" ")[0]);
+                return a < b ? -1 : a == b ? 0 : 1;
+            }
+        });
+        for(int i = 0; i < list.size(); i++){
+            linearLayout.addView(createMonthButton(list.get(i)));
+        }
+
     }
 
     Button createMonthButton(final String title){

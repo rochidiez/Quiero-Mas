@@ -30,7 +30,8 @@ public class AgeHelper {
 
     public boolean canAccessPlan(String babyBirthdate){
         DateTime birthdate = dtf.parseDateTime(babyBirthdate);
-        if(Months.monthsBetween(birthdate,new DateTime()).getMonths() >= 6){
+        int diff = Months.monthsBetween(birthdate,new DateTime()).getMonths();
+        if (diff >= 6 && diff < 12){
             return true;
         }else{
             return false;

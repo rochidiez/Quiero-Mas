@@ -14,6 +14,7 @@
     android:paddingRight="36dp"
     android:paddingTop="8dp"
     android:paddingBottom="8dp"
+    android:textAppearance="@style/AppTheme.TextAppearance.Bold"
     android:text=""
     android:textSize="@dimen/subtitle_text_size"
     android:textColor="@color/textColorBlack" />
