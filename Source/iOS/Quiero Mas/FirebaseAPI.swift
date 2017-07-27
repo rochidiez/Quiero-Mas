@@ -236,7 +236,7 @@ class FirebaseAPI: NSObject {
     
     static func getUser(firebaseID: String) {
         FIRDatabase.database().reference().child("Usuarios").child(firebaseID).observeSingleEvent(of: .value, with: { (snap) in
-            if let userDic = snap.value as? [String:String] {
+            if let userDic = snap.value as? [String:Any] {
                 UserDefaults.standard.set(userDic, forKey: defPerfil)
                 NotificationCenter.default.post(name: Notification.Name(rawValue: perfilUpdated), object: nil)
             }

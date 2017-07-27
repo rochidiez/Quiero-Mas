@@ -205,6 +205,7 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
             cell.numberLabel.text = String(indexPath.row + 1)
             if let pasosArr = recetaDict?[firRecetaPasos] as? [String] {
                 cell.title.text = pasosArr[indexPath.row]
+                cell.title.scrollRangeToVisible(NSMakeRange(0, 0))
             }
             
             return cell
@@ -218,7 +219,13 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
         if indexPath.section == 0 {
             height = 44
         } else {
-            height = 90
+            if DeviceType.IS_IPHONE_6P {
+                height = 85
+            } else if DeviceType.IS_IPHONE_6 {
+                height = 85
+            } else {
+                height = 88
+            }
         }
         
         return height

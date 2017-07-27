@@ -48,7 +48,7 @@ class TodasViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationItem.title = "Plan de nutrición"
+        self.navigationItem.title = "Todas las recetas"
         self.navigationController?.navigationBar.backgroundColor = appMainColor
         reloadRecetas()
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadRecetas), name: NSNotification.Name(rawValue: recetasUpdated), object: nil)

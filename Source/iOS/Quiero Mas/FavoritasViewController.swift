@@ -13,6 +13,7 @@ class FavoritasViewController: UIViewController, UITableViewDataSource, UITableV
 
     @IBOutlet weak var revealMenuButton: UIBarButtonItem!
     @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var noFavoritesView: UIView!
     
     var favRecetas: [[String:Any]?]?
     
@@ -44,6 +45,9 @@ class FavoritasViewController: UIViewController, UITableViewDataSource, UITableV
             if let favoritosArr = perfilDic[firUsuarioFavoritos] as? [String] {
                 favRecetas = FirebaseAPI.getRecetasByNames(names: favoritosArr)
                 table.reloadData()
+                noFavoritesView.isHidden = true
+            } else {
+                noFavoritesView.isHidden = false
             }
         }
     }
@@ -92,15 +96,20 @@ class FavoritasViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     //MARK: - IBAction
-    @IBAction func unfavAction(_ sender:UIButton) {
+    @IBAction func unfavAction(_ sender: UIButton) {
         let receta = favRecetas![sender.tag]
         guard receta != nil else {return}
         
         FirebaseAPI.favUnfavReceta(name: receta![firRecetaNombre] as! String)
         favRecetas!.remove(at: sender.tag)
-        UIView.animate(withDuration: 0.4, animations: {
-            self.table.reloadData()
-        })
+        table.reloadData()
+        noFavoritesView.isHidden = favRecetas!.count != 0
+    }
+    
+    @IBAction func openTodas(_ sender: UIButton) {
+        let story = UIStoryboard(name: "Main", bundle: nil)
+        let vc = story.instantiateViewController(withIdentifier: "TodasNav")
+        self.revealViewController().pushFrontViewController(vc, animated: true)
     }
     
     

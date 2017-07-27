@@ -38,6 +38,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     @IBOutlet weak var registerConfirmPassTF: UITextField!
     
     //Nacio View
+    @IBOutlet weak var nacioOpacityView: UIView!
     @IBOutlet weak var nacioView: UIView!
     @IBOutlet weak var partoView: UIView!
     @IBOutlet weak var noView: UIView!
@@ -260,7 +261,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         noView.backgroundColor = .clear
         noButton.setTitleColor(.white, for: .normal)
         partoView.isHidden = true
-        notificationPopUp.isHidden = true
+        hideNotificationPopUp()
         clearAllTextFields()
         showLoginView()
     }
@@ -393,8 +394,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
             alert.addAction(cancelAction)
             present(alert, animated: true, completion: nil)
         } else {
-            notificationPopUp.isHidden = false
+            showNotificationPopUp()
         }
+    }
+    
+    func showNotificationPopUp() {
+        view.endEditing(true)
+        notificationPopUp.isHidden = false
+        nacioOpacityView.isHidden = false
+        
+    }
+    
+    func hideNotificationPopUp() {
+        notificationPopUp.isHidden = true
+        nacioOpacityView.isHidden = true
     }
     
     @IBAction func showEmailAction(_ sender: Any) {
@@ -456,7 +469,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
             userDic["Bebé"] = ["Fecha de Nacimiento": deliveryDateTF.text!]
         }
         
-        UserDefaults.standard.set(userDic, forKey: "perfil")
+        UserDefaults.standard.set(userDic, forKey: defPerfil)
     }
     
     @IBAction func datePickerValueChanged(_ sender: Any) {
@@ -492,7 +505,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
                                     if let res = result as? [String:Any] {
                                         let datosDic = ["Nombre Completo":res["name"] as? String, "Email":res["email"] as? String]
                                         let userDic = ["Datos" : datosDic]
-                                        UserDefaults.standard.set(userDic, forKey: "perfil")
+                                        UserDefaults.standard.set(userDic, forKey: defPerfil)
                                     }
                                 }
                             })

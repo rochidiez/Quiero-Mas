@@ -81,16 +81,26 @@ class NutricionViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.title = "Plan de nutrición"
-        checkForBaby()
-        reloadNutricion()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadNutricion), name: NSNotification.Name(rawValue: recetasUpdated), object: nil)
-        
+        if babyIsValid() {
+            reloadNutricion()
+        } else {
+            spinner.stopAnimating()
+        }
     }
     
-    func checkForBaby() {
+    func babyIsValid() -> Bool {
         if let userDic = UserDefaults.standard.dictionary(forKey: defPerfil) {
             noBabyView.isHidden = userDic[defPerfilBebe] != nil
+            if userDic[defPerfilBebe] != nil {
+                do {
+                    _ = try DateManager.getBabyDayInPlan()
+                    noBabyView.isHidden = true
+                } catch {
+                    noBabyView.isHidden = false
+                }
+            }
         }
+        return noBabyView.isHidden == true
     }
     
     func reloadNutricion() {
@@ -104,6 +114,11 @@ class NutricionViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func setObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.viewWillAppear(_:)), name: NSNotification.Name(rawValue: recetasUpdated), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.viewWillAppear(_:)), name: NSNotification.Name(rawValue: perfilUpdated), object: nil)
     }
     
     
@@ -146,7 +161,11 @@ class NutricionViewController: UIViewController {
     }
     
     func loadBabyDayInPlan() {
-        babyDayInPlan = DateManager.getBabyDayInPlan()
+        do {
+            babyDayInPlan = try DateManager.getBabyDayInPlan()
+        } catch {
+            babyDayInPlan = 0
+        }
     }
     
     func loadBabyName() {
@@ -217,39 +236,47 @@ class NutricionViewController: UIViewController {
     func getVolverACocinarString(recetaName: String) -> String? {
         let babyDay = getNextAppearanceForReceta(recetaName: recetaName)
         guard babyDay != nil else {return nil}
-        let currentIndex = DateManager.getBabyDayInPlan()
-        let dateString = DateManager.getDateFromIndexInPlan(indexToTransform: babyDay!, currentIndex: currentIndex)
-        return "Volveremos a cocinar esta receta el \(dateString)"
+        do {
+            let currentIndex = try DateManager.getBabyDayInPlan()
+            let dateString = DateManager.getDateFromIndexInPlan(indexToTransform: babyDay!, currentIndex: currentIndex)
+            return "Volveremos a cocinar esta receta el \(dateString)"
+        } catch {
+            return nil
+        }
     }
     
     func getNextAppearanceForReceta(recetaName: String) -> Int? {
-        var babyDay = DateManager.getBabyDayInPlan()
-        while babyDay < (recetasEdadArr?.count)! {
-            if let currentDia = recetasEdadArr?[babyDay] {
-                //check almuerzo
-                if let currentDiaAlmuerzo = currentDia[firPorEdadAlmuerzo] as? [String:String] {
-                    if let currentDiaAlmuerzoReceta = currentDiaAlmuerzo[firPorEdadAlmuerzoReceta] {
-                        if currentDiaAlmuerzoReceta == recetaName {
-                            break
+        do {
+            var babyDay = try DateManager.getBabyDayInPlan()
+            while babyDay < (recetasEdadArr?.count)! {
+                if let currentDia = recetasEdadArr?[babyDay] {
+                    //check almuerzo
+                    if let currentDiaAlmuerzo = currentDia[firPorEdadAlmuerzo] as? [String:String] {
+                        if let currentDiaAlmuerzoReceta = currentDiaAlmuerzo[firPorEdadAlmuerzoReceta] {
+                            if currentDiaAlmuerzoReceta == recetaName {
+                                break
+                            }
+                        }
+                    }
+                    
+                    //check cena
+                    if let currentDiaCena = currentDia[firPorEdadCena] as? [String:String] {
+                        if let currentDiaCenaReceta = currentDiaCena[firPorEdadCenaReceta] {
+                            if currentDiaCenaReceta == recetaName {
+                                break
+                            }
                         }
                     }
                 }
-                
-                //check cena
-                if let currentDiaCena = currentDia[firPorEdadCena] as? [String:String] {
-                    if let currentDiaCenaReceta = currentDiaCena[firPorEdadCenaReceta] {
-                        if currentDiaCenaReceta == recetaName {
-                            break
-                        }
-                    }
-                }
+                babyDay += 1
             }
-            babyDay += 1
-        }
-        
-        if babyDay < (recetasEdadArr?.count)! {
-            return babyDay
-        } else {
+            
+            if babyDay < (recetasEdadArr?.count)! {
+                return babyDay
+            } else {
+                return nil
+            }
+        } catch {
             return nil
         }
     }
@@ -284,7 +311,7 @@ class NutricionViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBAction func openPerfilAction(_ sender:Any) {
+    @IBAction func openPerfilAction(_ sender: Any) {
         let story = UIStoryboard(name: "Main", bundle: nil)
         let vc = story.instantiateViewController(withIdentifier: "PerfilNav")
         self.revealViewController().pushFrontViewController(vc, animated: true)

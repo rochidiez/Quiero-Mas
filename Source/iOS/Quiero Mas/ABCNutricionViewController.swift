@@ -95,9 +95,9 @@ class ABCNutricionViewController: UIViewController, UITableViewDataSource, UITab
         
         if let meaning = seccionesDic?[String(indexPath.row)] {
             if meaning[2] == "closed" {
-                cell.openButton.setImage(UIImage(named: "Mas Orange"), for: .normal)
+                cell.openImg.image = UIImage(named: "Mas Orange")
             } else {
-                cell.openButton.setImage(UIImage(named: "Menos Orange"), for: .normal)
+                cell.openImg.image = UIImage(named: "Menos Orange")
             }
             
             cell.openButton.tag = indexPath.row

@@ -106,7 +106,7 @@ class RecomendarViewController: UIViewController, UITableViewDataSource, UITextF
     
     //MARK: - Observers
     func recomendarSentAlert() {
-        showAlert(text: "Tu lista de compras se ha enviado exitósamente a los destinatarios")
+        showAlert(text: "Tus invitaciones se enviaron exitosamente")
         eraseEmails()
     }
 

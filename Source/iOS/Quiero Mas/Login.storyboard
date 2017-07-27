@@ -189,13 +189,13 @@ todo su inmenso potencial.</string>
                                                     <constraint firstAttribute="trailing" secondItem="vsX-jl-xMT" secondAttribute="trailing" id="wZy-vx-j5S"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalado por la SAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPL-ND-HGT">
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalado por la SAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPL-ND-HGT">
                                                 <rect key="frame" x="126.5" y="596" width="123.5" height="14"/>
                                                 <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login TV Crecer" translatesAutoresizingMaskIntoConstraints="NO" id="N0S-E4-gWu">
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login TV Crecer" translatesAutoresizingMaskIntoConstraints="NO" id="N0S-E4-gWu">
                                                 <rect key="frame" x="111" y="542" width="152" height="44"/>
                                             </imageView>
                                         </subviews>
@@ -910,7 +910,7 @@ todo su inmenso potencial.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Ya nació tu bebé?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Rd-q5-ohk">
-                                                <rect key="frame" x="91.5" y="100" width="192" height="22"/>
+                                                <rect key="frame" x="92.5" y="100" width="192" height="22"/>
                                                 <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -1116,6 +1116,10 @@ todo su inmenso potencial.</string>
                                                     <constraint firstItem="d4J-Vq-qJD" firstAttribute="leading" secondItem="l3r-VM-f9z" secondAttribute="leading" constant="20" id="xTd-vr-Cuo"/>
                                                 </constraints>
                                             </view>
+                                            <view hidden="YES" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vrt-iW-Hy3">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XSx-YF-p69" userLabel="Notification Pop up">
                                                 <rect key="frame" x="20" y="234" width="335" height="200"/>
                                                 <subviews>
@@ -1180,8 +1184,12 @@ todo su inmenso potencial.</string>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="l3r-VM-f9z" secondAttribute="trailing" constant="20" id="9pe-q3-ozx"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vrt-iW-Hy3" secondAttribute="trailing" id="B0h-rQ-u25"/>
+                                            <constraint firstItem="Vrt-iW-Hy3" firstAttribute="leading" secondItem="CNM-jY-VWR" secondAttribute="leading" id="FFe-01-lFR"/>
+                                            <constraint firstAttribute="bottom" secondItem="Vrt-iW-Hy3" secondAttribute="bottom" id="JDQ-Tu-NFn"/>
                                             <constraint firstItem="xXF-nw-x7C" firstAttribute="top" secondItem="1Rd-q5-ohk" secondAttribute="bottom" constant="40" id="MrI-0k-57X"/>
                                             <constraint firstItem="l3r-VM-f9z" firstAttribute="leading" secondItem="CNM-jY-VWR" secondAttribute="leading" constant="20" id="Pv4-OG-edk"/>
+                                            <constraint firstItem="Vrt-iW-Hy3" firstAttribute="top" secondItem="CNM-jY-VWR" secondAttribute="top" id="QAv-1H-tPE"/>
                                             <constraint firstAttribute="trailing" secondItem="XSx-YF-p69" secondAttribute="trailing" constant="20" id="U2p-bS-PBr"/>
                                             <constraint firstItem="l3r-VM-f9z" firstAttribute="top" secondItem="gPx-W7-e6I" secondAttribute="bottom" constant="20" id="UaU-Qh-Lox"/>
                                             <constraint firstAttribute="trailing" secondItem="xXF-nw-x7C" secondAttribute="trailing" constant="20" id="dyq-TZ-tco"/>
@@ -1255,6 +1263,7 @@ todo su inmenso potencial.</string>
                         <outlet property="loginPassTF" destination="Cjw-zl-fXF" id="KSS-9e-aea"/>
                         <outlet property="loginScroll" destination="1Ik-UX-hFI" id="UL3-zF-dzK"/>
                         <outlet property="loginView" destination="Cq6-Xi-ElM" id="JRt-B3-fn9"/>
+                        <outlet property="nacioOpacityView" destination="Vrt-iW-Hy3" id="GLM-ww-C37"/>
                         <outlet property="nacioView" destination="CNM-jY-VWR" id="1z7-Kw-ifd"/>
                         <outlet property="noButton" destination="e8u-Gr-pCm" id="ivG-mt-AqN"/>
                         <outlet property="noView" destination="gPx-W7-e6I" id="0Rg-WA-AFZ"/>
@@ -1322,7 +1331,7 @@ todo su inmenso potencial.</string>
                                                         <rect key="frame" x="0.0" y="50" width="335" height="400"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUBIR FOTO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn1-Pm-yBI">
-                                                                <rect key="frame" x="119" y="60" width="97" height="17"/>
+                                                                <rect key="frame" x="120" y="60" width="97" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="17"/>
                                                                 <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>

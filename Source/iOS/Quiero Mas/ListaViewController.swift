@@ -18,9 +18,15 @@ class ListaViewController: UIViewController, UITableViewDataSource, UIPickerView
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var noBabyView: UIView!
     
     var ingredientes: [String]?
     
+    enum ListaError: Error {
+        case invalidIndex
+    }
+    
+    //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         setRevealMenuButton()
@@ -59,6 +65,29 @@ class ListaViewController: UIViewController, UITableViewDataSource, UIPickerView
         NotificationCenter.default.addObserver(self, selector: #selector(self.ingredientesSentAlert), name: NSNotification.Name(rawValue: ingredientesSent), object: nil)
     }
     
+    
+    //MARK: - ViewWillAppear
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showHideNoBabyView()
+    }
+    
+    func showHideNoBabyView() {
+        if let userDic = UserDefaults.standard.dictionary(forKey: defPerfil) {
+            noBabyView.isHidden = userDic[defPerfilBebe] != nil
+            if userDic[defPerfilBebe] != nil {
+                do {
+                    _ = try DateManager.getBabyDayInPlan()
+                    noBabyView.isHidden = true
+                } catch {
+                    noBabyView.isHidden = false
+                }
+            }
+        }
+    }
+    
+    
+    //MARK: - Aux
     func ingredientesSentAlert() {
         let user = FIRAuth.auth()?.currentUser
         if let email = user?.email {
@@ -188,13 +217,33 @@ class ListaViewController: UIViewController, UITableViewDataSource, UIPickerView
     }
     
     func setTable(diff: Int) {
-        let initialIndex = DateManager.getBabyDayInPlan() + diff
-        let finalIndex = initialIndex + 6 <= 185 ? initialIndex + 6 : 185
-        ingredientes = getIngredientes(initialIndex: initialIndex, finalIndex: finalIndex)
+        let initialIndex: Int?
+        do {
+            initialIndex = try DateManager.getBabyDayInPlan() + diff
+        } catch {
+            ingredientes = nil
+            table.reloadData()
+            view.endEditing(true)
+            return
+        }
+        
+        let finalIndex = min(initialIndex!+6, 185)
+        
+        do {
+            ingredientes = try getIngredientes(initialIndex: initialIndex!, finalIndex: finalIndex)
+        } catch {
+            ingredientes = nil
+        }
+        
         table.reloadData()
+        view.endEditing(true)
     }
     
-    func getIngredientes(initialIndex: Int, finalIndex: Int) -> [String]? {
+    func getIngredientes(initialIndex: Int, finalIndex: Int) throws -> [String]? {
+        guard initialIndex >= 0 && finalIndex <= 185 && initialIndex < finalIndex else {
+            throw ListaError.invalidIndex
+        }
+        
         if let recetasDic = UserDefaults.standard.dictionary(forKey: defRecetas) {
             if let rIngredientesDic = recetasDic[firIngredientes] as? [String:Any] {
                 if let rEdadArr = recetasDic[firPorEdad] as? [[String:Any]] {
@@ -247,13 +296,17 @@ class ListaViewController: UIViewController, UITableViewDataSource, UIPickerView
 
     
     //MARK: - IBAction
-    @IBAction func sendEmail(_ sender:Any) {
+    @IBAction func sendEmail(_ sender: Any) {
         if ingredientes != nil {
             FirebaseAPI.sendIngredients(list: ingredientes!)
         }
     }
     
-    
+    @IBAction func openPerfilAction(_ sender: Any) {
+        let story = UIStoryboard(name: "Main", bundle: nil)
+        let vc = story.instantiateViewController(withIdentifier: "PerfilNav")
+        self.revealViewController().pushFrontViewController(vc, animated: true)
+    }
     
     
     

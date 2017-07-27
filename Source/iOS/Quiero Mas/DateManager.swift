@@ -23,8 +23,8 @@ class DateManager: NSObject {
         let component: Set<Calendar.Component> = [.day, .month, .year]
         let timeDifference = calendar.dateComponents(component, from: birthdayDate, to: currentDate)
 
-        let months = timeDifference.month!
-        let weeks = timeDifference.day! % 7 == 0 ? timeDifference.day!/7 : timeDifference.day!/7 + 1
+        let months = timeDifference.month! + timeDifference.year! * 12
+        let weeks = timeDifference.day!/7
         let days = (timeDifference.day! % 7) + 1
         
         return QuieroDate(mes: months, semana: weeks, dia: days)
@@ -42,7 +42,7 @@ class DateManager: NSObject {
         return components.weekday!
     }
     
-    static func getBabyDayInPlan() -> Int {
+    static func getBabyDayInPlan() throws -> Int {
         if let userDic = UserDefaults.standard.dictionary(forKey: defPerfil) {
             if let bebeDic = userDic[defPerfilBebe] as? [String:String] {
                 if let dateString = bebeDic[defPerfilBebeFechaDeNacimiento] {
@@ -55,7 +55,12 @@ class DateManager: NSObject {
                     let component: Set<Calendar.Component> = [.day]
                     let timeDifference = calendar.dateComponents(component, from: birthdayDate, to: currentDate)
                     
-                    let days = timeDifference.day! - 185
+                    let days = timeDifference.day! - 181
+                    
+                    guard days >= 0 && days <= 185 else {
+                        throw DateManagerError.dayOutOfBounds
+                    }
+                    
                     return days
                 }
             }
@@ -94,6 +99,9 @@ struct QuieroDate {
     var dia: Int
 }
 
+enum DateManagerError: Error {
+    case dayOutOfBounds
+}
 
 
 

@@ -30,6 +30,12 @@ class PostreViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewWillAppear(animated)
         setBasicaTitle()
         setVideo()
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     func setBasicaTitle() {
@@ -79,6 +85,7 @@ class PostreViewController: UIViewController, UITableViewDataSource, UITableView
             if let pasosArr = basicaDict?[firBasicaPasos] as? [String] {
                 cell.pasonumber.text = "\(indexPath.row+1)"
                 cell.pasoTW.text = pasosArr[indexPath.row]
+                cell.pasoTW.scrollRangeToVisible(NSMakeRange(0, 0))
             }
             
             return cell
@@ -105,7 +112,13 @@ class PostreViewController: UIViewController, UITableViewDataSource, UITableView
         if indexPath.section == 0 {
             height = 44
         } else {
-            height = 80
+            if DeviceType.IS_IPHONE_6P {
+                height = 85
+            } else if DeviceType.IS_IPHONE_6 {
+                height = 85
+            } else {
+                height = 80
+            }
         }
         return height
     }

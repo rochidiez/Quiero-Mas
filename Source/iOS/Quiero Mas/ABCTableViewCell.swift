@@ -11,6 +11,7 @@ import UIKit
 class ABCTableViewCell: UITableViewCell {
 
     @IBOutlet weak var openButton: UIButton!
+    @IBOutlet weak var openImg: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var orangeView: UIView!
     @IBOutlet weak var web: UIWebView!
