@@ -1,5 +1,6 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
+var dateMath = require("date-arithmetic");
 
 admin.initializeApp(functions.config().firebase);
 
@@ -112,29 +113,43 @@ exports.registrar = functions.https.onRequest((req, res) => {
 		
 
 		//Bebe
-		if (nombreBebeSpace != '' && apodoBebeSpace != '') {
-			admin.database().ref('/Usuarios').child(firebaseID).child('Bebé').child('Apodo').set(apodoBebeSpace);
-			admin.database().ref('/Usuarios').child(firebaseID).child('Bebé').child('Nombre').set(nombreBebeSpace);
-			admin.database().ref('/Usuarios').child(firebaseID).child('Bebé').child('Fecha de Nacimiento').set(fechaBebe);
+		if (fechaBebe != '') {
+			var todayDate = new Date
 
-			return admin.database().ref('Bebés de menos de 6 meses').once('value').then(snap => {
-		    if (snap.exists()) {
-		    	if (snap.child(firebaseID).exists()) {
-		    		var refString = '/Bebés de menos de 6 meses/' + firebaseID;
-		    		var adaRef = admin.database().ref(refString);
-					adaRef.remove()
-					  .then(function() {
-					    console.log("Remove succeeded.")
-					  })
-					  .catch(function(error) {
-					    console.log("Remove failed: " + error.message)
-					  });
-		    	}
-		    }
-		    res.status(200).send('Updated Successfully');
-		  });
-		} else {
-			if (fechaBebe != '') {
+			var day = fechaBebe.substring(0,3)
+			var month = fechaBebe.substring(3,6)
+			var year = fechaBebe.substring(6,10)
+			var changedString = month.concat(day, year)
+			var oldDate = new Date(changedString)
+
+			console.log("old date: ", oldDate)
+			console.log("today date: ", todayDate)
+
+			var diff = dateMath.diff(oldDate, todayDate, "day")
+
+			console.log("diff: ", diff)
+
+			if (diff >= 180) {
+				admin.database().ref('/Usuarios').child(firebaseID).child('Bebé').child('Apodo').set(apodoBebeSpace);
+				admin.database().ref('/Usuarios').child(firebaseID).child('Bebé').child('Nombre').set(nombreBebeSpace);
+				admin.database().ref('/Usuarios').child(firebaseID).child('Bebé').child('Fecha de Nacimiento').set(fechaBebe);
+
+				return admin.database().ref('Bebés de menos de 6 meses').once('value').then(snap => {
+			    if (snap.exists()) {
+			    	if (snap.child(firebaseID).exists()) {
+			    		var refString = '/Bebés de menos de 6 meses/' + firebaseID;
+			    		var adaRef = admin.database().ref(refString);
+						adaRef.remove()
+						  .then(function() {
+						    console.log("Remove succeeded.")
+						  })
+						  .catch(function(error) {
+						    console.log("Remove failed: " + error.message)
+						  });
+			    	}
+			    }
+			  });
+			} else {
 				admin.database().ref('/Bebés de menos de 6 meses').child(firebaseID).set(fechaBebe);
 			}
 		}
@@ -142,3 +157,5 @@ exports.registrar = functions.https.onRequest((req, res) => {
 	}
 	res.json({success: false});
 });
+
+
