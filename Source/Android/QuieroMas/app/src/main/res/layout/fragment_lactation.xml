@@ -9,7 +9,7 @@
         android:id="@+id/lactation_exp_listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:groupIndicator="@drawable/expandable_lv_indicator"
+        android:groupIndicator="@null"
         android:indicatorStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_gravity="center_vertical">

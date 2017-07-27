@@ -136,7 +136,7 @@ public class FirstUseActivity extends AuthActivity {
                                @Override
                                public final void onError(Throwable e) {
                                    Log.e(TAG, e.getMessage());
-                                   Toast.makeText(getApplicationContext(),"gg",Toast.LENGTH_LONG).show();
+                                   Toast.makeText(getApplicationContext(),"There was an error",Toast.LENGTH_LONG).show();
                                }
 
                                @Override

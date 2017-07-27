@@ -66,9 +66,9 @@ public class ForgotPasswordFragment extends BaseFragment {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(getActivity(), "Un email fue enviado", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getActivity(), "Un email fue enviado", Toast.LENGTH_LONG).show();
                                     }else{
-                                        Toast.makeText(getActivity(), "Ocurrió un error", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getActivity(), "Ocurrió un error", Toast.LENGTH_LONG).show();
 
                                     }
                                 }

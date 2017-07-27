@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/textView1"
-    android:layout_width="wrap_content"
-    android:layout_height="?android:attr/listPreferredItemHeight"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
-    android:layout_marginTop="16dp"
-    android:layout_marginBottom="16dp"
-    android:lines="3"
-    android:gravity="start|center_vertical"
-    android:paddingLeft="16dp"
-    android:paddingRight="36dp"
-    android:paddingTop="8dp"
-    android:paddingBottom="8dp"
-    android:textAppearance="@style/AppTheme.TextAppearance.Bold"
-    android:text=""
-    android:textSize="@dimen/subtitle_text_size"
-    android:textColor="@color/textColorBlack" />
+    android:id="@+id/ll"
+    android:layout_width="match_parent"
+    android:layout_height="88dp">
+
+    <CheckedTextView
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/txt_listrow_group"
+        android:layout_width="wrap_content"
+        android:layout_height="88dp"
+        android:lines="3"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:gravity="start|center_vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="36dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:textAppearance="@style/AppTheme.TextAppearance.Bold"
+        android:text=""
+        android:textSize="@dimen/subtitle_text_size"
+        android:textColor="@color/textColorBlack" />
+
+
+    <ImageView
+        android:id="@+id/img_listrow_group"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="8dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/plus_icon"/>
+
+
+</RelativeLayout>

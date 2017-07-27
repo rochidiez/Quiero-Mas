@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.CheckedTextView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -92,8 +95,14 @@ public class QuieroMasExpandableListAdapter extends BaseExpandableListAdapter {
             convertView = inflater.inflate(R.layout.expandable_listrow_group, null);
         }
         ExpandableListGroup group = (ExpandableListGroup) getGroup(groupPosition);
-        ((CheckedTextView) convertView).setText(group.string);
-        ((CheckedTextView) convertView).setChecked(isExpanded);
+        CheckedTextView checkedTextView = (CheckedTextView) convertView.findViewById(R.id.txt_listrow_group);
+        checkedTextView.setText(group.string);
+        ImageView imgIndicator = (ImageView) convertView.findViewById(R.id.img_listrow_group);
+        if(isExpanded){
+            imgIndicator.setBackground(convertView.getResources().getDrawable(R.drawable.minus_icon_img));
+        }else{
+            imgIndicator.setBackground(convertView.getResources().getDrawable(R.drawable.plus_icon));
+        }
         return convertView;
     }
 

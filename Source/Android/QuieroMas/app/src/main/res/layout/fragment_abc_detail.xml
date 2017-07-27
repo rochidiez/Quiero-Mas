@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
         android:layout_marginTop="8dp"
-        android:groupIndicator="@drawable/expandable_lv_indicator"
-        android:indicatorStart="16dp"></ExpandableListView>
+        android:groupIndicator="@null"
+        android:indicatorStart="16dp"/>
 
 </FrameLayout>

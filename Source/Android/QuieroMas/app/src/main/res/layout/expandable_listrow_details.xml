@@ -17,6 +17,7 @@
         android:paddingTop="8dp"
         android:text="test"
         android:textColor="@color/textColorBlack"
+        android:lineSpacingMultiplier="1.25"
         android:textSize="@dimen/subsubtitle_text_size">
 
     </TextView>
