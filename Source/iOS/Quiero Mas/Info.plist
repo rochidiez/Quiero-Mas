@@ -28,7 +28,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>22</string>
+	<string>24</string>
 	<key>FacebookAppID</key>
 	<string>1461644063898168</string>
 	<key>FacebookDisplayName</key>
@@ -52,6 +52,10 @@
 	<string>Requiere para la foto del bebe</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Requiere para la foto del bebe</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

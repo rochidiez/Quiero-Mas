@@ -374,6 +374,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     //MARK: - IBAction Nacio
     @IBAction func bornYesAction(_ sender: Any) {
         performSegue(withIdentifier: "babyDataSegue", sender: self)
+        restartLogin()
     }
     
     @IBAction func bornNoAction(_ sender: Any) {

@@ -24,12 +24,14 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate, UIImagePick
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var babyImgView: UIImageView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var backArrowImg: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setBabyBirthdayTF()
         setTapGesture()
         setBabyImgCorners()
+        setBackArrow()
     }
     
     func setBabyBirthdayTF() {
@@ -43,6 +45,14 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate, UIImagePick
     
     func setBabyImgCorners() {
         babyImgView.layer.cornerRadius = babyImgView.frame.width/2
+    }
+    
+    func setBackArrow() {
+        backArrowImg.image = UIImage(named: "Back Arrow")!.withRenderingMode(.alwaysTemplate)
+    }
+    
+    @IBAction func backArrowAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func tapGestureHandler() {

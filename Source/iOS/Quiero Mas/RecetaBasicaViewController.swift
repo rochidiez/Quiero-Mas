@@ -118,18 +118,12 @@ class RecetaBasicaViewController: UIViewController, UITableViewDataSource, UITab
         if let videoString = basicaDict?[firBasicaVideo] as? String {
             let videoURL = URL(string: videoString)
             let player = AVPlayer(url: videoURL!)
-            let playerViewController = AVPlayerViewController()
+            let playerViewController = LandscapeAVPlayerController()
             playerViewController.player = player
             self.present(playerViewController, animated: true) {
                 playerViewController.player!.play()
             }
         }
     }
-    
-    
-    
-    
-    
-    
     
 }

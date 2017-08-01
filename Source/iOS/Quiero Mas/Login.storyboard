@@ -190,7 +190,7 @@ todo su inmenso potencial.</string>
                                                 </constraints>
                                             </view>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalado por la SAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPL-ND-HGT">
-                                                <rect key="frame" x="126.5" y="596" width="123.5" height="14"/>
+                                                <rect key="frame" x="126" y="596" width="123.5" height="14"/>
                                                 <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -231,7 +231,7 @@ todo su inmenso potencial.</string>
                                                 <rect key="frame" x="80" y="40" width="215" height="90"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalado por nutricionistas y pediatras." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSc-Zk-sdR">
-                                                <rect key="frame" x="44.5" y="140" width="286.5" height="16"/>
+                                                <rect key="frame" x="45" y="140" width="286.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -443,7 +443,7 @@ todo su inmenso potencial.</string>
                                                 <rect key="frame" x="80" y="40" width="215" height="90"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalado por nutricionistas y pediatras." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kF-QS-QaL">
-                                                <rect key="frame" x="44.5" y="140" width="286.5" height="16"/>
+                                                <rect key="frame" x="45" y="140" width="286.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -620,7 +620,7 @@ todo su inmenso potencial.</string>
                                                 <rect key="frame" x="80" y="40" width="215" height="90"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalado por nutricionistas y pediatras." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxo-SR-CnI">
-                                                <rect key="frame" x="44.5" y="140" width="286.5" height="16"/>
+                                                <rect key="frame" x="45" y="140" width="286.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -910,7 +910,7 @@ todo su inmenso potencial.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Ya nació tu bebé?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Rd-q5-ohk">
-                                                <rect key="frame" x="92.5" y="100" width="192" height="22"/>
+                                                <rect key="frame" x="92" y="100" width="192" height="22"/>
                                                 <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -1331,7 +1331,7 @@ todo su inmenso potencial.</string>
                                                         <rect key="frame" x="0.0" y="50" width="335" height="400"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUBIR FOTO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn1-Pm-yBI">
-                                                                <rect key="frame" x="120" y="60" width="97" height="17"/>
+                                                                <rect key="frame" x="119.5" y="60" width="97" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="17"/>
                                                                 <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -1518,6 +1518,20 @@ todo su inmenso potencial.</string>
                                                     <constraint firstAttribute="bottom" secondItem="8j7-js-qys" secondAttribute="bottom" id="wjk-I9-ehG"/>
                                                 </constraints>
                                             </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D2W-IC-2RA">
+                                                <rect key="frame" x="20" y="20" width="10" height="34"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="10" id="Bme-AV-P8O"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oE3-3J-p59">
+                                                <rect key="frame" x="20" y="20" width="10" height="34"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <action selector="backArrowAction:" destination="ogg-wx-Feg" eventType="touchUpInside" id="Rc8-zN-7Lw"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1527,10 +1541,16 @@ todo su inmenso potencial.</string>
                                             <constraint firstAttribute="bottom" secondItem="JR1-YJ-B3O" secondAttribute="bottom" constant="20" id="7lN-jc-tnR"/>
                                             <constraint firstItem="Hrf-PN-Aqh" firstAttribute="top" secondItem="DbH-7a-d5e" secondAttribute="bottom" constant="20" id="AHf-ie-7Dj"/>
                                             <constraint firstItem="JR1-YJ-B3O" firstAttribute="leading" secondItem="Rgi-KT-Xga" secondAttribute="leading" constant="20" id="Bo3-QI-qoC"/>
+                                            <constraint firstItem="D2W-IC-2RA" firstAttribute="top" secondItem="Rgi-KT-Xga" secondAttribute="top" constant="20" id="KPb-CS-nxB"/>
+                                            <constraint firstItem="oE3-3J-p59" firstAttribute="height" secondItem="D2W-IC-2RA" secondAttribute="height" id="Rwo-Is-AJw"/>
+                                            <constraint firstItem="D2W-IC-2RA" firstAttribute="leading" secondItem="Rgi-KT-Xga" secondAttribute="leading" constant="20" id="TWf-iR-TMF"/>
+                                            <constraint firstItem="oE3-3J-p59" firstAttribute="top" secondItem="D2W-IC-2RA" secondAttribute="top" id="UlL-Ah-QS1"/>
                                             <constraint firstAttribute="trailing" secondItem="JR1-YJ-B3O" secondAttribute="trailing" constant="20" id="XkX-O4-vyo"/>
                                             <constraint firstAttribute="height" constant="650" id="f0v-ln-Dyq"/>
                                             <constraint firstItem="JR1-YJ-B3O" firstAttribute="top" secondItem="Hrf-PN-Aqh" secondAttribute="bottom" constant="20" id="g63-DH-F3b"/>
                                             <constraint firstItem="DbH-7a-d5e" firstAttribute="top" secondItem="Rgi-KT-Xga" secondAttribute="top" constant="60" id="l03-No-c5t"/>
+                                            <constraint firstItem="oE3-3J-p59" firstAttribute="leading" secondItem="D2W-IC-2RA" secondAttribute="leading" id="qFA-9O-b3u"/>
+                                            <constraint firstItem="oE3-3J-p59" firstAttribute="width" secondItem="D2W-IC-2RA" secondAttribute="width" id="uyW-Uv-3Fl"/>
                                             <constraint firstItem="DbH-7a-d5e" firstAttribute="leading" secondItem="Rgi-KT-Xga" secondAttribute="leading" constant="40" id="xxR-3k-7N2"/>
                                         </constraints>
                                     </view>
@@ -1564,6 +1584,7 @@ todo su inmenso potencial.</string>
                         <outlet property="babyNameTF" destination="KJk-7y-IN0" id="eSm-Yl-TrB"/>
                         <outlet property="babyNickNameTF" destination="nKV-0n-XeC" id="ua6-0c-jen"/>
                         <outlet property="babyScroll" destination="5kM-LO-Gdt" id="i7H-4f-nHB"/>
+                        <outlet property="backArrowImg" destination="D2W-IC-2RA" id="w3f-eM-XUs"/>
                         <outlet property="datePicker" destination="vKl-w1-sF7" id="49Y-9V-z2t"/>
                         <outlet property="spinner" destination="6Nc-1U-wx3" id="VtB-D6-DGu"/>
                     </connections>

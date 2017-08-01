@@ -56,8 +56,6 @@ class EstimulacionViewController: UIViewController {
         }
         spinner.stopAnimating()
     }
-    
-    
 
     
     

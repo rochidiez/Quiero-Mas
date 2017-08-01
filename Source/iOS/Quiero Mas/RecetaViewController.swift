@@ -316,7 +316,7 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
         if let videoString = recetaDict?[firRecetaVideo] as? String {
             let videoURL = URL(string: videoString)
             let player = AVPlayer(url: videoURL!)
-            let playerViewController = AVPlayerViewController()
+            let playerViewController = LandscapeAVPlayerController()
             playerViewController.player = player
             self.present(playerViewController, animated: true) {
                 playerViewController.player!.play()
@@ -458,8 +458,11 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+}
+
+class LandscapeAVPlayerController: AVPlayerViewController {
     
-    
-    
-    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscapeRight
+    }
 }

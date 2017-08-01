@@ -1,7 +1,6 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 var dateMath = require("date-arithmetic");
-
 admin.initializeApp(functions.config().firebase);
 
 // URL: "https://us-central1-quiero-mas.cloudfunctions.net/enviarLista/"

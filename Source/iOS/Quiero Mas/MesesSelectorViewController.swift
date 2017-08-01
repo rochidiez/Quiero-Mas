@@ -55,19 +55,13 @@ class MesesSelectorViewController: UIViewController {
                 key = String(t) + " meses"
             }
             
-            if mesesDic?[key] != nil {
-                if let tempDic = mesesDic?[key] as? [String:Any] {
-                    var i = 0
-                    var newDic = [String:[String]]()
-                    for (tempKey, tempElement) in tempDic {
-                        newDic[String(i)] = [tempKey, tempElement as! String, "closed"]
-                        i += 1
-                    }
-                    vc.mesDic = newDic
+            if var tempArray = mesesDic?[key] as? [[String:String]] {
+                for i in 0...tempArray.count-1 {
+                    tempArray[i][firNutricionMesStatus] = firNutricionMesStatusClosed
                 }
-                
-                vc.titulo = key
+                vc.mesArr = tempArray
             }
+            vc.titulo = key
         }
     }
 

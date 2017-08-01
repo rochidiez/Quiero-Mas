@@ -10,7 +10,7 @@ import UIKit
 
 class MesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var mesDic: [String:Any]?
+    var mesArr: [[String:String]]?
     var titulo: String?
     let tableBackgroundColor = UIColor(red: 247/255, green: 248/255, blue: 250/255, alpha: 1)
     
@@ -48,8 +48,8 @@ class MesViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if mesDic != nil {
-            return (mesDic?.count)!
+        if mesArr != nil {
+            return mesArr!.count
         }
         return 0
     }
@@ -61,21 +61,21 @@ class MesViewController: UIViewController, UITableViewDataSource, UITableViewDel
         cell.leftFirst.isHidden = indexPath.row != 0
         cell.rightFirst.isHidden = indexPath.row != 0
         
-        if let sectionArr = mesDic?[String(indexPath.row)] as? [String] {
-            cell.title.text = sectionArr[0]
+        if let sectionDic = mesArr?[indexPath.row] {
+            cell.title.text = sectionDic[firNutricionMesTitulo]
             
-            if sectionArr[2] == "closed" {
-                cell.openButton.setImage(UIImage(named: "Mas Orange"), for: .normal)
+            if sectionDic[firNutricionMesStatus] == firNutricionMesStatusClosed {
+                cell.openImg.image = UIImage(named: "Mas Orange")
             } else {
-                cell.openButton.setImage(UIImage(named: "Menos Orange"), for: .normal)
+                cell.openImg.image = UIImage(named: "Menos Orange")
             }
             
             cell.openButton.tag = indexPath.row
             cell.openButton.addTarget(self, action: #selector(MesViewController.openCloseCell(sender:)), for: .touchUpInside)
             
-            cell.orangeView.isHidden = sectionArr[2] == "closed"
+            cell.orangeView.isHidden = sectionDic[firNutricionMesStatus] == firNutricionMesStatusClosed
             
-            cell.web.loadHTMLString(sectionArr[1], baseURL: nil)
+            cell.web.loadHTMLString(sectionDic[firNutricionMesDescripcion]!, baseURL: nil)
         }
         
         return cell
@@ -84,8 +84,8 @@ class MesViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     //MARK: - UITableView Delegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if let sectionArr = mesDic?[String(indexPath.row)] as? [String] {
-            if sectionArr[2] == "closed" {
+        if let sectionDic = mesArr?[indexPath.row] {
+            if sectionDic[firNutricionMesStatus] == firNutricionMesStatusClosed {
                 return 80
             } else {
                 return 350
@@ -97,13 +97,13 @@ class MesViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     func openCloseCell(sender: UIButton) {
         let t = sender.tag
-        if var sectionArr = mesDic?[String(t)] as? [String] {
-            if sectionArr[2] == "closed" {
-                sectionArr[2] = "opened"
+        if var sectionDic = mesArr?[t] {
+            if sectionDic[firNutricionMesStatus] == firNutricionMesStatusClosed {
+                sectionDic[firNutricionMesStatus] = firNutricionMesStatusOpened
             } else {
-                sectionArr[2] = "closed"
+                sectionDic[firNutricionMesStatus] = firNutricionMesStatusClosed
             }
-            mesDic?[String(t)] = sectionArr
+            mesArr?[t] = sectionDic
             table.reloadRows(at: [IndexPath(row: t, section: 0)], with: .automatic)
         }
     }

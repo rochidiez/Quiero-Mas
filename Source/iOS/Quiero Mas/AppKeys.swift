@@ -96,6 +96,13 @@ let firLactanciaTitulo = "titulo"
 let firLactanciaTituloTitulo = "titulo"
 let firLactanciaTituloTexto = "texto"
 
+//Firebase Nutrición
+let firNutricionMesTitulo = "titulo"
+let firNutricionMesDescripcion = "descripcion"
+let firNutricionMesStatus = "status"
+let firNutricionMesStatusClosed = "closed"
+let firNutricionMesStatusOpened = "opened"
+
 
 //User Defaults Keys
 let defRecetas = "recetas"
