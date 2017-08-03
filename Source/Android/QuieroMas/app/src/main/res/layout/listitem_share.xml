@@ -14,6 +14,7 @@
         android:textColor="@color/textColorBlack"
         android:hint="ej: vani@gmail.com"
         android:backgroundTint="@android:color/transparent"
+        android:background="@android:color/transparent"
         android:textColorHint="@color/grayPrimary"/>
 
 </LinearLayout>

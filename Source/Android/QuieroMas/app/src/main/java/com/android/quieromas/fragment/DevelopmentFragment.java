@@ -101,13 +101,14 @@ public class DevelopmentFragment extends BaseFragment {
 
             window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.blue));
         }else{
-            window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            //status bar height
-            int actionBarHeight = getActionBarHeight();
-            int statusBarHeight = getStatusBarHeight();
-            //action bar height
-            statusBar.getLayoutParams().height = actionBarHeight + statusBarHeight;
+            window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION,WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+//            //status bar height
+//            int actionBarHeight = getActionBarHeight();
+//            int statusBarHeight = getStatusBarHeight();
+//            //action bar height
+//            statusBar.getLayoutParams().height = actionBarHeight + statusBarHeight;
             statusBar.setBackgroundColor(ContextCompat.getColor(getActivity(),R.color.blue));
+            statusBar.setVisibility(View.VISIBLE);
         }
 
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.development_linear_layout);
