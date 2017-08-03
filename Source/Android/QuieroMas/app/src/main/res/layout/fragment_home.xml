@@ -227,7 +227,7 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:elevation="2dp"
-            android:id="@+id/img_first_use_profile"
+            android:id="@+id/img_home_profile"
             android:layout_width="96dp"
             android:layout_height="96dp"
             android:layout_alignParentBottom="true"

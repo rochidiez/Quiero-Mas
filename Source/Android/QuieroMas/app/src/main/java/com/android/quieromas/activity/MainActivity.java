@@ -34,14 +34,19 @@ import com.android.quieromas.fragment.ShoppingListFragment;
 import com.android.quieromas.fragment.TermsFragment;
 import com.android.quieromas.helper.AgeHelper;
 import com.android.quieromas.helper.FirebaseDatabaseHelper;
+import com.android.quieromas.helper.FirebaseStorageHelper;
 import com.android.quieromas.model.receta.Receta;
 import com.android.quieromas.model.user.User;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AuthActivity
         implements NavigationView.OnNavigationItemSelectedListener, FavoriteRecipesFragment.OnListFragmentInteractionListener,
@@ -54,7 +59,9 @@ public class MainActivity extends AuthActivity
     Class nutritionPlanFragment;
     DrawerLayout drawer;
     TextView txtName;
+    CircleImageView imgProfile;
     User user;
+    Uri profilePicUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +78,8 @@ public class MainActivity extends AuthActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
+
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
@@ -86,6 +95,18 @@ public class MainActivity extends AuthActivity
         fragmentManager.beginTransaction().replace(R.id.main_content, fragment).commit();
 
         View headerLayout = navigationView.getHeaderView(0);
+
+        imgProfile = (CircleImageView) headerLayout.findViewById(R.id.img_drawer_profile);
+
+        FirebaseStorageHelper firebaseStorageHelper = new FirebaseStorageHelper();
+        firebaseStorageHelper.getProfilePictureStorageReference().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                profilePicUri = uri;
+                loadPicture();
+            }
+        });
+
         Button btnProfile = (Button) headerLayout.findViewById(R.id.btn_drawer_profile);
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,6 +128,15 @@ public class MainActivity extends AuthActivity
 
         txtName = (TextView) headerLayout.findViewById(R.id.txt_drawer_name);
 
+    }
+
+    public void loadPicture(){
+        if(profilePicUri != null){
+            Picasso.with(this).load(profilePicUri)
+                    .fit()
+                    .placeholder(R.drawable.img_perfil)
+                    .into(imgProfile);
+        }
     }
 
     void userLoggedEvent(){

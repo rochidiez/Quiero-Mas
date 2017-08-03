@@ -1,5 +1,6 @@
 package com.android.quieromas.fragment;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -17,10 +18,15 @@ import com.android.quieromas.R;
 import com.android.quieromas.activity.MainActivity;
 import com.android.quieromas.helper.AgeHelper;
 import com.android.quieromas.helper.FirebaseDatabaseHelper;
+import com.android.quieromas.helper.FirebaseStorageHelper;
 import com.android.quieromas.model.user.User;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeFragment extends BaseFragment {
 
@@ -28,11 +34,14 @@ public class HomeFragment extends BaseFragment {
     private LinearLayout abcView;
     private LinearLayout nutritionPlanView;
     private LinearLayout developmentView;
+    private CircleImageView imgProfile;
     private TextView txtNames;
     private Button btnMenu;
     private DrawerLayout drawerLayout;
     FirebaseDatabaseHelper firebaseDatabaseHelper;
+    FirebaseStorageHelper firebaseStorageHelper;
     User user;
+    Uri profilePicUri;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -74,7 +83,7 @@ public class HomeFragment extends BaseFragment {
         android.support.v7.app.ActionBar bar =  ((MainActivity) getActivity()).getSupportActionBar();
 
 
-
+        imgProfile = (CircleImageView) view.findViewById(R.id.img_home_profile);
         lactationView = (LinearLayout) view.findViewById(R.id.view_lactancia_home);
         abcView = (LinearLayout) view.findViewById(R.id.view_abc_home);
         nutritionPlanView = (LinearLayout) view.findViewById(R.id.view_receta_home);
@@ -137,6 +146,24 @@ public class HomeFragment extends BaseFragment {
             }
         });
 
+        firebaseStorageHelper = new FirebaseStorageHelper();
+        firebaseStorageHelper.getProfilePictureStorageReference().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                profilePicUri = uri;
+                loadPicture();
+            }
+        });
+
+    }
+
+    public void loadPicture(){
+        if(profilePicUri != null){
+            Picasso.with(getContext()).load(profilePicUri)
+                    .fit()
+                    .placeholder(R.drawable.img_perfil)
+                    .into(imgProfile);
+        }
     }
 
     public void updateUI(){

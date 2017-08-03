@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,12 +20,17 @@ import com.andreabaccega.widget.FormEditText;
 import com.android.quieromas.R;
 import com.android.quieromas.api.FirebaseFunctionApi;
 import com.android.quieromas.api.ServiceFactory;
+import com.android.quieromas.helper.FirebaseStorageHelper;
 import com.android.quieromas.helper.QueryHelper;
 import com.android.quieromas.validator.RepeatPasswordValidator;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.storage.UploadTask;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -183,6 +189,26 @@ public class FirstUseActivity extends AuthActivity {
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
                 imgProfile.setImageBitmap(bitmap);
+                FirebaseStorageHelper firebaseStorageHelper = new FirebaseStorageHelper();
+
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                byte[] byteData = baos.toByteArray();
+
+                UploadTask uploadTask = firebaseStorageHelper.getProfilePictureStorageReference().putBytes(byteData);
+                uploadTask.addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        // Handle unsuccessful uploads
+                    }
+                }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
+                        Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                    }
+                });
+
                 hasChangedImage = true;
             } catch (IOException e) {
                 e.printStackTrace();
