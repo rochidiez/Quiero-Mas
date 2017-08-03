@@ -14,11 +14,17 @@ import android.widget.LinearLayout;
 
 import com.android.quieromas.R;
 import com.android.quieromas.activity.MainActivity;
+import com.android.quieromas.helper.AgeHelper;
+import com.android.quieromas.helper.FirebaseDatabaseHelper;
+import com.android.quieromas.model.user.User;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class EmptyNutritionPlanFragment extends BaseFragment {
 
-
+    User user;
 
     public EmptyNutritionPlanFragment() {
         // Required empty public constructor
@@ -56,6 +62,30 @@ public class EmptyNutritionPlanFragment extends BaseFragment {
                 ft.replace(R.id.main_content, new ProfileFragment(),"profile");
                 ft.addToBackStack("profile");
                 ft.commit();
+            }
+        });
+
+        FirebaseDatabaseHelper firebaseDatabaseHelper = new FirebaseDatabaseHelper();
+        firebaseDatabaseHelper.getCurrentUserReference().addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                user = dataSnapshot.getValue(User.class);
+                AgeHelper ageHelper = new AgeHelper();
+
+                if(user.bebe != null){
+                    if(ageHelper.canAccessPlan(user.bebe.fechaDeNacimiento)){
+
+                        final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                        ft.replace(R.id.main_content, new NutritionPlanFragment(),"nutrition_plan");
+                        ft.addToBackStack("nutrition_plan");
+                        ft.commit();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
             }
         });
     }

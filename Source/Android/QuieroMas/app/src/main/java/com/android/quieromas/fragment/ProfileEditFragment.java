@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -149,12 +150,16 @@ public class ProfileEditFragment extends BaseFragment {
                     user.datos.fechaDeNacimiento = txtBirthdate.getText().toString();
                     if(hasBaby){
                         Bebe bebe = new Bebe(txtBabyName.getText().toString(),txtBabyNickname.getText().toString(),
-                                txtBirthdate.getText().toString());
+                                txtBabyBirthdate.getText().toString());
                         user.bebe = bebe;
                     }
                     firebaseDatabaseHelper.getCurrentUserReference().setValue(user);
 
                     Toast.makeText(getContext(),"Los cambios han sido guardados con éxito",Toast.LENGTH_LONG).show();
+                    final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                    ft.replace(R.id.profile_edit_container, new ProfileViewFragment(),"profile");
+                    ft.addToBackStack("edit_profile");
+                    ft.commit();
                 }
             }
         });

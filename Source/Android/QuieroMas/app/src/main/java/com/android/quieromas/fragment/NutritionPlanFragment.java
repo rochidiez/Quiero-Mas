@@ -105,6 +105,17 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 user = dataSnapshot.getValue(User.class);
+                AgeHelper ageHelper = new AgeHelper();
+
+                if(user.bebe != null){
+                    if(!ageHelper.canAccessPlan(user.bebe.fechaDeNacimiento)){
+
+                        final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                        ft.replace(R.id.main_content, new EmptyNutritionPlanFragment(),"empty");
+                        ft.addToBackStack("empty");
+                        ft.commit();
+                    }
+                }
                 updateUI();
             }
 
