@@ -16,7 +16,7 @@ public class Nutricion {
     HashMap<String,String> secciones;
 
     @PropertyName("Meses")
-    HashMap<String,HashMap<String,String>> meses;
+    HashMap<String,ArrayList<NutricionItem>> meses;
 
     @PropertyName("Título")
     String titulo;
@@ -24,7 +24,7 @@ public class Nutricion {
 
     public Nutricion(){}
 
-    public Nutricion(String titulo, HashMap<String, String> secciones, HashMap<String, HashMap<String, String>> meses) {
+    public Nutricion(String titulo, HashMap<String, String> secciones, HashMap<String,ArrayList<NutricionItem>> meses) {
         this.titulo = titulo;
         this.secciones = secciones;
         this.meses = meses;
@@ -39,7 +39,7 @@ public class Nutricion {
         return secciones;
     }
 
-    public HashMap<String, HashMap<String, String>> getMeses() {
+    public HashMap<String,ArrayList<NutricionItem>> getMeses() {
         return meses;
     }
 }

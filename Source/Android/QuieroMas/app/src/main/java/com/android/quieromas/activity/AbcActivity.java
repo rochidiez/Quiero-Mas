@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 
 import com.android.quieromas.R;
 import com.android.quieromas.helper.FirebaseDatabaseHelper;
+import com.android.quieromas.model.nutricion.NutricionItem;
 import com.android.quieromas.model.planDeNutricion.DiaPlanNutricion;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,7 +31,7 @@ import java.util.TreeMap;
 public class AbcActivity extends BaseActivity {
 
     FirebaseDatabaseHelper firebaseDatabaseHelper;
-    HashMap<String,HashMap<String,String>> data;
+    HashMap<String,ArrayList<NutricionItem>> data;
     LinearLayout linearLayout;
     LinearLayout.LayoutParams lp;
 
@@ -52,7 +53,7 @@ public class AbcActivity extends BaseActivity {
         firebaseDatabaseHelper.getNutritionMonthsReference().addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                GenericTypeIndicator<HashMap<String,HashMap<String,String>>> t = new GenericTypeIndicator<HashMap<String,HashMap<String,String>>>() {};
+                GenericTypeIndicator<HashMap<String,ArrayList<NutricionItem>>> t = new  GenericTypeIndicator<HashMap<String,ArrayList<NutricionItem>>>() {};
                 data = dataSnapshot.getValue(t);
                 updateUI();
             }
@@ -67,7 +68,7 @@ public class AbcActivity extends BaseActivity {
 
     void updateUI(){
         ArrayList<String> list = new ArrayList<>();
-        for (Map.Entry<String,HashMap<String,String>> entry : data.entrySet()) {
+        for (Map.Entry<String,ArrayList<NutricionItem>> entry : data.entrySet()) {
             list.add(entry.getKey());
         }
         Collections.sort(list, new Comparator<String>() {

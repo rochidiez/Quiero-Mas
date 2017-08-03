@@ -16,11 +16,13 @@ import com.android.quieromas.adapter.QuieroMasExpandableListAdapter;
 import com.android.quieromas.helper.FirebaseDatabaseHelper;
 import com.android.quieromas.model.ExpandableListGroup;
 import com.android.quieromas.model.lactancia.Lactancia;
+import com.android.quieromas.model.nutricion.NutricionItem;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,7 +30,7 @@ public class AbcDetailFragment extends BaseExpandableFragment {
 
     TextView txtSubtitle;
     TextView txtTitle;
-    HashMap<String,String> data;
+    ArrayList<NutricionItem> data;
 
 
     private String month;
@@ -84,7 +86,7 @@ public class AbcDetailFragment extends BaseExpandableFragment {
         firebaseDatabaseHelper.getNutritionMonthReference(month).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                GenericTypeIndicator<HashMap<String,String>> t = new GenericTypeIndicator<HashMap<String,String>>() {};
+                GenericTypeIndicator<ArrayList<NutricionItem>> t = new GenericTypeIndicator<ArrayList<NutricionItem>>() {};
                 data = dataSnapshot.getValue(t);
                 updateUI();
             }
@@ -97,9 +99,9 @@ public class AbcDetailFragment extends BaseExpandableFragment {
     }
 
     public void updateUI(){
-        for (Map.Entry<String,String> entry : data.entrySet()) {
-            ExpandableListGroup group = new ExpandableListGroup(entry.getKey());
-            group.children.add(entry.getValue());
+        for (int i = 0; i < data.size(); i++) {
+            ExpandableListGroup group = new ExpandableListGroup(data.get(i).getTitulo());
+            group.children.add(data.get(i).getDescripcion());
             groups.add(group);
         }
 

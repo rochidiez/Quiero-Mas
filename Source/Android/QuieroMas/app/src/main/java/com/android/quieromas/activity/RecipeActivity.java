@@ -122,7 +122,7 @@ public class RecipeActivity extends AuthActivity {
                     btnDessert.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Intent intent = new Intent(getApplicationContext(), BasicRecipeActivity.class);
+                            Intent intent = new Intent(RecipeActivity.this, BasicRecipeActivity.class);
                             intent.putExtra("BASIC_RECIPE",dessertName);
                             intent.putExtra("IS_DESSERT",true);
                             getApplicationContext().startActivity(intent);
