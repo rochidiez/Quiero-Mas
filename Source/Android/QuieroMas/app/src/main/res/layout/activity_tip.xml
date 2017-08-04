@@ -7,6 +7,14 @@
     android:layout_height="match_parent"
     tools:context="com.android.quieromas.activity.TipActivity">
 
+    <Button
+        android:id="@+id/btn_tip_close"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/close_orange"
+        android:layout_margin="8dp"
+        android:layout_gravity="start"/>
+
 
     <TextView
         android:layout_width="wrap_content"

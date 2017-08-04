@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.android.quieromas.R;
+import com.android.quieromas.activity.MainActivity;
 import com.android.quieromas.adapter.MyFavoriteRecipesRecyclerViewAdapter;
 import com.android.quieromas.adapter.MyPlanRecipesRecyclerViewAdapter;
 import com.android.quieromas.helper.FirebaseDatabaseHelper;
@@ -38,6 +39,12 @@ public class SearchFragment extends BaseRecipeFragment {
 
     public SearchFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((MainActivity) getActivity()).setActionBarTitle("Todas las Recetas");
     }
 
 
