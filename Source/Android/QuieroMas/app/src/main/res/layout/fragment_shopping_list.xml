@@ -14,25 +14,36 @@
         android:background="@color/orangePrimary">
 
         <TextView
+            android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="¿Qué día de la semana vas al supermercado?"
-            android:textColor="@color/colorPrimary"
             android:textAppearance="@style/AppTheme.TextAppearance.Bold"
-            android:textSize="@dimen/subtitle_text_size"/>
-        
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:drawablePadding="4dp"
-            android:drawableBottom="@drawable/linea_input"
             android:textColor="@color/colorPrimary"
-            android:hint="Selecciona un día"
-            android:backgroundTint="@android:color/transparent"
-            android:textColorHint="@color/grayLight"
-            android:drawableLeft="@drawable/calendario"
-            android:drawableRight="@drawable/flecha_bajo"/>
+            android:textSize="@dimen/subtitle_text_size" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
+
+            <Spinner
+                style="@style/Widget.App.Spinner"
+                android:id="@+id/spn_shopping_list"
+                android:layout_marginBottom="4dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/linea_input"/>
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -47,16 +58,17 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_marginTop="16dp"
+                android:id="@+id/textView11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="Lista de ingredientes"
-                android:textAllCaps="true"
-                android:textSize="@dimen/subtitle_text_size"
-                android:textColor="@color/textColorBlack"
-                android:textAppearance="@style/AppTheme.TextAppearance.Bold"
                 android:textAlignment="center"
-                />
+                android:textAllCaps="true"
+                android:textAppearance="@style/AppTheme.TextAppearance.Bold"
+                android:textColor="@color/textColorBlack"
+                android:textSize="@dimen/subtitle_text_size" />
+
             <TextView
                 android:id="@+id/txt_shopping_date_text"
                 android:layout_marginTop="8dp"
@@ -67,12 +79,12 @@
                 android:textColor="@color/textColorBlack"
                 android:textAlignment="center"
                 />
+
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/shopping_list_rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:listitem="@layout/listitem_shopping_item">
-            </android.support.v7.widget.RecyclerView>
+                tools:listitem="@layout/listitem_shopping_item"/>
         </LinearLayout>
 
     </ScrollView>

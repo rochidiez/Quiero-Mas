@@ -98,14 +98,16 @@ public class MainActivity extends AuthActivity
 
         imgProfile = (CircleImageView) headerLayout.findViewById(R.id.img_drawer_profile);
 
-        FirebaseStorageHelper firebaseStorageHelper = new FirebaseStorageHelper();
-        firebaseStorageHelper.getProfilePictureStorageReference().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                profilePicUri = uri;
-                loadPicture();
-            }
-        });
+        if(mAuth.getCurrentUser() != null){
+            FirebaseStorageHelper firebaseStorageHelper = new FirebaseStorageHelper();
+            firebaseStorageHelper.getProfilePictureStorageReference().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    profilePicUri = uri;
+                    loadPicture();
+                }
+            });
+        }
 
         Button btnProfile = (Button) headerLayout.findViewById(R.id.btn_drawer_profile);
         btnProfile.setOnClickListener(new View.OnClickListener() {

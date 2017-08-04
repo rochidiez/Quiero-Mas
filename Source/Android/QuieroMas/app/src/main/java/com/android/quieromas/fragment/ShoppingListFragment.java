@@ -2,6 +2,7 @@ package com.android.quieromas.fragment;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,7 +14,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +49,7 @@ import org.joda.time.format.DateTimeFormat;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -54,8 +59,9 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 
-public class ShoppingListFragment extends BaseFragment {
+public class ShoppingListFragment extends BaseFragment implements AdapterView.OnItemSelectedListener {
 
+    public static final String DATE_TEXT = "Para recetas de la semana del ";
     FirebaseDatabaseHelper firebaseDatabaseHelper;
     User user;
     int hmSize;
@@ -66,6 +72,10 @@ public class ShoppingListFragment extends BaseFragment {
     FirebaseAuth mAuth;
     FirebaseFunctionApi api;
     TextView txtDate;
+    Spinner spnDays;
+    List<String> days;
+    int currentDay;
+    LocalDateTime currentDate = new LocalDateTime();
 
 
     public ShoppingListFragment() {
@@ -86,6 +96,15 @@ public class ShoppingListFragment extends BaseFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        days = new ArrayList<String>();
+        days.add("Lunes");
+        days.add("Martes");
+        days.add("Miércoles");
+        days.add("Jueves");
+        days.add("Viernes");
+        days.add("Sábado");
+        days.add("Domingo");
     }
 
     @Override
@@ -104,15 +123,20 @@ public class ShoppingListFragment extends BaseFragment {
         rvList = (RecyclerView) view.findViewById(R.id.shopping_list_rv);
         btnEmail = (Button) view.findViewById(R.id.shopping_list_btn_mail);
         txtDate = (TextView) view.findViewById(R.id.txt_shopping_date_text);
+        spnDays = (Spinner) view.findViewById(R.id.spn_shopping_list);
 
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, days);
 
-        String dateText = "Para recetas de la semana del ";
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        LocalDateTime date = new LocalDateTime();
-        String month = DateTimeFormat.forPattern("MMMM").withLocale(new Locale("es", "ES")).print(date);
-        txtDate.setText(dateText + date.getDayOfMonth() + " " + month);
+        // attaching data adapter to spinner
+        spnDays.setAdapter(dataAdapter);
+        spnDays.setOnItemSelectedListener(this);
 
-        getList();
+        //setteo el spinner al dia actual
+        currentDay = currentDate.getDayOfWeek();
+        spnDays.setSelection(currentDay);
 
 
         btnEmail.setOnClickListener(new View.OnClickListener() {
@@ -147,9 +171,32 @@ public class ShoppingListFragment extends BaseFragment {
 
     }
 
-    public void getList(){
-        ingedients = new HashMap<>();
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        TextView txt = (TextView) parent.getChildAt(0);
 
+        txt.setTextColor(Color.WHITE);
+
+        int diff;
+        LocalDateTime date = new LocalDateTime(currentDate);
+        if(position + 1 > currentDay){
+            diff = position + 1 - currentDay;
+        }else{
+            diff = Math.abs(7-currentDay) + position + 1;
+        }
+        date = date.plusDays(diff);
+        String month = DateTimeFormat.forPattern("MMMM").withLocale(new Locale("es", "ES")).print(date);
+        txtDate.setText(DATE_TEXT + date.getDayOfMonth() + " " + month);
+        getList(diff);
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> arg0) {
+        // TODO Auto-generated method stub
+    }
+
+    public void getList(final int diff){
+        ingedients = new HashMap<>();
         firebaseDatabaseHelper = new FirebaseDatabaseHelper();
         firebaseDatabaseHelper.getCurrentUserReference().addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -157,6 +204,10 @@ public class ShoppingListFragment extends BaseFragment {
                 user = dataSnapshot.getValue(User.class);
                 AgeHelper ageHelper = new AgeHelper();
                 int planWeekStartDay = ageHelper.getPlanWeekStartDay(user.bebe.fechaDeNacimiento);
+
+                if (planWeekStartDay + diff < 180)
+                    planWeekStartDay += diff;
+
                 firebaseDatabaseHelper.getPlanByAgeReference().orderByKey().startAt(Integer.toString(planWeekStartDay)).endAt(Integer.toString(planWeekStartDay + 6)).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -223,6 +274,7 @@ public class ShoppingListFragment extends BaseFragment {
     }
 
     public void queryIngredients(){
+        ingredientsToShow.clear();
         firebaseDatabaseHelper = new FirebaseDatabaseHelper();
         firebaseDatabaseHelper.getIngredientsReference().addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

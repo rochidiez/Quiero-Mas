@@ -78,5 +78,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
     </style>
 
+    <style name="Widget.App.Spinner" parent="@style/Widget.AppCompat.Spinner">
+        <item name="overlapAnchor">true</item>
+        <item name="android:background">@drawable/spinner</item>
+    </style>
+
 
 </resources>
