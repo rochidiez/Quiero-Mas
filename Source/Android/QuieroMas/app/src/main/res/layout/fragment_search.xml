@@ -27,14 +27,51 @@
             android:id="@+id/etxt_search_recipe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:drawablePadding="4dp"
-            android:drawableBottom="@drawable/linea_input"
             android:textColor="@color/colorPrimary"
             android:hint="Ej: Puré de naranja"
             android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
             android:textColorHint="@color/grayLight"
             android:drawableLeft="@drawable/calendario"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/linea_input"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Que contenga"
+            android:textColor="@color/colorPrimary"
+            android:textAppearance="@style/AppTheme.TextAppearance.Bold"
+            android:textSize="@dimen/subtitle_text_size"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
+
+            <Spinner
+                style="@style/Widget.App.SpinnerSearch"
+                android:id="@+id/spn_search"
+                android:layout_marginBottom="4dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:prompt="@string/spinner_search_prompt"
+                />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/linea_input"/>
+        </LinearLayout>
 
         <Button
             android:layout_width="fill_parent"

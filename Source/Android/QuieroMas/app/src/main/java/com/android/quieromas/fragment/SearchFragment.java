@@ -1,24 +1,25 @@
 package com.android.quieromas.fragment;
 
 import android.content.Context;
-import android.net.Uri;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.android.quieromas.R;
 import com.android.quieromas.activity.MainActivity;
-import com.android.quieromas.adapter.MyFavoriteRecipesRecyclerViewAdapter;
-import com.android.quieromas.adapter.MyPlanRecipesRecyclerViewAdapter;
 import com.android.quieromas.helper.FirebaseDatabaseHelper;
+import com.android.quieromas.model.receta.IngredienteListaSemanal;
 import com.android.quieromas.model.receta.Receta;
 import com.android.quieromas.view.EmptyRecyclerView;
 import com.google.firebase.database.DataSnapshot;
@@ -28,14 +29,20 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-public class SearchFragment extends BaseRecipeFragment {
+public class SearchFragment extends BaseRecipeFragment implements AdapterView.OnItemSelectedListener {
 
+    private static final String PROMPT = "Selecciona un ingrediente";
     FirebaseDatabaseHelper firebaseDatabaseHelper;
     ArrayList<Receta> allRecipes = new ArrayList<>();
     Button btnSearh;
     EditText etxtRecipeName;
+    Spinner spnIngredients;
+    List<String> ingredients;
+    HashMap<String,String> hmIngredients;
+    String selectedIngredient;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -67,6 +74,9 @@ public class SearchFragment extends BaseRecipeFragment {
         recyclerView = (EmptyRecyclerView) view.findViewById(R.id.search_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        spnIngredients = (Spinner) view.findViewById(R.id.spn_search);
+        spnIngredients.setOnItemSelectedListener(this);
+
 
         firebaseDatabaseHelper = new FirebaseDatabaseHelper();
         firebaseDatabaseHelper.getRecipesByNameReference().addListenerForSingleValueEvent(new ValueEventListener() {
@@ -82,6 +92,32 @@ public class SearchFragment extends BaseRecipeFragment {
                 }
                 recipes = allRecipes;
                 addRecipes();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        firebaseDatabaseHelper.getIngredientsReference().addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                GenericTypeIndicator< HashMap<String,IngredienteListaSemanal>> t = new GenericTypeIndicator< HashMap<String,IngredienteListaSemanal>>() {};
+                HashMap<String,IngredienteListaSemanal> todosLosIngredientes = dataSnapshot.getValue(t);
+                ingredients = new ArrayList<String>();
+                hmIngredients = new HashMap<String, String>();
+
+                ingredients.add(PROMPT);
+                for (Map.Entry<String, IngredienteListaSemanal> ingredient : todosLosIngredientes.entrySet()) {
+                    ingredients.add(ingredient.getValue().getNombre());
+                    hmIngredients.put(ingredient.getValue().getNombre(),ingredient.getKey());
+                }
+
+                ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, ingredients);
+                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spnIngredients.setAdapter(dataAdapter);
+
             }
 
             @Override
@@ -110,8 +146,10 @@ public class SearchFragment extends BaseRecipeFragment {
                 ArrayList<Receta> filteredRecipes = new ArrayList<>();
                 if(recipes.size() != 0){
                     for (Receta receta : recipes) {
-                        if (receta.titulo.contains(text)) {
-                            filteredRecipes.add(receta);
+                        if (receta.titulo.contains(text) || text == "") {
+                            if(selectedIngredient == null || receta.getIngredientesLista().containsKey(selectedIngredient)){
+                                filteredRecipes.add(receta);
+                            }
                         }
                     }
                 }
@@ -124,6 +162,25 @@ public class SearchFragment extends BaseRecipeFragment {
             }
         });
 
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        TextView txt = (TextView) parent.getChildAt(0);
+
+        txt.setTextColor(Color.WHITE);
+
+        if(txt.getText().toString() != PROMPT){
+            selectedIngredient = hmIngredients.get(txt.getText().toString());
+        }else{
+            selectedIngredient = null;
+        }
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> arg0) {
+        // TODO Auto-generated method stub
     }
 
 }
