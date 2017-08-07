@@ -46,8 +46,6 @@ class EstimulacionVideosViewController: UIViewController {
     func loadThumbnails() {
         s1ImageView.sd_setImage(with: URL(string:(videosDic?[firEstimulacionMesSemana+"1"]?[firEstimulacionMesSemanaThumbnail])!), placeholderImage: UIImage(named: "Thumbnail Receta"))
         s2ImageView.sd_setImage(with: URL(string:(videosDic?[firEstimulacionMesSemana+"2"]?[firEstimulacionMesSemanaThumbnail])!), placeholderImage: UIImage(named: "Thumbnail Receta"))
-        s3ImageView.sd_setImage(with: URL(string:(videosDic?[firEstimulacionMesSemana+"3"]?[firEstimulacionMesSemanaThumbnail])!), placeholderImage: UIImage(named: "Thumbnail Receta"))
-        s4ImageView.sd_setImage(with: URL(string:(videosDic?[firEstimulacionMesSemana+"4"]?[firEstimulacionMesSemanaThumbnail])!), placeholderImage: UIImage(named: "Thumbnail Receta"))
     }
     
     @IBAction func playVideo(_ sender: UIButton) {

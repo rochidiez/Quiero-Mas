@@ -549,9 +549,12 @@ todo su inmenso potencial.</string>
                                                                 <rect key="frame" x="1" y="1" width="293" height="38"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="18"/>
-                                                                <state key="normal" title="Ingresar contraseña">
+                                                                <state key="normal" title="Recuperar contraseña">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="forgotPass:" destination="uCc-nz-vbp" eventType="touchUpInside" id="2Fn-9N-NOi"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1116,7 +1119,7 @@ todo su inmenso potencial.</string>
                                                     <constraint firstItem="d4J-Vq-qJD" firstAttribute="leading" secondItem="l3r-VM-f9z" secondAttribute="leading" constant="20" id="xTd-vr-Cuo"/>
                                                 </constraints>
                                             </view>
-                                            <view hidden="YES" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vrt-iW-Hy3">
+                                            <view hidden="YES" alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vrt-iW-Hy3">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
@@ -1181,7 +1184,6 @@ todo su inmenso potencial.</string>
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="l3r-VM-f9z" secondAttribute="trailing" constant="20" id="9pe-q3-ozx"/>
                                             <constraint firstAttribute="trailing" secondItem="Vrt-iW-Hy3" secondAttribute="trailing" id="B0h-rQ-u25"/>
@@ -1224,7 +1226,6 @@ todo su inmenso potencial.</string>
                                     <constraint firstItem="KMt-LH-RAe" firstAttribute="leading" secondItem="1Ik-UX-hFI" secondAttribute="leading" id="pDX-xA-iYt"/>
                                     <constraint firstItem="CNM-jY-VWR" firstAttribute="leading" secondItem="1Ik-UX-hFI" secondAttribute="leading" id="ruM-gD-WHh"/>
                                     <constraint firstItem="KMt-LH-RAe" firstAttribute="top" secondItem="1Ik-UX-hFI" secondAttribute="top" id="sL2-6J-KSA"/>
-                                    <constraint firstItem="CNM-jY-VWR" firstAttribute="height" secondItem="Cq6-Xi-ElM" secondAttribute="height" id="sbD-h2-kCr"/>
                                     <constraint firstItem="Cq6-Xi-ElM" firstAttribute="leading" secondItem="1Ik-UX-hFI" secondAttribute="leading" id="uhi-kw-X5i"/>
                                     <constraint firstItem="RSC-yd-L83" firstAttribute="leading" secondItem="1Ik-UX-hFI" secondAttribute="leading" id="vWu-aS-wSW"/>
                                     <constraint firstItem="RSC-yd-L83" firstAttribute="height" secondItem="Cq6-Xi-ElM" secondAttribute="height" id="vnY-kb-7Qs"/>
@@ -1258,6 +1259,7 @@ todo su inmenso potencial.</string>
                         <outlet property="emailNoAccountConstraint" destination="Pi3-MM-5lG" id="ruf-z0-uvg"/>
                         <outlet property="emailView" destination="RSC-yd-L83" id="hUj-rk-P27"/>
                         <outlet property="forgotPassNoAccountConstraint" destination="IRS-mQ-DXg" id="qq6-p2-mQW"/>
+                        <outlet property="forgotTF" destination="JNH-lU-o8p" id="wqK-Mr-LPr"/>
                         <outlet property="forgotView" destination="wPi-Hs-cgg" id="MFl-in-ZeX"/>
                         <outlet property="loginEmailTF" destination="cqW-07-vMh" id="5sW-MK-ukw"/>
                         <outlet property="loginPassTF" destination="Cjw-zl-fXF" id="KSS-9e-aea"/>

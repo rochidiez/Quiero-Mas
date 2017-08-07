@@ -179,7 +179,7 @@ class TodasViewController: UIViewController, UITableViewDataSource, UITableViewD
         while i < recetasArray!.count {
             let receta = recetasArray![i]
             for (_, element) in receta {
-                if agregarPorNombre(receta: element) || agregarPorIngrediente(receta: element) {
+                if agregarPorNombre(receta: element) && agregarPorIngrediente(receta: element) {
                     recetasFiltered.append(receta)
                 }
             }
@@ -197,16 +197,20 @@ class TodasViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     //MARK: - Aux
     func agregarPorNombre(receta: [String:Any]) -> Bool {
-        if let recetaNombre = receta[firRecetaNombre] as? String {
-            return recetaNombre.lowercased().range(of: recetaTF.text!) != nil
+        if recetaTF.text != nil && recetaTF.text! != "" {
+            if let recetaNombre = receta[firRecetaNombre] as? String {
+                let val = recetaNombre.lowercased().range(of: recetaTF.text!) != nil
+                return val
+            }
         }
-        return false
+        return true
     }
     
     func agregarPorIngrediente(receta: [String:Any]) -> Bool {
-        guard selectedIngredientKey != nil else {return false}
+        guard selectedIngredientKey != nil else {return true}
         if let recetaIngredientesDic = receta[firRecetaIngredientesLista] as? [String:Any] {
-            return recetaIngredientesDic[selectedIngredientKey!] != nil
+            let val = recetaIngredientesDic[selectedIngredientKey!] != nil
+            return val
         }
         return false
     }

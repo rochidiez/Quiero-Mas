@@ -28,6 +28,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     
     //Forgot View
     @IBOutlet weak var forgotView: UIView!
+    @IBOutlet weak var forgotTF: UITextField!
     
     //Register View
     @IBOutlet weak var registerView: UIView!
@@ -56,32 +57,36 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let theUrl = NSURL(fileURLWithPath: Bundle.main.path(forResource: "video-background_1200x720", ofType: "mp4")!)
-        
-        avPlayer = AVPlayer(url: theUrl as URL)
-        
-        avPlayerLayer = AVPlayerLayer(player: avPlayer)
-        avPlayerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-        avPlayer.actionAtItemEnd = .none
-        
-        avPlayerLayer.frame = view.layer.frame
-        
-        view.layer.insertSublayer(avPlayerLayer, at: 0)
-        
-        NotificationCenter.default.addObserver(self,
-        selector: #selector(playerItemDidReachEnd(notification:)),
-        name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
-        object: avPlayer.currentItem)
-        
+        setAVPlayer()
         adjustDasanConstraint()
         adjustEmailNoAccountConstraint()
         adjustForgotPasswordNoAccountConstraint()
+        setTapGestures()
+        setDatePickerInputs()
+        setObservers()
+    }
+    
+    func setAVPlayer() {
+        let theUrl = NSURL(fileURLWithPath: Bundle.main.path(forResource: "video-background_1200x720", ofType: "mp4")!)
         
+        avPlayer = AVPlayer(url: theUrl as URL)
+        avPlayerLayer = AVPlayerLayer(player: avPlayer)
+        avPlayerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        avPlayer.actionAtItemEnd = .none
+        avPlayerLayer.frame = view.layer.frame
+        
+        view.layer.insertSublayer(avPlayerLayer, at: 0)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd(notification:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayer.currentItem)
+    }
+    
+    func setObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.passUpdated), name: NSNotification.Name(rawValue: perfilPassUpdated), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.connectionAlert), name: NSNotification.Name(rawValue: connectionError), object: nil)
+    }
+    
+    func setTapGestures() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapGestureHandler))
         self.view.addGestureRecognizer(tapGesture)
-        
-        setDatePickerInputs()
     }
     
     //Set up
@@ -322,6 +327,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     }
     
     //MARK: - IBAction Forgot
+    @IBAction func forgotPass(_ sender: Any) {
+        if let email = forgotTF.text {
+            guard email != "" else {return}
+            FirebaseAPI.changePasswordWithEmail(email: email)
+        }
+    }
+    
     
     //MARK: - IBAction Register
     @IBAction func createAccount(_ sender: Any) {
@@ -561,6 +573,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
             vc?.password = registerPassTF.text
             vc?.birthday = registerDateTF.text
         }
+    }
+    
+    //MARK: - Aux
+    func passUpdated() {
+        if let email = forgotTF.text {
+            showAlert(text: "Email de cambio de contraseña enviado exitosamente a \(email)")
+        }
+    }
+    
+    func connectionAlert() {
+        showAlert(text: "Error de conexión")
+    }
+    
+    func showAlert(text: String) {
+        let alert = UIAlertController(title: "",
+                                      message: text,
+                                      preferredStyle: UIAlertControllerStyle.alert)
+        
+        let cancelAction = UIAlertAction(title: "OK",
+                                         style: .cancel, handler: nil)
+        
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+        return
     }
     
 

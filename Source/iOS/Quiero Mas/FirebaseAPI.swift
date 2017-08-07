@@ -371,6 +371,16 @@ class FirebaseAPI: NSObject {
         }
     }
     
+    static func changePasswordWithEmail(email: String) {
+        FIRAuth.auth()?.sendPasswordReset(withEmail: email, completion: { (error) in
+            if error != nil {
+                NotificationCenter.default.post(name: Notification.Name(rawValue: connectionError), object: nil)
+            } else {
+                NotificationCenter.default.post(name: Notification.Name(rawValue: perfilPassUpdated), object: nil)
+            }
+        })
+    }
+    
     static func sendIngredients(list: [String]) {
         let user = FIRAuth.auth()?.currentUser
         if let email = user?.email {
