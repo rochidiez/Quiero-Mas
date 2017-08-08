@@ -9,7 +9,7 @@ import android.support.annotation.Nullable;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
@@ -29,6 +29,8 @@ import com.android.quieromas.model.user.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
+
+import org.joda.time.DateTime;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -137,7 +139,7 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
         AgeHelper ageHelper = new AgeHelper();
         planWeek = ageHelper.getPlanWeek(user.bebe.fechaDeNacimiento);
         int totalWeek = ageHelper.getTotalWeeks(user.bebe.fechaDeNacimiento);
-        int weekStartDay = ageHelper.getPlanWeekStartDay(user.bebe.fechaDeNacimiento);
+        final int weekStartDay = ageHelper.getPlanWeekStartDay(user.bebe.fechaDeNacimiento);
 
         txtBabyName.setText(user.bebe.nombre);
 
@@ -153,7 +155,8 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
             @Override
             public void onClick(View view) {
                 planWeek--;
-                setupViewPager(viewPager, planWeek);
+                final int newWeekStartDay = weekStartDay - 7;
+                setupViewPager(viewPager, newWeekStartDay);
             }
         });
 
@@ -161,13 +164,14 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
             @Override
             public void onClick(View view) {
                 planWeek++;
-                setupViewPager(viewPager, planWeek);
+                final int newWeekStartDay = weekStartDay - 7;
+                setupViewPager(viewPager, newWeekStartDay);
             }
         });
 
-
         setupViewPager(viewPager, weekStartDay);
-        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setupWithViewPager(viewPager,true);
+
 
     }
 
@@ -191,6 +195,9 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
         day++;
         adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day), "Dom");
         viewPager.setAdapter(adapter);
+
+        int dayOfWeek = new DateTime().getDayOfWeek() -1;
+        viewPager.setCurrentItem(dayOfWeek,false);
     }
 
 
@@ -199,7 +206,7 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
         Log.w("", "Hello");
     }
 
-    class ViewPagerAdapter extends FragmentPagerAdapter {
+    class ViewPagerAdapter extends FragmentStatePagerAdapter {
         private final List<NutritionPlanRecipesFragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
 
@@ -226,6 +233,7 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
             mFragmentList.add(fragment);
             mFragmentTitleList.add(title);
         }
+
 
 
         @Override

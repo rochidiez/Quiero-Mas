@@ -29,6 +29,7 @@ public class FirebaseDatabaseHelper {
     public static final String TITLE = "Título";
     public static final String SECTIONS = "Secciones";
     public static final String MONTHS = "Meses";
+    public static final String SCORE = "puntaje";
 
     public FirebaseDatabaseHelper(){
         mAuth = FirebaseAuth.getInstance();
@@ -57,6 +58,10 @@ public class FirebaseDatabaseHelper {
 
     public DatabaseReference getRecipeReference(String recipeName){
         return getRecipesByNameReference().child(recipeName);
+    }
+
+    public DatabaseReference getScoreReference(String recipeName){
+        return getRecipeReference(recipeName).child(SCORE);
     }
 
     public DatabaseReference getFavoriteRecipesReference(){

@@ -10,23 +10,16 @@ import java.util.HashMap;
 
 @IgnoreExtraProperties
 public class Puntaje {
-    public HashMap<String,Double> datos;
-    public double total;
+    public HashMap<String,Integer> datos;
+    public Integer total;
 
-    public Puntaje(HashMap<String, Double> datos, double total) {
+    public Puntaje(HashMap<String, Integer> datos, Integer total) {
         this.datos = datos;
         this.total = total;
     }
 
     public Puntaje(){}
 
-    public HashMap<String, Double> getDatos() {
-        return datos;
-    }
-
-    public double getTotal() {
-        return total;
-    }
 }
 
 

@@ -2,28 +2,35 @@ package com.android.quieromas.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.quieromas.R;
 import com.android.quieromas.adapter.RecipeRecyclerViewAdapter;
 import com.android.quieromas.helper.FirebaseDatabaseHelper;
 import com.android.quieromas.model.receta.Ingrediente;
 import com.android.quieromas.model.receta.Postre;
+import com.android.quieromas.model.receta.Puntaje;
 import com.android.quieromas.model.receta.Receta;
 import com.android.quieromas.model.receta.RecipeStepElement;
+import com.android.quieromas.model.user.Bebe;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.ListIterator;
 
 public class RecipeActivity extends AuthActivity {
@@ -43,6 +50,9 @@ public class RecipeActivity extends AuthActivity {
     private RecyclerView rvSteps;
     private RecyclerView rvIngredients;
     private RelativeLayout reuseLayout;
+    private LinearLayout llRating;
+    private ArrayList<Button> btnRatingArray;
+    FirebaseDatabaseHelper firebaseDatabaseHelper;
 
 
     @Override
@@ -69,7 +79,7 @@ public class RecipeActivity extends AuthActivity {
             }
         }
 
-        FirebaseDatabaseHelper firebaseDatabaseHelper = new FirebaseDatabaseHelper();
+        firebaseDatabaseHelper = new FirebaseDatabaseHelper();
         firebaseDatabaseHelper.getRecipeReference(recipeName).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -94,6 +104,9 @@ public class RecipeActivity extends AuthActivity {
         rvIngredients = (RecyclerView) findViewById(R.id.recipe_list_ingredients);
         reuseLayout = (RelativeLayout) findViewById(R.id.recipe_layout_reuse);
         btnReuse = (Button) findViewById(R.id.recipe_button_reuse);
+        llRating = (LinearLayout) findViewById(R.id.recipe_rating_container);
+
+        btnRatingArray = new ArrayList<>();
 
         txtName.setText(recipeName);
 
@@ -114,7 +127,7 @@ public class RecipeActivity extends AuthActivity {
                 }
             });
 
-            FirebaseDatabaseHelper firebaseDatabaseHelper1 =  new FirebaseDatabaseHelper();
+            firebaseDatabaseHelper =  new FirebaseDatabaseHelper();
             firebaseDatabaseHelper.getDessertReference(dessertName).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
@@ -149,6 +162,58 @@ public class RecipeActivity extends AuthActivity {
     }
 
     private void updateUI(){
+
+        int i = 0;
+        final Puntaje puntaje = receta.getPuntaje();
+        if (puntaje.datos.containsKey(mAuth.getCurrentUser().getUid())){
+            i = puntaje.datos.get(mAuth.getCurrentUser().getUid());
+        }
+        int j = 1;
+        int dimensionInDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 38, getResources().getDisplayMetrics());
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(dimensionInDp,dimensionInDp);
+        params.setMargins(12,8,12,8);
+        while(j <= 5){
+            Button btn = new Button(this);
+            btn.setLayoutParams(params);
+            btn.setText(String.valueOf(j));
+            // btn.setTextSize(getResources().getDimension(R.dimen.subsubtitle_text_size));
+            if(i>0){
+                btn.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));
+                btn.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.button_circle_orange));
+
+                i--;
+            }else{
+                btn.setTextColor(ContextCompat.getColor(this, R.color.orangePrimary));
+                btn.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.button_circle_border));
+            }
+
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Button button = (Button) view;
+                    int score =  Integer.parseInt(button.getText().toString());
+                    int index = score - 1;
+                    for(int i = 0; i < btnRatingArray.size(); i++){
+                        Button it = btnRatingArray.get(i);
+                        if(i <= index){
+                            it.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary));
+                            it.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.button_circle_orange));
+                        }else{
+                            it.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.orangePrimary));
+                            it.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.button_circle_border));
+                        }
+                    }
+                    puntaje.datos.put(mAuth.getCurrentUser().getUid(),score);
+                    firebaseDatabaseHelper.getScoreReference(recipeName).setValue(puntaje);
+                    Toast.makeText(getApplicationContext(),"Su puntaje ha sido guardado.",Toast.LENGTH_LONG).show();
+                }
+            });
+
+            llRating.addView(btn);
+            btnRatingArray.add(btn);
+            j++;
+        }
+
 
         btnDevelopmentTip.setOnClickListener(new View.OnClickListener() {
             @Override

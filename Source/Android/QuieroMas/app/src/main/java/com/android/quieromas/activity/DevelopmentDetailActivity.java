@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.text.method.TextKeyListener;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -73,15 +74,21 @@ public class DevelopmentDetailActivity extends BaseActivity {
         android.support.v7.app.ActionBar bar = this.getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this,R.color.blue)));
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window window =  this.getWindow();
+        Window window =  this.getWindow();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
 
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
-            window.setStatusBarColor(ContextCompat.getColor(this,R.color.blue));
+            window.setStatusBarColor(ContextCompat.getColor(this, R.color.blue));
         }
+//        }else{
+//            window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION,WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+//            statusBar.setBackgroundColor(ContextCompat.getColor(this,R.color.blue));
+//            statusBar.setVisibility(View.VISIBLE);
+//        }
 
     }
 
