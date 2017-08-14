@@ -922,7 +922,7 @@
 				DEVELOPMENT_TEAM = 426MNF8EA3;
 				INFOPLIST_FILE = "Quiero Mas/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Quiero-Mas.Quiero-Mas";
+				PRODUCT_BUNDLE_IDENTIFIER = "FerFrassia.Quiero-Mas";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Quiero Mas/Quiero Mas-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -941,7 +941,7 @@
 				DEVELOPMENT_TEAM = 426MNF8EA3;
 				INFOPLIST_FILE = "Quiero Mas/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Quiero-Mas.Quiero-Mas";
+				PRODUCT_BUNDLE_IDENTIFIER = "FerFrassia.Quiero-Mas";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Quiero Mas/Quiero Mas-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

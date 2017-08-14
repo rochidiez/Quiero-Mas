@@ -301,14 +301,17 @@ class NutricionViewController: UIViewController {
     }
     
     @IBAction func bottomRecetaAction(_ sender: Any) {
-        let story = UIStoryboard(name: "Main", bundle: nil)
-        let vc = story.instantiateViewController(withIdentifier: "RecetaViewController") as! RecetaViewController
-        vc.recetaNombre = recetasActuales?.cenaReceta?[firRecetaIngredientesNombre] as? String
-        vc.recetaDict = recetasActuales?.cenaReceta
-        vc.recetaPostre = recetasActuales?.cenaPostre
-        vc.recetaDia = recetasEdadArr?[babyDayInPlan]
-        vc.volverACocinar = getVolverACocinarString(recetaName: vc.recetaNombre!)
-        self.navigationController?.pushViewController(vc, animated: true)
+        if let recetaName = recetasActuales?.cenaReceta?[firRecetaIngredientesNombre] as? String {
+            guard recetaName != "No cocines" else {return}
+            let story = UIStoryboard(name: "Main", bundle: nil)
+            let vc = story.instantiateViewController(withIdentifier: "RecetaViewController") as! RecetaViewController
+            vc.recetaNombre = recetaName
+            vc.recetaDict = recetasActuales?.cenaReceta
+            vc.recetaPostre = recetasActuales?.cenaPostre
+            vc.recetaDia = recetasEdadArr?[babyDayInPlan]
+            vc.volverACocinar = getVolverACocinarString(recetaName: vc.recetaNombre!)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @IBAction func openPerfilAction(_ sender: Any) {
