@@ -44,10 +44,16 @@ public class MyFavoriteRecipesRecyclerViewAdapter extends RecyclerView.Adapter<M
            holder.btnFav.setBackground(holder.btnFav.getResources().getDrawable(R.drawable.fav_vacio));
         }
 
-        Picasso.with(holder.imgBackground.getContext()).load(mValues.get(position).getThumbnail())
-                //.resize(holder.imgBackground.getWidth(),holder.imgBackground.getHeight())
-                .fit()
-                .into(holder.imgBackground);
+        try{
+            Picasso.with(holder.imgBackground.getContext()).load(mValues.get(position).getThumbnail())
+                    //.resize(holder.imgBackground.getWidth(),holder.imgBackground.getHeight())
+                    .fit()
+                    .centerCrop()
+                    .into(holder.imgBackground);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +68,8 @@ public class MyFavoriteRecipesRecyclerViewAdapter extends RecyclerView.Adapter<M
     }
 
     public void updateValues(List<Receta> values){
-        mValues = values;
+        mValues.clear();
+        mValues.addAll(values);
         notifyDataSetChanged();
     }
 

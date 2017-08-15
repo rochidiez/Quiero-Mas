@@ -90,8 +90,8 @@ public class DevelopmentFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        ((MainActivity) getActivity()).getSupportActionBar().setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(getActivity(),R.color.blue)));
         Window window =  ((MainActivity) getActivity()).getWindow();
-        View statusBar = (View) getActivity().findViewById(R.id.statusBarBackground);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 
 
@@ -100,16 +100,17 @@ public class DevelopmentFragment extends BaseFragment {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
             window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.blue));
-        }else{
-            window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION,WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        }
+//        else{
+//            window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION,WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
 //            //status bar height
 //            int actionBarHeight = getActionBarHeight();
 //            int statusBarHeight = getStatusBarHeight();
 //            //action bar height
 //            statusBar.getLayoutParams().height = actionBarHeight + statusBarHeight;
-            statusBar.setBackgroundColor(ContextCompat.getColor(getActivity(),R.color.blue));
-            statusBar.setVisibility(View.VISIBLE);
-        }
+//        statusBar.setBackgroundColor(ContextCompat.getColor(getActivity(),R.color.blue));
+//            statusBar.setVisibility(View.VISIBLE);
+//        }
 
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.development_linear_layout);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);

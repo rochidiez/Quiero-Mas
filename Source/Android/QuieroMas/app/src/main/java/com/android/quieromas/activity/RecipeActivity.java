@@ -29,6 +29,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.security.spec.ECField;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.ListIterator;
@@ -165,7 +166,7 @@ public class RecipeActivity extends AuthActivity {
 
         int i = 0;
         final Puntaje puntaje = receta.getPuntaje();
-        if (puntaje.datos.containsKey(mAuth.getCurrentUser().getUid())){
+        if (puntaje != null && puntaje.datos != null && puntaje.datos.containsKey(mAuth.getCurrentUser().getUid())){
             i = puntaje.datos.get(mAuth.getCurrentUser().getUid());
         }
         int j = 1;
@@ -239,9 +240,14 @@ public class RecipeActivity extends AuthActivity {
             }
         });
 
-        Picasso.with(getApplicationContext()).load(receta.getThumbnail())
-                .fit()
-                .into(imgBackground);
+        try{
+            Picasso.with(getApplicationContext()).load(receta.getThumbnail())
+                    .fit()
+                    .into(imgBackground);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
 
         txtVariants.setText(receta.getVariante());
 

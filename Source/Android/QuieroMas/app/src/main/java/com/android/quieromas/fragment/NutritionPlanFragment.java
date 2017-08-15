@@ -149,7 +149,11 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
         if(weeks > 1){
             weekText += "s";
         }
-        txtPlanStage.setText(months + " meses, " + weeks + weekText);
+        String finalText = months + " meses";
+        if(weeks > 0){
+            finalText += ", " + weeks + weekText;
+        }
+        txtPlanStage.setText(finalText);
 
         previousWeek.setOnClickListener(new View.OnClickListener() {
             @Override

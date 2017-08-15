@@ -11,11 +11,13 @@
         android:id="@+id/development_linear_layout"
         android:orientation="vertical">
 
-        <View
-            android:id="@+id/statusBarBackground"
-            android:layout_width="match_parent"
-            android:layout_height="?android:attr/actionBarSize"
-            android:visibility="gone"/>
+        <!--<View-->
+            <!--android:id="@+id/statusBarBackground"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:minHeight="?attr/actionBarSize"-->
+            <!--android:visibility="gone"/>-->
 
         <ImageView
             android:layout_width="match_parent"
@@ -28,7 +30,7 @@
             android:layout_margin="8dp"
             android:textColor="@color/blue"
             android:textSize="@dimen/subtitle_text_size"
-            android:text="Lorem ipsum dolor sit amet, eu cetero utamur nam. Sit omittam voluptatibus ex. Novum impedit eu mea, epicuri verterem inimicus et eum. Ornatus fastidii in pri. Quo ancillae accusamus eu, nec vidit doming ut, vis an habeo iusto salutandi."/>
+            android:text=""/>
 
     </LinearLayout>
 

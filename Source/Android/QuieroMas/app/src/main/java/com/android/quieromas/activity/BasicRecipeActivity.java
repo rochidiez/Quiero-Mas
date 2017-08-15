@@ -92,9 +92,13 @@ public class BasicRecipeActivity extends BaseActivity {
 
     public void updateUI(){
 
-        Picasso.with(getApplicationContext()).load(recetaBasica.getThumbnail())
-                .fit()
-                .into(imgBackground);
+        try {
+            Picasso.with(getApplicationContext()).load(recetaBasica.getThumbnail())
+                    .fit()
+                    .into(imgBackground);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
         //Set steps
         ArrayList<RecipeStepElement> stepsList = new ArrayList<>();

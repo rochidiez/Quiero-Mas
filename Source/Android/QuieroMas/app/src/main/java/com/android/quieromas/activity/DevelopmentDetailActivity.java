@@ -104,7 +104,8 @@ public class DevelopmentDetailActivity extends BaseActivity {
 
         Collections.sort(developmentItems, new ComparatorSemana());
 
-        recyclerView.setAdapter(new DevelopmentRecyclerViewAdapter(developmentItems));
+
+        recyclerView.setAdapter(new DevelopmentRecyclerViewAdapter(developmentItems.subList(0,2)));
 
     }
 

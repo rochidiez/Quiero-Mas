@@ -111,18 +111,28 @@ public class NutritionPlanRecipesFragment extends BaseFragment {
         txtMeal.setText(mealText);
         txtTitle.setText(comida.getReceta());
 
-        Picasso.with(getContext()).load(receta.getThumbnail())
-                .fit()
-                .into(imgMeal);
+        try{
+            Picasso.with(getContext()).load(receta.getThumbnail())
+                    .fit()
+                    .centerCrop()
+                    .into(imgMeal);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
 
         meal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), RecipeActivity.class);
-                intent.putExtra("RECIPE", comida.getReceta());
-                intent.putExtra("DESSERT",comida.getPostre());
-                intent.putExtra("DEVELOPMENT",data.getTipDesarrollo());
-                startActivity(intent);
+                if(!comida.getReceta().toLowerCase().contains("sin receta" )){
+                    Intent intent = new Intent(getActivity(), RecipeActivity.class);
+                    intent.putExtra("RECIPE", comida.getReceta());
+                    if(!comida.getPostre().toLowerCase().contains("sin postre") && !comida.getPostre().toLowerCase().contains("sin receta")){
+                        intent.putExtra("DESSERT",comida.getPostre());
+                    }
+                    intent.putExtra("DEVELOPMENT",data.getTipDesarrollo());
+                    startActivity(intent);
+                }
             }
         });
     }
