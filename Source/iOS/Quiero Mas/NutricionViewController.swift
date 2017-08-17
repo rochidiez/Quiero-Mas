@@ -247,7 +247,7 @@ class NutricionViewController: UIViewController {
     
     func getNextAppearanceForReceta(recetaName: String) -> Int? {
         do {
-            var babyDay = try DateManager.getBabyDayInPlan()
+            var babyDay = try DateManager.getBabyDayInPlan() + 1
             while babyDay < (recetasEdadArr?.count)! {
                 if let currentDia = recetasEdadArr?[babyDay] {
                     //check almuerzo

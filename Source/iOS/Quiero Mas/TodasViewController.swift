@@ -120,7 +120,7 @@ class TodasViewController: UIViewController, UITableViewDataSource, UITableViewD
         if let receta = recetasArray?[indexPath.section] {
             for (key, element) in receta {
                 cell.recetaName.text = key
-                if let thumbnail = element["Thumbnail"] as? String {
+                if let thumbnail = element[firRecetaThumbnail] as? String {
                     cell.recetaImg.sd_setImage(with: URL(string:thumbnail), placeholderImage: UIImage(named: "Thumbnail Receta"))
                 }
                 if FirebaseAPI.isRecetaFavorite(name: key) {
