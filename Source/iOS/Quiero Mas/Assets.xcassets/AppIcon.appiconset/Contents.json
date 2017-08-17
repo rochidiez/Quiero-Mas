@@ -3,49 +3,49 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "iPhone Notificacion iOS 7-10 20pt 2x.png",
+      "filename" : "2x 40x40 12.05.11 AM.png",
       "scale" : "2x"
     },
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "iPhone Notificacion iOS 7-10 20pt 3x.png",
+      "filename" : "3x-60x60-1.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "iPhone spotlight iOS 5,6 29pt 2x.png",
+      "filename" : "2x-58x58.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "iPhone spotlight iOS 5,6 29pt 3x.png",
+      "filename" : "3x (87x87).png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "iPhone spotlight iOS 7-10 40pt 2x.png",
+      "filename" : "2x-80x80.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "iPhone spotlight iOS 7-10 40pt 3x.png",
+      "filename" : "3x-120x120.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "iPhone App 60pt 2x.png",
+      "filename" : "2x-120x120.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "iPhone App 60pt 3x.png",
+      "filename" : "3x-180x180.png",
       "scale" : "3x"
     },
     {
@@ -57,7 +57,7 @@
     {
       "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "iPad Notifications 2x.png",
+      "filename" : "2x 40x40 00-04-09-312.png",
       "scale" : "2x"
     },
     {
@@ -75,31 +75,31 @@
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "iPad Spotlight 40pt 1x.png",
+      "filename" : "1x-40x40.png",
       "scale" : "1x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "iPad Spotlight 40pt 2x.png",
+      "filename" : "2x-80x80-1.png",
       "scale" : "2x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "iPad App 1x 76pt.png",
+      "filename" : "1x-76x76.png",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "iPad App 2x 76pt.png",
+      "filename" : "2x-152x152.png",
       "scale" : "2x"
     },
     {
       "size" : "83.5x83.5",
       "idiom" : "ipad",
-      "filename" : "iPad Pro App 2x.png",
+      "filename" : "2x-167x167.png",
       "scale" : "2x"
     }
   ],
