@@ -27,12 +27,15 @@ import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import org.joda.time.DateTime;
+
 import java.util.ArrayList;
 
 
 public class NutritionPlanRecipesFragment extends BaseFragment {
 
     private int dia;
+    private int plus;
     DiaPlanNutricion data;
     Receta almuerzo;
     Receta cena;
@@ -47,10 +50,11 @@ public class NutritionPlanRecipesFragment extends BaseFragment {
         // Required empty public constructor
     }
 
-    public static NutritionPlanRecipesFragment newInstance(int dia) {
+    public static NutritionPlanRecipesFragment newInstance(int dia,int plus) {
         NutritionPlanRecipesFragment fragment = new NutritionPlanRecipesFragment();
         Bundle args = new Bundle();
         args.putInt("DIA",dia);
+        args.putInt("PLUS",plus);
         fragment.setArguments(args);
         return fragment;
     }
@@ -60,6 +64,7 @@ public class NutritionPlanRecipesFragment extends BaseFragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             dia = getArguments().getInt("DIA");
+            plus = getArguments().getInt("PLUS");
         }
     }
 
@@ -87,7 +92,7 @@ public class NutritionPlanRecipesFragment extends BaseFragment {
 
     }
 
-    public void updateUI(boolean isAlmuerzo){
+    public void updateUI(boolean isAlmuerzo, final String reuse){
         View meal;
         String mealText;
         final Comida comida;
@@ -130,6 +135,9 @@ public class NutritionPlanRecipesFragment extends BaseFragment {
                     if(!comida.getPostre().toLowerCase().contains("sin postre") && !comida.getPostre().toLowerCase().contains("sin receta")){
                         intent.putExtra("DESSERT",comida.getPostre());
                     }
+                    if(reuse != null){
+                        intent.putExtra("REUSE",reuse);
+                    }
                     intent.putExtra("DEVELOPMENT",data.getTipDesarrollo());
                     startActivity(intent);
                 }
@@ -137,22 +145,50 @@ public class NutritionPlanRecipesFragment extends BaseFragment {
         });
     }
 
-    public void getReceta(final Boolean isAlmuerzo){
+    public void getReceta(final Boolean isAlmuerzo,ArrayList<DiaPlanNutricion> allDays){
         Comida comida;
         if(isAlmuerzo){
             comida = data.getAlmuerzo();
         }else{
             comida = data.getCena();
         }
+
+        String name = comida.getReceta().toString();
+        boolean found = false;
+        int i = dia + 1;
+        if(!name.equals("Sin Receta")){
+            while (!found && i < allDays.size()){
+                if(allDays.get(i).getAlmuerzo().getReceta().equals(name) || allDays.get(i).getCena().getReceta().equals(name)){
+                    found = true;
+                }
+                i++;
+            }
+        }
+
+        final boolean hasReuse =  found;
+        int diff = i - plus - 1;
+        DateTime now = new DateTime();
+        now = now.plusDays(diff);
+        final String reuse = String.valueOf(now.getDayOfMonth()) + "/" + String.valueOf(now.getMonthOfYear());
+
         firebaseDatabaseHelper.getRecipeReference(comida.getReceta()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if(isAlmuerzo){
                     almuerzo = dataSnapshot.getValue(Receta.class);
-                    updateUI(true);
+                    if(hasReuse){
+                        updateUI(true,reuse);
+                    }else{
+                        updateUI(true,null);
+                    }
+
                 }else{
                     cena = dataSnapshot.getValue(Receta.class);
-                    updateUI(false);
+                    if(hasReuse){
+                        updateUI(false,reuse);
+                    }else{
+                        updateUI(false,null);
+                    }
                 }
 
 
@@ -176,8 +212,8 @@ public class NutritionPlanRecipesFragment extends BaseFragment {
                 GenericTypeIndicator<ArrayList<DiaPlanNutricion>> t = new GenericTypeIndicator<ArrayList<DiaPlanNutricion>>() {};
                 ArrayList<DiaPlanNutricion> dataArray = dataSnapshot.getValue(t);
                 data = dataArray.get(dia);
-                getReceta(true);
-                getReceta(false);
+                getReceta(true,dataArray);
+                getReceta(false,dataArray);
             }
 
             @Override

@@ -209,12 +209,13 @@
                     android:textSize="@dimen/subtitle_text_size" />
 
                 <TextView
+                    android:id="@+id/txt_recipe_reuse"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/recipe_button_reuse"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="8dp"
-                    android:text="Volveremos a utilizar esta receta el 10/8"
+                    android:text=""
                     android:textAlignment="center"
                     android:textColor="@color/textColorBlack"
                     android:textSize="@dimen/subsubtitle_text_size" />

@@ -46,14 +46,17 @@ public class RecipeActivity extends AuthActivity {
     private ImageView imgBackground;
     private String dessertName;
     private String developmentTip;
+    private String reuse;
     private TextView txtVariants;
     private TextView txtName;
+    private TextView txtReuse;
     private RecyclerView rvSteps;
     private RecyclerView rvIngredients;
     private RelativeLayout reuseLayout;
     private LinearLayout llRating;
     private ArrayList<Button> btnRatingArray;
     FirebaseDatabaseHelper firebaseDatabaseHelper;
+    private static final String REUSE_TEXT = "Volveremos a utilizar esta receta el ";
 
 
     @Override
@@ -78,6 +81,9 @@ public class RecipeActivity extends AuthActivity {
             if(extras.containsKey("DEVELOPMENT")){
                 developmentTip = extras.getString("DEVELOPMENT");
             }
+            if(extras.containsKey("REUSE")){
+                reuse = extras.getString("REUSE");
+            }
         }
 
         firebaseDatabaseHelper = new FirebaseDatabaseHelper();
@@ -101,6 +107,7 @@ public class RecipeActivity extends AuthActivity {
         btnDevelopmentTip = (Button) findViewById(R.id.recipe_button_development_tip);
         txtVariants = (TextView) findViewById(R.id.txt_recipe_variants);
         txtName = (TextView) findViewById(R.id.txt_recipe_name);
+        txtReuse = (TextView) findViewById(R.id.txt_recipe_reuse);
         rvSteps = (RecyclerView) findViewById(R.id.recipe_list_steps);
         rvIngredients = (RecyclerView) findViewById(R.id.recipe_list_ingredients);
         reuseLayout = (RelativeLayout) findViewById(R.id.recipe_layout_reuse);
@@ -115,11 +122,14 @@ public class RecipeActivity extends AuthActivity {
             btnDevelopmentTip.setVisibility(View.GONE);
         }
 
-        if(dessertName == null){
+        if(dessertName == null) {
             btnDessert.setVisibility(View.GONE);
+        }
+
+        if(reuse == null){
             reuseLayout.setVisibility(View.GONE);
         }else{
-
+            txtReuse.setText(REUSE_TEXT + reuse);
             btnReuse.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

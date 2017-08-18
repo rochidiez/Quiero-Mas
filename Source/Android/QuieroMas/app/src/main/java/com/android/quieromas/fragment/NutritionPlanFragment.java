@@ -144,6 +144,7 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
         planWeek = ageHelper.getPlanWeek(user.bebe.fechaDeNacimiento);
         int totalWeek = ageHelper.getTotalWeeks(user.bebe.fechaDeNacimiento);
         final int weekStartDay = ageHelper.getPlanWeekStartDay(user.bebe.fechaDeNacimiento);
+        final int todayDay = weekStartDay;
 
         txtBabyName.setText(user.bebe.nombre);
 
@@ -157,7 +158,7 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
             public void onClick(View view) {
                 planWeek--;
                 final int newWeekStartDay = weekStartDay - 7;
-                setupViewPager(viewPager, newWeekStartDay);
+                setupViewPager(viewPager, newWeekStartDay, todayDay);
             }
         });
 
@@ -166,38 +167,40 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
             public void onClick(View view) {
                 planWeek++;
                 final int newWeekStartDay = weekStartDay - 7;
-                setupViewPager(viewPager, newWeekStartDay);
+                setupViewPager(viewPager, newWeekStartDay, todayDay);
             }
         });
 
-        setupViewPager(viewPager, weekStartDay);
+        setupViewPager(viewPager, weekStartDay, todayDay);
         tabLayout.setupWithViewPager(viewPager,true);
 
 
     }
 
 
-    private void setupViewPager(ViewPager viewPager, int day) {
-
+    private void setupViewPager(ViewPager viewPager, int day, int todayDay) {
 
         adapter = new ViewPagerAdapter(getFragmentManager());
+        int dayOfWeek = new DateTime().getDayOfWeek() -1;
 
-        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day), "Lun");
+        todayDay += dayOfWeek;
+
+        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day,todayDay), "Lun");
         day++;
-        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day), "Mar");
+        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day,todayDay), "Mar");
         day++;
-        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day), "Mie");
+        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day,todayDay), "Mie");
         day++;
-        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day), "Jue");
+        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day,todayDay), "Jue");
         day++;
-        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day), "Vie");
+        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day,todayDay), "Vie");
         day++;
-        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day), "Sab");
+        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day,todayDay), "Sab");
         day++;
-        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day), "Dom");
+        adapter.addFragment(new NutritionPlanRecipesFragment().newInstance(day,todayDay), "Dom");
         viewPager.setAdapter(adapter);
 
-        int dayOfWeek = new DateTime().getDayOfWeek() -1;
+
         viewPager.setCurrentItem(dayOfWeek,false);
     }
 
