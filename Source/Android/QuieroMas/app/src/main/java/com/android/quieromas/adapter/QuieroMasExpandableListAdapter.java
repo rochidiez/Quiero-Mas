@@ -1,19 +1,15 @@
 package com.android.quieromas.adapter;
 
 import android.app.Activity;
-import android.support.v4.app.Fragment;
+import android.graphics.Typeface;
 import android.text.Html;
-import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.CheckedTextView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.quieromas.R;
 import com.android.quieromas.model.ExpandableListGroup;
@@ -52,8 +48,11 @@ public class QuieroMasExpandableListAdapter extends BaseExpandableListAdapter {
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.expandable_listrow_details, null);
         }
+
         text = (TextView) convertView.findViewById(R.id.lactation_text);
-        text.setText(Html.fromHtml(children));
+        String childrent = children.replaceAll("<font[^>]*>"," ");
+
+        text.setText(Html.fromHtml(childrent), TextView.BufferType.SPANNABLE);
 
         return convertView;
     }
