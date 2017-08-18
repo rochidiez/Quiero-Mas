@@ -47,7 +47,7 @@ public class LoginActivity extends AuthFbActivity implements VideoFragment.OnFra
     private int interval = 10000; // 5 seconds by default, can be changed later
     private Handler mHandler;
 
-    String text1ToShow[] = {"Recetas aprobadas por nutricionistas y pediatras para bebés de 6 a 12 meses.","Plan de nutrición y recetas para cada etapa de tu bebé."};
+    String text1ToShow[] = {"Recetas aprobadas por nutricionistas y pediatras para bebés de 6 a 12 meses.","Plan de nutrición y recetas para tu bebé."};
     String text2ToShow[] = {"","Queremos que tu hijo desarrolle todo su inmenso potencial."};
     int index = 0;
 

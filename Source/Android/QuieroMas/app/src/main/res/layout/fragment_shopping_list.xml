@@ -85,20 +85,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:listitem="@layout/listitem_shopping_item"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/shopping_list_btn_mail"
+                android:layout_margin="12dp"
+                android:paddingLeft="24dp"
+                android:drawableStart="@drawable/mail"
+                android:text="Enviarmelo por mail"
+                android:textSize="@dimen/subtitle_text_size"
+                android:textAppearance="@style/AppTheme.TextAppearance.Bold"
+                android:background="@drawable/button_border_black_thin"/>
+
         </LinearLayout>
+
 
     </ScrollView>
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/shopping_list_btn_mail"
-        android:layout_margin="12dp"
-        android:paddingLeft="24dp"
-        android:drawableStart="@drawable/mail"
-        android:text="Enviarmelo por mail"
-        android:textSize="@dimen/subtitle_text_size"
-        android:textAppearance="@style/AppTheme.TextAppearance.Bold"
-        android:background="@drawable/button_border_black_thin"/>
 
 </LinearLayout>

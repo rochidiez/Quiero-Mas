@@ -236,12 +236,14 @@ public class ShoppingListFragment extends BaseFragment implements AdapterView.On
                                     HashMap<String,Integer> recipeIngredientHm = dataSnapshot.getValue(Receta.class).getIngredientesLista();
                                     //iterarlos e ir metiendolos en otro hashmap con la cantidad multiplicada por el value de la entry
                                     //si ya estan definidos, sumarlos
-                                    for (Map.Entry<String, Integer> ingrediententry : recipeIngredientHm.entrySet()) {
-                                        int value = ingrediententry.getValue() * entry.getValue();
-                                        if(ingedients.containsKey(ingrediententry.getKey())){
-                                            ingedients.put(ingrediententry.getKey(),ingedients.get(ingrediententry.getKey()) + value);
-                                        }else{
-                                            ingedients.put(ingrediententry.getKey(),value);
+                                    if(recipeIngredientHm != null){
+                                        for (Map.Entry<String, Integer> ingrediententry : recipeIngredientHm.entrySet()) {
+                                            int value = ingrediententry.getValue() * entry.getValue();
+                                            if(ingedients.containsKey(ingrediententry.getKey())){
+                                                ingedients.put(ingrediententry.getKey(),ingedients.get(ingrediententry.getKey()) + value);
+                                            }else{
+                                                ingedients.put(ingrediententry.getKey(),value);
+                                            }
                                         }
                                     }
                                     hmSize--;
