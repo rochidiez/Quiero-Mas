@@ -33,6 +33,7 @@ import com.google.firebase.database.ValueEventListener;
 import org.joda.time.DateTime;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -48,6 +49,7 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
     TextView txtBabyName;
     TextView txtPlanStage;
     Button btnShoppingList;
+    AgeHelper ageHelper;
 
     FirebaseDatabaseHelper firebaseDatabaseHelper;
     User user;
@@ -74,6 +76,7 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_nutrition_plan, container, false);
     }
@@ -107,7 +110,7 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 user = dataSnapshot.getValue(User.class);
-                AgeHelper ageHelper = new AgeHelper();
+                ageHelper = new AgeHelper();
 
                 if(user.bebe != null){
                     if(!ageHelper.canAccessPlan(user.bebe.fechaDeNacimiento)){
@@ -116,9 +119,10 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
                         ft.replace(R.id.main_content, new EmptyNutritionPlanFragment(),"empty");
                         ft.addToBackStack("empty");
                         ft.commit();
+                    }else{
+                        updateUI();
                     }
                 }
-                updateUI();
             }
 
             @Override
@@ -143,17 +147,10 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
 
         txtBabyName.setText(user.bebe.nombre);
 
-        int months = (int) Math.floor(totalWeek / 4);
-        int weeks = totalWeek % 4;
-        String weekText = " semana";
-        if(weeks > 1){
-            weekText += "s";
-        }
-        String finalText = months + " meses";
-        if(weeks > 0){
-            finalText += ", " + weeks + weekText;
-        }
-        txtPlanStage.setText(finalText);
+        String ageString = ageHelper.getAgeString(user.bebe.fechaDeNacimiento);
+
+
+        txtPlanStage.setText(ageString);
 
         previousWeek.setOnClickListener(new View.OnClickListener() {
             @Override

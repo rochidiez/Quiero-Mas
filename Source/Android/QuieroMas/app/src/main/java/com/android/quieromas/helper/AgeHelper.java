@@ -64,6 +64,28 @@ public class AgeHelper {
         return day;
     }
 
+    public String getAgeString(String babyBirthdate){
+        DateTime birthdate = dtf.parseDateTime(babyBirthdate);
+        DateTime now = new DateTime();
+
+        int months = Math.abs(Months.monthsBetween(birthdate,now).getMonths());
+
+        birthdate = birthdate.plusMonths(months);
+        int weeks = Math.abs(Weeks.weeksBetween(birthdate,now).getWeeks());
+
+
+        String weekText = " semana";
+        if(weeks > 1){
+            weekText += "s";
+        }
+        String finalText = months + " meses";
+        if(weeks > 0){
+            finalText += ", " + weeks + weekText;
+        }
+
+        return finalText;
+    }
+
     public int getTotalWeeks(String babyBirthdate){
         DateTime birthdate = dtf.parseDateTime(babyBirthdate);
 
