@@ -75,11 +75,18 @@ public class FavoriteRecipesFragment extends BaseRecipeFragment {
     }
 
     @Override
+    void addRecipes(){
+        adapter = new MyFavoriteRecipesRecyclerViewAdapter(recipes, mListener);
+        recyclerView.setAdapter(adapter);
+
+    }
+
+    @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         Context context = view.getContext();
         recyclerView = (EmptyRecyclerView) view.findViewById(R.id.list);
-        recyclerView.setLayoutManager(new LinearLayoutManager(context));
-        //recyclerView.setAdapter(new MyFavoriteRecipesRecyclerViewAdapter(recipes, mListener));
+        //recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        recyclerView.setAdapter(new MyFavoriteRecipesRecyclerViewAdapter(recipes, mListener));
         recyclerView.setEmptyView(view.findViewById(R.id.empty_view));
 
         firebaseDatabaseHelper = new FirebaseDatabaseHelper();

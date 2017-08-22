@@ -1,5 +1,6 @@
 package com.android.quieromas.adapter;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,12 +8,21 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.quieromas.R;
+import com.android.quieromas.activity.RecipeActivity;
 import com.android.quieromas.fragment.BaseRecipeFragment.OnListFragmentInteractionListener;
+import com.android.quieromas.helper.FirebaseDatabaseHelper;
 import com.android.quieromas.model.receta.Receta;
+import com.android.quieromas.model.user.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -55,14 +65,50 @@ public class MyFavoriteRecipesRecyclerViewAdapter extends RecyclerView.Adapter<M
         }
 
 
+        holder.btnFav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                holder.mItem.isFavorite = !holder.mItem.isFavorite;
+                if(holder.mItem.isFavorite == false){
+                    holder.btnFav.setBackground(holder.btnFav.getResources().getDrawable(R.drawable.fav_vacio));
+                }else{
+                    holder.btnFav.setBackground(holder.btnFav.getResources().getDrawable(R.drawable.fav_lleno));
+                }
+                final FirebaseDatabaseHelper firebaseDatabaseHelper = new FirebaseDatabaseHelper();
+                firebaseDatabaseHelper.getCurrentUserReference().addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        User user = dataSnapshot.getValue(User.class);
+                        if(user.recetasFavoritas == null || user.recetasFavoritas.size() == 0){
+                            ArrayList<String> array = new ArrayList<String>();
+                            array.add(holder.mItem.getTitulo());
+                            user.recetasFavoritas = array;
+                        }else if(user.recetasFavoritas.contains(holder.mItem.getTitulo())){
+                            user.recetasFavoritas.remove(holder.mItem.getTitulo());
+                            Toast.makeText(holder.mView.getContext(),"La receta fue removida de favoritos",Toast.LENGTH_LONG).show();
+                        }else{
+                            user.recetasFavoritas.add(holder.mItem.getTitulo());
+                            Toast.makeText(holder.mView.getContext(),"La receta fue añadida a favoritos",Toast.LENGTH_LONG).show();
+                        }
+                        firebaseDatabaseHelper.getCurrentUserReference().setValue(user);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+            }
+        });
+
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (null != mListener) {
-                    // Notify the active callbacks interface (the activity, if the
-                    // fragment is attached to one) that an item has been selected.
-                    mListener.onListFragmentInteraction(holder.mItem);
-                }
+                    String name = holder.mItem.getTitulo();
+                    Intent intent = new Intent(v.getContext(), RecipeActivity.class);
+                    intent.putExtra("RECIPE", name);
+                    v.getContext().startActivity(intent);
             }
         });
     }

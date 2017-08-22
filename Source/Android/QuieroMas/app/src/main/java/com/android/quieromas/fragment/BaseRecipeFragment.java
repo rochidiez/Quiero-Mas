@@ -51,6 +51,7 @@ public class BaseRecipeFragment extends Fragment {
 
 
         }));
+
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.android.quieromas.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -18,7 +19,11 @@ import android.widget.TextView;
 
 import com.android.quieromas.R;
 import com.android.quieromas.activity.MainActivity;
+import com.android.quieromas.activity.RecipeActivity;
+import com.android.quieromas.adapter.MyFavoriteRecipesRecyclerViewAdapter;
 import com.android.quieromas.helper.FirebaseDatabaseHelper;
+import com.android.quieromas.listener.ClickListener;
+import com.android.quieromas.listener.RecyclerTouchListener;
 import com.android.quieromas.model.receta.IngredienteListaSemanal;
 import com.android.quieromas.model.receta.Receta;
 import com.android.quieromas.view.EmptyRecyclerView;
@@ -67,9 +72,17 @@ public class SearchFragment extends BaseRecipeFragment implements AdapterView.On
         return inflater.inflate(R.layout.fragment_search, container, false);
     }
 
+    void addRecipes(){
+        adapter = new MyFavoriteRecipesRecyclerViewAdapter(recipes, mListener);
+        recyclerView.setAdapter(adapter);
+    }
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+//        recyclerView = (EmptyRecyclerView) view.findViewById(R.id.search_rv);
+//        recyclerView.setAdapter(new MyFavoriteRecipesRecyclerViewAdapter(recipes, mListener));
 
         recyclerView = (EmptyRecyclerView) view.findViewById(R.id.search_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

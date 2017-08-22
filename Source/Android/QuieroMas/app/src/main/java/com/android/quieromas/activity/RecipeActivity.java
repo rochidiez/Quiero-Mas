@@ -139,26 +139,29 @@ public class RecipeActivity extends AuthActivity {
             });
 
             firebaseDatabaseHelper =  new FirebaseDatabaseHelper();
-            firebaseDatabaseHelper.getDessertReference(dessertName).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    final Postre dessert = dataSnapshot.getValue(Postre.class);
-                    btnDessert.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Intent intent = new Intent(RecipeActivity.this, BasicRecipeActivity.class);
-                            intent.putExtra("BASIC_RECIPE",dessertName);
-                            intent.putExtra("IS_DESSERT",true);
-                            getApplicationContext().startActivity(intent);
-                        }
-                    });
-                }
+            if(dessertName != null){
+                firebaseDatabaseHelper.getDessertReference(dessertName).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        final Postre dessert = dataSnapshot.getValue(Postre.class);
+                        btnDessert.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(RecipeActivity.this, BasicRecipeActivity.class);
+                                intent.putExtra("BASIC_RECIPE",dessertName);
+                                intent.putExtra("IS_DESSERT",true);
+                                getApplicationContext().startActivity(intent);
+                            }
+                        });
+                    }
 
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
 
-                }
-            });
+                    }
+                });
+            }
+
         }
 
 
