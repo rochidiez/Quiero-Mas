@@ -75,7 +75,7 @@ public class DevelopmentFragment extends BaseFragment {
         android.support.v7.app.ActionBar bar = ((MainActivity) getActivity()).getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(getActivity(),R.color.orangePrimary)));
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window =  ((MainActivity) getActivity()).getWindow();
 
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);

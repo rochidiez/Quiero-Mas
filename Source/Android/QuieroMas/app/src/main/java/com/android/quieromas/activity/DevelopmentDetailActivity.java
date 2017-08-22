@@ -115,7 +115,7 @@ public class DevelopmentDetailActivity extends BaseActivity {
         android.support.v7.app.ActionBar bar = this.getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this,R.color.orangePrimary)));
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window =  this.getWindow();
 
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);

@@ -1,6 +1,7 @@
 package com.android.quieromas.model.receta;
 
 import com.google.firebase.database.IgnoreExtraProperties;
+import com.google.firebase.database.PropertyName;
 
 import java.util.HashMap;
 
@@ -10,6 +11,8 @@ import java.util.HashMap;
 
 @IgnoreExtraProperties
 public class Puntaje {
+
+    @PropertyName("Datos")
     public HashMap<String,Integer> datos;
     public Integer total;
 

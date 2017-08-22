@@ -262,21 +262,26 @@ public class RecipeActivity extends AuthActivity {
         txtVariants.setText(receta.getVariante());
 
         //Set steps
-        ArrayList<RecipeStepElement> stepsList = new ArrayList<>();
-        for (ListIterator<String> iter = receta.getPasos().listIterator(); iter.hasNext(); ) {
-            String element = iter.next();
-            stepsList.add(new RecipeStepElement(element));
+        if(receta.getPasos() != null){
+            ArrayList<RecipeStepElement> stepsList = new ArrayList<>();
+            for (ListIterator<String> iter = receta.getPasos().listIterator(); iter.hasNext(); ) {
+                String element = iter.next();
+                stepsList.add(new RecipeStepElement(element));
+            }
+            rvSteps.setLayoutManager(new LinearLayoutManager(this));
+            rvSteps.setAdapter(new RecipeRecyclerViewAdapter(stepsList,true));
         }
-        rvSteps.setLayoutManager(new LinearLayoutManager(this));
-        rvSteps.setAdapter(new RecipeRecyclerViewAdapter(stepsList,true));
 
         //set ingredients
-        ArrayList<RecipeStepElement> ingredientsList = new ArrayList<>();
-        for (ListIterator<Ingrediente> iter = receta.getIngredientes().listIterator(); iter.hasNext(); ) {
-            Ingrediente element = iter.next();
-            ingredientsList.add(new RecipeStepElement(element.getNombre(),element.getNombre_basico()));
+        if(receta.getIngredientes() != null){
+            ArrayList<RecipeStepElement> ingredientsList = new ArrayList<>();
+            for (ListIterator<Ingrediente> iter = receta.getIngredientes().listIterator(); iter.hasNext(); ) {
+                Ingrediente element = iter.next();
+                ingredientsList.add(new RecipeStepElement(element.getNombre(),element.getNombre_basico()));
+            }
+            rvIngredients.setLayoutManager(new LinearLayoutManager(this));
+            rvIngredients.setAdapter(new RecipeRecyclerViewAdapter(ingredientsList,false));
         }
-        rvIngredients.setLayoutManager(new LinearLayoutManager(this));
-        rvIngredients.setAdapter(new RecipeRecyclerViewAdapter(ingredientsList,false));
+
     }
 }
