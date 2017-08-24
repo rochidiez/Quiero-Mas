@@ -32,6 +32,7 @@ import com.squareup.picasso.Picasso;
 import java.security.spec.ECField;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.ListIterator;
 
 public class RecipeActivity extends AuthActivity {
@@ -217,8 +218,20 @@ public class RecipeActivity extends AuthActivity {
                             it.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.button_circle_border));
                         }
                     }
-                    puntaje.datos.put(mAuth.getCurrentUser().getUid(),score);
-                    firebaseDatabaseHelper.getScoreReference(recipeName).setValue(puntaje);
+                    Puntaje punt = puntaje;
+                    if(punt == null || punt.datos == null){
+                        punt = new Puntaje();
+                        punt.total = 0;
+                        punt.datos = new HashMap<String, Integer>();
+                    }
+                    punt.datos.put(mAuth.getCurrentUser().getUid(),score);
+                    if(punt.total != null){
+                        punt.total = punt.total++;
+                    }else{
+                        punt.total = 1;
+                    }
+
+                    firebaseDatabaseHelper.getScoreReference(recipeName).setValue(punt);
                     Toast.makeText(getApplicationContext(),"Su puntaje ha sido guardado.",Toast.LENGTH_LONG).show();
                 }
             });

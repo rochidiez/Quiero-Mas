@@ -157,12 +157,10 @@ public class SearchFragment extends BaseRecipeFragment implements AdapterView.On
 
                 String text = etxtRecipeName.getText().toString();
                 ArrayList<Receta> filteredRecipes = new ArrayList<>();
-                if(text.equals("")){
-                    filteredRecipes = allRecipes;
-                }else if(allRecipes.size() != 0){
+                if(allRecipes.size() != 0){
                     for (Receta receta : allRecipes) {
                         if (receta.titulo.toLowerCase().contains(text) || text == "") {
-                            if(selectedIngredient == null || receta.getIngredientesLista().containsKey(selectedIngredient)){
+                            if(selectedIngredient == null || (receta.getIngredientesLista() != null && receta.getIngredientesLista().containsKey(selectedIngredient))){
                                 filteredRecipes.add(receta);
                             }
                         }
