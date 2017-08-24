@@ -166,7 +166,7 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
             @Override
             public void onClick(View view) {
                 planWeek++;
-                final int newWeekStartDay = weekStartDay - 7;
+                final int newWeekStartDay = weekStartDay + 7;
                 setupViewPager(viewPager, newWeekStartDay, todayDay);
             }
         });
