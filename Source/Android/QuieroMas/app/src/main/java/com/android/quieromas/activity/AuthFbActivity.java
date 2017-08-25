@@ -121,6 +121,8 @@ public class AuthFbActivity extends BaseActivity {
                                         getUserInfoFromFb(token);
                                     }else if(user.bebe == null){
                                         goToBabyInfo();
+                                    }else if(user.datos == null){
+                                        Toast.makeText(getApplicationContext(),"No hay datos para este usuario, registrese nuevamente",Toast.LENGTH_LONG).show();
                                     }else{
                                         goToMain();
                                     }

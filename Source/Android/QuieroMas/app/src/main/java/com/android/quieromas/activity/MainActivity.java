@@ -176,13 +176,15 @@ public class MainActivity extends AuthActivity
 
     public void updateUI(){
         String names;
-        names = user.datos.nombreCompleto.split(" ")[0];
-        if(user.bebe != null && user.bebe.apodo != null){
-            names = names + " y " + user.bebe.apodo;
-        }else if(user.bebe != null && user.bebe.nombre != null){
-            names = names + " y " + user.bebe.nombre;
+        if(user != null && user.datos != null){
+            names = user.datos.nombreCompleto.split(" ")[0];
+            if(user.bebe != null && user.bebe.apodo != null){
+                names = names + " y " + user.bebe.apodo;
+            }else if(user.bebe != null && user.bebe.nombre != null){
+                names = names + " y " + user.bebe.nombre;
+            }
+            txtName.setText(names);
         }
-        txtName.setText(names);
 
         AgeHelper ageHelper = new AgeHelper();
         if(user.bebe != null){

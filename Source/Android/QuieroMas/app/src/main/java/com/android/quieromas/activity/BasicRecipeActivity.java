@@ -102,21 +102,28 @@ public class BasicRecipeActivity extends BaseActivity {
 
         //Set steps
         ArrayList<RecipeStepElement> stepsList = new ArrayList<>();
-        for (ListIterator<String> iter = recetaBasica.getIngredientes().listIterator(); iter.hasNext(); ) {
-            String element = iter.next();
-            stepsList.add(new RecipeStepElement(element));
-        }
-        rvIngredients.setLayoutManager(new LinearLayoutManager(this));
-        rvIngredients.setAdapter(new RecipeRecyclerViewAdapter(stepsList,false));
+        if(recetaBasica != null){
+            if(recetaBasica.getIngredientes() != null){
+                for (ListIterator<String> iter = recetaBasica.getIngredientes().listIterator(); iter.hasNext(); ) {
+                    String element = iter.next();
+                    stepsList.add(new RecipeStepElement(element));
+                }
+                rvIngredients.setLayoutManager(new LinearLayoutManager(this));
+                rvIngredients.setAdapter(new RecipeRecyclerViewAdapter(stepsList,false));
+            }
 
-        //Set steps
-        ArrayList<RecipeStepElement> ingList = new ArrayList<>();
-        for (ListIterator<String> iter = recetaBasica.getPasos().listIterator(); iter.hasNext(); ) {
-            String element = iter.next();
-            ingList.add(new RecipeStepElement(element));
+            if(recetaBasica.getPasos() != null){
+                //Set steps
+                ArrayList<RecipeStepElement> ingList = new ArrayList<>();
+                for (ListIterator<String> iter = recetaBasica.getPasos().listIterator(); iter.hasNext(); ) {
+                    String element = iter.next();
+                    ingList.add(new RecipeStepElement(element));
+                }
+                rvSteps.setLayoutManager(new LinearLayoutManager(this));
+                rvSteps.setAdapter(new RecipeRecyclerViewAdapter(ingList,true));
+            }
+
         }
-        rvSteps.setLayoutManager(new LinearLayoutManager(this));
-        rvSteps.setAdapter(new RecipeRecyclerViewAdapter(ingList,true));
 
         btnWatch.setOnClickListener(new View.OnClickListener() {
             @Override

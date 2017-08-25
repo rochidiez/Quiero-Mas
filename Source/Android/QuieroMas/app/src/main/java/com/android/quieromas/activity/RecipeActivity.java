@@ -123,13 +123,13 @@ public class RecipeActivity extends AuthActivity {
             btnDevelopmentTip.setVisibility(View.GONE);
         }
 
-        if(dessertName == null) {
+        if(dessertName == null || dessertName.toLowerCase().equals("sin postre")) {
             btnDessert.setVisibility(View.GONE);
         }
 
         if(reuse == null){
-            reuseLayout.setVisibility(View.GONE);
-        }else{
+            txtReuse.setVisibility(View.GONE);
+        }else {
             txtReuse.setText(REUSE_TEXT + reuse);
             btnReuse.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -138,34 +138,19 @@ public class RecipeActivity extends AuthActivity {
                     startActivity(intent);
                 }
             });
-
-            firebaseDatabaseHelper =  new FirebaseDatabaseHelper();
-            if(dessertName != null){
-                firebaseDatabaseHelper.getDessertReference(dessertName).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        final Postre dessert = dataSnapshot.getValue(Postre.class);
-                        btnDessert.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                Intent intent = new Intent(RecipeActivity.this, BasicRecipeActivity.class);
-                                intent.putExtra("BASIC_RECIPE",dessertName);
-                                intent.putExtra("IS_DESSERT",true);
-                                getApplicationContext().startActivity(intent);
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
-            }
-
         }
 
-
+        if(dessertName != null && !dessertName.toLowerCase().equals("sin postre")){
+            btnDessert.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(RecipeActivity.this, BasicRecipeActivity.class);
+                    intent.putExtra("BASIC_RECIPE",dessertName);
+                    intent.putExtra("IS_DESSERT",true);
+                    getApplicationContext().startActivity(intent);
+                }
+            });
+        }
     }
 
     private void startTipActivity(String title, String text, String drawable){

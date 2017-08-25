@@ -54,6 +54,8 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
     FirebaseDatabaseHelper firebaseDatabaseHelper;
     User user;
     int planWeek = -1;
+    int todayDay = -1;
+    int weekStartDay = -1;
 
 
 
@@ -142,9 +144,8 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
 
         AgeHelper ageHelper = new AgeHelper();
         planWeek = ageHelper.getPlanWeek(user.bebe.fechaDeNacimiento);
-        int totalWeek = ageHelper.getTotalWeeks(user.bebe.fechaDeNacimiento);
-        final int weekStartDay = ageHelper.getPlanWeekStartDay(user.bebe.fechaDeNacimiento);
-        final int todayDay = weekStartDay;
+        weekStartDay = ageHelper.getPlanWeekStartDay(user.bebe.fechaDeNacimiento);
+        todayDay = weekStartDay;
 
         txtBabyName.setText(user.bebe.nombre);
 
@@ -157,8 +158,8 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
             @Override
             public void onClick(View view) {
                 planWeek--;
-                final int newWeekStartDay = weekStartDay - 7;
-                setupViewPager(viewPager, newWeekStartDay, todayDay);
+                weekStartDay = Math.max(0,weekStartDay - 7);
+                setupViewPager(viewPager, weekStartDay, todayDay);
             }
         });
 
@@ -166,8 +167,8 @@ public class NutritionPlanFragment extends BaseFragment implements BaseFragment.
             @Override
             public void onClick(View view) {
                 planWeek++;
-                final int newWeekStartDay = weekStartDay + 7;
-                setupViewPager(viewPager, newWeekStartDay, todayDay);
+                weekStartDay = Math.min(180,weekStartDay + 7);
+                setupViewPager(viewPager, weekStartDay, todayDay);
             }
         });
 
