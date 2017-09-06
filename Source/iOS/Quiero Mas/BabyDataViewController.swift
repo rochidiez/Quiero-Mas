@@ -115,30 +115,36 @@ class BabyDataViewController: UIViewController, UITextFieldDelegate, UIImagePick
         }
         
         if name != nil && name! != "" {
+            if userDic["Datos"] == nil {userDic["Datos"] = [String:String]()}
             userDic["Datos"]?["Nombre Completo"] = name!
         }
         
         if birthday != nil && birthday! != "" {
+            if userDic["Datos"] == nil {userDic["Datos"] = [String:String]()}
             userDic["Datos"]?["Fecha de Nacimiento"] = birthday!
         }
         
         if email != nil && email! != "" {
+            if userDic["Datos"] == nil {userDic["Datos"] = [String:String]()}
             userDic["Datos"]?["Email"] = email!
         }
         
         if babyNameTF.text != nil && babyNameTF.text! != "" {
+            if userDic["Bebé"] == nil {userDic["Bebé"] = [String:String]()}
             userDic["Bebé"]?["Nombre"] = babyNameTF.text!
         }
         
         if babyNickNameTF.text != nil && babyNickNameTF.text! != "" {
+            if userDic["Bebé"] == nil {userDic["Bebé"] = [String:String]()}
             userDic["Bebé"]?["Apodo"] = babyNickNameTF.text!
         }
         
         if babyBirthdayTF.text != nil && babyBirthdayTF.text! != "" {
+            if userDic["Bebé"] == nil {userDic["Bebé"] = [String:String]()}
             userDic["Bebé"]?["Fecha de Nacimiento"] = babyBirthdayTF.text!
         }
         
-        UserDefaults.standard.set(userDic, forKey: "perfil")
+        UserDefaults.standard.set(userDic, forKey: defPerfil)
     }
     
     @IBAction func datePickerValueChanged(_ sender: Any) {

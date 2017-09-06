@@ -128,33 +128,20 @@ exports.registrar = functions.https.onRequest((req, res) => {
 
 			console.log("diff: ", diff)
 
-			if (diff >= 180) {
+			if (180 <= diff && diff < 365) {
 				admin.database().ref('/Usuarios').child(firebaseID).child('Bebé').child('Apodo').set(apodoBebeSpace);
 				admin.database().ref('/Usuarios').child(firebaseID).child('Bebé').child('Nombre').set(nombreBebeSpace);
 				admin.database().ref('/Usuarios').child(firebaseID).child('Bebé').child('Fecha de Nacimiento').set(fechaBebe);
 
-				return admin.database().ref('Bebés de menos de 6 meses').once('value').then(snap => {
-			    if (snap.exists()) {
-			    	if (snap.child(firebaseID).exists()) {
-			    		var refString = '/Bebés de menos de 6 meses/' + firebaseID;
-			    		var adaRef = admin.database().ref(refString);
-						adaRef.remove()
-						  .then(function() {
-						    console.log("Remove succeeded.")
-						  })
-						  .catch(function(error) {
-						    console.log("Remove failed: " + error.message)
-						  });
-			    	}
-			    }
-			  });
+				var updates = {};
+				updates[firebaseID] = null;
+				admin.database().ref('Bebés de menos de 6 meses').update(updates);
 			} else {
 				admin.database().ref('/Bebés de menos de 6 meses').child(firebaseID).set(fechaBebe);
 			}
 		}
-		res.json({success: true});
 	}
-	res.json({success: false});
+	res.send({success: true});
 });
 
 
