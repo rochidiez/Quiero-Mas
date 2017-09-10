@@ -80,7 +80,7 @@ class NutricionViewController: UIViewController {
     //MARK: - ViewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationItem.title = "Plan de nutrición"
+        self.navigationItem.title = "Tu receta de hoy"
         if babyIsValid() {
             reloadNutricion()
         } else {

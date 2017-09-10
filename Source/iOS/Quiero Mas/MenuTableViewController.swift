@@ -106,7 +106,7 @@ class MenuTableViewController: UITableViewController {
                         cell.name.text = "Todas las recetas"
                     case 1:
                         cell.img.image = UIImage(named: "Plan Menu")
-                        cell.name.text = "Plan de nutrición"
+                        cell.name.text = "Tu receta de hoy"
                     default:
                         print("")
                 }

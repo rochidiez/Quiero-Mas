@@ -21,6 +21,7 @@ class ListaViewController: UIViewController, UITableViewDataSource, UIPickerView
     @IBOutlet weak var noBabyView: UIView!
     
     var ingredientes: [String]?
+    var shouldEndEditing : Bool = false
     
     enum ListaError: Error {
         case invalidIndex
@@ -63,6 +64,7 @@ class ListaViewController: UIViewController, UITableViewDataSource, UIPickerView
     
     func setObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.ingredientesSentAlert), name: NSNotification.Name(rawValue: ingredientesSent), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
     }
     
     
@@ -223,7 +225,9 @@ class ListaViewController: UIViewController, UITableViewDataSource, UIPickerView
         } catch {
             ingredientes = nil
             table.reloadData()
-            view.endEditing(true)
+            if self.shouldEndEditing {
+                view.endEditing(true)
+            }
             return
         }
         
@@ -236,7 +240,9 @@ class ListaViewController: UIViewController, UITableViewDataSource, UIPickerView
         }
         
         table.reloadData()
-        view.endEditing(true)
+        if self.shouldEndEditing {
+            view.endEditing(true)
+        }
     }
     
     func getIngredientes(initialIndex: Int, finalIndex: Int) throws -> [String]? {
@@ -294,6 +300,13 @@ class ListaViewController: UIViewController, UITableViewDataSource, UIPickerView
         return nil
     }
 
+    // MARK: Oservers
+    func keyboardDidShow(notification: NSNotification) {
+        if self.dateTF.text == "" {
+            self.picker.delegate?.pickerView!(self.picker, didSelectRow: 0, inComponent: 0)
+            self.shouldEndEditing = true
+        }
+    }
     
     //MARK: - IBAction
     @IBAction func sendEmail(_ sender: Any) {
@@ -307,19 +320,5 @@ class ListaViewController: UIViewController, UITableViewDataSource, UIPickerView
         let vc = story.instantiateViewController(withIdentifier: "PerfilNav")
         self.revealViewController().pushFrontViewController(vc, animated: true)
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
 }

@@ -14,6 +14,8 @@ class EstimulacionViewController: UIViewController {
     @IBOutlet weak var revealMenuButton: UIBarButtonItem!
     @IBOutlet weak var scroll: UIScrollView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var monthButton : UIButton!
+    @IBOutlet weak var scrollViewHeight: NSLayoutConstraint!
     
     var estimulacionDic: [String:[String:[String:String]]]?
     
@@ -27,6 +29,12 @@ class EstimulacionViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.backgroundColor = UIColor(red: 43/255, green: 74/255, blue: 124/255, alpha: 1.0)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.scrollViewHeight.constant = self.monthButton.frame.origin.y + self.monthButton.frame.size.height + 20
     }
     
     func setRevealMenuButton() {

@@ -14,6 +14,8 @@ class LactanciaViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var revealMenuButton: UIBarButtonItem!
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var descriptionTopLabelHeight: NSLayoutConstraint!
     
     //Top
     @IBOutlet weak var titleTop: UILabel!
@@ -58,8 +60,8 @@ class LactanciaViewController: UIViewController, UITableViewDataSource, UITableV
             }
             lactanciaDic = storedDic
         }
-        table.reloadData()
         setTitle()
+        table.reloadData()
         spinner.stopAnimating()
     }
     
@@ -67,6 +69,12 @@ class LactanciaViewController: UIViewController, UITableViewDataSource, UITableV
         if let tituloDic = lactanciaDic?[firLactanciaTitulo] as? [String:String] {
             titleTop.text = tituloDic[firLactanciaTituloTitulo]
             descriptionTop.text = tituloDic[firLactanciaTituloTexto]
+            if let font = UIFont(name: "Cera-Regular", size: 17), let height = descriptionTop.text?.height(withConstrainedWidth: UIScreen.main.bounds.size.width - 40, font: font) {
+                self.descriptionTopLabelHeight.constant = height + 20
+                var topViewFrame = self.topView.frame
+                topViewFrame.size.height = self.descriptionTop.frame.origin.y + self.descriptionTopLabelHeight.constant
+                self.topView.frame = topViewFrame
+            }
         }
     }
     

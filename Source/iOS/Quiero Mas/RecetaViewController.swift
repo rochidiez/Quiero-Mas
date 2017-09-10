@@ -36,19 +36,29 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var fourthLabel: UILabel!
     @IBOutlet weak var fifthLabel: UILabel!
     
+    @IBOutlet weak var tipsViewHeight : NSLayoutConstraint!
+    
     //Variante
     @IBOutlet weak var varianteLabel: UILabel!
     @IBOutlet weak var varianteHeightConstraint: NSLayoutConstraint!
     
     //Postre
     @IBOutlet weak var postreView: UIView!
+    @IBOutlet weak var postreViewHeight : NSLayoutConstraint!
     
     //Tip Desarrollo
     @IBOutlet weak var tipDesarrolloView: UIView!
+    @IBOutlet weak var tipDesarrolloViewHeight : NSLayoutConstraint!
+    
+    // Receta
+    @IBOutlet weak var recetaView : UIView!
+    @IBOutlet weak var reutilizarViewPosition : NSLayoutConstraint!
     
     //Volver a cocinar
     @IBOutlet weak var reutilizarLabel: UILabel!
     @IBOutlet weak var volverACocinarLabel: UILabel!
+    
+    @IBOutlet weak var puntosView: UIView!
     
     
     var recetaDict: [String:Any]?
@@ -94,6 +104,13 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
         setVolverACocinar()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.showOrHideViews()
+//            self.table.reloadData()
+//        }
+    }
+    
     func setTop() {
         recetaTitle.text = recetaNombre
     }
@@ -132,14 +149,26 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
     func showOrHideViews() {
         showOrHidePostre()
         showOrHideTipDesarrollo()
+        if tipDesarrolloView.isHidden {
+            self.tipsViewHeight.constant = self.recetaView.frame.origin.y + self.recetaView.frame.size.height + 20
+        } else {
+            self.tipsViewHeight.constant = self.tipDesarrolloView.frame.origin.y + self.tipDesarrolloViewHeight.constant + 20
+        }
     }
 
     func showOrHidePostre() {
         postreView.isHidden = recetaPostre == nil
+        if postreView.isHidden {
+            self.postreViewHeight.constant = 0
+            self.reutilizarViewPosition.constant = 0
+        }
     }
 
     func showOrHideTipDesarrollo() {
         tipDesarrolloView.isHidden = recetaDia == nil
+        if tipDesarrolloView.isHidden {
+            self.tipDesarrolloViewHeight.constant = 0
+        }
     }
     
     func setVolverACocinar() {
