@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cera-Bold.ttf">
+            <string>Cera-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CongelarDescripcionHeaderTableViewCell" rowHeight="93" id="KGk-i7-Jjw" customClass="CongelarDescripcionHeaderTableViewCell" customModule="Quiero_Mas" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="706" height="93"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="706" height="92.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MÉTODOS DE COCCIÓN DE LEGUMBRES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTt-c2-Dfs">
+                        <rect key="frame" x="20" y="37.5" width="666" height="18"/>
+                        <fontDescription key="fontDescription" name="Cera-Bold" family="Cera" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="DTt-c2-Dfs" secondAttribute="trailing" constant="20" id="KRW-dB-Azf"/>
+                    <constraint firstItem="DTt-c2-Dfs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="PKG-Yn-J1f"/>
+                    <constraint firstItem="DTt-c2-Dfs" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="YlQ-mI-3CI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="headerLabel" destination="DTt-c2-Dfs" id="7vp-Cd-hc0"/>
+            </connections>
+            <point key="canvasLocation" x="246" y="83.5"/>
+        </tableViewCell>
+    </objects>
+</document>

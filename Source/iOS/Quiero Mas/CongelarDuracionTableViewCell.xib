@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cera-Medium.ttf">
+            <string>Cera-Medium</string>
+        </array>
+        <array key="Cera-Regular.ttf">
+            <string>Cera-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CongelarDuracionTableViewCell" rowHeight="115" id="KGk-i7-Jjw" customClass="CongelarDuracionTableViewCell" customModule="Quiero_Mas" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xMM-mJ-D1k" userLabel="Central Container">
+                        <rect key="frame" x="20" y="20" width="560" height="49.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Congelar Oval Orange" translatesAutoresizingMaskIntoConstraints="NO" id="qUh-Jh-G8c">
+                                <rect key="frame" x="0.0" y="6" width="5" height="5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="BMZ-jt-keJ"/>
+                                    <constraint firstAttribute="width" constant="5" id="V18-6R-dJ4"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VEGETALES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b14-MD-OZV">
+                                <rect key="frame" x="15" y="0.0" width="91" height="17"/>
+                                <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cocidos, trozados o en puré" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYs-Hq-szS">
+                                <rect key="frame" x="15" y="34.5" width="194" height="15"/>
+                                <fontDescription key="fontDescription" name="Cera-Regular" family="Cera" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="6 meses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PR0-WX-Miw">
+                                <rect key="frame" x="488" y="-0.5" width="72" height="19"/>
+                                <fontDescription key="fontDescription" name="Cera-Medium" family="Cera" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="PR0-WX-Miw" secondAttribute="trailing" id="3EL-sY-FhZ"/>
+                            <constraint firstItem="b14-MD-OZV" firstAttribute="centerY" secondItem="qUh-Jh-G8c" secondAttribute="centerY" id="5GV-WT-iFa"/>
+                            <constraint firstItem="qUh-Jh-G8c" firstAttribute="leading" secondItem="xMM-mJ-D1k" secondAttribute="leading" id="7UY-Xt-caI"/>
+                            <constraint firstAttribute="bottom" secondItem="RYs-Hq-szS" secondAttribute="bottom" id="KdC-ah-qWf"/>
+                            <constraint firstItem="b14-MD-OZV" firstAttribute="top" secondItem="xMM-mJ-D1k" secondAttribute="top" id="PN3-J0-xP1"/>
+                            <constraint firstItem="PR0-WX-Miw" firstAttribute="centerY" secondItem="b14-MD-OZV" secondAttribute="centerY" id="at3-4t-IFw"/>
+                            <constraint firstItem="RYs-Hq-szS" firstAttribute="leading" secondItem="b14-MD-OZV" secondAttribute="leading" id="f2h-3V-d26"/>
+                            <constraint firstItem="b14-MD-OZV" firstAttribute="leading" secondItem="qUh-Jh-G8c" secondAttribute="trailing" constant="10" id="rR3-Qe-1Gm"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKs-eD-Rr2" userLabel="Separator">
+                        <rect key="frame" x="20" y="89" width="560" height="1"/>
+                        <color key="backgroundColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="i6s-uf-TT6"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="xMM-mJ-D1k" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="KVl-eg-6Yh"/>
+                    <constraint firstItem="MKs-eD-Rr2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="NJF-yN-NrO"/>
+                    <constraint firstAttribute="bottom" secondItem="xMM-mJ-D1k" secondAttribute="bottom" constant="20" id="PWo-sC-2mR"/>
+                    <constraint firstItem="xMM-mJ-D1k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="QoE-Ve-y4z"/>
+                    <constraint firstAttribute="bottom" secondItem="MKs-eD-Rr2" secondAttribute="bottom" id="Tw3-1T-PKr"/>
+                    <constraint firstAttribute="trailing" secondItem="xMM-mJ-D1k" secondAttribute="trailing" constant="20" id="diW-Qs-HAO"/>
+                    <constraint firstAttribute="trailing" secondItem="MKs-eD-Rr2" secondAttribute="trailing" constant="20" id="m9I-J2-Gao"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="descriptionLabel" destination="RYs-Hq-szS" id="tyY-1Z-K6y"/>
+                <outlet property="durationLabel" destination="PR0-WX-Miw" id="7KQ-cQ-c4s"/>
+                <outlet property="separator" destination="MKs-eD-Rr2" id="4ow-sP-U0Y"/>
+                <outlet property="titleLabel" destination="b14-MD-OZV" id="brP-zl-zfM"/>
+            </connections>
+            <point key="canvasLocation" x="174" y="94"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Congelar Oval Orange" width="5" height="5"/>
+    </resources>
+</document>

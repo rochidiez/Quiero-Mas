@@ -1,0 +1,998 @@
+{
+  "Bebés por nacer" : {
+    "4U3KchtmawVTDsq76v9OSvdpowH3" : "12/04/2017",
+    "VO35g6R64DbHblUvgm9sHyQxCe62" : "31/05/2017"
+  },
+  "Estimulación" : {
+    "mes6" : {
+      "semana1" : {
+        "video" : "url-video"
+      },
+      "semana2" : {
+        "texto" : "ejemplo del texto"
+      },
+      "semana3" : {
+        "texto" : "Hola que tal"
+      }
+    }
+  },
+  "Lactancia" : {
+    "0" : "<h1>La importancia de la lactancia</h1><p>Amamantar a tu bebe es un momento único e íntimo para ambos. Le estás ofreciendo el mejor alimento que podés brindarle.</p><p>Pero no es solamente una razón nutricional, sino que es la continuación de una profunda relación de amor que comenzó en el mismo momento de la concepción.</p><p>Seguro estás llena de dudas con respecto a la lactancia, veamos …</p>",
+    "De la A a la Z" : "<b>Beneficios</b> de la lactancia:<p><b>A<b/>- <b>A</b>mor.</br><b>B</b>- <b>B</b>ebé más sano y contento.</br><b>C</b>- Lo más <b>C</b>ómodo.</br><b>D</b>- <b>D</b>isminuye las infecciones y alergias. <b>D</b>ientes más sanos.</br><b>E</b>-  Es más <b>E</b>conómico.</br><b>F</b>-  Es más <b>F</b>ácil.</br><b>G</b>- Es <b>G</b>ratis.</br><b>H</b>- Es más <b>H</b>igiénico.</br><b>I</b>-  Mayor <b>I</b>nmunidad, es la mejor protección contra las enfermedades.</br><b>J</b>-  La manera más <b>J</b>ovial de alimentarlo.</br><b>K</b>- <b>K</b>ilos, la mejor manera de perderlos.</br><b>L</b>-  La mejor <b>L</b>eche.</br><b>M</b>- <b>M</b>amás más protegidas, disminuye el cáncer de mama.</br><b>N</b>-  <b>N</b>o tenés que comprarla.</br><b>O</b>-  Buen <b>O</b>lor.</br><b>P</b>-  <b>P</b>siquis saludable.</br><b>Q</b>- <b>Q</b>uita enfermedades producidas por leche de vaca.</br><b>R</b>-  Menor <b>R</b>iesgo de cáncer de ovario en las madres.</br><b>S</b>- <b>S</b>alud para tu bebé.</br><b>T</b>- <b>T</b>emperatura justa.</br><b>U</b>- <b>Ú</b>nica.</br><b>V</b>- <b>V</b>os estas contenta.</br><b>X</b>-  Siempre pró<b>X</b>ima al bebé.</br><b>Y</b>- <b>Y</b>a está lista.</br><b>Z</b>-  “<b>Z</b>ar” de la leche.</p>",
+    "Para Recordar:" : "\"<p>• Debe mamar entre ocho a doce veces por día. La producción depende de la succión.</p><p>•\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\tLa prendida y la posición son claves para un buen amamantamiento.</p><p>•\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\tSi le das de los dos pechos, empezá por el último que tomó.</p><p>•\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\tLa duración de la mamada es variable.</p><p>•\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\tSi se duerme con facilidad, estimulalo para que no lo haga.</p><p>•\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\tDebes estar descansada, cómoda, relajada, tomar mucho líquido y comer bien.</p><p>•\\\\\\\\\\\\\\\\tTu cuerpo se adapta al nacimiento y crianza de tu bebe.</p><p>•\\\\\\\\tNo es momento para pensar en la belleza y estética, las madres de un recién nacido son lindas por sí solas.</p><p>•\\\\tPodés comer y tomar lo que vos quieras, evitando los excesos.</p><p>•\\tTu cuerpo gasta energías similares a la de un deportista de alta competencia, cuidá tu descanso.</p><p>•\tDurante los primeros tiempos, vos te tenés que adaptarte al bebe.</p>\"",
+    "Por qué es mejor darle el pecho que la mamadera con una leche maternizada?" : "Tu bebé cumplió 6 meses y ya puede comenzar con sus primeras comidas. Han madurado su función digestiva y renal...",
+    "¿Cuáles son las primeras recomendaciones para amamantar?" : "<p>El estímulo más importante para favorecer la bajada de la leche es la succión del bebe. La bajada puede ser inhibida por ansiedad o dolor; por ello resulta muy importante estar <b>cómoda y relajada</p> antes de cada mamada.</p><p>Es aconsejable ponerlo al pecho dentro de las primeras dos horas de vida.</p><p>Los primeros días después del nacimiento producís CALOSTRO. Es un alimento con gran valor nutritivo que brinda muchas defensas contra las infecciones; por ello es importante ponerlo al pecho todas las veces que sea posible. Recién a partir del tercer o quinto día se produce la bajada de la leche.</p><p>Cuando baja la leche, los pechos pueden sentirse tensos, calientes y doloridos e incluso podés tener fiebre. Por ello es bueno que previo a la prendida, realices fomentos tibios a calientes en las mamas. Debes masajearlas en forma circular ablandando la areola. Luego de la mamada, si continúan llenos, vacialos en forma manual o con sacaleche.</p>",
+    "¿Cuánto tiempo debo amamantar al bebé?" : "<p>El tiempo de duración de cada mamada es variable y debe ser flexible. Cada bebe es único, irrepetible e incomparable con otros. Muchas veces es él quien decide cuánto tiempo tomar de cada pecho.</br>Por lo tanto, si está tomando por lo menos cada tres horas, puede llevar el mando de cuánto tiempo necesita para tomar.</p><p>La Academia Americana de Pediatría recomienda que los recién nacidos deben mamar de ocho a doce veces, cada 24 horas. Esto equivale a amamantar al bebe cada dos o tres horas. Es aconsejable que no se exceda el intervalo de tres horas entre cada mamada (contando del comienzo de la toma al comienzo de la siguiente).</p><p>Una buena alternativa es dejar que tome del primer pecho hasta que muestre señales de soltarse él solo o tener los brazos y las manos relajados; esto puede durar de diez a treinta minutos. Y del segundo pecho hasta que esté satisfecho. La mayoría de los bebés maman entre quince y veinte minutos de cada pecho.</p><p>La alternancia de los dos pechos en cada toma favorece al mejor vaciado de las mamas y permite que ambas reciban similar estímulo. Debés empezar a darle por el último pecho que tomó la vez anterior, ya que es el que queda más lleno.</p><p>Para retirarlo del pecho, podés introducir suavemente el dedo chiquito en la comisura de los labios y cortar el vacío para que no te lastime. Antes y después de la mamada es aconsejable que te saques unas gotas de leche y te la pases por el pezón ya que tiene factores cicatrizantes que los protegerán.</p>",
+    "¿Cómo puedo aumentar la producción de leche?" : "<p>Ofrecele el pecho con mucha frecuencia. La producción de leche depende de lo que chupe tu bebé: cuanto más chupe, más leche producís. Debe tomar por lo menos entre ocho y doce veces por día. También es importante verificar que la prendida y la posición de la mamada sean las correctas. Es fundamental que estés bien descansada, tomando mucho líquido y comiendo bien.</p>",
+    "¿En qué posición debo poner al bebé?" : "<p>Primero, debés ubicarte vos en una posición cómoda. En cuanto al bebe, en la posición clásica: su panza debe estar en contacto con tu panza y no como si estuviese colgado. La cara tiene que estar alineada con el pecho.</p><p>Está también la posición invertida (la panza del bebe sobre tus costillas) y la acostada (los dos apoyan sus cuerpos sobre el colchón).</p><p>En cuanto a la prendida al pecho, los labios deben abarcar la mayor parte del pezón y areola posible. El mismo se alarga dentro de la boca y llega casi hasta el fondo del paladar. Si se prende nada más que de la punta del pezón seguramente terminarás con una grieta, que son muy dolorosas.</p>\\\"\"",
+    "¿Puedo darle de mamar si me enfermo?" : "<p>Desde ya que podés. No hay que cortarle la lactancia porque te resfríes, tengas gripe o angina. Pensá que a través de la leche le pasás todas las defensas que adquiriste durante tu vida. Dando de mamar estás protegiendo a tu hijo contra un montón de enfermedades.</p>",
+    "¿Qué cuidados tengo que tener cuando estoy dando el pecho?" : "<p>Por ser una mujer que amamanta, tu desgasta físico es equivalente al de un deportista de alto rendimiento.</p><p>Al dar de mamar, necesitás una mayor ingesta de calorías, por lo que te recomiendo una dieta completa y mucho aporte de agua, aproximadamente dos litros por día. No es momento de estar haciendo dietas ni de fijarse mucho en la figura y en la estética. No tenés contraindicaciones de ningún alimento ni bebida ya que no perjudican a tu bebé. Comé y tomá lo que quieras, pero obviamente evita los excesos, sobre todo de bebidas alcohólicas.</p><p>Es muy importante que estés descansada para una mejor producción de leche. Si tu bebé está acostumbrado a dormir de día y a estar despierto de noche, <b>al principio vos tenés que acostumbrarte a él</b>, o sea, dormir de día y estar despierta de noche. Como habrás visto, la lactancia es de suma importancia.</p>",
+    "¿Qué es una mastitis?" : "<p>La mastitis es una inflamación infecciosa de la glándula mamaria. Las causas principales son: una grieta o fisura en el pezón, pasar largos períodos sin amamantar (saltearse tomas), usar corpiños muy ajustados, dormir boca abajo o tener una producción muy abundante de leche.</p><p>Te doy algunos consejos que debes seguir para prevenirla:</p><p> •\tQue el bebe mame en posición adecuada.</p><p>•\tQue mame frecuentemente.</p>•\tUsá corpiños adecuados.</p><p>•\tDormí boca arriba.</p><p>La primera señal de inflamación es la aparición de una zona dura y sensible. Si así ocurre es porque esa zona está drenando mal y seguramente se debe haber tapado algún conducto. Si esto progresa, aparece una zona roja, caliente, dolorosa y puede aparecer fiebre. Ante estos casos, siempre consultá con urgencia al médico.</p><p>Los tratamientos se orientan a drenar el pecho y la succión del bebé es la mejor opción. Poné al bebé al pecho muy frecuentemente, sobre todo las primeras 24 horas. Variá las posiciones de las mamadas (podés usar la posición invertida y acostada). Si el bebé no toma lo suficiente para drenar la mama, podés extraer la leche manualmente o con sacaleche.</p><p>Aplicate paños calientes o fríos. Masajeá suavemente el pecho. Permanecé en reposo al menos por 24 horas.</p><p>El médico evaluará la necesidad de indicarte antiinflamatorios y antibióticos luego de evaluarte.</p>",
+    "¿Qué hago si me duelen los pezones o se me agrietan?" : "<p>•\tFijate bien la posición en que pones a tu hijo porque la mayoría de las grietas y dolores se deben a una mala posición.</p><p>•\tTambién variá las posiciones para amamantar.</p><p>•\tIntroducile suavemente el dedo chiquito en la boca cuando lo saques del pecho para evitar el vacío que se produce cuando se suelta del pecho.</p><p>•\tColocá sobre los pezones una gota de tu leche al empezar y terminar la mamada. La leche tiene factores cicatrizantes.</p><p>•\tToma sol sin corpiño, entre quince y veinte minutos diarios. Acelera la curación de las grietas y protege los pezones. Cuidado con los vecinos curiosos!!</p>",
+    "¿Qué hago si se duerme mientras lo estoy amamantando?" : "<p>Puede ocurrir que el bebe se prenda de un solo pecho y se duerma. Si así ocurre, en la próxima mamada le das del otro. Un consejo para que no se duerma es estimularlo cuando mama, hablándole, frotándoles la espalda, las manos y los pies. Es conveniente también que no tome pecho con demasiada ropa ya que el calor predispone al sueño. Que el bebe mame es comparable a un adulto haciendo ejercicio, es así que no debe estar muy abrigado.</p>",
+    "¿Se me \"caerán\" los pechos si lacto a mi bebe?" : "<p>Los pechos fueron creados por Dios para amamantar a los recién nacidos y cumplen esa función hace millones de años, tanto en los seres humanos como en distintas especies animales. El concepto moderno de estética es que las mujeres luzcan bellas y con un cuerpo perfecto, pero tené presente que los pechos van a modificarse independientemente de si das de mamar o no.</p><p>Algunas recomendaciones para cuidar estéticamente tus pechos:</p><p>•\tPara evitar el congestionamiento de las mamas y que se estiren de más, dale de mamar con frecuencia.</p><p>•\tDestetalo en forma gradual.</p><p>•\tAmamantalo en la posición adecuada.</p><p>•\tUsá corpiños diseñados para la lactancia.</p><p>Tu cuerpo tarda un año en volver a su estado normal. El amamantar te va a ayudar a bajar toda la grasa que almacenaste durante el embarazo e incluso la grasa que tenía antes del mismo.</p>"
+  },
+  "Nutrición" : {
+    "ALIMENTACIÓN PERCEPTIVA" : "<p>Una alimentación complementaria óptima no solo se relaciona con qué es lo que se come, sino también con el cómo, cuándo, dónde y quién alimenta al niño (alimentación perceptiva). Para implementarla podés seguir estos consejos:</br> -Alimentar a los lactantes directamente y asistir a los niños mayores cuándo comen solos, prestando especial atención y respondiendo a sus signos de hambre y saciedad.</br> -Alimentar despacio y con paciencia, animando a los niños a comer, pero sin forzarlos.</br> -Si los niños rechazan varios alimentos, experimentar con diversas combinaciones, sabores y texturas para animarlos a comer (evitar monotonía). Recordar que a veces es conveniente la exposición reiterada a los alimentos antes de evitarlos en forma definitiva. Utilizar alimentos “ancla” en la incorporación de nuevos alimentos.</br> -Minimizar las distracciones durante los horarios de comida ya que el niño pierde interés rápidamente. Evitar la televisión.</br> -Recordar que los momentos de comer son periodos de aprendizaje y amor, es conveniente hablar con los niños y mantener el contacto visual.</p>",
+    "INTRODUCCION" : "<p>Tu bebé cumplió 6 meses y ya puede comenzar con sus primeras comidas. Han madurado su función digestiva y renal, su sistema neuromuscular le permite estar sentado y participar activamente de la alimentación.</br> Recordá que los dos primeros años del bebé son fundamentales para la instalación de hábitos de alimentación saludables que luego lo acompañarán hasta la vida adulta y serán importantes para prevenir enfermedades. .</br> Estás primeras comidas del bebé se conocen como alimentación complementaria, ya que al inicio complementan la leche materna y luego en forma progresiva se convierten en la principal fuente de energía para el crecimiento y desarrollo del niño.</br> Es fundamental que desde las primeras comidas conozcas cuales son los nutrientes más importantes que tu bebé necesita.</br> Todos estos motivos son los que nos han llevado a desarrollar esta aplicación, nuestro objetivo es que siguiendo estos lineamientos nutricionales y las recetas que incluimos mes a mes, a tu bebé no le falte nada para su óptimo crecimiento y pueda desarrollar todas sus capacidades. </p><h>Carnes, huevos, leche y derivados</h> <p>El principal macronutriente que aporta este grupo son las proteínas,  fundamentales para el crecimiento del bebé. Además, los lácteos aportan calcio y las carnes hierro, zinc y otros micronutrientes.</p>",
+    "INTRODUCCION DE LOS ALIMENTOS" : {
+      "MES 10" : [ "<h>4 comidas/día</h> <p>El bebé ya ha madurado su masticación y capacidad digestiva. En general a esta edad ya ha comenzado la dentición que le permite comer de a poco trocito de mayor tamaño en forma progresiva. El niño puede tomar los alimentos con sus manos y llevárselos a la boca. Es la mejor forma que conozca las nuevas texturas para que luego sean aceptadas más fácilmente.</p> <h>Leche materna y/o fórmula láctea recomendada.</h> <h>Carnes</h> <p>Se incorpora el pescado (inicialmente pescados blancos tipo merluza desespinado), aporta proteínas de alto valor biológico con muy poco contenido de grasa, los pescados que primero se incorporan en la alimentación del bebé son magros. El pescado es de fácil digestión y se incluyen en la alimentación complementaria entre los 9 y 10 meses. En bebés con antecedentes familiares de alergia el pediatra evaluará si se demora la introducción después del año.</p> <h>Vegetales</h> <p>Se puede utilizar en champiñón en distintas preparaciones, si bien forma parte de la familia de los hongos se lo considera dentro del grupo de los vegetales. Aporta fibra como betaglucanos que mejoran el colesterol sanguíneo y participan en el sistema inmune protegiendo al bebé de infecciones. También minerales como potasio y selenio. El selenio también tiene un rol en el sistema inmune (defensas del organismo) y es un potente antioxidante. El champiñón también contiene un aminoácido vegetal llamado ergotioneina proporciona energía a las células haciendo más eficaz el metabolismo.</p> <p>Se continuará consumiendo agua segura evitando jugos y gaseosas comerciales.</p> <p>Se aumentará el número de comidas diarias a 4 por día incluyendo desayuno y merienda. En el desayuno y merienda se consumirán pan, galletitas simples que el bebé pueda masticar y disgregar con facilidad y panificados elaborados en casa o que se encuentren dentro del grupo de productos recomendados. </p>" ],
+      "MES 6" : [ "<h>Leche materna y/o fórmula láctea recomendada</h> <h>Quesos untables y ricota</h>\t <p>Los lácteos deben ser enteros los dos primeros años de vida ya que el niño necesita grasas para el correcto desarrollo de su cerebro y sistema nervioso central.  Los quesos aportan proteínas de buena calidad (alto valor biológico) fundamentales para el crecimiento del niño. También son fuente de calcio, nutriente fundamental para la formación y crecimiento de los huesos y los dientes. Además, cuando agregamos queso a las comidas a base de almidones o cereales se enriquece el aporte de calorías y la densidad energética de la preparación. </p> <h>Cereales / almidones</h> <p>Se inicia la introducción de cereales sin gluten, fécula y harina de maíz (Maizena, Polenta). Cereales infantiles a base de arroz y maíz. Se introducen en primer lugar los cereales sin gluten para permitir al intestino del bebé un periodo de adaptación y maduración previo a la introducción del gluten que puede provocar con mayor frecuencia intolerancia y alergias alimentarias. Los cereales, féculas y harinas provenientes de ellos son fácilmente digeribles, aportan energía, son la base de las primeras preparaciones y mediante el proceso de fortificación pueden además aportar minerales y vitaminas (hierro, ácido fólico, etc).</p> <h>Carnes</h> <p>Es fundamental la introducción de carnes desde el inicio de la alimentación complementaria, ya que aportan además de proteínas de óptima calidad, micronutrientes como hierro y zinc que deben ser cubiertos en más del 80% por la alimentación complementaria ya que las reservas del bebé se agotan luego de los 4 meses. Se comenzará a ofrecer al bebé carnes blancas y luego rojas, magras y tiernas primero ralladas y luego desmenuzada en trozos muy pequeños. La porción recomendada es aproximadamente como la palma de la mano del bebé (50g). El hierro es fundamental para prevenir la anemia y cumple un papel muy importante en el desarrollo de la inteligencia del niño. El zinc es muy importante para el crecimiento, para el desarrollo de la inteligencia, la salud intestinal y la adecuada absorción intestinal de nutrientes, la función del sistema inmune y defensa del organismo ante infecciones. </p> <h>Vegetales amarillos/blancos</h> <p>Los vegetales amarillos son zapallo y zanahoria. Aportan fibra y vitamina A de origen vegetal (carotenoides). Los carotenoides además de ser precursores de la vitamina A poseen efecto antioxidante y anticancerígeno sobre algunos tejidos. La vitamina A cumple funciones importantes en el crecimiento, en la protección ante infecciones, es necesaria para el adecuado transporte del hierro previniendo la anemia y cumple un papel fundamental en el ciclo visual. Los vegetales blancos (feculentos) son la papa, batata y mandioca. Estos últimos aportan energía y algo de vitamina C. La papa aporta además potasio y la batata vitamina A. Todos constituyen una buena fuente de fibra.</p> <h>Frutas</h> <p>Las frutas aportan fundamentalmente fibra, vitaminas, minerales y azúcares naturales de rápida absorción. Es conveniente que inicialmente se consuman maduras, peladas y ralladas o procesadas para que sean más fácilmente digeribles y mejor toleradas por el sistema digestivo del bebé. La fruta debe ser incluida como postre luego de ambas comidas principales, es la opción más saludable y nutricionalmente completa. Algunas de las frutas que se introducen en primer lugar son la manzana, banana, pera, duraznos al natural y naranja exprimida colada y sin semillas. </p><p> •\tManzana: Aporta vitamina A que cumple funciones importantes en el crecimiento, en la protección ante infecciones, es necesaria para el adecuado transporte del hierro previniendo la anemia y cumple un papel fundamental en el ciclo visual. También es fuente de vitamina E que es una antioxidante natural. Aporta fibra soluble (pectina) que mejora la función intestinal y colabora para mantener niveles adecuados de colesterol en la sangre. También aporta  en potasio y magnesio que intervienen en la función de varios sistemas del organismo. El <b>magnesio</b> se relaciona con el funcionamiento de intestino, nervios y músculos, formando parte de huesos y dientes, mejora la inmunidad y posee un efecto laxante suave.</p> <p>El potasio es un mineral necesario para la transmisión y generación del impulso nervioso y para la actividad muscular normal. Interviene en el equilibrio de agua dentro y fuera de la célula. Evita los calambres musculares.<p><p> •\tBanana: Rica en minerales como el magnesio, potasio, ácido fólico y sustancias astringentes (protectoras del intestino), la banana también ofrece un elevado aporte de fibra, del tipo fruto-oligosacáridos. Es pobre en grasas y en proteínas. La presencia de las 3 vitaminas antioxidantes (A, C y E) hace que se la considera una fruta que proporciona salud al organismo Es muy valiosa como fuente de energía natural .</p><p>El magnesio se relaciona con el funcionamiento de intestino, nervios y músculos, formando parte de huesos y dientes, mejora la inmunidad y posee un efecto laxante suave.</p> <p>El potasio es un mineral necesario para la transmisión y generación del impulso nervioso y para la actividad muscular normal. Interviene en el equilibrio de agua dentro y fuera de la célula. Evita los calambres musculares.</p> <p>El ácido fólico interviene en la producción de glóbulos rojos y blancos y la formación de anticuerpos del sistema inmunológico.</p> <p>Es muy valiosa su riqueza en triptófano, un aminoácido fundamental para la liberación de serotonina (neurotransmisor que se encuentra en varias regiones del sistema nervioso central y que tiene mucho que ver con el estado de ánimo). Contiene una elevada cantidad de vitamina B, lo que ayuda a regular y tranquilizar el sistema nervioso.</p> <p>Es rica en vitamina C y en fósforo, nutriente importante para optimizar las funciones del cerebro.</p><p> •\tPera: Tiene un gran contenido de agua. Contiene  vitamina C, necesaria  para el crecimiento y reparación de tejidos en todas las partes del cuerpo. Se utiliza para formar una proteína importante dela piel (colágeno), los tendones, los ligamentos y los vasos sanguíneos. Es fundamental en el proceso de cicatrización. También contiene ácido fólico y vitamina E. Es rica en potasio y magnesio. </p> <h>Recordá que:</h><p> •\tLuego de los 4 meses el depósito corporal de hierro del bebé comienza a agotarse, por esta razón es importante introducir alimentos que sean fuente de hierro como las carnes, legumbres y vegetales verdes como brócoli o de hoja verde oscuro como acelga y espinaca. El hierro que proviene de fuentes de origen vegetal necesita para facilitar su absorción y utilización de la vitamina C contenida en cítricos y otras frutas (naranja, mandarina, pomelo, kiwi). Además, a partir de los 4/5 meses el bebé debe recibir suplemento de hierro en gotas hasta el año de vida. Cuando existe déficit de hierro los dos primeros años de vida se producen fallas en el desarrollo del cerebro del bebe y puede haber daño a nivel de su inteligencia. Estas fallas son irreversibles ya que no existe recuperación de los daños en etapas posteriores.  </p><p> •\tLa vitamina D la fuente principal es la activación por exposición solar, además de su función en el metabolismo fosfocálcico , también se han observado otras funciones como inmunomoduladora,  en la regulación  del metabolismo de los hidratos de carbono, disminuye el riesgo de diabetes, la aparición de HTA y también funciones a nivel de músculos y articulaciones mejorando el rendimiento deportivo en etapas más tardías del desarrollo. Los niños nacen con pocas reservas de vitamina D y dependen de la leche materna, la luz solar o los suplementos como fuente de vitamina D en los primeros meses de vida. Como el contenido de vitamina D de la leche materna depende de las reservas maternas de vitamina D, y dado que a menudo éstas son escasas, y como la exposición al sol no siempre es posible, los lactantes son particularmente propensos a padecer carencias de vitamina D. Por esta razón es recomendable el suplemento de vitamina D en el primer año de vida.<p>" ],
+      "MES 7 Y 8" : [ "<h>2 comidas/día</h><h>Leche materna y/o fórmula láctea recomendada.</h> <h>Cereales/Almidones</h> <p>Se inicia la introducción de cereales con gluten y las legumbres Aportan energía, son la base de las preparaciones y mediante el proceso de fortificación pueden además aportar minerales y vitaminas (hierro, ácido fólico, etc.). El intestino del bebe ha madurado y ya tiene capacidad para filtrar algunos componentes de los alimentos que puedan generar alergias como el gluten. Se introducen la harina de trigo y los alimentos provenientes de ella como pastas. Vamos a comenzar con los fideos tipo cabello de ángel o soperos (laminado fino) bien cocidos que son de fácil digestión para el niño. También se puede iniciar con sémola de trigo (Vitina tradicional) preparada con leche o caldos de vegetales casero sin agregado de sal. Se introducen otros cereales como cebada y avena. La avena además de ser fuente de energía como todos los integrantes de este grupo también aporta fibra soluble, beneficiosa para mantener limitar la absorción del colesterol de la dieta y mantenerlo en niveles saludables. Las legumbres como lentejas y garbanzos se pueden incluir una o dos veces por semana, aportan energía, fibra, proteínas que combinadas con otros cereales (por ej. arroz) mejoran su calidad nutricional y hierro.</p> <h>Pan/galletitas</h> <p>A partir de los cereales y harinas también se obtienen los panificados (pan blanco, galletitas de agua, baybiscuit y vainilla) que se irán introduciendo en forma progresiva en la alimentación del bebé. Estos alimentos se reservarán para desayuno y merienda, pero no es conveniente utilizarlos para acompañar las comidas principales o ofrecerlos al bebe en cualquier momento del día ya que en general tienen alta aceptación por los niños y pueden desplazar otros alimentos de mayor calidad nutricional, y además pueden colaborar si se consumen en exceso con el desarrollo de obesidad infantil.</p> <h>Carnes</h> <p>Se introduce el hígado, la frecuencia recomendada es una o dos veces por semana. Aporta los mismos nutrientes que las carnes, pero es más rico en zinc, vitamina B12 y ácido fólico. La porción es la misma que para el resto de las carnes. También se pueden incluir cortes magros de cerdo como carré o lomo.</p> <h>Huevo</h> <p>Comenzaremos incorporando la yema. Contiene carotenoides, que además de ser precursores de la vitamina A poseen efecto antioxidante y anticancerígeno sobre algunos tejidos. Es fuente de vitamina A, E Y es uno de los únicos alimentos que aportan vitamina D en forma natural. La vitamina A que cumple funciones importantes en el crecimiento, en la protección ante infecciones, es necesaria para el adecuado transporte del hierro previniendo la anemia y cumple un papel fundamental en el ciclo visual. La vitamina E que es una antioxidante natural. La vitamina D tiene una función fundamental en el metabolismo fosfocálcico , también se han observado otras funciones en la inmunidad previniendo enfermedades autoinmunes, en la regulación del metabolismo de los hidratos de carbono, disminuye el riesgo de diabetes, la aparición de HTA y también funciones a nivel de músculos y articulaciones mejorando el rendimiento deportivo en etapas más tardías del desarrollo.</p> <p>También aporta ácido fólico, vitaminas del grupo B y minerales como hierro, fósforo, magnesio y potasio. El ácido fólico interviene en la producción de glóbulos rojos y blancos y la formación de anticuerpos por el sistema inmunológico. Las vitaminas del grupo B, ayudan a regular y tranquilizar el sistema nervioso. La vitamina B12 es fundamental para la producción de los glóbulos rojos y previene la anemia.</p> <p>La yema de huevo contiene también colina que colabora en el desarrollo de la memoria y lecitina que es necesaria para el buen funcionamiento del sistema nervioso central. </p> <p>La mayor parte de grasas que contiene el huevo se encuentran en la yema, si bien es fuente de colesterol no afecta en gran medida el colesterol sanguíneo en personas sanas. Además, el colesterol es necesario para la producción de hormonas y vitamina D.</p> <h>Vegetales</h> <p>La variedad se vegetales se irá ampliando, se introducen los zapallitos verdes pelados, hervidos y retirando las semillas o procesados. Aportan fibra, potasio y contienen mucha agua. Tienen muy pocas calorías por lo tanto deben ser consumidos en preparaciones enriquecidas como budines, cremas o terrinas. La acelga también aporta fibra, hierro ya que es una hoja de color verde oscuro y muy pocas calorías. El hierro que aporta la acelga es de origen vegetal por lo tanto necesita de facilitadores para mejorar su absorción como la vitamina C contenida en cítricos que se podrán consumir como jugos o en purés de frutas. El puerro y la cebolla serán muy útiles para saborizar y condimentar preparaciones en forma natural y aportan fibra, vitamina C y potasio.</p> <h>Frutas</h> <p>Las frutas aportan fundamentalmente fibra, vitaminas, minerales y azúcares naturales de rápida absorción. Es conveniente que inicialmente se consuman maduras, peladas y ralladas o procesadas para que sean más fácilmente digeribles y mejor toleradas por el sistema digestivo del bebé. La fruta debe ser incluida como postre luego de ambas comidas principales, es la opción más saludable y nutricionalmente completa. Algunas de las frutas que se introducen en primer lugar son la manzana, banana, pera, duraznos al natural y naranja exprimida colada y sin semillas. Los cítricos (naranja, mandarina, pomelo) son fuente importante de vitamina C, fibra, potasio y sustancias antioxidantes. La vitamina C además de tener funciones importantes en mantener la salud e integridad de la piel, participa en la reparación de heridas y activa el sistema inmune previniendo infecciones frecuentes en los niños menores de dos años.</p> <h>Se continuará consumiendo agua segura evitando jugos y gaseosas comerciales.</h>" ],
+      "MES 9" : [ "<h>Leche materna y/o fórmula láctea recomendada.</h> <h>Cereales/Almidones</h> <p>Se inicia la introducción de cereales con gluten y las legumbres Aportan energía, son la base de las preparaciones y mediante el proceso de fortificación pueden además aportar minerales y vitaminas (hierro, ácido fólico, etc.). El intestino del bebe ha madurado y ya tiene capacidad para filtrar algunos componentes de los alimentos que puedan generar alergias como el gluten. Se introducen la harina de trigo y los alimentos provenientes de ella como pastas. Vamos a comenzar con los fideos tipo cabello de ángel o soperos (laminado fino) bien cocidos que son de fácil digestión para el niño. También se puede iniciar con sémola de trigo (Vitina tradicional) preparada con leche o caldos de vegetales casero sin agregado de sal. Se introducen otros cereales como cebada y avena. La avena además de ser fuente de energía como todos los integrantes de este grupo también aporta fibra soluble, beneficiosa para mantener limitar la absorción del colesterol de la dieta y mantenerlo en niveles saludables. Las legumbres como lentejas y garbanzos se pueden incluir una o dos veces por semana, aportan energía, fibra, proteínas que combinadas con otros cereales (por ej. arroz) mejoran su calidad nutricional y hierro.</p> <h>Pan/galletitas</h> <p>A partir de los cereales y harinas también se obtienen los panificados (pan blanco, galletitas de agua, baybiscuit y vainilla) que se irán introduciendo en forma progresiva en la alimentación del bebé. Estos alimentos se reservarán para desayuno y merienda, pero no es conveniente utilizarlos para acompañar las comidas principales o ofrecerlos al bebe en cualquier momento del día ya que en general tienen alta aceptación por los niños y pueden desplazar otros alimentos de mayor calidad nutricional, y además pueden colaborar si se consumen en exceso con el desarrollo de obesidad infantil.</p> <h>Carnes</h> <p>Se introduce el hígado, la frecuencia recomendada es una o dos veces por semana. Aporta los mismos nutrientes que las carnes, pero es más rico en zinc, vitamina B12 y ácido fólico. La porción es la misma que para el resto de las carnes. También se pueden incluir cortes magros de cerdo como carré o lomo.</p> <h>Huevo</h> <p>Comenzaremos incorporando la yema. Contiene carotenoides, que además de ser precursores de la vitamina A poseen efecto antioxidante y anticancerígeno sobre algunos tejidos. Es fuente de vitamina A, E Y es uno de los únicos alimentos que aportan vitamina D en forma natural. La vitamina A que cumple funciones importantes en el crecimiento, en la protección ante infecciones, es necesaria para el adecuado transporte del hierro previniendo la anemia y cumple un papel fundamental en el ciclo visual. La vitamina E que es una antioxidante natural. La vitamina D tiene una función fundamental en el metabolismo fosfocálcico , también se han observado otras funciones en la inmunidad previniendo enfermedades autoinmunes, en la regulación del metabolismo de los hidratos de carbono, disminuye el riesgo de diabetes, la aparición de HTA y también funciones a nivel de músculos y articulaciones mejorando el rendimiento deportivo en etapas más tardías del desarrollo.</p> <p>También aporta ácido fólico, vitaminas del grupo B y minerales como hierro, fósforo, magnesio y potasio. El ácido fólico interviene en la producción de glóbulos rojos y blancos y la formación de anticuerpos por el sistema inmunológico. Las vitaminas del grupo B, ayudan a regular y tranquilizar el sistema nervioso. La vitamina B12 es fundamental para la producción de los glóbulos rojos y previene la anemia.</p> <p>La yema de huevo contiene también colina que colabora en el desarrollo de la memoria y lecitina que es necesaria para el buen funcionamiento del sistema nervioso central. </p> <p>La mayor parte de grasas que contiene el huevo se encuentran en la yema, si bien es fuente de colesterol no afecta en gran medida el colesterol sanguíneo en personas sanas. Además, el colesterol es necesario para la producción de hormonas y vitamina D.</p> <h>Vegetales</h> <p>La variedad se vegetales se irá ampliando, se introducen los zapallitos verdes pelados, hervidos y retirando las semillas o procesados. Aportan fibra, potasio y contienen mucha agua. Tienen muy pocas calorías por lo tanto deben ser consumidos en preparaciones enriquecidas como budines, cremas o terrinas. La acelga también aporta fibra, hierro ya que es una hoja de color verde oscuro y muy pocas calorías. El hierro que aporta la acelga es de origen vegetal por lo tanto necesita de facilitadores para mejorar su absorción como la vitamina C contenida en cítricos que se podrán consumir como jugos o en purés de frutas. El puerro y la cebolla serán muy útiles para saborizar y condimentar preparaciones en forma natural y aportan fibra, vitamina C y potasio.</p> <h>Frutas</h> <p>Las frutas aportan fundamentalmente fibra, vitaminas, minerales y azúcares naturales de rápida absorción. Es conveniente que inicialmente se consuman maduras, peladas y ralladas o procesadas para que sean más fácilmente digeribles y mejor toleradas por el sistema digestivo del bebé. La fruta debe ser incluida como postre luego de ambas comidas principales, es la opción más saludable y nutricionalmente completa. Algunas de las frutas que se introducen en primer lugar son la manzana, banana, pera, duraznos al natural y naranja exprimida colada y sin semillas. Los cítricos (naranja, mandarina, pomelo) son fuente importante de vitamina C, fibra, potasio y sustancias antioxidantes. La vitamina C además de tener funciones importantes en mantener la salud e integridad de la piel, participa en la reparación de heridas y activa el sistema inmune previniendo infecciones frecuentes en los niños menores de dos años.</p> <h>Se continuará consumiendo agua segura evitando jugos y gaseosas comerciales.</h>  8/9 meses <h>3 comidas/día (vos podés elegir desayuno o merienda).</h> <p>El bebé ya ha madurado su masticación y capacidad digestiva. En general a esta edad ya ha comenzado la dentición que le permite comer de a poco trocito de mayor tamaño en forma progresiva. El niño puede tomar los alimentos con sus manos y llevárselos a la boca. Es la mejor forma que conozca las nuevas texturas para que luego sean aceptadas más fácilmente.</p> <h>Leche materna y/o fórmula láctea recomendada.</h> <p>Se mantiene la lactancia materna, si el bebé toma fórmula se recomienda hasta 750/800 ml por día. De a poco podés ir incluyendo variantes en la alimentación de tu bebé. Las preparaciones con leche y sus derivados pueden ser dulces o saladas. Continuarán aportando proteínas de buena calidad, calcio y energía a las preparaciones. Podés usar la salsa blanca para enriquecer vegetales y hortalizas (en cremas o budines) también con pastas. Si bien la fruta fresca es la opción más saludable y nutritiva para el postre, los postres con leche son una buena opción también.<p> <h>Cereales/Almidones</h> <p>Se va progresando la incorporación de los cereales, se incluyen fideos laminado grueso tipo tallarín y guiseros (mostacholes, penne rigati, tirabuzones). Se pueden preparar con diferentes salsas y cremas incluyendo vegetales, hortalizas y carnes.</p> <h>Carnes</h> <p>Sin cambios en la selección con respecto al mes anterior. Sólo se irán cortando en trocitos de mayor tamaño, siempre cortes magros y bien cocidas.</p> <h>Huevo entero</h> <p>Ya se pude introducir en la alimentación del bebé el huevo entero, entre los 7 y 8 meses comenzamos con la yema y a partir de los 9 meses incluiremos la clara que contiene la mayor parte de proteínas del huevo. Las proteínas del huevo, junto con las contenidas en lácteos y carnes son de alto valor biológico y contienen todos los aminoácidos necesarios para el crecimiento del bebé. Además, la clara de huevo es un alimento de alta calidad nutricional y muy bajo contenido de grasas.</p> <h>Vegetales</h> <p>La variedad se vegetales se irá ampliando. Se introduce la acelga que aporta fibra de tipo insoluble que evita la constipación y es muy importante para la adecuada función intestinal. También es fuente hierro ya que es una hoja de color verde oscuro. El hierro que aporta la acelga es de origen vegetal por lo tanto necesita de facilitadores para mejorar su absorción como la vitamina C contenida en cítricos que se podrán consumir como jugos o en purés de frutas. Aporta muy pocas calorías por lo tanto se utilizarán en preparaciones con otros alimentos que aporten energía (salsa blanca, huevo, queso, etc). La acelga además es fuente de ácido fólico, vitamina E, C y minerales como el potasio y magnesio. Es uno de los alimentos más ricos en vitamina K, fundamental para la producción de factores claves en la coagulación sanguínea. Se incorpora la pulpa de tomate, rica en vitamina A, C y del complejo B. El tomate es fuente de licopeno, pigmento con alto poder antioxidante, que colabora en la protección ante el cáncer. También se podrán ofrecer preparaciones con berenjenas, siempre cocidas, que aportan hierro, potasio y vitamina A.</p> <h>Frutas</h> <p>Las frutas aportan fundamentalmente fibra, vitaminas, minerales y azúcares naturales de rápida absorción. A los 9 meses es niño ya puede incluir todas las frutas frescas en su alimentación, siempre peladas, en purés, licuados o en trozos. También se pueden usar frutas como helados o como agregados en postres lácteos.</p><p> •\tSe continuará consumiendo agua segura evitando jugos y gaseosas comerciales.</br> •\tSe aumentará el número de comidas diarias a 3 por día incluyendo desayuno o merienda.</br> •\tSe incorpora como opción para postre o colación el dulce de membrillo o batata, que puede consumirse con queso o en alguna preparación dulce. Aporta principalmente calorías a partir de azúcar. El dulce de membrillo es astringente por esta razón puede utilizarse durante los episodios de diarrea.</br> •\tNo se recomienda incorporar la acelga más tempranamente en la alimentación complementaria, ya que podrían tener un contenido elevado de nitratos que luego se podrían transformar en nitritos tóxicos en el intestino todavía inmaduro del niño. Estos nitritos pueden dañar la hemoglobina del glóbulo rojo del bebé impidiendo que ésta transporte el oxígeno a todos los tejidos del organismo. Otros vegetales y hortalizas que pueden contener mayor contenido de nitritos son la espinaca y la remolacha por esta razón no se incorporarán hasta el año de vida del niño. Se debe evitar que el bebé consuma acelga más de una vez por día luego de su incorporación.</p>" ]
+    },
+    "PORCIONES Y VARIEDAD" : "<p>Además de seleccionar los alimentos para tu hijo, es fundamental que conozcas la porción adecuada de los alimentos que le vas a ofrecer a tu bebé.</br> Las porciones excesivas (sobrealimentación) y no estar atentos a las señales de apetito y saciedad del bebé generan que el niño se acostumbre a comer de más y pierda la capacidad de autorregular su apetito. Estas conductas pueden facilitar la instalación de la obesidad infantil que es en la actualidad uno de los mayores problemas de salud en la población pediátrica y aumenta el riesgo de aparición de enfermedades en los adolescentes y adultos jóvenes como hipertensión arterial, diabetes y enfermedad cardiovascular.</br> La comida monótona constituida por un solo grupo de alimentos hace que el niño no adquiera la capacidad de adaptar su paladar a diferentes sabores y texturas en forma gradual, aumentando el riesgo de dificultades alimentarias en los primeros años de vida.<p>",
+    "PROGRESION DE LA ALIMENTACION COMPLEMENTARIA" : "<p>La incorporación de los alimentos nuevos debe ser progresiva. Hasta los 6 meses el niño cubre con la lactancia materna todo lo que necesita para crecer. Luego de esta edad si no se instala una alimentación complementaria adecuada comienza el riesgo de malnutrición ya que el aporte de calorías no es suficiente para sostener el rápido crecimiento del bebé. Existen micronutrientes como el hierro, el zinc que son aportados fundamentalmente por la alimentación complementaria por este motivo no se debe demorar su inicio y las carnes que son las fuentes principales deben incorporarse desde el principio, ya que la deficiencia sera más marcada a medida que el niño crece y aumenta su requerimiento. La vitamina A también constituye un nutriente crítico que es cubierto por la incorporación de alimentos tanto de origen vegetal como animal. </br> Es normal que los bebés rechacen los alimentos nuevos (“neofobia”). Es importante que sepas que el rechazo inicial no se relaciona con que “no le gusta” y la clave para lograr que lo acepte es volver a ofrecérselo varias veces más. Cada vez que incorpores un nuevo alimento es conveniente so lo ofrezcas al bebé al menos durante tres días seguidos.</br> Con respecto a las texturas y consistencias de los diferentes alimentos, vamos a comenzar con texturas blandas (papilla espesa) y luego de a poco vas a ir progresando a consistencias más sólidas. Es importante que desde las primeras papillas evites procesar todos los alimentos juntos, de este modo tu hijo se va a ir acostumbrando a las diferentes texturas y será más fácil lograr una alimentación más variada y completa. Entre los 9 y 10 meses el niño ya tiene que incluir alimentos sólidos cortados en trocitos pequeños ya que los movimientos de la boca, la lengua y la masticación se lo permiten.</br> El número de comidas diarias también irá aumentando con el paso de los meses, a los seis meses podés empezar con 1 comida por día. Cuando tu hijo cumpla su primer año ya se habrán incorporado las 4 comidas diarias. El orden con que incluyas las comidas puede variar según tus horarios y disponibilidad de tiempo, es conveniente que la primera comida que incorpores (almuerzo o cena) puedas dedicarle al bebe un rato para estimularlo y acompañarlo en sus primeras cucharadas.</br> Recordá que hay alimentos que no aportan nutrientes y solo son fuente de calorías innecesarias, por este motivo vamos a evitar su consumo desde el comienzo. Las gaseosas y jugos comerciales son un ejemplo de este grupo de alimentos. Existen también otros alimentos que es conveniente evitar por su alto contenido de sodio (sal) como caldos comerciales (en cubos o polvo) y salsas envasadas. Además, siempre es mejor cocinar sin agregar sal ni azúcar a las preparaciones, el bebé se va a ir acostumbrando al sabor natural de los alimentos.</p>",
+    "SELECCION DE ALIMENTOS" : "<p>Para empezar, vamos a repasar de qué grupos de alimentos provienen los nutrientes de mayor importancia durante el primer año de vida del bebé. Estos nutrientes se clasifican según la cantidad que se necesita para cubrir sus requerimientos. Los macronutrientes son aquellos que se necesitan en cantidades importantes, a diferencia de los micronutrientes que se requieren en pequeñas cantidades. Ninguno puede faltar ya que cuando no se aportan en la cantidad suficiente el crecimiento y el desarrollo del cerebro del bebé no se alcanzan en forma completa. Estás deficiencias nutricionales en los primeros años no se pueden recuperar en etapas posteriores.</br> Los macronutrientes principales son los hidratos de carbono o almidones, las proteínas, las grasas y la fibra. Los micronutrientes son las vitaminas y los minerales. </p> <p>Los grupos de alimentos más importantes de los cuales provienen los macro y micronutrientes necesarios son:</p> <h>Cereales o almidones</h> <p>Este grupo está formado por cereales que todos conocemos como el arroz, el maíz, el trigo, y la avena, y algunos que no consumimos en forma tan frecuente como la cebada, el centeno, o la quínoa. También forman parte de este grupo las harinas que se obtienen a partir de ellos y algunos vegetales como la papa, la batata y la mandioca. Las harinas no son todas iguales (almidones, harinas y sémolas) y según el proceso que se realiza para obtenerlas pueden ser más fácilmente digeribles para el bebé. Por este motivo se irán introduciendo en forma gradual. El macronutriente más importante que aporta este grupo de alimentos son los hidratos de carbono, principal fuente de energía (calorías) en la alimentación del bebé. Es en general la base para las primeras comidas del bebe y en general es un grupo de alimentos que los niños aceptan sin dificultad.</p> <h>Carnes, huevos, leche y derivados</h> <p>El principal macronutriente que aporta este grupo son las proteínas,  fundamentales para el crecimiento del bebé. Además, los lácteos aportan calcio y las carnes hierro, zinc y otros micronutrientes.</p> <h>Vegetales y frutas</h> <p>Aportan fundamentalmente fibra que es muy importante para la salud digestiva del bebé. La fibra no es digerida por el organismo y previene la constipación. Este grupo de alimentos también son fuente principal de micronutrientes como vitaminas y minerales.</p> <h>Aceites y otras grasas como manteca y crema</h> <p>Aportan lípidos o grasas, el último de los macronutrientes, que son fundamentales los primeros dos años de vida para el desarrollo del cerebro y del sistema nervioso central. Además, complementan el aporte de calorías de los cereales/almidones mediante el agregado de pequeñas cantidades, mejorando la calidad nutricional de la preparación.</p>"
+  },
+  "Postres A BORRAR" : {
+    "Arroz con Leche" : {
+      "Ingredientes" : [ "⅓ Arroz blanco", "¾ taza Leche Recomendada", "1 gotita Esencia de Vainilla", "1 cda. Azúcar impalpable", "1 pizca de Canela", "1 Cascarita de Limón lavada" ],
+      "Pasos" : [ "Calentar la leche con el azúcar,  la cascara de limón y el arroz,  hasta que rompa hervor.", "Revolver con cuchara de madera frecuentemente. Si fuera necesario agregar leche tibia, para evitar que se pegue en el fondo. Cocinar 20m o hasta que este hecho el arroz.  Cuando este listo, agregar la vainilla.", "Verter en un moldecito individual y dejar enfriar en la heladera. Espolvorear con canela al servir." ],
+      "Variantes" : [ "Se pueden agregar frutas desecada picadita como orejones de damascos, pasas." ]
+    },
+    "Bocaditos de Fruta Fresca" : {
+      "Ingredientes" : [ "¼ Banana", "¼ Durazno" ],
+      "Pasos" : [ "Elegir fruta fresca, madura, jugosa, lavarla, pelarla, quitarle semillas y trozarla de manera que él bebe pueda tomarla con sus manitos.", "Emplatar la fruta, cuidando de mezclar varios colores y formas, y que sea atractivo para él bebe. Servir." ],
+      "Variantes" : [ "Se puede realizar esta preparación con cortantes apropiados y realizar florcitas de kiwi, triángulos de sandía, bastoncitos de manzanas y esferas de melón. A partir del 9 mes, podremos incorporar todas las frutas." ]
+    },
+    "Ensalada de Frutas" : {
+      "Ingredientes" : [ "¼ Banana", "½ Durazno chico, Ciruela o Damasco", "¼ Manzana Roja", "Jugo colado de ½ Naranja" ],
+      "Pasos" : [ "Elegir fruta fresca, madura, jugosa, lavarla, pelarla, quitarle semillas/carozos y picarla en cubos pequeños.", "Incorporar el jugo de naranja colado.", "Mezclar y servir." ],
+      "Variantes" : [ "Se puede realizar esta preparación con manzana, pera, banana, durazno o combinar más de dos frutas. A partir del 9 mes, podremos incorporar todas las frutas." ]
+    },
+    "Flan" : {
+      "Descripcion" : "Delicioso flan con crema",
+      "Ingredientes" : [ "¾ taza Leche Recomendada", "1 gotita Esencia de Vainilla", "2 cdas. Azúcar Impalpable", "1 Huevo", "Azúcar para el Caramelo" ],
+      "Pasos" : [ "Hacer caramelo en una sartén con el azucar y acaramelar moldes individuales.", "Precalentar el horno a 160°C. Mezclar el huevo con la mitad del azúcar impalpable y la vainilla", "Calentar la leche con el resto del azúcar impalpable,  hasta que rompa hervor. Agregar de a poco a la mezcla del huevo, revolviendo constantemente. Verter en los moldes.", "Cocinar a Baño María en horno bajo durante 20 minutos. Dejar enfriar (mínimo una hora). Servir." ],
+      "Variantes" : [ "Se puede utilizar este postrecito con huevo entero a partir del Mes 10." ]
+    },
+    "Fruta Cocida" : {
+      "Ingredientes" : [ "½ Banana madura", "2 cdas. de Manteca", "Jugo colado de ½ Naranja", "1 pizca de Canela" ],
+      "Pasos" : [ "Precalentar el horno a 200C. Pelar la banana, trozarla en dos partes.", "Disponerla en una fuente térmica enmantecada. Rociarla con el jugo de naranjas y espolvorear con la canela.", "Hornear 10 minutos a horno fuerte." ],
+      "Variantes" : [ "Se puede realizar esta preparación con Pera o Manzana y cambiar el jugo de Naranja por otro jugo de Cítricos, incluso Limón." ]
+    },
+    "Gelatina con Frutas" : {
+      "Ingredientes" : [ "1 Manzana fresca", "1 sobrecito de Gelatinas (no rojas)" ],
+      "Pasos" : [ "Elegir fruta fresca, lavarla, pelarla, quitarle semillas y cortarla en cubitos pequeños.", "Diluir la gelatina en agua caliente (cantidad que indique el paquete). Ir agregando el agua fría (cantidad que indique el paquete). Servir en vacitos y agregar la fruta picada.", "Reservar en la heladera hasta que gelatinice.", "Para que la fruta no quede toda arriba, se puede poner la mitad de la gelatina con la fruta en los moldes. Dejar gelificar en la heladera, y dejar el resto de la preparación a temperatura ambiente. Cuando esté gelificada la primer mitad, agregar el resto de la gelatina y la fruta. Volver a la heladera." ],
+      "Variantes" : [ "Se puede realizar esta preparación con  pera, banana, durazno o combinar más de dos frutas. A partir del 9 mes, podremos incorporar todas las frutas." ]
+    },
+    "Helado de Frutas" : {
+      "Ingredientes" : [ "3 Claras de Huevo", "1 ½ taza de fruta procesada", "¾ taza Azúcar" ],
+      "Pasos" : [ "En una cacerolita colocar el azúcar, humedecer con agua y una gota de limon y llevar a fuego para que se derrita y obtener un almibar. Mientras, batir las clavas a nieve.", "Añadir el almíbar a las claras batidas, en forma de hilo, mientras se bate permanentemente para realizar un merengue. Batir hasta que se enfríe el merengue.", "Procesar la fruta. Agregar la fruta y batir durante 10 minutos a velocidad media. Llevar al freezer.", "Mientras la preparación se enfría se puede revolver con un batidor manual, sacandolo un pco del freezer para lograr una consistencia homogénea.", "Cuando tenga la consistencia deseada, servir." ],
+      "Variantes" : [ "Se puede dar más consistencia, si le agregamos al helado 1 cda. de crema de leche  batida o 1 cda. de queso untable. Lo que incrementara el aporte de calcio!" ]
+    },
+    "Licuado de Banana" : {
+      "Ingredientes" : [ "½ Banana", "100 cc. Leche Recomendada" ],
+      "Pasos" : [ "Elegir una banana madura, pelarla, y ponerla en el vaso de la licuadora, cortada en trocitos.", "Incorporar la leche fría.", "Licuar  hasta quede homogéneo y servir." ],
+      "Variantes" : [ "Se puede dar mas consistencia, si le agregamos al licuado 1 cda. de Crema de Leche o 1 cda. de Queso untable. Lo que incrementara el aporte de calcio!" ]
+    },
+    "Licuado de Fruta Fresca" : {
+      "Ingredientes" : [ "½ Fruta fresca", "Jugo colado de ½ Naranja" ],
+      "Pasos" : [ "Elegir fruta fresca, madura, jugosa, lavarla, pelarla, quitarle semillas y poner en el vaso de la licuadora, cortada en trocitos.", "Incorporar el jugo de naranja colado.", "Licuar y servir." ],
+      "Variantes" : [ "Se puede realizar esta preparación con manzana, pera, banana, durazno o combinar más de dos frutas, y porque no, alguna hortaliza. A partir del 9 mes, podremos incorporar todas las frutas." ]
+    },
+    "Mousse de Frutas" : {
+      "Ingredientes" : [ "1 ½  durazno en almibar (u otra fruta)", "150 cc de crema de leche", "3 Claras de Huevo", "¾ taza Azúcar", "Agua cant. nec.", "Jugo de limón 1 gotita" ],
+      "Pasos" : [ null, "En una cacerolita colocar el azúcar, humedecer con agua y una gota de limon y llevar a fuego para que se derrita y obtener un almibar. Mientras, batir las clavas a nieve.", "Añadir el almíbar a las claras batidas, en forma de hilo, mientras se bate permanentemente para realizar un merengue. Batir hasta que se enfríe el merengue.", "Batir la crema de leche hasta que haga picos suaves. Por otro lado, licuar el durazno.", "Mezclar el merengue, la crema y los duraznos licuados de forma envolvente. Colocar la preparación en moldes individuales. Llevar a la heladera hasta el momento de servir." ],
+      "Variantes" : [ "Se puede realizar esta preparación a partir del 10 mes, donde se incorporan las claras de huevo a la alimentación del bebé." ]
+    },
+    "Papilla de Fruta Fresca" : {
+      "Ingredientes" : [ "½ Manzana roja", "Jugo colado de ½ Naranja" ],
+      "Pasos" : [ "Elegir fruta fresca, madura, jugosa, lavarla, pelarla, quitarle semillas y rallarla.", "Incorporar el jugo de naranja colado.", "Mezclar y servir." ],
+      "Variantes" : [ "Se puede realizar esta preparación con manzana, pera, banana, durazno o combinar más de dos frutas. A partir del 9 mes, podremos incorporar todas las frutas." ]
+    },
+    "Postre Lácteo" : {
+      "Ingredientes" : [ "¾ taza Leche Recomendada", "1 gotita de Esencia de Vainilla", "1 cda. Azúcar Impalpable", "1 cdita. Almidón de Maíz" ],
+      "Pasos" : [ "Calentar ½ taza de leche  hasta que rompa hervor.", "En un bol mezclar ¼ taza de leche con el Azúcar Impalpable y el Almidón de Maíz.", "Añadir la leche hirviendo, poco a poco y sin dejar de revolver. Agregar la vainilla.", "Filtrar con un colador y volver al fuego hasta que hierva nuevamente. Verter en moldecitos individuales y dejar enfriar en la heladera." ],
+      "Variantes" : [ "Se puede realizar esta preparación incorporando frutas frescas como pera, banana, durazno, cuando la crema esta lista para servir." ]
+    }
+  },
+  "Recetas" : {
+    "Por Edad" : {
+      "Mes 10" : {
+        "Semana 1" : {
+          "día 1" : {
+            "Almuerzo" : "Calabaza Gratinada con Carne",
+            "Cena" : "Pollo con papas"
+          },
+          "día 2" : [ "Budín de Pescado", "Formitas de Polenta" ],
+          "día 3" : [ "Wok de Pollo", "Terrina Primavera" ],
+          "día 4" : [ "Estofado de Carne y Papa", "Croquetas de Arroz" ],
+          "día 5" : [ "Bocadillos de Acelga", "Pollo a la Crema" ],
+          "día 6" : [ "Fideitos con Salsa y Carne", "Omelette de Queso" ],
+          "día 7" : [ "Bifes Salteados con Raratouille", "Tortilla de Papa" ]
+        },
+        "Semana 2" : {
+          "día 1" : [ "Budín Bicolor", "Formitas de Pescado" ],
+          "día 2" : [ "Wok de Carne", "Budín de Arroz, Queso y Arvejas" ],
+          "día 3" : [ "Bastoncitos de Pollo", "Budín de Brócoli" ],
+          "día 4" : [ "Ñoquis de Papa con Salsa Rosa", "Cerdo con Puré de Manzanas" ],
+          "día 5" : [ "Croquetas de Mijo", "Chau Fan de Pollo" ],
+          "día 6" : [ "Canelones de Verduras", "Budín de Pollo" ],
+          "día 7" : [ "Peceto con Zanahorias", "Tortilla de Zapallitos y Puerros" ]
+        },
+        "Semana 3" : {
+          "día 1" : [ "Arroz Amarillo con Pollo", "Terrina Primavera" ],
+          "día 2" : [ "Guiso de Quinoa con Carne", "Omelette con Vegetales" ],
+          "día 3" : [ "Formitas de Polenta", "Cerdo con Puré Amarillo" ],
+          "día 4" : [ "Budín de Pescado", "Tortitas de Batata y Zanahorias" ],
+          "día 5" : [ "Fideitos con Salsa Rosa", "Bastoncitos de Pollo" ],
+          "día 6" : [ "Guiso de Lentejas y Carne", "Budín de Zanahoria y Arroz" ],
+          "día 7" : [ "Bifes Salteados con Ratatouille", "Ñoquis de Calabaza con Salsa Rosa" ]
+        },
+        "Semana 4" : {
+          "día 1" : [ "Cous Cous con Vegetales y Carne", "Budín Bicolor" ],
+          "día 2" : [ "Formitas de Pescado", "Fideitos con Salsa Fileto" ],
+          "día 3" : [ "Bifes Salteados con Ratatouille", "Tortilla de Papa" ],
+          "día 4" : [ "Budín de Pollo", "Ñoquis de Ricota y Acelga" ],
+          "día 5" : [ "Wok de Carne", "Croquetas de Mijo" ],
+          "día 6" : [ "Cerdo con Puré Blanco", "Tortilla de Zapallitos y Puerros" ],
+          "día 7" : [ "Canelones de Verduras", "Formitas de Pollo con Puré Naranja" ]
+        },
+        "Semana 5" : {
+          "día 1" : [ "Calabaza Gratinada con Carne", "Ñoquis de sémola" ],
+          "día 2" : [ "Budín de Pescado", "Formitas de Polenta" ],
+          "día 3" : [ "Wok de Pollo", "Terrina Primavera" ]
+        }
+      },
+      "Mes 11" : {
+        "Semana 1" : {
+          "día 1" : [ "Estofado de Carne y Papa", "Bocadillos de Acelga" ],
+          "día 2" : [ "Revuelto de Zapallitos con Carne", "Terrina Primavera" ],
+          "día 3" : [ "Formitas de Pescado", "Croquetas de Arroz" ],
+          "día 4" : [ "Wok de Pollo", "Tortilla de Zapallitos y Puerros" ],
+          "día 5" : [ "Pollo a la Crema", "Budín de Brócoli" ],
+          "día 6" : [ "Budín de Pollo", "Ñoquis de sémola" ],
+          "día 7" : [ "Peceto con Zanahorias", "Fideitos con Salsa Rosa" ]
+        },
+        "Semana 2" : {
+          "día 1" : [ "Chau Fan de Pollo", "Budín de Arroz, Queso y Arvejas" ],
+          "día 2" : [ "Bifes Salteados con Puré Amarillo", "Omelette con Vegetales" ],
+          "día 3" : [ "Budín de Pescado", "Canelones de Verduras" ],
+          "día 4" : [ "Budín de Zanahoria y Arroz", "Cerdo con Puré de Manzanas" ],
+          "día 5" : [ "Guiso de Quinoa con Carne", "Bastoncitos de Pollo" ],
+          "día 6" : [ "Soufle de Vegetales", "Arroz Amarillo con Pollo" ],
+          "día 7" : [ "Fideitos con Salsa Rosa", "Albóndigas de Pollo" ]
+        },
+        "Semana 3" : {
+          "día 1" : [ "Croquetas de Mijo", "Wok de Carne" ],
+          "día 2" : [ "Humita", "Bifes Salteados con Ratatouille" ],
+          "día 3" : [ "Tortilla de Zapallitos y Puerros", "Formitas de Pescado" ],
+          "día 4" : [ "Bifes Salteados con Puré Amarillo", "Guiso de Lentejas y Arroz" ],
+          "día 5" : [ "Peceto con Zanahorias", "Terrina Primavera" ],
+          "día 6" : [ "Budín de Pollo", "Cerdo con Puré Amarillo" ],
+          "día 7" : [ "Bifes Salteados con Ratatouille", "Fideitos con Salsa y Carne" ]
+        },
+        "Semana 4" : {
+          "día 1" : [ "Bifes Salteados con Puré Amarillo", "Budín de Arroz, Queso y Arvejas" ],
+          "día 2" : [ "Ñoquis de Ricota y Acelga", "Formitas de Pescado" ],
+          "día 3" : [ "Albóndigas de Pollo", "Tortitas de Batata y Zanahorias" ],
+          "día 4" : [ "Cerdo con Puré Blanco", "Soufle de Vegetales" ],
+          "día 5" : [ "Bastoncitos de Pollo", "Croquetas de Arroz" ],
+          "día 6" : [ "Budín de Brócoli con Carne", "Fideitos con Salsa Rosa" ],
+          "día 7" : [ "Arroz Amarillo con Pollo", "Terrina Primavera" ]
+        },
+        "Semana 5" : {
+          "día 1" : [ "Estofado de Carne y Papa", "Bocadillos de Acelga" ],
+          "día 2" : [ "Revuelto de Zapallitos con Carne", "Terrina Primavera" ],
+          "día 3" : [ "Formitas de Pescado", "Croquetas de Arroz" ]
+        }
+      },
+      "Mes 6" : {
+        "Semana 1" : {
+          "día 1" : [ "Papilla Naranja con Pollo" ],
+          "día 2" : [ "Papilla Naranja con Pollo" ],
+          "día 3" : [ "Papilla Naranja con Pollo" ],
+          "día 4" : [ "Papilla Blanca con Carne" ],
+          "día 5" : [ "Papilla Blanca con Carne" ],
+          "día 6" : [ "Papilla Blanca con Carne" ],
+          "día 7" : [ "Papilla de Batata con Pollo" ]
+        },
+        "Semana 2" : {
+          "día 1" : [ "Papilla de Batata con Pollo" ],
+          "día 2" : [ "Papilla de Batata con Pollo" ],
+          "día 3" : [ "Polenta Clásica con Carne" ],
+          "día 4" : [ "Polenta Clásica con Carne" ],
+          "día 5" : [ "Polenta Clásica con Carne" ],
+          "día 6" : [ "Puré Mixto con Pollo" ],
+          "día 7" : [ "Puré Mixto con Pollo" ]
+        },
+        "Semana 3" : {
+          "día 1" : [ "Puré Mixto con Pollo" ],
+          "día 2" : [ "Crema de Cereal con Carne" ],
+          "día 3" : [ "Crema de Cereal con Carne" ],
+          "día 4" : [ "Crema de Cereal con Carne" ],
+          "día 5" : [ "Polenta con Pollo" ],
+          "día 6" : [ "Polenta con Pollo" ],
+          "día 7" : [ "Polenta con Pollo" ]
+        },
+        "Semana 4" : {
+          "día 1" : [ "Puré Vegetal y Cereal con Carne" ],
+          "día 2" : [ "Puré Vegetal y Cereal con Carne" ],
+          "día 3" : [ "Puré Vegetal y Cereal con Carne" ],
+          "día 4" : [ "Puré de Cereal con Pollo" ],
+          "día 5" : [ "Puré de Cereal con Pollo" ],
+          "día 6" : [ "Puré de Cereal con Pollo" ],
+          "día 7" : [ "Papilla Blanca con Carne" ]
+        },
+        "Semana 5" : {
+          "día 1" : [ "Papilla Blanca con Carne" ],
+          "día 2" : [ "Papilla Blanca con Carne" ],
+          "día 3" : [ "Papilla Naranja con Pollo" ]
+        }
+      },
+      "Mes 7" : {
+        "Semana 1" : {
+          "día 1" : [ "Crema de Avena y Pollo", "Puré de Hígado y Vegetales" ],
+          "día 2" : [ "Papilla de Zapallitos y Pollo", "Crema de Cereal con Carne" ],
+          "día 3" : [ "Fideitos con Salsa Fileto", "Calabaza Gratinada con Carne" ],
+          "día 4" : [ "Papilla de Zapallitos y Pollo", "Papilla clásica de Sémola" ],
+          "día 5" : [ "Puré Vegetal y Cereal con Carne", "Puré de Lentejas con Zanahoria" ],
+          "día 6" : [ "Cerdo con Puré de Manzanas", "Polenta Clásica con Carne" ],
+          "día 7" : [ "Terrina Tricolor con Pollo", "Cous Cous con Vegetales y Carne" ]
+        },
+        "Semana 2" : {
+          "día 1" : [ "Fideitos con Salsa Rosa", "Puré de Cereal con Pollo" ],
+          "día 2" : [ "Mijo Con Vegetales y Carne", "Budín Bicolor" ],
+          "día 3" : [ "Puré de Hígado y Vegetales", "Pollo a la Crema" ],
+          "día 4" : [ "Calabaza Gratinada con Carne", "Crema de Avena y Pollo" ],
+          "día 5" : [ "Papilla de Zapallitos y Pollo", "Budín de Zanahoria y Arroz" ],
+          "día 6" : [ "Puré Vegetal y Cereal con Carne", "Terrina Tricolor con Pollo" ],
+          "día 7" : [ "Ñoquis de sémola", "Cerdo con Puré de Manzanas" ]
+        },
+        "Semana 3" : {
+          "día 1" : [ "Puré de Cereal con Pollo", "Cous Cous con Vegetales y Carne" ],
+          "día 2" : [ "Fideitos con Salsa Fileto", "Puré Vegetal y Cereal con Carne" ],
+          "día 3" : [ "Papilla de Zapallitos y Pollo", "Calabaza Gratinada con Carne" ],
+          "día 4" : [ "Puré de Lentejas con Zanahoria", "Terrina Tricolor con Pollo" ],
+          "día 5" : [ "Puré de Hígado y Vegetales", "Puré de Lentejas con Zanahoria" ],
+          "día 6" : [ "Budín Bicolor", "Puré Vegetal y Cereal con Carne" ],
+          "día 7" : [ "Pollo a la Crema", "Mijo Con Vegetales y Carne" ]
+        },
+        "Semana 4" : {
+          "día 1" : [ "Budín de Zanahoria y Arroz", "Papilla de Zapallitos y Pollo" ],
+          "día 2" : [ "Ñoquis de sémola", "Puré de Hígado y Vegetales" ],
+          "día 3" : [ "Cous Cous con Vegetales y Carne", "Puré de Lentejas con Zanahoria" ],
+          "día 4" : [ "Fideitos con Salsa Rosa", "Cerdo con Puré de Manzanas" ],
+          "día 5" : [ "Polenta Clásica con Carne", "Terrina Tricolor con Pollo" ],
+          "día 6" : [ "Calabaza Gratinada con Carne", "Puré de Cereal con Pollo" ],
+          "día 7" : [ "Formitas de Polenta", "Puré Vegetal y Cereal con Carne" ]
+        },
+        "Semana 5" : {
+          "día 1" : [ "Crema de Avena y Pollo", "Puré de Hígado y Vegetales" ],
+          "día 2" : [ "Papilla de Zapallitos y Pollo", "Crema de Cereal con Carne" ],
+          "día 3" : [ "Fideitos con Salsa Fileto", "Calabaza Gratinada con Carne" ]
+        }
+      },
+      "Mes 8" : {
+        "Semana 1" : {
+          "día 1" : [ "Fideitos con Salsa Fileto", "Hígado Salteado" ],
+          "día 2" : [ "Peceto con Zanahorias", "Milhojas Tricolor" ],
+          "día 3" : [ "Budín de Arroz, Queso y Arvejas", "Pollo a la Crema" ],
+          "día 4" : [ "Budín Bicolor", "Cerdo con Puré de Manzanas" ],
+          "día 5" : [ "Calabaza Gratinada con Carne", "Ñoquis de sémola" ],
+          "día 6" : [ "Budín de Zanahoria y Arroz", "Pollo a la Crema" ],
+          "día 7" : [ "Fideitos con Salsa Rosa", "Formitas de Pollo con Puré Naranja" ]
+        },
+        "Semana 2" : {
+          "día 1" : [ "Cerdo con Puré Blanco", "Puré de Lentejas con Zanahoria" ],
+          "día 2" : [ "Mijo Con Vegetales y Carne", "Papilla de Zapallitos y Pollo" ],
+          "día 3" : [ "Terrina Tricolor con Pollo", "Bifes Salteados con Puré Amarillo" ],
+          "día 4" : [ "Cous Cous con Vegetales y Carne", "Budín Bicolor" ],
+          "día 5" : [ "Ñoquis de Papa con Salsa Rosa", "Peceto con Zanahorias" ],
+          "día 6" : [ "Albóndigas de Pollo", "Crema de Zucchinis y Queso" ],
+          "día 7" : [ "Budín de Arroz, Queso y Arvejas", "Puré Vegetal y Cereal con Carne" ]
+        },
+        "Semana 3" : {
+          "día 1" : [ "Tortitas de Batata y Zanahorias", "Pollo a la Crema" ],
+          "día 2" : [ "Terrina Tricolor con Pollo", "Chau Fan de Pollo" ],
+          "día 3" : [ "Calabaza Gratinada con Carne", "Papilla de Zapallitos y Pollo" ],
+          "día 4" : [ "Fideitos con Salsa Fileto", "Formitas de Pollo con Puré Naranja" ],
+          "día 5" : [ "Cous Cous con Vegetales y Carne", "Lasagna Verde" ],
+          "día 6" : [ "Milhojas Tricolor", "Cerdo con Puré Amarillo" ],
+          "día 7" : [ "Budín de Zanahoria y Arroz", "Mijo Con Vegetales y Carne" ]
+        },
+        "Semana 4" : {
+          "día 1" : [ "Albóndigas de Pollo", "Terrina Tricolor con Pollo" ],
+          "día 2" : [ "Fideitos con Salsa Rosa", "Cerdo con Puré de Manzanas" ],
+          "día 3" : [ "Peceto con Zanahorias", "Tortitas de Batata y Zanahorias" ],
+          "día 4" : [ "Ñoquis de sémola", "Calabaza Gratinada con Carne" ],
+          "día 5" : [ "Puré Vegetal y Cereal con Carne", "Papilla de Zapallitos y Pollo" ],
+          "día 6" : [ "Pollo a la Crema", "Budín Bicolor" ],
+          "día 7" : [ "Guiso de Lentejas y Arroz", "Terrina Tricolor con Pollo" ]
+        },
+        "Semana 5" : {
+          "día 1" : [ "Fideitos con Salsa Fileto", "Hígado Salteado" ],
+          "día 2" : [ "Peceto con Zanahorias", "Milhojas Tricolor" ],
+          "día 3" : [ "Budín de Arroz, Queso y Arvejas", "Pollo a la Crema" ]
+        }
+      },
+      "Mes 9" : {
+        "Semana 1" : {
+          "día 1" : [ "Budín de Brócoli con Carne", "Ñoquis de sémola" ],
+          "día 2" : [ "Budín de Pollo", "Lasagna Verde" ],
+          "día 3" : [ "Cerdo con Puré Blanco", "Terrina Primavera" ],
+          "día 4" : [ "Malfatti Verdes con Salsa Blanca", "Pollo a la Crema" ],
+          "día 5" : [ "Croquetas de Mijo", "Fideitos con Salsa y Carne" ],
+          "día 6" : [ "Bastoncitos de Pollo", "Humita" ],
+          "día 7" : [ "Calabaza Gratinada con Carne", "Crema de Zucchinis y Queso" ]
+        },
+        "Semana 2" : {
+          "día 1" : [ "Albóndigas de Pollo", "Polenta con Salsa Fileto" ],
+          "día 2" : [ "Tortilla de Papa", "Cerdo con Puré de Manzanas" ],
+          "día 3" : [ "Bocadillos de Acelga", "Guiso de Quinoa con Carne" ],
+          "día 4" : [ "Pollo a la Crema", "Fideitos con Salsa Rosa" ],
+          "día 5" : [ "Peceto con Zanahorias", "Budín de Arroz, Queso y Arvejas" ],
+          "día 6" : [ "Ñoquis de Ricota y Acelga", "Budín de Pollo" ],
+          "día 7" : [ "Puré Vegetal y Cereal con Carne", "Terrina Primavera" ]
+        },
+        "Semana 3" : {
+          "día 1" : [ "Budín Bicolor", "Fideitos con Pollo" ],
+          "día 2" : [ "Lasagna Verde", "Estofado de Carne y Papa" ],
+          "día 3" : [ "Cerdo con Puré Amarillo", "Budín de Zanahoria y Arroz" ],
+          "día 4" : [ "Formitas de Pollo con Puré Naranja", "Tortitas de Batata y Zanahorias" ],
+          "día 5" : [ "Cous Cous con Vegetales y Carne", "Omelette con Vegetales" ],
+          "día 6" : [ "Croquetas de Mijo", "Fideitos con Salsa y Carne" ],
+          "día 7" : [ "Bifes Salteados con Ratatouille", "Formitas de Polenta" ]
+        },
+        "Semana 4" : {
+          "día 1" : [ "Ñoquis de Calabaza con Salsa Rosa", "Bastoncitos de Pollo" ],
+          "día 2" : [ "Chau Fan de Pollo", "Tortilla de Zapallitos y Puerros" ],
+          "día 3" : [ "Guiso de Quinoa con Carne", "Bocadillos de Acelga" ],
+          "día 4" : [ "Albóndigas de Pollo", "Budín de Brócoli" ],
+          "día 5" : [ "Fideitos con Salsa y Carne", "Terrina Primavera" ],
+          "día 6" : [ "Arroz Amarillo con Pollo", "Budín Bicolor" ],
+          "día 7" : [ "Bifes Salteados con Puré Amarillo", "Canelones de Verduras" ]
+        },
+        "Semana 5" : {
+          "día 1" : [ "Budín de Brócoli con Carne", "Ñoquis de sémola" ],
+          "día 2" : [ "Puré Verde con Pollo", "Lasagna Verde" ],
+          "día 3" : [ "Cerdo con Puré Blanco", "Terrina Primavera" ]
+        }
+      }
+    },
+    "Por Nombre" : {
+      "Acelga a la Crema" : {
+        "Ingredientes" : [ "5 Hojas Acelga", "⅓ taza Salsa Blanca" ],
+        "Pasos" : [ "Cortarle la penca a la acelga. Blanquearla en agua hirviendo y colar.", "Triturar la acelga con el mixer hasta desmenuzarla.", "Agregar la salsa blanca, colocar en una cacerolita y calentar.", "Fuera del fuego, condimentar si se desea con nuez moscada. Servir." ],
+        "Tip Nutricional" : [ "La acelga la introduciremos recién a los 9 meses. Aporta fibra, hierro de origen vegetal (necesita facilitadores para su absorción como por ejemplo frutas cítricas que contienen vitamina C) y ácido fólico, ambos muy importantes para evitar la anemia. " ],
+        "Variantes" : {
+          "0 " : "Condimentar con nuez moscada."
+        },
+        "Video" : "url"
+      },
+      "Albóndigas de Pollo" : {
+        "Ingredientes" : [ "1 cda. de Cebolla", "50 gr de Pechuga de Pollo, sin hueso ni piel", "2 cditas. de Aceite de Maiz", "2 cdas. de Harina", "1 Yema de Huevo", "1 pizca de Nuez Moscada", "½ taza de Salsa Fileto", "¼ taza de Crema de Leche", "½ taza de Arroz blanco hervido" ],
+        "Pasos" : [ null, "Pelar y picar cebolla. Desgrasar el pollo y cortarlo en cubitos.", "Rehogar la cebolla en el aceite. Colocar la cebolla rehogada, y el pollo crudo en la procesadora y moler todo. Unir con la harina, la yema y condimentar con nuez moscada.", "Tomar pequeñas porciones, formar bolitas con sémola en la mesada. Colocar en una placa lubricada y llevar a la heladera por unos minutos.", "Colocar las bolitas en un recipiente apto para horno y con profundidad. Cocinar 10 minutos en horno moderado. Rociar con la Salsa Fileto mezclada con la crema de leche y hornear 5 minutos. Se puede acompañar con arroz blando bien cocido." ],
+        "Tip Nutricional" : [ "Esta preparación es una variante para incluir la carne de ave en la alimentación del niño, recordemos que las carnes aportan hierro, además de proteínas de alto valor biológico y zinc.  El arroz y la crema de leche aportan energía. El tomate aporta licopeno que se mantiene su función antioxidante a pesar de la cocción." ],
+        "Variantes" : [ "Se puede cambiar el Pollo por Pavo o pescado (a partir de los 10 meses)" ]
+      },
+      "Arroz Amarillo con Pollo" : {
+        "Ingredientes" : [ "70 gr de Pechuga de Pollo cortada en cubitos", "1 cdita. de Aceite de Maiz", "3 cdas. de Arroz Blanco", "¼ unidad de Cebolla picada", "1 pizca de Azafrán", "½ taza de agua o Caldo casero de Pollo" ],
+        "Pasos" : [ "Rehogar la cebolla en agua hasta que cambie de color; agregar el arroz, el agua o caldo de verduras y el azafrán.", "Dejar cocinar 15m y cuando esté casi a punto apagar el fuego, tapar y dejar reposar.", "Mientras reposa el arroz, dorar cubitos de pollo en una sartén con 1 cdita. de aceite de maíz. Servir con el arroz." ],
+        "Tip Nutricional" : [ "El arroz es un cereal que aporta energía, en los primeros meses de vida se consumirá bien cocido para evitar el riesgo de aspiración. El pollo aporta proteínas de alto valor biológico  fundamentales para el crecimiento además de otros micronutrientes como el hierro y el zinc." ],
+        "Variantes" : [ "El arroz amarillo puede acompañar cualquier tipo de carne" ]
+      },
+      "Arroz con Leche" : {
+        "Ingredientes" : [ "⅓ Arroz blanco", "¾ taza Leche Recomendada", "1 gotita Esencia de Vainilla", "1 cda. Azúcar impalpable", "1 pizca de Canela", "1 Cascarita de Limón lavada" ],
+        "Pasos" : [ "Calentar la leche con el azúcar,  la cascara de limón y el arroz,  hasta que rompa hervor.", "Revolver con cuchara de madera frecuentemente. Si fuera necesario agregar leche tibia, para evitar que se pegue en el fondo. Cocinar 20m o hasta que este hecho el arroz.  Cuando este listo, agregar la vainilla.", "Verter en un moldecito individual y dejar enfriar en la heladera. Espolvorear con canela al servir." ],
+        "Variantes" : [ "Se pueden agregar frutas desecada picadita como orejones de damascos, pasas." ]
+      },
+      "Bastoncitos de Pollo" : {
+        "Ingredientes" : [ "70 grs. de Pechuga de Pollo sin piel", "80 gr. de Copos de Maiz", "Harina (cantidad necesaria)", "1 Huevo", "2 cditas. de Aceite de Maiz", "Rocío Vegetal" ],
+        "Pasos" : [ "Desgrasar el pollo y cortarlo en tiras. Triturar los copos de maíz con un palote.", "Poner la harina en una bolsita, introducir el pollo y sacudir.", "Pasar las tiras de pollo por el huevo batido y luego por los copos de cereal.", "Colocar las tiras de pollo en una bandeja de horno previamente lubricada con rocío vegetal. Cocinar en horno moderado hasta que doren de ambos lados." ],
+        "Tip Nutricional" : [ "En general a los 9 meses ha comenzado la dentición que le permite al niño comer de a poco trocitos de mayor tamaño en forma progresiva. El niño puede tomar los alimentos con sus manos y llevárselos a la boca. \tEsta receta aporta proteínas, hierro y zinc sumado a la energía y el sabor crocante de los copos." ],
+        "Variantes" : [ "se puede acompañar con Puré Blanco, Naranja o Amarillo" ]
+      },
+      "Bifes Salteados con Puré Amarillo" : {
+        "Ingredientes" : [ "100 gr. de Carne de ternera", "2 cditas. de Aceite de Maiz", "½ taza de Cebolla en juliana", "¼ taza de Morrón en juliana", "1 cda. de Harina", "1 pizca de Curry suave", "½ taza de Caldo Casero de Vegetales", "½ taza de Puré Amarillo" ],
+        "Pasos" : [ "Desgrasar la carne, corte pequeños bifecitos de carne y tiernizar, golpeándolos con un martillo de cocina. Reservar.", "Mezclar la harina y el curry. Y enharinar los bifecitos con la mezcla.", "Calentar una sartén a fuego moderado, coloque el aceite y dore los bifecitos por ambos lados. Retire los bifecitos. En el mismo fondo de cocción incorpore los vegetales y cocine hasta que estén tiernos. Agregue nuevamente los bifecitos, cubra con el caldo y cocine por 20 minutos a fuego bajo.Si el líquido se consume antes, vierta un poco más de caldo.", "Acompañar con Puré Amarillo" ],
+        "Tip Nutricional" : [ "Esta preparación es una variante para incluir la carne vacuna en la alimentación del niño, recordemos que las carnes rojas aportan mayor cantidad de hierro, además de proteínas de alto valor biológico y zinc.  El puré amarillo aporta fibra y vitamina A, el agregado de crema mejora la densidad energética." ],
+        "Variantes" : [ "La Carne de Ternera puede ser Lomo, Cuadril, Nalga o Bola de Lomo." ]
+      },
+      "Bifes Salteados con Ratatouille" : {
+        "Ingredientes" : [ "70 gr. de Carne de ternera", "2 cditas. de Aceite de Maiz", "1 cda. de Harina", "1 cda. de Cebolla cortada en cubitos", "1 cda. de Morrón cortado en cubitos", "1 cda. de Zucchini cortado en cubitos", "1 cda. de Berenjena cortada en cubitos", "1 unidad de Tomate perita , sin piel y sin semillas en cubitos", "3 hojas de Albahaca", "½ taza de Caldo Casero de Vegetales", "½ taza de Puré Amarillo" ],
+        "Pasos" : [ "Desgrasar la carne, corte pequeños bifecitos de carne y tiernizar, golpeándolos con un martillo de cocina.", "Enharinar los bifecitos. Calentar una sartén a fuego moderado, colocar el aceite y dorar los bifecitos por ambos lados.", "Retirar los bifecitos. En el mismo fondo de cocción incorporar los vegetales cortaditos del mismo tamaño y la albahaca. Cocinar hasta que estén tiernos. Agregar nuevamente los bifecitos, cubrir con el caldo y cocinar por 20 minutos a fuego bajo. Si el líquido se consume antes, vertir un poco más de caldo.", "4. Retirar la albahaca. Acompañar con Puré Amarillo" ],
+        "Tip Nutricional" : [ "Esta preparación incluye carne y vegetales , por lo tanto aporta fibra, vitaminas, hierro y zinc. Combina sabores y texturas,  aporta energía a partir del aceite fuente de ácidos grasos esenciales fundamentales para el desarrollo del cerebro del bebé." ],
+        "Variantes" : [ "La Carne de ternera puede ser lomo, cuadril, nalga o bola de lomo." ]
+      },
+      "Bocadillos de Acelga" : {
+        "Ingredientes" : [ "5 hojas de Acelga cruda picada", "1 cda. de Cebolla picada", "2 cdas. de Harina de Garbanzos", "1 Huevo", "1 pizca de Cúrcuma", "1 cdita. de Orégano", "1 cdita. de Aceite de Maiz", "Rocío Vegetal" ],
+        "Pasos" : [ "Picar la acelga en una fina juliana.", "Rehogar la cebolla en 1 cdita. de aceite de maíz, hasta que cambie de color. Agregar la acelga.", "En un bol, unir todos los ingredientes y mezclar. Condimentar.", "Cocinar la mezcla de a cucharadas en sartén antiadheente previamente lubricado con rocío vegetal." ],
+        "Tip Nutricional" : [ "La acelga aporta fibra insoluble,  hierro y acido fólico. La harina de garbanzos no contiene gluten y es fuente de proteína vegetal y vitaminas del grupo B. También aporta acido fólico  y hierro. El hierro al ser de origen vegetal mejora su utilización con el consumo de vitamina C (contenida en las frutas cítricas)." ],
+        "Variantes" : [ "Se puede acompañar con tomate cubeteado, sin piel y sin semillas" ]
+      },
+      "Bocaditos de Fruta Fresca" : {
+        "Ingredientes" : [ "¼ Banana", "¼ Durazno" ],
+        "Pasos" : [ "Elegir fruta fresca, madura, jugosa, lavarla, pelarla, quitarle semillas y trozarla de manera que él bebe pueda tomarla con sus manitos.", "Emplatar la fruta, cuidando de mezclar varios colores y formas, y que sea atractivo para él bebe. Servir." ],
+        "Variantes" : [ "Se puede realizar esta preparación con cortantes apropiados y realizar florcitas de kiwi, triángulos de sandía, bastoncitos de manzanas y esferas de melón. A partir del 9 mes, podremos incorporar todas las frutas." ]
+      },
+      "Budín Bicolor" : {
+        "Ingredientes" : [ "1 Yema de Huevo", "2 cdas. de Ricota", "2 cdas. de Leche recomendada", "2 cdas. de Almidón de Maíz", "1 Zapallito Verde sin semillas", "½ Zanahoria", "1 cda. Manteca" ],
+        "Pasos" : [ "Hervir los vegetales y picarlos en la procesadora por separado. Mezclar la yema, con la ricota. Agregar el almidón de maíz diluído en la leche.", "Dividir la mezcla en dos partes iguales: combinar la mitad con el zapallito procesado, y la otra mitad con el puré de zanahoria.", "Derretir la manteca y pincelar dos budineras individuales. Disponer en el fondo la preparación de zanahorias y sobre ella la de zapallitos.", "Hornear a Baño María, por 30 minutos, hasta que la mezcla este firme. Retirar. Desmoldar y Servir." ],
+        "Tip Nutricional" : [ "Los budines de vegetales/hortalizas son preparaciones completas ya que aportan fibra y contienen vitaminas y minerales. Se incorporan para su elaboración yema de huevo, ricota y leche que aportan proteínas, calcio y energía. El calcio es fundamental junto con la vitamina D para la salud ósea." ],
+        "Variantes" : [ "Esta preparación puede fraccionarse en 2 porciones, y congelarse. Así estará disponible cada vez que las necesitemos!" ]
+      },
+      "Budín de Arroz, Queso y Arvejas" : {
+        "Ingredientes" : [ "¼ taza de Arroz blanco", "1 taza de Leche Recomendada", "1 taza de Agua", "1 cda. de Cebolla picada", "¼ taza de Arvejas frescas o congeladas", "1 cda. Queso fresco rallado en hebras", "1 cdita. de Aceite de Maíz", "1 Hoja de Laurel", "1 pizca de Nuez Moscada" ],
+        "Pasos" : [ "En una cacerola , caliente agua suficiente para cubrir el arroz y hiérvalo por 2 minutos. Escurra y enjuague con agua fría para detener la cocción. En la misma cacerola, ponga a hervir la leche, la cebolla, el laurel y la nuez moscada, a fuego moderado.", "Añada el arroz, baje la llama y cocine sin tapar, removiendo con frecuencia hasta que el arroz este tierno y cremoso. Si el líquido se consume antes, vierta un poco más de agua.", "Deseche el laurel. Agregue las arvejas y cocine por 2 minutos.", "En un molde lubricado colocar la preparación y, el queso por encima para que se derrita." ],
+        "Tip Nutricional" : [ "En esta receta al combinar un cereal (arroz) y una legumbre (arvejas) se logra obtener una proteína de mejor calidad. También aporta energía, fibra, proteínas y calcio." ],
+        "Variantes" : [ "Se puede cambiar el arroz por mijo" ]
+      },
+      "Budín de Brócoli" : {
+        "Ingredientes" : [ "¾ taza de Brócoli cocido al vapor", "2 Huevos", "½ Cebolla picada", "50 grs. de Ricota", "1 pizca de Nuez Moscada", "1 cda. de Queso Mozzarella en hebras", "2 cditas. de Aceite de Maiz", "½ taza de Salsa Blanca" ],
+        "Pasos" : [ "Precalentar el horno a 180°C. Luego de cocer el brócoli al vapor, cortarlo en trozos chicos. Rehogar la cebolla.", "Colocar en un bol la ricota, el huevo y el queso en hebras. Mezclar con el brócoli, la cebolla y condimentar con nuez moscada. Colocar en budinera individual lubricada.", "Hornear en horno moderado hasta que coagule el huevo (aproximadamente 20m). Servir" ],
+        "Tip Nutricional" : [ "Los budines de vegetales/hortalizas son preparaciones completas ya que aportan fibra, vitaminas y minerales. se incorporan para su elaboración yema de huevo, ricota y leche que aportan proteínas, calcio y energía.  El brócoli  también aporta calcio." ],
+        "Variante" : [ "Se puede cambiar el Brócoli por Coliflor." ]
+      },
+      "Budín de Brócoli con Carne" : {
+        "Ingredientes" : [ "¾ taza de Brócoli cocido al vapor", "2 Huevos", "½ Cebolla picada", "50 grs. de Ricota", "1 pizca de Nuez Moscada", "1 cda. de Queso Mozzarella en hebras", "2 cditas. de Aceite de Maiz", "50 gr. de Bife de Lomo a la Plancha" ],
+        "Pasos" : [ "Luego de cocer el brócoli al vapor, cortarlo en trozos chicos. Rehogar la cebolla.", "Precalentar el horno a 200°C. Colocar en un bol la ricota, el huevo y el queso en hebras. Mezclar con el brócoli, la cebolla y condimentar con nuez moscada. Colocar en budinera individual lubricada.", "Hornear en horno moderado hasta que coagule el huevo.", "Servir con un bifecito de lomo a la plancha." ],
+        "Tip Nutricional" : [ "Los budines de vegetales son una buena opción para incorporar fibra, minerales y vitaminas. Son preparaciones completas ya que incluyen lácteos como ricota y queso que aportan calcio y proteínas, además de enriquecer el aporte de energía. El brócoli contiene hierro de origen vegetal, que mejora su utilización al consumirlo junto con la carne." ],
+        "Variantes" : [ "Se puede cambiar el Brócoli por Coliflor." ]
+      },
+      "Budín de Pescado" : {
+        "Ingredientes" : [ "1 Filet de Merluza despinado", "1 cda. Cebolla picada", "½ Huevo batido", "1 cda. de Queso untable", "1 cda. Queso en hebras", "1 cda. Crema de leche", "1 cdita. Perejil picado", "Rocío Vegetal" ],
+        "Pasos" : [ "Cocinar el pescado al vapor. Rehogar en agua la cebolla hasta que quede transparente.", "Colocar en un bol la cebolla y el pescado desmenuzado. Batir el huevo, la crema y el queso, agregar el perejil picado. Mezclar con la preparación anterior.", "Colocar en molde individual lubricado.", "Cocinar a Baño Maria en horno moderado alrededor de 30 minutos, hasta que este firme." ],
+        "Tip Nutricional" : [ "La merluza  es un pescado magro por lo tanto aporta proteínas con bajo contenido de grasa y calorías. También es fuente de vitamina B fundamental para el buen funcionamiento del sistema nervioso. Cuando es de consumo habitual en el hogar y se utilizan distintas preparaciones para incluirlo en la alimentación de los niños se logra una mayor aceptación." ],
+        "Variantes" : [ "Se puede cambiar la merluza por otros pescados de mar como el lenguado, gatuso, congrio, corvina." ]
+      },
+      "Budín de Pollo" : {
+        "Ingredientes" : [ "70 grs. de Pechuga de Pollo sin piel", "1 Huevo", "1 cda. de Queso Untable", "½ Cebolla chica", "¼ taza de Caldo casero de Pollo", "1 pizca de Nuez Moscada", "Tomillo a gusto", "Rocío Vegetal" ],
+        "Pasos" : [ "Precalentar el horno a 200°C", "Rehogar en agua la cebolla hasta que quede transparente", "Cortar en trozos el pollo y colocarlo en la procesadora con el huevo, el caldo de pollo, el queso, el tomillo y condimentar con nuez moscada.", "Lubricar un molde individual de horno con rocío vegetal y verter allí el licuado de pollo. Cocinar en horno a baño María durante 1/2 hora en horno moderado. Servir" ],
+        "Tip Nutricional" : [ "Esta receta nos permite incorporar el pollo en una preparación distinta evitando la monotonía y ofrece la oportunidad de que el bebé se acostumbre a diferentes sabores y texturas." ],
+        "Variantes" : "Se puede acompañar con Salsa Blanca o Salsa Rosa"
+      },
+      "Budín de Zanahoria y Arroz" : {
+        "Ingredientes" : [ "1 cda. sopera de Cebolla picada", "1 cda. de Manteca", "2 cdas. Arroz blanco grano largo", "1 taza Caldo casero de Pollo", "1 Yema de Huevo", "2 cdas. de Leche recomendada", "1 cda. de Almidón de Maíz", "1 Zanahoria pelada, picada en trozos pequeños" ],
+        "Pasos" : [ "En una cacerola, derretir la manteca a fuego bajo. Dorar allí la cebolla y la zanahoria por 1 minuto o hasta que se suavice. Agregar el arroz y cubrir con caldo. Cocinar por 15 minutos o hasta que todo este tierno.", "Precalentar el horno a 190º. En la procesadora, moler la preparación, por 20 seg. En un bowl batir la yema de huevo, y el almidón de maíz previamente disuelto en la leche.", "Colocar unas gotitas de aceite y pincelar budineras individuales. Disponer la preparación en los moldes.", "Hornear a Baño María, por 30 minutos, o hasta que la mezcla se esponje y se dore. Retirar. Enfriar. Desmoldar y Servir." ],
+        "Tip Nutricional" : [ "Los budines de vegetales/hortalizas son preparaciones completas ya que aportan fibra y contienen vitaminas y minerales. Se incorporan para su elaboración yema de huevo, ricota y leche que aportan proteínas, calcio y energía. El calcio es fundamental junto con la vitamina D para la salud ósea." ],
+        "Variantes" : [ "Esta preparación puede variar según la estación del año. En invierno se puede preparar con brócoli, o calabaza y en verano con zapallitos o zucchinis." ]
+      },
+      "Calabaza Gratinada con Carne" : {
+        "Ingredientes" : [ "100 gr. de Calabaza", "½ taza de Salsa Blanca", "1 cda. Queso mozzarella rallado en hebras", "50 gr. de Bife de Carne a la plancha", "Rocío Vegetal" ],
+        "Pasos" : [ "Cortar y pelar la calabaza en rodajas de 1 cm de espesor, colocarlas en una placa de horno humedecida con rocío vegetal y cocinarlas en el horno.", "Pinchar con un tenedor para verificar que este cocida. Distribuir sobre ellas la salsa blanca. Espolvorear la mozzarella y gratinar al horno.", "Cocinar el bifecito y picarlo. Servir acompañado de la calabaza." ],
+        "Tip Nutricional" : [ "Esta receta nos permite usar ingredientes que ya fueron introducidos en la alimentación del bebé dándole variedad y evitando la monotonía aportando proteínas, fibra y calcio." ],
+        "Variantes" : [ "Se pueden utilizar cortantes para galletitas y darle formas divertidas a la calabaza!" ]
+      },
+      "Caldo Casero de Pollo" : {
+        "Ingredientes" : [ "1 Pechuga de Pollo", "1,5 litros Agua", "1 Cebolla", "1 Zanahoria", "1 Puerro", "1 tallo de Apio", "1 Nabo", "1 Batata", "1 rodaja de Zapallo", "1 ramita de Perejil" ],
+        "Pasos" : [ "Desgrasar y trozar la pechuga. Poner en una olla el agua fría, el pollo y las verduras limpias y en pedazos grandes. Llevar al fuego y dejar que hierva suavemente 30 minutos. Retirar la espuma.", "Comprobar que todo este tierno, colar el caldo, reservar el pollo y la batata y el zapallo para elaborar el purés.", "Refrigerar el caldo 12 horas. En caso que grasa se solidifique en la superficie, retirar." ],
+        "Tip Nutricional" : [ "Esta receta la utilizaremos para darle sabor a diferentes preparaciones evitando el contenido de sodio, grasa y conservantes presentes en los caldos comerciales." ],
+        "Variantes" : [ "Congelar porciones de caldo casero. Llenar cubeteras esterilizadas y congelar. Descongelar cada vez los cubitos necesarios." ]
+      },
+      "Caldo Casero de Vegetales" : {
+        "Ingredientes" : [ "1,5 litros Agua", "1 Cebolla", "1 Zanahoria", "1 Puerro", "1 Tallo de Apio", "1 Nabo", "1 Choclo", "1 rodaja de Zapallo", "1 ramita de Perejil", "1 hoja de Laurel" ],
+        "Pasos" : [ "Lavar, limpiar y trozar todas las verduras.", "Poner en una olla el agua fría, agregar las verduras. Llevar a al fuego y esperar que hierva.", "Cocinar durante 20 minutos, contados desde el momento en que el agua entre en ebullición. Retirar y colar el caldo. Dejar enfriar antes de meter en las freezer si se elige congelar el caldo." ],
+        "Tip Nutricional" : [ "Esta receta la utilizaremos para darle sabor a diferentes preparaciones evitando el contenido de sodio, grasa y conservantes presentes en los caldos comerciales" ],
+        "Variantes" : [ "Congelar porciones de caldo casero. Llenar cubeteras esterilizadas y congelar. Descongelar cada vez los cubitos necesarios." ]
+      },
+      "Canelones de Verduras" : {
+        "Ingredientes" : [ "1 cda. de Zapallito rallado", "1 cda. de Choclo rallado", "1 cda. de Zanahoria rallada", "1 cda. Cebolla rallada", "30 gr. de Ricota", "2 hojas de Acelgas", "1 cda. de Queso en hebras", "2 Panqueques", "2 cditas. de Aceite de Maiz", "½ taza de Salsa Fileto" ],
+        "Pasos" : [ "Rehogar las hortalizas en una sartén con 1 cdita. de aceite de maíz, hasta que estén tiernas.", "Picar las hojas de acelga (sin pencas ni nervaduras) en fina juliana y añadirlas a la preparación, mezclar y cocinar por 1 minuto más. Retirar del fuego.", "En un bol mezclar la ricota y el queso, agregar las verduras y mezclar muy bien. Reservar en heladera.", "Rellenar los panqueques, colocarlos en una fuente de horno previamente lubricada. Rociarlos con la salsa. Calentar en horno fuerte 5 minutos. Servir." ],
+        "Tip Nutricional" : [ "Esta receta es muy útil para que el niño siga incorporando vegetales y hortalizas en su alimentación que le aportan fibra, minerales y vitaminas. Además al incluir la preparación ricota y queso se incorporan proteínas, energía y calcio." ],
+        "Variantes" : [ "Se puede acompañar con otras salsas como Rosa o salsa Blanca." ]
+      },
+      "Cerdo con Puré Amarillo" : {
+        "Ingredientes" : [ "100gr unidad de Carré de Cerdo", "2 cditas de Aceite de Maiz", "1 cdita. de Salvia fresca, picada", "½ Taza de Puré Amarillo" ],
+        "Pasos" : [ "Retirar toda la grasa visible del carré de cerdo.", "En una bolsa limpia de plástico, mezcle el aceite y la salvia. Meta la costillita de cerdo, saque el aire, cierre y lleve a la heladera por ½ hora.", "Caliente una sartén a fuego moderado, ponga la costillita y cocine por 3 minutos de cada lado o hasta que no tenga color rosa por dentro. Acompañar con puré amarillo." ],
+        "Tip Nutricional" : [ "La carne de cerdo es una excelente opción para incluir en la alimentación complementaria, recordando elegir siempre cortes magros y retirando toda la grasa visible.  El puré amarillo aporta fibra y vitamina A, el agregado de crema mejora la densidad energética." ],
+        "Variantes" : [ "Se puede cambiar la Carne de Cerdo por Pollo." ]
+      },
+      "Cerdo con Puré Blanco" : {
+        "Ingredientes" : [ "100gr Carré de Cerdo", "2 cditas de Aceite de Maiz", "1 cdita. de Salvia fresca, picada", "½ taza de Puré Blanco" ],
+        "Pasos" : [ "Retirar toda la grasa visible del carré de cerdo.", "En una bolsa limpia de plástico, mezcle el aceite y la salvia. Meta la costillita de cerdo, saque el aire, cierre y lleve a la heladera por ½ hora.", "Caliente una sartén a fuego moderado, ponga el cerdo y cocine por 3 minutos de cada lado o hasta que no tenga color rosa por dentro. Acompañar con Puré Blanco." ],
+        "Tip Nutricional" : [ "La carne de cerdo es una excelente opción para incluir en la alimentación complementaria, recordando elegir siempre cortes magros y retirando toda la grasa visible. La papa es un vegetal feculento, aporta energía y no contiene gluten. Es muy aceptado por los niños y mejora su valor nutricional con el agregado de aceite/manteca y leche (aportan grasas y proteínas respectivamente)." ],
+        "Variantes" : [ "Se puede cambiar el Cerdo por otra carne, Vaca o Pollo." ]
+      },
+      "Cerdo con Puré de Manzanas" : {
+        "Ingredientes" : [ "50 gr. de Lomo de Cerdo cocido a la plancha, desmenuzado", "1 Manzana Verde chica", "1 cdita. de Azúcar", "¼ taza de Agua segura", "1 cdita. de Aceite de Maíz" ],
+        "Pasos" : [ "Colocar el bife de lomo de cerdo en una plancha caliente y cocinar hasta que no queden partes rosadas. Picar y reservar.", "Mientras tanto en una cacerola colocar la manzana verde pelada y cortada en finas rodajas. Espolvorear el azúcar y agregar el agua. Dejar cocinar a fuego bajo, hasta que las manzanas estén tiernas. Si hace falta, agregar un poco de agua.", "Retirar del fuego y pisar las manzanas con un tenedor hasta consistencia puré. Agregar el aceite y el cerdo. Servir." ],
+        "Tip Nutricional" : [ "La carne de cerdo es una excelente opción para incluir en la alimentación complementaria, recordando elegir siempre cortes magros y retirando toda la grasa visible. La manzana aporta vitamina A y fibra soluble que mejora la función intestinal." ],
+        "Variantes" : [ "Se puede reemplazar el Cerdo por Pollo" ]
+      },
+      "Chau Fan de Pollo" : {
+        "Ingredientes" : [ "1 taza de Agua", "1/2 taza de Arroz blanco", "1 cda. de Cebolla picada fina", "1 cda. Morrón Rojo picado", "1 cda. Cebolla de verdeo picada", "2 cditas. Aceite de Maiz", "100 gr. Pechuga de pollo, sin hueso, ni piel" ],
+        "Pasos" : [ "Desgrasar y trozar el pollo. En una cacerola hervir el agua, añadir el arroz, tapar parcialmente y cocinar alrededor de 10 minutos, hasta que el arroz absorba toda el agua. Retirar, tapar y reservar.", "Saltear en una sartén antiadherente el pollo. Luego agregar la cebolla y el morrón y la cebolla de verdeo cortada en rueditas.", "Por último, incorporar el pollo en cubitos, cocinar revolviendo, alrededor de 5 minutos. Cuando el pollo este bien cocido y la cebolla transparente, agregar el arroz a la sartén y mezclar." ],
+        "Tip Nutricional" : [ "Los hábitos en los niños se instalan desde el inicio de la alimentación complementaria, por este motivo las preparaciones mixtas que incluyen carnes (pollo), almidones (arroz) y vegetales es conveniente incorporarlas desde el principio, para estimular a que el bebé se adapte a la combinación de texturas, colores y sabores." ],
+        "Variantes" : [ "Se puede cambiar el Pollo por otra carne como Vaca o Cerdo" ]
+      },
+      "Cous Cous con Vegetales y Carne" : {
+        "Ingredientes" : [ "⅓ taza Cous Cous", "½ taza de Caldo de Verduras Casero", "1 cdita.  de Aceite  de Maíz", "1 cdita. de  Manteca", "1 cda. Cebolla picada", "1 cda. Zanahoria picada", "50 gr. Bife de Carne a la plancha" ],
+        "Pasos" : [ "Llevar a hervor en una cacerola 1 taza de caldo de verduras, agregar 1 cdita. de aceite. Retirar del fuego.", "Incorporar el cous cous removiendo. Tapar y dejar reposar 2 minutos hasta que el agua se absorba. Agregar 1 cdita de manteca y separar los granos con un tenedor.", "Pelar y picar la cebolla y la zanahoria en cubitos pequeños. Rehogar en agua o caldo por unos minutos, y agregar al couscous. Mezclar.", "Servir con el Bife cortado pequeño." ],
+        "Tip Nutricional" : [ "El cous cous es un alimento muy nutritivo, aporta energía a partir del almidón. Se obtiene a partir de la molienda del trigo, es bajo en grasas y aporta selenio que es antioxidante y es componente de varias enzimas que participan en el metabolismo." ],
+        "Variantes" : [ "Se puede reemplazar el couscous por otro cereal como arroz o mijo." ]
+      },
+      "Crema de Avena y Pollo" : {
+        "Ingredientes" : [ "1/2 taza Caldo Casero de Vegetales", "3 cdas. de Avena Instantánea", "3 cdas. de Pollo cocido", "2 cdas. de Crema de Leche", "1 cubito de Queso Cremoso" ],
+        "Pasos" : [ "Colocar el caldo en una cacerola y llevarlo a hervor. Agregar la avena en forma de lluvia y revolver bien hasta que espese.", "Retirar del fuego, agregar el pollo procesado o bien picado, la crema de leche y el queso.", "Mezclar todo. Servir." ],
+        "Tip Nutricional" : [ "La avena es un cereal con alto contenido de fibra soluble, que contribuye a mantener el colesterol dentro de los valores saludables en el organismo. Además, es fuente de energía, acompañada con pollo y queso aporta las proteínas necesarias para el crecimiento." ],
+        "Variantes" : [ "Se puede reemplazar la avena por sémola de trigo." ]
+      },
+      "Crema de Cereal con Carne" : {
+        "Ingredientes" : [ "50 grs. De Papa cocida ", "50 grs. De Calabaza cocida", "2 cdas. de Cereales precocidos (tipo Nestum arroz)", "1 cda. de Ricota de Leche entera", "Caldo casero de Vegetales o Leche recomendada para aligerar", "1 cda. de Peceto (Hervido, desmenuzado y picado)", "2 cditas. de Aceite de Maíz" ],
+        "Pasos" : [ "Cortar en agua la papa y la calabaza. Cocinar hasta que este tierno. ", "Hacer un puré con la papa y la calabaza.", "Agregar los cereales, la ricota y un poco de caldo o leche recomendada. ", "Agregar la carne desmenuzada y el aceite. Servir." ],
+        "Tip Nutricional" : [ "Los cereales infantiles precocidos constituyen una buena opción ya que están enriquecidos con minerales y vitaminas y su valor nutricional mejora al prepararse con leche." ],
+        "Variantes" : [ "Los caldos en cubitos o sopas deshidratadas contienen mucha sal, por lo que es recomendable no utilizarlos durante el primer año de vida. Mejor utilizar caldos caseros." ],
+        "Video" : "https://www.youtube.com/"
+      },
+      "Crema de Zucchinis y Queso" : {
+        "Ingredientes" : [ "1 unidad de Zucchini cortados en cubitos", "1 cda. de Cebolla cortada fina", "½ taza de Ricota", "1 cda. de Morrón picado", "¼ taza de Leche recomendada", "1 feta de Queso Mozzarella rallada", "2 cditas. de Aceite de Maiz", "¼ taza de Salsa Blanca", "1 pizca de Nuez Moscada" ],
+        "Pasos" : [ null, "Rehogar en una sartén la cebolla y el morrón, agregar los cubitos de zucchinnis y cocinar hasta que estén tiernos. Condimentar con nuez moscada. Colocarlos en una fuente de horno con profundidad.", "Mezclar la ricota con la leche y verter esta mezcla sobre las verduras.", "Cubrir con la Salsa Blanca y la mozzarella. Hornear hasta que el queso se derrita." ],
+        "Tip Nutricional" : [ "Esta preparación con vegetales/hortalizas aporta energía, fibra, vitaminas y minerales. Los zucchini aportan fibra y potasio, tienen muy pocas calorías, pero con la utilización de queso y la salsa blanca aumentamos la densidad energética." ],
+        "Variantes" : [ "Se puede cambiar el zucchini por zapallo, calabaza o zapallitos." ]
+      },
+      "Croquetas de Arroz" : {
+        "Ingredientes" : [ "1 taza Arroz blanco común cocido", "¼ unidad de Cebolla picada", "½ taza de Salsa Blanca", "2 cdas. de Harina", "2 cdas. de Pan Rallado", "1 Huevo" ],
+        "Pasos" : [ "Rehogar la cebolla en aceite hasta que cambie de color. Reservar.", "Separar la yema de la clara del huevo. En un bol mezclar la yema, con la salsa blanca espesa, la cebolla, la harina y el arroz cocido (hervido en agua 20m).", "Tomar con la cuchara pequeñas porciones de la mezcla, dándole la forma que más nos guste. Dejar enfriar la mezcla.", "Precalentar el horno a 180°C. Pasar por la clara de huevo y luego pan rallado.", "Llevar a horno, en fuente previamente lubricada, y dorar por ambos lados. Servir." ],
+        "Tip Nutricional" : [ "Esta receta es completa ya que aporta energía a partir de arroz,  la salsa blanca y el huevo enriquecen la preparación sumando proteínas, calcio, vitaminas A,E , D y acido fólico. Además el niño puede comer las croquetas con sus propias manos estimulando sus habilidades motoras." ],
+        "Variantes" : [ "Se puede acompañar con Salsa Rosa" ]
+      },
+      "Croquetas de Mijo" : {
+        "Ingredientes" : [ "¾ taza de Mijo hervido", "Clara de Huevo", "cda. de Queso en hebras", "cda. de Puerro picado", "1 cdita. de Salvado de avena fino", "Rocío vegetal" ],
+        "Pasos" : [ "Colocar en un bol mijo, la clara, el puerro, el salvado y el queso. Mezclar.", "Formar pequeñas bolitas, y aplastarlas con los dedos. Llevar a la heladera 30m antes de hornear.", "Colocar en fuente previamente lubricada con rocío vegetal. Cocinar en horno moderado (180°C)." ],
+        "Tip Nutricional" : [ "El mijo forma parte del grupo de los cereales y semillas, es rico en magnesio y una buena fuente de energía a partir de carbohidratos. La preparación contiene queso y huevo que aportan proteínas, calcio y calorías. El salvado de avena es rico en fibra soluble que enlentece la absorción del colesterol y de la glucosa." ],
+        "Variantes" : [ "Se puede combinar con ½ Zanahoria rallada." ]
+      },
+      "Ensalada de Frutas" : {
+        "Ingredientes" : [ "¼ Banana", "½ Durazno chico, Ciruela o Damasco", "¼ Manzana Roja", "Jugo colado de ½ Naranja" ],
+        "Pasos" : [ "Elegir fruta fresca, madura, jugosa, lavarla, pelarla, quitarle semillas/carozos y picarla en cubos pequeños.", "Incorporar el jugo de naranja colado.", "Mezclar y servir." ],
+        "Variantes" : [ "Se puede realizar esta preparación con manzana, pera, banana, durazno o combinar más de dos frutas. A partir del 9 mes, podremos incorporar todas las frutas." ]
+      },
+      "Estofado de Carne y Papa" : {
+        "Ingredientes" : [ "70 gr. de Cuadril en cubos pequeños", "1 cda. de Apio en brunoise", "1 cda. de Cebolla en brunoise", "1 cda. de Zanahoria en brunoise", "½ diente de Ajo picado en brunoise", "½ unidad de Tomate en cubos pequeños", "2 cditas. de Aceite de Oliva", "½ unidad de Papa chica en cubos pequeños", "1 ramita de Romero", "1 ramita de Tomillo", "½ taza de Salsa Fileto", "1 taza de Caldo casero de Vegetales" ],
+        "Pasos" : [ "Dorar en una cacerola mediana los cubitos de carne en 1 cdita. de aceite de oliva. Retirar y reservar.", "Incorporar en el mismo fondo de cocción, el apio, la cebolla, la zanahoria, el ajo, el tomate y las hierbas aromáticas. Cocinar hasta que todo este tierno.", "Agregar la salsa Fileto casera, cocinar 2 minutos y volver a colocar los cubitos de carne.", "Agregar la papa junto con el caldo de vegetales. Tapar y cocinar por 15 minutos o hasta que todo este cocido. Retirar las el romero y el tomillo. Servir." ],
+        "Tip Nutricional" : [ "Esta receta es muy completa y sabrosa. Aporta todos los nutrientes ya que incorpora carne, almidones y varios vegetales estimulando al bebé a incorporar nuevas texturas y trocitos de diferentes tamaños mediante la masticación." ],
+        "Variantes" : [ "Se puede realizar esta preparación con otras carnes como conejo, pavo o pollo." ]
+      },
+      "Fideitos con Pollo" : {
+        "Ingredientes" : [ "50 gr. Suprema de Pollo", "1 cda. de Morrón rojo", "1 cda. de Morrón verde", "1 cda. de Cebolla", "⅓ unidad Zanahoria chica", "1 cda. Zucchini", "1 unidad de Chaucha Ballina", "1 nidito de cabellos de angel", "2 cditas. de Aceite de Maiz", "Agua o CALDO casero de Pollo" ],
+        "Pasos" : [ "Picar los morrones, la cebolla, zanahoria, zucchini y chauchas en juliana fina de 2 cm. Retirar la grasa del pollo y cortar en tiras finas de 2 cm.", "Hervir la pasta en abundante agua por 2m y luego enjuagarla con agua fría y reservarla. 3. Rehogar el pollo en una sartén previamente lubricada con aceite. Cuando cambien de color las tiritas de pollo, agregar las hortalizas hasta que pierdan la rigidez, agregando de a poco si es necesario agua o caldo en cantidad necesaria.", "Luego verter los fideos y mezclar con cuchara de madera, para calentarlos. Servir." ],
+        "Tip Nutricional" : [ "Los fideos (en todas sus variantes) son muy bien aceptados por los niños, son fuente de energía. Es importante recordar servirlos con diferentes acompañamientos e incluyendo vegetales que le den color y variedad al plato. El pollo cortado en tiritas ofrece una textura diferente, además de aportar hierro, zinc y proteínas." ],
+        "Variantes" : [ "Se puede con cambiar el pollo por cerdo" ]
+      },
+      "Fideitos con Salsa Fileto" : {
+        "Ingredientes" : [ "¼ taza de Fideos  dedalitos", "½ litro de Agua", "½  taza de  Salsa Fileto", "1 cdita. de Aceite de Maíz" ],
+        "Pasos" : [ "Llevar el agua a hervor, si se desea se pueden incorporar algunas hojas de laurel.", "Agregar los fideos en el punto máximo de hervor y cocinar por 5 minutos. Retirar y colar.", "Agregar la salsa fileto, el aceite y Servir." ],
+        "Tip Nutricional" : [ "Los fideos (en todas sus variantes) son muy bien aceptados por los niños y son fuente de energía. Es importante recordar servirlos con diferentes acompañamientos e incluyendo vegetales que le den color y variedad al plato." ],
+        "Variantes" : [ "Fideos de laminado fino de sémola: cabellos de ángel, dedalitos, anillitos, ojo de perdiz, coditos, moñitos." ]
+      },
+      "Fideitos con Salsa Rosa" : {
+        "Ingredientes" : [ "⅓ taza de Fideos  coditos", "½  taza de  Salsa Rosa", "2 cditas. de Aceite de Maíz", "Cantidad necesaria de Agua" ],
+        "Pasos" : [ "Llevar el agua a hervor en una cacerolita, si se desea se pueden incorporar algunas hojas de laurel.", "Agregar los fideos en el punto máximo de hervor del agua y cocinar por 5 minutos. Retirar y colar.", "Agregar la salsa rosa. Mezclar, agregar el aceite y Servir." ],
+        "Tip Nutricional" : [ "Los fideos (en todas sus variantes) son muy bien aceptados por los niños, son fuente de energía. Es importante recordar servirlos con diferentes acompañamientos e incluyendo vegetales que le den color y variedad al plato." ],
+        "Variantes" : [ "Fideos de laminado fino de sémola: cabellos de ángel, dedalitos, anillitos, ojo de perdiz," ]
+      },
+      "Fideitos con Salsa y Carne" : {
+        "Ingredientes" : [ "½ taza de Tallerines cocidos", "2 cditas. de Aceite de Maíz", "¼ taza de Salsa Fileto", "50 gr. de Carne cortadita a cuchillo", "1 cda. de Cebolla picada", " cdita. de Orégano o Tomillo fresco" ],
+        "Pasos" : [ "Llevar el agua a hervor en una cacerolita, si se desea se pueden incorporar algunas hojas de laurel. Agregar los fideos en el punto máximo de hervor del agua y cocinar por 9 minutos. Retirar, colar, agregar el aceite y reservar.", "Rehogar la cebolla en agua hasta que este transparente, y agregar la carne cocinando bien hasta que cambie de coloración (no debe estar rosada). Condimentar con las hierbas aromáticas.", "Agregar la salsa Fileto. Mezclar con los tallarines cortaditos y Servir." ],
+        "Tip Nutricional" : [ "Los fideos (en todas sus variantes) son muy bien aceptados por los niños, son fuente de energía. Es importante recordar servirlos con diferentes acompañamientos e incluyendo vegetales que le den color y variedad al plato. La carne cortada en trozos pequeños ofrece una textura diferente, además de aportar hierro, zinc y proteínas." ],
+        "Variantes" : [ "Fideos de laminado fino de sémola: cabellos de ángel, dedalitos, anillitos, ojo de perdiz, coditos, moñitos." ]
+      },
+      "Flan" : {
+        "Ingredientes" : [ "¾ taza Leche Recomendada", "1 gotita Esencia de Vainilla", "2 cdas. Azúcar Impalpable", "1 Huevo", "Azúcar para el Caramelo" ],
+        "Pasos" : [ "Hacer caramelo en una sartén con el azucar y acaramelar moldes individuales. ", "Precalentar el horno a 160°C. Mezclar el huevo con la mitad del azúcar impalpable y la vainilla", "Calentar la leche con el resto del azúcar impalpable,  hasta que rompa hervor. Agregar de a poco a la mezcla del huevo, revolviendo constantemente.  Verter en los moldes.", "Cocinar a Baño María en horno bajo durante 20 minutos. Dejar enfriar (mínimo una hora). Servir." ],
+        "Variantes" : [ "Se puede utilizar este postrecito con huevo entero a partir del Mes 10." ]
+      },
+      "Formitas de Pescado" : {
+        "Ingredientes" : [ "300 gr. de Filet de pescado despinado cocido", "3 cdas. de Almidón de Maíz", "4 cdas. de Queso rallado fino", "Pan Rallado cantidad necesaria", "2 Huevos", "Rocío Vegetal" ],
+        "Pasos" : [ "En un bol mezclar el pescado desmenuzado, el almidón de maíz, el queso rallado y el huevo.", "Estirar la preparación sobre una fuente previamente lubricada con rocío vegetal. Reservar en la heladera media hora.", "Precalentar el horno a 200°C. Cortar la preparación con cortantes. Rebozar con pan rallado y colocar en una fuente lubricada.", "Cocinar en horno fuerte hasta que estén dorados de ambos lados." ],
+        "Tip Nutricional" : [ "Esta receta permite que el niño pueda tomar las formitas con sus manos y llevárselos a la boca. Es la mejor forma de incluir alimentos nuevos y no tan aceptados por los niños como el pescado, ya que los estimula el poder alimentarse sin ayuda de los adultos." ],
+        "Variantes" : [ "Se puede acompañar con Puré Blanco o Naranja" ]
+      },
+      "Formitas de Polenta" : {
+        "Ingredientes" : [ "½ taza de Leche recomendada", "½ taza de Caldo casero de Pollo", "1 cda. Manteca", "3 cdas. Polenta", "2 cdas. Queso Fresco cortado en hebras", "2 cditas. de Aceite de Maíz" ],
+        "Pasos" : [ "Hervir en una cacerola la leche con el caldo, agregar la polenta en forma de lluvia.", "Revolver constantemente para evitar grumos, hasta que retome el hervor. Cocinar por 1 minuto más.", "Fuera del fuego unir con el queso fresco. Extender sobre una placa para horno enmantecada. Dejar enfriar.", "Cortar formitas de masa con un cortapasta o con un cuchillo en pequeñas piezas. Acomodarlas en una fuente para horno, espolvorearlas con queso en hebras. Gratinar por 10 minutos. Servir." ],
+        "Tip Nutricional" : [ "La polenta (harina de maíz) es un cereal sin gluten, aporta energía y además en general la industria las fortifica con distintos micronutrientes. El agregado de leche, queso y manteca en la preparación mejora densidad energética y sabor, además de variar la textura y consistencia." ]
+      },
+      "Formitas de Pollo con Puré Naranja" : {
+        "Ingredientes" : [ "100 gr. de Pechuga de Pollo sin hueso ni piel", "¼ unidad de Manzana", "1 cda. de Cebolla picada", "1 cdita. Perejil picado", "½ rebanada de Pan Lactal sin corteza", "1 huevo", "Cantidad necesaria de Pan Rallado", "½ taza de Puré Naranja", "Rocío Vegetal" ],
+        "Pasos" : [ "Desgrasar y trozar el pollo. Pelar y cortar la manzana y la cebolla. Colocar todo en la procesadora, junto con el perejil y la miga de pan. Procesar. Si hiciera falta agregar caldo, para lograr una consistencia espesa.", "Retirar la preparación de la procesadora y extenderla en forma pareja sobre una placa. Enfriar bien unos minutos en la heladera. Cortar con un cortante galletitas, la forma deseada.", "Rebozar las Formitas de pollo con huevo y pan rallado. Colocar en una placa lubricada. Cocinar en horno caliente durante 5 minutos o hasta que estén doradas. Acompañar con Puré Naranja" ],
+        "Tip Nutricional" : [ "Esta receta permite que el niño puede tomar trocitos de pollo (formitas) con sus manos y llevárselos a la boca. Es la mejor forma que conozca las nuevas texturas para que luego sean aceptadas más fácilmente." ],
+        "Variantes" : [ "Se puede cambiar el Pollo por otra carne como Pavo o Pescado (a partir de los 10 meses)" ]
+      },
+      "Fruta Cocida" : {
+        "Ingredientes" : [ "½ Banana madura", "2 cdas. de Manteca", "Jugo colado de ½ Naranja", "1 pizca de Canela" ],
+        "Pasos" : [ "Precalentar el horno a 200C. Pelar la banana, trozarla en dos partes.", "Disponerla en una fuente térmica enmantecada. Rociarla con el jugo de naranjas y espolvorear con la canela.", "Hornear 10 minutos a horno fuerte." ],
+        "Variantes" : [ "Se puede realizar esta preparación con Pera o Manzana y cambiar el jugo de Naranja por otro jugo de Cítricos, incluso Limón." ]
+      },
+      "Fruta Fresca" : {
+        "Ingredientes" : [ "½ Fruta fresca", "Jugo colado de ½ Naranja" ],
+        "Pasos" : [ "Elegir fruta fresca, madura, jugosa, lavarla, pelarla, quitarle semillas y poner en el vaso de la licuadora, cortada en trocitos.", "Incorporar el jugo de naranja colado.", "Licuar y servir." ],
+        "Variantes" : [ "Se puede realizar esta preparación con manzana, pera, banana, durazno o combinar más de dos frutas, y porque no, alguna hortaliza. A partir del 9 mes, podremos incorporar todas las frutas." ]
+      },
+      "Gelatina con Frutas" : {
+        "Ingredientes" : [ "1 Manzana fresca", "1 sobrecito de Gelatinas (no rojas)" ],
+        "Pasos" : [ "Elegir fruta fresca, lavarla, pelarla, quitarle semillas y cortarla en cubitos pequeños.", "Diluir la gelatina en agua caliente (cantidad que indique el paquete). Ir agregando el agua fría (cantidad que indique el paquete). Servir en vacitos y agregar la fruta picada.", "Reservar en la heladera hasta que gelatinice.", "Para que la fruta no quede toda arriba, se puede poner la mitad de la gelatina con la fruta en los moldes. Dejar gelificar en la heladera, y dejar el resto de la preparación a temperatura ambiente. Cuando esté gelificada la primer mitad, agregar el resto de la gelatina y la fruta. Volver a la heladera." ],
+        "Variantes" : [ "Se puede realizar esta preparación con  pera, banana, durazno o combinar más de dos frutas. A partir del 9 mes, podremos incorporar todas las frutas." ]
+      },
+      "Guiso de Lentejas y Arroz" : {
+        "Ingredientes" : [ "1 cda. de Puerro picado fino", "1 cda. de Apio picado fino", "½ unidad de Zanahorias pelada, cortada en cubitos", "1 cdita. de Aceite de Maiz", "⅓ taza de Lentejas remojadas", "½ taza de Arroz blanco hervido", "Caldo Casero de Vegetales" ],
+        "Pasos" : [ "En una cacerola rehogar los vegetales durante 5 minutos.", "Incorporar las lentejas remojadas (preferentemente de la noche anterior) y cubrir con el caldo caliente y llevar a hervor.", "Bajar el fuego y cocinar alrededor de 30 minutos, hasta que todo este tierno.", "Agregar el arroz blanco hervido, mezclar y servir." ],
+        "Tip Nutricional" : [ "Las legumbres como lentejas y garbanzos se pueden incluir una o dos veces por semana, aportan energía, fibra, proteínas que combinadas con otros cereales (arroz) mejoran su calidad nutricional. La utilización de vegetales en la preparación aporte vitaminas y minerales." ],
+        "Variantes" : [ "Se pueden cambiar las Lentejas por otras Legumbres como Arvejas." ]
+      },
+      "Guiso de Lentejas y Carne" : {
+        "Ingredientes" : [ "50 gr. de Cuadril cortado en cubos", "1/4 taza de Arroz blanco cocido", "1/4 taza de Lentejas remojadas", "1 cda. Cebolla picada", "1/2 unidad de Tomate sin piel y sin semillas", "1/4 taza Batata cortada en cubitos", "1 cda. Zanahoria rallada", "1 taza de Caldo casero de Vegetales", "1 cdita. de Aceite de Oliva", "1 hoja de Laurel" ],
+        "Pasos" : [ "Rehogar en una cacerola mediana la cebolla en 1 cdita. de aceite de oliva. Agregar las lentejas remojadas (recomendamos que desde la noche anterior). Agregar la zanahoria, las batatas, el tomate, el caldo casero y la hoja de laurel. Cocinar por 30m.", "Cuando las lentejas y la batata estén tiernos, agregar el arroz cocido (20m en agua hirviendo). Si fuera necesario agregar más caldo.", "Cocinar 5 minutos. Servir." ],
+        "Tip Nutricional" : [ "Las legumbres como lentejas y garbanzos se pueden incluir una o dos veces por semana, aportan energía, fibra, proteínas que combinadas con carne  mejoran su absorción y calidad nutricional. La utilización de vegetales en la preparación es fuente de  vitaminas y minerales." ],
+        "Variantes" : [ "Para mejorar el valor proteico de las legumbres es importante combinarlas con cereales como arroz o mijo" ]
+      },
+      "Guiso de Quinoa con Carne" : {
+        "Ingredientes" : [ "1 cda de Cebolla picada", "½ unidad Cebolla de Verdeo finamente cortada", "1 cda. Morrón rojo", "¼ taza Zapallo cortado en cubitos pequeños", "1 cda. Zanahoria rallada", "1 cda. de Arvejas", "½ unidad de Tomate sin semillas cortado en cubitos", "⅓ taza de Quinoa bien lavada con agua", "1 taza de Caldo casero de vegetales", "1 pizca de Comino", "1 pizca de Pimentón Dulce", "2 cditas. de Aceite de Maiz", "70 gr. de Bife de Lomo" ],
+        "Pasos" : [ "Colocar aceite en la cacerola. Colocar la carne cortadita e ir agregando la cebolla, cebolla de verdeo, la zanahoria, la calabaza, el morrón, las arvejas, y por último los tomates cortados en cubitos. Condimentar con comino y pimentón.", "Agregar la quinoa (bien lavada con agua) al resto de los ingredientes y cocinar a fuego suave 1 minuto. Anadir el caldo hirviendo y remover. Cuando recupere el hervor, reduzca el fuego, tape y deje cocinar a fuego lento por 15 minutos mas o hasta que la quinoa este tierna.", "Sacamos del fuego y servimos." ],
+        "Tip Nutricional" : [ " La quínoa forma parte del grupo de los cereales, contiene proteínas y grasas saludables de origen vegetal. Aporta energía como todos los cereales y  fibra. También contiene  potasio, magnesio, calcio, fósforo, hierro y zinc entre los minerales y vitaminas del complejo B. Con el agregado de carne en la receta mejora la calidad de la proteína vegetal presente en la quínoa." ],
+        "Variantes" : [ "Se puede acompañar con queso de rallar." ]
+      },
+      "Helado de Frutas" : {
+        "Ingredientes" : [ "3 Claras de Huevo", "1 ½ taza de fruta procesada", "¾ taza Azúcar" ],
+        "Pasos" : [ "En una cacerolita colocar el azúcar, humedecer con agua y una gota de limon y llevar a fuego para que se derrita y obtener un almibar. Mientras, batir las clavas a nieve.", "Añadir el almíbar a las claras batidas, en forma de hilo, mientras se bate permanentemente para realizar un merengue. Batir hasta que se enfríe el merengue.", "Procesar la fruta. Agregar la fruta y batir durante 10 minutos a velocidad media. Llevar al freezer.", "Mientras la preparación se enfría se puede revolver con un batidor manual, sacandolo un pco del freezer para lograr una consistencia homogénea.", "Cuando tenga la consistencia deseada, servir." ],
+        "Variantes" : [ "Se puede dar más consistencia, si le agregamos al helado 1 cda. de crema de leche  batida o 1 cda. de queso untable. Lo que incrementara el aporte de calcio!" ]
+      },
+      "Humita" : {
+        "Ingredientes" : [ "1 unidad chica de Choclo rallado", "taza de cubitos de Zapallo hervidos", "1 cda. de Cebolla picada", "1 Huevo", "1 cda. de Queso en hebras", "1 pizca de Nuez Moscada", "Rocío vegetal" ],
+        "Pasos" : [ "Precalentar el horno a 190°C. Rehogar la cebolla en agua, hasta que quede transparente.", "Colocar en un bol la cebolla, el choclo, el zapallo, el huevo y el queso en hebras. Mezclar. Condimentar con nuez moscada.", "Colocar en budinera individual lubricada.", "Hornear en horno moderado hasta que coagule el huevo." ],
+        "Tip Nutricional" : [ "Otra buena opción para incluir vegetales y hortalizas, el queso y el huevo mejoran el valor nutricional agregando energía, proteínas y calcio. El choclo aporta fibra insoluble que mejora la constipación y es saludable para la flora intestinal." ],
+        "Variantes" : [ "Se puede acompañar con vegetales hervidos como Brócoli o Coliflor." ]
+      },
+      "Hígado Salteado" : {
+        "Ingredientes" : [ "50 gr de Hígado de Ternera", "½ taza de Cebolla picada", "½ taza de Tomate cortado en cubos, sin piel y sin semillas", "½ taza de Puré Blanco", "1 cdita. de Manteca" ],
+        "Pasos" : [ "Cocinar la cebolla picada fino en una cdita. de manteca hasta que empiece a tomar color. Anadir el tomate en cubitos y cocinar 2 minutos más.", "Agregar el hígado cortado en cubos pequeños y saltearlo a fuego fuerte 2 minutos, y luego bajar el fuego y cocinar hasta que su interior cambie de color. Si se necesita, agregar un chorrito de caldo de vegetales o agua.", "Servir con Puré Blanco" ],
+        "Tip Nutricional" : [ "El hígado es una víscera, aporta proteínas, vitamina A, hierro, zinc y vitamina B12. Se puede utilizar bien cocido en reemplazo de la carne una vez por semana. El tomate aporta licopeno que mantiene su función antioxidante a pesar de la cocción." ],
+        "Variantes" : [ "Se puede cambiar el Hígado por Carne o Pollo" ]
+      },
+      "Lasagna Verde" : {
+        "Ingredientes" : [ "5 hojas de Acelga", "2 fetas de Queso Mozzarella", "¼ taza de Salsa Fileto", "½ taza de Salsa Blanca", "1 cda de Cebolla picada", "1 cda de Morrón picado", "¼ taza de Caldo casero de Vegetales" ],
+        "Pasos" : [ "Precalentar el horno a 200°C", "Rehogar en caldo la cebolla y el morrón. Agregar la acelga. Retirar del fuego.", "ezclar todas las verduras con la salsa blanca.", "Colocar en un molde individual, la mitad de la preparación y cubrir con 1 feta de mozzarella. Encima colocar la otra mitad de la preparación, y cubrirla con la otra feta de mozzarella. Por último cubrir con la salsa de tomate, y meter en el horno.", "Hornear la preparación hasta que se derrita el queso (aproximadamente 15m). Servir." ],
+        "Tip Nutricional" : [ "Esta preparación con vegetales/hortalizas aporta energía, fibra, vitaminas y minerales. Los zapallitos aportan fibra y potasio, tienen muy pocas calorías, pero con la utilización de queso y la salsa blanca aumentamos la densidad energética." ]
+      },
+      "Licuado de Banana con Leche" : {
+        "Ingredientes" : [ "½ Banana", "100 cc. Leche Recomendada" ],
+        "Pasos" : [ "Elegir una banana madura, pelarla, y ponerla en el vaso de la licuadora, cortada en trocitos.", "Incorporar la leche fría.", "Licuar  hasta quede homogéneo y servir." ],
+        "Variantes" : [ "Se puede dar mas consistencia, si le agregamos al licuado 1 cda. de Crema de Leche o 1 cda. de Queso untable. Lo que incrementara el aporte de calcio!" ]
+      },
+      "Malfatti Verdes con Salsa Blanca" : {
+        "Ingredientes" : [ "50 grs. de Ricota", "1 Huevo", "2 cdas. de Harina", "¾ taza de Acelga cocida bien picada", "1 pizca de Nuez Moscada", "2 cditas. de Aceite de Maiz", "½ taza Salsa Blanca" ],
+        "Pasos" : [ "Mezclar todos los ingredientes, e incorporar la harina por último.", "Unir y formar una pasta. Si hace fala agregar más harina. Formar los ñoquis y cocinar en agua hirviendo con sal.", "Retirar con espumadera. Servir con la salsa blanca." ],
+        "Tip Nutricional" : [ "Esta receta como todas las pastas aporta energía, con la utilización de huevo, ricota y salsa blanca se incorporan las proteínas y mejora el valor nutritivo de la preparación. Para que no falte nada la acelga aporta color y fibra." ],
+        "Variantes" : [ "se puede acompañar con Salsa que más le guste al bebe, Fileto, Rosa o simplemente gratinados con queso." ]
+      },
+      "Mijo Con Vegetales y Carne" : {
+        "Ingredientes" : [ "¼ taza Mijo", "½ taza de Agua hirviendo", "1 cdita. de Aceite de Maíz", "1 cda. Cebolla picada", "1 cda. Zanahoria picada", "1 cda. Zucchini picado", "1 cdta. Manteca", "1 pizca de Comino", "50 gr. Bife de Carne a la plancha" ],
+        "Pasos" : [ "Poner en una sartén pequeña. 1 cdita. de aceite y tostar el mijo 2 minutos con el comino si se desea. Sacar de la sartén y reservar.", "Incorporar en la sartén 1 cdita. de manteca y rehogar las verduras. Cocinar 2-3 minutos.", "Agregar el mijo, remover y regar con el agua hirviendo, cuando recupere el hervor, tapar, reducir y dejar reposar 10 minutos.", "Servir con el Bife de carne a la plancha cortadito. Sirva de inmediato." ],
+        "Tip Nutricional" : [ "El mijo forma parte del grupo de los cereales. Aporta vitamina B y también magnesio esencial para el buen funcionamiento de los músculos y del sistema nervioso. También contiene proteína de origen vegetal." ],
+        "Variantes" : [ "Se puede reemplazar el mijo por otro cereal como arroz o cebada." ]
+      },
+      "Milhojas Tricolor" : {
+        "Ingredientes" : [ "½ unidad de Papa", "½ unidad de Zanahoria", "½ unidad de Zucchini chico", "1 Yema de Huevo", "1 cda. Queso Fresco rallado en hebras", "1 cda. de Almidón de Maíz", "1 cdita. de Aceite de Maíz", "1 cda. de Queso Untable", "½ taza de Leche Recomendada para aligerar", "50 gr Churrasquito de Carne grillado", "Queso Mantecoso para gratinar (opcional)" ],
+        "Pasos" : [ "Lavar los vegetales, pelar y cortar con mandolina o cuchillo en láminas finas. Reservar.", "En un bol colocar la yema, el queso fresco rallado, el queso crema y el almidón de maíz previamente disuelto en la leche. Batir.", "En un molde lubricado colocar una capa de papas y bañar con una cucharada de la mezcla. Repetir el mismo procedimiento con las láminas de zanahorias y por último los zucchinnis. Se pueden colocar cubitos de queso al final.", "Cocinar en horno moderado por 20 minutos o hasta que al introducir un cuchillo salga limpio. Acompañar una porción de milhojas con un churrasquito de carne grillado" ],
+        "Tip Nutricional" : [ "Esta preparación con vegetales/hortalizas aporta energía, fibra, vitaminas y minerales. En su elaboración se utiliza también yema de huevo, queso y leche ricos en proteínas y calcio. El calcio es fundamental junto con la vitamina D para la salud ósea." ],
+        "Variantes" : [ "Se puede cambiar la papa, calabaza y zucchinni, por otros vegetales de colores verde, amarillo, naranja, blanco." ]
+      },
+      "Mousse de Frutas" : {
+        "Ingredientes" : [ "1 ½  durazno en almibar (u otra fruta)", "150 cc de crema de leche ", "3 Claras de Huevo ", " ¾ taza Azúcar ", "Agua cant. nec.", "Jugo de limón 1 gotita" ],
+        "Pasos" : [ "En una cacerolita colocar el azúcar, humedecer con agua y una gota de limon y llevar a fuego para que se derrita y obtener un almibar. Mientras, batir las clavas a nieve.", "Añadir el almíbar a las claras batidas, en forma de hilo, mientras se bate permanentemente para realizar un merengue. Batir hasta que se enfríe el merengue.", "Batir la crema de leche hasta que haga picos suaves. Por otro lado, licuar el durazno.", "Mezclar el merengue, la crema y los duraznos licuados de forma envolvente. Colocar la preparación en moldes individuales. Llevar a la heladera hasta el momento de servir." ],
+        "Variantes" : [ "Se puede realizar esta preparación a partir del 10 mes, donde se incorporan las claras de huevo a la alimentación del bebé" ]
+      },
+      "Omelette con Vegetales" : {
+        "Ingredientes" : [ "1 Huevo y 1 Clara", "½ cdita. de Albahaca picada", "2 cdas. de Queso Fresco en hebras", "¼ taza Choclo rallado", "1 cda. de Puerro picado", "1 cdita. Morrón picado", "2 cditas. de Aceite de Maiz", "Rocío Vegetal" ],
+        "Pasos" : [ "Separar las claras de la yema. Batir las claras a punto de nieve.", "En otro recipiente mezclar la yema con el resto de los ingredientes e incorporar a estos las claras, con movimientos envolventes.", "Verter en sartén previamente lubricada con aceite y caliente. Cocinar hasta que el huevo coagule." ],
+        "Tip Nutricional" : [ "El huevo y el queso son fuente de proteínas de alto valor biológico (completas) fundamentales para el crecimiento y desarrollo del bebé. La utilización de vegetales crudos aportan vitaminas y minerales como vitamina C y potasio, además de fibra." ],
+        "Variantes" : [ "Se pueden cambiar los vegetales según la estación del año" ]
+      },
+      "Omelette de Queso" : {
+        "Ingredientes" : [ "1 Clara", "1 Huevo", "1 cda. de Queso untable", "25 gr. de Queso mantecoso", "Rocío vegetal" ],
+        "Pasos" : [ "Colocar en un bol el huevo, la clara y el queso untable. Batir.", "Verter sobre sartén antiadherente caliente previamente lubricada con rocío vegetal.", "Cocinar hasta que el huevo coagule. Colocar el trocito de queso mantecoso en el medio, doblar, dar vuelta y cocinar del otro lado." ],
+        "Tip Nutricional" : [ "El huevo y el queso aportan proteínas de alto valor biológico (completas) fundamentales para el crecimiento y desarrollo del bebé." ],
+        "Variantes" : [ "Se puede combinar con 1 cda. de Ricota, 1 cda. de Cebolla rehogada, ¼ taza de Arvejas cocidas, ¼ taza de Champiñones cortaditos, Palmitos cortaditos, ½ Zanahoria hervida cortada en cubitos." ]
+      },
+      "Panqueques" : {
+        "Ingredientes" : [ "1 ½ taza Leche", "¾ taza Harina", "2 Huevos", "1 cda. Manteca Derretida" ],
+        "Pasos" : [ "Colocar todos ingredientes con la mitad de la leche en el vaso de la licuadora y mezclar.", "De a poco agregar el resto de la leche. Si ves que la masa está muy líquida, agregale un poco de harina. Reservar en la heladera por 1 hora con film de contacto.", "Calentar una sartén antiadherente, verter 1 cucharon de la pasta y dejar que dore de ambos lados, dándolo vuelta con una espátula. Guardar hasta el momento de armar la preparación o congelar en recipientes herméticos con separadores." ],
+        "Tip Nutricional" : [ "Esta preparación aporta energía, proteínas y calcio ya que incluye leche entre sus ingredientes. Los diferentes rellenos permiten ofrecer diferentes sabores y texturas al bebé. " ],
+        "Variantes" : [ "Rellenar con Frutas Trituradas y crema batida. O con Acelga a la Crema" ]
+      },
+      "Papilla Blanca con Carne" : {
+        "Ingredientes" : [ "¼ taza de Puré de Papa", "1 cda. sopera de Queso Crema", "2 cditas. de Cereal Infantil de arroz ", "¼ taza de Leche Recomendada", "2 cditas. de Aceite de Maíz", "1 cda. sopera de Carne (hervida y desmenuzada)" ],
+        "Pasos" : [ "Hacer una mezcla con el puré de papa, el queso crema y el cereal Infantil de arroz.", "Agregar poco a poco la cantidad necesaria de leche fría, sin dejar de mezclar.", "Incorporar la carne desmenuzada y picada.", "Calentar a Baño María. Agregar el aceite. Servir." ],
+        "Tip Nutricional" : [ "La incorporación de carnes desde las primeras comidas del bebé es fundamental para la prevención de la anemia, además de ofrecer distintas texturas que facilitarán que el niño vaya ampliando su alimentación." ],
+        "Variantes" : [ "Se puede reemplazar la papa por mandioca.", "Si querés que este puré sea aún más nutritivo podés agregarle leche de la mama o una leche recomendada por el pediatra" ],
+        "Video" : "https://www.youtube.com/"
+      },
+      "Papilla Naranja con Pollo" : {
+        "Ingredientes" : [ "¼ taza de Puré Naranja", "1 cda. de Queso Crema", "1 cda. sopera de Pechuga de Pollo (hervida y desmenuzada)", "2 cditas. de Aceite de Maíz" ],
+        "Pasos" : [ "Picar el pollo bien chiquito.", "Hacer una mezcla con el puré naranja y el queso crema.", "Hacer una mezcla con el puré naranja y el queso crema.", "Mezclar todo junto, hasta lograr una consistencia homogénea. Agregar el aceite Servir." ],
+        "Tip Nutricional" : [ "El zapallo y zanahoria (vegetales naranjas), la batata y la papa utilizados como base de las primeras comidas aportan energía, fibra y vitamina A, con el aceite agregamos calorías y ácidos grasos fundamentales para el desarrollo del sistema nervioso del bebé." ],
+        "Variantes" : [ "Se puede cambiar la calabaza por zapallo de estación" ]
+      },
+      "Papilla clásica de Sémola" : {
+        "Ingredientes" : [ "½ taza de Leche recomendada", "½ taza de Agua segura", "3 cdas. Sémola de Trigo", "1 Pizca de Nuez moscada", "2 cditas. de Aceite de Maíz" ],
+        "Pasos" : [ "Colocar en una cacerola la leche y el agua, llevar a hervor.", "Agregar la sémola en forma de lluvia.", "Revolver constantemente hasta que retome el hervor. Cocinar por 2 minutos más.", "Fuera del fuego, condimentar con nuez moscada. Agregar el aceite y Servir." ],
+        "Tip Nutricional" : [ "La sémola es una harina gruesa (poco molida) procedente del trigo, es la “Vitina” del supermercado y en general está fortificada con vitaminas del grupo B, hierro y zinc. Aporta energía y no contiene grasa. Es una buena opción acompañarla con diferentes vegetales." ],
+        "Variantes" : [ "Se puede combinar con puré de zapallo" ]
+      },
+      "Papilla de Batata con Pollo" : {
+        "Ingredientes" : [ "¼ taza de Puré de Batata", "1 cda. sopera de Ricota", "1 cda. sopera de Pollo (cocida y desmenuzada)", "2 cditas. de Aceite de Maíz" ],
+        "Pasos" : [ "Picar el pollo bien chiquito", "Hacer una mezcla con el puré de batata y la ricota", "Agregar la cucharada de pollo cocida, desmenuzada.", "Mezclar hasta lograr una consistencia homogénea", "Agregar el aceite. Servir." ],
+        "Tip Nutricional" : [ "Además del hierro las carnes también aportan zinc, fundamental para el crecimiento y defensa ante infecciones, y proteínas de alto valor biológico (de buena calidad) nutriente clave para el crecimiento." ],
+        "Variantes" : [ "Se puede realizar la misma preparación utilizando Puré Naranja, y así poder congelar esta comida." ],
+        "Video" : "https://www.youtube.com/"
+      },
+      "Papilla de Zapallitos y Pollo" : {
+        "Ingredientes" : [ "100 gr. de  Zapallitos redondos", "50 gr. de Pollo", "2 cditas. de Aceite de Maíz" ],
+        "Pasos" : [ "Colocar en una cacerola con agua, que puede llevar condimentos suaves, el pollo sin piel, cortado en cubitos pequeños.", "Agregar los zapallitos cortados en cubitos (sin pelar y sin semillas). Cocinar hasta que estén tiernos.", "Retirar los zapallitos y pisar con tenedor. Luego, retirar el pollo y mezclar todo, hasta que quede uniforme. Agregar el aceite y Servir." ],
+        "Tip Nutricional" : [ "Los zapallitos aportan fibra y potasio, tienen muy pocas calorías por eso no tenemos que olvidarnos del agregado de aceite para enriquecer el valor energético. El pollo como el resto de las carnes es fuente de proteínas, hierro y zinc necesarios para el crecimiento y prevención de la anemia." ],
+        "Variantes" : [ "Se puede utilizar otra carne en reemplazo del pollo, puede utilizarse carré de cerdo bien desgrasado." ]
+      },
+      "Papillas de Fruta Fresca" : {
+        "Ingredientes" : [ "½ Manzana roja", "Jugo colado de ½ Naranja " ],
+        "Pasos" : [ "Elegir fruta fresca, madura, jugosa, lavarla, pelarla, quitarle semillas y rallarla.", "Incorporar el jugo de naranja colado.", "Mezclar y servir." ],
+        "Variantes" : [ "Se puede realizar esta preparación con manzana, pera, banana, durazno o combinar más de dos frutas. A partir del 9 mes, podremos incorporar todas las frutas." ]
+      },
+      "Peceto con Zanahorias" : {
+        "Ingredientes" : [ "50 gr de Peceto desgrasado", "½ taza de Cebolla picada", "½ taza de Zanahorias peladas, cortadas en semicirculos finitos", "1 taza de Caldo casero de Vegetales", "1 cdita. de Manteca", "1 hoja de Laurel" ],
+        "Pasos" : [ "Cocinar la cebolla picada fino en una cdita. de manteca hasta que empiece a tomar color. Agregar las zanahorias y dorar por unos minutos más.", "Agregar el peceto cortado en bifes finitos y cubrir con caldo. Incorporar la hoja de laurel, bajar el fuego, tapar y dejar cocinar hasta que la zanahoria este tierna.", "Servir la carne y las zanahorias como guarnición." ],
+        "Tip Nutricional" : [ "El peceto es una carne magra que aporta proteínas, hierro y zinc fundamentales para el crecimiento y desarrollo cognitivo del bebé. Las zanahorias aportan fibra y vitamina A. Recordemos que varias vitaminas (A, C, B1 y ácido fólico) se pierden o disminuye su contenido en los vegetales/hortalizas luego de la cocción." ],
+        "Variantes" : [ "Se puede cambiar el Peceto por Cerdo" ]
+      },
+      "Polenta Clásica con Carne" : {
+        "Ingredientes" : [ "½ taza de Leche recomendada", "½ taza de Agua Hervida o caldo", "1 cda. de manteca", "3 cdas. de Harina de Maíz (Polenta)", "Una pizca de Nuez Moscada", "1 cda. sopera de Peceto (hervido y desmenuzado)" ],
+        "Pasos" : [ "Colocar en una cacerola la leche y el agua. Llevar a hervor. Agregar la manteca y la harina de maíz, lentamente y en forma de lluvia.", "Revolver constantemente hasta que retome el hervor. Cocinar 2 minutos más.", "Fuera del fuego sazonar con nuez moscada. Agregar la carne desmenuzada. Servir." ],
+        "Tip Nutricional" : [ "La polenta (harina de maíz) es un cereal sin gluten, aporta energía y además en general la industria las fortifica con distintos micronutrientes. El agregado de leche en la preparación mejora densidad energética y sabor." ],
+        "Variantes" : [ "Se puede agregar a esta preparación puré de calabaza o zanahoria" ]
+      },
+      "Polenta con Pollo" : {
+        "Ingredientes" : [ "½ taza de Leche recomendada", "½ taza de Agua Hervida o Caldo", "1 cda. Manteca", "3 cdas. de Harina de Maíz (Polenta)", "Nuez moscada una pizca", "1 cda. sopera de Pechuga Pollo (Hervida y desmenuzada y picada)" ],
+        "Pasos" : [ "Colocar en una cacerola la leche y el agua. Llevar a hervor. Agregar la manteca y la harina de maíz, lentamente y en forma de lluvia.", "Revolver constantemente hasta que retome el hervor. Cocinar 2 minutos más. ", "Fuera del fuego sazonar con nuez moscada. Agregar la pechuga desmenuzada. Servir." ],
+        "Tip Nutricional" : [ "La polenta (harina de maíz) es un cereal sin gluten, aporta energía y además en general la industria las fortifica con distintos micronutrientes. El agregado de leche en la preparación mejora densidad energética y sabor. " ],
+        "Variantes" : [ "Se puede agregar a esta preparación calabaza o zanahoria y congelar esta comida." ]
+      },
+      "Polenta con Salsa Fileto" : {
+        "Ingredientes" : [ "½ taza de Leche recomendada", "½ taza de Caldo casero de Pollo", "1 cda. Manteca", "3 cdas. Polenta", "2 cdas. Queso fresco cortado en hebras", "2 cditas. de Aceite de Maíz", "½ taza de Salsa Fileto" ],
+        "Pasos" : [ "Hervir en una cacerola la leche con el caldo, agregar la polenta en forma de lluvia.", "Revolver constantemente para evitar grumos, hasta que retome el hervor. Cocinar por 1 minuto más. Fuera del fuego unir con el queso fresco y el aceite.", "Acompañar con la Salsa Fileto. Servir." ],
+        "Tip Nutricional" : [ "La polenta (harina de maíz) es un cereal sin gluten, aporta energía y además en general la industria las fortifica con distintos micronutrientes. El agregado de leche, queso y manteca en la preparación mejora densidad energética y sabor, además de variar  la textura y consistencia. La salsa aporta color y fibra a la preparación." ],
+        "Variantes" : [ "se puede combinar la polenta con la Salsa que mas le guste al bebe, Fileto, Blanca o simplemente gratinada con queso." ]
+      },
+      "Pollo a la Crema" : {
+        "Ingredientes" : [ "1 cda. CEBOLLA", "50 gr. Pechuga de pollo", "2 cditas. de Aceite de Maíz", "½ taza Zapallo", "½ taza Caldo casero de Pollo", "2 cdas. de Crema de Leche" ],
+        "Pasos" : [ "Pelar y picar finamente la cebolla. Cortar el zapallo en cubitos. Desgrasar el pollo y cortarlo en trocitos.", "Rehogar la cebolla con un poquito de aceite. Añadir el zapallo en cubitos y el caldo casero. Incorporar el pollo y continuar la cocción durante 5 minutos más.", "Verter la crema de leche y seguir cocinando alrededor de 5 minutos más, hasta que todo esté cocido. Servir." ],
+        "Tip Nutricional" : [ "Esta receta le aporta a tu bebé proteínas, hierro y zinc contenidos en la carne de ave y la crema de leche enriquece la densidad energética aportando calorías." ],
+        "Variantes" : [ "Las carnes en la alimentación infantil, deben ser tiernas, sabrosas y fáciles de digerir. Se puede utilizar pavo o conejo en reemplazo del pollo." ]
+      },
+      "Postre Lácteo" : {
+        "Ingredientes" : [ "¾ taza Leche Recomendada", "1 gotita de Esencia de Vainilla", "1 cda. Azúcar Impalpable", "1 cdita. Almidón de Maíz" ],
+        "Pasos" : [ "Calentar ½ taza de leche  hasta que rompa hervor.", "En un bol mezclar ¼ taza de leche con el Azúcar Impalpable y el Almidón de Maíz.", "Añadir la leche hirviendo, poco a poco y sin dejar de revolver. Agregar la vainilla.", "Filtrar con un colador y volver al fuego hasta que hierva nuevamente. Verter en moldecitos individuales y dejar enfriar en la heladera." ],
+        "Variantes" : [ "Se puede realizar esta preparación incorporando frutas frescas como pera, banana, durazno, cuando la crema esta lista para servir." ]
+      },
+      "Puré Blanco" : {
+        "Ingredientes" : [ "1 papa chica", "50 cc. Leche Recomendad", "1 cda. Manteca o Aceite", "1 pizca Nuez Moscada" ],
+        "Pasos" : [ null, "Cortar la papa en cubos y cocinar en abundante agua hasta que esté tierna.", "Pisar con el prensapure la papa, hasta desmenuzarla, colocar en una cacerolita y llevar a fuego bajo.", "Agregar la leche, revolver constantemente hasta calentar.", "Fuera del fuego, condimentar con nuez moscada. Y servir." ],
+        "Tip Nutricional" : [ "La papa es un vegetal feculento, aporta energía y no contiene gluten. Es muy aceptado por los niños y mejora su valor nutricional con el agregado de aceite/manteca y leche (aportan grasas y proteínas respectivamente)." ],
+        "Variantes" : [ "Hervir la leche con una brizna de tomillo y hojas de laurel para dar sabor.", "No Congelar Puré Blanco. Es mejor si se prepara en el momento." ]
+      },
+      "Puré Mixto con Pollo" : {
+        "Ingredientes" : [ "¼ taza de Puré de Calabaza", "¼ taza de Puré de Batata", "20 gr de Queso Fresco", "2 cditas. de Aceite de Maíz", "1 cda. sopera de Pechuga de Pollo (hervida y desmenuzada)" ],
+        "Pasos" : [ "Hacer una mezcla con el puré calabaza y batata. Mezclar con el queso hasta que se derrita.", "Agregar la cucharada de pechuga desmenuzada.", "Pisar con tenedor todo junto, hasta lograr una consistencia homogénea. Agregar el aceite. Servir." ],
+        "Tip Nutricional" : [ "Las primeras recetas son muy similares entre ellas, una base de cereal sin gluten o vegetales blancos o naranjas con una porción adecuada de alguna carne. En general no aportan demasiadas calorías y su densidad energética es baja (calorías/porción de alimento), por eso es fundamental enriquecerlas con aceite o queso." ],
+        "Variantes" : [ "Se puede cambiar la calabaza por zanahoria y la batata por papa.", "Si desea que este puré sea aún más nutritivo puede agregarle leche de la mama o una leche recomendada por el pediatra." ]
+      },
+      "Puré Naranja" : {
+        "Ingredientes" : [ "½ Zanahoria", "1 Rodaja fina Zapallo", "1 cda. Aceite de Maíz" ],
+        "Pasos" : [ "Cortar la zanahoria y calabaza en cubos y cocinar en abundante agua hasta que estén tiernas.", "Pisar con el prensapure la zanahoria y la calabaza, hasta desmenuzarlas, colocar en una cacerolita y llevar a fuego bajo.", "Revolver constantemente hasta calentar.", "Fuera del fuego, agregar el aceite de maíz. Servir." ],
+        "Tip Nutricional" : [ "Los vegetales naranjas contienen fibra y carotenoides (precursores de la vitamina A), con efecto antioxidante y funciones en la protección ante infecciones habituales los durante el primer año del bebé." ],
+        "Variantes" : [ "Congelar Porciones de Pure Naranja, para tenerlo disponible cada vez que lo necesitemos." ]
+      },
+      "Puré Vegetal y Cereal con Carne" : {
+        "Ingredientes" : [ "½ litro de Caldo casero", "1 bife de Carne chico 50 gr.(peso crudo)", "1 rodaja de Calabaza ", "½  unidad de Zanahoria", "1 cda. de Cereal Precocidos (tipo Nestum Maíz)", "2 cditas. de Aceite de Maíz" ],
+        "Pasos" : [ "En una cacerola colocar caldo casero, llevar a hervor  la calabaza  y la zanahoria bien lavadas y peladas.", "Cocinar hasta que las hortalizas estén tiernas. Retirar del fuego. Hacer un puré con prensapure o tenedor. Agregar el aceite.", "Agregar al puré, cereal Infantil de maíz, mezclar. Agregar caldo casero para aligerar.", "Cocinar a la plancha el bifecito de carne y picar. Disponer en el plato junto con el puré.  Agregar el aceite. Servir." ],
+        "Tip Nutricional" : [ "Las preparaciones variadas, que incluyen vegetales junto con los cereales/almidones, facilitan que el bebé incluya fibra, vitaminas y minerales en su alimentación diaria. Además se estimula el hábito del consumo diario de vegetales y hortalizas." ],
+        "Variantes" : [ "Se puede cambiar la calabaza por zapallito  o zucchini sin semillas." ],
+        "Video" : "https://www.youtube.com/"
+      },
+      "Puré Verde con Pollo" : {
+        "Ingredientes" : [ "5 hojas de Acelga", "½ taza de Salsa Blanca", "2 cditas. de Aceite de Maíz", "2 cdas. soperas (50 grs.) de Pechuga Pollo (hervida y desmenuzada)" ],
+        "Pasos" : [ "Sacarle pencas y nervaduras a la acelga. Blanquearla en agua hirviendo.", "Cortar la acelga bien chiquita con un cuchillo.", "Agregar la salsa blanca. Y mezclar hasta lograr una consistencia homogénea.", "Incorporar la cucharada de pechuga desmenuzada. Agregar el aceite. Servir." ],
+        "Variantes" : [ "La espinaca se introduce al año de vida. " ]
+      },
+      "Puré de Batata" : {
+        "Ingredientes" : [ "½ Batata", "1 cda. Crema de Leche" ],
+        "Pasos" : [ "Cortar la batata en cubos y cocinar en abundante agua hasta que este tierna.", "Pisar con el prensapure la papa, hasta desmenuzarla, colocar en una cacerolita y llevar a fuego bajo.", "Agregar la crema de leche, revolver constantemente hasta calentar.", "Fuera del fuego, condimentar si se desea con nuez moscada o canela. Servir." ],
+        "Tip Nutricional" : [ "La batata tiene buena aceptación por su sabor dulce. Aporta fibra y vitamina A. La fibra mejora la función intestinal del bebé favoreciendo el desarrollo de flora intestinal saludable. " ],
+        "Variantes" : [ "No Congelar Pure de Batata. Es mejor si se prepara en el momento." ]
+      },
+      "Puré de Cereal con Pollo" : {
+        "Ingredientes" : [ "¼ taza de Arroz blanco", "50 gr de Zanahoria", "50 gr de Zapallito redondo o Zucchini", "1 cda. de Pechuga de Pollo (Hervida, desmenuzada)", "2 cditas. de Aceite de maíz" ],
+        "Pasos" : [ "Hervir la pechuga de pollo entera en agua con condimentos suaves como perejil, laurel, apio. Después de 20 minutos de hervor, agregar la zanahoria y zapallitos sin semilla, pelados en cubos pequeños, cocinar hasta que estén tiernas. ", "Colar y reservar el pollo para integrarlo a la preparación en la porción recomendada (1 cda. sopera). Reservar las hortalizas.", "n otro recipiente, hervir en agua el arroz. Asegurarse de que quede muy bien cocido.", "Poner todos los ingredientes en el mixer o procesadora. Agregar el aceite. Servir." ],
+        "Tip Nutricional" : [ "El hígado es una víscera, aporta proteínas, vitamina A, hierro, zinc y vitamina B12. Se puede utilizar bien cocido en reemplazo de la carne una vez por semana." ],
+        "Variantes" : [ "Una vez por semana se puede reemplazar el pollo o carne por hígado ( bien cocido y molido) en la misma proporción." ],
+        "Video" : "https://www.youtube.com/"
+      },
+      "Puré de Hígado y Vegetales" : {
+        "Ingredientes" : [ "50 gr de Hígado", "½ taza de Caldo casero de Vegetales", "1 cda. de Cebolla picada", "1 Papa chica pelada, en cubos", "100 gr. de Zapallo pelado, en cubos", "2 cditas. de Aceite de Maíz" ],
+        "Pasos " : [ "Cocinar la cebolla picada fina en un poco de agua hasta que este transparente.", "Agregar el caldo casero y el hígado cortado en cubos pequeños. Cocinar hasta que su interior cambie de color.", "Incorporar la papa y el zapallo en cubitos pequeños. Tapar y cocinar a fuego lento por 20 minutos o hasta que esté todo tierno.", "Pisar todos los ingredientes con pisapapas. Agregar el aceite y Servir." ],
+        "Tip Nutricional" : [ "El hígado aporta vitamina A y minerales como zinc y cobre. El zinc participa en varios pasos metabólicos del organismo como la síntesis de proteínas y es un componente clave de varias enzimas, lo mismo el cobre." ],
+        "Variantes" : [ "Se puede reemplazar el hígado por Carne o Pollo." ]
+      },
+      "Puré de Lentejas con Zanahoria" : {
+        "Ingredientes" : [ "1 cda. de Cebolla picada", "⅓ taza de Lentejas remojadas", "1 taza de Caldo casero de vegetales", "100 gr. de Zanahorias", "2 cdas. de Queso Crema", "2 cditas. de Aceite de Maiz", "1 pizca de comino (opcional)" ],
+        "Pasos" : [ "Cocinar la cebolla picada fina en un poco de agua hasta que este transparente.", "Agregar el caldo y la zanahoria cortada en cubos pequeños. Agregar las lentejas remojadas (preferentemente de la noche anterior). Cocinar 15 minutos contados desde el momento en que el agua entre en ebullición.", "Retirar del fuego. Cuando la preparación este fría triturar la mezcla con un mixer o con un tenedor, hasta obtener un puré suave. incorporar el queso crema.", "Agregar el aceite y Servir." ],
+        "Tip Nutricional" : [ "Las lentejas son legumbres que aportan proteínas, hierro y energía. El hierro contenido en las legumbres es inorgánico por lo tanto necesita de facilitadores para favorecer su absorción, también se absorbe más fácilmente cuando se acompaña de carnes." ],
+        "Variantes" : [ "Se pueden reemplazar las lentejas por arvejas secas" ]
+      },
+      "Receta Ejemplo" : {
+        "Ingredientes" : [ {
+          "es basico" : 0,
+          "nombre" : "1 cda. sopera de carne (cocida)"
+        }, {
+          "es basico " : 1,
+          "nombre " : "Papilla Naranja"
+        } ],
+        "Pasos" : [ "Hacer una mezcla con el puré de batata y ricota.", "Agregar la cucharada de carne cocida procesada.", "Mezclar hasta lograr una consistencia homogénea.", "Calentar a Baño María." ],
+        "Postre" : "Banana Pisada",
+        "Tip Desarrollo" : "tip desarrollo",
+        "Tip Nutricional" : "tip nutricional",
+        "Variantes" : [ "Se puede cambiar la calabaza por zapallo", "Se puede cambiar la calabaza por pescado" ]
+      },
+      "Revuelto de Zapallitos con Carne" : {
+        "Ingredientes" : [ "50 gr de Carne", "1 Zapallito cortado en cubos pequeños", "½ unidad de Cebolla de verdeo picada", "1 cda. de Cebolla picada", "1 cda. de Apio picado", "1 Clara de Huevo", "¼ taza de Leche recomendada", "2 cditas. de Aceite de Maíz" ],
+        "Pasos" : [ "En una sartén antiadherente rehogar las cebollas, el apio y el zapallito en el caldo por 2-3 minutos.", "Mezclar en un bol la clara y la leche e incorporarla a las verduras, revolviendo constantemente hasta que coagule. Cocinar por 1 minuto más. Retirar del fuego.", "Agregar el aceite y Servir con del Bife de carne cortadito." ],
+        "Tip Nutricional" : [ "Esta receta incluye zapallitos que se pueden reemplazar por otras opciones que aportan fibra y potasio con muy bajo contenido de calorías. Al utilizar el huevo y la leche  en la preparación incorporamos energía y proteínas completas. Es una excelente opción como guarnición de cualquier carne. " ],
+        "Variantes" : [ "Se puede cambiar el Zapallito, por Zucchinis o Puerros" ]
+      },
+      "Salsa Blanca" : {
+        "Ingredientes" : [ "250 cc. Leche Recomendada", "1 cda. Manteca o Aceite", "1 cda. Harina", "1 pizca Nuez Moscada" ],
+        "Pasos" : [ "Mezclar la manteca con la harina en una cacerolita, cuidando que no queden grumos.", "Llevar a fuego bajo. Agregar la leche caliente revolviendo constantemente hasta que espese.", "Fuera del fuego, condimentar con nuez moscada." ],
+        "Tip Nutricional" : [ "Es una preparación muy completa, aporta energía proveniente de la harina y la manteca, además de proteínas provenientes de la leche. Será útil para hacer más nutritivas las preparaciones con vegetales" ],
+        "Variantes" : [ "No Congelar Salsa Blanca. Es mejor si se prepara en el momento." ]
+      },
+      "Salsa Fileto" : {
+        "Ingredientes" : [ "3 Tomates pelados, sin semillas", "1 cditas. Aceite de Maíz", "½ cdita. Azúcar", "1 hoja Albahaca" ],
+        "Pasos" : [ "Cortar los tomates pelados, y sin semillas. Cortarlos en trozos pequeños, y ponerlos en una cacerolita.", "Llevar a fuego bajo. Agregar el azúcar, la albahaca.", "Cocinar unos 10 minutos, retirar la hoja de albahaca. Pisar los tomates con un tenedor. Agregar el aceite. Servir." ],
+        "Tip Nutricional" : [ "La utilizaremos para acompañar pastas, arroz y otras preparaciones. Al ser hecha en casa no contiene sal, conservantes ni otros agregados que pueden perjudicar el intestino de tu bebé. " ],
+        "Variantes" : [ "Congelar Salsa Fileto en cubeteras con cierre hermético." ]
+      },
+      "Salsa Rosa" : {
+        "Ingredientes" : [ "⅓ taza Salsa Fileto", "¼ taza Crema de Leche" ],
+        "Pasos" : [ "Mezclar todos los ingredientes en una cacerolita.", "Llevar a fuego bajo y calentar.", "Servir sobre la pasta." ],
+        "Tip Nutricional" : [ "Agregando crema de leche a la salsa fileto logramos mayor aporte de calorías para el crecimiento de tu hijo." ],
+        "Variantes" : [ "No Congelar Salsa Rosa. Es mejor si se prepara en el momento." ]
+      },
+      "Soufle de Vegetales" : {
+        "Ingredientes" : [ "30 grs. de Ricota", "1 Huevo", "1 cda. de Queso rallado", "1 cdita de Perejil picado", "1 cda. de Choclo rallado", "1 cda. de Puerro cortadito", "¼ taza de Zapallito rallado", "1 de Zanahoria rallada" ],
+        "Pasos" : [ "Precalentar el horno a 180°C. Separar la yema de la clara. Incorporar a la yema las verduras, el queso rallado, el perejil, la leche, la sal y la pimienta.", "Batir la clara a nieve con una pizca de sal e incorporar a la mezcla anterior.", "Colocar en un molde para Soufle previamente lubricado con aceite. Cocinar en horno a temperatura moderada hasta que esté elevado y dorado. Servir." ],
+        "Tip Nutricional" : [ "Los soufflés de vegetales son una buena opción para incorporar fibra, minerales y vitaminas. Son preparaciones completas ya que incluyen lácteos como queso que aportan calcio y huevo que también aporta proteínas, además de enriquecer el aporte de energía." ],
+        "Variantes" : [ "Se puede acompañar con arroz, mijo, cous cous o quinoa cocida." ]
+      },
+      "Terrina Primavera" : {
+        "Ingredientes" : [ "¼ taza de Zanahoria rallada", "¼ taza de florcitas de Brócoli", "1 cda. Cebolla picada", "1 Huevo", "1 cda. de Queso Untable", "1 cdita. Perejil picado", "Rocío vegetal" ],
+        "Pasos" : [ "Precalentar el horno a 180°C. Rehogar en agua la cebolla hasta que quede transparente.", "Colocar en un bowl la cebolla, la zanahoria y el brócoli. Batir el huevo y el queso, agregar el perejil picado. Mezclar con la preparación anterior.", "Colocar en molde individual lubricada.", "Hornear en horno moderado hasta que coagule el huevo. Servir" ],
+        "Tip Nutricional" : [ "Otra buena opción para incluir vegetales y hortalizas, el queso y el huevo mejoran el valor nutricional agregando energía, proteínas y calcio." ],
+        "Variantes" : [ "Se puede acompañar con Salsa Rosa" ]
+      },
+      "Terrina Tricolor con Pollo" : {
+        "Ingredientes" : [ "70 gr de Calabaza cocida", "3 Yemas", "3 cdas. de Crema de Leche", "2 cdas. de Sémola", "70 gr. de Arvejas cocidas", "30 gr. de Ricota", "30 gr. de Pechuga de Pollo, hervida", "Rocío Vegetal" ],
+        "Pasos" : [ "Procesar la calabaza junto con una yema, 1 cucharada de crema y una cucharada de sémola. Hacer lo mismo con las arvejas. Repetir con la ricota y pollo cocido, omitiendo la sémola.", "Humedecer un recipiente de vidrio tipo terrina, con rocío vegetal. Disponer en el fondo la preparación de ricota, sobre ella la de calabaza y arriba la de arvejas.", "Humedecer un recipiente de vidrio tipo terrina, con rocío vegetal. Disponer en el fondo la preparación de ricota, sobre ella la de calabaza y arriba la de arvejas." ],
+        "Tip Nutricional" : [ "Divertida combinación de varios grupos de alimentos (carne de ave, vegetales y sémola) , el agregado de yema de huevo  enriquece la preparación con el aporte de vitaminas A, E Y D y también de colina y lecitina que participan en el desarrollo de la memoria y en sistema nervioso central." ],
+        "Variantes" : [ "Esta preparación puede fraccionarse en 4 porciones, y congelarse. Así estará disponible cada vez que la necesitemos!" ]
+      },
+      "Tortilla de Papa" : {
+        "Ingredientes" : [ "1 unidad de Papa mediana", "¼ taza de Cebolla picada", "1 Huevo", "2 cditas. de Aceite de Maiz", "Rocío Vegetal" ],
+        "Pasos" : [ "Picar la cebolla bien chiquita y rehogarla con 1 cdita. de aceite de maíz en una sartén.", "Lavar y pelar la papa. Rallar con rallador de ojo grande.", "Mezclar la cebolla con la papa rallada. Agregar un huevo batido.", "Cocinar hasta que se dore de ambos lados en una sarten con rocío vegetal a fuego bien bajo. Darla vuelta con espátula. Servir" ],
+        "Tip Nutricional" : [ "La papa es un vegetal feculento con alto contenido de almidón por lo tanto aporta energía y también potasio. En la preparación se utiliza huevo fuente de proteínas y de varias vitaminas con poder antioxidante. Se puede servir en cuadraditos para que el bebé la tome con sus manos." ],
+        "Variantes" : [ "Se puede acompañar con vegetales cocidos como bastones de zanahoria o arvejas." ]
+      },
+      "Tortilla de Zapallitos y Puerros" : {
+        "Ingredientes" : [ "1 unidad de Puerro picado", "½ unidad de Zapallito cortado en juliana fina", "1 Huevo y 1 Clara", "1 cda. de Queso fresco rallado", "Rocío Vegetal" ],
+        "Pasos" : [ "Mezclar todos los ingredientes en un bol.", "En sartén antiadherente previamente lubricada, cocinar la preparación en forma de tortilla y voltear. Servir." ],
+        "Tip Nutricional" : [ "La tortilla es una preparacion con buen valor nutritivo ya que al utilizar huevo y queso es fuente de proteínas, calcio y energía. Los zapallitos y el puerro aportan fibra y potasio." ],
+        "Variantes" : [ "Se pueden cambiar los Zapallitos y puerro por otros vegetales como Cebolla, Cebolla de Verdeo, Zucchini, Chaucha o Zanahoria cocida al vapor" ]
+      },
+      "Tortitas de Batata y Zanahorias" : {
+        "Ingredientes" : [ "1 Yema de Huevo", "1 cda. de Cebolla de Verdeo", "1 cdita. de Perejil fresco, picado", "1 cda. de Harina", "½ taza de Batatas peladas y ralladas", "1 cdita. de Albahaca fresca, picada", "½ taza de Zanahoria peladas y ralladas", "2 cditas. de Aceite de Maiz", "1 Bifecito de Carne o Cerdo para acompañar" ],
+        "Pasos" : [ "En un bowl batir la yema. Agregar la cebollita de verdeo, el perejil, la albahaca, la batata, la zanahoria y la harina. Mezclar bien.", "En una sartén antiadherente, calentar el aceite y poner 2 cdas. de la mezcla de batata y zanahorias. Con una cuchara de madera, extiéndala para formar dos tortitas delgadas. Cocine hasta dorar, 3 minutos de cada lado.", "Reservar para servir tibias con 1 bife de carne o cerdo." ],
+        "Tip Nutricional" : [ "En la elaboración de esta receta se utiliza yema de huevo que contiene carotenoides, que además de ser precursores de la vitamina A poseen efecto antioxidante y anticancerígeno sobre algunos tejidos. Es uno de los únicos alimentos que aportan vitamina D en forma natural. La mayor parte de grasas que contiene el huevo se encuentran en la yema, si bien es fuente de colesterol no afecta en gran medida el colesterol sanguíneo en personas sanas." ],
+        "Variantes" : [ "Se puede cambiar la batata por papa." ]
+      },
+      "Wok de Carne" : {
+        "Ingredientes" : [ "70 gr. de Bola de lomo cortada en tiritas finas", "½ Zanahoria en tiritas", "1 tallito de Apio en tiritas", "½ unidad de Cebolla de verdeo", "2 Champignones en laminas", "1 cdita de Aceite de Oliva" ],
+        "Pasos" : [ "Rehogar en un wok o sartén antiadherente las tiritas de carne con 1 cdita de aceite de oliva, hasta que estén doradas. Retirar y reservar.", "Colocar en el wok la zanahoria, apio y cebolla de verdeo, cocinar hasta que estén tiernas. Agregar los champignones y las tiritas de carne nuevamente.", "Cocinar por unos minutos más. Servir." ],
+        "Tip Nutricional" : [ "Esta colorida receta es ideal para incluir diferentes vegetales y hortalizas en la alimentación de los niños. Puede ser consumida por toda la familia, aporta proteínas, hierro, zinc y se puede preparar con los vegetales de estación  que estén disponibles en casa." ],
+        "Variantes" : [ "Se puede acompañar con arroz blanco o pasta." ]
+      },
+      "Wok de Pollo" : {
+        "Ingredientes" : [ "taza de Zanahoria cortada en juliana fina", "¼ taza de Zucchini cortado en juliana fina", "1 cda. Cebolla cortada en juliana fina", "100 gr. de Pechuga de Pollo", "2 cditas. de Aceite de maiz" ],
+        "Pasos" : [ "Quitar toda la grasa al pollo, y cortar en tiras finas de 2 cm de largo. Cocinar en sartén antiadherente con 1 cdita. de aceite. Reservar.", "Colocar el resto del aceite y rehogar las verduras hasta que estén tiernas. Agregar el pollo.", "Servir caliente." ],
+        "Tip Nutricional" : [ "Esta colorida receta es ideal para incluir diferentes vegetales y hortalizas en la alimentación de los niños. Puede ser consumida por toda la familia, aporta proteínas, hierro, zinc y se puede preparar con los vegetales de estación  que estén disponibles en casa." ],
+        "Variantes" : [ "Se puede cambiar el pollo por otra carne, vacuna o cerdo." ]
+      },
+      "Ñoquis de Calabaza con Salsa Rosa" : {
+        "Ingredientes" : [ "100g de Calabaza", "50 gr de Papa", "1 cda. de Queso fresco rallado", "30g de Harina", "1 Yema", "1 cditas. de Aceite de Maiz", "½ taza de Salsa Rosa" ],
+        "Pasos" : [ "Cortar la calabaza y la papa y cocinar en el horno, para que quede bien sequita y no tenga mucha agua.", "Deshacer la pulpa de la calabaza y la papa cocida, hacer un puré suave. Mezclar con la yema batida, el queso rallado y la harina.", "Volcar la masa sobre la mesada enharinada y hacerla rodar bajo las palmas de las manos hasta formar un cordón. Cortar trocitos y llevar a la heladera por unos minutos.", "Cocinarlos en agua hirviendo con una hoja de laurel y un poco de sal. A medida que suben en la superficie sacarlos con espumadera. Servir con la salsa." ],
+        "Tip Nutricional" : [ "Los ñoquis aportan energía ya que contienen harina y yema de huevo, la utilización de calabaza agrega fibra y color a la preparación. La salsa y el queso enriquecen el valor nutritivo aportando calorías y proteínas." ],
+        "Variantes" : [ "Se puede acompañar con otras salsas como Fileto o Salsa Blanca" ]
+      },
+      "Ñoquis de Papa con Salsa Rosa" : {
+        "Ingredientes" : [ "1 unidad de Papa cocida", "1 pizca de Nuez Moscada", "2 cdas. de Harina (aproximadamente)", "Sal Gruesa para la cocción", "½ taza de Salsa Rosa" ],
+        "Pasos" : [ "Reducir a puré la papa, sazonar con nuez moscada. Incorporar la harina para obtener una masa tierna.", "Volcar la masa sobre la mesada ligeramente enharinada y hacerla rodar bajo las palmas de las manos hasta formar un cordón. Cortar trocitos. Pasarlos por un tenedor, presionando levemente con el pulgar, para dar a los ñoquis su aspecto característico.", "Cocinar en agua hirviendo con un toque de sal hasta que suban a la superficie. Retirarlos con espumadera. Servirlos con Salsa Rosa." ],
+        "Tip Nutricional" : [ "La papa es un vegetal feculento, aporta energía y no contiene gluten. Es muy aceptado por los niños y mejora su valor nutricional con el agregado de harina y salsa rosa." ],
+        "Variantes" : [ "Se puede combinar la Papa con Zanahoria cocida." ]
+      },
+      "Ñoquis de Ricota y Acelga" : {
+        "Ingredientes" : [ "50 gr. de Ricota", "2 cdas. de Cereales Precocidos para bebes (tipo Nestum Multicereal)", "5 hojas de ACELGA cocida (sin pencas, ni nervaduras)", "2 Yemas de huevo", "1 cda. de Queso Mozzarella en hebras", "2 cdas. de Harina Leudante", "2 cditas. de Aceite de Maíz", "Harina adicional", "½ taza de Salsa Fileto" ],
+        "Pasos" : [ "Colocar en un bol la ricota, el cereal infantil, las yemas, la acelga cortadita y el queso. Mezclar.", "Incorporar la harina leudante hasta integrar sin amasar. Formar rollitos con ayuda de la harina y cortar pequeños daditos.", "Cocinar en abundante agua hirviendo y cuando suben a la superficie, retirar. Agregar el aceite. Acompañar con Salsa Fileto." ],
+        "Variantes" : [ "Se puede acompañar con otras salsas como Salsa Blanca o Salsa Rosa" ]
+      },
+      "Ñoquis de sémola" : {
+        "Ingredientes" : [ "½ taza de Leche recomendada", "½ taza de Agua segura", "1 cda. Manteca", "3 cdas. Sémola de Trigo", "1 pizca de Nuez moscada", "2 cditas. de Aceite de Maíz", "2 cdas. Queso Fresco cortado en hebra", "1 Yema de Huevo" ],
+        "Pasos" : [ "Colocar en una cacerola la leche y el agua, llevar a hervor. Agregar la sémola en forma de lluvia.", "Revolver constantemente para evitar grumos, hasta que retome el hervor. Cocinar por 2 minutos más.", "Fuera del fuego, agregar la yema de huevo y condimentar con nuez moscada.", "Volcar en una placa para horno enmantecada y esparcir uniformemente, hasta 1 cm de espesor. Dejar enfriar.", "Cortar la masa con un cortapasta o con un cuchillo en pequeñas piezas. Colocarlos en una fuente para horno lubricada, rociarlos con aceite y espolvorearlos con queso en hebras. Gratinar por 10 minutos. Servir." ],
+        "Tip Nutricional" : [ "La sémola es una harina gruesa (poco molida) procedente del trigo, es la “Vitina” del supermercado y en general está fortificada con vitaminas del grupo B, hierro y zinc. Aporta energía y no contiene grasa. Es una buena opción acompañarla con diferentes vegetales y con el agregado de yema de huevo y queso aumenta su valor energético y el contenido proteico." ],
+        "Variantes" : [ "Se puede combinar con puré de zapallo en cuyo caso se agregara a la papilla clásica de sémola, 100 gr. de calabaza." ]
+      }
+    }
+  },
+  "Recetas Básicas" : {
+    "Banana Pisada" : {
+      "Ingredientes" : [ "⅓ de puré de batatas (100 grs)", "1 cda. sopera (25 grs.) de ricota", "1 cda. sopera de carne (cocida)", "2 cditas. de aceite de maíz" ],
+      "Video" : "link"
+    },
+    "Papilla Naranja" : {
+      "Ingredientes" : [ "⅓ de puré de batatas (100 grs)", "1 cda. sopera (25 grs.) de ricota", "1 cda. sopera de carne (cocida)", "2 cditas. de aceite de maíz" ],
+      "Video" : "link"
+    }
+  },
+  "Usuarios" : {
+    "0HMTBZ6PfQUTK5hJRCorxavtnyC3" : {
+      "Bebé" : {
+        "Apodo" : "Sofi",
+        "Fecha de Nacimiento" : "17/03/2016",
+        "Nombre" : "Sofía"
+      },
+      "Datos" : {
+        "Email" : "vanina@gmail.com",
+        "Fecha de Nacimiento" : "17/03/1990",
+        "Nombre Completo" : "Vanina Gonzalez"
+      },
+      "Recetas Favoritas" : [ "Puré de manzana", "Wok de Pollo" ]
+    },
+    "4U3KchtmawVTDsq76v9OSvdpowH3" : {
+      "Bebé" : {
+        "Apodo" : "fer",
+        "Fecha de Nacimiento" : "sfgc",
+        "Nombre" : "fern"
+      },
+      "Datos" : {
+        "Email" : "fer@gmail.com",
+        "Fecha de Nacimiento" : "17/04/2017",
+        "Nombre Completo" : "fer"
+      }
+    },
+    "VO35g6R64DbHblUvgm9sHyQxCe62" : {
+      "Datos" : {
+        "Email" : "test@gmail.com",
+        "Fecha de Nacimiento" : "17/05/1967",
+        "Nombre Completo" : "test"
+      }
+    }
+  }
+}
