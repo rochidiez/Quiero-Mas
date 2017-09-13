@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.android.quieromas.view.EmptyRecyclerView;
 import com.android.quieromas.R;
@@ -88,6 +90,18 @@ public class FavoriteRecipesFragment extends BaseRecipeFragment {
         //recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(new MyFavoriteRecipesRecyclerViewAdapter(recipes, mListener));
         recyclerView.setEmptyView(view.findViewById(R.id.empty_view));
+
+        Button btnEmpty = (Button) recyclerView.getEmptyView().findViewById(R.id.btn_empty_recipes);
+        btnEmpty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.main_content, new SearchFragment(),"search");
+                ft.addToBackStack("search");
+                ft.commit();
+            }
+        });
+
 
         firebaseDatabaseHelper = new FirebaseDatabaseHelper();
         firebaseDatabaseHelper.getFavoriteRecipesReference().addListenerForSingleValueEvent(new ValueEventListener() {

@@ -203,7 +203,10 @@ public class ShoppingListFragment extends BaseFragment implements AdapterView.On
             public void onDataChange(DataSnapshot dataSnapshot) {
                 user = dataSnapshot.getValue(User.class);
                 AgeHelper ageHelper = new AgeHelper();
-                int planWeekStartDay = ageHelper.getPlanWeekStartDay(user.bebe.fechaDeNacimiento);
+
+                int planWeekStartDay = 0;
+                if(user.bebe.fechaDeNacimiento != null)
+                    planWeekStartDay =ageHelper.getPlanWeekStartDay(user.bebe.fechaDeNacimiento);
 
                 if (planWeekStartDay + diff < 180)
                     planWeekStartDay += diff;

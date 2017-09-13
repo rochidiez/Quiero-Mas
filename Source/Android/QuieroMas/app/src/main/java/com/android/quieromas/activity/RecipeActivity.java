@@ -125,6 +125,17 @@ public class RecipeActivity extends AuthActivity {
 
         if(dessertName == null || dessertName.toLowerCase().equals("sin postre")) {
             btnDessert.setVisibility(View.GONE);
+        }else {
+            btnDessert.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(RecipeActivity.this, BasicRecipeActivity.class);
+                    intent.putExtra("BASIC_RECIPE", dessertName);
+                    intent.putExtra("IS_DESSERT", true);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    getApplicationContext().startActivity(intent);
+                }
+            });
         }
 
         if(reuse == null){
@@ -140,17 +151,6 @@ public class RecipeActivity extends AuthActivity {
             });
         }
 
-        if(dessertName != null && !dessertName.toLowerCase().equals("sin postre")){
-            btnDessert.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(RecipeActivity.this, BasicRecipeActivity.class);
-                    intent.putExtra("BASIC_RECIPE",dessertName);
-                    intent.putExtra("IS_DESSERT",true);
-                    getApplicationContext().startActivity(intent);
-                }
-            });
-        }
     }
 
     private void startTipActivity(String title, String text, String drawable){

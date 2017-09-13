@@ -2,10 +2,15 @@ package com.android.quieromas.view;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.Button;
 
+import com.android.quieromas.R;
+import com.android.quieromas.fragment.SearchFragment;
 import com.firebase.client.annotations.NotNull;
 
 /**
@@ -57,7 +62,10 @@ public class EmptyRecyclerView extends RecyclerView {
 
     public void setEmptyView(@Nullable View emptyView) {
         this.emptyView = emptyView;
-        checkIfEmpty();
+    }
+
+    public View getEmptyView() {
+        return emptyView;
     }
 
     @Override
