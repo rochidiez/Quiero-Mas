@@ -31,9 +31,11 @@ class NutricionViewController: UIViewController {
     //Recetas
     @IBOutlet weak var almuerzoRecetaLabel: UILabel!
     @IBOutlet weak var almuerzoRecetaImg: UIImageView!
+    @IBOutlet weak var almuerzoBottom: NSLayoutConstraint!
     
     @IBOutlet weak var cenaRecetaLabel: UILabel!
     @IBOutlet weak var cenaRecetaImg: UIImageView!
+    @IBOutlet weak var cenaBottom: NSLayoutConstraint!
     
     
     //Spinner
@@ -64,6 +66,10 @@ class NutricionViewController: UIViewController {
         super.viewDidLoad()
         setRevealMenuButton()
         setAppMainColor()
+        if DeviceType.IS_IPHONE_4_OR_LESS {
+            almuerzoBottom.constant = 8
+            cenaBottom.constant = 8
+        }
     }
     
     func setRevealMenuButton() {

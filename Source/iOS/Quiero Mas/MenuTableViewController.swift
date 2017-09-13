@@ -26,6 +26,7 @@ class MenuTableViewController: UITableViewController {
     
     func setTableView() {
         if DeviceType.IS_IPHONE_5 {tableView.isScrollEnabled = true}
+        if DeviceType.IS_IPHONE_4_OR_LESS {tableView.isScrollEnabled = true}
     }
     
     func setAppMainColor() {
@@ -81,7 +82,7 @@ class MenuTableViewController: UITableViewController {
         case 3:
             return 2
         case 4:
-            if DeviceType.IS_IPHONE_5 {
+            if DeviceType.IS_IPHONE_5 || DeviceType.IS_IPHONE_4_OR_LESS {
                 return 3
             } else {
                 return 7
