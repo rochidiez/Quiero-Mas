@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.text.Html;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +20,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.quieromas.R;
@@ -111,6 +113,14 @@ public class DevelopmentFragment extends BaseFragment {
 //        statusBar.setBackgroundColor(ContextCompat.getColor(getActivity(),R.color.blue));
 //            statusBar.setVisibility(View.VISIBLE);
 //        }
+
+        TextView txt = (TextView) view.findViewById(R.id.txt_development_title);
+        txt.setText(Html.fromHtml("<p><font face=\\\"Cera\\\">El desarrollo de tu hijo no s&oacute;lo depende de su gen&eacute;tica, sino tambi&eacute;n de la nutrici&oacute;n espec&iacute;fica para cada edad, junto con un patr&oacute;n de sue&ntilde;o adecuado, y las&nbsp;experiencias que tu beb&eacute; tenga en su vida diaria. Estas interacciones cotidianas hacen que avance en el desarrollo de sus habilidades. Por lo tanto, la forma como sosten&eacute;s en brazos a tu hijo, como lo hac&eacute;s jugar pancita abajo, como le cant&aacute;s, lo mir&aacute;s o sonre&iacute;s, estar&aacute;n dejando huellas en su arquitectura cerebral.&nbsp;&nbsp;Y ese v&iacute;nculo que gener&aacute;s con &eacute;l es el eje, la base fundamental, para que progrese en los aprendizajes de cada una de las &aacute;reas del desarrollo infantil.&nbsp;<u></u><u></u></font></p>\n" +
+                "<p><font face=\\\"Cera\\\">Por esta raz&oacute;n, te proponemos juegos para que puedas fortalecer este v&iacute;nculo y disfrutar de acompa&ntilde;ar el desarrollo de tu bebe en las 4 &aacute;reas principales:<u></u><u></u></font></p>\n" +
+                "<p><font face=\\\"Cera\\\"><strong>&Aacute;rea Cognitiva:</strong>&nbsp;referente a la exploraci&oacute;n, manipulaci&oacute;n y relaci&oacute;n con los objetos, permanencia de objeto, memoria.<u></u><u></u></font></p>\n" +
+                "<p><font face=\\\"Cera\\\"><strong>&Aacute;rea de Comunicaci&oacute;n:</strong>&nbsp;relacionado con el balbuceo, gestos, identificaci&oacute;n y nombres objetos y figuras, el saber esperar el turno.<u></u><u></u></font></p>\n" +
+                "<p><font face=\\\"Cera\\\"><strong>&Aacute;rea Motriz:</strong>&nbsp;enfocado en la coordinaci&oacute;n viso-manual, alcance y manipulaci&oacute;n de objetos de diversa informaci&oacute;n t&aacute;ctil, el sentarse, gatear, trepar, perfecci&oacute;n del equilibrio y la planificaci&oacute;n motora.<u></u><u></u></font></p>\n" +
+                "<p><font face=\\\"Cera\\\"><strong>&Aacute;rea Social:</strong>&nbsp;relativo a la autorregulaci&oacute;n, autoestima, inter&eacute;s por el mundo y las personas, la identidad, comunicaci&oacute;n de necesidades, reglas de juego, respuesta a las consignas, realizaci&oacute;n de elecciones, participaci&oacute;n en tareas de la casa; cuidado de los objetos personales y el ambiente, la higiene personal, los modales.</font></p>"));
 
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.development_linear_layout);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);

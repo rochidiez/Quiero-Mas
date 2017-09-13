@@ -14,7 +14,7 @@
         <item
             android:id="@+id/nav_nutrition_plan"
             android:icon="@drawable/receta"
-            android:title="Plan de Nutrición" />
+            android:title="Tu receta de hoy" />
     </group>
     <group android:id="@+id/grp2" android:checkableBehavior="single">
         <item
