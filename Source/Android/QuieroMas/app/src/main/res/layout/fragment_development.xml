@@ -25,13 +25,51 @@
             android:background="@drawable/enfabebe"/>
 
         <TextView
-            android:id="@+id/txt_development_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:textColor="@color/blue"
             android:textSize="@dimen/subtitle_text_size"
-            android:text=""/>
+            android:text="El desarrollo de tu hijo no sólo depende de su genética, sino también de la nutrición específica para cada edad, junto con un patrón de sueño adecuado, y las experiencias que tu bebé tenga en su vida diaria. Estas interacciones cotidianas hacen que avance en el desarrollo de sus habilidades. Por lo tanto, la forma como sostenés en brazos a tu hijo, como lo hacés jugar pancita abajo, como le cantás, lo mirás o sonreís, estarán dejando huellas en su arquitectura cerebral.  Y ese vínculo que generás con él es el eje, la base fundamental, para que progrese en los aprendizajes de cada una de las áreas del desarrollo infantil. "/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/subtitle_text_size"
+            android:text="Por esta razón, te proponemos juegos para que puedas fortalecer este vínculo y disfrutar de acompañar el desarrollo de tu bebe en las 4 áreas principales:"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/subtitle_text_size"
+            android:text="Área Cognitiva: referente a la exploración, manipulación y relación con los objetos, permanencia de objeto, memoria."/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/subtitle_text_size"
+            android:text="Área de Comunicación: relacionado con el balbuceo, gestos, identificación y nombres objetos y figuras, el saber esperar el turno."/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/subtitle_text_size"
+            android:text="Área Motriz: enfocado en la coordinación viso-manual, alcance y manipulación de objetos de diversa información táctil, el sentarse, gatear, trepar, perfección del equilibrio y la planificación motora."/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/subtitle_text_size"
+            android:text="Área Social: relativo a la autorregulación, autoestima, interés por el mundo y las personas, la identidad, comunicación de necesidades, reglas de juego, respuesta a las consignas, realización de elecciones, participación en tareas de la casa; cuidado de los objetos personales y el ambiente, la higiene personal, los modales"/>
 
     </LinearLayout>
 
