@@ -87,7 +87,7 @@ class RecetaViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func setCongelarLabel() {
-        if DeviceType.IS_IPHONE_5 {
+        if DeviceType.IS_IPHONE_5 || DeviceType.IS_IPHONE_4_OR_LESS {
             reutilizarLabel.font = UIFont(name: "Cera-Bold", size: 13)
         }
     }

@@ -52,6 +52,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     @IBOutlet weak var dasanTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var emailNoAccountConstraint: NSLayoutConstraint!
     @IBOutlet weak var forgotPassNoAccountConstraint: NSLayoutConstraint!
+    @IBOutlet weak var quieroMasLogoConstraint: NSLayoutConstraint!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
@@ -64,6 +65,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         setTapGestures()
         setDatePickerInputs()
         setObservers()
+        if DeviceType.IS_IPHONE_4_OR_LESS {
+            quieroMasLogoConstraint.constant = 8
+        }
     }
     
     func setAVPlayer() {
@@ -132,6 +136,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         if DeviceType.IS_IPHONE_5 {
             dasanTopConstraint.constant = 110
         }
+        
+        if DeviceType.IS_IPHONE_4_OR_LESS {
+            dasanTopConstraint.constant = 22
+        }
     }
     
     func adjustEmailNoAccountConstraint() {
@@ -146,6 +154,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         if DeviceType.IS_IPHONE_5 {
             emailNoAccountConstraint.constant = 40
         }
+        
+        if DeviceType.IS_IPHONE_4_OR_LESS {
+            emailNoAccountConstraint.constant = 0
+        }
     }
     
     func adjustForgotPasswordNoAccountConstraint() {
@@ -159,6 +171,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         
         if DeviceType.IS_IPHONE_5 {
             forgotPassNoAccountConstraint.constant = 90
+        }
+        
+        if DeviceType.IS_IPHONE_4_OR_LESS {
+            forgotPassNoAccountConstraint.constant = 20
         }
     }
     

@@ -55,7 +55,7 @@ class HomeViewController: UIViewController {
     }
 
     func setConstraints() {
-        if DeviceType.IS_IPHONE_5 {
+        if DeviceType.IS_IPHONE_5 || DeviceType.IS_IPHONE_4_OR_LESS {
             tlImgWidthConstraint.constant = 35
             tlImgHeightConstraint.constant = 35
             tlLabel.font = UIFont(name: "Cera-Medium", size: 12)
